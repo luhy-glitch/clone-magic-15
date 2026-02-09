@@ -15,10 +15,15 @@ const Footer = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          {[Mail, Linkedin, Github].map((Icon, i) => (
+          {[
+            { Icon: Mail, label: "Skicka e-post", href: "mailto:kontakt@lrhkonsult.se" },
+            { Icon: Linkedin, label: "LinkedIn", href: "#" },
+            { Icon: Github, label: "GitHub", href: "#" },
+          ].map(({ Icon, label, href }) => (
             <a
-              key={i}
-              href="#"
+              key={label}
+              href={href}
+              aria-label={label}
               className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
             >
               <Icon size={18} />
