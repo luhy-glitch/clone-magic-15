@@ -11,12 +11,12 @@ const highlights = [
 
 const About = () => {
   return (
-    <section id="om-mig" className="py-20 md:py-28 bg-background">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+    <section id="om-mig" className="py-14 sm:py-20 md:py-28 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-10 sm:gap-16 items-center">
           {/* Profile card */}
           <div className="flex justify-center">
-            <div className="bg-card rounded-2xl shadow-xl p-10 text-center max-w-sm w-full border border-border">
+            <div className="bg-card rounded-2xl shadow-xl p-8 sm:p-10 text-center max-w-sm w-full border border-border">
               {/* Avatar */}
               <div className="mx-auto w-28 h-28 rounded-full bg-primary flex items-center justify-center mb-6">
                 <span className="text-primary-foreground font-serif text-4xl font-bold">LR</span>
@@ -41,7 +41,7 @@ const About = () => {
           {/* Text content */}
           <div>
             <span className="text-primary font-medium text-sm tracking-widest uppercase">Om mig</span>
-            <h2 className="mt-4 text-3xl md:text-5xl font-bold leading-tight">
+            <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold leading-tight">
               Passion för att skapa{" "}
               <span className="text-primary">digitala upplevelser</span>
             </h2>

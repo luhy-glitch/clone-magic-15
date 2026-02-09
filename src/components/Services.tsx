@@ -41,12 +41,12 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="tjanster" className="py-20 md:py-28 bg-section-alt">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="tjanster" className="py-14 sm:py-20 md:py-28 bg-section-alt">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <span className="text-primary font-medium text-sm tracking-widest uppercase">Tjänster</span>
-          <h2 className="mt-4 text-3xl md:text-5xl font-bold">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold">
             Allt du behöver för en{" "}
             <span className="text-primary">framgångsrik närvaro online</span>
           </h2>
@@ -56,11 +56,11 @@ const Services = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-card rounded-xl border border-border p-8 hover:shadow-lg transition-shadow"
+              className="bg-card rounded-xl border border-border p-6 sm:p-8 hover:shadow-lg transition-shadow"
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                 <service.icon size={24} className="text-primary" />
