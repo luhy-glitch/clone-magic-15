@@ -33,12 +33,6 @@ const Hero = () => {
           >
             Boka ett samtal <ArrowRight size={18} />
           </button>
-          <button
-            onClick={() => scrollTo("tjanster")}
-            className="px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-hero-muted/30 text-hero-foreground font-medium flex items-center justify-center gap-2 hover:bg-hero-muted/10 transition-colors"
-          >
-            <Code2 size={18} /> Se mina projekt
-          </button>
         </div>
 
         {/* Stats */}
