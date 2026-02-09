@@ -1,4 +1,5 @@
 import { Code2, Palette, Search, Settings, Wrench, Zap } from "lucide-react";
+import AnimatedSection, { FadeIn } from "./AnimatedSection";
 
 const services = [
   {
@@ -44,38 +45,39 @@ const Services = () => {
     <section id="tjanster" className="py-14 sm:py-20 md:py-28 bg-section-alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-10 sm:mb-16">
-          <span className="text-primary font-medium text-sm tracking-widest uppercase">Tjänster</span>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold">
-            Allt du behöver för en{" "}
-            <span className="text-primary">framgångsrik närvaro online</span>
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Från koncept till lansering – jag erbjuder helhetslösningar som hjälper ditt företag att växa digitalt.
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="text-center mb-10 sm:mb-16">
+            <span className="text-primary font-medium text-sm tracking-widest uppercase">Tjänster</span>
+            <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold">
+              Allt du behöver för en{" "}
+              <span className="text-primary">framgångsrik närvaro online</span>
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              Från koncept till lansering – jag erbjuder helhetslösningar som hjälper ditt företag att växa digitalt.
+            </p>
+          </div>
+        </AnimatedSection>
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="bg-card rounded-xl border border-border p-6 sm:p-8 hover:shadow-lg transition-shadow"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                <service.icon size={24} className="text-primary" />
+          {services.map((service, i) => (
+            <FadeIn key={service.title} delay={i * 0.1}>
+              <div className="bg-card rounded-xl border border-border p-6 sm:p-8 hover:shadow-lg transition-shadow h-full">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                  <service.icon size={24} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold font-serif mb-3">{service.title}</h3>
+                <p className="text-muted-foreground text-sm mb-5">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-bold font-serif mb-3">{service.title}</h3>
-              <p className="text-muted-foreground text-sm mb-5">{service.description}</p>
-              <ul className="space-y-2">
-                {service.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-foreground">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </div>
