@@ -42,7 +42,7 @@ serve(async (req: Request) => {
 
     const data = await resend.emails.send({
       from: "LRH Konsult <noreply@lrhkonsult.se>",
-      to: ["kontakt@lrhkonsult.se"],
+      to: ["lucas@lrhkonsult.se"],
       replyTo: email,
       subject: subject ? `Kontaktformulär: ${subject}` : `Kontaktformulär: Nytt meddelande från ${name}`,
       html: `

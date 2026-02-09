@@ -20,7 +20,7 @@ const Footer = () => {
 
         <div className="flex items-center gap-4">
           {[
-            { Icon: Mail, label: "Skicka e-post", href: "mailto:kontakt@lrhkonsult.se" },
+            { Icon: Mail, label: "Skicka e-post", href: "mailto:lucas@lrhkonsult.se" },
             { Icon: Linkedin, label: "LinkedIn", href: "#" },
             { Icon: Github, label: "GitHub", href: "#" },
           ].map(({ Icon, label, href }) => (

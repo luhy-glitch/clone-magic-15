@@ -58,7 +58,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-xl font-bold text-foreground mt-8">5. Kontakt</h2>
           <p>Har du frågor om hur vi hanterar dina personuppgifter? Kontakta oss:</p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>E-post: kontakt@lrhkonsult.se</li>
+            <li>E-post: lucas@lrhkonsult.se</li>
             <li>Telefon: 070 460 65 78</li>
           </ul>
 
