@@ -14,6 +14,22 @@ function escapeHtml(text: string): string {
   return text.replace(/[&<>"']/g, (m) => map[m]);
 }
 
+// In-memory rate limiter (resets on cold start, but sufficient for edge function)
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+  entry.count++;
+  return entry.count > RATE_LIMIT;
+}
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -26,7 +42,25 @@ serve(async (req: Request) => {
   }
 
   try {
-    const { name, email, subject, message } = await req.json();
+    // Rate limiting by IP
+    const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    if (isRateLimited(clientIp)) {
+      return new Response(
+        JSON.stringify({ error: "För många förfrågningar. Försök igen senare." }),
+        { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    const { name, email, subject, message, website } = await req.json();
+
+    // Honeypot check – bots tend to fill hidden fields
+    if (website) {
+      // Silently accept to not reveal the honeypot
+      return new Response(JSON.stringify({ id: "ok" }), {
+        status: 200,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
 
     if (!name || !email || !message) {
       return new Response(
@@ -35,7 +69,6 @@ serve(async (req: Request) => {
       );
     }
 
-    // Basic validation
     if (name.length > 100 || email.length > 255 || message.length > 5000) {
       return new Response(
         JSON.stringify({ error: "Fälten överskrider maxlängd." }),

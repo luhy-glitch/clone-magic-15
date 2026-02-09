@@ -5,7 +5,7 @@ import { toast } from "@/hooks/use-toast";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", website: "" });
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -17,7 +17,7 @@ const Contact = () => {
       });
       if (error) throw error;
       toast({ title: "Meddelande skickat!", description: "Tack, jag återkommer så snart jag kan." });
-      setForm({ name: "", email: "", subject: "", message: "" });
+      setForm({ name: "", email: "", subject: "", message: "", website: "" });
     } catch (err: any) {
       toast({ title: "Något gick fel", description: err.message || "Försök igen senare.", variant: "destructive" });
     } finally {
@@ -66,6 +66,17 @@ const Contact = () => {
           {/* Form */}
           <FadeIn delay={0.3}>
             <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Honeypot field – hidden from real users */}
+              <div className="absolute opacity-0 pointer-events-none" aria-hidden="true" tabIndex={-1}>
+                <input
+                  type="text"
+                  name="website"
+                  autoComplete="off"
+                  value={form.website}
+                  onChange={(e) => setForm({ ...form, website: e.target.value })}
+                  tabIndex={-1}
+                />
+              </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Namn</label>
