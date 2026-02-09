@@ -12,13 +12,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="kontakt" className="py-20 md:py-28 bg-section-alt">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16">
+    <section id="kontakt" className="py-14 sm:py-20 md:py-28 bg-section-alt">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-10 sm:gap-16">
           {/* Left */}
           <div>
             <span className="text-primary font-medium text-sm tracking-widest uppercase">Kontakt</span>
-            <h2 className="mt-4 text-3xl md:text-5xl font-bold leading-tight">
+            <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold leading-tight">
               Låt oss prata om ditt{" "}
               <span className="text-primary">nästa projekt</span>
             </h2>
