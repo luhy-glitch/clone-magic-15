@@ -28,6 +28,9 @@ const Navbar = () => {
           <button onClick={() => scrollTo("om-mig")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Om mig
           </button>
+          <button onClick={() => scrollTo("priser")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Priser
+          </button>
           <button onClick={() => scrollTo("kontakt")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Kontakt
           </button>
@@ -50,6 +53,7 @@ const Navbar = () => {
         <div className="md:hidden bg-background border-b border-border px-6 py-4 flex flex-col gap-4">
           <button onClick={() => scrollTo("tjanster")} className="text-left text-sm text-muted-foreground">Tjänster</button>
           <button onClick={() => scrollTo("om-mig")} className="text-left text-sm text-muted-foreground">Om mig</button>
+          <button onClick={() => scrollTo("priser")} className="text-left text-sm text-muted-foreground">Priser</button>
           <button onClick={() => scrollTo("kontakt")} className="text-left text-sm text-muted-foreground">Kontakt</button>
           <button
             onClick={() => scrollTo("kontakt")}
