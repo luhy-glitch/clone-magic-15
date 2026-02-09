@@ -3,6 +3,17 @@ import { Resend } from "npm:resend@2.0.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
+function escapeHtml(text: string): string {
+  const map: Record<string, string> = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+  };
+  return text.replace(/[&<>"']/g, (m) => map[m]);
+}
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -44,14 +55,14 @@ serve(async (req: Request) => {
       from: "LRH Konsult <onboarding@resend.dev>",
       to: ["lucas@lrhkonsult.se"],
       replyTo: email,
-      subject: subject ? `Kontaktformulär: ${subject}` : `Kontaktformulär: Nytt meddelande från ${name}`,
+      subject: subject ? `Kontaktformulär: ${escapeHtml(subject)}` : `Kontaktformulär: Nytt meddelande från ${escapeHtml(name)}`,
       html: `
         <h2>Nytt meddelande från kontaktformuläret</h2>
-        <p><strong>Namn:</strong> ${name}</p>
-        <p><strong>E-post:</strong> ${email}</p>
-        <p><strong>Ämne:</strong> ${subject || "Ej angivet"}</p>
+        <p><strong>Namn:</strong> ${escapeHtml(name)}</p>
+        <p><strong>E-post:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Ämne:</strong> ${escapeHtml(subject || "Ej angivet")}</p>
         <hr />
-        <p>${message.replace(/\n/g, "<br />")}</p>
+        <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
       `,
     });
 
@@ -62,7 +73,7 @@ serve(async (req: Request) => {
   } catch (error: any) {
     console.error("Error sending email:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Det gick inte att skicka meddelandet. Försök igen senare eller kontakta oss direkt via e-post." }),
       { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
   }
