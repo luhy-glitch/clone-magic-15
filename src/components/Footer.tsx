@@ -1,4 +1,5 @@
 import { Mail, Linkedin, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -10,7 +11,10 @@ const Footer = () => {
           </div>
           <div>
             <div className="font-serif font-bold text-foreground">LRH Konsult</div>
-            <div className="text-xs text-muted-foreground">© 2026 Alla rättigheter förbehållna.</div>
+            <div className="text-xs text-muted-foreground">
+              © 2026 Alla rättigheter förbehållna. ·{" "}
+              <Link to="/integritetspolicy" className="hover:text-primary transition-colors">Integritetspolicy</Link>
+            </div>
           </div>
         </div>
 

@@ -1,14 +1,28 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Tack för ditt meddelande!");
-    setForm({ name: "", email: "", subject: "", message: "" });
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: form,
+      });
+      if (error) throw error;
+      toast({ title: "Meddelande skickat!", description: "Tack, jag återkommer så snart jag kan." });
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (err: any) {
+      toast({ title: "Något gick fel", description: err.message || "Försök igen senare.", variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -99,9 +113,14 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-4 rounded-lg bg-primary text-primary-foreground font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                disabled={loading}
+                className="w-full px-6 py-4 rounded-lg bg-primary text-primary-foreground font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors disabled:opacity-60"
               >
-                Skicka meddelande <Send size={18} />
+                {loading ? (
+                  <><Loader2 size={18} className="animate-spin" /> Skickar...</>
+                ) : (
+                  <>Skicka meddelande <Send size={18} /></>
+                )}
               </button>
             </form>
           </FadeIn>
