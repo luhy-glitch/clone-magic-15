@@ -43,7 +43,7 @@ const Contact = () => {
 
               <div className="mt-10 space-y-6">
                 {[
-                  { icon: Mail, label: "E-post", value: "kontakt@lrhkonsult.se" },
+                  { icon: Mail, label: "E-post", value: "lucas@lrhkonsult.se" },
                   { icon: Phone, label: "Telefon", value: "070 460 65 78" },
                   { icon: MapPin, label: "Plats", value: "Sverige" },
                 ].map((item, i) => (
