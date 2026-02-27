@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { supabase } from "@/integrations/supabase/client";
-import { Plus, LogOut, Pencil, Trash2, ArrowLeft, Save, Upload, X } from "lucide-react";
+import { Plus, LogOut, Pencil, Trash2, ArrowLeft, Save, Upload, X, Eye, Code } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 interface BlogPost {
   id: string;
@@ -30,6 +31,7 @@ const AdminDashboard = () => {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [uploading, setUploading] = useState(false);
+  const [previewMode, setPreviewMode] = useState(false);
 
   const adminKey = localStorage.getItem("admin_key");
 
@@ -175,8 +177,23 @@ const AdminDashboard = () => {
               <Textarea value={editing.excerpt || ""} onChange={(e) => setEditing({ ...editing, excerpt: e.target.value })} rows={2} />
             </div>
             <div className="space-y-2">
-              <Label>Innehåll (Markdown)</Label>
-              <Textarea value={editing.content || ""} onChange={(e) => setEditing({ ...editing, content: e.target.value })} rows={16} className="font-mono text-sm" />
+              <div className="flex items-center justify-between">
+                <Label>Innehåll (Markdown)</Label>
+                <button
+                  type="button"
+                  onClick={() => setPreviewMode(!previewMode)}
+                  className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {previewMode ? <><Code size={14} /> Redigera</> : <><Eye size={14} /> Förhandsvisning</>}
+                </button>
+              </div>
+              {previewMode ? (
+                <div className="min-h-[400px] rounded-md border border-input bg-background px-4 py-3 prose prose-invert prose-sm max-w-none prose-headings:font-serif prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground">
+                  <ReactMarkdown>{editing.content || "*Inget innehåll ännu...*"}</ReactMarkdown>
+                </div>
+              ) : (
+                <Textarea value={editing.content || ""} onChange={(e) => setEditing({ ...editing, content: e.target.value })} rows={16} className="font-mono text-sm" />
+              )}
             </div>
 
             {/* Image upload */}
