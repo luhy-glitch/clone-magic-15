@@ -82,7 +82,7 @@ function ssgPlugin(): Plugin {
         const template = fs.readFileSync(templatePath, "utf-8");
 
         // Routes to pre-render
-        const routes = ["/", "/integritetspolicy"];
+        const routes = ["/", "/webbutveckling", "/seo-optimering", "/om-mig", "/blogg", "/kontakt", "/integritetspolicy"];
 
         for (const route of routes) {
           const appHtml = render(route);

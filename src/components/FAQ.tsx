@@ -8,14 +8,19 @@ import AnimatedSection, { FadeIn } from "./AnimatedSection";
 
 const faqs = [
   {
+    question: "Vad kostar det att bygga en hemsida?",
+    answer:
+      "Priset varierar beroende på projektets storlek och komplexitet. Jag erbjuder tre paket – Bas (5 000 kr), Standard (12 000 kr) och Premium (25 000 kr) – som täcker de flesta behov. Kontakta mig för en kostnadsfri offert anpassad efter ditt projekt.",
+  },
+  {
     question: "Hur lång tid tar det att bygga en webbplats?",
     answer:
       "Det beror på projektets omfattning. En enkel webbplats kan vara klar inom 1–2 veckor, medan en mer komplex lösning med e-handel eller skräddarsydda funktioner kan ta 4–8 veckor.",
   },
   {
-    question: "Vad kostar det att anlita dig?",
+    question: "Hur lång tid tar SEO-optimering?",
     answer:
-      "Priset varierar beroende på projektets storlek och komplexitet. Jag erbjuder tre paket – Bas, Standard och Premium – som täcker de flesta behov. Kontakta mig för en kostnadsfri offert anpassad efter ditt projekt.",
+      "De första förbättringarna syns ofta inom 2–3 månader, medan mer konkurrenskraftiga sökord kan ta 6–12 månader att ranka för. SEO är en långsiktig investering som ger bestående resultat.",
   },
   {
     question: "Kan jag uppdatera webbplatsen själv efteråt?",
@@ -31,6 +36,11 @@ const faqs = [
     question: "Erbjuder du löpande support och underhåll?",
     answer:
       "Ja, jag erbjuder löpande support- och underhållsavtal så att din webbplats alltid är uppdaterad, säker och fungerar optimalt. Detta ingår i Premium-paketet eller kan läggas till separat.",
+  },
+  {
+    question: "Vilka företag arbetar du med i Västmanland?",
+    answer:
+      "Jag arbetar med företag av alla storlekar i Västerås, Köping, Sala och hela Västmanlands län. Oavsett om du är en enskild firma eller ett större företag kan jag hjälpa dig med webbutveckling och SEO.",
   },
   {
     question: "Vad händer om jag inte är nöjd med resultatet?",
