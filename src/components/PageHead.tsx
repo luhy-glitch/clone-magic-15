@@ -5,13 +5,16 @@ interface PageHeadProps {
   title: string;
   description: string;
   canonical?: string;
+  ogImage?: string;
 }
 
 const BASE_URL = "https://lrhkonsult.se";
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
 
-const PageHead = ({ title, description, canonical }: PageHeadProps) => {
+const PageHead = ({ title, description, canonical, ogImage }: PageHeadProps) => {
   const { pathname } = useLocation();
   const url = canonical || `${BASE_URL}${pathname === "/" ? "" : pathname}`;
+  const image = ogImage || DEFAULT_OG_IMAGE;
 
   useEffect(() => {
     document.title = title;
@@ -31,6 +34,7 @@ const PageHead = ({ title, description, canonical }: PageHeadProps) => {
     setMeta("og:description", description, "property");
     setMeta("og:url", url, "property");
     setMeta("og:type", "website", "property");
+    setMeta("og:image", image, "property");
 
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
