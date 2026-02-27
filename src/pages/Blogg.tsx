@@ -40,20 +40,35 @@ const Blogg = () => {
             ) : (
               <div className="space-y-6">
                 {posts.map((post, i) => (
-                  <FadeIn key={post.slug} delay={i * 0.1}>
+              <FadeIn key={post.slug} delay={i * 0.1}>
                     <Link to={`/blogg/${post.slug}`} className="block">
-                      <article className="bg-card rounded-xl border border-border p-6 sm:p-8 hover:shadow-lg hover:border-primary/30 transition-all group">
-                        <div className="flex items-center gap-3 mb-4">
-                          <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">{post.tag}</span>
-                          <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                            <Calendar size={14} /> {post.date}
+                      <article className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all group">
+                        <div className="aspect-video w-full overflow-hidden">
+                          {post.image_url ? (
+                            <img
+                              src={post.image_url}
+                              alt={post.image_alt || post.title}
+                              loading="lazy"
+                              decoding="async"
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-gradient-to-br from-[hsl(140_18%_18%)] via-[hsl(140_16%_22%)] to-[hsl(140_12%_16%)]" />
+                          )}
+                        </div>
+                        <div className="p-6 sm:p-8">
+                          <div className="flex items-center gap-3 mb-4">
+                            <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">{post.tag}</span>
+                            <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                              <Calendar size={14} /> {post.date}
+                            </span>
+                          </div>
+                          <h2 className="text-xl font-bold font-serif mb-3 group-hover:text-primary transition-colors">{post.title}</h2>
+                          <p className="text-muted-foreground mb-4">{post.excerpt}</p>
+                          <span className="inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all">
+                            Läs mer <ArrowRight size={14} />
                           </span>
                         </div>
-                        <h2 className="text-xl font-bold font-serif mb-3 group-hover:text-primary transition-colors">{post.title}</h2>
-                        <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-                        <span className="inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all">
-                          Läs mer <ArrowRight size={14} />
-                        </span>
                       </article>
                     </Link>
                   </FadeIn>
