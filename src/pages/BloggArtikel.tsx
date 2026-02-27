@@ -79,6 +79,13 @@ const BloggArtikel = () => {
         <section className="py-14 sm:py-20 bg-section-alt">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
+              {post.image_url && (
+                <img
+                  src={post.image_url}
+                  alt={post.image_alt || post.title}
+                  className="w-full rounded-xl mb-10 object-cover max-h-[480px]"
+                />
+              )}
               <article className="space-y-6">
                 {contentBlocks.map((block, i) => {
                   if (block.startsWith("## ")) {

@@ -11,21 +11,63 @@ Deno.serve(async (req) => {
   }
 
   try {
+    const contentType = req.headers.get("content-type") || "";
+
+    const ADMIN_KEY = Deno.env.get("ADMIN_SECRET_KEY");
+    const supabase = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+    );
+
+    // Handle image upload (multipart)
+    if (contentType.includes("multipart/form-data")) {
+      const formData = await req.formData();
+      const secretKey = formData.get("secret_key") as string;
+      if (!ADMIN_KEY || secretKey !== ADMIN_KEY) {
+        return new Response(JSON.stringify({ error: "Unauthorized" }), {
+          status: 401,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
+      const file = formData.get("file") as File;
+      if (!file) {
+        return new Response(JSON.stringify({ error: "No file provided" }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
+      const ext = file.name.split(".").pop() || "jpg";
+      const fileName = `${crypto.randomUUID()}.${ext}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from("blog-images")
+        .upload(fileName, file, {
+          contentType: file.type,
+          upsert: false,
+        });
+
+      if (uploadError) throw uploadError;
+
+      const { data: urlData } = supabase.storage
+        .from("blog-images")
+        .getPublicUrl(fileName);
+
+      return new Response(JSON.stringify({ success: true, url: urlData.publicUrl }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // Handle JSON actions
     const { action, secret_key, post } = await req.json();
 
-    // Validate admin key
-    const ADMIN_KEY = Deno.env.get("ADMIN_SECRET_KEY");
     if (!ADMIN_KEY || secret_key !== ADMIN_KEY) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 401,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
-
-    const supabase = createClient(
-      Deno.env.get("SUPABASE_URL")!,
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
-    );
 
     if (action === "verify") {
       return new Response(JSON.stringify({ success: true }), {
@@ -42,6 +84,7 @@ Deno.serve(async (req) => {
         excerpt: post.excerpt,
         content: post.content,
         image_url: post.image_url || "",
+        image_alt: post.image_alt || "",
       }).select().single();
 
       if (error) throw error;
@@ -59,6 +102,7 @@ Deno.serve(async (req) => {
           excerpt: post.excerpt,
           content: post.content,
           image_url: post.image_url || "",
+          image_alt: post.image_alt || "",
           slug: post.slug,
         })
         .eq("id", post.id)

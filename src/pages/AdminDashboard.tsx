@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { supabase } from "@/integrations/supabase/client";
-import { Plus, LogOut, Pencil, Trash2, ArrowLeft, Save } from "lucide-react";
+import { Plus, LogOut, Pencil, Trash2, ArrowLeft, Save, Upload, X } from "lucide-react";
 
 interface BlogPost {
   id: string;
@@ -17,9 +17,10 @@ interface BlogPost {
   excerpt: string;
   content: string;
   image_url: string;
+  image_alt: string;
 }
 
-const emptyPost = { slug: "", title: "", date: "", tag: "", excerpt: "", content: "", image_url: "" };
+const emptyPost = { slug: "", title: "", date: "", tag: "", excerpt: "", content: "", image_url: "", image_alt: "" };
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ const AdminDashboard = () => {
   const [editing, setEditing] = useState<Partial<BlogPost> | null>(null);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
+  const [uploading, setUploading] = useState(false);
 
   const adminKey = localStorage.getItem("admin_key");
 
@@ -59,6 +61,42 @@ const AdminDashboard = () => {
       .replace(/ö/g, "o")
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/(^-|-$)/g, "");
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    setError("");
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("secret_key", adminKey || "");
+
+      const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
+      const res = await fetch(
+        `https://${projectId}.supabase.co/functions/v1/admin-auth`,
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+          },
+        }
+      );
+      const data = await res.json();
+
+      if (data.url) {
+        setEditing((prev) => prev ? { ...prev, image_url: data.url } : prev);
+      } else {
+        setError(data.error || "Kunde inte ladda upp bilden.");
+      }
+    } catch {
+      setError("Uppladdning misslyckades.");
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const handleSave = async () => {
     if (!editing) return;
@@ -140,9 +178,51 @@ const AdminDashboard = () => {
               <Label>Innehåll (Markdown)</Label>
               <Textarea value={editing.content || ""} onChange={(e) => setEditing({ ...editing, content: e.target.value })} rows={16} className="font-mono text-sm" />
             </div>
+
+            {/* Image upload */}
             <div className="space-y-2">
-              <Label>Bild-URL (valfritt)</Label>
-              <Input value={editing.image_url || ""} onChange={(e) => setEditing({ ...editing, image_url: e.target.value })} />
+              <Label>Bild</Label>
+              {editing.image_url ? (
+                <div className="relative rounded-lg overflow-hidden border border-border">
+                  <img src={editing.image_url} alt={editing.image_alt || "Förhandsvisning"} className="w-full h-48 object-cover" />
+                  <button
+                    onClick={() => setEditing({ ...editing, image_url: "" })}
+                    className="absolute top-2 right-2 p-1 rounded-full bg-background/80 hover:bg-background text-foreground"
+                  >
+                    <X size={16} />
+                  </button>
+                </div>
+              ) : (
+                <label className="flex flex-col items-center justify-center h-32 border-2 border-dashed border-border rounded-lg cursor-pointer hover:border-primary/50 transition-colors">
+                  <Upload size={24} className="text-muted-foreground mb-2" />
+                  <span className="text-sm text-muted-foreground">
+                    {uploading ? "Laddar upp..." : "Klicka för att ladda upp bild"}
+                  </span>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={handleImageUpload}
+                    disabled={uploading}
+                  />
+                </label>
+              )}
+              <Input
+                value={editing.image_url || ""}
+                onChange={(e) => setEditing({ ...editing, image_url: e.target.value })}
+                placeholder="Eller klistra in bild-URL..."
+                className="mt-2"
+              />
+            </div>
+
+            {/* Image alt text */}
+            <div className="space-y-2">
+              <Label>Bildtext / Alt-text</Label>
+              <Input
+                value={editing.image_alt || ""}
+                onChange={(e) => setEditing({ ...editing, image_alt: e.target.value })}
+                placeholder="Beskriv bilden kort (för SEO och tillgänglighet)"
+              />
             </div>
 
             {error && <p className="text-destructive text-sm">{error}</p>}

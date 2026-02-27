@@ -21,6 +21,7 @@ export type Database = {
           date: string
           excerpt: string
           id: string
+          image_alt: string
           image_url: string | null
           slug: string
           tag: string
@@ -33,6 +34,7 @@ export type Database = {
           date: string
           excerpt?: string
           id?: string
+          image_alt?: string
           image_url?: string | null
           slug: string
           tag?: string
@@ -45,6 +47,7 @@ export type Database = {
           date?: string
           excerpt?: string
           id?: string
+          image_alt?: string
           image_url?: string | null
           slug?: string
           tag?: string
