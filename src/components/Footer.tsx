@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="font-serif font-bold text-lg text-foreground">LRH Konsult</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Webbutvecklare & SEO-konsult baserad i Västmanlands län. Hjälper företag i Västerås, Köping och Sala att växa digitalt.
+              Din lokala partner för Webbutveckling &amp; SEO i Västmanland. Vi hjälper företag i Västerås, Köping och Sala att växa genom moderna Next.js-lösningar och datadriven optimering.
             </p>
           </div>
 
@@ -43,13 +43,22 @@ const Footer = () => {
           <div>
             <h4 className="font-serif font-bold text-foreground mb-4">Kontakt</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>lucas@lrhkonsult.se</li>
-              <li>070 460 65 78</li>
+              <li>
+                <a href="mailto:lucas@lrhkonsult.se" className="hover:text-primary transition-colors">
+                  lucas@lrhkonsult.se
+                </a>
+              </li>
+              <li>
+                <a href="tel:+46704606578" className="hover:text-primary transition-colors">
+                  070 460 65 78
+                </a>
+              </li>
               <li>Västmanlands län, Sverige</li>
             </ul>
             <div className="flex items-center gap-3 mt-4">
               {[
                 { Icon: Mail, label: "Skicka e-post", href: "mailto:lucas@lrhkonsult.se" },
+                { Icon: Phone, label: "Ring oss", href: "tel:+46704606578" },
                 { Icon: Linkedin, label: "LinkedIn", href: "#" },
                 { Icon: Github, label: "GitHub", href: "#" },
               ].map(({ Icon, label, href }) => (

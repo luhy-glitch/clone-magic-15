@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import AnimatedSection, { FadeIn } from "@/components/AnimatedSection";
+import BlogSummaryBox from "@/components/BlogSummaryBox";
+import SocialShare from "@/components/SocialShare";
 import { useBlogPost, useBlogPosts } from "@/hooks/useBlogPosts";
 import { Calendar, ArrowLeft, Tag, ArrowRight, Clock, User } from "lucide-react";
 import {
@@ -43,6 +45,29 @@ function estimateReadingTime(content: string): number {
   return Math.max(1, Math.ceil(content.split(/\s+/).length / 200));
 }
 
+/** Extract 3-4 key takeaways from first paragraphs */
+function extractSummaryPoints(content: string): string[] {
+  const lines = content.split("\n").map((l) => l.trim()).filter(Boolean);
+  const points: string[] = [];
+  for (const line of lines) {
+    if (line.startsWith("- ") || line.startsWith("* ")) {
+      points.push(line.slice(2));
+      if (points.length >= 4) break;
+    }
+  }
+  // Fallback: use first sentences from paragraphs
+  if (points.length < 3) {
+    const paragraphs = lines.filter(
+      (l) => !l.startsWith("#") && !l.startsWith(">") && !l.startsWith("-") && !l.startsWith("*") && l.length > 40
+    );
+    for (const p of paragraphs.slice(0, 4 - points.length)) {
+      const sentence = p.split(/[.!?]/)[0];
+      if (sentence && sentence.length > 20) points.push(sentence.trim());
+    }
+  }
+  return points.slice(0, 4);
+}
+
 /** Parse content line-by-line so headings never swallow paragraphs */
 function parseContentLines(raw: string) {
   const lines = raw.split("\n");
@@ -78,7 +103,6 @@ function parseContentLines(raw: string) {
       listBuffer.push(trimmed.slice(2));
     } else {
       flushList();
-      // Merge with previous paragraph if it exists
       const last = elements[elements.length - 1];
       if (last && last.type === "p") {
         last.text += " " + trimmed;
@@ -126,6 +150,7 @@ const BloggArtikel = () => {
   const readingTime = estimateReadingTime(post.content);
   const parsed = parseContentLines(post.content);
   const headings = parsed.filter((e) => e.type === "h2");
+  const summaryPoints = extractSummaryPoints(post.content);
 
   // Related: same tag first, then others
   const sameTag = allPosts.filter((p) => p.slug !== post.slug && p.tag === post.tag);
@@ -133,6 +158,7 @@ const BloggArtikel = () => {
   const related = [...sameTag, ...otherTag].slice(0, 3);
 
   const serviceLinks = SERVICE_LINKS[post.tag] || SERVICE_LINKS["Digital Strategi"];
+  const postUrl = `https://lrhkonsult.se/blogg/${post.slug}`;
 
   return (
     <div className="min-h-screen">
@@ -149,16 +175,15 @@ const BloggArtikel = () => {
             image: post.image_url || undefined,
             author: { "@type": "Person", name: "Lucas", url: "https://lrhkonsult.se/om-mig" },
             publisher: { "@type": "Organization", name: "LRH Konsult", url: "https://lrhkonsult.se" },
-            mainEntityOfPage: `https://lrhkonsult.se/blogg/${post.slug}`,
+            mainEntityOfPage: postUrl,
           }),
         }}
       />
       <Navbar />
       <main>
-        {/* Hero with breadcrumbs */}
+        {/* Hero */}
         <section className="bg-hero text-hero-foreground pt-20 pb-12 sm:pb-16">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            {/* Breadcrumbs */}
             <Breadcrumb className="mb-8">
               <BreadcrumbList>
                 <BreadcrumbItem>
@@ -176,7 +201,6 @@ const BloggArtikel = () => {
             </Breadcrumb>
 
             <AnimatedSection>
-              {/* Meta row */}
               <div className="flex flex-wrap items-center gap-3 mb-5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/15 text-primary text-xs font-semibold">
                   <Tag size={12} /> {post.tag}
@@ -195,13 +219,13 @@ const BloggArtikel = () => {
               <p className="text-base sm:text-lg text-hero-muted max-w-2xl leading-relaxed">{post.excerpt}</p>
 
               {/* Author */}
-              <div className="flex items-center gap-3 mt-8 pt-6 border-t border-white/10">
+              <div className="flex items-center gap-3 mt-8 pt-6 border-t border-border/30">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                   <User size={18} className="text-primary" />
                 </div>
                 <div>
                   <p className="text-sm font-medium">Lucas</p>
-                  <p className="text-xs text-hero-muted">Webbutvecklare & SEO-konsult</p>
+                  <p className="text-xs text-hero-muted">Webbutvecklare & SEO-konsult · LRH Konsult</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -223,6 +247,9 @@ const BloggArtikel = () => {
                 />
               </div>
             )}
+
+            {/* Summary box */}
+            <BlogSummaryBox points={summaryPoints} />
 
             {/* Table of contents */}
             {headings.length >= 3 && (
@@ -268,14 +295,14 @@ const BloggArtikel = () => {
                       );
                     case "li":
                       return (
-                        <li key={i} className="text-muted-foreground leading-relaxed text-[15px] sm:text-base ml-5 list-disc mb-1.5">
+                        <li key={i} className="text-muted-foreground leading-[1.7] text-[15px] sm:text-base ml-5 list-disc mb-1.5">
                           {renderInline(el.text)}
                         </li>
                       );
                     case "p":
                     default:
                       return (
-                        <p key={i} className="text-muted-foreground leading-[1.8] text-[15px] sm:text-base mb-5">
+                        <p key={i} className="text-muted-foreground leading-[1.7] text-[15px] sm:text-base mb-5">
                           {renderInline(el.text)}
                         </p>
                       );
@@ -284,15 +311,34 @@ const BloggArtikel = () => {
               </article>
             </AnimatedSection>
 
-            {/* Service links */}
-            <div className="mt-14 flex flex-wrap gap-2.5">
-              <span className="text-sm text-muted-foreground self-center mr-1">Relaterade tjänster:</span>
-              {serviceLinks.map((link) => (
-                <Link key={link.href} to={link.href} className="px-4 py-2 rounded-full border border-border text-sm text-foreground hover:border-primary hover:text-primary transition-colors">
-                  {link.label} →
-                </Link>
-              ))}
+            {/* Social sharing + service links */}
+            <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-8 border-b border-border">
+              <SocialShare url={postUrl} title={post.title} />
+              <div className="flex flex-wrap gap-2">
+                <span className="text-sm text-muted-foreground self-center mr-1">Relaterade tjänster:</span>
+                {serviceLinks.map((link) => (
+                  <Link key={link.href} to={link.href} className="px-4 py-2 rounded-full border border-border text-sm text-foreground hover:border-primary hover:text-primary transition-colors">
+                    {link.label} →
+                  </Link>
+                ))}
+              </div>
             </div>
+
+            {/* Author bio */}
+            <FadeIn>
+              <div className="mt-10 flex items-start gap-4 p-6 bg-card rounded-xl border border-border">
+                <div className="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
+                  <User size={24} className="text-primary" />
+                </div>
+                <div>
+                  <p className="font-serif font-bold text-foreground">Lucas</p>
+                  <p className="text-sm text-muted-foreground mb-2">Webbutvecklare & SEO-konsult</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Hjälper företag i Västmanland att växa digitalt med moderna webbplatser och datadriven sökmotoroptimering. Specialiserad på Next.js, React och teknisk SEO.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
 
             {/* CTA */}
             <FadeIn>
@@ -319,12 +365,12 @@ const BloggArtikel = () => {
                     <FadeIn key={r.slug} delay={i * 0.1}>
                       <Link to={`/blogg/${r.slug}`} className="block group h-full">
                         <article className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all h-full flex flex-col">
-                          <div className="aspect-[16/10] w-full overflow-hidden">
+                          <div className="aspect-video w-full overflow-hidden">
                             {r.image_url ? (
                               <img src={r.image_url} alt={r.image_alt || r.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                             ) : (
-                              <div className="w-full h-full bg-gradient-to-br from-[hsl(140_18%_18%)] via-[hsl(140_16%_22%)] to-[hsl(140_12%_16%)] flex items-center justify-center">
-                                <span className="text-muted-foreground/20 font-serif text-4xl font-bold">{r.title.charAt(0)}</span>
+                              <div className="w-full h-full bg-gradient-to-br from-muted to-secondary flex items-center justify-center">
+                                <span className="text-muted-foreground/30 font-serif text-4xl font-bold">{r.title.charAt(0)}</span>
                               </div>
                             )}
                           </div>

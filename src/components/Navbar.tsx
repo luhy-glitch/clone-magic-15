@@ -67,7 +67,7 @@ const Navbar = () => {
           <Link to="/kontakt" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Kontakt</Link>
           <Link
             to="/kontakt"
-            className="px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+            className="px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors animate-[pulse_3s_ease-in-out_infinite] hover:animate-none shadow-lg shadow-primary/25"
           >
             Boka samtal
           </Link>

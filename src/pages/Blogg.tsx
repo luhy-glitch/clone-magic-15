@@ -96,8 +96,8 @@ const Blogg = () => {
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             />
                           ) : (
-                            <div className="w-full h-full min-h-[240px] bg-gradient-to-br from-[hsl(140_18%_18%)] via-[hsl(140_16%_22%)] to-[hsl(140_12%_16%)] flex items-center justify-center">
-                              <span className="text-muted-foreground/20 font-serif text-6xl font-bold">{featured.title.charAt(0)}</span>
+                            <div className="w-full h-full min-h-[240px] bg-gradient-to-br from-muted to-secondary flex items-center justify-center">
+                              <span className="text-muted-foreground/30 font-serif text-6xl font-bold">{featured.title.charAt(0)}</span>
                             </div>
                           )}
                         </div>
@@ -128,7 +128,7 @@ const Blogg = () => {
                     <FadeIn key={post.slug} delay={i * 0.08}>
                       <Link to={`/blogg/${post.slug}`} className="block h-full">
                         <article className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg hover:shadow-primary/5 hover:border-primary/30 transition-all duration-300 group h-full flex flex-col">
-                          <div className="aspect-[16/10] w-full overflow-hidden">
+                          <div className="aspect-video w-full overflow-hidden">
                             {post.image_url ? (
                               <img
                                 src={post.image_url}
@@ -138,8 +138,8 @@ const Blogg = () => {
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                               />
                             ) : (
-                              <div className="w-full h-full bg-gradient-to-br from-[hsl(140_18%_18%)] via-[hsl(140_16%_22%)] to-[hsl(140_12%_16%)] flex items-center justify-center">
-                                <span className="text-muted-foreground/20 font-serif text-4xl font-bold">{post.title.charAt(0)}</span>
+                              <div className="w-full h-full bg-gradient-to-br from-muted to-secondary flex items-center justify-center">
+                                <span className="text-muted-foreground/30 font-serif text-4xl font-bold">{post.title.charAt(0)}</span>
                               </div>
                             )}
                           </div>
