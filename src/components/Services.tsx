@@ -1,4 +1,5 @@
-import { Code2, Palette, Search, Settings, Wrench, Zap } from "lucide-react";
+import { Code2, Palette, Search, Settings, Wrench, Zap, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
 
 const services = [
@@ -7,6 +8,7 @@ const services = [
     title: "Webbutveckling",
     description: "Skräddarsydda webbplatser byggda med modern teknik för optimal prestanda och säkerhet.",
     items: ["React & Next.js", "Responsiv design", "API-integrationer"],
+    link: "/webbutveckling",
   },
   {
     icon: Palette,
@@ -19,6 +21,7 @@ const services = [
     title: "SEO-optimering",
     description: "Öka din synlighet på Google och andra sökmotorer med beprövade strategier.",
     items: ["Teknisk SEO", "Innehållsoptimering", "Lokal SEO"],
+    link: "/seo-optimering",
   },
   {
     icon: Settings,
@@ -62,13 +65,13 @@ const Services = () => {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, i) => (
             <FadeIn key={service.title} delay={i * 0.1}>
-              <div className="bg-card rounded-xl border border-border p-6 sm:p-8 hover:shadow-lg transition-shadow h-full">
+              <div className="bg-card rounded-xl border border-border p-6 sm:p-8 hover:shadow-lg transition-shadow h-full flex flex-col">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                   <service.icon size={24} className="text-primary" />
                 </div>
                 <h3 className="text-xl font-bold font-serif mb-3">{service.title}</h3>
                 <p className="text-muted-foreground text-sm mb-5">{service.description}</p>
-                <ul className="space-y-2">
+                <ul className="space-y-2 flex-1">
                   {service.items.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-foreground">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -76,6 +79,11 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
+                {service.link && (
+                  <Link to={service.link} className="mt-5 inline-flex items-center gap-1 text-primary text-sm font-medium hover:underline">
+                    Läs mer <ArrowRight size={14} />
+                  </Link>
+                )}
               </div>
             </FadeIn>
           ))}

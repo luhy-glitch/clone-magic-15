@@ -1,11 +1,8 @@
 import { ArrowRight, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="relative bg-hero text-hero-foreground pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 flex flex-col items-center text-center">
@@ -17,7 +14,7 @@ const Hero = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-hero-muted/30 bg-hero-muted/10 mb-8"
         >
           <Code2 size={16} className="text-primary" />
-          <span className="text-sm text-hero-muted">Webbutveckling & Konsulttjänster</span>
+          <span className="text-sm text-hero-muted">Webbutveckling & SEO i Västmanland</span>
         </motion.div>
 
         {/* Heading */}
@@ -27,8 +24,8 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-4xl"
         >
-          Din digitala partner för{" "}
-          <span className="text-primary">moderna webblösningar</span>
+          Professionell Webbutveckling & SEO i{" "}
+          <span className="text-primary">Västmanland</span> – LRH Konsult
         </motion.h1>
 
         {/* Subtitle */}
@@ -38,7 +35,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-hero-muted max-w-2xl"
         >
-          Jag hjälper företag och entreprenörer att skapa professionella, snabba och sökmotoroptimerade webbplatser som konverterar besökare till kunder.
+          Jag hjälper företag i Västerås, Köping och Sala att skapa snabba, sökmotoroptimerade webbplatser i React & Next.js som konverterar besökare till kunder.
         </motion.p>
 
         {/* Buttons */}
@@ -48,12 +45,12 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto"
         >
-          <button
-            onClick={() => scrollTo("kontakt")}
+          <Link
+            to="/kontakt"
             className="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary text-primary-foreground font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
           >
             Boka ett samtal <ArrowRight size={18} />
-          </button>
+          </Link>
         </motion.div>
 
         {/* Stats */}
