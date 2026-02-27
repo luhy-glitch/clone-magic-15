@@ -1,0 +1,223 @@
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { supabase } from "@/integrations/supabase/client";
+import { Plus, LogOut, Pencil, Trash2, ArrowLeft, Save } from "lucide-react";
+
+interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+  tag: string;
+  excerpt: string;
+  content: string;
+  image_url: string;
+}
+
+const emptyPost = { slug: "", title: "", date: "", tag: "", excerpt: "", content: "", image_url: "" };
+
+const AdminDashboard = () => {
+  const navigate = useNavigate();
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [editing, setEditing] = useState<Partial<BlogPost> | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState("");
+
+  const adminKey = localStorage.getItem("admin_key");
+
+  useEffect(() => {
+    if (localStorage.getItem("admin_authenticated") !== "true") {
+      navigate("/admin", { replace: true });
+      return;
+    }
+    fetchPosts();
+  }, []);
+
+  const fetchPosts = async () => {
+    setLoading(true);
+    const { data } = await supabase.from("blog_posts").select("*").order("date", { ascending: false });
+    setPosts((data as BlogPost[]) || []);
+    setLoading(false);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("admin_authenticated");
+    localStorage.removeItem("admin_key");
+    navigate("/");
+  };
+
+  const generateSlug = (title: string) =>
+    title
+      .toLowerCase()
+      .replace(/[åä]/g, "a")
+      .replace(/ö/g, "o")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+
+  const handleSave = async () => {
+    if (!editing) return;
+    setSaving(true);
+    setError("");
+
+    const post = {
+      ...editing,
+      slug: editing.slug || generateSlug(editing.title || ""),
+    };
+
+    try {
+      const action = editing.id ? "update" : "create";
+      const { data, error: fnError } = await supabase.functions.invoke("admin-auth", {
+        body: { action, secret_key: adminKey, post },
+      });
+
+      if (fnError || data?.error) {
+        setError(data?.error || "Kunde inte spara.");
+      } else {
+        setEditing(null);
+        await fetchPosts();
+      }
+    } catch {
+      setError("Något gick fel.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleDelete = async (post: BlogPost) => {
+    if (!confirm(`Radera "${post.title}"?`)) return;
+
+    try {
+      await supabase.functions.invoke("admin-auth", {
+        body: { action: "delete", secret_key: adminKey, post: { id: post.id } },
+      });
+      await fetchPosts();
+    } catch {
+      setError("Kunde inte radera.");
+    }
+  };
+
+  if (editing !== null) {
+    return (
+      <div className="min-h-screen" style={{ background: "hsl(140 18% 12%)" }}>
+        <div className="max-w-3xl mx-auto px-4 py-8">
+          <button onClick={() => setEditing(null)} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6">
+            <ArrowLeft size={16} /> Tillbaka
+          </button>
+          <h1 className="text-2xl font-bold font-serif mb-6">
+            {editing.id ? "Redigera inlägg" : "Nytt inlägg"}
+          </h1>
+
+          <div className="space-y-5 bg-card border border-border rounded-xl p-6">
+            <div className="space-y-2">
+              <Label>Titel</Label>
+              <Input value={editing.title || ""} onChange={(e) => setEditing({ ...editing, title: e.target.value })} />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label>Datum</Label>
+                <Input type="date" value={editing.date || ""} onChange={(e) => setEditing({ ...editing, date: e.target.value })} />
+              </div>
+              <div className="space-y-2">
+                <Label>Kategori</Label>
+                <Input value={editing.tag || ""} onChange={(e) => setEditing({ ...editing, tag: e.target.value })} placeholder="SEO, Prestanda..." />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Label>Slug</Label>
+              <Input value={editing.slug || ""} onChange={(e) => setEditing({ ...editing, slug: e.target.value })} placeholder="auto-genereras från titeln" />
+            </div>
+            <div className="space-y-2">
+              <Label>Utdrag</Label>
+              <Textarea value={editing.excerpt || ""} onChange={(e) => setEditing({ ...editing, excerpt: e.target.value })} rows={2} />
+            </div>
+            <div className="space-y-2">
+              <Label>Innehåll (Markdown)</Label>
+              <Textarea value={editing.content || ""} onChange={(e) => setEditing({ ...editing, content: e.target.value })} rows={16} className="font-mono text-sm" />
+            </div>
+            <div className="space-y-2">
+              <Label>Bild-URL (valfritt)</Label>
+              <Input value={editing.image_url || ""} onChange={(e) => setEditing({ ...editing, image_url: e.target.value })} />
+            </div>
+
+            {error && <p className="text-destructive text-sm">{error}</p>}
+
+            <Button onClick={handleSave} disabled={saving || !editing.title || !editing.date} className="w-full">
+              <Save size={16} /> {saving ? "Sparar..." : "Publicera"}
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen" style={{ background: "hsl(140 18% 12%)" }}>
+      <div className="max-w-5xl mx-auto px-4 py-8">
+        <div className="flex items-center justify-between mb-8">
+          <h1 className="text-2xl font-bold font-serif">Blogg-admin</h1>
+          <div className="flex gap-3">
+            <Button onClick={() => setEditing({ ...emptyPost })} size="sm">
+              <Plus size={16} /> Nytt inlägg
+            </Button>
+            <Button onClick={handleLogout} variant="outline" size="sm">
+              <LogOut size={16} /> Logga ut
+            </Button>
+          </div>
+        </div>
+
+        {error && <p className="text-destructive text-sm mb-4">{error}</p>}
+
+        {loading ? (
+          <p className="text-muted-foreground">Laddar...</p>
+        ) : (
+          <div className="bg-card border border-border rounded-xl overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Titel</TableHead>
+                  <TableHead>Datum</TableHead>
+                  <TableHead>Kategori</TableHead>
+                  <TableHead className="text-right">Åtgärder</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {posts.map((post) => (
+                  <TableRow key={post.id}>
+                    <TableCell className="font-medium">{post.title}</TableCell>
+                    <TableCell>{post.date}</TableCell>
+                    <TableCell>
+                      <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs">{post.tag}</span>
+                    </TableCell>
+                    <TableCell className="text-right space-x-2">
+                      <Button size="icon" variant="ghost" onClick={() => setEditing(post)}>
+                        <Pencil size={14} />
+                      </Button>
+                      <Button size="icon" variant="ghost" onClick={() => handleDelete(post)}>
+                        <Trash2 size={14} />
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+                {posts.length === 0 && (
+                  <TableRow>
+                    <TableCell colSpan={4} className="text-center text-muted-foreground py-8">
+                      Inga inlägg ännu.
+                    </TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default AdminDashboard;

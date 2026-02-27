@@ -12,6 +12,8 @@ import OmMig from "./pages/OmMig";
 import Blogg from "./pages/Blogg";
 import Kontakt from "./pages/Kontakt";
 import BloggArtikel from "./pages/BloggArtikel";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 import CookieBanner from "./components/CookieBanner";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -32,6 +34,8 @@ const AppContent = () => (
         <Route path="/blogg/:slug" element={<BloggArtikel />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieBanner />

@@ -3,22 +3,35 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import AnimatedSection from "@/components/AnimatedSection";
-import { getPostBySlug, blogPosts } from "@/data/blogPosts";
+import { useBlogPost, useBlogPosts } from "@/hooks/useBlogPosts";
 import { Calendar, ArrowLeft, Tag, ArrowRight } from "lucide-react";
-import { Link as RouterLink } from "react-router-dom";
 import NotFound from "./NotFound";
 
 const BloggArtikel = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = slug ? getPostBySlug(slug) : undefined;
+  const { data: post, isLoading } = useBlogPost(slug);
+  const { data: allPosts = [] } = useBlogPosts();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-muted-foreground">Laddar...</p>
+      </div>
+    );
+  }
 
   if (!post) return <NotFound />;
+
+  const related = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
+
+  // Parse markdown-style content into blocks
+  const contentBlocks = post.content.split("\n\n").filter(Boolean);
 
   return (
     <div className="min-h-screen">
       <PageHead
         title={`${post.title} | LRH Konsult`}
-        description={post.metaDescription}
+        description={post.excerpt}
       />
       <script
         type="application/ld+json"
@@ -27,7 +40,7 @@ const BloggArtikel = () => {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             "headline": post.title,
-            "description": post.metaDescription,
+            "description": post.excerpt,
             "datePublished": post.date,
             "author": { "@type": "Person", "name": "Lucas", "url": "https://lrhkonsult.se/om-mig" },
             "publisher": { "@type": "Organization", "name": "LRH Konsult", "url": "https://lrhkonsult.se" },
@@ -67,7 +80,7 @@ const BloggArtikel = () => {
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <article className="space-y-6">
-                {post.content.map((block, i) => {
+                {contentBlocks.map((block, i) => {
                   if (block.startsWith("## ")) {
                     return (
                       <h2 key={i} className="text-2xl sm:text-3xl font-bold font-serif mt-10 mb-4 text-foreground">
@@ -90,43 +103,39 @@ const BloggArtikel = () => {
               <p className="text-muted-foreground mb-6">
                 Kontakta mig för en kostnadsfri konsultation om ditt nästa webbprojekt.
               </p>
-              <RouterLink
+              <Link
                 to="/kontakt"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
               >
                 Boka samtal
-              </RouterLink>
+              </Link>
             </div>
 
             {/* Related articles */}
-            {(() => {
-              const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
-              if (!related.length) return null;
-              return (
-                <div className="mt-16">
-                  <h3 className="text-2xl font-bold font-serif mb-6">Relaterade artiklar</h3>
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    {related.map((r) => (
-                      <RouterLink key={r.slug} to={`/blogg/${r.slug}`} className="block group">
-                        <article className="bg-card rounded-xl border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all h-full flex flex-col">
-                          <div className="flex items-center gap-3 mb-3">
-                            <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">{r.tag}</span>
-                            <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                              <Calendar size={14} /> {r.date}
-                            </span>
-                          </div>
-                          <h4 className="text-lg font-bold font-serif mb-2 group-hover:text-primary transition-colors">{r.title}</h4>
-                          <p className="text-muted-foreground text-sm mb-4 flex-1">{r.excerpt}</p>
-                          <span className="inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all">
-                            Läs mer <ArrowRight size={14} />
+            {related.length > 0 && (
+              <div className="mt-16">
+                <h3 className="text-2xl font-bold font-serif mb-6">Relaterade artiklar</h3>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  {related.map((r) => (
+                    <Link key={r.slug} to={`/blogg/${r.slug}`} className="block group">
+                      <article className="bg-card rounded-xl border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all h-full flex flex-col">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">{r.tag}</span>
+                          <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                            <Calendar size={14} /> {r.date}
                           </span>
-                        </article>
-                      </RouterLink>
-                    ))}
-                  </div>
+                        </div>
+                        <h4 className="text-lg font-bold font-serif mb-2 group-hover:text-primary transition-colors">{r.title}</h4>
+                        <p className="text-muted-foreground text-sm mb-4 flex-1">{r.excerpt}</p>
+                        <span className="inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all">
+                          Läs mer <ArrowRight size={14} />
+                        </span>
+                      </article>
+                    </Link>
+                  ))}
                 </div>
-              );
-            })()}
+              </div>
+            )}
           </div>
         </section>
       </main>
