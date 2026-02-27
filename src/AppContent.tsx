@@ -11,6 +11,7 @@ import SeoOptimering from "./pages/SeoOptimering";
 import OmMig from "./pages/OmMig";
 import Blogg from "./pages/Blogg";
 import Kontakt from "./pages/Kontakt";
+import BloggArtikel from "./pages/BloggArtikel";
 import CookieBanner from "./components/CookieBanner";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -28,6 +29,7 @@ const AppContent = () => (
         <Route path="/seo-optimering" element={<SeoOptimering />} />
         <Route path="/om-mig" element={<OmMig />} />
         <Route path="/blogg" element={<Blogg />} />
+        <Route path="/blogg/:slug" element={<BloggArtikel />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
         <Route path="*" element={<NotFound />} />
