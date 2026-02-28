@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import AnimatedSection, { FadeIn } from "@/components/AnimatedSection";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import {
   Breadcrumb,
@@ -36,7 +36,35 @@ interface ServicePageProps {
   };
   icon: LucideIcon;
   breadcrumbLabel: string;
+  serviceType?: string;
 }
+
+const BASE_URL = "https://lrhkonsult.se";
+
+const buildLocalBusinessJsonLd = (serviceName: string, description: string, path: string) => ({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": `LRH Konsult – ${serviceName}`,
+  "description": description,
+  "url": `${BASE_URL}${path}`,
+  "telephone": "+46704606578",
+  "email": "lucas@lrhkonsult.se",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Västmanlands län",
+    "addressCountry": "SE",
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Västerås" },
+    { "@type": "City", "name": "Köping" },
+    { "@type": "City", "name": "Sala" },
+  ],
+  "priceRange": "$$",
+  "image": `${BASE_URL}/og-image.png`,
+  "sameAs": [
+    "https://www.linkedin.com/in/lucasrosvall/"
+  ],
+});
 
 const ServicePageTemplate = ({
   metaTitle,
@@ -51,9 +79,12 @@ const ServicePageTemplate = ({
   icon: Icon,
   breadcrumbLabel,
 }: ServicePageProps) => {
+  const { pathname } = useLocation();
+  const jsonLd = buildLocalBusinessJsonLd(breadcrumbLabel, metaDescription, pathname);
+
   return (
     <div className="min-h-screen">
-      <PageHead title={metaTitle} description={metaDescription} />
+      <PageHead title={metaTitle} description={metaDescription} jsonLd={jsonLd} />
       <Navbar />
       <main className="pt-16">
         {/* Breadcrumbs */}
