@@ -6,12 +6,13 @@ interface PageHeadProps {
   description: string;
   canonical?: string;
   ogImage?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
 const BASE_URL = "https://lrhkonsult.se";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
 
-const PageHead = ({ title, description, canonical, ogImage }: PageHeadProps) => {
+const PageHead = ({ title, description, canonical, ogImage, jsonLd }: PageHeadProps) => {
   const { pathname } = useLocation();
   const url = canonical || `${BASE_URL}${pathname === "/" ? "" : pathname}`;
   const image = ogImage || DEFAULT_OG_IMAGE;
@@ -43,7 +44,27 @@ const PageHead = ({ title, description, canonical, ogImage }: PageHeadProps) => 
       document.head.appendChild(link);
     }
     link.href = url;
-  }, [title, description, url]);
+
+    // JSON-LD structured data
+    const jsonLdId = "page-json-ld";
+    let scriptEl = document.getElementById(jsonLdId) as HTMLScriptElement | null;
+    if (jsonLd) {
+      if (!scriptEl) {
+        scriptEl = document.createElement("script");
+        scriptEl.id = jsonLdId;
+        scriptEl.type = "application/ld+json";
+        document.head.appendChild(scriptEl);
+      }
+      scriptEl.textContent = JSON.stringify(jsonLd);
+    } else if (scriptEl) {
+      scriptEl.remove();
+    }
+
+    return () => {
+      const el = document.getElementById(jsonLdId);
+      if (el) el.remove();
+    };
+  }, [title, description, url, jsonLd]);
 
   return null;
 };
