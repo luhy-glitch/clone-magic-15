@@ -49,12 +49,24 @@ const Navbar = () => {
             </button>
             {dropdownOpen && (
               <div className="absolute top-full left-0 pt-2">
-                <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[180px]">
-                  <Link to="/webbutveckling" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[200px]">
+                  <Link to="/tjanster/webbutveckling" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
                     Webbutveckling
                   </Link>
-                  <Link to="/seo-optimering" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                  <Link to="/tjanster/webbdesign" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                    Webbdesign
+                  </Link>
+                  <Link to="/tjanster/seo-optimering" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
                     SEO-optimering
+                  </Link>
+                  <Link to="/tjanster/wordpress-losningar" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                    WordPress
+                  </Link>
+                  <Link to="/tjanster/underhall-support" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                    Underhåll & Support
+                  </Link>
+                  <Link to="/tjanster/prestanda-optimering" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                    Prestanda
                   </Link>
                 </div>
               </div>
@@ -82,8 +94,12 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-background border-b border-border px-6 py-4 flex flex-col gap-4">
-          <Link to="/webbutveckling" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Webbutveckling</Link>
-          <Link to="/seo-optimering" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">SEO-optimering</Link>
+          <Link to="/tjanster/webbutveckling" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Webbutveckling</Link>
+          <Link to="/tjanster/webbdesign" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Webbdesign</Link>
+          <Link to="/tjanster/seo-optimering" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">SEO-optimering</Link>
+          <Link to="/tjanster/wordpress-losningar" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">WordPress</Link>
+          <Link to="/tjanster/underhall-support" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Underhåll & Support</Link>
+          <Link to="/tjanster/prestanda-optimering" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Prestanda</Link>
           <Link to="/om-mig" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Om mig</Link>
           <Link to="/#priser" onClick={() => handleNavClick("/#priser")} className="text-left text-sm text-muted-foreground">Priser</Link>
           <Link to="/blogg" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Blogg</Link>
