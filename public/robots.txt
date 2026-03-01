@@ -14,3 +14,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://lrhkonsult.se/sitemap.xml
+Sitemap: https://egantzcnrlrkjccstmpw.supabase.co/storage/v1/object/public/sitemap/sitemap.xml
