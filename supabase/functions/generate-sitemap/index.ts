@@ -13,7 +13,7 @@ const staticRoutes = [
   { loc: "/tjanster/webbutveckling", changefreq: "monthly", priority: "0.8" },
   { loc: "/tjanster/webbdesign", changefreq: "monthly", priority: "0.8" },
   { loc: "/tjanster/seo-optimering", changefreq: "monthly", priority: "0.8" },
-  { loc: "/tjanster/wordpress", changefreq: "monthly", priority: "0.8" },
+  { loc: "/tjanster/wordpress-losningar", changefreq: "monthly", priority: "0.8" },
   { loc: "/tjanster/underhall-support", changefreq: "monthly", priority: "0.8" },
   { loc: "/tjanster/prestanda-optimering", changefreq: "monthly", priority: "0.8" },
 ];
