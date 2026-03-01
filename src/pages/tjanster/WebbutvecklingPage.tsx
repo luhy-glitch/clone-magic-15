@@ -25,6 +25,11 @@ const WebbutvecklingPage = () => (
       author: "Erik Johansson",
       role: "VD, TechStart Västerås",
     }}
+    relatedServices={[
+      { label: "Webbdesign", href: "/tjanster/webbdesign" },
+      { label: "Prestanda-optimering", href: "/tjanster/prestanda-optimering" },
+      { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+    ]}
   />
 );
 

@@ -25,6 +25,11 @@ const SeoOptimeringPage = () => (
       author: "Marcus Ek",
       role: "Ägare, Köpings Rörmokare",
     }}
+    relatedServices={[
+      { label: "Prestanda-optimering", href: "/tjanster/prestanda-optimering" },
+      { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+      { label: "Underhåll & Support", href: "/tjanster/underhall-support" },
+    ]}
   />
 );
 

@@ -24,6 +24,11 @@ const WordpressPage = () => (
       author: "Sofia Berg",
       role: "Grundare, Bergström Design",
     }}
+    relatedServices={[
+      { label: "Underhåll & Support", href: "/tjanster/underhall-support" },
+      { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+      { label: "Webbdesign", href: "/tjanster/webbdesign" },
+    ]}
   />
 );
 

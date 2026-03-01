@@ -24,6 +24,11 @@ const WebbdesignPage = () => (
       author: "Anna Lindström",
       role: "Marknadschef, Sala Bygg AB",
     }}
+    relatedServices={[
+      { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+      { label: "WordPress-lösningar", href: "/tjanster/wordpress" },
+      { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+    ]}
   />
 );
 

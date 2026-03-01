@@ -19,6 +19,11 @@ interface ServiceFeature {
   description: string;
 }
 
+interface RelatedService {
+  label: string;
+  href: string;
+}
+
 interface ServicePageProps {
   title: string;
   metaTitle: string;
@@ -37,6 +42,7 @@ interface ServicePageProps {
   icon: LucideIcon;
   breadcrumbLabel: string;
   serviceType?: string;
+  relatedServices?: RelatedService[];
 }
 
 const BASE_URL = "https://lrhkonsult.se";
@@ -78,6 +84,7 @@ const ServicePageTemplate = ({
   testimonial,
   icon: Icon,
   breadcrumbLabel,
+  relatedServices,
 }: ServicePageProps) => {
   const { pathname } = useLocation();
   const jsonLd = buildLocalBusinessJsonLd(breadcrumbLabel, metaDescription, pathname);
@@ -201,6 +208,30 @@ const ServicePageTemplate = ({
             </AnimatedSection>
           </div>
         </section>
+
+        {/* Related services */}
+        {relatedServices && relatedServices.length > 0 && (
+          <section className="py-12 sm:py-16 bg-background border-t border-border">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <AnimatedSection>
+                <h2 className="text-xl sm:text-2xl font-bold font-serif mb-6 text-center">
+                  Se även
+                </h2>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {relatedServices.map((s) => (
+                    <Link
+                      key={s.href}
+                      to={s.href}
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-card text-foreground font-medium hover:bg-primary/10 hover:border-primary/30 transition-colors"
+                    >
+                      {s.label} <ArrowRight size={16} className="text-primary" />
+                    </Link>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="py-16 sm:py-24 bg-background">
