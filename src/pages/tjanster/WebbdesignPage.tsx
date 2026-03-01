@@ -26,7 +26,7 @@ const WebbdesignPage = () => (
     }}
     relatedServices={[
       { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
-      { label: "WordPress-lösningar", href: "/tjanster/wordpress" },
+      { label: "WordPress-lösningar", href: "/tjanster/wordpress-losningar" },
       { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
     ]}
   />
