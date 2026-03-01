@@ -25,6 +25,11 @@ const PrestandaOptimeringPage = () => (
       author: "Karin Olsson",
       role: "Marknadschef, FastTrack AB",
     }}
+    relatedServices={[
+      { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+      { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+      { label: "Underhåll & Support", href: "/tjanster/underhall-support" },
+    ]}
   />
 );
 

@@ -25,6 +25,11 @@ const UnderhallSupportPage = () => (
       author: "Peter Nilsson",
       role: "VD, Nilssons Fastigheter",
     }}
+    relatedServices={[
+      { label: "Prestanda-optimering", href: "/tjanster/prestanda-optimering" },
+      { label: "WordPress-lösningar", href: "/tjanster/wordpress" },
+      { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+    ]}
   />
 );
 
