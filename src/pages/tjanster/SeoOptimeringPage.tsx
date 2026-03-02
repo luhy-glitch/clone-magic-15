@@ -31,6 +31,21 @@ const SeoOptimeringPage = () => (
       { client: "Sala Trädgård", metric: "+120%", result: "Ökning i organisk trafik efter 6 månaders SEO-arbete med lokalt fokus." },
       { client: "Västerås El & VVS", metric: "+85%", result: "Fler inkommande samtal tack vare optimerad Google Business-profil." },
     ]}
+    contentSections={[
+      {
+        title: "Kundcase: Från osynlig till topp 3 på sex månader",
+        paragraphs: [
+          "En nystartad tjänsteverksamhet i Västerås hade svårt att synas på sina viktigaste sökord. Genom en kombination av teknisk SEO-städning och en aggressiv strategi för lokala landningssidor lyckades vi placera dem bland de tre högsta resultaten på över tio relevanta sökfraser. Detta ledde till en organisk trafikökning på 250 %.",
+        ],
+      },
+      {
+        title: "Vanliga frågor om SEO",
+        paragraphs: [
+          "Hur lång tid tar det innan man ser resultat av SEO? SEO är en långsiktig investering. Normalt börjar man se tydliga förbättringar i rankingen efter 3 till 6 månader, men de tekniska optimeringarna vi gör ger ofta en omedelbar effekt på hur sökmotorerna läser din sida.",
+          "Vad är skillnaden mellan vanlig SEO och lokal SEO? Lokal SEO handlar om att optimera din närvaro för specifika geografiska områden, som Västerås eller Köping. Det handlar om att synas i kartresultat och vid sökningar där användaren letar efter tjänster \"nära mig\" eller i en specifik stad.",
+        ],
+      },
+    ]}
     faqTitle="Vanliga frågor om SEO i Västmanland"
     faq={[
       { question: "Hur rankar jag på första sidan på Google?", answer: "Det krävs en kombination av teknisk prestanda, relevant lokalt innehåll och starka backlinks." },

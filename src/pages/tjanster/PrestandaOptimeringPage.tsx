@@ -31,6 +31,21 @@ const PrestandaOptimeringPage = () => (
       { client: "Västerås Handel", metric: "-3.4s", result: "Minskad laddtid från 4.2s till 0.8s med bildoptimering och koddelning." },
       { client: "Sala Bygg", metric: "+25%", result: "Ökning i konverteringsgrad efter att Core Web Vitals nådde gröna tröskelvärden." },
     ]}
+    contentSections={[
+      {
+        title: "Kundcase: Optimering av Core Web Vitals",
+        paragraphs: [
+          "En befintlig webbplats led av höga Bounce Rates på grund av långsamma laddningstider i mobilen. Vi genomförde en total prestandaoptimering där vi optimerade bildhantering, skriptladdning och serverrespons. Sidan gick från ett rött betyg (45/100) till ett grönt (98/100) på Google PageSpeed Insights, vilket direkt sänkte avhoppsfrekvensen dramatiskt.",
+        ],
+      },
+      {
+        title: "Vanliga frågor om prestanda",
+        paragraphs: [
+          "Varför är hastigheten så viktig för min hemsida? Google använder laddningstid som en direkt rankingfaktor. Om din sida är långsam kommer besökarna att lämna den innan den ens har laddat klart, vilket skickar signaler till Google att din sida inte är användarvänlig.",
+          "Behöver jag bygga om hela sidan för att få den snabb? Inte alltid. Ofta kan vi göra stora förbättringar genom att optimera befintlig kod, komprimera tunga bilder och se över hur resurser laddas. Vi börjar alltid med en analys för att se var de största vinsterna finns.",
+        ],
+      },
+    ]}
     faqTitle="Vanliga frågor om sidhastighet"
     faq={[
       { question: "Hur snabb måste en hemsida vara?", answer: "Under 2026 bör en sida ladda på under 1.5 sekund för att inte tappa besökare och ranking." },

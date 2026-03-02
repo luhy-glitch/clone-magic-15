@@ -31,6 +31,21 @@ const WebbutvecklingPage = () => (
       { client: "Bygg & Design AB", metric: "0.8s", result: "Laddtid på startsidan efter optimering – ner från 4.2 sekunder." },
       { client: "Sala Restaurang", metric: "+40%", result: "Fler kontaktförfrågningar efter lansering av mobilanpassad hemsida." },
     ]}
+    contentSections={[
+      {
+        title: "Kundcase: Modernisering av lokal e-handel",
+        paragraphs: [
+          "Vi hjälpte ett lokalt företag i Västmanland att migrera från en tung WordPress-sajt till en blixtsnabb Next.js-lösning. Resultatet blev en 40 % minskning av laddningstiden och en mätbar ökning av konverteringsgraden med 15 % under de första tre månaderna. Genom att fokusera på användarupplevelse och ren kod skapade vi en plattform som är redo att växa i takt med företaget.",
+        ],
+      },
+      {
+        title: "Vanliga frågor om webbutveckling",
+        paragraphs: [
+          "Hur lång tid tar det att bygga en ny hemsida? Det beror på projektets omfattning, men en standardwebbplats för ett mindre till medelstort företag tar vanligtvis mellan 4 och 8 veckor från första möte till lansering. Vi arbetar agilt och håller dig uppdaterad genom hela processen.",
+          "Varför använder ni React och Next.js? Vi väljer modern teknik för att ge våra kunder bästa möjliga prestanda och säkerhet. Next.js tillåter oss att bygga sidor som laddar omedelbart, vilket är en av de viktigaste rankingfaktorerna hos Google idag.",
+        ],
+      },
+    ]}
     faqTitle="Vanliga frågor om webbutveckling i Västmanland"
     faq={[
       { question: "Vilken teknik är bäst för SEO 2026?", answer: "Next.js är det överlägsna valet då det kombinerar blixtsnabb laddning med perfekt indexering för Google." },
