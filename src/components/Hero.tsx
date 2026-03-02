@@ -4,7 +4,7 @@ import PlexusBackground from "./PlexusBackground";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-32 pb-20 px-4">
+    <section className="relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-40 pb-20 px-4">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
@@ -44,28 +44,31 @@ export default function Hero() {
       </p>
 
       {/* CTA + city nodes */}
-      <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-10">
+      <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-20">
         {/* Map image */}
         <img
           src="/images/vastmanland-karta.png"
           alt=""
           aria-hidden="true"
-          className="absolute w-[350px] md:w-[550px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 pointer-events-none z-0 mix-blend-screen invert"
+          className="absolute w-[350px] md:w-[550px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25 pointer-events-none z-0 mix-blend-screen invert"
         />
 
         {/* Soft glow behind button */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-500/15 blur-[100px] rounded-full pointer-events-none z-0"></div>
 
         {/* City nodes – geographically placed */}
-        <div className="absolute top-[12%] right-[25%] flex flex-col items-center group cursor-default z-10">
+        {/* Sala – nordost */}
+        <div className="absolute top-[15%] right-[30%] flex flex-col items-center group cursor-default z-10">
           <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Sala</span>
         </div>
-        <div className="absolute bottom-[25%] left-[15%] flex flex-col items-center group cursor-default z-10">
+        {/* Köping – sydväst */}
+        <div className="absolute bottom-[28%] left-[22%] flex flex-col items-center group cursor-default z-10">
           <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Köping</span>
         </div>
-        <div className="absolute bottom-[18%] right-[20%] flex flex-col items-center group cursor-default z-10">
+        {/* Västerås – sydost */}
+        <div className="absolute bottom-[22%] right-[28%] flex flex-col items-center group cursor-default z-10">
           <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Västerås</span>
         </div>
@@ -80,7 +83,7 @@ export default function Hero() {
       </div>
 
       {/* Glass cards */}
-      <div className="flex flex-wrap justify-center gap-6 w-full max-w-4xl relative z-20">
+      <div className="flex flex-wrap justify-center gap-6 w-full max-w-4xl relative z-10">
         <div className="bg-white/[0.08] border border-white/[0.15] rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] relative overflow-hidden group hover:bg-white/[0.12] transition-all duration-300">
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-white/[0.05] to-transparent pointer-events-none"></div>
