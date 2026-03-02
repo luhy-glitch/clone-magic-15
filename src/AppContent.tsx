@@ -20,6 +20,9 @@ import SeoOptimeringPage from "./pages/tjanster/SeoOptimeringPage";
 import WordpressPage from "./pages/tjanster/WordpressPage";
 import UnderhallSupportPage from "./pages/tjanster/UnderhallSupportPage";
 import PrestandaOptimeringPage from "./pages/tjanster/PrestandaOptimeringPage";
+import WebbutvecklingVasteras from "./pages/WebbutvecklingVasteras";
+import SeoKoping from "./pages/SeoKoping";
+import HemsidorSala from "./pages/HemsidorSala";
 import CookieBanner from "./components/CookieBanner";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -46,6 +49,10 @@ const AppContent = () => (
         <Route path="/tjanster/wordpress-losningar" element={<WordpressPage />} />
         <Route path="/tjanster/underhall-support" element={<UnderhallSupportPage />} />
         <Route path="/tjanster/prestanda-optimering" element={<PrestandaOptimeringPage />} />
+        {/* Local landing pages */}
+        <Route path="/webbutveckling-vasteras" element={<WebbutvecklingVasteras />} />
+        <Route path="/seo-koping" element={<SeoKoping />} />
+        <Route path="/hemsidor-sala" element={<HemsidorSala />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="*" element={<NotFound />} />

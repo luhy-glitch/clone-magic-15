@@ -20,11 +20,23 @@ const WebbutvecklingPage = () => (
       { title: "E-handelslösningar", description: "Skräddarsydda webshop-lösningar med säker betalning och smidig orderhantering." },
       { title: "Prestanda & Säkerhet", description: "Optimerad kod, HTTPS, CSP-headers och regelbundna säkerhetsgranskningar ingår som standard." },
     ]}
+    process={[
+      { step: "1", title: "Behovsanalys & strategi", description: "Vi börjar med att förstå ditt företag, era mål och er målgrupp i Västmanland. Tillsammans tar vi fram en strategi och en tydlig projektplan." },
+      { step: "2", title: "Design & prototyp", description: "Vi skapar wireframes och interaktiva prototyper som du kan testa innan en enda rad kod skrivs. Du godkänner designen innan vi går vidare." },
+      { step: "3", title: "Utveckling & optimering", description: "Vi bygger din hemsida i React/Next.js med fokus på prestanda, tillgänglighet och SEO. Varje sida optimeras för snabbast möjliga laddtid." },
+      { step: "4", title: "Lansering & uppföljning", description: "Vi lanserar din nya sajt, konfigurerar analytics och ger dig en genomgång. Efter lansering följer vi upp med support och justeringar." },
+    ]}
+    caseStudies={[
+      { client: "TechStart Västerås", metric: "+65%", result: "Ökning i organisk trafik inom 3 månader efter lansering av ny Next.js-sajt." },
+      { client: "Bygg & Design AB", metric: "0.8s", result: "Laddtid på startsidan efter optimering – ner från 4.2 sekunder." },
+      { client: "Sala Restaurang", metric: "+40%", result: "Fler kontaktförfrågningar efter lansering av mobilanpassad hemsida." },
+    ]}
     faqTitle="Vanliga frågor om webbutveckling i Västmanland"
     faq={[
       { question: "Vilken teknik är bäst för SEO 2026?", answer: "Next.js är det överlägsna valet då det kombinerar blixtsnabb laddning med perfekt indexering för Google." },
       { question: "Kan ni hjälpa företag i hela Västmanlands län?", answer: "Ja, vi arbetar tätt med lokala företag i Västerås, Köping, Sala och Hallstahammar." },
       { question: "Ingår mobiloptimering i er webbutveckling?", answer: "Självklart, alla våra projekt bygger på en mobil-först-strategi för maximal räckvidd." },
+      { question: "Hur ser er process ut för ett webbutvecklingsprojekt?", answer: "Vi arbetar i fyra steg: behovsanalys, design/prototyp, utveckling/optimering och lansering/uppföljning. Du är involverad i varje fas." },
     ]}
     testimonial={{
       quote: "Lucas levererade en webbplats som överträffade alla våra förväntningar. Snabb, modern och enkel att uppdatera.",
