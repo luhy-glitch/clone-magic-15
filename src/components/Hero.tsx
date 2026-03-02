@@ -12,15 +12,8 @@ export default function Hero() {
         `}
       </style>
 
-      {/* Bakgrundseffekter (Subtila stjärnor och glow, inga skarpa prickar) */}
+      {/* Mjuk mörkblå glow */}
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-900/20 blur-[150px] rounded-full pointer-events-none" />
-      <div
-        className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(circle at center, #ffffff 0.5px, transparent 0.5px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
 
       {/* Badge */}
       <div className="border border-white/10 rounded-full px-4 py-1.5 text-xs text-gray-300 mb-8 flex items-center gap-2 bg-white/[0.03] backdrop-blur-md shadow-lg z-10 relative">
@@ -32,7 +25,7 @@ export default function Hero() {
         Professionell
         <br />
         Webbutveckling & SEO i<br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-500 to-yellow-600">
           Västmanland
         </span>{" "}
         – LRH
@@ -78,16 +71,16 @@ export default function Hero() {
 
       {/* Bottenkort (Glassmorphism) */}
       <div className="flex flex-wrap justify-center gap-6 w-full max-w-4xl relative z-20">
-        <div className="bg-white/[0.02] border border-white/[0.08] rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-xl shadow-2xl relative overflow-hidden group hover:bg-white/[0.04] transition-colors">
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        <div className="bg-white/10 border border-white/20 rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-xl shadow-2xl relative overflow-hidden group hover:bg-white/15 transition-colors">
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
           <div className="text-3xl font-bold text-yellow-500 mb-1 flex items-baseline">
             50<span className="text-xl">+</span>
           </div>
           <span className="text-xs text-gray-400 font-medium tracking-wide">Projekt</span>
         </div>
 
-        <div className="bg-white/[0.02] border border-white/[0.08] rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-xl shadow-2xl relative overflow-hidden group hover:bg-white/[0.04] transition-colors">
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        <div className="bg-white/10 border border-white/20 rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-xl shadow-2xl relative overflow-hidden group hover:bg-white/15 transition-colors">
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
           <span className="text-2xl font-bold text-white mb-2">100%</span>
           <div className="flex flex-col items-center gap-1">
             <ThumbsUp size={14} className="text-yellow-500" />
@@ -95,8 +88,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="bg-white/[0.02] border border-white/[0.08] rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-xl shadow-2xl relative overflow-hidden group hover:bg-white/[0.04] transition-colors">
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        <div className="bg-white/10 border border-white/20 rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-xl shadow-2xl relative overflow-hidden group hover:bg-white/15 transition-colors">
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
           <div className="text-2xl font-bold text-white mb-2 flex items-baseline">
             5<span className="text-lg text-gray-300 ml-1">+</span>
           </div>
