@@ -56,11 +56,11 @@ export default function Hero() {
           aria-hidden="true"
           loading="lazy"
           decoding="async"
-          className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 invert opacity-15 brightness-[200%] contrast-[150%] pointer-events-none z-0"
+          className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.25] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_15px_rgba(250,204,21,0.2)] pointer-events-none z-0"
         />
 
         {/* Soft glow behind button */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500/[0.25] blur-[100px] rounded-full pointer-events-none z-0"></div>
 
         {/* City nodes – geographically placed */}
         {/* Sala – nordost */}
