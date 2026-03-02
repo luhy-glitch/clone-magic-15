@@ -8,8 +8,47 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 
-const faqSchema = {
+const localBusinessSchema = {
   "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "LRH Konsult",
+  "url": "https://lrhkonsult.se",
+  "logo": "https://lrhkonsult.se/logo.png",
+  "image": "https://lrhkonsult.se/og-image.png",
+  "description": "Expert på webbutveckling, SEO och webbdesign i Västerås, Köping och Sala. Vi bygger blixtsnabba hemsidor i Next.js för företag i Västmanland.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Västerås",
+    "addressRegion": "Västmanland",
+    "addressCountry": "SE",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 59.6099,
+    "longitude": 16.5448,
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Västerås" },
+    { "@type": "City", "name": "Köping" },
+    { "@type": "City", "name": "Sala" },
+    { "@type": "State", "name": "Västmanland" },
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Tjänster",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webbutveckling" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO-optimering" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webbdesign" } },
+    ],
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/din-profil",
+    "https://www.facebook.com/lrhkonsult",
+  ],
+};
+
+const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     {
@@ -40,16 +79,18 @@ const faqSchema = {
   ]
 };
 
+const combinedJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [localBusinessSchema, faqSchema],
+};
+
 const Index = () => {
   return (
     <div className="min-h-screen">
       <PageHead
         title="Webbutvecklare & SEO-konsult i Västmanlands län | LRH Konsult"
         description="Behöver ditt företag en snabbare hemsida? Jag skapar moderna sidor i React & Next.js med fokus på SEO i Västerås, Köping och Sala. Boka fri konsultation!"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        jsonLd={combinedJsonLd}
       />
       <Navbar />
       <main>
