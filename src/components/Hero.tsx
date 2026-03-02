@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Star, ThumbsUp, ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
 
@@ -64,7 +65,7 @@ export default function Hero() {
 
         {/* City nodes – geographically placed */}
         {/* Sala – nordost */}
-        <div className="absolute top-[15%] right-[30%] flex flex-col items-center group cursor-pointer z-10">
+        <Link to="/hemsidor-sala" className="absolute top-[15%] right-[30%] flex flex-col items-center group cursor-pointer z-10">
           <div className="relative">
             <motion.div
               animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
@@ -77,9 +78,9 @@ export default function Hero() {
             </div>
           </div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Sala</span>
-        </div>
+        </Link>
         {/* Köping – sydväst */}
-        <div className="absolute bottom-[28%] left-[22%] flex flex-col items-center group cursor-pointer z-10">
+        <Link to="/seo-koping" className="absolute bottom-[28%] left-[22%] flex flex-col items-center group cursor-pointer z-10">
           <div className="relative">
             <motion.div
               animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
@@ -92,9 +93,9 @@ export default function Hero() {
             </div>
           </div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Köping</span>
-        </div>
+        </Link>
         {/* Västerås – sydost */}
-        <div className="absolute bottom-[22%] right-[28%] flex flex-col items-center group cursor-pointer z-10">
+        <Link to="/webbutveckling-vasteras" className="absolute bottom-[22%] right-[28%] flex flex-col items-center group cursor-pointer z-10">
           <div className="relative">
             <motion.div
               animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
@@ -107,7 +108,7 @@ export default function Hero() {
             </div>
           </div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Västerås</span>
-        </div>
+        </Link>
 
         {/* CTA Button */}
         <div className="relative z-20">
