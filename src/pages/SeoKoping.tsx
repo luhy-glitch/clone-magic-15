@@ -5,10 +5,10 @@ const config = {
   city: "Köping",
   slug: "seo-koping",
   serviceKeyword: "SEO-optimering",
-  metaTitle: "SEO-optimering i Köping – Ranka #1 på Google | LRH Konsult",
-  metaDescription: "Professionell SEO-optimering i Köping. Lokal SEO-expert som hjälper företag i Köping att synas högst på Google. Boka kostnadsfri SEO-analys idag!",
-  heroHeading: "SEO-optimering i Köping – syns högst på Google",
-  heroDescription: "Vill ditt företag i Köping synas överst när kunder söker efter dina tjänster? Vi är specialister på lokal SEO i Köping och hjälper dig att dominera sökresultaten.",
+  metaTitle: "SEO Köping | Sökmotoroptimering som ger resultat | LRH Konsult",
+  metaDescription: "Dominera sökresultaten lokalt! LRH Konsult hjälper företag i Köping med teknisk SEO och innehållsoptimering för att nå förstaplatsen på Google.",
+  heroHeading: "SEO och Sökmotoroptimering i Köping",
+  heroDescription: "Syns du inte på Google så finns du inte. Vi hjälper lokala företag i Köping att ta marknadsandelar digitalt genom datadriven och teknisk sökmotoroptimering (SEO) anpassad för din bransch.",
   icon: Search,
   benefits: [
     { title: "Lokal SEO i Köping", description: "Vi optimerar din närvaro för lokala sökningar så att kunder i Köping hittar dig först." },
@@ -16,12 +16,17 @@ const config = {
     { title: "Teknisk SEO-analys", description: "Djupgående analys av din webbplats struktur, hastighet och indexering." },
     { title: "Mätbara resultat", description: "Månatliga rapporter med tydliga KPI:er så du ser exakt hur din investering presterar." },
   ],
-  bodyTitle: "Din SEO-expert i Köping",
+  bodyTitle: "Lokal SEO som driver riktiga kunder",
   bodyParagraphs: [
-    "Köping är en stad med många lokala företag som konkurrerar om synlighet online. Oavsett om du driver en hantverksverksamhet, en butik eller ett tjänsteföretag i Köping, är lokal SEO den mest kostnadseffektiva metoden för att nå nya kunder.",
-    "Som SEO-konsult med erfarenhet av den lokala marknaden i Västmanland hjälper jag företag i Köping att optimera sin digitala närvaro. Det handlar om allt från teknisk SEO och sökordsstrategi till innehållsoptimering och lokal citering.",
-    "Genom att fokusera på de sökord som dina potentiella kunder i Köping faktiskt använder, bygger vi en långsiktig strategi som ger bestående resultat. De första förbättringarna syns ofta inom 2–3 månader, medan mer konkurrenskraftiga sökord kan ta 6–12 månader att ranka för.",
-    "Boka en kostnadsfri SEO-analys så visar jag dig konkret hur ditt företag i Köping kan klättra i sökresultaten och nå fler kunder.",
+    "Att ranka högt på relevanta sökord i din region är den bästa investeringen du kan göra. Vi optimerar din Google Business Profile, bygger rätt landningssidor och ser till att din verksamhet i Köping fångar upp de kunder som aktivt letar efter dina tjänster.",
+  ],
+  bodyExtraSections: [
+    {
+      title: "Teknisk optimering i framkant",
+      paragraphs: [
+        "Sökmotorer älskar tekniskt felfria webbplatser. Vi genomför djupgående tekniska SEO-audits och åtgärdar allt från Core Web Vitals och laddningstider till strukturerad data och semantisk HTML.",
+      ],
+    },
   ],
   faq: [
     { question: "Hur mycket kostar SEO i Köping?", answer: "Vi erbjuder skräddarsydda SEO-paket från 3 000 kr/månad, anpassade efter ditt företags behov och budget i Köping." },
