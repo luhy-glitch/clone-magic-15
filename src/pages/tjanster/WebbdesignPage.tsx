@@ -30,6 +30,22 @@ const WebbdesignPage = () => (
       author: "Anna Lindström",
       role: "Marknadschef, Sala Bygg AB",
     }}
+    contentSections={[
+      {
+        title: "Kundcase: Ny digital identitet för lokal byrå",
+        paragraphs: [
+          "En etablerad redovisningsbyrå i Västerås behövde en ny webbplats som speglade deras professionalism och byggde förtroende hos potentiella kunder. Den gamla sajten var föråldrad, långsam och saknade en tydlig struktur som ledde besökare till kontakt.",
+          "Vi genomförde en komplett designprocess med research, wireframes och prototyper innan vi gick in i utvecklingsfasen. Den nya designen fokuserade på tydliga call-to-actions, en varm men professionell färgpalett och en mobilanpassad layout som fungerade felfritt på alla enheter. Resultatet blev en 55 % ökning av kontaktförfrågningar och en avhoppsfrekvens som sjönk med 30 % under de första två månaderna.",
+        ],
+      },
+      {
+        title: "Vanliga frågor om webbdesign",
+        paragraphs: [
+          "Hur skiljer sig bra design från dålig design? Bra webbdesign handlar inte bara om estetik – det handlar om att leda besökaren mot ett mål. En professionell design guidar ögat, skapar förtroende och gör det enkelt att ta nästa steg, oavsett om det är att fylla i ett formulär eller ringa ett samtal.",
+          "Kan ni jobba med min befintliga grafiska profil? Absolut. Vi utgår alltid från ditt befintliga varumärke och bygger vidare på det. Om du saknar en grafisk profil kan vi hjälpa dig att ta fram en komplett visuell identitet som fungerar både digitalt och i tryck.",
+        ],
+      },
+    ]}
     relatedServices={[
       { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
       { label: "WordPress-lösningar", href: "/tjanster/wordpress-losningar" },
