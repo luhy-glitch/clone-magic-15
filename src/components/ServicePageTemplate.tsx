@@ -47,6 +47,11 @@ interface FAQItem {
   answer: string;
 }
 
+interface ContentSection {
+  title: string;
+  paragraphs: string[];
+}
+
 interface ServicePageProps {
   title: string;
   metaTitle: string;
@@ -70,6 +75,7 @@ interface ServicePageProps {
   faqTitle?: string;
   process?: ProcessStep[];
   caseStudies?: CaseStudy[];
+  contentSections?: ContentSection[];
 }
 
 const BASE_URL = "https://lrhkonsult.se";
@@ -142,6 +148,7 @@ const ServicePageTemplate = ({
   faqTitle,
   process,
   caseStudies,
+  contentSections,
 }: ServicePageProps) => {
   const { pathname } = useLocation();
   const jsonLd = buildServiceJsonLd(breadcrumbLabel, metaDescription, pathname, faq);
@@ -299,6 +306,24 @@ const ServicePageTemplate = ({
             </div>
           </section>
         )}
+
+        {/* Content sections (narrative case studies, extra FAQ prose, etc.) */}
+        {contentSections && contentSections.length > 0 && contentSections.map((section, idx) => (
+          <section key={idx} className={`py-16 sm:py-24 ${idx % 2 === 0 ? "bg-section-alt" : "bg-background"}`}>
+            <div className="max-w-3xl mx-auto px-4 sm:px-6">
+              <AnimatedSection>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-8">
+                  {section.title}
+                </h2>
+                <div className="space-y-5 text-muted-foreground leading-[1.8] text-base">
+                  {section.paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+          </section>
+        ))}
 
         {/* FAQ */}
         {faq && faq.length > 0 && (
