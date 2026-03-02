@@ -23,6 +23,10 @@ interface BlogPost {
 
 const emptyPost = { slug: "", title: "", date: "", tag: "", excerpt: "", content: "", image_url: "", image_alt: "" };
 
+function getSessionToken(): string | null {
+  return sessionStorage.getItem("admin_session_token");
+}
+
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -33,14 +37,23 @@ const AdminDashboard = () => {
   const [uploading, setUploading] = useState(false);
   const [previewMode, setPreviewMode] = useState(false);
 
-  const adminKey = localStorage.getItem("admin_key");
-
   useEffect(() => {
-    if (localStorage.getItem("admin_authenticated") !== "true") {
+    const token = getSessionToken();
+    if (!token) {
       navigate("/admin", { replace: true });
       return;
     }
-    fetchPosts();
+    // Validate session server-side
+    supabase.functions.invoke("admin-auth", {
+      body: { action: "validate_session", session_token: token },
+    }).then(({ data, error: fnError }) => {
+      if (fnError || data?.error) {
+        sessionStorage.removeItem("admin_session_token");
+        navigate("/admin", { replace: true });
+      } else {
+        fetchPosts();
+      }
+    });
   }, []);
 
   const fetchPosts = async () => {
@@ -50,9 +63,14 @@ const AdminDashboard = () => {
     setLoading(false);
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("admin_authenticated");
-    localStorage.removeItem("admin_key");
+  const handleLogout = async () => {
+    const token = getSessionToken();
+    if (token) {
+      await supabase.functions.invoke("admin-auth", {
+        body: { action: "logout", session_token: token },
+      });
+    }
+    sessionStorage.removeItem("admin_session_token");
     navigate("/");
   };
 
@@ -73,7 +91,7 @@ const AdminDashboard = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("secret_key", adminKey || "");
+      formData.append("session_token", getSessionToken() || "");
 
       const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
       const res = await fetch(
@@ -113,7 +131,7 @@ const AdminDashboard = () => {
     try {
       const action = editing.id ? "update" : "create";
       const { data, error: fnError } = await supabase.functions.invoke("admin-auth", {
-        body: { action, secret_key: adminKey, post },
+        body: { action, session_token: getSessionToken(), post },
       });
 
       if (fnError || data?.error) {
@@ -134,7 +152,7 @@ const AdminDashboard = () => {
 
     try {
       await supabase.functions.invoke("admin-auth", {
-        body: { action: "delete", secret_key: adminKey, post: { id: post.id } },
+        body: { action: "delete", session_token: getSessionToken(), post: { id: post.id } },
       });
       await fetchPosts();
     } catch {
