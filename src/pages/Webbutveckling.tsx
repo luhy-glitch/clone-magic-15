@@ -5,6 +5,12 @@ import Contact from "@/components/Contact";
 import AnimatedSection, { FadeIn } from "@/components/AnimatedSection";
 import { Code2, Zap, Shield, Smartphone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const features = [
   { icon: Code2, title: "React & Next.js", desc: "Moderna ramverk som ger snabba, interaktiva webbplatser med optimal prestanda." },
@@ -13,12 +19,60 @@ const features = [
   { icon: Smartphone, title: "Mobile-first design", desc: "Responsiva lösningar som fungerar perfekt på alla enheter och skärmstorlekar." },
 ];
 
+const faq = [
+  { question: "Vilken teknik är bäst för SEO 2026?", answer: "Next.js är det överlägsna valet då det kombinerar blixtsnabb laddning med perfekt indexering för Google." },
+  { question: "Kan ni hjälpa företag i hela Västmanlands län?", answer: "Ja, vi arbetar tätt med lokala företag i Västerås, Köping, Sala och Hallstahammar." },
+  { question: "Ingår mobiloptimering i er webbutveckling?", answer: "Självklart, alla våra projekt bygger på en mobil-först-strategi för maximal räckvidd." },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer,
+    },
+  })),
+};
+
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "name": "LRH Konsult – Webbutveckling",
+      "description": "Bäst webbutveckling i Västerås & Västmanland. Vi bygger blixtsnabba Next.js-sajter som rankar #1 på Google. Din lokala expert för moderna webblösningar.",
+      "url": "https://lrhkonsult.se/webbutveckling",
+      "telephone": "+46704606578",
+      "email": "lucas@lrhkonsult.se",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Västmanlands län",
+        "addressCountry": "SE",
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Västerås" },
+        { "@type": "City", "name": "Köping" },
+        { "@type": "City", "name": "Sala" },
+      ],
+      "priceRange": "$$",
+      "image": "https://lrhkonsult.se/og-image.png",
+      "sameAs": ["https://www.linkedin.com/in/lucasrosvall/"],
+    },
+    faqJsonLd,
+  ],
+};
+
 const Webbutveckling = () => {
   return (
     <div className="min-h-screen">
       <PageHead
-        title="Webbutveckling i Västmanland – React & Next.js | LRH Konsult"
-        description="Professionell webbutveckling i Västerås, Köping och Sala. Skräddarsydda webbplatser i React & Next.js med fokus på prestanda och SEO. Boka fri konsultation!"
+        title="Bäst webbutveckling i Västerås & Västmanland | Next.js & React | LRH Konsult"
+        description="Bäst webbutveckling i Västerås & Västmanland. Vi bygger blixtsnabba Next.js-sajter som rankar #1 på Google. Din lokala expert för moderna webblösningar."
+        jsonLd={pageJsonLd}
       />
       <Navbar />
       <main>
@@ -31,7 +85,7 @@ const Webbutveckling = () => {
                 Skräddarsydda <span className="text-primary">webbplatser</span> som levererar resultat
               </h1>
               <p className="mt-6 text-lg text-hero-muted max-w-2xl">
-                Jag skapar moderna, snabba och sökmotoroptimerade webbplatser i React och Next.js för företag i Västerås, Köping, Sala och hela Västmanlands län.
+                LRH Konsult är din ledande partner för professionell webbutveckling i Västerås och övriga Västmanland. Vi bygger högpresterande digitala verktyg i Next.js och React som konverterar besökare till betalande kunder i Mälardalen.
               </p>
               <Link
                 to="/kontakt"
@@ -67,11 +121,11 @@ const Webbutveckling = () => {
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8">
-                Varför välja <span className="text-primary">professionell webbutveckling?</span>
+                Webbutveckling i Västerås med fokus på <span className="text-primary">Next.js</span>
               </h2>
               <div className="prose prose-invert max-w-none text-muted-foreground space-y-4 leading-relaxed">
                 <p>
-                  I dagens digitala landskap är din webbplats ofta det första intrycket potentiella kunder får av ditt företag. En professionellt byggd webbplats i React eller Next.js erbjuder inte bara en fantastisk användarupplevelse – den hjälper dig också att ranka högre på Google och konvertera fler besökare till betalande kunder.
+                  Genom att använda världsledande teknik ser vi till att ditt företag får en teknisk fördel. Våra lösningar laddar på under en sekund, vilket är ett krav för att nå förstaplatsen på Google under 2026.
                 </p>
                 <p>
                   Som webbutvecklare baserad i Västmanland har jag hjälpt företag i Västerås, Köping och Sala att skapa hemsidor som verkligen gör skillnad. Jag bygger skräddarsydda webblösningar med modern teknik som React och Next.js – ramverk som används av världens största företag för sin hastighet och skalbarhet.
@@ -79,10 +133,30 @@ const Webbutveckling = () => {
                 <p>
                   Varje projekt börjar med en grundlig analys av dina behov och mål. Jag fokuserar på att skapa en responsiv, mobilvänlig design som ser fantastisk ut på alla enheter. Genom att optimera laddtider och Core Web Vitals säkerställer jag att din webbplats inte bara ser bra ut, utan också presterar på toppnivå i sökmotorerna.
                 </p>
-                <p>
-                  Behöver du en enkel företagssida, en avancerad webbapplikation eller en e-handelslösning? Oavsett projektets storlek erbjuder jag personlig service och transparent kommunikation genom hela processen. Kontakta mig idag för en kostnadsfri konsultation så diskuterar vi hur jag kan hjälpa ditt företag att växa online.
-                </p>
               </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-14 sm:py-20 md:py-28 bg-section-alt">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <AnimatedSection>
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-center mb-10">
+                Vanliga frågor om webbutveckling i Västmanland
+              </h2>
+              <Accordion type="single" collapsible className="space-y-3">
+                {faq.map((item, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`} className="bg-card border border-border rounded-xl px-6">
+                    <AccordionTrigger className="text-left font-serif font-bold text-base">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </AnimatedSection>
           </div>
         </section>
