@@ -69,7 +69,7 @@ serve(async (req: Request) => {
       );
     }
 
-    if (name.length > 100 || email.length > 255 || message.length > 5000) {
+    if (name.length > 100 || email.length > 255 || message.length > 5000 || (subject && subject.length > 200)) {
       return new Response(
         JSON.stringify({ error: "Fälten överskrider maxlängd." }),
         { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
