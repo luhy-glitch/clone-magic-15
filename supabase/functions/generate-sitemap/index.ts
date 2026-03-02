@@ -65,7 +65,8 @@ Deno.serve(async () => {
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
-    return new Response(JSON.stringify({ error: err.message }), {
+    console.error("Sitemap generation failed:", err);
+    return new Response(JSON.stringify({ error: "Sitemap generation failed" }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     });
