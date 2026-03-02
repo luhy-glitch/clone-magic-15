@@ -44,28 +44,28 @@ export default function Hero() {
       </p>
 
       {/* CTA + city nodes */}
-      <div className="relative w-full max-w-2xl h-64 mb-20 flex items-center justify-center z-10">
-      {/* Map background + glow behind button */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <img
-            src="/images/vastmanland-karta.png"
-            alt=""
-            aria-hidden="true"
-            className="absolute w-[400px] h-auto opacity-20 mix-blend-screen"
-          />
-          <div className="w-64 h-64 bg-yellow-500/15 blur-[100px] rounded-full"></div>
-        </div>
+      <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-10">
+        {/* Map image */}
+        <img
+          src="/images/vastmanland-karta.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute w-[350px] md:w-[550px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 pointer-events-none z-0 mix-blend-screen invert"
+        />
 
-        {/* City nodes floating around button */}
-        <div className="absolute top-[15%] right-[18%] flex flex-col items-center group cursor-default">
+        {/* Soft glow behind button */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-500/15 blur-[100px] rounded-full pointer-events-none z-0"></div>
+
+        {/* City nodes – geographically placed */}
+        <div className="absolute top-[12%] right-[25%] flex flex-col items-center group cursor-default z-10">
           <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Sala</span>
         </div>
-        <div className="absolute top-[45%] left-[12%] flex flex-col items-center group cursor-default">
+        <div className="absolute bottom-[25%] left-[15%] flex flex-col items-center group cursor-default z-10">
           <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Köping</span>
         </div>
-        <div className="absolute bottom-[15%] right-[22%] flex flex-col items-center group cursor-default">
+        <div className="absolute bottom-[18%] right-[20%] flex flex-col items-center group cursor-default z-10">
           <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Västerås</span>
         </div>
