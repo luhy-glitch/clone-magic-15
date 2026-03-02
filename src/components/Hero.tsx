@@ -45,8 +45,14 @@ export default function Hero() {
 
       {/* CTA + city nodes */}
       <div className="relative w-full max-w-2xl h-64 mb-20 flex items-center justify-center z-10">
-        {/* Round glow behind button */}
+      {/* Map background + glow behind button */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <img
+            src="/images/vastmanland-karta.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute w-[400px] h-auto opacity-20 mix-blend-screen"
+          />
           <div className="w-64 h-64 bg-yellow-500/15 blur-[100px] rounded-full"></div>
         </div>
 
