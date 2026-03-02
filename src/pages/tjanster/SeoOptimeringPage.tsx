@@ -4,13 +4,13 @@ import { Search } from "lucide-react";
 const SeoOptimeringPage = () => (
   <ServicePageTemplate
     title="SEO-optimering"
-    metaTitle="SEO-optimering i Västerås, Köping & Sala | Lokal SEO | LRH Konsult"
-    metaDescription="Öka din synlighet på Google med professionell SEO-optimering. Teknisk SEO, lokal SEO och innehållsstrategi för företag i Västmanland."
+    metaTitle="Nå plats #1 på Google med SEO i Västerås & Västmanland | LRH Konsult"
+    metaDescription="Nå plats #1 på Google med SEO i Västerås & Västmanland. Lokal SEO-expert som hjälper dig i Köping och Sala att synas. Starta din tillväxtresa nu!"
     heroSubheading="SEO-optimering"
     heroHeading="SEO-optimering i Västerås, Köping & Sala"
-    heroDescription="Bli hittad av dina kunder när de söker på Google. Med datadriven SEO-strategi hjälper jag företag i Västmanland att klättra i sökresultaten och få fler kvalificerade besökare."
-    whyTitle="Varför är SEO viktigt för ditt företag?"
-    whyText="75% av alla användare scrollar aldrig förbi första sidan på Google. Med rätt SEO-strategi kan ditt företag synas precis när potentiella kunder söker efter dina tjänster. Jag kombinerar teknisk SEO, innehållsoptimering och lokal SEO för att bygga en hållbar digital synlighet som ger resultat månad efter månad."
+    heroDescription="Vill du synas högst upp när kunder söker efter dina tjänster? Vi är specialister på SEO-optimering i Västmanland. Genom att kombinera teknisk expertis med lokalt anpassat innehåll ser vi till att ditt företag dominerar sökresultaten i Västerås, Köping och Sala."
+    whyTitle="Lokal SEO-strategi för Västerås och Mälardalen"
+    whyText="Vi optimerar din närvaro på Google Maps och ser till att du rankar på geografiska sökord. Lokal SEO är den mest kostnadseffektiva metoden för småföretag att växa digitalt under 2026."
     icon={Search}
     breadcrumbLabel="SEO-optimering"
     features={[
@@ -19,6 +19,12 @@ const SeoOptimeringPage = () => (
       { title: "Innehållsstrategi", description: "Keyword research och innehållsplanering som attraherar rätt besökare och bygger auktoritet." },
       { title: "Konkurrentanalys", description: "Djupgående analys av dina konkurrenters SEO-strategi för att hitta möjligheter och luckor." },
       { title: "Löpande rapportering", description: "Månatliga rapporter med tydliga KPI:er så du alltid vet hur din investering presterar." },
+    ]}
+    faqTitle="Vanliga frågor om SEO i Västmanland"
+    faq={[
+      { question: "Hur rankar jag på första sidan på Google?", answer: "Det krävs en kombination av teknisk prestanda, relevant lokalt innehåll och starka backlinks." },
+      { question: "Vad är lokal SEO?", answer: "Det är optimering för att synas i specifika städer som Västerås, Köping och Sala vid lokala sökningar." },
+      { question: "Kan ni garantera en förstaplats?", answer: "Ingen seriös aktör ger garantier, men våra metoder följer Googles \"Best Practices\" för att ge dig absolut bäst förutsättningar." },
     ]}
     testimonial={{
       quote: "Inom 4 månader gick vi från sida 3 till topp 3 på Google för våra viktigaste sökord. Fantastiskt arbete!",

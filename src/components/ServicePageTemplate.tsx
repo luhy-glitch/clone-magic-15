@@ -12,6 +12,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { LucideIcon } from "lucide-react";
 
 interface ServiceFeature {
@@ -22,6 +28,11 @@ interface ServiceFeature {
 interface RelatedService {
   label: string;
   href: string;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
 }
 
 interface ServicePageProps {
@@ -43,6 +54,8 @@ interface ServicePageProps {
   breadcrumbLabel: string;
   serviceType?: string;
   relatedServices?: RelatedService[];
+  faq?: FAQItem[];
+  faqTitle?: string;
 }
 
 const BASE_URL = "https://lrhkonsult.se";
@@ -72,6 +85,19 @@ const buildLocalBusinessJsonLd = (serviceName: string, description: string, path
   ],
 });
 
+const buildFaqJsonLd = (faq: FAQItem[]) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer,
+    },
+  })),
+});
+
 const ServicePageTemplate = ({
   metaTitle,
   metaDescription,
@@ -85,9 +111,16 @@ const ServicePageTemplate = ({
   icon: Icon,
   breadcrumbLabel,
   relatedServices,
+  faq,
+  faqTitle,
 }: ServicePageProps) => {
   const { pathname } = useLocation();
-  const jsonLd = buildLocalBusinessJsonLd(breadcrumbLabel, metaDescription, pathname);
+  const localBizLd = buildLocalBusinessJsonLd(breadcrumbLabel, metaDescription, pathname);
+
+  // Merge JSON-LD: wrap in @graph if FAQ exists
+  const jsonLd = faq && faq.length > 0
+    ? { "@context": "https://schema.org", "@graph": [localBizLd, buildFaqJsonLd(faq)] }
+    : localBizLd;
 
   return (
     <div className="min-h-screen">
@@ -191,8 +224,33 @@ const ServicePageTemplate = ({
           </div>
         </section>
 
+        {/* FAQ */}
+        {faq && faq.length > 0 && (
+          <section className="py-16 sm:py-24 bg-section-alt">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6">
+              <AnimatedSection>
+                <h2 className="text-2xl sm:text-3xl font-bold font-serif text-center mb-10">
+                  {faqTitle || "Vanliga frågor"}
+                </h2>
+                <Accordion type="single" collapsible className="space-y-3">
+                  {faq.map((item, i) => (
+                    <AccordionItem key={i} value={`faq-${i}`} className="bg-card border border-border rounded-xl px-6">
+                      <AccordionTrigger className="text-left font-serif font-bold text-base">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground leading-relaxed">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </AnimatedSection>
+            </div>
+          </section>
+        )}
+
         {/* Testimonial */}
-        <section className="py-16 sm:py-24 bg-section-alt">
+        <section className="py-16 sm:py-24 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <div className="max-w-2xl mx-auto text-center">
@@ -211,7 +269,7 @@ const ServicePageTemplate = ({
 
         {/* Related services */}
         {relatedServices && relatedServices.length > 0 && (
-          <section className="py-12 sm:py-16 bg-background border-t border-border">
+          <section className="py-12 sm:py-16 bg-section-alt border-t border-border">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
               <AnimatedSection>
                 <h2 className="text-xl sm:text-2xl font-bold font-serif mb-6 text-center">
