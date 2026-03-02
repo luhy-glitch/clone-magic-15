@@ -51,7 +51,7 @@ export default function Hero() {
           src="/images/vastmanland-karta.png"
           alt=""
           aria-hidden="true"
-          className="absolute w-[350px] md:w-[550px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 pointer-events-none z-0 mix-blend-screen invert"
+          className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 invert opacity-15 brightness-[200%] contrast-[150%] pointer-events-none z-0"
         />
 
         {/* Soft glow behind button */}
