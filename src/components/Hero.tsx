@@ -1,5 +1,6 @@
 import React from "react";
 import { Star, ThumbsUp, ArrowRight, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 import PlexusBackground from "./PlexusBackground";
 
 export default function Hero() {
@@ -59,17 +60,29 @@ export default function Hero() {
         {/* City nodes – geographically placed */}
         {/* Sala – nordost */}
         <div className="absolute top-[15%] right-[30%] flex flex-col items-center group cursor-default z-10">
-          <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
+          <motion.div
+            animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308]"
+          />
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Sala</span>
         </div>
         {/* Köping – sydväst */}
         <div className="absolute bottom-[28%] left-[22%] flex flex-col items-center group cursor-default z-10">
-          <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
+          <motion.div
+            animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+            className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308]"
+          />
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Köping</span>
         </div>
         {/* Västerås – sydost */}
         <div className="absolute bottom-[22%] right-[28%] flex flex-col items-center group cursor-default z-10">
-          <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
+          <motion.div
+            animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1.6 }}
+            className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308]"
+          />
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Västerås</span>
         </div>
 
