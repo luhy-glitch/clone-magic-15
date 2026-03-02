@@ -1,7 +1,8 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import SeoRoiCalculator from "@/components/SeoRoiCalculator";
+const SeoRoiCalculator = lazy(() => import("@/components/SeoRoiCalculator"));
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -20,7 +21,9 @@ const Index = () => {
       <main>
         <Hero />
         <Services />
-        <SeoRoiCalculator />
+        <Suspense fallback={<div className="py-28" />}>
+          <SeoRoiCalculator />
+        </Suspense>
         <Pricing />
         <Testimonials />
         <FAQ />
