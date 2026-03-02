@@ -65,7 +65,7 @@ export default function Hero() {
 
         {/* City nodes – geographically placed */}
         {/* Sala – nordost */}
-        <Link to="/hemsidor-sala" className="absolute top-[15%] right-[30%] flex flex-col items-center group cursor-pointer z-10">
+        <Link to="/hemsidor-sala" className="absolute top-[15%] right-[30%] flex flex-col items-center group cursor-pointer z-50">
           <div className="relative">
             <motion.div
               animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
@@ -80,7 +80,7 @@ export default function Hero() {
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Sala</span>
         </Link>
         {/* Köping – sydväst */}
-        <Link to="/seo-koping" className="absolute bottom-[28%] left-[22%] flex flex-col items-center group cursor-pointer z-10">
+        <Link to="/seo-koping" className="absolute bottom-[28%] left-[22%] flex flex-col items-center group cursor-pointer z-50">
           <div className="relative">
             <motion.div
               animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
@@ -95,7 +95,7 @@ export default function Hero() {
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Köping</span>
         </Link>
         {/* Västerås – sydost */}
-        <Link to="/webbutveckling-vasteras" className="absolute bottom-[22%] right-[28%] flex flex-col items-center group cursor-pointer z-10">
+        <Link to="/webbutveckling-vasteras" className="absolute bottom-[22%] right-[28%] flex flex-col items-center group cursor-pointer z-50">
           <div className="relative">
             <motion.div
               animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
