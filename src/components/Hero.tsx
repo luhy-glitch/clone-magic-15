@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Star, ThumbsUp, ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import PlexusBackground from "./PlexusBackground";
+
+const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
 
 export default function Hero() {
   return (
@@ -14,7 +15,9 @@ export default function Hero() {
       </style>
 
       {/* Plexus network */}
-      <PlexusBackground />
+      <Suspense fallback={null}>
+        <PlexusBackground />
+      </Suspense>
 
       {/* Soft blue glow */}
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-900/20 blur-[150px] rounded-full pointer-events-none z-0" />
@@ -51,6 +54,8 @@ export default function Hero() {
           src="/images/vastmanland-karta.png"
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 invert opacity-15 brightness-[200%] contrast-[150%] pointer-events-none z-0"
         />
 
