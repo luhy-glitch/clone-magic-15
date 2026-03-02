@@ -242,6 +242,7 @@ const BloggArtikel = () => {
                   src={post.image_url}
                   alt={post.image_alt || post.title}
                   loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                   className="w-full h-full object-cover"
                 />
