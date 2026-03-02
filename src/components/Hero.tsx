@@ -64,30 +64,48 @@ export default function Hero() {
 
         {/* City nodes – geographically placed */}
         {/* Sala – nordost */}
-        <div className="absolute top-[15%] right-[30%] flex flex-col items-center group cursor-default z-10">
-          <motion.div
-            animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308]"
-          />
+        <div className="absolute top-[15%] right-[30%] flex flex-col items-center group cursor-pointer z-10">
+          <div className="relative">
+            <motion.div
+              animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308]"
+            />
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-3 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-200 pointer-events-none">
+              Hemsidor & SEO i Sala
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-white/10 border-r border-b border-white/20 rotate-45 -mt-1"></div>
+            </div>
+          </div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Sala</span>
         </div>
         {/* Köping – sydväst */}
-        <div className="absolute bottom-[28%] left-[22%] flex flex-col items-center group cursor-default z-10">
-          <motion.div
-            animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-            className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308]"
-          />
+        <div className="absolute bottom-[28%] left-[22%] flex flex-col items-center group cursor-pointer z-10">
+          <div className="relative">
+            <motion.div
+              animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+              className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308]"
+            />
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-3 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-200 pointer-events-none">
+              SEO-optimering i Köping
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-white/10 border-r border-b border-white/20 rotate-45 -mt-1"></div>
+            </div>
+          </div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Köping</span>
         </div>
         {/* Västerås – sydost */}
-        <div className="absolute bottom-[22%] right-[28%] flex flex-col items-center group cursor-default z-10">
-          <motion.div
-            animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1.6 }}
-            className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308]"
-          />
+        <div className="absolute bottom-[22%] right-[28%] flex flex-col items-center group cursor-pointer z-10">
+          <div className="relative">
+            <motion.div
+              animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1.6 }}
+              className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308]"
+            />
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-3 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-200 pointer-events-none">
+              Webbutveckling i Västerås
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-white/10 border-r border-b border-white/20 rotate-45 -mt-1"></div>
+            </div>
+          </div>
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Västerås</span>
         </div>
 
