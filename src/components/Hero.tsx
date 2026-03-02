@@ -1,12 +1,10 @@
 import React from "react";
 import { Star, ThumbsUp, ArrowRight, Sparkles } from "lucide-react";
 import PlexusBackground from "./PlexusBackground";
-import VastmanlandMap from "./VastmanlandMap";
 
 export default function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-32 pb-20 px-4">
-      {/* Playfair Display */}
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
@@ -14,7 +12,7 @@ export default function Hero() {
         `}
       </style>
 
-      {/* Animated plexus network */}
+      {/* Plexus network */}
       <PlexusBackground />
 
       {/* Soft blue glow */}
@@ -38,24 +36,35 @@ export default function Hero() {
         Konsult
       </h1>
 
-      {/* Body text */}
+      {/* Body */}
       <p className="text-gray-400 max-w-2xl text-sm md:text-base mb-16 leading-relaxed text-center z-10 relative">
         Jag hjälper företag i <span className="text-blue-400">Västerås, Köping</span> och{" "}
         <span className="text-blue-400">Sala</span> att skapa snabba, sökmotoroptimerade webbplatser i{" "}
         <span className="text-white font-medium">React & Next.js</span> som konverterar besökare till kunder.
       </p>
 
-      {/* Map + CTA section */}
+      {/* CTA + city nodes */}
       <div className="relative w-full max-w-2xl h-64 mb-20 flex items-center justify-center z-10">
-        {/* Västmanland map behind */}
-        <VastmanlandMap />
-
-        {/* Warm glow behind button */}
+        {/* Round glow behind button */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-72 h-72 bg-gradient-radial from-amber-500/15 to-transparent blur-[100px] rounded-full"></div>
+          <div className="w-64 h-64 bg-yellow-500/15 blur-[100px] rounded-full"></div>
         </div>
 
-        {/* CTA Button with warm gradient and aura */}
+        {/* City nodes floating around button */}
+        <div className="absolute top-[15%] right-[18%] flex flex-col items-center group cursor-default">
+          <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
+          <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Sala</span>
+        </div>
+        <div className="absolute top-[45%] left-[12%] flex flex-col items-center group cursor-default">
+          <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
+          <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Köping</span>
+        </div>
+        <div className="absolute bottom-[15%] right-[22%] flex flex-col items-center group cursor-default">
+          <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full shadow-[0_0_15px_#eab308] group-hover:scale-150 transition-transform"></div>
+          <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Västerås</span>
+        </div>
+
+        {/* CTA Button */}
         <div className="relative z-20">
           <div className="absolute -inset-3 bg-gradient-to-r from-yellow-500/30 via-amber-500/20 to-orange-500/30 rounded-full blur-xl animate-pulse"></div>
           <button className="relative bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-400 text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 shadow-[0_0_40px_rgba(245,158,11,0.4)] hover:shadow-[0_0_60px_rgba(245,158,11,0.6)] hover:scale-105 transition-all">
@@ -78,7 +87,7 @@ export default function Hero() {
         <div className="bg-white/[0.08] border border-white/[0.15] rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] relative overflow-hidden group hover:bg-white/[0.12] transition-all duration-300">
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-white/[0.05] to-transparent pointer-events-none"></div>
-          <span className="text-2xl font-bold text-white mb-2 relative z-10">100%</span>
+          <span className="text-2xl font-bold text-yellow-500 mb-2 relative z-10">100%</span>
           <div className="flex flex-col items-center gap-1 relative z-10">
             <ThumbsUp size={14} className="text-yellow-500" />
             <span className="text-xs text-gray-400 font-medium tracking-wide text-center">Nöjda kunder</span>
@@ -88,8 +97,8 @@ export default function Hero() {
         <div className="bg-white/[0.08] border border-white/[0.15] rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] relative overflow-hidden group hover:bg-white/[0.12] transition-all duration-300">
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-white/[0.05] to-transparent pointer-events-none"></div>
-          <div className="text-2xl font-bold text-white mb-2 flex items-baseline relative z-10">
-            5<span className="text-lg text-gray-300 ml-1">+</span>
+          <div className="text-2xl font-bold text-yellow-500 mb-2 flex items-baseline relative z-10">
+            5<span className="text-lg ml-1">+</span>
           </div>
           <span className="text-xs text-gray-400 mb-3 font-medium tracking-wide text-center relative z-10">År i branschen</span>
           <div className="flex gap-1 text-yellow-500 relative z-10">
