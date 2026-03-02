@@ -6,21 +6,37 @@ const Footer = () => {
     <footer className="bg-background border-t border-border py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
-          <div className="sm:col-span-2 md:col-span-1">
+          {/* Brand + NAP */}
+          <div className="sm:col-span-2 md:col-span-1" itemScope itemType="https://schema.org/ProfessionalService">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-serif font-bold text-sm">LR</span>
               </div>
-              <span className="font-serif font-bold text-lg text-foreground">LRH Konsult</span>
+              <span className="font-serif font-bold text-lg text-foreground" itemProp="name">LRH Konsult</span>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4" itemProp="description">
               Din lokala partner för Webbutveckling &amp; SEO i Västmanland. Vi hjälper företag i Västerås, Köping och Sala att växa genom moderna Next.js-lösningar och datadriven optimering.
             </p>
+            {/* Structured NAP */}
+            <address className="not-italic text-sm text-muted-foreground space-y-1" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+              <p itemProp="addressLocality">Västerås</p>
+              <p><span itemProp="addressRegion">Västmanlands län</span>, <span itemProp="addressCountry">Sverige</span></p>
+              <p>
+                <a href="tel:+46704606578" className="hover:text-primary transition-colors" itemProp="telephone">
+                  070 460 65 78
+                </a>
+              </p>
+              <p>
+                <a href="mailto:lucas@lrhkonsult.se" className="hover:text-primary transition-colors" itemProp="email">
+                  lucas@lrhkonsult.se
+                </a>
+              </p>
+            </address>
+            <meta itemProp="url" content="https://lrhkonsult.se" />
           </div>
 
           {/* Tjänster */}
-          <div>
+          <nav aria-label="Tjänster">
             <h4 className="font-serif font-bold text-foreground mb-4">Tjänster</h4>
             <ul className="space-y-2">
               <li><Link to="/tjanster/webbutveckling" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling</Link></li>
@@ -30,10 +46,10 @@ const Footer = () => {
               <li><Link to="/tjanster/underhall-support" className="text-sm text-muted-foreground hover:text-primary transition-colors">Underhåll & Support</Link></li>
               <li><Link to="/tjanster/prestanda-optimering" className="text-sm text-muted-foreground hover:text-primary transition-colors">Prestanda</Link></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Sidor */}
-          <div>
+          <nav aria-label="Sidor">
             <h4 className="font-serif font-bold text-foreground mb-4">Sidor</h4>
             <ul className="space-y-2">
               <li><Link to="/om-mig" className="text-sm text-muted-foreground hover:text-primary transition-colors">Om mig</Link></li>
@@ -41,35 +57,29 @@ const Footer = () => {
               <li><Link to="/kontakt" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kontakt</Link></li>
               <li><Link to="/integritetspolicy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Integritetspolicy</Link></li>
             </ul>
-          </div>
+          </nav>
 
-          {/* Kontakt */}
+          {/* Lokala sidor */}
           <div>
-            <h4 className="font-serif font-bold text-foreground mb-4">Kontakt</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="mailto:lucas@lrhkonsult.se" className="hover:text-primary transition-colors">
-                  lucas@lrhkonsult.se
-                </a>
-              </li>
-              <li>
-                <a href="tel:+46704606578" className="hover:text-primary transition-colors">
-                  070 460 65 78
-                </a>
-              </li>
-              <li>Västmanlands län, Sverige</li>
+            <h4 className="font-serif font-bold text-foreground mb-4">Lokalt</h4>
+            <ul className="space-y-2">
+              <li><Link to="/webbutveckling-vasteras" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Västerås</Link></li>
+              <li><Link to="/seo-koping" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Köping</Link></li>
+              <li><Link to="/hemsidor-sala" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor Sala</Link></li>
             </ul>
-            <div className="flex items-center gap-3 mt-4">
+            <div className="flex items-center gap-3 mt-6">
               {[
                 { Icon: Mail, label: "Skicka e-post", href: "mailto:lucas@lrhkonsult.se" },
                 { Icon: Phone, label: "Ring oss", href: "tel:+46704606578" },
-                { Icon: Linkedin, label: "LinkedIn", href: "#" },
+                { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/lucasrosvall/" },
                 { Icon: Github, label: "GitHub", href: "#" },
               ].map(({ Icon, label, href }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
                 >
                   <Icon size={16} />

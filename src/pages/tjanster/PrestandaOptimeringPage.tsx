@@ -20,11 +20,23 @@ const PrestandaOptimeringPage = () => (
       { title: "Konverteringsoptimering (CRO)", description: "Snabbare sajt = fler konverteringar. Vi kopplar prestanda till affärsresultat." },
       { title: "Före & efter-rapport", description: "Detaljerad rapport med mätbara förbättringar i Lighthouse-poäng och laddtider." },
     ]}
+    process={[
+      { step: "1", title: "Prestandaanalys", description: "Vi kör Lighthouse, WebPageTest och Chrome DevTools för att identifiera exakt vad som saktar ner din sajt." },
+      { step: "2", title: "Prioriterad åtgärdsplan", description: "Vi rangordnar alla problem efter påverkan och presenterar en tydlig plan med förväntade förbättringar." },
+      { step: "3", title: "Teknisk optimering", description: "Vi implementerar åtgärder: bildkomprimering, koddelning, cachning, CDN-konfiguration och rendering-optimering." },
+      { step: "4", title: "Verifiering & rapport", description: "Vi mäter resultaten med en detaljerad före/efter-rapport som visar konkreta förbättringar i Lighthouse-poäng." },
+    ]}
+    caseStudies={[
+      { client: "FastTrack AB", metric: "42→98", result: "Lighthouse-poäng efter fullständig prestandaoptimering. Laddtid under 1 sekund." },
+      { client: "Västerås Handel", metric: "-3.4s", result: "Minskad laddtid från 4.2s till 0.8s med bildoptimering och koddelning." },
+      { client: "Sala Bygg", metric: "+25%", result: "Ökning i konverteringsgrad efter att Core Web Vitals nådde gröna tröskelvärden." },
+    ]}
     faqTitle="Vanliga frågor om sidhastighet"
     faq={[
       { question: "Hur snabb måste en hemsida vara?", answer: "Under 2026 bör en sida ladda på under 1.5 sekund för att inte tappa besökare och ranking." },
       { question: "Påverkar hastigheten min försäljning?", answer: "Absolut. En snabbare sida leder bevisat till högre konvertering och fler leads." },
       { question: "Kan ni optimera min befintliga sajt?", answer: "Ja, vi utför prestandaanalyser på alla typer av plattformar och implementerar konkreta förbättringar." },
+      { question: "Vad är Core Web Vitals?", answer: "Det är Googles mätvärden för användarupplevelse: LCP (laddtid), INP (interaktivitet) och CLS (visuell stabilitet). Bra poäng ger bättre ranking." },
     ]}
     testimonial={{
       quote: "Vår Lighthouse-poäng gick från 42 till 98. Sajten laddar nu på under en sekund och vi ser direkt fler förfrågningar.",

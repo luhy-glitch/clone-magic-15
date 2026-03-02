@@ -25,6 +25,18 @@ interface ServiceFeature {
   description: string;
 }
 
+interface ProcessStep {
+  step: string;
+  title: string;
+  description: string;
+}
+
+interface CaseStudy {
+  client: string;
+  result: string;
+  metric: string;
+}
+
 interface RelatedService {
   label: string;
   href: string;
@@ -56,47 +68,62 @@ interface ServicePageProps {
   relatedServices?: RelatedService[];
   faq?: FAQItem[];
   faqTitle?: string;
+  process?: ProcessStep[];
+  caseStudies?: CaseStudy[];
 }
 
 const BASE_URL = "https://lrhkonsult.se";
 
-const buildLocalBusinessJsonLd = (serviceName: string, description: string, path: string) => ({
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": `LRH Konsult – ${serviceName}`,
-  "description": description,
-  "url": `${BASE_URL}${path}`,
-  "telephone": "+46704606578",
-  "email": "lucas@lrhkonsult.se",
-  "address": {
-    "@type": "PostalAddress",
-    "addressRegion": "Västmanlands län",
-    "addressCountry": "SE",
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Västerås" },
-    { "@type": "City", "name": "Köping" },
-    { "@type": "City", "name": "Sala" },
-  ],
-  "priceRange": "$$",
-  "image": `${BASE_URL}/og-image.png`,
-  "sameAs": [
-    "https://www.linkedin.com/in/lucasrosvall/"
-  ],
-});
-
-const buildFaqJsonLd = (faq: FAQItem[]) => ({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faq.map((item) => ({
-    "@type": "Question",
-    "name": item.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": item.answer,
+const buildServiceJsonLd = (serviceName: string, description: string, path: string, faq?: FAQItem[]) => {
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "Service",
+      "name": serviceName,
+      "description": description,
+      "url": `${BASE_URL}${path}`,
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "LRH Konsult",
+        "url": BASE_URL,
+        "telephone": "+46704606578",
+        "email": "lucas@lrhkonsult.se",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Västerås",
+          "addressRegion": "Västmanlands län",
+          "addressCountry": "SE",
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Västerås" },
+          { "@type": "City", "name": "Köping" },
+          { "@type": "City", "name": "Sala" },
+          { "@type": "State", "name": "Västmanland" },
+        ],
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Västerås" },
+        { "@type": "City", "name": "Köping" },
+        { "@type": "City", "name": "Sala" },
+      ],
     },
-  })),
-});
+  ];
+
+  if (faq && faq.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "mainEntity": faq.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer,
+        },
+      })),
+    });
+  }
+
+  return { "@context": "https://schema.org", "@graph": graph };
+};
 
 const ServicePageTemplate = ({
   metaTitle,
@@ -113,14 +140,11 @@ const ServicePageTemplate = ({
   relatedServices,
   faq,
   faqTitle,
+  process,
+  caseStudies,
 }: ServicePageProps) => {
   const { pathname } = useLocation();
-  const localBizLd = buildLocalBusinessJsonLd(breadcrumbLabel, metaDescription, pathname);
-
-  // Merge JSON-LD: wrap in @graph if FAQ exists
-  const jsonLd = faq && faq.length > 0
-    ? { "@context": "https://schema.org", "@graph": [localBizLd, buildFaqJsonLd(faq)] }
-    : localBizLd;
+  const jsonLd = buildServiceJsonLd(breadcrumbLabel, metaDescription, pathname, faq);
 
   return (
     <div className="min-h-screen">
@@ -128,7 +152,7 @@ const ServicePageTemplate = ({
       <Navbar />
       <main className="pt-16">
         {/* Breadcrumbs */}
-        <div className="bg-section-alt border-b border-border">
+        <nav className="bg-section-alt border-b border-border" aria-label="Brödsmulor">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
             <Breadcrumb>
               <BreadcrumbList>
@@ -150,10 +174,10 @@ const ServicePageTemplate = ({
               </BreadcrumbList>
             </Breadcrumb>
           </div>
-        </div>
+        </nav>
 
         {/* Hero */}
-        <section className="py-16 sm:py-24 bg-background">
+        <section className="py-16 sm:py-24 bg-background" aria-labelledby="service-hero-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <div className="max-w-3xl">
@@ -163,7 +187,7 @@ const ServicePageTemplate = ({
                 <span className="text-primary font-medium text-sm tracking-widest uppercase">
                   {heroSubheading}
                 </span>
-                <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold font-serif leading-tight">
+                <h1 id="service-hero-heading" className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold font-serif leading-tight">
                   {heroHeading}
                 </h1>
                 <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">
@@ -181,11 +205,11 @@ const ServicePageTemplate = ({
         </section>
 
         {/* Why section */}
-        <section className="py-16 sm:py-24 bg-section-alt">
+        <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="service-why-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <div className="max-w-3xl mx-auto text-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif">
+                <h2 id="service-why-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif">
                   {whyTitle}
                 </h2>
                 <p className="mt-6 text-muted-foreground leading-[1.8] text-base sm:text-lg">
@@ -197,17 +221,17 @@ const ServicePageTemplate = ({
         </section>
 
         {/* Features */}
-        <section className="py-16 sm:py-24 bg-background">
+        <section className="py-16 sm:py-24 bg-background" aria-labelledby="service-features-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-center mb-12">
+              <h2 id="service-features-heading" className="text-2xl sm:text-3xl font-bold font-serif text-center mb-12">
                 Vad som ingår
               </h2>
             </AnimatedSection>
             <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {features.map((feature, i) => (
                 <FadeIn key={feature.title} delay={i * 0.1}>
-                  <div className="bg-card border border-border rounded-xl p-6 h-full">
+                  <article className="bg-card border border-border rounded-xl p-6 h-full">
                     <div className="flex items-start gap-4">
                       <CheckCircle size={22} className="text-primary mt-0.5 shrink-0" />
                       <div>
@@ -217,19 +241,71 @@ const ServicePageTemplate = ({
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </FadeIn>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Process */}
+        {process && process.length > 0 && (
+          <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="service-process-heading">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6">
+              <AnimatedSection>
+                <h2 id="service-process-heading" className="text-2xl sm:text-3xl font-bold font-serif text-center mb-12">
+                  Vår process
+                </h2>
+              </AnimatedSection>
+              <div className="space-y-8">
+                {process.map((step, i) => (
+                  <FadeIn key={step.step} delay={i * 0.1}>
+                    <div className="flex gap-6 items-start">
+                      <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold font-serif text-lg shrink-0">
+                        {step.step}
+                      </div>
+                      <div>
+                        <h3 className="font-bold font-serif text-lg mb-1">{step.title}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Case Studies */}
+        {caseStudies && caseStudies.length > 0 && (
+          <section className="py-16 sm:py-24 bg-background" aria-labelledby="service-cases-heading">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6">
+              <AnimatedSection>
+                <h2 id="service-cases-heading" className="text-2xl sm:text-3xl font-bold font-serif text-center mb-12">
+                  Kundcase med mätbara resultat
+                </h2>
+              </AnimatedSection>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {caseStudies.map((cs, i) => (
+                  <FadeIn key={cs.client} delay={i * 0.1}>
+                    <article className="bg-card border border-border rounded-xl p-6 text-center">
+                      <div className="text-3xl font-bold text-primary font-serif mb-2">{cs.metric}</div>
+                      <p className="text-foreground font-medium mb-1">{cs.client}</p>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{cs.result}</p>
+                    </article>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* FAQ */}
         {faq && faq.length > 0 && (
-          <section className="py-16 sm:py-24 bg-section-alt">
+          <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="service-faq-heading">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
               <AnimatedSection>
-                <h2 className="text-2xl sm:text-3xl font-bold font-serif text-center mb-10">
+                <h2 id="service-faq-heading" className="text-2xl sm:text-3xl font-bold font-serif text-center mb-10">
                   {faqTitle || "Vanliga frågor"}
                 </h2>
                 <Accordion type="single" collapsible className="space-y-3">
@@ -250,11 +326,12 @@ const ServicePageTemplate = ({
         )}
 
         {/* Testimonial */}
-        <section className="py-16 sm:py-24 bg-background">
+        <section className="py-16 sm:py-24 bg-background" aria-labelledby="service-testimonial-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <div className="max-w-2xl mx-auto text-center">
-                <div className="text-4xl text-primary mb-6">"</div>
+                <h2 id="service-testimonial-heading" className="sr-only">Kundrecension</h2>
+                <div className="text-4xl text-primary mb-6" aria-hidden="true">"</div>
                 <blockquote className="text-lg sm:text-xl font-serif italic leading-relaxed text-foreground">
                   {testimonial.quote}
                 </blockquote>
@@ -269,10 +346,10 @@ const ServicePageTemplate = ({
 
         {/* Related services */}
         {relatedServices && relatedServices.length > 0 && (
-          <section className="py-12 sm:py-16 bg-section-alt border-t border-border">
+          <section className="py-12 sm:py-16 bg-section-alt border-t border-border" aria-labelledby="service-related-heading">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
               <AnimatedSection>
-                <h2 className="text-xl sm:text-2xl font-bold font-serif mb-6 text-center">
+                <h2 id="service-related-heading" className="text-xl sm:text-2xl font-bold font-serif mb-6 text-center">
                   Se även
                 </h2>
                 <div className="flex flex-wrap justify-center gap-3">
@@ -292,10 +369,10 @@ const ServicePageTemplate = ({
         )}
 
         {/* CTA */}
-        <section className="py-16 sm:py-24 bg-background">
+        <section className="py-16 sm:py-24 bg-background" aria-labelledby="service-cta-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <AnimatedSection>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-6">
+              <h2 id="service-cta-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-6">
                 Redo att ta nästa steg?
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
