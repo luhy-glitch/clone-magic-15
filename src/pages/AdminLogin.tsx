@@ -12,8 +12,8 @@ const AdminLogin = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Check if already authenticated
-  if (localStorage.getItem("admin_authenticated") === "true") {
+  // Check if already has a valid session token
+  if (sessionStorage.getItem("admin_session_token")) {
     navigate("/admin/dashboard", { replace: true });
     return null;
   }
@@ -29,10 +29,12 @@ const AdminLogin = () => {
       });
 
       if (fnError || data?.error) {
-        setError("Fel nyckel. Försök igen.");
-      } else {
-        localStorage.setItem("admin_authenticated", "true");
-        localStorage.setItem("admin_key", key);
+        setError(data?.error === "Too many attempts. Try again later." 
+          ? "För många försök. Vänta en stund." 
+          : "Fel nyckel. Försök igen.");
+      } else if (data?.session_token) {
+        // Store only the session token, never the raw key
+        sessionStorage.setItem("admin_session_token", data.session_token);
         navigate("/admin/dashboard", { replace: true });
       }
     } catch {
