@@ -9,6 +9,7 @@ const services = [
     description: "Skräddarsydda webbplatser byggda med modern teknik för optimal prestanda och säkerhet.",
     items: ["React & Next.js", "Responsiv design", "API-integrationer"],
     link: "/tjanster/webbutveckling",
+    linkText: "Läs mer om professionell webbutveckling",
   },
   {
     icon: Palette,
@@ -16,6 +17,7 @@ const services = [
     description: "Moderna och användarvänliga designs som speglar ditt varumärke och engagerar besökare.",
     items: ["UI/UX Design", "Varumärkesidentitet", "Prototyper"],
     link: "/tjanster/webbdesign",
+    linkText: "Se våra lösningar för webbdesign",
   },
   {
     icon: Search,
@@ -23,6 +25,7 @@ const services = [
     description: "Öka din synlighet på Google och andra sökmotorer med beprövade strategier.",
     items: ["Teknisk SEO", "Innehållsoptimering", "Lokal SEO"],
     link: "/tjanster/seo-optimering",
+    linkText: "Optimera din synlighet med SEO",
   },
   {
     icon: Settings,
@@ -30,6 +33,7 @@ const services = [
     description: "Snabba och kostnadseffektiva WordPress-sajter med anpassade teman och plugins.",
     items: ["Anpassade teman", "WooCommerce", "Plugin-utveckling"],
     link: "/tjanster/wordpress-losningar",
+    linkText: "Utforska våra WordPress-lösningar",
   },
   {
     icon: Wrench,
@@ -37,6 +41,7 @@ const services = [
     description: "Månatliga supportpaket som säkerställer att din webbplats alltid fungerar optimalt.",
     items: ["Säkerhetsuppdateringar", "Backup-lösningar", "24/7 support"],
     link: "/tjanster/underhall-support",
+    linkText: "Läs om vår support och underhåll",
   },
   {
     icon: Zap,
@@ -44,6 +49,7 @@ const services = [
     description: "Snabbare laddtider och bättre användarupplevelse genom teknisk optimering.",
     items: ["Hastighetsoptimering", "Core Web Vitals", "Cachning"],
     link: "/tjanster/prestanda-optimering",
+    linkText: "Maxa hastigheten med prestandaoptimering",
   },
 ];
 
@@ -85,7 +91,7 @@ const Services = () => {
                 </ul>
                 {service.link && (
                   <Link to={service.link} className="mt-5 inline-flex items-center gap-1 text-primary text-sm font-medium hover:underline">
-                    Läs mer <ArrowRight size={14} />
+                    {service.linkText} <ArrowRight size={14} />
                   </Link>
                 )}
               </div>

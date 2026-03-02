@@ -379,7 +379,7 @@ const BloggArtikel = () => {
                             <span className="text-xs text-muted-foreground mb-2">{r.date}</span>
                             <h4 className="text-sm font-bold font-serif mb-1 group-hover:text-primary transition-colors leading-snug">{r.title}</h4>
                             <span className="inline-flex items-center gap-1 text-primary text-xs font-medium mt-auto pt-2 group-hover:gap-2 transition-all">
-                              Läs mer <ArrowRight size={12} />
+                              Läs mer om {r.title.toLowerCase()} <ArrowRight size={12} />
                             </span>
                           </div>
                         </article>
