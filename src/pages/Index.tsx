@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import SeoRoiCalculator from "@/components/SeoRoiCalculator";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -19,6 +20,7 @@ const Index = () => {
       <main>
         <Hero />
         <Services />
+        <SeoRoiCalculator />
         <Pricing />
         <Testimonials />
         <FAQ />
