@@ -50,11 +50,11 @@ export default function Hero() {
           src="/images/vastmanland-karta.png"
           alt=""
           aria-hidden="true"
-          className="absolute w-[350px] md:w-[550px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25 pointer-events-none z-0 mix-blend-screen invert"
+          className="absolute w-[350px] md:w-[550px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 pointer-events-none z-0 mix-blend-screen invert"
         />
 
         {/* Soft glow behind button */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-500/15 blur-[100px] rounded-full pointer-events-none z-0"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
 
         {/* City nodes – geographically placed */}
         {/* Sala – nordost */}
