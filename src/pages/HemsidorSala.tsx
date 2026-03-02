@@ -5,10 +5,10 @@ const config = {
   city: "Sala",
   slug: "hemsidor-sala",
   serviceKeyword: "Hemsidor",
-  metaTitle: "Hemsidor i Sala – Professionell webbdesign & utveckling | LRH Konsult",
-  metaDescription: "Professionella hemsidor i Sala. Vi bygger moderna, snabba hemsidor för företag i Sala med fokus på SEO och konvertering. Boka fri konsultation!",
-  heroHeading: "Professionella hemsidor i Sala",
-  heroDescription: "Ditt företag i Sala förtjänar en hemsida som gör intryck. Vi skapar moderna, snabba och SEO-optimerade hemsidor som hjälper företag i Sala att nå fler kunder online.",
+  metaTitle: "Bygga Hemsida Sala | Webbyrå & Prestandaoptimering | LRH Konsult",
+  metaDescription: "Ska du bygga en ny hemsida i Sala? Vi skapar moderna, mobilanpassade webbplatser med fokus på prestanda, snygg design och hög konvertering.",
+  heroHeading: "Moderna och Snabba Hemsidor i Sala",
+  heroDescription: "Din webbplats är ditt digitala skyltfönster. För företag i Sala erbjuder vi kompletta lösningar för att bygga hemsidor som är lika visuellt tilltalande som de är tekniskt fulländade.",
   icon: Code2,
   benefits: [
     { title: "Anpassat för Sala", description: "Vi förstår den lokala marknaden i Sala och skapar hemsidor som tilltalar dina kunder." },
@@ -16,12 +16,17 @@ const config = {
     { title: "Allt-i-ett-lösning", description: "Design, utveckling, SEO och support – allt du behöver för din hemsida i Sala." },
     { title: "Personlig service", description: "Nära samarbete med personliga möten och direkt kontakt genom hela projektet." },
   ],
-  bodyTitle: "Din partner för hemsidor i Sala",
+  bodyTitle: "Mobilanpassad design från grunden",
   bodyParagraphs: [
-    "Sala är en stad med en rik historia och en växande företagsscen. Allt fler företag i Sala inser vikten av en professionell hemsida för att konkurrera i den digitala eran. Oavsett om du driver ett lokalt servicebolag, en butik eller en restaurang – en väl utformad hemsida är din viktigaste marknadsföringskanal.",
-    "Vi specialiserar oss på att skapa skräddarsydda hemsidor för företag i Sala med hjälp av modern teknik som React och Next.js. Dessa ramverk ger dig en hemsida som laddar blixtsnabbt, ser fantastisk ut på alla enheter och rankar högt på Google.",
-    "Varje projekt vi tar oss an i Sala börjar med en grundlig behovsanalys. Vi lyssnar på dina mål, analyserar din bransch och skapar en digital strategi som är anpassad för den lokala marknaden i Sala och Västmanland.",
-    "Redo att ge ditt företag i Sala en modern hemsida? Kontakta oss för en kostnadsfri konsultation.",
+    "Majoriteten av dina besökare surfar via mobilen. Därför designar och utvecklar vi alltid med ett \"mobile-first\"-fokus, vilket garanterar en perfekt och snabb upplevelse oavsett skärmstorlek för dina kunder i Sala.",
+  ],
+  bodyExtraSections: [
+    {
+      title: "Från idé till färdig webbplats",
+      paragraphs: [
+        "Vi hanterar hela processen, från den allra första skissen till lansering och drift. Du får en trygg lokal partner som ser till att din nya hemsida laddar snabbt, rankar bra på Google och är enkel att uppdatera.",
+      ],
+    },
   ],
   faq: [
     { question: "Vad kostar en hemsida i Sala?", answer: "Vi erbjuder paket från 5 000 kr till 25 000 kr beroende på projektets storlek. Kontakta oss för en offert anpassad för ditt företag i Sala." },

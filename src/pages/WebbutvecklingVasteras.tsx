@@ -5,10 +5,10 @@ const config = {
   city: "Västerås",
   slug: "webbutveckling-vasteras",
   serviceKeyword: "Webbutveckling",
-  metaTitle: "Webbutveckling i Västerås – Moderna hemsidor i React & Next.js | LRH Konsult",
-  metaDescription: "Professionell webbutveckling i Västerås. Vi bygger snabba, SEO-optimerade hemsidor i React och Next.js för företag i Västerås och Mälardalen. Boka fri konsultation!",
-  heroHeading: "Webbutveckling i Västerås – hemsidor som konverterar",
-  heroDescription: "Behöver ditt företag i Västerås en modern, snabb hemsida? Vi bygger skräddarsydda webbplatser i React och Next.js som rankar högt på Google och förvandlar besökare till kunder.",
+  metaTitle: "Webbutveckling Västerås | Snabba & Säljande Hemsidor | LRH Konsult",
+  metaDescription: "Behöver ditt företag i Västerås en ny hemsida? Vi bygger blixtsnabba, moderna och SEO-optimerade webbplatser som konverterar besökare till kunder.",
+  heroHeading: "Professionell Webbutveckling i Västerås",
+  heroDescription: "Letar du efter en lokal partner för webbutveckling i Västerås? På LRH Konsult bygger vi skräddarsydda, moderna webbplatser i React och Next.js som inte bara ser bra ut, utan också presterar på absolut toppnivå.",
   icon: Code2,
   benefits: [
     { title: "Lokalt i Västerås", description: "Vi finns nära dig i Västerås och erbjuder personliga möten och snabb kommunikation." },
@@ -16,12 +16,17 @@ const config = {
     { title: "SEO-optimerat från start", description: "Varje hemsida vi bygger i Västerås är optimerad för att ranka på Google från dag ett." },
     { title: "Responsiv design", description: "Pixel-perfekt upplevelse på mobil, surfplatta och desktop för dina kunder i Västerås." },
   ],
-  bodyTitle: "Din webbutvecklare i Västerås",
+  bodyTitle: "Blixtsnabba hemsidor för lokala företag",
   bodyParagraphs: [
-    "Som webbutvecklare baserad i Västmanland har jag hjälpt företag i Västerås att ta steget in i den digitala världen med moderna, högpresterande webbplatser. Västerås är en stad i stark tillväxt och konkurrensen online ökar stadigt – det är viktigare än någonsin att ha en professionell hemsida som sticker ut.",
-    "Jag specialiserar mig på webbutveckling med React och Next.js, teknologier som används av världens största företag för sin hastighet och skalbarhet. Genom att kombinera detta med djup kunskap om SEO och lokal marknadsföring i Västerås skapar jag hemsidor som inte bara ser fantastiska ut, utan också presterar på toppnivå i sökmotorerna.",
-    "Varje projekt börjar med en grundlig analys av ditt företags behov och mål. Oavsett om du driver en restaurang på Stora Gatan, en butik i Erikslund eller en konsultfirma i centrum – jag skapar en digital närvaro som är skräddarsydd för just din verksamhet i Västerås.",
-    "Kontakta mig för en kostnadsfri konsultation så diskuterar vi hur vi kan ta ditt företag i Västerås till nästa nivå digitalt.",
+    "En snabb hemsida är avgörande för både användarupplevelsen och din synlighet på Google. Vi fokuserar på extrem prestandaoptimering så att dina kunder i Västerås och Västmanland aldrig behöver vänta på att din sida ska ladda.",
+  ],
+  bodyExtraSections: [
+    {
+      title: "Rätt teknisk grund för framtiden",
+      paragraphs: [
+        "Vi bygger din plattform med modern teknik som är skalbar. Oavsett om du behöver en stilren företagspresentation eller en mer avancerad webbapplikation, ser vi till att koden är ren, säker och helt redo för framtida uppdateringar.",
+      ],
+    },
   ],
   faq: [
     { question: "Vad kostar en hemsida i Västerås?", answer: "Priset varierar beroende på projektets storlek. Jag erbjuder paket från 5 000 kr till 25 000 kr, anpassade för företag i Västerås. Kontakta mig för en skräddarsydd offert." },

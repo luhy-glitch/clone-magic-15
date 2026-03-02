@@ -18,6 +18,11 @@ interface FAQItem {
   answer: string;
 }
 
+interface ExtraSection {
+  title: string;
+  paragraphs: string[];
+}
+
 interface LocalPageConfig {
   city: string;
   slug: string;
@@ -30,6 +35,7 @@ interface LocalPageConfig {
   benefits: { title: string; description: string }[];
   bodyTitle: string;
   bodyParagraphs: string[];
+  bodyExtraSections?: ExtraSection[];
   faq: FAQItem[];
 }
 
@@ -144,6 +150,24 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
             </AnimatedSection>
           </div>
         </section>
+
+        {/* Extra body sections */}
+        {config.bodyExtraSections?.map((section, idx) => (
+          <section key={idx} className={`py-16 sm:py-24 ${idx % 2 === 0 ? "bg-section-alt" : "bg-background"}`}>
+            <div className="max-w-3xl mx-auto px-4 sm:px-6">
+              <AnimatedSection>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-8">
+                  {section.title}
+                </h2>
+                <div className="space-y-5 text-muted-foreground leading-[1.8] text-base">
+                  {section.paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+          </section>
+        ))}
 
         {/* FAQ */}
         <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="local-faq-heading">
