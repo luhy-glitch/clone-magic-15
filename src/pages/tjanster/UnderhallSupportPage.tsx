@@ -4,13 +4,13 @@ import { Wrench } from "lucide-react";
 const UnderhallSupportPage = () => (
   <ServicePageTemplate
     title="Underhåll & Support"
-    metaTitle="Underhåll & Support för webbplatser | Trygg webbdrift | LRH Konsult"
-    metaDescription="Löpande underhåll, säkerhetsuppdateringar och teknisk support för din webbplats. Dagliga backups och snabb hjälp när du behöver det."
+    metaTitle="Personlig support & underhåll för din hemsida i Västmanland | LRH Konsult"
+    metaDescription="Personlig support & underhåll för din hemsida i Västmanland. Vi finns i Västerås för snabb hjälp. Säkerhet, backup och trygghet för lokala företag."
     heroSubheading="Underhåll & Support"
     heroHeading="Underhåll & Support – trygg webbdrift"
-    heroDescription="En webbplats kräver löpande underhåll för att vara säker och prestera. Med mitt supportpaket får du lugn och ro – jag tar hand om allt tekniskt så att du kan fokusera på din verksamhet."
-    whyTitle="Varför behöver din webbplats löpande underhåll?"
-    whyText="En ovårdad webbplats är en säkerhetsrisk. Uppdateringar som missas kan leda till hackade sajter, dålig prestanda och förlorade kunder. Med ett proaktivt underhållsavtal övervakar jag din webbplats dygnet runt, säkerställer dagliga backups och åtgärdar problem innan de påverkar dina besökare."
+    heroDescription="Lämna det tekniska till oss. Vi erbjuder marknadens tryggaste underhåll och support för företag i hela Västmanlands län. Vi ser till att din hemsida alltid är uppdaterad, snabb och skyddad mot digitala hot."
+    whyTitle="Din lokala IT-partner i Västerås och Västmanland"
+    whyText="Med personlig support i Västerås får du hjälp direkt när du behöver det. Vi övervakar din sajt dygnet runt så att du kan fokusera på att driva din verksamhet i Köping eller Sala."
     icon={Wrench}
     breadcrumbLabel="Underhåll & Support"
     features={[
@@ -19,6 +19,12 @@ const UnderhallSupportPage = () => (
       { title: "Övervakning dygnet runt", description: "Uptime-monitoring som larmar direkt om din sajt går ner – med snabb åtgärd." },
       { title: "Teknisk support", description: "Snabb hjälp med innehållsuppdateringar, buggfixar och nya funktioner." },
       { title: "Månadsrapport", description: "Tydlig rapport varje månad med status, uppdateringar och rekommendationer." },
+    ]}
+    faqTitle="Vanliga frågor om webbsupport"
+    faq={[
+      { question: "Vad händer om min hemsida går ner?", answer: "Vi övervakar sajten dygnet runt och återställer den direkt från våra dagliga backuper om något sker." },
+      { question: "Hjälper ni till med e-post och domäner också?", answer: "Ja, vi kan hantera hela din digitala infrastruktur för en krångelfri vardag." },
+      { question: "Hur kontaktar jag supporten?", answer: "Du når oss via mejl eller telefon, vi finns lokalt i Västmanland för snabb hantering." },
     ]}
     testimonial={{
       quote: "Vi sover gott om natten nu. Lucas sköter allt tekniskt och vi kan fokusera på våra kunder istället.",

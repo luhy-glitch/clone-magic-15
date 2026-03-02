@@ -4,13 +4,13 @@ import { Code2 } from "lucide-react";
 const WebbutvecklingPage = () => (
   <ServicePageTemplate
     title="Webbutveckling"
-    metaTitle="Webbutveckling i Västerås & Västmanland | React & Next.js | LRH Konsult"
-    metaDescription="Skräddarsydd webbutveckling med React och Next.js för företag i Västerås, Köping och Sala. Snabba, säkra och SEO-optimerade webbplatser."
+    metaTitle="Bäst webbutveckling i Västerås & Västmanland | Next.js & React | LRH Konsult"
+    metaDescription="Bäst webbutveckling i Västerås & Västmanland. Vi bygger blixtsnabba Next.js-sajter som rankar #1 på Google. Din lokala expert för moderna webblösningar."
     heroSubheading="Webbutveckling"
     heroHeading="Webbutveckling i Västerås & Västmanland"
-    heroDescription="Jag bygger skräddarsydda webbapplikationer med React och Next.js som ger ditt företag en modern, snabb och säker digital närvaro. Varje projekt är unikt och anpassat efter dina behov."
-    whyTitle="Varför investera i professionell webbutveckling?"
-    whyText="En väl byggd webbplats är grunden för din digitala framgång. Med modern teknik som React och Next.js skapar jag lösningar som laddar blixtsnabbt, rankar högt på Google och ger besökarna en sömlös upplevelse oavsett enhet. Du får en skalbar lösning som växer med ditt företag – utan kompromisser på prestanda eller säkerhet."
+    heroDescription="LRH Konsult är din ledande partner för professionell webbutveckling i Västerås och övriga Västmanland. Vi bygger inte bara hemsidor; vi skapar högpresterande digitala verktyg i Next.js och React som är optimerade för att konvertera besökare till betalande kunder i Mälardalen."
+    whyTitle="Webbutveckling i Västerås med fokus på Next.js"
+    whyText="Genom att använda världsledande teknik ser vi till att ditt företag får en teknisk fördel. Våra lösningar laddar på under en sekund, vilket är ett krav för att nå förstaplatsen på Google under 2026."
     icon={Code2}
     breadcrumbLabel="Webbutveckling"
     features={[
@@ -19,6 +19,12 @@ const WebbutvecklingPage = () => (
       { title: "API-integrationer", description: "Sömlös koppling till betalningssystem, CRM, bokningssystem och andra tredjepartstjänster." },
       { title: "E-handelslösningar", description: "Skräddarsydda webshop-lösningar med säker betalning och smidig orderhantering." },
       { title: "Prestanda & Säkerhet", description: "Optimerad kod, HTTPS, CSP-headers och regelbundna säkerhetsgranskningar ingår som standard." },
+    ]}
+    faqTitle="Vanliga frågor om webbutveckling i Västmanland"
+    faq={[
+      { question: "Vilken teknik är bäst för SEO 2026?", answer: "Next.js är det överlägsna valet då det kombinerar blixtsnabb laddning med perfekt indexering för Google." },
+      { question: "Kan ni hjälpa företag i hela Västmanlands län?", answer: "Ja, vi arbetar tätt med lokala företag i Västerås, Köping, Sala och Hallstahammar." },
+      { question: "Ingår mobiloptimering i er webbutveckling?", answer: "Självklart, alla våra projekt bygger på en mobil-först-strategi för maximal räckvidd." },
     ]}
     testimonial={{
       quote: "Lucas levererade en webbplats som överträffade alla våra förväntningar. Snabb, modern och enkel att uppdatera.",

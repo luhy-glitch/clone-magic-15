@@ -4,21 +4,27 @@ import { Zap } from "lucide-react";
 const PrestandaOptimeringPage = () => (
   <ServicePageTemplate
     title="Prestanda-optimering"
-    metaTitle="Prestanda-optimering & Core Web Vitals | Snabbare Webb | LRH Konsult"
-    metaDescription="Snabbare laddtider, bättre Core Web Vitals och högre konvertering. Professionell prestandaoptimering för webbplatser i Västmanland."
+    metaTitle="Optimera din hemsidas hastighet i Västmanland | Core Web Vitals | LRH Konsult"
+    metaDescription="Optimera din hemsidas hastighet i Västmanland. Vi fixar Core Web Vitals för företag i Västerås & Sala. Maxa din ranking med en blixtsnabb sajt."
     heroSubheading="Prestanda"
     heroHeading="Prestanda-optimering för snabbare affärer"
-    heroDescription="Varje sekund räknas. Långsamma webbplatser förlorar besökare, tappar ranking och minskar konverteringen. Jag optimerar din webbplats för blixtsnabba laddtider och gröna Core Web Vitals."
-    whyTitle="Varför är hastighet så viktigt?"
-    whyText="Google använder laddtid som rankingfaktor sedan 2021. En sajt som laddar på 1 sekund konverterar 3x bättre än en som laddar på 5 sekunder. Med djupgående prestandaanalys identifierar jag flaskhalsar och implementerar optimeringar som ger mätbara resultat – både i sökresultaten och på din bottenlinje."
+    heroDescription="Sidhastighet är den dolda nyckeln till framgång. Vi utför djupgående prestandaoptimering för företag i Västerås och Västmanland som vill sänka sina laddtider och klättra i sökresultaten genom bättre Core Web Vitals."
+    whyTitle="Core Web Vitals-optimering i Västmanland"
+    whyText="Google mäter din framgång genom användarupplevelsen. Vi optimerar din kod, komprimerar dina bilder och ser till att din sajt levererar en blixtsnabb upplevelse för kunder i Köping och Sala."
     icon={Zap}
     breadcrumbLabel="Prestanda-optimering"
     features={[
       { title: "Core Web Vitals", description: "Optimering av LCP, FID och CLS för att nå Googles gröna tröskelvärden." },
       { title: "Bildoptimering", description: "Automatisk komprimering, lazy loading och moderna format (WebP/AVIF) för snabbare laddning." },
       { title: "Cachning & CDN", description: "Smart cachning-strategi och CDN-konfiguration för snabb leverans globalt." },
-      { title: "Konverteringsoptimering (CRO)", description: "Snabbare sajt = fler konverteringar. Jag kopplar prestanda till affärsresultat." },
+      { title: "Konverteringsoptimering (CRO)", description: "Snabbare sajt = fler konverteringar. Vi kopplar prestanda till affärsresultat." },
       { title: "Före & efter-rapport", description: "Detaljerad rapport med mätbara förbättringar i Lighthouse-poäng och laddtider." },
+    ]}
+    faqTitle="Vanliga frågor om sidhastighet"
+    faq={[
+      { question: "Hur snabb måste en hemsida vara?", answer: "Under 2026 bör en sida ladda på under 1.5 sekund för att inte tappa besökare och ranking." },
+      { question: "Påverkar hastigheten min försäljning?", answer: "Absolut. En snabbare sida leder bevisat till högre konvertering och fler leads." },
+      { question: "Kan ni optimera min befintliga sajt?", answer: "Ja, vi utför prestandaanalyser på alla typer av plattformar och implementerar konkreta förbättringar." },
     ]}
     testimonial={{
       quote: "Vår Lighthouse-poäng gick från 42 till 98. Sajten laddar nu på under en sekund och vi ser direkt fler förfrågningar.",
