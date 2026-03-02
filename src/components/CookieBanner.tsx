@@ -33,7 +33,7 @@ const CookieBanner = () => {
             to="/integritetspolicy"
             className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-foreground hover:bg-muted transition-colors"
           >
-            Läs mer
+            Läs vår integritetspolicy i sin helhet
           </Link>
           <button
             onClick={accept}
