@@ -31,6 +31,22 @@ const UnderhallSupportPage = () => (
       author: "Peter Nilsson",
       role: "VD, Nilssons Fastigheter",
     }}
+    contentSections={[
+      {
+        title: "Kundcase: Trygg drift för fastighetsbolag",
+        paragraphs: [
+          "Ett fastighetsbolag i Västerås med flera hundra hyresgäster förlitade sig på sin webbplats för felanmälningar, kontaktformulär och information. När sajten gick ner under en helg förlorade de viktiga felanmälningar och fick hantera frustrerade hyresgäster via telefon under måndagen.",
+          "Vi tog över driften och implementerade ett komplett övervaknings- och backupsystem. Sajten övervakas nu dygnet runt med automatiska larm vid driftstörningar, dagliga backuper med möjlighet till återställning inom 15 minuter, samt månatliga säkerhetsuppdateringar. Sedan vi tog över har sajten haft 99,98 % upptid och bolaget har inte missat en enda felanmälan.",
+        ],
+      },
+      {
+        title: "Vanliga frågor om underhåll och support",
+        paragraphs: [
+          "Vad ingår i ett månadsavtal för webbunderhåll? Våra månadsavtal inkluderar dagliga backuper, säkerhetsuppdateringar, uptime-övervakning, teknisk support via mejl och telefon, samt en månadsrapport med status och rekommendationer. Vi anpassar alltid paketet efter din verksamhets behov och budget.",
+          "Kan ni ta över driften av en sajt som någon annan har byggt? Ja, vi tar regelbundet över webbplatser som byggts av andra byråer eller frilansare. Vi börjar alltid med en teknisk genomgång för att identifiera eventuella problem och säkerställa att vi har full kontroll över alla system innan vi lägger in sajten i vårt övervakningssystem.",
+        ],
+      },
+    ]}
     relatedServices={[
       { label: "Prestanda-optimering", href: "/tjanster/prestanda-optimering" },
       { label: "WordPress-lösningar", href: "/tjanster/wordpress-losningar" },

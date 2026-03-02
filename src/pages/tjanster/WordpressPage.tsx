@@ -30,6 +30,22 @@ const WordpressPage = () => (
       author: "Sofia Berg",
       role: "Grundare, Bergström Design",
     }}
+    contentSections={[
+      {
+        title: "Kundcase: Säkerhetsöversyn och prestandalyft för WordPress",
+        paragraphs: [
+          "Ett medelstort företag i Köping hade en WordPress-sajt som drabbats av upprepade säkerhetsincidenter och hade laddningstider på över sex sekunder. Deras befintliga webbyrå hade staplat plugin på plugin utan att tänka på helheten, vilket resulterade i en instabil och sårbar plattform.",
+          "Vi genomförde en total genomgång av installationen: tog bort 15 onödiga plugins, bytte till ett lättviktstema, implementerade server-side cachning och härdade hela WordPress-kärnan. Laddningstiden sjönk till under 1,5 sekunder och sajten har varit fri från säkerhetsincidenter i över 12 månader. Dessutom förbättrades den organiska trafiken med 35 % tack vare snabbare sidladdning.",
+        ],
+      },
+      {
+        title: "Vanliga frågor om WordPress",
+        paragraphs: [
+          "Är WordPress fortfarande relevant jämfört med moderna ramverk? Ja, WordPress driver fortfarande över 40 % av alla webbplatser globalt och är ett utmärkt val för innehållstunga sajter, bloggar och e-handel. Nyckeln är att ha en expert som konfigurerar det korrekt – utan onödiga plugins och med fokus på prestanda.",
+          "Hur skyddar ni min WordPress-sajt mot hackare? Vi implementerar en flerlagersäkerhet som inkluderar brandvägg på servernivå, tvåfaktorsautentisering, begränsade inloggningsförsök, automatiska säkerhetsuppdateringar och dagliga backuper. Vi övervakar även sajten löpande för att upptäcka och åtgärda hot i realtid.",
+        ],
+      },
+    ]}
     relatedServices={[
       { label: "Underhåll & Support", href: "/tjanster/underhall-support" },
       { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
