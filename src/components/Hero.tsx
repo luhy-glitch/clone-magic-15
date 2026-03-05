@@ -47,7 +47,7 @@ export default function Hero() {
       <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-20 overflow-visible">
         {/* Map image */}
         <picture>
-          <source srcSet="/images/vastmanland-karta.webp" type="image/webp" />
+          <source srcSet="/images/vastmanland-karta-sm.webp" type="image/webp" />
           <img
             src="/images/vastmanland-karta.png"
             alt=""
