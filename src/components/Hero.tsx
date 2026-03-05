@@ -52,7 +52,7 @@ export default function Hero() {
       <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-20 bg-transparent">
         {/* Optimized Map Image - Fixed LCP and Size issues */}
         <img
-          src="/images/vastmanland-karta.webp"
+          src="/images/vastmanland-karta.png"
           alt="Karta över Västmanland med fokus på Västerås, Köping och Sala"
           aria-hidden="true"
           /* Performance: Removed loading="lazy" and added high priority for hero image */
