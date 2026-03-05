@@ -37,7 +37,7 @@ const Footer = () => {
 
           {/* Tjänster */}
           <nav aria-label="Tjänster">
-            <h4 className="font-serif font-bold text-foreground mb-4">Tjänster</h4>
+            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Tjänster</h3>
             <ul className="space-y-2">
               <li><Link to="/tjanster/webbutveckling" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling</Link></li>
               <li><Link to="/tjanster/webbdesign" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbdesign</Link></li>
@@ -50,7 +50,7 @@ const Footer = () => {
 
           {/* Sidor */}
           <nav aria-label="Sidor">
-            <h4 className="font-serif font-bold text-foreground mb-4">Sidor</h4>
+            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Sidor</h3>
             <ul className="space-y-2">
               <li><Link to="/om-mig" className="text-sm text-muted-foreground hover:text-primary transition-colors">Om mig</Link></li>
               <li><Link to="/blogg" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blogg</Link></li>
@@ -61,7 +61,7 @@ const Footer = () => {
 
           {/* Lokala sidor */}
           <div>
-            <h4 className="font-serif font-bold text-foreground mb-4">Lokalt</h4>
+            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Lokalt</h3>
             <ul className="space-y-2">
               <li><Link to="/webbutveckling-vasteras" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Västerås</Link></li>
               <li><Link to="/seo-koping" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Köping</Link></li>

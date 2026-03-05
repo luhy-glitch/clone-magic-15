@@ -50,10 +50,11 @@ const SeoRoiCalculator = () => {
               </h3>
 
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">
+                <label htmlFor="roi-traffic" className="text-sm font-medium text-foreground mb-2 block">
                   Månatlig trafik (besökare)
                 </label>
                 <input
+                  id="roi-traffic"
                   type="number"
                   min={0}
                   max={1000000}
