@@ -8,12 +8,7 @@ const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
 export default function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-40 pb-20 px-4">
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-          .font-serif-custom { font-family: 'Playfair Display', serif; }
-        `}
-      </style>
+      {/* Font loaded via <link> in index.html */}
 
       {/* Plexus network */}
       <Suspense fallback={null}>
@@ -51,14 +46,19 @@ export default function Hero() {
       {/* CTA + city nodes */}
       <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-20">
         {/* Map image */}
-        <img
-          src="/images/vastmanland-karta.png"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.25] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_15px_rgba(250,204,21,0.2)] pointer-events-none z-0"
-        />
+        <picture>
+          <source srcSet="/images/vastmanland-karta.webp" type="image/webp" />
+          <img
+            src="/images/vastmanland-karta.png"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            width="500"
+            height="500"
+            className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.25] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_15px_rgba(250,204,21,0.2)] pointer-events-none z-0"
+          />
+        </picture>
 
         {/* Soft glow behind button */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500/[0.25] blur-[100px] rounded-full pointer-events-none z-0"></div>
