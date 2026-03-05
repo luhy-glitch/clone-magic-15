@@ -44,7 +44,7 @@ export default function Hero() {
       </p>
 
       {/* CTA + city nodes */}
-      <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-20">
+      <div className="relative w-full max-w-2xl h-[400px] md:h-[450px] mb-20 flex items-center justify-center z-20">
         {/* Map image */}
         <picture>
           <source srcSet="/images/vastmanland-karta.webp" type="image/webp" />
