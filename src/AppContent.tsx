@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -58,6 +59,7 @@ const AppContent = () => (
         <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieBanner />
+      <SpeedInsights />
     </TooltipProvider>
   </QueryClientProvider>
 );
