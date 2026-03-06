@@ -49,13 +49,6 @@ export default function PlexusBackground() {
       const nodes = nodesRef.current;
       const maxDist = 160;
 
-      for (const n of nodes) {
-        n.x += n.vx;
-        n.y += n.vy;
-        if (n.x < 0 || n.x > w) n.vx *= -1;
-        if (n.y < 0 || n.y > h) n.vy *= -1;
-      }
-
       // Lines
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
@@ -81,8 +74,6 @@ export default function PlexusBackground() {
         ctx.arc(n.x, n.y, 1.8, 0, Math.PI * 2);
         ctx.fill();
       }
-
-      animRef.current = requestAnimationFrame(draw);
     };
 
     // Double-rAF: first frame lets browser finish layout, second reads geometry safely
