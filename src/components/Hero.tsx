@@ -1,27 +1,18 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React, { Suspense } from "react";
 import { Star, ThumbsUp, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
 
 export default function Hero() {
-  const [showPlexus, setShowPlexus] = useState(false);
-
-  useEffect(() => {
-    // Delay plexus load by 2s to ensure LCP (H1) completes first
-    const id = setTimeout(() => setShowPlexus(true), 2000);
-    return () => clearTimeout(id);
-  }, []);
 
   return (
     <section className="hero-section relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-40 pb-20 px-4">
 
       {/* Plexus network background - deferred to avoid critical chain */}
-      {showPlexus && (
-        <Suspense fallback={null}>
-          <PlexusBackground />
-        </Suspense>
-      )}
+      <Suspense fallback={null}>
+        <PlexusBackground />
+      </Suspense>
 
       {/* Soft blue glow for depth */}
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-900/20 blur-[150px] rounded-full pointer-events-none z-0" />
