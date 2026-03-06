@@ -1,27 +1,17 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React, { Suspense } from "react";
 import { Star, ThumbsUp, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
 
 export default function Hero() {
-  const [showPlexus, setShowPlexus] = useState(false);
-
-  useEffect(() => {
-    // Delay plexus load by 2s to ensure LCP (H1) completes first
-    const id = setTimeout(() => setShowPlexus(true), 2000);
-    return () => clearTimeout(id);
-  }, []);
-
   return (
     <section className="hero-section relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-40 pb-20 px-4">
 
-      {/* Plexus network background - deferred to avoid critical chain */}
-      {showPlexus && (
-        <Suspense fallback={null}>
-          <PlexusBackground />
-        </Suspense>
-      )}
+      {/* Plexus network background - loads asynchronously via Suspense without blocking LCP */}
+      <Suspense fallback={null}>
+        <PlexusBackground />
+      </Suspense>
 
       {/* Soft blue glow for depth */}
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-900/20 blur-[150px] rounded-full pointer-events-none z-0" />
@@ -51,9 +41,9 @@ export default function Hero() {
         <span className="text-white font-medium">React & Next.js</span> som konverterar besökare till kunder.
       </p>
 
-      {/* SEAMLESS MAP SECTION - No borders or boxes */}
+      {/* SEAMLESS MAP SECTION */}
       <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-20 bg-transparent">
-        {/* Optimized Map Image - Fixed LCP and Size issues */}
+        {/* Optimized Map Image */}
         <img
           src="/images/vastmanland-karta-sm.webp"
           srcSet="/images/vastmanland-karta-sm.webp 350w, /images/vastmanland-karta.avif 1024w"
@@ -71,7 +61,6 @@ export default function Hero() {
         {/* Seamless glow behind CTA button */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500/[0.15] blur-[100px] rounded-full pointer-events-none z-0"></div>
 
-        {/* City nodes - Geographic markers */}
         {/* Sala */}
         <Link
           to="/hemsidor-sala"
@@ -117,7 +106,7 @@ export default function Hero() {
           <span className="text-xs mt-2 text-gray-400 group-hover:text-white transition-colors">Västerås</span>
         </Link>
 
-        {/* CTA Button - Primary Conversion Goal */}
+        {/* CTA Button */}
         <div className="relative z-20 -translate-y-10">
           <div className="absolute -inset-3 bg-gradient-to-r from-yellow-500/30 via-amber-500/20 to-orange-500/30 rounded-full blur-xl animate-pulse"></div>
           <Link
@@ -129,7 +118,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Trust Indicators - Glass cards */}
+      {/* Trust Indicators */}
       <div className="flex flex-wrap justify-center gap-6 w-full max-w-4xl relative z-10">
         <div className="bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-2xl shadow-xl relative overflow-hidden group hover:bg-white/[0.08] transition-all duration-300">
           <div className="text-3xl font-bold text-yellow-500 mb-1 flex items-baseline relative z-10">
