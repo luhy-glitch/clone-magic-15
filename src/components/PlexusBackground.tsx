@@ -44,6 +44,8 @@ export default function PlexusBackground() {
       }));
     };
 
+    const isMobile = window.innerWidth < 768;
+
     const draw = () => {
       ctx.clearRect(0, 0, w, h);
       const nodes = nodesRef.current;
@@ -73,6 +75,18 @@ export default function PlexusBackground() {
         ctx.beginPath();
         ctx.arc(n.x, n.y, 1.8, 0, Math.PI * 2);
         ctx.fill();
+
+        // Animate positions only on desktop
+        if (!isMobile) {
+          n.x += n.vx;
+          n.y += n.vy;
+          if (n.x < 0 || n.x > w) n.vx *= -1;
+          if (n.y < 0 || n.y > h) n.vy *= -1;
+        }
+      }
+
+      if (!isMobile) {
+        animRef.current = requestAnimationFrame(draw);
       }
     };
 
