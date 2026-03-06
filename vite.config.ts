@@ -77,6 +77,23 @@ function ssgPlugin(): Plugin {
         const templatePath = path.resolve(distDir, "index.html");
         let template = fs.readFileSync(templatePath, "utf-8");
 
+        // ——— Inline CSS: replace all <link stylesheet> (including deferred ones) with <style> ———
+        template = template.replace(
+          /<link\b[^>]*?href=["']([^"']*\.css[^"']*)["'][^>]*>/gi,
+          (linkTag: string, cssHref: string) => {
+            const actualHref = cssHref.startsWith("/") ? cssHref.slice(1) : cssHref;
+            const cssFilePath = path.resolve(distDir, actualHref);
+            if (fs.existsSync(cssFilePath)) {
+              const cssContent = fs.readFileSync(cssFilePath, "utf-8");
+              console.log(`  ✅ Inlined CSS: ${actualHref} (${cssContent.length} bytes)`);
+              return `<style>${cssContent}</style>`;
+            }
+            console.log(`  ⚠️ CSS file not found for: ${cssHref}`);
+            return linkTag;
+          }
+        );
+        // Clean up <noscript> wrappers left by deferCssPlugin
+        template = template.replace(/<noscript><link\b[^>]*\.css[^>]*><\/noscript>/gi, "");
 
         const routes = ["/", "/webbutveckling", "/seo-optimering", "/om-mig", "/blogg", "/blogg/oka-hemsidans-hastighet", "/blogg/lokal-seo-smaforetag", "/blogg/react-vs-wordpress", "/kontakt", "/integritetspolicy"];
 
