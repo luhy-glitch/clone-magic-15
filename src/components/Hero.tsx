@@ -8,12 +8,6 @@ const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
 export default function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-40 pb-20 px-4">
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-          .font-serif-custom { font-family: 'Playfair Display', serif; }
-        `}
-      </style>
 
       {/* Plexus network background */}
       <Suspense fallback={null}>
@@ -55,9 +49,11 @@ export default function Hero() {
           src="/images/vastmanland-karta.avif"
           alt="Karta över Västmanland med fokus på Västerås, Köping och Sala"
           aria-hidden="true"
-          /* Performance: Removed loading="lazy" and added high priority for hero image */
           loading="eager"
           decoding="async"
+          fetchPriority="high"
+          width={500}
+          height={500}
           className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.3] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_20px_rgba(250,204,21,0.15)] pointer-events-none z-0"
         />
 

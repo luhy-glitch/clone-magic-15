@@ -22,11 +22,13 @@ export default function PlexusBackground() {
     let h = 0;
 
     const resize = () => {
-      w = canvas.offsetWidth;
-      h = canvas.offsetHeight;
-      canvas.width = w * window.devicePixelRatio;
-      canvas.height = h * window.devicePixelRatio;
-      ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+      requestAnimationFrame(() => {
+        w = canvas.offsetWidth;
+        h = canvas.offsetHeight;
+        canvas.width = w * window.devicePixelRatio;
+        canvas.height = h * window.devicePixelRatio;
+        ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+      });
     };
 
     const initNodes = () => {
