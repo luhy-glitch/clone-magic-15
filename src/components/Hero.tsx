@@ -16,7 +16,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-40 pb-20 px-4">
+    <section className="hero-section relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-40 pb-20 px-4">
 
       {/* Plexus network background - deferred to avoid critical chain */}
       {showPlexus && (
@@ -34,11 +34,11 @@ export default function Hero() {
       </div>
 
       {/* Main Heading - Optimized for H1 ranking */}
-      <h1 className="font-serif-custom text-5xl md:text-6xl lg:text-7xl mb-6 leading-[1.15] max-w-4xl tracking-tight text-center z-10 relative">
+      <h1 className="hero-h1 font-serif-custom text-5xl md:text-6xl lg:text-7xl mb-6 leading-[1.15] max-w-4xl tracking-tight text-center z-10 relative">
         Professionell
         <br />
         Webbutveckling & SEO i<br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-500 to-yellow-600">
+        <span className="hero-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-500 to-yellow-600">
           Västmanland
         </span>{" "}
         – LRH
