@@ -47,8 +47,13 @@ const AppContent = () => {
 
   useEffect(() => {
     // Defer overlays until after LCP
-    const id = requestIdleCallback(() => setShowOverlays(true));
-    return () => cancelIdleCallback(id);
+    if (typeof requestIdleCallback === "function") {
+      const id = requestIdleCallback(() => setShowOverlays(true));
+      return () => cancelIdleCallback(id);
+    } else {
+      const id = setTimeout(() => setShowOverlays(true), 1);
+      return () => clearTimeout(id);
+    }
   }, []);
 
   return (
