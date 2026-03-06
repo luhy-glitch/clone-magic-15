@@ -131,7 +131,16 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    sourcemap: true,
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': ['@radix-ui/react-tooltip', '@radix-ui/react-accordion', '@radix-ui/react-toast', '@radix-ui/react-dialog'],
+          'query': ['@tanstack/react-query'],
+        },
+      },
+    },
   },
   plugins: [
     react(),
