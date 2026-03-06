@@ -11,15 +11,12 @@
     <link rel="canonical" href="https://lrhkonsult.se/" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
-    <!-- Preconnect to Google Fonts for faster loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Preconnect to Google Fonts CDN for font file -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Preload the actual font file to eliminate LCP render delay -->
     <link rel="preload" href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDTbtPY_Q.woff2" as="font" type="font/woff2" crossorigin />
-    <!-- Non-render-blocking font loading with font-display: swap -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&display=swap" /></noscript>
+    <!-- @font-face is fully inlined below — no external CSS needed -->
 
     <!-- Inline critical font-face to prevent LCP render delay -->
     <style>
