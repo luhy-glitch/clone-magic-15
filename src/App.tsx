@@ -7,7 +7,7 @@ const SpeedInsights = lazy(() => import("@vercel/speed-insights/react").then(m =
 const Analytics = lazy(() => import("@vercel/analytics/react").then(m => ({ default: m.Analytics })));
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
     <AppContent />
     <Suspense fallback={null}>
       <SpeedInsights />
