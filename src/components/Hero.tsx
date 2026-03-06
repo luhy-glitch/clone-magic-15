@@ -55,14 +55,16 @@ export default function Hero() {
       <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-20 bg-transparent">
         {/* Optimized Map Image - Fixed LCP and Size issues */}
         <img
-          src="/images/vastmanland-karta.avif"
+          src="/images/vastmanland-karta-sm.webp"
+          srcSet="/images/vastmanland-karta-sm.webp 350w, /images/vastmanland-karta.avif 1024w"
+          sizes="(max-width: 768px) 350px, 500px"
           alt="Karta över Västmanland med fokus på Västerås, Köping och Sala"
           aria-hidden="true"
           loading="eager"
-          decoding="sync"
+          decoding="async"
           fetchPriority="high"
-          width={613}
-          height={613}
+          width={500}
+          height={500}
           className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.3] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_20px_rgba(250,204,21,0.15)] pointer-events-none z-0"
         />
 

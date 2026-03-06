@@ -38,12 +38,10 @@ function ssgPlugin(): Plugin {
           alias: {
             "@": path.resolve(rootDir, "src"),
           },
-          // Externalize node_modules that aren't needed for rendering
           external: [
             "@supabase/supabase-js",
             "sonner",
           ],
-          // Define browser globals for SSR compatibility
           define: {
             "window": "globalThis",
             "document": "globalThis.__document__",
@@ -74,14 +72,25 @@ function ssgPlugin(): Plugin {
         if (!g.removeEventListener) g.removeEventListener = () => {};
         if (!g.innerWidth) g.innerWidth = 1024;
 
-        // Import the SSR render function
         const { render } = await import(pathToFileURL(serverOutFile).href);
 
-        // Read the client-built HTML template
         const templatePath = path.resolve(distDir, "index.html");
-        const template = fs.readFileSync(templatePath, "utf-8");
+        let template = fs.readFileSync(templatePath, "utf-8");
 
-        // Routes to pre-render
+        // ——— Inline CSS: replace <link rel="stylesheet"> with <style> ———
+        const cssLinkRegex = /<link\s+[^>]*rel=["']stylesheet["'][^>]*href=["']([^"']+)["'][^>]*\/?>/gi;
+        let match;
+        while ((match = cssLinkRegex.exec(template)) !== null) {
+          const cssHref = match[1];
+          const cssFileName = cssHref.startsWith("/") ? cssHref.slice(1) : cssHref;
+          const cssFilePath = path.resolve(distDir, cssFileName);
+          if (fs.existsSync(cssFilePath)) {
+            const cssContent = fs.readFileSync(cssFilePath, "utf-8");
+            template = template.replace(match[0], `<style>${cssContent}</style>`);
+            console.log(`  ✅ Inlined CSS: ${cssFileName}`);
+          }
+        }
+
         const routes = ["/", "/webbutveckling", "/seo-optimering", "/om-mig", "/blogg", "/blogg/oka-hemsidans-hastighet", "/blogg/lokal-seo-smaforetag", "/blogg/react-vs-wordpress", "/kontakt", "/integritetspolicy"];
 
         for (const route of routes) {
@@ -101,7 +110,6 @@ function ssgPlugin(): Plugin {
           console.log(`  ✅ ${route}`);
         }
 
-        // Generate 404.html
         const notFoundHtml = render("/this-page-does-not-exist");
         const notFoundPage = template.replace(
           '<div id="root"></div>',
@@ -110,12 +118,10 @@ function ssgPlugin(): Plugin {
         fs.writeFileSync(path.resolve(distDir, "404.html"), notFoundPage);
         console.log("  ✅ /404.html");
 
-        // Clean up server build artifacts
         fs.rmSync(path.resolve(rootDir, "dist-server"), { recursive: true, force: true });
         console.log("✅ Static site generation complete!\n");
       } catch (err) {
         console.error("⚠️ SSG pre-rendering failed, falling back to SPA mode:", err);
-        // Don't throw - let the build succeed as a normal SPA
       }
     },
   };
