@@ -35,7 +35,7 @@ export default function PlexusBackground() {
     };
 
     const initNodes = () => {
-      const count = Math.min(30, Math.floor((w * h) / 25000));
+      const count = Math.min(50, Math.floor((w * h) / 15000));
       nodesRef.current = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
