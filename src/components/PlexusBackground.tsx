@@ -22,17 +22,16 @@ export default function PlexusBackground() {
     let h = 0;
 
     const resize = () => {
-      requestAnimationFrame(() => {
-        w = canvas.offsetWidth;
-        h = canvas.offsetHeight;
-        canvas.width = w * window.devicePixelRatio;
-        canvas.height = h * window.devicePixelRatio;
-        ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
-      });
+      w = canvas.clientWidth;
+      h = canvas.clientHeight;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
     const initNodes = () => {
-      const count = 75;
+      const count = Math.min(50, Math.floor((w * h) / 15000));
       nodesRef.current = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
@@ -82,13 +81,17 @@ export default function PlexusBackground() {
       animRef.current = requestAnimationFrame(draw);
     };
 
-    resize();
-    initNodes();
-    draw();
+    // Defer initial setup to avoid forced reflow during mount
+    const initId = requestAnimationFrame(() => {
+      resize();
+      initNodes();
+      draw();
+    });
 
     const onResize = () => { resize(); initNodes(); };
     window.addEventListener("resize", onResize);
     return () => {
+      cancelAnimationFrame(initId);
       cancelAnimationFrame(animRef.current);
       window.removeEventListener("resize", onResize);
     };

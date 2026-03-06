@@ -49,11 +49,10 @@ export default function Hero() {
           src="/images/vastmanland-karta.avif"
           alt="Karta över Västmanland med fokus på Västerås, Köping och Sala"
           aria-hidden="true"
-          loading="eager"
+          loading="lazy"
           decoding="async"
-          fetchPriority="high"
-          width={500}
-          height={500}
+          width={613}
+          height={613}
           className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.3] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_20px_rgba(250,204,21,0.15)] pointer-events-none z-0"
         />
 
