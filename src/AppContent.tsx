@@ -4,7 +4,7 @@ import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Defer heavy providers — not needed for initial paint
-const TooltipProvider = lazy(() => import("@radix-ui/react-tooltip").then(m => ({ default: m.Provider })));
+const TooltipProvider = lazy(() => import("@radix-ui/react-tooltip").then(m => ({ default: m.TooltipProvider })));
 const Toaster = lazy(() => import("@/components/ui/toaster").then(m => ({ default: m.Toaster })));
 const Sonner = lazy(() => import("@/components/ui/sonner").then(m => ({ default: m.Toaster })));
 const CookieBanner = lazy(() => import("./components/CookieBanner"));
