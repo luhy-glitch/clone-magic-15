@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Star, ThumbsUp, ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -6,13 +6,25 @@ import { Link } from "react-router-dom";
 const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
 
 export default function Hero() {
+  const [showPlexus, setShowPlexus] = useState(false);
+
+  useEffect(() => {
+    // Delay plexus load until after LCP (H1) has rendered
+    const id = requestIdleCallback?.(() => setShowPlexus(true)) ?? setTimeout(() => setShowPlexus(true), 1500);
+    return () => {
+      if (typeof id === "number") cancelIdleCallback?.(id) ?? clearTimeout(id);
+    };
+  }, []);
+
   return (
     <section className="relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-40 pb-20 px-4">
 
-      {/* Plexus network background */}
-      <Suspense fallback={null}>
-        <PlexusBackground />
-      </Suspense>
+      {/* Plexus network background - deferred to avoid critical chain */}
+      {showPlexus && (
+        <Suspense fallback={null}>
+          <PlexusBackground />
+        </Suspense>
+      )}
 
       {/* Soft blue glow for depth */}
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-900/20 blur-[150px] rounded-full pointer-events-none z-0" />
