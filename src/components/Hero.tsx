@@ -8,11 +8,9 @@ export default function Hero() {
   const [showPlexus, setShowPlexus] = useState(false);
 
   useEffect(() => {
-    // Delay plexus load until after LCP (H1) has rendered
-    const id = requestIdleCallback?.(() => setShowPlexus(true)) ?? setTimeout(() => setShowPlexus(true), 1500);
-    return () => {
-      if (typeof id === "number") cancelIdleCallback?.(id) ?? clearTimeout(id);
-    };
+    // Delay plexus load by 2s to ensure LCP (H1) completes first
+    const id = setTimeout(() => setShowPlexus(true), 2000);
+    return () => clearTimeout(id);
   }, []);
 
   return (
