@@ -1,17 +1,26 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Star, ThumbsUp, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
 
 export default function Hero() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // Triggar inladdningen av stjärnorna precis när DOM:en är redo
+    setIsMounted(true);
+  }, []);
+
   return (
     <section className="hero-section relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-[#050810] text-white overflow-hidden pt-40 pb-20 px-4">
 
-      {/* Plexus network background - loads asynchronously via Suspense without blocking LCP */}
-      <Suspense fallback={null}>
-        <PlexusBackground />
-      </Suspense>
+      {/* Renderas säkert precis efter första sidmålningen, kraschar inte och blockerar inte LCP */}
+      {isMounted && (
+        <Suspense fallback={null}>
+          <PlexusBackground />
+        </Suspense>
+      )}
 
       {/* Soft blue glow for depth */}
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-900/20 blur-[150px] rounded-full pointer-events-none z-0" />
