@@ -78,18 +78,24 @@ function ssgPlugin(): Plugin {
         let template = fs.readFileSync(templatePath, "utf-8");
 
         // ——— Inline CSS: replace <link rel="stylesheet"> with <style> ———
-        const cssLinkRegex = /<link\s+[^>]*rel=["']stylesheet["'][^>]*href=["']([^"']+)["'][^>]*\/?>/gi;
-        let match;
-        while ((match = cssLinkRegex.exec(template)) !== null) {
-          const cssHref = match[1];
-          const cssFileName = cssHref.startsWith("/") ? cssHref.slice(1) : cssHref;
-          const cssFilePath = path.resolve(distDir, cssFileName);
-          if (fs.existsSync(cssFilePath)) {
-            const cssContent = fs.readFileSync(cssFilePath, "utf-8");
-            template = template.replace(match[0], `<style>${cssContent}</style>`);
-            console.log(`  ✅ Inlined CSS: ${cssFileName}`);
+        // Match any <link> with rel="stylesheet" regardless of attribute order
+        template = template.replace(
+          /<link\b[^>]*\.css["'][^>]*>/gi,
+          (linkTag: string) => {
+            const hrefMatch = linkTag.match(/href=["']([^"']+)["']/);
+            if (!hrefMatch) return linkTag;
+            const cssHref = hrefMatch[1];
+            const cssFileName = cssHref.startsWith("/") ? cssHref.slice(1) : cssHref;
+            const cssFilePath = path.resolve(distDir, cssFileName);
+            if (fs.existsSync(cssFilePath)) {
+              const cssContent = fs.readFileSync(cssFilePath, "utf-8");
+              console.log(`  ✅ Inlined CSS: ${cssFileName} (${cssContent.length} bytes)`);
+              return `<style>${cssContent}</style>`;
+            }
+            console.log(`  ⚠️ CSS file not found: ${cssFilePath}`);
+            return linkTag;
           }
-        }
+        );
 
         const routes = ["/", "/webbutveckling", "/seo-optimering", "/om-mig", "/blogg", "/blogg/oka-hemsidans-hastighet", "/blogg/lokal-seo-smaforetag", "/blogg/react-vs-wordpress", "/kontakt", "/integritetspolicy"];
 
