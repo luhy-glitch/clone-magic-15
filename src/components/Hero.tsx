@@ -64,6 +64,7 @@ export default function Hero() {
           aria-hidden="true"
           loading="lazy"
           decoding="async"
+          fetchPriority="low"
           width={350}
           height={350}
           className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.3] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_20px_rgba(250,204,21,0.15)] pointer-events-none z-0"
