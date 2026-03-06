@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -30,7 +30,7 @@ const WebbutvecklingVasteras = lazy(() => import("./pages/WebbutvecklingVasteras
 const SeoKoping = lazy(() => import("./pages/SeoKoping"));
 const HemsidorSala = lazy(() => import("./pages/HemsidorSala"));
 
-// Lazy-init QueryClient to avoid importing @tanstack/react-query in the critical path
+// Lazy-init QueryClient — only needed for pages that fetch data
 const LazyQueryProvider = lazy(() =>
   import("@tanstack/react-query").then(m => {
     const client = new m.QueryClient();
@@ -42,8 +42,39 @@ const LazyQueryProvider = lazy(() =>
   })
 );
 
+/** Routes that need QueryClient (blog, admin, etc.) */
+const DataRoutes = () => (
+  <Suspense fallback={null}>
+    <LazyQueryProvider>
+      <Routes>
+        <Route path="/webbutveckling" element={<Webbutveckling />} />
+        <Route path="/seo-optimering" element={<SeoOptimering />} />
+        <Route path="/om-mig" element={<OmMig />} />
+        <Route path="/blogg" element={<Blogg />} />
+        <Route path="/blogg/:slug" element={<BloggArtikel />} />
+        <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
+        <Route path="/tjanster/webbutveckling" element={<WebbutvecklingPage />} />
+        <Route path="/tjanster/webbdesign" element={<WebbdesignPage />} />
+        <Route path="/tjanster/seo-optimering" element={<SeoOptimeringPage />} />
+        <Route path="/tjanster/wordpress-losningar" element={<WordpressPage />} />
+        <Route path="/tjanster/underhall-support" element={<UnderhallSupportPage />} />
+        <Route path="/tjanster/prestanda-optimering" element={<PrestandaOptimeringPage />} />
+        <Route path="/webbutveckling-vasteras" element={<WebbutvecklingVasteras />} />
+        <Route path="/seo-koping" element={<SeoKoping />} />
+        <Route path="/hemsidor-sala" element={<HemsidorSala />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </LazyQueryProvider>
+  </Suspense>
+);
+
 const AppContent = () => {
   const [showOverlays, setShowOverlays] = useState(false);
+  const location = useLocation();
+  const isIndex = location.pathname === "/";
 
   useEffect(() => {
     // Defer overlays until after LCP
@@ -59,32 +90,8 @@ const AppContent = () => {
   return (
     <>
       <ScrollToTop />
-      <Suspense fallback={null}>
-        <LazyQueryProvider>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/webbutveckling" element={<Webbutveckling />} />
-            <Route path="/seo-optimering" element={<SeoOptimering />} />
-            <Route path="/om-mig" element={<OmMig />} />
-            <Route path="/blogg" element={<Blogg />} />
-            <Route path="/blogg/:slug" element={<BloggArtikel />} />
-            <Route path="/kontakt" element={<Kontakt />} />
-            <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
-            <Route path="/tjanster/webbutveckling" element={<WebbutvecklingPage />} />
-            <Route path="/tjanster/webbdesign" element={<WebbdesignPage />} />
-            <Route path="/tjanster/seo-optimering" element={<SeoOptimeringPage />} />
-            <Route path="/tjanster/wordpress-losningar" element={<WordpressPage />} />
-            <Route path="/tjanster/underhall-support" element={<UnderhallSupportPage />} />
-            <Route path="/tjanster/prestanda-optimering" element={<PrestandaOptimeringPage />} />
-            <Route path="/webbutveckling-vasteras" element={<WebbutvecklingVasteras />} />
-            <Route path="/seo-koping" element={<SeoKoping />} />
-            <Route path="/hemsidor-sala" element={<HemsidorSala />} />
-            <Route path="/admin" element={<AdminLogin />} />
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </LazyQueryProvider>
-      </Suspense>
+      {/* Index renders immediately without waiting for QueryClient chunk */}
+      {isIndex ? <Index /> : <DataRoutes />}
       {showOverlays && (
         <Suspense fallback={null}>
           <TooltipProvider>
