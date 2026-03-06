@@ -12,9 +12,12 @@
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
     <!-- Preconnect to Google Fonts CDN for font file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Preload the actual font file to eliminate LCP render delay -->
     <link rel="preload" href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDTbtPY_Q.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Preload hero image for faster LCP -->
+    <link rel="preload" as="image" type="image/webp" href="/images/vastmanland-karta-sm.webp" imagesrcset="/images/vastmanland-karta-sm.webp 350w, /images/vastmanland-karta.avif 1024w" imagesizes="(max-width: 768px) 350px, 500px" />
     <!-- @font-face is fully inlined below — no external CSS needed -->
 
     <!-- Inline critical font-face to prevent LCP render delay -->
