@@ -85,11 +85,13 @@ export default function PlexusBackground() {
       animRef.current = requestAnimationFrame(draw);
     };
 
-    // Defer initial setup to avoid forced reflow during mount
+    // Double-rAF: first frame lets browser finish layout, second reads geometry safely
     const initId = requestAnimationFrame(() => {
-      resize();
-      initNodes();
-      draw();
+      requestAnimationFrame(() => {
+        resize();
+        initNodes();
+        draw();
+      });
     });
 
     const onResize = () => { resize(); initNodes(); };
