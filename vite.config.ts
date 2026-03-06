@@ -77,25 +77,6 @@ function ssgPlugin(): Plugin {
         const templatePath = path.resolve(distDir, "index.html");
         let template = fs.readFileSync(templatePath, "utf-8");
 
-        // ——— Inline CSS: replace <link rel="stylesheet"> with <style> ———
-        // Match any <link> with rel="stylesheet" regardless of attribute order
-        template = template.replace(
-          /<link\b[^>]*\.css["'][^>]*>/gi,
-          (linkTag: string) => {
-            const hrefMatch = linkTag.match(/href=["']([^"']+)["']/);
-            if (!hrefMatch) return linkTag;
-            const cssHref = hrefMatch[1];
-            const cssFileName = cssHref.startsWith("/") ? cssHref.slice(1) : cssHref;
-            const cssFilePath = path.resolve(distDir, cssFileName);
-            if (fs.existsSync(cssFilePath)) {
-              const cssContent = fs.readFileSync(cssFilePath, "utf-8");
-              console.log(`  ✅ Inlined CSS: ${cssFileName} (${cssContent.length} bytes)`);
-              return `<style>${cssContent}</style>`;
-            }
-            console.log(`  ⚠️ CSS file not found: ${cssFilePath}`);
-            return linkTag;
-          }
-        );
 
         const routes = ["/", "/webbutveckling", "/seo-optimering", "/om-mig", "/blogg", "/blogg/oka-hemsidans-hastighet", "/blogg/lokal-seo-smaforetag", "/blogg/react-vs-wordpress", "/kontakt", "/integritetspolicy"];
 
@@ -133,6 +114,34 @@ function ssgPlugin(): Plugin {
   };
 }
 
+/**
+ * Plugin that makes CSS non-render-blocking during build.
+ * Uses media="print" onload trick so critical CSS (inlined in index.html <head>)
+ * handles initial paint, while full CSS loads asynchronously.
+ */
+function deferCssPlugin(): Plugin {
+  return {
+    name: "defer-css",
+    apply: "build",
+    enforce: "post",
+    transformIndexHtml: {
+      order: "post",
+      handler(html: string) {
+        // Convert render-blocking CSS links to non-blocking
+        // The <noscript> fallback ensures CSS still loads without JS
+        return html.replace(
+          /<link\b([^>]*?)rel=["']stylesheet["']([^>]*?)>/gi,
+          (match, before, after) => {
+            // Don't double-process if already deferred
+            if (match.includes('media="print"')) return match;
+            return `<link${before}rel="stylesheet"${after} media="print" onload="this.media='all'"><noscript>${match}</noscript>`;
+          }
+        );
+      },
+    },
+  };
+}
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
@@ -157,6 +166,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
+    deferCssPlugin(),
     mode === "production" && ssgPlugin(),
   ].filter(Boolean),
   resolve: {
