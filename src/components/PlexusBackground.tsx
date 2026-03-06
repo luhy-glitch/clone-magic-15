@@ -21,10 +21,14 @@ export default function PlexusBackground() {
     let w = 0;
     let h = 0;
 
+    // Cache DPR to avoid repeated reads
+    const dpr = window.devicePixelRatio || 1;
+
     const resize = () => {
-      w = canvas.clientWidth;
-      h = canvas.clientHeight;
-      const dpr = window.devicePixelRatio || 1;
+      // Read layout props once, then batch all writes
+      const rect = canvas.getBoundingClientRect();
+      w = rect.width;
+      h = rect.height;
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
