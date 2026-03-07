@@ -3,7 +3,8 @@ import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import Contact from "@/components/Contact";
 import AnimatedSection, { FadeIn, ScaleIn } from "@/components/AnimatedSection";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const skills = ["React", "TypeScript", "Next.js", "Node.js", "WordPress", "SEO", "Tailwind CSS", "Figma"];
 
