@@ -42,6 +42,14 @@ Deno.serve(async (req) => {
     const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
     if (!GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is not configured");
 
+    // Image-only generation
+    if (action === "generate_image") {
+      const prompt = image_prompt || topic || "Professional blog header";
+      const imageUrl = await generateImage(supabase, GEMINI_API_KEY, prompt);
+      return new Response(JSON.stringify({ success: true, image_url: imageUrl }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
 
     const systemPrompt = `Du är en SEO-expert och copywriter för en svensk webbyrå (LRH Konsult) i Västmanland. 
