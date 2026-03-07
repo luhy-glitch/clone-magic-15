@@ -39,6 +39,20 @@ interface LocalPageConfig {
   faq: FAQItem[];
 }
 
+const ALL_LOCAL_PAGES = [
+  { slug: "webbutveckling-vasteras", label: "Webbutveckling i Västerås", city: "Västerås" },
+  { slug: "seo-koping", label: "SEO i Köping", city: "Köping" },
+  { slug: "hemsidor-sala", label: "Hemsidor i Sala", city: "Sala" },
+];
+
+const RELATED_SERVICES = [
+  { href: "/tjanster/webbutveckling", label: "Webbutveckling" },
+  { href: "/tjanster/seo-optimering", label: "SEO-optimering" },
+  { href: "/tjanster/webbdesign", label: "Webbdesign" },
+  { href: "/tjanster/prestanda-optimering", label: "Prestandaoptimering" },
+  { href: "/blogg", label: "Blogg" },
+];
+
 const BASE_URL = "https://lrhkonsult.se";
 
 const buildLocalJsonLd = (config: LocalPageConfig) => ({
