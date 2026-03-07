@@ -120,6 +120,38 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleAiGenerate = async () => {
+    if (!aiTopic.trim()) return;
+    setGenerating(true);
+    setError("");
+
+    try {
+      const { data, error: fnError } = await supabase.functions.invoke("generate-blog-post", {
+        body: { session_token: getSessionToken(), topic: aiTopic },
+      });
+
+      if (fnError || data?.error) {
+        setError(data?.error || "AI-generering misslyckades.");
+      } else if (data?.post) {
+        setEditing((prev) => prev ? {
+          ...prev,
+          title: data.post.title,
+          excerpt: data.post.excerpt,
+          tag: data.post.tag,
+          content: data.post.content,
+          image_url: data.post.image_url || prev.image_url || "",
+          image_alt: data.post.image_alt || prev.image_alt || "",
+          date: prev.date || new Date().toISOString().split("T")[0],
+        } : prev);
+        setAiTopic("");
+      }
+    } catch {
+      setError("Något gick fel med AI-genereringen.");
+    } finally {
+      setGenerating(false);
+    }
+  };
+
   const handleSave = async () => {
     if (!editing) return;
     setSaving(true);
@@ -173,10 +205,37 @@ const AdminDashboard = () => {
             {editing.id ? "Redigera inlägg" : "Nytt inlägg"}
           </h1>
 
+          {/* AI Generator */}
+          {!editing.id && (
+            <div className="mb-5 bg-primary/5 border border-primary/20 rounded-xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <Sparkles size={18} className="text-primary" />
+                <span className="font-semibold text-sm">Generera med AI</span>
+              </div>
+              <div className="flex gap-2">
+                <Input
+                  value={aiTopic}
+                  onChange={(e) => setAiTopic(e.target.value)}
+                  placeholder="Beskriv ämnet, t.ex. 'Varför snabba hemsidor rankar bättre på Google'"
+                  disabled={generating}
+                  onKeyDown={(e) => e.key === "Enter" && handleAiGenerate()}
+                />
+                <Button onClick={handleAiGenerate} disabled={generating || !aiTopic.trim()} size="sm" className="shrink-0">
+                  <Sparkles size={14} />
+                  {generating ? "Genererar..." : "Generera"}
+                </Button>
+              </div>
+              {generating && (
+                <p className="text-xs text-muted-foreground mt-2">AI skriver inlägget och genererar en bild. Det kan ta 15-30 sekunder...</p>
+              )}
+            </div>
+          )}
+
           <div className="space-y-5 bg-card border border-border rounded-xl p-6">
             <div className="space-y-2">
               <Label>Titel</Label>
               <Input value={editing.title || ""} onChange={(e) => setEditing({ ...editing, title: e.target.value })} />
+            </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
