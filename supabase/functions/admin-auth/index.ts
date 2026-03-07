@@ -5,10 +5,10 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
-// --- Rate limiting ---
+// --- Rate limiting (in-memory is fine for this - worst case resets on cold start) ---
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 5;
-const RATE_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const RATE_WINDOW_MS = 15 * 60 * 1000;
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -21,37 +21,41 @@ function isRateLimited(ip: string): boolean {
   return entry.count > RATE_LIMIT;
 }
 
-// --- Session tokens ---
-// Simple HMAC-based session tokens valid for 2 hours
-const activeSessions = new Map<string, number>(); // token -> expiresAt
+// --- DB-backed session helpers ---
+function getSupabase() {
+  return createClient(
+    Deno.env.get("SUPABASE_URL")!,
+    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+  );
+}
 
-function generateSessionToken(): string {
+async function createSession(supabase: ReturnType<typeof createClient>): Promise<string> {
   const token = crypto.randomUUID() + "-" + crypto.randomUUID();
-  const expiresAt = Date.now() + 2 * 60 * 60 * 1000; // 2 hours
-  activeSessions.set(token, expiresAt);
+  const expiresAt = new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString();
+  await supabase.from("admin_sessions").insert({ token, expires_at: expiresAt });
   return token;
 }
 
-function validateSessionToken(token: string): boolean {
-  const expiresAt = activeSessions.get(token);
-  if (!expiresAt) return false;
-  if (Date.now() > expiresAt) {
-    activeSessions.delete(token);
+async function validateSession(supabase: ReturnType<typeof createClient>, token: string): Promise<boolean> {
+  const { data } = await supabase
+    .from("admin_sessions")
+    .select("expires_at")
+    .eq("token", token)
+    .single();
+  if (!data) return false;
+  if (new Date(data.expires_at) < new Date()) {
+    await supabase.from("admin_sessions").delete().eq("token", token);
     return false;
   }
   return true;
 }
 
-function invalidateSessionToken(token: string): void {
-  activeSessions.delete(token);
+async function invalidateSession(supabase: ReturnType<typeof createClient>, token: string) {
+  await supabase.from("admin_sessions").delete().eq("token", token);
 }
 
-// Cleanup expired sessions periodically
-function cleanupSessions() {
-  const now = Date.now();
-  for (const [token, expiresAt] of activeSessions) {
-    if (now > expiresAt) activeSessions.delete(token);
-  }
+async function cleanupExpiredSessions(supabase: ReturnType<typeof createClient>) {
+  await supabase.from("admin_sessions").delete().lt("expires_at", new Date().toISOString());
 }
 
 Deno.serve(async (req) => {
@@ -59,25 +63,22 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // Clean up expired sessions on each request
-  cleanupSessions();
-
+  const supabase = getSupabase();
   const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+
+  // Cleanup expired sessions occasionally
+  cleanupExpiredSessions(supabase).catch(() => {});
 
   try {
     const contentType = req.headers.get("content-type") || "";
     const ADMIN_KEY = Deno.env.get("ADMIN_SECRET_KEY");
-    const supabase = createClient(
-      Deno.env.get("SUPABASE_URL")!,
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
-    );
 
-    // Handle image upload (multipart) - uses session token
+    // Handle image upload (multipart)
     if (contentType.includes("multipart/form-data")) {
       const formData = await req.formData();
       const sessionToken = formData.get("session_token") as string;
 
-      if (!sessionToken || !validateSessionToken(sessionToken)) {
+      if (!sessionToken || !(await validateSession(supabase, sessionToken))) {
         return new Response(JSON.stringify({ error: "Unauthorized" }), {
           status: 401,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -97,16 +98,11 @@ Deno.serve(async (req) => {
 
       const { error: uploadError } = await supabase.storage
         .from("blog-images")
-        .upload(fileName, file, {
-          contentType: file.type,
-          upsert: false,
-        });
+        .upload(fileName, file, { contentType: file.type, upsert: false });
 
       if (uploadError) throw uploadError;
 
-      const { data: urlData } = supabase.storage
-        .from("blog-images")
-        .getPublicUrl(fileName);
+      const { data: urlData } = supabase.storage.from("blog-images").getPublicUrl(fileName);
 
       return new Response(JSON.stringify({ success: true, url: urlData.publicUrl }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -117,9 +113,8 @@ Deno.serve(async (req) => {
     const body = await req.json();
     const { action, secret_key, session_token, post } = body;
 
-    // --- Login action: validate secret key with rate limiting ---
+    // --- Login ---
     if (action === "verify") {
-      // Apply rate limiting only to login attempts
       if (isRateLimited(clientIp)) {
         return new Response(JSON.stringify({ error: "Too many attempts. Try again later." }), {
           status: 429,
@@ -134,31 +129,28 @@ Deno.serve(async (req) => {
         });
       }
 
-      // Generate a session token instead of having client store the key
-      const token = generateSessionToken();
+      const token = await createSession(supabase);
       return new Response(JSON.stringify({ success: true, session_token: token }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    // --- All other actions: validate session token ---
-    if (!session_token || !validateSessionToken(session_token)) {
+    // --- All other actions require valid session ---
+    if (!session_token || !(await validateSession(supabase, session_token))) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 401,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    // --- Validate session: check if token is still valid ---
     if (action === "validate_session") {
       return new Response(JSON.stringify({ success: true }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    // --- Logout: invalidate session token ---
     if (action === "logout") {
-      invalidateSessionToken(session_token);
+      await invalidateSession(supabase, session_token);
       return new Response(JSON.stringify({ success: true }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
@@ -166,16 +158,10 @@ Deno.serve(async (req) => {
 
     if (action === "create") {
       const { data, error } = await supabase.from("blog_posts").insert({
-        slug: post.slug,
-        title: post.title,
-        date: post.date,
-        tag: post.tag,
-        excerpt: post.excerpt,
-        content: post.content,
-        image_url: post.image_url || "",
-        image_alt: post.image_alt || "",
+        slug: post.slug, title: post.title, date: post.date, tag: post.tag,
+        excerpt: post.excerpt, content: post.content,
+        image_url: post.image_url || "", image_alt: post.image_alt || "",
       }).select().single();
-
       if (error) throw error;
       return new Response(JSON.stringify({ success: true, post: data }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -185,19 +171,12 @@ Deno.serve(async (req) => {
     if (action === "update") {
       const { data, error } = await supabase.from("blog_posts")
         .update({
-          title: post.title,
-          date: post.date,
-          tag: post.tag,
-          excerpt: post.excerpt,
-          content: post.content,
-          image_url: post.image_url || "",
-          image_alt: post.image_alt || "",
+          title: post.title, date: post.date, tag: post.tag,
+          excerpt: post.excerpt, content: post.content,
+          image_url: post.image_url || "", image_alt: post.image_alt || "",
           slug: post.slug,
         })
-        .eq("id", post.id)
-        .select()
-        .single();
-
+        .eq("id", post.id).select().single();
       if (error) throw error;
       return new Response(JSON.stringify({ success: true, post: data }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },

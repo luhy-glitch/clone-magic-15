@@ -14,6 +14,21 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_sessions: {
+        Row: {
+          expires_at: string
+          token: string
+        }
+        Insert: {
+          expires_at: string
+          token: string
+        }
+        Update: {
+          expires_at?: string
+          token?: string
+        }
+        Relationships: []
+      }
       blog_posts: {
         Row: {
           content: string
