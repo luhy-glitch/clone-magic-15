@@ -14,7 +14,9 @@ const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
 
 const PageHead = ({ title, description, canonical, ogImage, jsonLd }: PageHeadProps) => {
   const { pathname } = useLocation();
-  const url = canonical || `${BASE_URL}${pathname === "/" ? "" : pathname}`;
+  // Strip trailing slash to avoid duplicate canonical URLs
+  const cleanPath = pathname === "/" ? "" : pathname.replace(/\/+$/, "");
+  const url = canonical || `${BASE_URL}${cleanPath}`;
   const image = ogImage || DEFAULT_OG_IMAGE;
 
   useEffect(() => {

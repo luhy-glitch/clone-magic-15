@@ -3,7 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const SITE_URL = "https://lrhkonsult.se";
 
 const staticRoutes = [
-  { loc: "/", changefreq: "weekly", priority: "1.0" },
+  { loc: "", changefreq: "weekly", priority: "1.0" },
   { loc: "/webbutveckling", changefreq: "monthly", priority: "0.9" },
   { loc: "/seo-optimering", changefreq: "monthly", priority: "0.9" },
   { loc: "/om-mig", changefreq: "monthly", priority: "0.7" },
