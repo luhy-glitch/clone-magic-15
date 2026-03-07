@@ -155,6 +155,7 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
       console.error("Image generation error:", imgErr);
       // Continue without image
     }
+    }
 
     return new Response(JSON.stringify({
       success: true,
