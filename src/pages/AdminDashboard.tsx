@@ -236,7 +236,6 @@ const AdminDashboard = () => {
               <Label>Titel</Label>
               <Input value={editing.title || ""} onChange={(e) => setEditing({ ...editing, title: e.target.value })} />
             </div>
-            </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>Datum</Label>
