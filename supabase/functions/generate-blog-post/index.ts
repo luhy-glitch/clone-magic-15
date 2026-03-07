@@ -23,42 +23,61 @@ async function validateSession(supabase: ReturnType<typeof createClient>, token:
 }
 
 async function generateImage(supabase: ReturnType<typeof createClient>, apiKey: string, prompt: string): Promise<string> {
-  const imageResponse = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`,
-    {
+  try {
+    const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`,
+      },
       body: JSON.stringify({
-        instances: [{ prompt: `Professional photorealistic blog header image: ${prompt}. Modern, clean, high quality, landscape orientation.` }],
-        parameters: { sampleCount: 1, aspectRatio: "16:9" },
+        model: "google/gemini-2.5-flash-image",
+        messages: [
+          {
+            role: "user",
+            content: `Generate a professional photorealistic blog header image: ${prompt}. Modern, clean, high quality, landscape orientation, 16:9 aspect ratio.`,
+          },
+        ],
       }),
+    });
+
+    if (!response.ok) {
+      const errBody = await response.text();
+      console.error("Image generation failed:", response.status, errBody);
+      return "";
     }
-  );
 
-  if (!imageResponse.ok) {
-    const errBody = await imageResponse.text();
-    console.error("Imagen failed:", imageResponse.status, errBody);
+    const data = await response.json();
+    const content = data.choices?.[0]?.message?.content;
+
+    // Check if response contains base64 image data
+    if (Array.isArray(content)) {
+      for (const part of content) {
+        if (part.type === "image_url" && part.image_url?.url) {
+          const base64Match = part.image_url.url.match(/^data:image\/\w+;base64,(.+)$/);
+          if (base64Match) {
+            const imageBytes = Uint8Array.from(atob(base64Match[1]), c => c.charCodeAt(0));
+            const fileName = `ai-${crypto.randomUUID()}.png`;
+            const { error: uploadError } = await supabase.storage
+              .from("blog-images")
+              .upload(fileName, imageBytes, { contentType: "image/png", upsert: false });
+            if (uploadError) {
+              console.error("Image upload error:", uploadError);
+              return "";
+            }
+            const { data: urlData } = supabase.storage.from("blog-images").getPublicUrl(fileName);
+            return urlData.publicUrl;
+          }
+          return part.image_url.url;
+        }
+      }
+    }
+
+    return "";
+  } catch (err) {
+    console.error("Image generation error:", err);
     return "";
   }
-
-  const imageData = await imageResponse.json();
-  const base64Image = imageData.predictions?.[0]?.bytesBase64Encoded;
-  if (!base64Image) return "";
-
-  const imageBytes = Uint8Array.from(atob(base64Image), c => c.charCodeAt(0));
-  const fileName = `ai-${crypto.randomUUID()}.png`;
-
-  const { error: uploadError } = await supabase.storage
-    .from("blog-images")
-    .upload(fileName, imageBytes, { contentType: "image/png", upsert: false });
-
-  if (uploadError) {
-    console.error("Image upload error:", uploadError);
-    return "";
-  }
-
-  const { data: urlData } = supabase.storage.from("blog-images").getPublicUrl(fileName);
-  return urlData.publicUrl;
 }
 
 Deno.serve(async (req) => {
@@ -78,13 +97,13 @@ Deno.serve(async (req) => {
       });
     }
 
-    const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
-    if (!GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is not configured");
+    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+    if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
 
     // Image-only generation
     if (action === "generate_image") {
       const prompt = image_prompt || topic || "Professional blog header";
-      const imageUrl = await generateImage(supabase, GEMINI_API_KEY, prompt);
+      const imageUrl = await generateImage(supabase, LOVABLE_API_KEY, prompt);
       if (!imageUrl) {
         return new Response(JSON.stringify({ error: "Kunde inte generera bild. Försök igen." }), {
           status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -114,33 +133,35 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
   "image_prompt": "Kort beskrivning på engelska av en passande fotorealistisk bild för artikeln"
 }`;
 
-    // Step 1: Generate blog post content via Google Gemini
-    const textResponse = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [
-            { role: "user", parts: [{ text: `${systemPrompt}\n\nSkriv ett blogginlägg om: ${topic}` }] },
-          ],
-        }),
-      }
-    );
+    // Generate blog post content via Lovable AI Gateway
+    const textResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${LOVABLE_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "google/gemini-3-flash-preview",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: `Skriv ett blogginlägg om: ${topic}` },
+        ],
+      }),
+    });
 
     if (!textResponse.ok) {
       const errText = await textResponse.text();
-      console.error("Gemini error:", textResponse.status, errText);
+      console.error("AI error:", textResponse.status, errText);
       if (textResponse.status === 429) {
         return new Response(JSON.stringify({ error: "AI-tjänsten är överbelastad. Försök igen om en stund." }), {
           status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
-      throw new Error("Gemini text generation failed");
+      throw new Error("AI text generation failed");
     }
 
     const textData = await textResponse.json();
-    const rawContent = textData.candidates?.[0]?.content?.parts?.[0]?.text || "";
+    const rawContent = textData.choices?.[0]?.message?.content || "";
 
     let parsed;
     try {
@@ -153,8 +174,8 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
       });
     }
 
-    // Step 2: Generate blog image
-    const imageUrl = await generateImage(supabase, GEMINI_API_KEY, parsed.image_prompt || topic);
+    // Generate blog image
+    const imageUrl = await generateImage(supabase, LOVABLE_API_KEY, parsed.image_prompt || topic);
 
     return new Response(JSON.stringify({
       success: true,
