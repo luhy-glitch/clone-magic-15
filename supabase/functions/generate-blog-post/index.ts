@@ -103,36 +103,29 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
       });
     }
 
-    // Step 2: Generate blog image
+    // Step 2: Generate blog image via Google Imagen
     let imageUrl = "";
-    if (LOVABLE_API_KEY) {
-      try {
-        const imageResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+    try {
+      const imageResponse = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${GEMINI_API_KEY}`,
+        {
           method: "POST",
-          headers: {
-            Authorization: `Bearer ${LOVABLE_API_KEY}`,
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-          model: "google/gemini-2.5-flash-image",
-          messages: [
-            {
-              role: "user",
-              content: `Create a professional, photorealistic blog header image: ${parsed.image_prompt}. Modern, clean, high quality, landscape orientation, suitable for a Swedish web agency blog.`
-            }
-          ],
-          modalities: ["image", "text"],
-        }),
-      });
+            instances: [
+              { prompt: `Professional photorealistic blog header image: ${parsed.image_prompt}. Modern, clean, high quality, landscape orientation, suitable for a Swedish web agency blog.` }
+            ],
+            parameters: { sampleCount: 1, aspectRatio: "16:9" },
+          }),
+        }
+      );
 
       if (imageResponse.ok) {
         const imageData = await imageResponse.json();
-        const base64Image = imageData.choices?.[0]?.message?.images?.[0]?.image_url?.url;
+        const base64Image = imageData.predictions?.[0]?.bytesBase64Encoded;
 
         if (base64Image) {
-          // Upload to storage
-          const base64Data = base64Image.replace(/^data:image\/\w+;base64,/, "");
-          const imageBytes = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
+          const imageBytes = Uint8Array.from(atob(base64Image), c => c.charCodeAt(0));
           const fileName = `ai-${crypto.randomUUID()}.png`;
 
           const { error: uploadError } = await supabase.storage
@@ -147,12 +140,11 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
           }
         }
       } else {
-        console.error("Image generation failed:", imageResponse.status);
+        const errBody = await imageResponse.text();
+        console.error("Imagen generation failed:", imageResponse.status, errBody);
       }
     } catch (imgErr) {
       console.error("Image generation error:", imgErr);
-      // Continue without image
-    }
     }
 
     return new Response(JSON.stringify({
