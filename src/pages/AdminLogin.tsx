@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,13 +10,28 @@ const AdminLogin = () => {
   const [key, setKey] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [checking, setChecking] = useState(true);
   const navigate = useNavigate();
 
-  // Check if already has a valid session token
-  if (sessionStorage.getItem("admin_session_token")) {
-    navigate("/admin/dashboard", { replace: true });
-    return null;
-  }
+  useEffect(() => {
+    const token = sessionStorage.getItem("admin_session_token");
+    if (!token) {
+      setChecking(false);
+      return;
+    }
+    supabase.functions.invoke("admin-auth", {
+      body: { action: "validate_session", session_token: token },
+    }).then(({ data, error: fnError }) => {
+      if (!fnError && !data?.error) {
+        navigate("/admin/dashboard", { replace: true });
+      } else {
+        sessionStorage.removeItem("admin_session_token");
+        setChecking(false);
+      }
+    });
+  }, []);
+
+  if (checking) return null;
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
