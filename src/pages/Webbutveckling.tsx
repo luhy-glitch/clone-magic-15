@@ -161,6 +161,41 @@ const Webbutveckling = () => {
           </div>
         </section>
 
+        {/* Related links */}
+        <section className="py-12 sm:py-16 bg-background border-t border-border">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <AnimatedSection>
+              <h2 className="text-xl sm:text-2xl font-bold font-serif mb-6 text-center">
+                Webbutveckling nära dig
+              </h2>
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                {[
+                  { href: "/webbutveckling-vasteras", label: "Webbutveckling i Västerås" },
+                  { href: "/hemsidor-sala", label: "Hemsidor i Sala" },
+                  { href: "/seo-koping", label: "SEO i Köping" },
+                ].map((l) => (
+                  <Link key={l.href} to={l.href} className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-card text-foreground font-medium hover:bg-primary/10 hover:border-primary/30 transition-colors">
+                    {l.label} <ArrowRight size={16} className="text-primary" />
+                  </Link>
+                ))}
+              </div>
+              <h3 className="text-lg font-bold font-serif mb-4 text-center text-muted-foreground">Se även</h3>
+              <div className="flex flex-wrap justify-center gap-3">
+                {[
+                  { href: "/tjanster/webbdesign", label: "Webbdesign" },
+                  { href: "/tjanster/seo-optimering", label: "SEO-optimering" },
+                  { href: "/tjanster/prestanda-optimering", label: "Prestandaoptimering" },
+                  { href: "/blogg", label: "Blogg" },
+                ].map((s) => (
+                  <Link key={s.href} to={s.href} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors">
+                    {s.label} <ArrowRight size={14} className="text-primary" />
+                  </Link>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
         <Contact />
       </main>
       <Footer />

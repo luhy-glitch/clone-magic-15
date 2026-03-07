@@ -3,7 +3,8 @@ import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import Contact from "@/components/Contact";
 import AnimatedSection, { FadeIn, ScaleIn } from "@/components/AnimatedSection";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const skills = ["React", "TypeScript", "Next.js", "Node.js", "WordPress", "SEO", "Tailwind CSS", "Figma"];
 
@@ -88,6 +89,47 @@ const OmMig = () => {
                 <p>
                   Oavsett om du behöver en helt ny webbplats, vill förbättra din befintliga sida eller söker hjälp med SEO-optimering – jag är här för att hjälpa. Kontakta mig för ett kostnadsfritt samtal så diskuterar vi hur vi kan ta ditt företag till nästa nivå digitalt.
                 </p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
+        {/* Services & Links */}
+        <section className="py-14 sm:py-20 bg-background">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <AnimatedSection>
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-center mb-8">
+                Vad jag kan hjälpa dig med
+              </h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+                {[
+                  { href: "/tjanster/webbutveckling", label: "Webbutveckling", desc: "Moderna hemsidor i React & Next.js" },
+                  { href: "/tjanster/seo-optimering", label: "SEO-optimering", desc: "Ranka högre på Google" },
+                  { href: "/tjanster/webbdesign", label: "Webbdesign", desc: "UI/UX som engagerar" },
+                  { href: "/tjanster/wordpress-losningar", label: "WordPress", desc: "Snabba WP-lösningar" },
+                  { href: "/tjanster/prestanda-optimering", label: "Prestanda", desc: "Optimera Core Web Vitals" },
+                  { href: "/tjanster/underhall-support", label: "Underhåll & Support", desc: "Löpande drift och säkerhet" },
+                ].map((s) => (
+                  <Link key={s.href} to={s.href} className="group bg-card border border-border rounded-xl p-5 hover:border-primary/30 hover:shadow-md transition-all">
+                    <h3 className="font-serif font-bold mb-1 group-hover:text-primary transition-colors">{s.label}</h3>
+                    <p className="text-sm text-muted-foreground">{s.desc}</p>
+                    <span className="inline-flex items-center gap-1 text-primary text-xs font-medium mt-3 group-hover:gap-2 transition-all">
+                      Läs mer om {s.label.toLowerCase()} <ArrowRight size={12} />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+              <h3 className="text-lg font-bold font-serif text-center mb-4 text-muted-foreground">Verksam lokalt i Västmanland</h3>
+              <div className="flex flex-wrap justify-center gap-3">
+                {[
+                  { href: "/webbutveckling-vasteras", label: "Webbutveckling Västerås" },
+                  { href: "/seo-koping", label: "SEO Köping" },
+                  { href: "/hemsidor-sala", label: "Hemsidor Sala" },
+                ].map((l) => (
+                  <Link key={l.href} to={l.href} className="px-5 py-2.5 rounded-full border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors">
+                    {l.label} →
+                  </Link>
+                ))}
               </div>
             </AnimatedSection>
           </div>
