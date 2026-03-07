@@ -206,6 +206,40 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
           </div>
         </section>
 
+        {/* Related local pages */}
+        <section className="py-12 sm:py-16 bg-background border-t border-border" aria-labelledby="local-related-heading">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <AnimatedSection>
+              <h2 id="local-related-heading" className="text-xl sm:text-2xl font-bold font-serif mb-6 text-center">
+                Vi hjälper företag i hela Västmanland
+              </h2>
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                {ALL_LOCAL_PAGES.filter(p => p.slug !== config.slug).map((page) => (
+                  <Link
+                    key={page.slug}
+                    to={`/${page.slug}`}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-card text-foreground font-medium hover:bg-primary/10 hover:border-primary/30 transition-colors"
+                  >
+                    {page.label} <ArrowRight size={16} className="text-primary" />
+                  </Link>
+                ))}
+              </div>
+              <h3 className="text-lg font-bold font-serif mb-4 text-center text-muted-foreground">Se även</h3>
+              <div className="flex flex-wrap justify-center gap-3">
+                {RELATED_SERVICES.map((s) => (
+                  <Link
+                    key={s.href}
+                    to={s.href}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                  >
+                    {s.label} <ArrowRight size={14} className="text-primary" />
+                  </Link>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
         {/* Contact */}
         <Contact />
       </main>
