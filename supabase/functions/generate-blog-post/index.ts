@@ -105,11 +105,14 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
 
     // Step 2: Generate blog image
     let imageUrl = "";
-    try {
-      const imageResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${LOVABLE_API_KEY}`,
+    if (LOVABLE_API_KEY) {
+      try {
+        const imageResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${LOVABLE_API_KEY}`,
+            "Content-Type": "application/json",
+          },
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
