@@ -153,6 +153,26 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleAiImage = async () => {
+    setGeneratingImage(true);
+    setError("");
+    try {
+      const prompt = editing?.title || aiTopic || "Blog header for Swedish web agency";
+      const { data, error: fnError } = await supabase.functions.invoke("generate-blog-post", {
+        body: { session_token: getSessionToken(), action: "generate_image", image_prompt: prompt },
+      });
+      if (fnError || data?.error) {
+        setError(data?.error || "Kunde inte generera bild.");
+      } else if (data?.image_url) {
+        setEditing((prev) => prev ? { ...prev, image_url: data.image_url, image_alt: prev.title || "" } : prev);
+      }
+    } catch {
+      setError("Bildgenerering misslyckades.");
+    } finally {
+      setGeneratingImage(false);
+    }
+  };
+
   const handleSave = async () => {
     if (!editing) return;
     setSaving(true);
