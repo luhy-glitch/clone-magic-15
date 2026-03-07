@@ -297,7 +297,23 @@ const AdminDashboard = () => {
 
             {/* Image upload */}
             <div className="space-y-2">
-              <Label>Bild</Label>
+              <div className="flex items-center justify-between">
+                <Label>Bild</Label>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={handleAiImage}
+                  disabled={generatingImage}
+                  className="gap-1.5 text-xs"
+                >
+                  <Sparkles size={12} />
+                  {generatingImage ? "Genererar..." : "Generera med AI"}
+                </Button>
+              </div>
+              {generatingImage && (
+                <p className="text-xs text-muted-foreground">Skapar en bild baserat på titeln... ~10 sek</p>
+              )}
               {editing.image_url ? (
                 <div className="relative rounded-lg overflow-hidden border border-border">
                   <img src={editing.image_url} alt={editing.image_alt || "Förhandsvisning"} className="w-full h-48 object-cover" />
