@@ -30,7 +30,7 @@ Deno.serve(async (req) => {
   const supabase = getSupabase();
 
   try {
-    const { session_token, topic } = await req.json();
+    const { session_token, topic, action, image_prompt } = await req.json();
 
     if (!session_token || !(await validateSession(supabase, session_token))) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
