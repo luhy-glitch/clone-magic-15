@@ -38,6 +38,7 @@ const AdminDashboard = () => {
   const [previewMode, setPreviewMode] = useState(false);
   const [aiTopic, setAiTopic] = useState("");
   const [generating, setGenerating] = useState(false);
+  const [generatingImage, setGeneratingImage] = useState(false);
 
   useEffect(() => {
     const token = getSessionToken();
