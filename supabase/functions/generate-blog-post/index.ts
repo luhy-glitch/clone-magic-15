@@ -22,6 +22,45 @@ async function validateSession(supabase: ReturnType<typeof createClient>, token:
   return new Date(data.expires_at) > new Date();
 }
 
+async function generateImage(supabase: ReturnType<typeof createClient>, apiKey: string, prompt: string): Promise<string> {
+  const imageResponse = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        instances: [{ prompt: `Professional photorealistic blog header image: ${prompt}. Modern, clean, high quality, landscape orientation.` }],
+        parameters: { sampleCount: 1, aspectRatio: "16:9" },
+      }),
+    }
+  );
+
+  if (!imageResponse.ok) {
+    const errBody = await imageResponse.text();
+    console.error("Imagen failed:", imageResponse.status, errBody);
+    return "";
+  }
+
+  const imageData = await imageResponse.json();
+  const base64Image = imageData.predictions?.[0]?.bytesBase64Encoded;
+  if (!base64Image) return "";
+
+  const imageBytes = Uint8Array.from(atob(base64Image), c => c.charCodeAt(0));
+  const fileName = `ai-${crypto.randomUUID()}.png`;
+
+  const { error: uploadError } = await supabase.storage
+    .from("blog-images")
+    .upload(fileName, imageBytes, { contentType: "image/png", upsert: false });
+
+  if (uploadError) {
+    console.error("Image upload error:", uploadError);
+    return "";
+  }
+
+  const { data: urlData } = supabase.storage.from("blog-images").getPublicUrl(fileName);
+  return urlData.publicUrl;
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -30,7 +69,7 @@ Deno.serve(async (req) => {
   const supabase = getSupabase();
 
   try {
-    const { session_token, topic } = await req.json();
+    const { session_token, topic, action, image_prompt } = await req.json();
 
     if (!session_token || !(await validateSession(supabase, session_token))) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
@@ -42,7 +81,19 @@ Deno.serve(async (req) => {
     const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
     if (!GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is not configured");
 
-
+    // Image-only generation
+    if (action === "generate_image") {
+      const prompt = image_prompt || topic || "Professional blog header";
+      const imageUrl = await generateImage(supabase, GEMINI_API_KEY, prompt);
+      if (!imageUrl) {
+        return new Response(JSON.stringify({ error: "Kunde inte generera bild. Försök igen." }), {
+          status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      return new Response(JSON.stringify({ success: true, image_url: imageUrl }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
     const systemPrompt = `Du är en SEO-expert och copywriter för en svensk webbyrå (LRH Konsult) i Västmanland. 
 Skriv blogginlägg på svenska som är informativa, engagerande och SEO-optimerade.
@@ -63,7 +114,7 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
   "image_prompt": "Kort beskrivning på engelska av en passande fotorealistisk bild för artikeln"
 }`;
 
-    // Step 1: Generate blog post content via Google Gemini API
+    // Step 1: Generate blog post content via Google Gemini
     const textResponse = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${GEMINI_API_KEY}`,
       {
@@ -90,8 +141,7 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
 
     const textData = await textResponse.json();
     const rawContent = textData.candidates?.[0]?.content?.parts?.[0]?.text || "";
-    
-    // Parse the JSON response (handle markdown code blocks)
+
     let parsed;
     try {
       const jsonStr = rawContent.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
@@ -103,49 +153,8 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
       });
     }
 
-    // Step 2: Generate blog image via Google Imagen
-    let imageUrl = "";
-    try {
-      const imageResponse = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${GEMINI_API_KEY}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            instances: [
-              { prompt: `Professional photorealistic blog header image: ${parsed.image_prompt}. Modern, clean, high quality, landscape orientation, suitable for a Swedish web agency blog.` }
-            ],
-            parameters: { sampleCount: 1, aspectRatio: "16:9" },
-          }),
-        }
-      );
-
-      if (imageResponse.ok) {
-        const imageData = await imageResponse.json();
-        const base64Image = imageData.predictions?.[0]?.bytesBase64Encoded;
-
-        if (base64Image) {
-          const imageBytes = Uint8Array.from(atob(base64Image), c => c.charCodeAt(0));
-          const fileName = `ai-${crypto.randomUUID()}.png`;
-
-          const { error: uploadError } = await supabase.storage
-            .from("blog-images")
-            .upload(fileName, imageBytes, { contentType: "image/png", upsert: false });
-
-          if (!uploadError) {
-            const { data: urlData } = supabase.storage.from("blog-images").getPublicUrl(fileName);
-            imageUrl = urlData.publicUrl;
-          } else {
-            console.error("Image upload error:", uploadError);
-          }
-        }
-      } else {
-        const errBody = await imageResponse.text();
-        console.error("Imagen generation failed:", imageResponse.status, errBody);
-      }
-    } catch (imgErr) {
-      console.error("Image generation error:", imgErr);
-    }
+    // Step 2: Generate blog image
+    const imageUrl = await generateImage(supabase, GEMINI_API_KEY, parsed.image_prompt || topic);
 
     return new Response(JSON.stringify({
       success: true,

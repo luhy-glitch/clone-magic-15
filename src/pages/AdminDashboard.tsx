@@ -38,6 +38,7 @@ const AdminDashboard = () => {
   const [previewMode, setPreviewMode] = useState(false);
   const [aiTopic, setAiTopic] = useState("");
   const [generating, setGenerating] = useState(false);
+  const [generatingImage, setGeneratingImage] = useState(false);
 
   useEffect(() => {
     const token = getSessionToken();
@@ -149,6 +150,26 @@ const AdminDashboard = () => {
       setError("Något gick fel med AI-genereringen.");
     } finally {
       setGenerating(false);
+    }
+  };
+
+  const handleAiImage = async () => {
+    setGeneratingImage(true);
+    setError("");
+    try {
+      const prompt = editing?.title || aiTopic || "Blog header for Swedish web agency";
+      const { data, error: fnError } = await supabase.functions.invoke("generate-blog-post", {
+        body: { session_token: getSessionToken(), action: "generate_image", image_prompt: prompt },
+      });
+      if (fnError || data?.error) {
+        setError(data?.error || "Kunde inte generera bild.");
+      } else if (data?.image_url) {
+        setEditing((prev) => prev ? { ...prev, image_url: data.image_url, image_alt: prev.title || "" } : prev);
+      }
+    } catch {
+      setError("Bildgenerering misslyckades.");
+    } finally {
+      setGeneratingImage(false);
     }
   };
 
@@ -276,7 +297,23 @@ const AdminDashboard = () => {
 
             {/* Image upload */}
             <div className="space-y-2">
-              <Label>Bild</Label>
+              <div className="flex items-center justify-between">
+                <Label>Bild</Label>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={handleAiImage}
+                  disabled={generatingImage}
+                  className="gap-1.5 text-xs"
+                >
+                  <Sparkles size={12} />
+                  {generatingImage ? "Genererar..." : "Generera med AI"}
+                </Button>
+              </div>
+              {generatingImage && (
+                <p className="text-xs text-muted-foreground">Skapar en bild baserat på titeln... ~10 sek</p>
+              )}
               {editing.image_url ? (
                 <div className="relative rounded-lg overflow-hidden border border-border">
                   <img src={editing.image_url} alt={editing.image_alt || "Förhandsvisning"} className="w-full h-48 object-cover" />
