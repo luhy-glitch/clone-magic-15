@@ -36,6 +36,8 @@ const AdminDashboard = () => {
   const [error, setError] = useState("");
   const [uploading, setUploading] = useState(false);
   const [previewMode, setPreviewMode] = useState(false);
+  const [aiTopic, setAiTopic] = useState("");
+  const [generating, setGenerating] = useState(false);
 
   useEffect(() => {
     const token = getSessionToken();
