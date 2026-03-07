@@ -39,22 +39,12 @@ Deno.serve(async (req) => {
       });
     }
 
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
+    const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
+    if (!GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is not configured");
 
-    // Step 1: Generate blog post content
-    const textResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${LOVABLE_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "google/gemini-2.5-flash",
-        messages: [
-          {
-            role: "system",
-            content: `Du är en SEO-expert och copywriter för en svensk webbyrå (LRH Konsult) i Västmanland. 
+    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+
+    const systemPrompt = `Du är en SEO-expert och copywriter för en svensk webbyrå (LRH Konsult) i Västmanland. 
 Skriv blogginlägg på svenska som är informativa, engagerande och SEO-optimerade.
 Följ dessa regler:
 - Använd H2-rubriker (##) för avsnitt, aldrig H1
@@ -71,29 +61,35 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
   "tag": "Kategori (t.ex. SEO, Webbutveckling, Prestanda, WordPress, Design)",
   "content": "Fullständigt markdown-innehåll med ## rubriker",
   "image_prompt": "Kort beskrivning på engelska av en passande fotorealistisk bild för artikeln"
-}`
-          },
-          {
-            role: "user",
-            content: `Skriv ett blogginlägg om: ${topic}`
-          }
-        ],
-      }),
-    });
+}`;
+
+    // Step 1: Generate blog post content via Google Gemini API
+    const textResponse = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${GEMINI_API_KEY}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [
+            { role: "user", parts: [{ text: `${systemPrompt}\n\nSkriv ett blogginlägg om: ${topic}` }] },
+          ],
+        }),
+      }
+    );
 
     if (!textResponse.ok) {
       const errText = await textResponse.text();
-      console.error("AI text error:", textResponse.status, errText);
+      console.error("Gemini error:", textResponse.status, errText);
       if (textResponse.status === 429) {
         return new Response(JSON.stringify({ error: "AI-tjänsten är överbelastad. Försök igen om en stund." }), {
           status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
-      throw new Error("AI text generation failed");
+      throw new Error("Gemini text generation failed");
     }
 
     const textData = await textResponse.json();
-    const rawContent = textData.choices?.[0]?.message?.content || "";
+    const rawContent = textData.candidates?.[0]?.content?.parts?.[0]?.text || "";
     
     // Parse the JSON response (handle markdown code blocks)
     let parsed;
@@ -109,11 +105,14 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
 
     // Step 2: Generate blog image
     let imageUrl = "";
-    try {
-      const imageResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${LOVABLE_API_KEY}`,
+    if (LOVABLE_API_KEY) {
+      try {
+        const imageResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${LOVABLE_API_KEY}`,
+            "Content-Type": "application/json",
+          },
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -155,6 +154,7 @@ Svara ALLTID i exakt detta JSON-format (inget annat):
     } catch (imgErr) {
       console.error("Image generation error:", imgErr);
       // Continue without image
+    }
     }
 
     return new Response(JSON.stringify({
