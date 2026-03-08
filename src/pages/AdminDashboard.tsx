@@ -436,6 +436,9 @@ const AdminDashboard = () => {
           <button onClick={() => setActiveTab("speed")} className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === "speed" ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
             <Gauge size={14} className="inline mr-1.5" />PageSpeed
           </button>
+          <button onClick={() => setActiveTab("seo")} className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === "seo" ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
+            <MapPin size={14} className="inline mr-1.5" />SEO Tracker
+          </button>
         </div>
 
         {error && <p className="text-destructive text-sm mb-4">{error}</p>}
