@@ -9,21 +9,22 @@ const WordpressPage = () => (
     heroSubheading="WordPress"
     heroHeading="WordPress-lösningar för ditt företag"
     heroDescription="WordPress är ett kraftfullt verktyg när det hanteras av experter. Vi bygger skräddarsydda WordPress-lösningar för företag i Västmanland som kräver en stabil, snabb och lätthanterlig plattform för sin digitala tillväxt."
-    whyTitle="Säker WordPress-utveckling för företag i Sala och Köping"
-    whyText="Vi ser till att din WordPress-sajt är befriad från tunga plugins och säkerhetsluckor. Våra installationer är optimerade för hastighet, vilket är avgörande för din lokala ranking."
+    whyTitle="Säker WordPress-utveckling i Västmanland"
+    whyText="Vi ser till att din WordPress-sajt är befriad från tunga, onödiga plugins och säkerhetsluckor. Våra installationer är optimerade för hastighet och säkerhet, vilket är avgörande för både din lokala ranking och dina kunders förtroende."
     icon={Settings}
     breadcrumbLabel="WordPress-lösningar"
     features={[
-      { title: "Anpassade teman", description: "Skräddarsydda teman som matchar ditt varumärke – inga generiska templates." },
-      { title: "WooCommerce", description: "Komplett e-handelslösning med säker betalning, lagerhantering och frakt." },
-      { title: "Säkerhet & Skydd", description: "Härdad WordPress-installation med brandvägg, malware-scanning och SSL." },
-      { title: "Hög prestanda", description: "Avancerad cachning, bildoptimering och CDN för blixtsnabba laddtider." },
+      { title: "Anpassade teman", description: "Skräddarsydda teman som matchar ditt varumärke – inga generiska templates. Unik design för unika företag." },
+      { title: "WooCommerce", description: "Komplett e-handelslösning med säker betalning, lagerhantering, fraktalternativ och automatiserade orderflöden." },
+      { title: "Säkerhet & Skydd", description: "Härdad WordPress-installation med brandvägg, malware-scanning, tvåfaktorsautentisering och SSL-certifikat." },
+      { title: "Hög prestanda", description: "Avancerad cachning, bildoptimering, CDN-konfiguration och databasoptimering för blixtsnabba laddtider." },
     ]}
     faqTitle="Vanliga frågor om WordPress"
     faq={[
-      { question: "Varför är min WordPress-sida långsam?", answer: "Ofta beror det på för många plugins eller dåliga teman. Vi rensar och optimerar din sajt för topprestanda." },
-      { question: "Hur ofta behöver WordPress uppdateras?", answer: "Vi rekommenderar månatliga uppdateringar av kärna och tillägg för att bibehålla maximal säkerhet." },
-      { question: "Kan jag byta från WordPress till Next.js senare?", answer: "Ja, vi kan hjälpa dig med en smidig migration när ditt företag växer och behöver mer kraft." },
+      { question: "Varför är min WordPress-sida långsam?", answer: "Ofta beror det på för många plugins, dåligt kodade teman eller bristfällig hosting. Vi analyserar, rensar och optimerar din sajt för topprestanda." },
+      { question: "Hur ofta behöver WordPress uppdateras?", answer: "Vi rekommenderar uppdatering av kärna, teman och plugins varje månad för att bibehålla maximal säkerhet och kompatibilitet." },
+      { question: "Kan jag byta från WordPress till Next.js senare?", answer: "Ja, vi kan hjälpa dig med en smidig migration inklusive SEO-omdirigeringar när ditt företag växer och behöver mer kraft och flexibilitet." },
+      { question: "Behöver jag ett underhållsavtal?", answer: "Vi rekommenderar det starkt. WordPress kräver regelbundna uppdateringar och säkerhetsövervakning för att förbli säkert och snabbt." },
     ]}
     testimonial={{
       quote: "Äntligen en WordPress-sajt som känns snabb och säker. Lucas fixade allt vi behövde och mer därtill.",
@@ -32,17 +33,19 @@ const WordpressPage = () => (
     }}
     contentSections={[
       {
-        title: "Kundcase: Säkerhetsöversyn och prestandalyft för WordPress",
+        title: "Kundcase: Säkerhetsöversyn och prestandalyft",
         paragraphs: [
           "Ett medelstort företag i Köping hade en WordPress-sajt som drabbats av upprepade säkerhetsincidenter och hade laddningstider på över sex sekunder. Deras befintliga webbyrå hade staplat plugin på plugin utan att tänka på helheten, vilket resulterade i en instabil och sårbar plattform.",
-          "Vi genomförde en total genomgång av installationen: tog bort 15 onödiga plugins, bytte till ett lättviktstema, implementerade server-side cachning och härdade hela WordPress-kärnan. Laddningstiden sjönk till under 1,5 sekunder och sajten har varit fri från säkerhetsincidenter i över 12 månader. Dessutom förbättrades den organiska trafiken med 35 % tack vare snabbare sidladdning.",
+          "Vi genomförde en total genomgång av installationen: tog bort 15 onödiga plugins, bytte till ett lättviktstema byggt specifikt för deras verksamhet, implementerade server-side cachning och härdade hela WordPress-kärnan med flerlagersäkerhet.",
+          "Laddningstiden sjönk till under 1,5 sekunder och sajten har varit fri från säkerhetsincidenter i över 12 månader. Dessutom förbättrades den organiska trafiken med 35 % tack vare snabbare sidladdning och bättre Core Web Vitals-poäng.",
         ],
       },
       {
-        title: "Vanliga frågor om WordPress",
+        title: "WordPress i modern kontext",
         paragraphs: [
-          "Är WordPress fortfarande relevant jämfört med moderna ramverk? Ja, WordPress driver fortfarande över 40 % av alla webbplatser globalt och är ett utmärkt val för innehållstunga sajter, bloggar och e-handel. Nyckeln är att ha en expert som konfigurerar det korrekt – utan onödiga plugins och med fokus på prestanda.",
-          "Hur skyddar ni min WordPress-sajt mot hackare? Vi implementerar en flerlagersäkerhet som inkluderar brandvägg på servernivå, tvåfaktorsautentisering, begränsade inloggningsförsök, automatiska säkerhetsuppdateringar och dagliga backuper. Vi övervakar även sajten löpande för att upptäcka och åtgärda hot i realtid.",
+          "Är WordPress fortfarande relevant jämfört med moderna ramverk? Absolut. WordPress driver fortfarande över 40 % av alla webbplatser globalt och är ett utmärkt val för innehållstunga sajter, bloggar och e-handel. Nyckeln är att ha en expert som konfigurerar det korrekt – utan onödiga plugins och med fokus på prestanda och säkerhet.",
+          "Vi ser ofta WordPress-sajter som har 30–50 aktiva plugins, varav knappt hälften faktiskt behövs. Varje onödigt plugin är en potentiell säkerhetslucka och en extra belastning på servern. Vår filosofi är minimalism: vi använder bara det som verkligen behövs och kodar resten själva för optimal prestanda.",
+          "Hur skyddar vi din WordPress-sajt mot hackare? Vi implementerar en flerlagersäkerhet som inkluderar brandvägg på servernivå, tvåfaktorsautentisering, begränsade inloggningsförsök, automatiska säkerhetsuppdateringar och dagliga backuper. Vi övervakar sajten löpande för att upptäcka och åtgärda hot innan de hinner orsaka skada.",
         ],
       },
     ]}
