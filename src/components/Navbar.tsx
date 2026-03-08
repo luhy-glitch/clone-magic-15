@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logoSrc from "@/assets/lrh-konsult-logo.png";
 import { Link, useLocation } from "react-router-dom";
@@ -27,7 +27,14 @@ const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileRegionsOpen, setMobileRegionsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleNavClick = (to: string) => {
     setMobileOpen(false);
@@ -41,15 +48,22 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border" role="banner">
-      <nav aria-label="Huvudnavigering" className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header
+      className={`sticky top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-all duration-300 ${scrolled ? "shadow-md shadow-background/50" : ""}`}
+      role="banner"
+    >
+      <nav
+        aria-label="Huvudnavigering"
+        className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-14" : "h-16"}`}
+      >
         <Link to="/" className="flex items-center gap-2 shrink-0">
           <img
             src={logoSrc}
             alt="LRH Konsult – Webbutveckling och SEO i Västerås"
             width={200}
-            height={48}
-            className="h-10 sm:h-12 w-auto"
+            height={45}
+            fetchPriority="high"
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-9 sm:h-9" : "h-11 sm:h-[45px]"}`}
           />
         </Link>
 
