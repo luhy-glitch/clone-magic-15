@@ -1,9 +1,8 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import { Star, ThumbsUp, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
-const VideoFacade = lazy(() => import("./VideoFacade"));
 
 export default function Hero() {
 
