@@ -84,7 +84,7 @@ const DataRoutes = () => (
         {/* Niche pages */}
         <Route path="/hemsidor-bygg-hantverkare" element={<HemsidorByggHantverkare />} />
         <Route path="/digital-marknadsforing-butiker" element={<DigitalMarknadsforing />} />
-        <Route path="/case-studies/pagespeed-revolution" element={<CaseStudyPageSpeed />} />
+        <Route path="/case-studies/pagespeed-revolution" element={<RedirectRoute to="/case" />} />
 
         {/* New pages */}
         <Route path="/case" element={<Case />} />
