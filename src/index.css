@@ -73,8 +73,32 @@
     font-family: 'Playfair Display', serif;
   }
 
+  h2 {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    line-height: 1.7;
+    max-width: 70ch;
+  }
+
   .font-serif-custom {
     font-family: 'Playfair Display', serif;
+  }
+
+  /* Touch target minimum */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Exclude inline text links and small UI elements from touch target rule */
+  p a, li a, span a,
+  nav a,
+  .text-sm a {
+    min-height: auto;
+    min-width: auto;
   }
 }
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import logoSrc from "@/assets/lrh-konsult-logo.png";
 import { Link, useLocation } from "react-router-dom";
 
 const mainServices = [
@@ -42,11 +43,14 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border" role="banner">
       <nav aria-label="Huvudnavigering" className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-serif font-bold text-sm">LR</span>
-          </div>
-          <span className="font-serif font-bold text-lg text-foreground">LRH Konsult</span>
+        <Link to="/" className="flex items-center gap-2 shrink-0">
+          <img
+            src={logoSrc}
+            alt="LRH Konsult – Webbutveckling och SEO i Västerås"
+            width={160}
+            height={40}
+            className="h-9 sm:h-10 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}
