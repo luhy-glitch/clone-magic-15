@@ -1,0 +1,2 @@
+UPDATE blog_posts SET image_url = 'https://egantzcnrlrkjccstmpw.supabase.co/storage/v1/object/public/blog-images/resan-till-100-pagespeed.jpg', image_alt = 'Laptop som visar 100/100 PageSpeed Insights resultat med kod i bakgrunden' WHERE slug = 'resan-till-100-pagespeed';
+UPDATE blog_posts SET image_url = 'https://egantzcnrlrkjccstmpw.supabase.co/storage/v1/object/public/blog-images/komplett-guide-digital-narvaro-malardalen.jpg', image_alt = 'Flygvy över Mälardalen med digitala nätverksanslutningar mellan städer' WHERE slug = 'komplett-guide-digital-narvaro-malardalen';
