@@ -119,7 +119,7 @@ export default function Hero() {
         </Link>
 
         {/* CTA Button */}
-        <div className="relative z-20 -translate-y-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
           <div className="absolute -inset-3 bg-gradient-to-r from-primary/30 via-primary/20 to-primary/30 rounded-full blur-xl animate-pulse" />
           <Link
             to="/gratis-seo-analys"
