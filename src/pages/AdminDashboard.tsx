@@ -260,6 +260,45 @@ const AdminDashboard = () => {
     } catch { setError("Sitemap-generering misslyckades."); }
   };
 
+  const handleBulkGenerateImages = async () => {
+    const postsWithoutImages = posts.filter(p => !p.image_url || p.image_url.trim() === "");
+    if (postsWithoutImages.length === 0) { setError("Alla inlägg har redan bilder."); return; }
+    if (!confirm(`Generera AI-bilder för ${postsWithoutImages.length} inlägg? Detta kan ta några minuter.`)) return;
+
+    setBulkImageProgress({ running: true, current: 0, total: postsWithoutImages.length, currentTitle: "", errors: [] });
+    const errors: string[] = [];
+
+    for (let i = 0; i < postsWithoutImages.length; i++) {
+      const post = postsWithoutImages[i];
+      setBulkImageProgress(prev => ({ ...prev, current: i + 1, currentTitle: post.title }));
+
+      try {
+        const { data, error: fnError } = await supabase.functions.invoke("generate-blog-post", {
+          body: {
+            session_token: getSessionToken(),
+            action: "generate_image_for_post",
+            slug: post.slug,
+            post_title: post.title,
+            image_prompt: `Professional photorealistic blog header image for article about: ${post.title}. Swedish web development and SEO theme.`,
+          },
+        });
+        if (fnError || data?.error) {
+          errors.push(`${post.title}: ${data?.error || "Misslyckades"}`);
+        }
+      } catch {
+        errors.push(`${post.title}: Nätverksfel`);
+      }
+
+      // Small delay to avoid rate limiting
+      if (i < postsWithoutImages.length - 1) {
+        await new Promise(r => setTimeout(r, 3000));
+      }
+    }
+
+    setBulkImageProgress(prev => ({ ...prev, running: false, errors }));
+    await fetchPosts();
+  };
+
   // Blog post editor view
   if (editing !== null) {
     return (
