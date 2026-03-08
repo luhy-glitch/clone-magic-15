@@ -24,11 +24,16 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Brand + NAP */}
           <div className="sm:col-span-2 lg:col-span-1" itemScope itemType="https://schema.org/ProfessionalService">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-serif font-bold text-sm">LR</span>
-              </div>
-              <span className="font-serif font-bold text-lg text-foreground" itemProp="name">LRH Konsult</span>
+            <div className="mb-4">
+              <img
+                src={logoSrc}
+                alt="LRH Konsult – Webbutveckling och SEO i Västerås"
+                width={160}
+                height={40}
+                className="h-10 w-auto brightness-0 invert"
+                loading="lazy"
+              />
+              <meta itemProp="name" content="LRH Konsult" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4" itemProp="description">
               Din lokala partner för Webbutveckling &amp; SEO i Mälardalen &amp; Västmanland.
