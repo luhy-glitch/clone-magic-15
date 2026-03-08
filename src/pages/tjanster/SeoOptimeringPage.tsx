@@ -4,21 +4,21 @@ import { Search } from "lucide-react";
 const SeoOptimeringPage = () => (
   <ServicePageTemplate
     title="SEO-optimering"
-    metaTitle="Nå plats #1 på Google med SEO i Västerås & Västmanland | LRH Konsult"
-    metaDescription="Nå plats #1 på Google med SEO i Västerås & Västmanland. Lokal SEO-expert som hjälper dig i Köping och Sala att synas. Starta din tillväxtresa nu!"
+    metaTitle="Lokal SEO Västerås, Köping & Sala | LRH Konsult"
+    metaDescription="Lokal SEO-expert i Västmanland. Vi optimerar din Google-närvaro i Västerås, Köping och Sala med teknisk SEO, innehållsstrategi och mätbara resultat."
     heroSubheading="SEO-optimering"
     heroHeading="SEO-optimering i Västerås, Köping & Sala"
-    heroDescription="Vill du synas högst upp när kunder söker efter dina tjänster? Vi är specialister på SEO-optimering i Västmanland. Genom att kombinera teknisk expertis med lokalt anpassat innehåll ser vi till att ditt företag dominerar sökresultaten i Västerås, Köping och Sala."
-    whyTitle="Lokal SEO-strategi för Västerås och Mälardalen"
-    whyText="Vi optimerar din närvaro på Google Maps och ser till att du rankar på geografiska sökord. Lokal SEO är den mest kostnadseffektiva metoden för småföretag att växa digitalt under 2026."
+    heroDescription="Vill du synas högst upp när kunder söker efter dina tjänster? Vi är specialister på sökmotoroptimering i Västmanland. Genom att kombinera teknisk expertis med lokalt anpassat innehåll ser vi till att ditt företag dominerar sökresultaten i Västerås, Köping och Sala."
+    whyTitle="Lokal SEO-strategi för Västmanland"
+    whyText="Vi optimerar din närvaro på Google Maps och i organiska sökresultat genom att fokusera på geografiska sökord, lokal auktoritet och teknisk excellens. Lokal SEO är den mest kostnadseffektiva metoden för småföretag att växa digitalt – varje investerad krona ger bestående synlighet."
     icon={Search}
     breadcrumbLabel="SEO-optimering"
     features={[
-      { title: "Teknisk SEO", description: "Optimering av sidstruktur, laddtider, schema markup och crawlbarhet för sökmotorer." },
-      { title: "Lokal SEO", description: "Google Business Profile-optimering och lokala sökord för Västerås, Köping och Sala." },
-      { title: "Innehållsstrategi", description: "Keyword research och innehållsplanering som attraherar rätt besökare och bygger auktoritet." },
-      { title: "Konkurrentanalys", description: "Djupgående analys av dina konkurrenters SEO-strategi för att hitta möjligheter och luckor." },
-      { title: "Löpande rapportering", description: "Månatliga rapporter med tydliga KPI:er så du alltid vet hur din investering presterar." },
+      { title: "Teknisk SEO", description: "Optimering av sidstruktur, laddtider, schema markup, crawlbarhet och indexering för sökmotorer." },
+      { title: "Lokal SEO", description: "Google Business Profile-optimering, lokala citeringar och sökord anpassade för Västerås, Köping och Sala." },
+      { title: "Innehållsstrategi", description: "Keyword research och innehållsplanering som attraherar rätt besökare och systematiskt bygger din domänauktoritet." },
+      { title: "Konkurrentanalys", description: "Djupgående analys av dina konkurrenters SEO-strategi för att hitta outnyttjade möjligheter och luckor i marknaden." },
+      { title: "Löpande rapportering", description: "Månatliga rapporter med tydliga KPI:er – rankingpositioner, organisk trafik och konverteringar – så du alltid vet hur din investering presterar." },
     ]}
     process={[
       { step: "1", title: "SEO-audit & analys", description: "Vi gör en djupgående analys av din nuvarande webbplats, identifierar tekniska problem och kartlägger dina konkurrenter i Västmanland." },
@@ -35,23 +35,33 @@ const SeoOptimeringPage = () => (
       {
         title: "Kundcase: Från osynlig till topp 3 på sex månader",
         paragraphs: [
-          "En nystartad tjänsteverksamhet i Västerås hade svårt att synas på sina viktigaste sökord. Genom en kombination av teknisk SEO-städning och en aggressiv strategi för lokala landningssidor lyckades vi placera dem bland de tre högsta resultaten på över tio relevanta sökfraser. Detta ledde till en organisk trafikökning på 250 %.",
+          "En nystartad tjänsteverksamhet i Västerås hade svårt att synas på sina viktigaste sökord. Trots en relativt ny hemsida fanns den inte ens på Googles första fem sidor för relevanta lokala söktermer. Problemet var en kombination av tekniska brister, saknad metadata och avsaknad av lokal optimering.",
+          "Vi inledde med en komplett teknisk SEO-audit som identifierade över 40 åtgärdspunkter. Prioriteringslistan inkluderade hastighetsoptimering, korrekt kanonisk URL-struktur, implementering av JSON-LD schema-markup och en fullständig omarbetning av metadata för varje sida.",
+          "Parallellt skapade vi en aggressiv strategi för lokala landningssidor – unika sidor optimerade för specifika tjänster i specifika orter i Västmanland. Inom sex månader rankade företaget bland de tre högsta resultaten på över tio relevanta sökfraser, med en organisk trafikökning på 250 %.",
+        ],
+      },
+      {
+        title: "Så fungerar sökmotoroptimering i praktiken",
+        paragraphs: [
+          "SEO handlar i grunden om att hjälpa Google förstå vad din webbplats handlar om och varför den förtjänar att visas högt upp i sökresultaten. Det är en kombination av teknisk optimering, relevant innehåll och extern auktoritet som tillsammans bygger din ranking.",
+          "Teknisk SEO säkerställer att sökmotorerna kan läsa, indexera och förstå din webbplats. Det handlar om snabba laddtider, korrekt HTML-struktur, mobilanpassning och strukturerad data. Utan en stark teknisk grund spelar det ingen roll hur bra ditt innehåll är – Google kommer helt enkelt inte hitta det.",
+          "Innehålls-SEO handlar om att skapa sidor som svarar på de frågor dina potentiella kunder ställer. Genom grundlig sökordsanalys identifierar vi exakt vilka termer som är mest lönsamma för ditt företag och skapar innehåll som rankar för dessa termer – naturligt, utan keyword-stuffing.",
         ],
       },
       {
         title: "Vanliga frågor om SEO",
         paragraphs: [
-          "Hur lång tid tar det innan man ser resultat av SEO? SEO är en långsiktig investering. Normalt börjar man se tydliga förbättringar i rankingen efter 3 till 6 månader, men de tekniska optimeringarna vi gör ger ofta en omedelbar effekt på hur sökmotorerna läser din sida.",
-          "Vad är skillnaden mellan vanlig SEO och lokal SEO? Lokal SEO handlar om att optimera din närvaro för specifika geografiska områden, som Västerås eller Köping. Det handlar om att synas i kartresultat och vid sökningar där användaren letar efter tjänster \"nära mig\" eller i en specifik stad.",
+          "Hur lång tid tar det innan man ser resultat av SEO? SEO är en långsiktig investering. Normalt börjar man se tydliga förbättringar i rankingen efter 3 till 6 månader, men de tekniska optimeringarna vi gör ger ofta en omedelbar effekt på hur sökmotorerna läser din sida. Mindre konkurrenskraftiga sökord kan ge resultat redan efter några veckor.",
+          "Vad är skillnaden mellan vanlig SEO och lokal SEO? Lokal SEO handlar om att optimera din närvaro för specifika geografiska områden, som Västerås eller Köping. Det handlar om att synas i kartresultat, i den lokala 3-packen och vid sökningar där användaren letar efter tjänster \"nära mig\" eller i en specifik stad. Det inkluderar även optimering av din Google Business-profil och hantering av kundrecensioner.",
         ],
       },
     ]}
     faqTitle="Vanliga frågor om SEO i Västmanland"
     faq={[
-      { question: "Hur rankar jag på första sidan på Google?", answer: "Det krävs en kombination av teknisk prestanda, relevant lokalt innehåll och starka backlinks." },
-      { question: "Vad är lokal SEO?", answer: "Det är optimering för att synas i specifika städer som Västerås, Köping och Sala vid lokala sökningar." },
-      { question: "Kan ni garantera en förstaplats?", answer: "Ingen seriös aktör ger garantier, men våra metoder följer Googles \"Best Practices\" för att ge dig absolut bäst förutsättningar." },
-      { question: "Hur mäter ni resultaten av SEO?", answer: "Vi följer upp med månatliga rapporter som visar positioner, organisk trafik, konverteringar och andra relevanta KPI:er." },
+      { question: "Hur rankar jag på första sidan på Google?", answer: "Det krävs en kombination av teknisk prestanda, relevant lokalt innehåll, korrekt strukturerad data och en webbplats som uppfyller Googles Core Web Vitals-krav." },
+      { question: "Vad är lokal SEO?", answer: "Det är optimering för att synas i specifika städer som Västerås, Köping och Sala vid lokala sökningar. Det inkluderar Google Business-optimering, lokala citeringar och geografiskt anpassat innehåll." },
+      { question: "Kan ni garantera en förstaplats?", answer: "Ingen seriös aktör ger garantier, men våra metoder följer Googles Best Practices för att ge dig absolut bäst förutsättningar att nå toppresultaten." },
+      { question: "Hur mäter ni resultaten av SEO?", answer: "Vi följer upp med månatliga rapporter som visar rankingpositioner, organisk trafik, konverteringar och andra relevanta KPI:er med full transparens." },
     ]}
     testimonial={{
       quote: "Inom 4 månader gick vi från sida 3 till topp 3 på Google för våra viktigaste sökord. Fantastiskt arbete!",
