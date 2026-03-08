@@ -19,25 +19,27 @@ import NotFound from "./NotFound";
 
 const SERVICE_LINKS: Record<string, { label: string; href: string }[]> = {
   SEO: [
-    { label: "SEO-optimering", href: "/seo-optimering" },
-    { label: "Kontakta oss", href: "/kontakt" },
+    { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+    { label: "Gratis SEO-analys", href: "/gratis-seo-analys" },
   ],
   "SEO & AI": [
-    { label: "SEO-optimering", href: "/seo-optimering" },
-    { label: "Webbutveckling", href: "/webbutveckling" },
+    { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+    { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+    { label: "Gratis SEO-analys", href: "/gratis-seo-analys" },
   ],
   Webbutveckling: [
-    { label: "Webbutveckling", href: "/webbutveckling" },
-    { label: "SEO-optimering", href: "/seo-optimering" },
+    { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+    { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+    { label: "Gratis SEO-analys", href: "/gratis-seo-analys" },
   ],
   "Digital Strategi": [
-    { label: "Webbutveckling", href: "/webbutveckling" },
-    { label: "SEO-optimering", href: "/seo-optimering" },
-    { label: "Om mig", href: "/om-mig" },
+    { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+    { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+    { label: "Gratis SEO-analys", href: "/gratis-seo-analys" },
   ],
   Prestanda: [
-    { label: "Webbutveckling", href: "/webbutveckling" },
-    { label: "Kontakta oss", href: "/kontakt" },
+    { label: "Prestandaoptimering", href: "/tjanster/prestanda-optimering" },
+    { label: "Gratis SEO-analys", href: "/gratis-seo-analys" },
   ],
 };
 
