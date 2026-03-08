@@ -30,6 +30,22 @@ const Case = () => {
             </p>
 
             <h2 className="text-2xl sm:text-3xl font-bold font-serif text-primary mt-12 mb-4">
+              Från 40 till 100 i PageSpeed – En teknisk revolution
+            </h2>
+            <p className="text-muted-foreground leading-[1.6] mb-4">
+              Ett etablerat tjänsteföretag i Västmanland kom till oss med ett problem som är vanligare än man tror: deras hemsida såg bra ut men presterade katastrofalt dåligt under huven. Google PageSpeed Insights visade 40 poäng i prestanda på mobil, vilket innebar att sidan tog över fem sekunder att ladda fullständigt. Konsekvensen var dramatisk: 60% av mobilbesökarna lämnade sidan innan den ens hade laddats klart.
+            </p>
+            <p className="text-muted-foreground leading-[1.6] mb-4">
+              Vi beslutade att bygga om hemsidan från grunden med React och Next.js. Den nya arkitekturen använde server-side rendering för kritiska sidor, automatisk koddelning för att minimera JavaScript-payloaden, och statisk generering för sidor med sällan ändrat innehåll. Alla bilder konverterades till AVIF-format med explicita dimensioner för att eliminera layout shifts. Vi implementerade Critical CSS Inlining och optimerade JavaScript-exekveringen genom att eliminera render-blockerande skript.
+            </p>
+            <p className="text-muted-foreground leading-[1.6] mb-4">
+              Den totala mängden JavaScript som skickades till klienten minskade från 2 MB till 89 KB. LCP förbättrades från 5,2 sekunder till 0,8 sekunder. CLS gick från 0,35 till 0. PageSpeed-poängen gick från 40 till 100 – på alla fyra kategorier.
+            </p>
+            <p className="text-muted-foreground leading-[1.6] mb-8">
+              Inom tre månader ökade den organiska trafiken med 156%, genomsnittlig tid på sidan ökade med 340%, avhoppsfrekvensen minskade från 60% till 18%, och antalet leads via kontaktformuläret tredubblades. Kunden gick från sida 3 till topp 3 på sina viktigaste sökord i Västmanland.
+            </p>
+
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-primary mt-12 mb-4">
               Hantverksföretag i Västerås: Från osynlig till topplacering
             </h2>
             <p className="text-muted-foreground leading-[1.6] mb-4">
