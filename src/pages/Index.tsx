@@ -78,6 +78,35 @@ const Index = () => {
         <Hero />
         <Suspense fallback={null}>
           <Services />
+
+          {/* Vi finns i Västmanland – lokal SEO-sektion */}
+          <section className="py-16 sm:py-20 bg-background">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-foreground mb-6">Vi finns i Västmanland</h2>
+              <p className="text-muted-foreground leading-relaxed mb-10">
+                LRH Konsult är din lokala partner för webbutveckling och sökmotoroptimering i hela Västmanlands län. Vi arbetar nära företag i regionen och förstår den lokala marknaden – från centrala Västerås till mindre orter som Köping, Sala, Enköping och Eskilstuna. Oavsett var du befinner dig hjälper vi dig att synas online.
+              </p>
+
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4">Webbutveckling i Västerås</h2>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Västerås är Västmanlands största stad och en viktig marknad för lokala företag. Vi bygger moderna, snabbladdade hemsidor med React och Next.js som hjälper företag i Västerås att sticka ut i konkurrensen. Från restauranger och hantverkare till techbolag – vi skräddarsyr lösningar som konverterar besökare till kunder.{" "}
+                <a href="/webbutveckling-vasteras" className="text-primary hover:underline">Läs mer om webbutveckling i Västerås</a>.
+              </p>
+
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4">SEO-optimering i Köping</h2>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Köping har en aktiv företagsscen där lokal synlighet är avgörande. Genom teknisk SEO, Google Business-optimering och innehållsstrategier hjälper vi företag i Köping att ranka högre i sökresultaten och nå fler lokala kunder.{" "}
+                <a href="/seo-koping" className="text-primary hover:underline">Läs mer om SEO i Köping</a>.
+              </p>
+
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4">Webbdesign i Sala</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                I Sala kombinerar vi lokal kännedom med modern webbdesign för att skapa hemsidor som verkligen representerar ditt företag. Vi fokuserar på snabb laddningstid, responsiv design och SEO-vänlig struktur som ger resultat.{" "}
+                <a href="/hemsidor-sala" className="text-primary hover:underline">Läs mer om webbdesign i Sala</a>.
+              </p>
+            </div>
+          </section>
+
           <Pricing />
           <Testimonials />
           <FAQ />
