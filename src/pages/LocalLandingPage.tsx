@@ -47,6 +47,14 @@ const ALL_LOCAL_PAGES = [
   { slug: "webbutveckling-eskilstuna", label: "Webbutveckling i Eskilstuna", city: "Eskilstuna" },
   { slug: "webbutveckling-arboga", label: "Webbutveckling i Arboga", city: "Arboga" },
   { slug: "webbutveckling-fagersta", label: "Webbutveckling i Fagersta", city: "Fagersta" },
+  { slug: "webbutveckling-hallstahammar", label: "Webbutveckling i Hallstahammar", city: "Hallstahammar" },
+  { slug: "webbutveckling-kungsor", label: "Webbutveckling i Kungsör", city: "Kungsör" },
+  { slug: "webbutveckling-surahammar", label: "Webbutveckling i Surahammar", city: "Surahammar" },
+  { slug: "webbutveckling-heby", label: "Webbutveckling i Heby", city: "Heby" },
+  { slug: "webbutveckling-norberg", label: "Webbutveckling i Norberg", city: "Norberg" },
+  { slug: "webbutveckling-skinnskatteberg", label: "Webbutveckling i Skinnskatteberg", city: "Skinnskatteberg" },
+  { slug: "webbutveckling-uppsala", label: "Webbutveckling i Uppsala", city: "Uppsala" },
+  { slug: "webbutveckling-orebro", label: "Webbutveckling i Örebro", city: "Örebro" },
 ];
 
 const RELATED_SERVICES = [
