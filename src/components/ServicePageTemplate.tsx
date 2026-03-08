@@ -422,6 +422,11 @@ const ServicePageTemplate = ({
                   { label: "Webbutveckling Eskilstuna", to: "/webbutveckling-eskilstuna" },
                   { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
                   { label: "Webbutveckling Fagersta", to: "/webbutveckling-fagersta" },
+                  { label: "Webbutveckling Hallstahammar", to: "/webbutveckling-hallstahammar" },
+                  { label: "Webbutveckling Kungsör", to: "/webbutveckling-kungsor" },
+                  { label: "Webbutveckling Surahammar", to: "/webbutveckling-surahammar" },
+                  { label: "Webbutveckling Uppsala", to: "/webbutveckling-uppsala" },
+                  { label: "Webbutveckling Örebro", to: "/webbutveckling-orebro" },
                 ].filter(l => l.to !== pathname).map(l => (
                   <Link
                     key={l.to}

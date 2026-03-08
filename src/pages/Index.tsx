@@ -152,7 +152,7 @@ const Index = () => {
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbdesign i Fagersta</h2>
               <p className="text-muted-foreground leading-[1.6]">
                 Fagersta och norra Västmanland förtjänar moderna, snabba hemsidor. Vi hjälper företag i Fagersta att byta från föråldrade system till blixtsnabba lösningar med 100/100 PageSpeed.{" "}
-                <a href="/webbutveckling-fagersta" className="text-primary hover:underline font-medium">Läs mer om webbdesign i Fagersta</a>.
+                <Link to="/webbutveckling-fagersta" className="text-primary hover:underline font-medium">Läs mer om webbdesign i Fagersta</Link>.
               </p>
             </div>
           </section>
