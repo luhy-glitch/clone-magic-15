@@ -29,6 +29,13 @@ const PrestandaOptimeringPage = lazy(() => import("./pages/tjanster/PrestandaOpt
 const WebbutvecklingVasteras = lazy(() => import("./pages/WebbutvecklingVasteras"));
 const SeoKoping = lazy(() => import("./pages/SeoKoping"));
 const HemsidorSala = lazy(() => import("./pages/HemsidorSala"));
+const WebbutvecklingEnkoping = lazy(() => import("./pages/WebbutvecklingEnkoping"));
+const WebbutvecklingEskilstuna = lazy(() => import("./pages/WebbutvecklingEskilstuna"));
+const WebbutvecklingArboga = lazy(() => import("./pages/WebbutvecklingArboga"));
+const WebbutvecklingFagersta = lazy(() => import("./pages/WebbutvecklingFagersta"));
+const HemsidorByggHantverkare = lazy(() => import("./pages/HemsidorByggHantverkare"));
+const DigitalMarknadsforing = lazy(() => import("./pages/DigitalMarknadsforing"));
+const CaseStudyPageSpeed = lazy(() => import("./pages/CaseStudyPageSpeed"));
 
 // Lazy-init QueryClient — only needed for pages that fetch data
 const LazyQueryProvider = lazy(() =>
