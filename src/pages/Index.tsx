@@ -13,9 +13,8 @@ const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
 
 const homeFaqs = [
-  { question: "Vad kostar en professionell hemsida?", answer: "Priset varierar beroende på projektets omfattning. Vi erbjuder paket från 5 000 kr för enklare sidor upp till skräddarsydda premiumlösningar för 25 000 kr och uppåt." },
+  { question: "Vad kostar det att bygga en hemsida?", answer: "Priset varierar beroende på projektets storlek och komplexitet. Vi erbjuder tre paket – Bas (5 000 kr), Standard (12 000 kr) och Premium (25 000 kr) – som täcker de flesta behov." },
   { question: "Hur snabb är en hemsida från LRH Konsult?", answer: "Vi siktar alltid på 100/100 i Google PageSpeed Insights för att garantera bästa möjliga användarupplevelse och SEO-rankning." },
-  { question: "Vad kostar det att bygga en hemsida?", answer: "Priset varierar beroende på projektets storlek och komplexitet. Jag erbjuder tre paket – Bas (5 000 kr), Standard (12 000 kr) och Premium (25 000 kr) – som täcker de flesta behov." },
   { question: "Hur lång tid tar det att bygga en webbplats?", answer: "Det beror på projektets omfattning. En enkel webbplats kan vara klar inom 1–2 veckor, medan en mer komplex lösning med e-handel kan ta 4–8 veckor." },
   { question: "Hur lång tid tar SEO-optimering?", answer: "De första förbättringarna syns ofta inom 2–3 månader, medan mer konkurrenskraftiga sökord kan ta 6–12 månader att ranka för." },
   { question: "Kan jag uppdatera webbplatsen själv efteråt?", answer: "Absolut! Jag bygger webbplatser med användarvänliga CMS-lösningar så att du enkelt kan uppdatera innehåll utan teknisk kunskap." },
