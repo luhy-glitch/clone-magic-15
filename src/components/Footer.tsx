@@ -1,5 +1,6 @@
 import { Mail, Linkedin, Github, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoSrc from "@/assets/lrh-konsult-logo.png";
 
 const localServices = [
   { label: "Webbutveckling Västerås", to: "/webbutveckling-vasteras" },
