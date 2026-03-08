@@ -34,7 +34,6 @@ const WebbutvecklingArboga = lazy(() => import("./pages/WebbutvecklingArboga"));
 const WebbutvecklingFagersta = lazy(() => import("./pages/WebbutvecklingFagersta"));
 const HemsidorByggHantverkare = lazy(() => import("./pages/HemsidorByggHantverkare"));
 const DigitalMarknadsforing = lazy(() => import("./pages/DigitalMarknadsforing"));
-const CaseStudyPageSpeed = lazy(() => import("./pages/CaseStudyPageSpeed"));
 const Case = lazy(() => import("./pages/Case"));
 const GratisSeoAnalys = lazy(() => import("./pages/GratisSeoAnalys"));
 
