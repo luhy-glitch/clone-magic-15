@@ -388,10 +388,43 @@ const ServicePageTemplate = ({
                     </Link>
                   ))}
                 </div>
-              </AnimatedSection>
+          </AnimatedSection>
             </div>
           </section>
         )}
+
+        {/* Din lokala partner i Västmanland */}
+        <section className="py-16 sm:py-24 bg-background" aria-labelledby="local-partner-heading">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <AnimatedSection>
+              <h2 id="local-partner-heading" className="text-2xl sm:text-3xl font-bold font-serif mb-6">
+                Din lokala partner i Västmanland
+              </h2>
+              <p className="text-muted-foreground leading-[1.8] mb-8">
+                Vi hjälper företag i hela Västmanland att växa digitalt. Oavsett om du befinner dig i Västerås, Köping, Sala, Enköping eller Eskilstuna erbjuder vi samma höga kvalitet och personliga service. Utforska våra lokala tjänster:
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { label: "Webbutveckling Västerås", to: "/webbutveckling-vasteras" },
+                  { label: "SEO Köping", to: "/seo-koping" },
+                  { label: "Hemsidor Sala", to: "/hemsidor-sala" },
+                  { label: "Webbutveckling Enköping", to: "/webbutveckling-enkoping" },
+                  { label: "Webbutveckling Eskilstuna", to: "/webbutveckling-eskilstuna" },
+                  { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
+                  { label: "Webbutveckling Fagersta", to: "/webbutveckling-fagersta" },
+                ].filter(l => l.to !== pathname).map(l => (
+                  <Link
+                    key={l.to}
+                    to={l.to}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border bg-card text-sm text-foreground hover:bg-primary/10 hover:border-primary/30 transition-colors"
+                  >
+                    {l.label} <ArrowRight size={14} className="text-primary" />
+                  </Link>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
 
         {/* CTA */}
         <section className="py-16 sm:py-24 bg-background" aria-labelledby="service-cta-heading">
