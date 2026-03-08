@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Phone } from "lucide-react";
+import { Mail, Linkedin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import LrhLogo from "@/components/LrhLogo";
 
