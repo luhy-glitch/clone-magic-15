@@ -116,7 +116,7 @@ const Index = () => {
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Västerås</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
                 Västerås är Västmanlands största stad och en viktig marknad för lokala företag. Vi bygger moderna, snabbladdade hemsidor med React och Next.js som hjälper företag i Västerås att sticka ut i konkurrensen. Från restauranger och hantverkare till techbolag – vi skräddarsyr lösningar som konverterar besökare till kunder.{" "}
-                <a href="/webbutveckling-vasteras" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Västerås</a>.
+                <Link to="/webbutveckling-vasteras" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Västerås</Link>.
               </p>
 
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">SEO-optimering i Köping</h2>
