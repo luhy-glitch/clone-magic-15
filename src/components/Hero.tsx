@@ -6,7 +6,7 @@ const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
 
 export default function Hero() {
   return (
-    <section className="hero-section relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-background text-foreground overflow-hidden pt-40 pb-20 px-4">
+    <section className="hero-section relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-background text-foreground overflow-x-hidden pt-40 pb-20 px-4">
 
       {/* Plexus network background - deferred, respects reduced motion */}
       <Suspense fallback={null}>
@@ -73,7 +73,7 @@ export default function Hero() {
         {/* Sala – top-right area of map */}
         <Link
           to="/hemsidor-sala"
-          className="absolute top-[10%] right-[25%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[5%] right-[28%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Hemsidor och SEO i Sala"
         >
           <div className="relative">
@@ -89,7 +89,7 @@ export default function Hero() {
         {/* Köping – southwest */}
         <Link
           to="/seo-koping"
-          className="absolute top-[45%] left-[10%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute bottom-[30%] left-[18%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="SEO-optimering i Köping"
         >
           <div className="relative">
@@ -105,7 +105,7 @@ export default function Hero() {
         {/* Västerås – center-east (largest city, central position) */}
         <Link
           to="/webbutveckling-vasteras"
-          className="absolute top-[50%] right-[20%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute bottom-[22%] right-[25%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Webbutveckling i Västerås"
         >
           <div className="relative">
