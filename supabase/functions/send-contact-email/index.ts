@@ -1,23 +1,19 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 function escapeHtml(text: string): string {
   const map: Record<string, string> = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;',
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;',
   };
   return text.replace(/[&<>"']/g, (m) => map[m]);
 }
 
-// In-memory rate limiter (resets on cold start, but sufficient for edge function)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 5;
-const RATE_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const RATE_WINDOW_MS = 60 * 60 * 1000;
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -36,13 +32,19 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+function getSupabase() {
+  return createClient(
+    Deno.env.get("SUPABASE_URL")!,
+    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+  );
+}
+
 serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    // Rate limiting by IP
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
     if (isRateLimited(clientIp)) {
       return new Response(
@@ -53,12 +55,10 @@ serve(async (req: Request) => {
 
     const { name, email, subject, message, website } = await req.json();
 
-    // Honeypot check – bots tend to fill hidden fields
+    // Honeypot check
     if (website) {
-      // Silently accept to not reveal the honeypot
       return new Response(JSON.stringify({ id: "ok" }), {
-        status: 200,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
+        status: 200, headers: { "Content-Type": "application/json", ...corsHeaders },
       });
     }
 
@@ -84,6 +84,14 @@ serve(async (req: Request) => {
       );
     }
 
+    // Save to database for CRM
+    const supabase = getSupabase();
+    await supabase.from("contact_submissions").insert({
+      name, email, subject: subject || "", message,
+    }).then(({ error: dbError }) => {
+      if (dbError) console.error("Failed to save contact submission:", dbError);
+    });
+
     const data = await resend.emails.send({
       from: "LRH Konsult <onboarding@resend.dev>",
       to: ["lucas@lrhkonsult.se"],
@@ -100,8 +108,7 @@ serve(async (req: Request) => {
     });
 
     return new Response(JSON.stringify(data), {
-      status: 200,
-      headers: { "Content-Type": "application/json", ...corsHeaders },
+      status: 200, headers: { "Content-Type": "application/json", ...corsHeaders },
     });
   } catch (error: any) {
     console.error("Error sending email:", error);

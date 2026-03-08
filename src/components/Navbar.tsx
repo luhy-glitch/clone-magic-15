@@ -110,6 +110,11 @@ const Navbar = () => {
           <Link to="/tjanster/wordpress-losningar" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">WordPress</Link>
           <Link to="/tjanster/underhall-support" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Underhåll & Support</Link>
           <Link to="/tjanster/prestanda-optimering" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Prestanda</Link>
+          <div className="border-t border-border" />
+          <Link to="/webbutveckling-vasteras" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Webbutveckling Västerås</Link>
+          <Link to="/seo-koping" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">SEO Köping</Link>
+          <Link to="/hemsidor-sala" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Webbdesign Sala</Link>
+          <div className="border-t border-border" />
           <Link to="/om-mig" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Om mig</Link>
           <Link to="/#priser" onClick={() => handleNavClick("/#priser")} className="text-left text-sm text-muted-foreground">Priser</Link>
           <Link to="/blogg" onClick={() => setMobileOpen(false)} className="text-left text-sm text-muted-foreground">Blogg</Link>
