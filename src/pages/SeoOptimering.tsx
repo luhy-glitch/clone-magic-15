@@ -17,8 +17,8 @@ const SeoOptimering = () => {
   return (
     <div className="min-h-screen">
       <PageHead
-        title="SEO-optimering i Västmanland – Ranka högre på Google | LRH Konsult"
-        description="Professionell SEO-optimering för företag i Västerås, Köping och Sala. Teknisk SEO, lokal SEO och innehållsstrategi som ökar din synlighet på Google."
+        title="SEO-optimering Västmanland | Ranka #1 | LRH Konsult"
+        description="Professionell SEO för företag i Västerås, Köping och Sala. Teknisk SEO, lokal sökmotoroptimering och innehållsstrategi som ökar din Google-synlighet."
       />
       <Navbar />
       <main>

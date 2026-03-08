@@ -4,8 +4,8 @@ import { Wrench } from "lucide-react";
 const UnderhallSupportPage = () => (
   <ServicePageTemplate
     title="Underhåll & Support"
-    metaTitle="Personlig support & underhåll för din hemsida i Västmanland | LRH Konsult"
-    metaDescription="Personlig support & underhåll för din hemsida i Västmanland. Vi finns i Västerås för snabb hjälp. Säkerhet, backup och trygghet för lokala företag."
+    metaTitle="Webbunderhåll & support Västmanland | LRH Konsult"
+    metaDescription="Personlig webbsupport och underhåll i Västmanland. Dagliga backuper, säkerhetsuppdateringar och dygnet-runt-övervakning för företag i Västerås."
     heroSubheading="Underhåll & Support"
     heroHeading="Underhåll & Support – trygg webbdrift"
     heroDescription="Lämna det tekniska till oss. Vi erbjuder marknadens tryggaste underhåll och support för företag i hela Västmanlands län. Vi ser till att din hemsida alltid är uppdaterad, snabb och skyddad mot digitala hot."

@@ -4,8 +4,8 @@ import { Search } from "lucide-react";
 const SeoOptimeringPage = () => (
   <ServicePageTemplate
     title="SEO-optimering"
-    metaTitle="Nå plats #1 på Google med SEO i Västerås & Västmanland | LRH Konsult"
-    metaDescription="Nå plats #1 på Google med SEO i Västerås & Västmanland. Lokal SEO-expert som hjälper dig i Köping och Sala att synas. Starta din tillväxtresa nu!"
+    metaTitle="Lokal SEO Västerås, Köping & Sala | LRH Konsult"
+    metaDescription="Lokal SEO-expert i Västmanland. Vi optimerar din Google-närvaro i Västerås, Köping och Sala med teknisk SEO, innehållsstrategi och mätbara resultat."
     heroSubheading="SEO-optimering"
     heroHeading="SEO-optimering i Västerås, Köping & Sala"
     heroDescription="Vill du synas högst upp när kunder söker efter dina tjänster? Vi är specialister på SEO-optimering i Västmanland. Genom att kombinera teknisk expertis med lokalt anpassat innehåll ser vi till att ditt företag dominerar sökresultaten i Västerås, Köping och Sala."

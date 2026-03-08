@@ -20,8 +20,18 @@ const OmMig = () => {
   return (
     <div className="min-h-screen">
       <PageHead
-        title="Om mig – Webbutvecklare i Västmanland | LRH Konsult"
-        description="Lär känna Lucas på LRH Konsult – webbutvecklare och SEO-konsult med 5+ års erfarenhet, baserad i Västmanlands län. Personlig service för företag i Västerås, Köping och Sala."
+        title="Om mig – Webbutvecklare Västmanland | LRH Konsult"
+        description="Lär känna Lucas på LRH Konsult – webbutvecklare och SEO-konsult med 5+ års erfarenhet i Västmanland. Personlig service i Västerås, Köping och Sala."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Lucas",
+          "jobTitle": "Webbutvecklare & SEO-konsult",
+          "worksFor": { "@type": "Organization", "name": "LRH Konsult", "url": "https://lrhkonsult.se" },
+          "url": "https://lrhkonsult.se/om-mig",
+          "knowsAbout": ["React", "Next.js", "TypeScript", "SEO", "WordPress", "Tailwind CSS"],
+          "address": { "@type": "PostalAddress", "addressRegion": "Västmanlands län", "addressCountry": "SE" }
+        }}
       />
       <Navbar />
       <main>

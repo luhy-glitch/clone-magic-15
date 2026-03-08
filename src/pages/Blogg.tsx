@@ -28,8 +28,16 @@ const Blogg = () => {
   return (
     <div className="min-h-screen">
       <PageHead
-        title="Blogg – Insikter om webbutveckling & SEO | LRH Konsult"
-        description="Läs artiklar om webbutveckling, SEO-optimering och digitala strategier från LRH Konsult i Västmanland. Tips för att skapa hemsida och ranka högre på Google."
+        title="Blogg – Webb & SEO-insikter | LRH Konsult"
+        description="Artiklar om webbutveckling, SEO och digitala strategier från LRH Konsult. Tips för att bygga hemsida och ranka högre på Google i Västmanland."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "LRH Konsult Blogg",
+          "url": "https://lrhkonsult.se/blogg",
+          "description": "Artiklar om webbutveckling, SEO och digitala strategier.",
+          "publisher": { "@type": "Organization", "name": "LRH Konsult", "url": "https://lrhkonsult.se" }
+        }}
       />
       <Navbar />
       <main>

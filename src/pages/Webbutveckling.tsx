@@ -70,8 +70,8 @@ const Webbutveckling = () => {
   return (
     <div className="min-h-screen">
       <PageHead
-        title="Bäst webbutveckling i Västerås & Västmanland | Next.js & React | LRH Konsult"
-        description="Bäst webbutveckling i Västerås & Västmanland. Vi bygger blixtsnabba Next.js-sajter som rankar #1 på Google. Din lokala expert för moderna webblösningar."
+        title="Webbutveckling Västerås & Västmanland | LRH Konsult"
+        description="Vi bygger blixtsnabba hemsidor i Next.js & React för företag i Västerås och Västmanland. SEO-optimerat från start. Boka fri konsultation!"
         jsonLd={pageJsonLd}
       />
       <Navbar />

@@ -4,8 +4,8 @@ import { Zap } from "lucide-react";
 const PrestandaOptimeringPage = () => (
   <ServicePageTemplate
     title="Prestanda-optimering"
-    metaTitle="Optimera din hemsidas hastighet i Västmanland | Core Web Vitals | LRH Konsult"
-    metaDescription="Optimera din hemsidas hastighet i Västmanland. Vi fixar Core Web Vitals för företag i Västerås & Sala. Maxa din ranking med en blixtsnabb sajt."
+    metaTitle="Prestanda & Core Web Vitals | LRH Konsult"
+    metaDescription="Optimera din hemsidas hastighet i Västmanland. Vi fixar Core Web Vitals, bildoptimering och cachning. Snabbare sajt = bättre ranking och fler kunder."
     heroSubheading="Prestanda"
     heroHeading="Prestanda-optimering för snabbare affärer"
     heroDescription="Sidhastighet är den dolda nyckeln till framgång. Vi utför djupgående prestandaoptimering för företag i Västerås och Västmanland som vill sänka sina laddtider och klättra i sökresultaten genom bättre Core Web Vitals."

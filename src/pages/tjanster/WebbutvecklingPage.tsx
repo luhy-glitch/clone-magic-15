@@ -4,8 +4,8 @@ import { Code2 } from "lucide-react";
 const WebbutvecklingPage = () => (
   <ServicePageTemplate
     title="Webbutveckling"
-    metaTitle="Bäst webbutveckling i Västerås & Västmanland | Next.js & React | LRH Konsult"
-    metaDescription="Bäst webbutveckling i Västerås & Västmanland. Vi bygger blixtsnabba Next.js-sajter som rankar #1 på Google. Din lokala expert för moderna webblösningar."
+    metaTitle="Professionell webbutveckling React & Next.js | LRH Konsult"
+    metaDescription="Skräddarsydd webbutveckling i React och Next.js för företag i Västmanland. Blixtsnabba sajter med SEO, API-integrationer och e-handel."
     heroSubheading="Webbutveckling"
     heroHeading="Webbutveckling i Västerås & Västmanland"
     heroDescription="LRH Konsult är din ledande partner för professionell webbutveckling i Västerås och övriga Västmanland. Vi bygger inte bara hemsidor; vi skapar högpresterande digitala verktyg i Next.js och React som är optimerade för att konvertera besökare till betalande kunder i Mälardalen."

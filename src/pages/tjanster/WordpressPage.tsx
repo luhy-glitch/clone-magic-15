@@ -4,8 +4,8 @@ import { Settings } from "lucide-react";
 const WordpressPage = () => (
   <ServicePageTemplate
     title="WordPress-lösningar"
-    metaTitle="Snabba & säkra WordPress-hemsidor i Västerås & Västmanland | LRH Konsult"
-    metaDescription="Snabba & säkra WordPress-hemsidor i Västerås. Vi optimerar WordPress för lokala företag i Västmanland. Support, säkerhet och prestanda i världsklass."
+    metaTitle="WordPress-hemsidor Västerås | LRH Konsult"
+    metaDescription="Snabba och säkra WordPress-hemsidor för företag i Västerås och Västmanland. Anpassade teman, WooCommerce, säkerhet och prestandaoptimering."
     heroSubheading="WordPress"
     heroHeading="WordPress-lösningar för ditt företag"
     heroDescription="WordPress är ett kraftfullt verktyg när det hanteras av experter. Vi bygger skräddarsydda WordPress-lösningar för företag i Västmanland som kräver en stabil, snabb och lätthanterlig plattform för sin digitala tillväxt."
