@@ -39,17 +39,37 @@ function getSessionToken(): string | null {
   return sessionStorage.getItem("admin_session_token");
 }
 
-interface PageSpeedScore {
-  performance: number | null;
-  seo: number | null;
-  accessibility: number | null;
-  bestPractices: number | null;
-  loading: boolean;
+interface CityRanking {
+  city: string;
+  route: string;
+  keyword: string;
+  rank: number | null;
+  prev7: number | null;
+  prev30: number | null;
+  leads: number;
+  color: string;
+}
+
+const CITIES: CityRanking[] = [
+  { city: "Västerås", route: "/webbutveckling-vasteras", keyword: "Webbutveckling Västerås", rank: null, prev7: null, prev30: null, leads: 0, color: "#888" },
+  { city: "Köping", route: "/seo-koping", keyword: "SEO Köping", rank: null, prev7: null, prev30: null, leads: 0, color: "#888" },
+  { city: "Sala", route: "/hemsidor-sala", keyword: "Hemsidor Sala", rank: null, prev7: null, prev30: null, leads: 0, color: "#888" },
+  { city: "Enköping", route: "/webbutveckling-enkoping", keyword: "Webbutveckling Enköping", rank: null, prev7: null, prev30: null, leads: 0, color: "#888" },
+  { city: "Eskilstuna", route: "/webbutveckling-eskilstuna", keyword: "Webbutveckling Eskilstuna", rank: null, prev7: null, prev30: null, leads: 0, color: "#888" },
+  { city: "Arboga", route: "/webbutveckling-arboga", keyword: "Webbutveckling Arboga", rank: null, prev7: null, prev30: null, leads: 0, color: "#888" },
+  { city: "Fagersta", route: "/webbutveckling-fagersta", keyword: "Webbutveckling Fagersta", rank: null, prev7: null, prev30: null, leads: 0, color: "#888" },
+];
+
+interface KeywordSuggestion {
+  keyword: string;
+  metaTitle: string;
+  metaDescription: string;
+  city: string;
 }
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<"blog" | "leads" | "speed">("blog");
+  const [activeTab, setActiveTab] = useState<"blog" | "leads" | "speed" | "seo">("blog");
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [leads, setLeads] = useState<ContactSubmission[]>([]);
   const [loading, setLoading] = useState(true);
