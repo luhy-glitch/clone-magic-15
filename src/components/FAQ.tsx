@@ -5,49 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
-
-const faqs = [
-  {
-    question: "Vad kostar en professionell hemsida?",
-    answer:
-      "Priset varierar beroende på projektets omfattning. Vi erbjuder paket från 5 000 kr för enklare sidor upp till skräddarsydda premiumlösningar för 25 000 kr och uppåt.",
-  },
-  {
-    question: "Hur snabb är en hemsida från LRH Konsult?",
-    answer:
-      "Vi siktar alltid på 100/100 i Google PageSpeed Insights för att garantera bästa möjliga användarupplevelse och SEO-rankning.",
-  },
-  {
-    question: "Hur lång tid tar det att bygga en webbplats?",
-    answer:
-      "Det beror på projektets omfattning. En enkel webbplats kan vara klar inom 1–2 veckor, medan en mer komplex lösning med e-handel eller skräddarsydda funktioner kan ta 4–8 veckor.",
-  },
-  {
-    question: "Hur lång tid tar SEO-optimering?",
-    answer:
-      "De första förbättringarna syns ofta inom 2–3 månader, medan mer konkurrenskraftiga sökord kan ta 6–12 månader att ranka för. SEO är en långsiktig investering som ger bestående resultat.",
-  },
-  {
-    question: "Kan jag uppdatera webbplatsen själv efteråt?",
-    answer:
-      "Absolut! Jag bygger webbplatser med användarvänliga CMS-lösningar så att du enkelt kan uppdatera innehåll, bilder och texter utan teknisk kunskap.",
-  },
-  {
-    question: "Ingår support och underhåll i era priser?",
-    answer:
-      "Vi erbjuder dedikerade underhållspaket för att säkerställa att din sajt förblir säker och snabb efter lanseringen. Det ingår i Premium-paketet eller kan läggas till separat.",
-  },
-  {
-    question: "Finns det några dolda avgifter?",
-    answer:
-      "Nej, vi tror på full transparens. Alla kostnader specificeras tydligt i våra paket och offerter.",
-  },
-  {
-    question: "Vilka företag arbetar du med i Västmanland?",
-    answer:
-      "Jag arbetar med företag av alla storlekar i Västerås, Köping, Sala och hela Västmanlands län. Oavsett om du är en enskild firma eller ett större företag kan jag hjälpa dig med webbutveckling och SEO.",
-  },
-];
+import { siteWideFaqs } from "@/data/faqData";
 
 const FAQ = () => {
   return (
@@ -68,22 +26,32 @@ const FAQ = () => {
         </AnimatedSection>
 
         <FadeIn delay={0.2}>
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`item-${i}`}
-                className="bg-card border border-border rounded-lg px-6"
-              >
-                <AccordionTrigger className="text-left text-foreground font-medium py-5 hover:no-underline">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div itemScope itemType="https://schema.org/FAQPage">
+            <Accordion type="single" collapsible className="space-y-3">
+              {siteWideFaqs.map((faq, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`item-${i}`}
+                  className="bg-card border border-border rounded-lg px-6"
+                  itemScope
+                  itemProp="mainEntity"
+                  itemType="https://schema.org/Question"
+                >
+                  <AccordionTrigger className="text-left text-foreground font-medium py-5 hover:no-underline">
+                    <span itemProp="name">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent
+                    className="text-muted-foreground pb-5 leading-relaxed"
+                    itemScope
+                    itemProp="acceptedAnswer"
+                    itemType="https://schema.org/Answer"
+                  >
+                    <span itemProp="text">{faq.answer}</span>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </FadeIn>
       </div>
     </section>

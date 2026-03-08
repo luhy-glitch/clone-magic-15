@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PageHead from "@/components/PageHead";
 import { ArrowRight } from "lucide-react";
+import { siteWideFaqs } from "@/data/faqData";
 
 // Lazy-load everything below the fold
 const Services = lazy(() => import("@/components/Services"));
@@ -32,17 +33,7 @@ const ALL_CITIES = [
   { label: "Webbutveckling Örebro", to: "/webbutveckling-orebro" },
 ];
 
-const homeFaqs = [
-  { question: "Vad kostar det att bygga en hemsida?", answer: "Priset varierar beroende på projektets storlek och komplexitet. Vi erbjuder tre paket – Bas (5 000 kr), Standard (12 000 kr) och Premium (25 000 kr) – som täcker de flesta behov." },
-  { question: "Hur snabb är en hemsida från LRH Konsult?", answer: "Vi siktar alltid på 100/100 i Google PageSpeed Insights för att garantera bästa möjliga användarupplevelse och SEO-rankning." },
-  { question: "Hur lång tid tar det att bygga en webbplats?", answer: "Det beror på projektets omfattning. En enkel webbplats kan vara klar inom 1–2 veckor, medan en mer komplex lösning med e-handel kan ta 4–8 veckor." },
-  { question: "Hur lång tid tar SEO-optimering?", answer: "De första förbättringarna syns ofta inom 2–3 månader, medan mer konkurrenskraftiga sökord kan ta 6–12 månader att ranka för." },
-  { question: "Kan jag uppdatera webbplatsen själv efteråt?", answer: "Absolut! Jag bygger webbplatser med användarvänliga CMS-lösningar så att du enkelt kan uppdatera innehåll utan teknisk kunskap." },
-  { question: "Ingår hosting och domän?", answer: "Jag hjälper dig att välja rätt hosting och domänlösning. Dessa kostnader tillkommer separat men jag kan rekommendera pålitliga leverantörer." },
-  { question: "Erbjuder du löpande support och underhåll?", answer: "Ja, jag erbjuder löpande support- och underhållsavtal så att din webbplats alltid är uppdaterad, säker och fungerar optimalt." },
-  { question: "Vilka företag arbetar du med i Västmanland?", answer: "Jag arbetar med företag av alla storlekar i Västerås, Köping, Sala, Enköping, Eskilstuna, Arboga, Fagersta och hela Västmanlands län." },
-  { question: "Finns det några dolda avgifter?", answer: "Nej, vi tror på full transparens. Alla kostnader specificeras tydligt i våra paket och offerter." },
-];
+const homeFaqs = siteWideFaqs;
 
 const Index = () => {
   return (

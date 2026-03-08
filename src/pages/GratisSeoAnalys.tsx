@@ -59,17 +59,25 @@ const GratisSeoAnalys = () => {
               Gratis SEO-analys för ditt företag
             </h1>
             <p className="text-muted-foreground leading-[1.6] mb-8">
-              Vill du veta hur din hemsida presterar i sökresultaten? Vi erbjuder en kostnadsfri SEO-analys där vi identifierar förbättringsområden och ger konkreta rekommendationer för att öka din organiska trafik och synlighet.
+              Vill du veta hur din hemsida presterar i sökresultaten? Vi erbjuder en kostnadsfri{" "}
+              <Link to="/tjanster/seo-optimering" className="text-primary hover:underline font-medium">SEO-analys</Link>{" "}
+              där vi identifierar förbättringsområden och ger konkreta rekommendationer för att öka din organiska trafik och synlighet.
             </p>
 
             <h2 className="text-2xl sm:text-3xl font-bold font-serif text-primary mt-12 mb-4">
               Vad ingår i analysen?
             </h2>
             <p className="text-muted-foreground leading-[1.6] mb-4">
-              Vår SEO-analys täcker de viktigaste aspekterna av din digitala närvaro. Vi granskar din hemsidas tekniska prestanda, inklusive laddningstider och Core Web Vitals, samt hur väl din sajt är optimerad för lokala sökningar i ditt område.
+              Vår SEO-analys täcker de viktigaste aspekterna av din digitala närvaro. Vi granskar din hemsidas tekniska{" "}
+              <Link to="/tjanster/prestanda-optimering" className="text-primary hover:underline font-medium">prestanda</Link>,{" "}
+              inklusive laddningstider och Core Web Vitals, samt hur väl din sajt är optimerad för lokala sökningar i ditt område.
             </p>
             <p className="text-muted-foreground leading-[1.6] mb-8">
-              Du får en tydlig rapport med prioriterade åtgärder som kan ge dig fler besökare, bättre ranking och i slutändan fler kunder. Allt presenterat på ett sätt som är lätt att förstå, oavsett teknisk bakgrund.
+              Du får en tydlig rapport med prioriterade åtgärder som kan ge dig fler besökare, bättre ranking och i slutändan fler kunder. Behöver du en helt ny sajt? Vi erbjuder{" "}
+              <Link to="/tjanster/webbutveckling" className="text-primary hover:underline font-medium">professionell webbutveckling</Link>{" "}
+              och{" "}
+              <Link to="/tjanster/webbdesign" className="text-primary hover:underline font-medium">webbdesign</Link>{" "}
+              som är optimerade för konvertering från dag ett.
             </p>
 
             {/* PDF Guide Lead Magnet */}
@@ -77,7 +85,10 @@ const GratisSeoAnalys = () => {
               Gratis guide: 5 steg till en blixtsnabb hemsida
             </h2>
             <p className="text-muted-foreground leading-[1.6] mb-6">
-              I dagens digitala landskap är hastighet inte längre en lyx – det är en absolut nödvändighet. Genom att optimera din sajt för 100/100 i PageSpeed säkerställer du att du behåller besökare och konverterar dem till kunder i Västerås, Sala och Köping.
+              I dagens digitala landskap är hastighet inte längre en lyx – det är en absolut nödvändighet. Genom att optimera din sajt för 100/100 i PageSpeed säkerställer du att du behåller besökare och konverterar dem till kunder i{" "}
+              <Link to="/webbutveckling-vasteras" className="text-primary hover:underline font-medium">Västerås</Link>,{" "}
+              <Link to="/hemsidor-sala" className="text-primary hover:underline font-medium">Sala</Link> och{" "}
+              <Link to="/seo-koping" className="text-primary hover:underline font-medium">Köping</Link>.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -93,7 +104,10 @@ const GratisSeoAnalys = () => {
             </div>
 
             <p className="text-muted-foreground leading-[1.6] mb-8">
-              Fyll i formuläret nedan för att få din gratis SEO-analys – och som bonus skickar vi med vår kompletta guide med alla fem stegen i detalj.
+              Fyll i formuläret nedan för att få din gratis SEO-analys – och som bonus skickar vi med vår kompletta guide med alla fem stegen i detalj. Vill du veta mer om vad vi kan göra för ditt företag? Kolla in våra{" "}
+              <Link to="/tjanster/google-ads" className="text-primary hover:underline font-medium">Google Ads-lösningar</Link>{" "}
+              eller läs om{" "}
+              <Link to="/tjanster/underhall-support" className="text-primary hover:underline font-medium">löpande underhåll och support</Link>.
             </p>
 
             <h2 className="text-2xl sm:text-3xl font-bold font-serif text-primary mt-12 mb-4">
