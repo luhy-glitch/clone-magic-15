@@ -38,11 +38,12 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // Require Authorization header with anon key or service role key
+  // Require authorization via Bearer token or apikey header
   const authHeader = req.headers.get("Authorization");
+  const apikeyHeader = req.headers.get("apikey");
   const anonKey = Deno.env.get("SUPABASE_ANON_KEY");
   const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-  const token = authHeader?.replace("Bearer ", "");
+  const token = authHeader?.replace("Bearer ", "") || apikeyHeader;
 
   if (!token || (token !== anonKey && token !== serviceKey)) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), {
