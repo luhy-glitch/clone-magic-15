@@ -38,6 +38,10 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd }: PageHeadPr
     setMeta("og:url", url, "property");
     setMeta("og:type", "website", "property");
     setMeta("og:image", image, "property");
+    setMeta("og:image:width", "1200", "property");
+    setMeta("og:image:height", "630", "property");
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:image", image);
 
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {

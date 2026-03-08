@@ -40,7 +40,7 @@ const Index = () => {
               "url": "https://lrhkonsult.se",
               "telephone": "+46704606578",
               "email": "lucas@lrhkonsult.se",
-              "image": "https://lrhkonsult.se/og-image.png",
+              "image": "https://lrhkonsult.se/assets/og/lrh-konsult-sharing-image.png",
               "description": "Din partner för blixtsnabba hemsidor och SEO i Västerås, Köping & Sala. 100/100 PageSpeed för maximal konvertering.",
               "address": {
                 "@type": "PostalAddress",
