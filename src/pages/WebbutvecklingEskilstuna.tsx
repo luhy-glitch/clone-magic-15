@@ -8,7 +8,7 @@ const config = {
   metaTitle: "SEO Eskilstuna - Dominera Lokala Sökresultat | LRH Konsult",
   metaDescription: "Vi hjälper företag i Eskilstuna att ranka högt på Google genom teknisk perfektion och lokal relevans.",
   heroHeading: "Webbutveckling & SEO i Eskilstuna",
-  heroDescription: "Eskilstuna är en stad i snabb tillväxt, och kraven på företagens digitala närvaro har aldrig varit högre. Vi specialiserar oss på webbutveckling med fokus på Next.js och React – tekniker som möjliggör extremt snabba laddningstider och en sömlös användarupplevelse.",
+  heroDescription: "Eskilstuna är en viktig knutpunkt i Södermanland och en stad i snabb tillväxt. Kraven på företagens digitala närvaro har aldrig varit högre. Vi specialiserar oss på webbutveckling med fokus på Next.js och React – tekniker som möjliggör extremt snabba laddningstider och en sömlös användarupplevelse.",
   icon: Code2,
   benefits: [
     { title: "Regional expertis", description: "Vi förstår den lokala marknaden i Eskilstuna och Sörmland och bygger hemsidor som talar direkt till din målgrupp." },
