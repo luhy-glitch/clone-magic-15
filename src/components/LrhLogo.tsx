@@ -1,6 +1,6 @@
 /**
  * Inline SVG logo for LRH Konsult – zero network requests, infinite scalability.
- * Renders the "LRH" monogram + "KONSULT" text in brand colors.
+ * Each letter is built from separate non-overlapping shapes for clarity.
  */
 interface LrhLogoProps {
   className?: string;
@@ -17,29 +17,44 @@ const LrhLogo = ({
   width = 180,
   height = 45,
 }: LrhLogoProps) => {
-  const blueColor = variant === "white" ? "#ffffff" : "#1e3a5f";
-  const goldColor = variant === "white" ? "#e2e8f0" : "#d4a843";
-  const gradEnd = variant === "white" ? "#cbd5e1" : "#b8942e";
+  const blue = variant === "white" ? "#ffffff" : "#1e3a5f";
+  const goldStart = variant === "white" ? "#e2e8f0" : "#d4a843";
+  const goldEnd = variant === "white" ? "#cbd5e1" : "#b8942e";
 
-  // Shared letter paths (viewBox 0 0 56 40)
-  const letters = (gradientId: string) => (
+  const Letters = ({ gid }: { gid: string }) => (
     <>
-      {/* L – clean vertical + base */}
-      <path d="M0 0h4.5v31h11v4H0V0z" fill={blueColor} />
+      {/* ===== L ===== */}
+      {/* Vertical stem */}
+      <rect x="0" y="0" width="5" height="35" fill={blue} />
+      {/* Horizontal base */}
+      <rect x="5" y="31" width="9" height="4" fill={blue} />
 
-      {/* R – stem + bowl + diagonal leg */}
-      <path
-        d="M19 0h7.5c4.2 0 7 2.8 7 7s-2.8 7-7 7h-3l7 21h-5l-6.5-21H23.5V0z
-           M23.5 4v6h3c1.8 0 3-1.2 3-3s-1.2-3-3-3h-3z"
-        fill={blueColor}
-        fillRule="evenodd"
-      />
+      {/* ===== R ===== */}
+      {/* Vertical stem */}
+      <rect x="18" y="0" width="5" height="35" fill={blue} />
+      {/* Bowl top bar */}
+      <rect x="23" y="0" width="7" height="4" fill={blue} />
+      {/* Bowl right side */}
+      <rect x="30" y="4" width="4" height="9" fill={blue} />
+      {/* Bowl bottom bar */}
+      <rect x="23" y="13" width="7" height="4" fill={blue} />
+      {/* Diagonal leg */}
+      <polygon points="26,17 31,17 36,35 31,35" fill={blue} />
 
-      {/* H – gold gradient */}
-      <path
-        d="M37 0h4.5v14.5h9V0H55v35h-4.5V19h-9v16H37V0z"
-        fill={`url(#${gradientId})`}
-      />
+      {/* ===== H (gold) ===== */}
+      {/* Left stem */}
+      <rect x="40" y="0" width="5" height="35" fill={`url(#${gid})`} />
+      {/* Right stem */}
+      <rect x="55" y="0" width="5" height="35" fill={`url(#${gid})`} />
+      {/* Cross bar */}
+      <rect x="45" y="14" width="10" height="5" fill={`url(#${gid})`} />
+
+      <defs>
+        <linearGradient id={gid} x1="40" y1="0" x2="60" y2="35">
+          <stop offset="0%" stopColor={goldStart} />
+          <stop offset="100%" stopColor={goldEnd} />
+        </linearGradient>
+      </defs>
     </>
   );
 
@@ -48,20 +63,14 @@ const LrhLogo = ({
       <svg
         width={height}
         height={height}
-        viewBox="0 0 56 40"
+        viewBox="0 0 60 35"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={className}
         aria-hidden="true"
         role="img"
       >
-        {letters("lrh-g-mono")}
-        <defs>
-          <linearGradient id="lrh-g-mono" x1="37" y1="0" x2="55" y2="35">
-            <stop offset="0%" stopColor={goldColor} />
-            <stop offset="100%" stopColor={gradEnd} />
-          </linearGradient>
-        </defs>
+        <Letters gid="lg-m" />
       </svg>
     );
   }
@@ -70,32 +79,25 @@ const LrhLogo = ({
     <svg
       width={width}
       height={height}
-      viewBox="0 0 200 40"
+      viewBox="0 0 195 35"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       role="img"
     >
       <title>LRH Konsult – Webbutveckling och SEO i Västerås</title>
-      {letters("lrh-g-full")}
-      {/* KONSULT text – vertically centered, spaced from monogram */}
+      <Letters gid="lg-f" />
       <text
-        x="66"
-        y="24"
-        fill={blueColor}
+        x="70"
+        y="23"
+        fill={blue}
         fontFamily="'Inter', system-ui, sans-serif"
         fontSize="13"
         fontWeight="700"
-        letterSpacing="4"
+        letterSpacing="4.5"
       >
         KONSULT
       </text>
-      <defs>
-        <linearGradient id="lrh-g-full" x1="37" y1="0" x2="55" y2="35">
-          <stop offset="0%" stopColor={goldColor} />
-          <stop offset="100%" stopColor={gradEnd} />
-        </linearGradient>
-      </defs>
     </svg>
   );
 };
