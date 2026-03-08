@@ -134,7 +134,7 @@ const Index = () => {
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Enköping (Uppsala län)</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
                 Enköping ligger strategiskt i Uppsala län, med närheten till Stockholm och Uppsala som en stor fördel. Vi hjälper företag i Enköping att maximera sin digitala närvaro med blixtsnabba hemsidor och teknisk SEO i världsklass.{" "}
-                <a href="/webbutveckling-enkoping" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Enköping</a>.
+                <Link to="/webbutveckling-enkoping" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Enköping</Link>.
               </p>
 
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">SEO i Eskilstuna (Södermanland)</h2>
