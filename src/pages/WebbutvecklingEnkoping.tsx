@@ -18,7 +18,7 @@ const config = {
   ],
   bodyTitle: "Din partner för modern webbutveckling i Enköping",
   bodyParagraphs: [
-    "Genom att använda moderna ramverk som React och Next.js skapar vi lösningar som inte bara ser fantastiska ut på alla skärmar, utan som också levererar en användarupplevelse i absolut världsklass. När vi pratar om webbutveckling i Enköping menar vi hemsidor som är byggda från grunden med fokus på hastighet, säkerhet och sökmotoroptimering. En snabb hemsida är inte längre en lyx, det är en förutsättning för att lyckas lokalt.",
+    "Genom att använda moderna ramverk som React och Next.js skapar vi lösningar som inte bara ser fantastiska ut på alla skärmar, utan som också levererar en användarupplevelse i absolut världsklass. När vi pratar om webbutveckling i Enköping menar vi hemsidor som är byggda från grunden med fokus på hastighet, säkerhet och sökmotoroptimering. Tack vare närheten till Stockholm och Uppsala har företag i Enköping en unik möjlighet att nå en stor marknad – men det kräver en hemsida som presterar på toppnivå.",
     "Många företagare i Enköping upplever att deras hemsidor inte rankar trots att de har bra innehåll. Ofta ligger problemet i den tekniska strukturen. Google har gjort Core Web Vitals till en central del av sin rankningsalgoritm, vilket innebär att mätvärden som Largest Contentful Paint (LCP) och First Contentful Paint (FCP) direkt påverkar din position i sökresultaten.",
     "Genom att sikta på 100/100 i Google PageSpeed Insights säkerställer vi att din sida laddar på under en sekund, vilket skapar en enorm konkurrensfördel. I en stad som Enköping, där konkurrensen om kunderna ökar, är varje millisekund av laddningstid en investering i högre konvertering och bättre synlighet.",
   ],

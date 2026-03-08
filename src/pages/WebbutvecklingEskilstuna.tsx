@@ -11,7 +11,7 @@ const config = {
   heroDescription: "Eskilstuna är en viktig knutpunkt i Södermanland och en stad i snabb tillväxt. Kraven på företagens digitala närvaro har aldrig varit högre. Vi specialiserar oss på webbutveckling med fokus på Next.js och React – tekniker som möjliggör extremt snabba laddningstider och en sömlös användarupplevelse.",
   icon: Code2,
   benefits: [
-    { title: "Regional expertis", description: "Vi förstår den lokala marknaden i Eskilstuna och Sörmland och bygger hemsidor som talar direkt till din målgrupp." },
+    { title: "Regional expertis", description: "Vi förstår den lokala marknaden i Eskilstuna och Södermanland och bygger hemsidor som talar direkt till din målgrupp." },
     { title: "Prestanda i världsklass", description: "Våra hemsidor når konsekvent 100/100 i Google PageSpeed, vilket ger dig en avgörande fördel i sökresultaten." },
     { title: "Modern teknikstack", description: "React, Next.js och TypeScript ger dig en skalbar och framtidssäker plattform som växer med ditt företag." },
     { title: "Konverteringsoptimerad", description: "Vi designar med konvertering i fokus – varje element på din hemsida har ett syfte och driver besökare mot handling." },
