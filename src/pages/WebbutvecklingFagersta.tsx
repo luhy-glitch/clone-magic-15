@@ -5,10 +5,10 @@ const config = {
   city: "Fagersta",
   slug: "webbutveckling-fagersta",
   serviceKeyword: "Webbdesign",
-  metaTitle: "Webbdesign Fagersta - Modern Teknik & SEO-optimering",
-  metaDescription: "Professionella hemsidor och webbdesign i Fagersta. 100/100 prestanda för lokala företag.",
-  heroHeading: "Webbdesign & SEO i Fagersta",
-  heroDescription: "Fagersta har en stolt industritradition och en växande företagsscen. Det är dags att din digitala närvaro matchar ambitionen. Vi hjälper företag i Fagersta att byta från föråldrade, långsamma system till blixtsnabba Next.js-hemsidor som rankar högt på Google.",
+  metaTitle: "Webbdesign Fagersta - Hemsidor som Ger Resultat | LRH Konsult",
+  metaDescription: "Moderna hemsidor i Fagersta som rankar på Google. 100/100 PageSpeed och lokal SEO för företag i norra Västmanland.",
+  heroHeading: "Få en modern hemsida som faktiskt säljer i Fagersta",
+  heroDescription: "Fagersta har en stolt industritradition och en växande företagsscen. Det är dags att din digitala närvaro matchar ambitionen. Vi bygger blixtsnabba hemsidor som rankar högt på Google och ger ditt företag fler kunder.",
   icon: Code2,
   benefits: [
     { title: "Lokal förståelse", description: "Vi känner Västmanland och förstår de specifika utmaningarna och möjligheterna för företag i Fagersta och norra Västmanland." },
@@ -28,7 +28,7 @@ const config = {
       paragraphs: [
         "Sökmotorer läser inte din hemsida med ögonen – de tolkar den genom HTML-strukturen. Semantisk HTML innebär att vi använder rätt HTML-element för rätt syfte: article för artiklar, nav för navigation, main för huvudinnehållet och heading-taggar i korrekt hierarki. Detta gör det enkelt för Google att förstå din sidas struktur och innehåll, vilket direkt påverkar hur väl den rankar för relevanta sökord i Fagersta.",
         "Tillgänglighet är inte längre bara en etisk fråga – det är en rankingfaktor. Google värderar hemsidor som är tillgängliga för alla användare, inklusive de med funktionsvariationer. Vi implementerar korrekta ARIA-attribut, säkerställer tillräcklig färgkontrast, gör alla interaktiva element tangentbordsnavigerbara och ser till att skärmläsare kan tolka din hemsida korrekt. En hemsida som är tillgänglig för alla rankar bättre för alla.",
-        "Vi bygger med en heading-hierarki som följer en logisk struktur: en H1 per sida som tydligt kommunicerar sidans huvudämne, H2-rubriker för huvudsektioner och H3-rubriker för undersektioner. Denna struktur ger sökmotorer en tydlig bild av din sidas innehållshierarki och hjälper dem att avgöra vilka sökord sidan är mest relevant för. I Fagersta ser vi detta som en grundläggande hygienåtgärd som många konkurrenter missar.",
+        "Vi bygger med en heading-hierarki som följer en logisk struktur: en H1 per sida som tydligt kommunicerar sidans huvudämne, H2-rubriker för huvudsektioner och underrubriker under dessa. Denna struktur ger sökmotorer en tydlig bild av din sidas innehållshierarki och hjälper dem att avgöra vilka sökord sidan är mest relevant för. I Fagersta ser vi detta som en grundläggande hygienåtgärd som många konkurrenter missar.",
       ],
     },
     {

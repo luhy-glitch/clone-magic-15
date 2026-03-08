@@ -5,10 +5,10 @@ const config = {
   city: "Enköping",
   slug: "webbutveckling-enkoping",
   serviceKeyword: "Webbutveckling",
-  metaTitle: "Webbutveckling Enköping - Blixtsnabba Hemsidor & SEO",
-  metaDescription: "Maximera din digitala närvaro i Enköping med Next.js och teknisk SEO i världsklass.",
-  heroHeading: "Webbutveckling & SEO i Enköping",
-  heroDescription: "Enköping ligger strategiskt i Uppsala län, med närheten till Stockholm och Uppsala som en stor fördel. Att bygga en hemsida i dagens digitala klimat handlar om mycket mer än bara estetik. För företag i Enköping är den tekniska prestandan den enskilt viktigaste faktorn för att synas och konvertera besökare till kunder.",
+  metaTitle: "Webbutveckling Enköping - Hemsidor som Rankar | LRH Konsult",
+  metaDescription: "Dominera sökresultaten i Enköping med blixtsnabba hemsidor och teknisk SEO. 100/100 PageSpeed garanterat.",
+  heroHeading: "Dominera sökresultaten i Enköping",
+  heroDescription: "Enköping ligger strategiskt i Uppsala län, med närheten till Stockholm och Uppsala som en stor fördel. Vi bygger hemsidor som presterar på toppnivå – tekniskt fulländade, SEO-optimerade och designade för att ge ditt företag fler kunder.",
   icon: Code2,
   benefits: [
     { title: "Nära Enköping", description: "Vi arbetar tätt med företag i Enköping och erbjuder personlig service och lokalkännedom för att förstå din marknad på djupet." },
@@ -24,7 +24,7 @@ const config = {
   ],
   bodyExtraSections: [
     {
-      title: "Strategisk sökmotoroptimering för företag i Enköpingsregionen",
+      title: "Strategisk sökmotoroptimering för företag i Uppsala län",
       paragraphs: [
         "SEO i Enköping handlar om att förstå den lokala marknaden och hur kunder söker efter tjänster i sitt närområde. Vi arbetar inte bara med teknisk SEO, utan även med strategiskt innehåll som svarar på dina kunders frågor. Genom att optimera för lokala söktermer och implementera korrekt JSON-LD Schema för lokala företag, gör vi det enkelt för Google att förstå att din verksamhet är det bästa alternativet i Enköping.",
         "Det handlar om att bygga auktoritet över tid. Genom att kombinera blixtsnabb teknik med relevant, djupt innehåll skapar vi en digital närvaro som faktiskt genererar tillväxt och nya affärsmöjligheter för ditt företag.",

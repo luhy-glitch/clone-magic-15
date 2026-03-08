@@ -117,7 +117,7 @@ export default function Hero() {
         <div className="relative z-20 -translate-y-10">
           <div className="absolute -inset-3 bg-gradient-to-r from-yellow-500/30 via-amber-500/20 to-orange-500/30 rounded-full blur-xl animate-pulse"></div>
           <Link
-            to="/kontakt"
+            to="/gratis-seo-analys"
             className="relative bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-400 text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 shadow-[0_0_40px_rgba(245,158,11,0.4)] hover:shadow-[0_0_60px_rgba(245,158,11,0.6)] hover:scale-105 transition-all"
           >
             Få en gratis SEO-analys <ArrowRight size={18} />

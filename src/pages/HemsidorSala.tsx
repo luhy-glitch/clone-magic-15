@@ -5,9 +5,9 @@ const config = {
   city: "Sala",
   slug: "hemsidor-sala",
   serviceKeyword: "Webbdesign",
-  metaTitle: "Webbdesign Sala - Modern Design & Hög Prestanda",
-  metaDescription: "Skräddarsydd webbdesign i Sala. Vi kombinerar estetik med blixtsnabb teknik för bästa användarupplevelse.",
-  heroHeading: "Webbdesign & Hemsidor i Sala",
+  metaTitle: "Webbdesign Sala - Hemsidor som Ger Fler Kunder | LRH Konsult",
+  metaDescription: "Moderna hemsidor i Sala som rankar på Google och konverterar besökare till kunder. 100/100 PageSpeed och lokal SEO.",
+  heroHeading: "Få en modern hemsida som faktiskt säljer i Sala",
   heroDescription: "I Sala vet vi att en hemsida inte bara ska vara snygg – den ska arbeta för dig. Vi skapar konverteringsoptimerade hemsidor med mobil-först-design och prestanda i världsklass som förvandlar besökare till betalande kunder.",
   icon: Code2,
   benefits: [
