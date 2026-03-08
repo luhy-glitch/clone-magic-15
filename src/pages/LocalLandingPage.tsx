@@ -244,6 +244,18 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
           </div>
         </section>
 
+        {/* Bottom CTA */}
+        <section className="py-12 sm:py-16 bg-section-alt text-center">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <Link
+              to="/kontakt"
+              className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px]"
+            >
+              Boka samtal <ArrowRight size={20} />
+            </Link>
+          </div>
+        </section>
+
         {/* Contact */}
         <Contact />
       </main>
