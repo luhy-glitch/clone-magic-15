@@ -122,7 +122,7 @@ const Index = () => {
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">SEO-optimering i Köping</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
                 Köping har en aktiv företagsscen där lokal synlighet är avgörande. Genom teknisk SEO, Google Business-optimering och innehållsstrategier hjälper vi företag i Köping att ranka högre i sökresultaten och nå fler lokala kunder.{" "}
-                <a href="/seo-koping" className="text-primary hover:underline font-medium">Läs mer om SEO i Köping</a>.
+                <Link to="/seo-koping" className="text-primary hover:underline font-medium">Läs mer om SEO i Köping</Link>.
               </p>
 
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbdesign i Sala</h2>
