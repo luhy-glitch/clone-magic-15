@@ -6,7 +6,7 @@ const PlexusBackground = React.lazy(() => import("./PlexusBackground"));
 
 export default function Hero() {
   return (
-    <section className="hero-section relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-background text-foreground overflow-hidden pt-40 pb-20 px-4">
+    <section className="hero-section relative flex flex-col items-center justify-center w-full min-h-[90vh] bg-background text-foreground overflow-x-hidden pt-40 pb-20 px-4">
 
       {/* Plexus network background - deferred, respects reduced motion */}
       <Suspense fallback={null}>
