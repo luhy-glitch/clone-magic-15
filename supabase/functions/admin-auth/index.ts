@@ -5,7 +5,6 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
-// --- Rate limiting (in-memory is fine for this - worst case resets on cold start) ---
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 5;
 const RATE_WINDOW_MS = 15 * 60 * 1000;
@@ -21,7 +20,6 @@ function isRateLimited(ip: string): boolean {
   return entry.count > RATE_LIMIT;
 }
 
-// --- DB-backed session helpers ---
 function getSupabase() {
   return createClient(
     Deno.env.get("SUPABASE_URL")!,
@@ -37,11 +35,7 @@ async function createSession(supabase: ReturnType<typeof createClient>): Promise
 }
 
 async function validateSession(supabase: ReturnType<typeof createClient>, token: string): Promise<boolean> {
-  const { data } = await supabase
-    .from("admin_sessions")
-    .select("expires_at")
-    .eq("token", token)
-    .single();
+  const { data } = await supabase.from("admin_sessions").select("expires_at").eq("token", token).single();
   if (!data) return false;
   if (new Date(data.expires_at) < new Date()) {
     await supabase.from("admin_sessions").delete().eq("token", token);
@@ -54,8 +48,8 @@ async function invalidateSession(supabase: ReturnType<typeof createClient>, toke
   await supabase.from("admin_sessions").delete().eq("token", token);
 }
 
-async function cleanupExpiredSessions(supabase: ReturnType<typeof createClient>) {
-  await supabase.from("admin_sessions").delete().lt("expires_at", new Date().toISOString());
+async function auditLog(supabase: ReturnType<typeof createClient>, action: string, details: Record<string, unknown> = {}) {
+  await supabase.from("admin_audit_log").insert({ action, details }).catch(() => {});
 }
 
 Deno.serve(async (req) => {
@@ -67,7 +61,7 @@ Deno.serve(async (req) => {
   const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
 
   // Cleanup expired sessions occasionally
-  cleanupExpiredSessions(supabase).catch(() => {});
+  supabase.from("admin_sessions").delete().lt("expires_at", new Date().toISOString()).then(() => {});
 
   try {
     const contentType = req.headers.get("content-type") || "";
@@ -77,85 +71,55 @@ Deno.serve(async (req) => {
     if (contentType.includes("multipart/form-data")) {
       const formData = await req.formData();
       const sessionToken = formData.get("session_token") as string;
-
       if (!sessionToken || !(await validateSession(supabase, sessionToken))) {
-        return new Response(JSON.stringify({ error: "Unauthorized" }), {
-          status: 401,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
+        return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } });
       }
-
       const file = formData.get("file") as File;
       if (!file) {
-        return new Response(JSON.stringify({ error: "No file provided" }), {
-          status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
+        return new Response(JSON.stringify({ error: "No file provided" }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
       }
-
       const ext = file.name.split(".").pop() || "jpg";
       const fileName = `${crypto.randomUUID()}.${ext}`;
-
-      const { error: uploadError } = await supabase.storage
-        .from("blog-images")
-        .upload(fileName, file, { contentType: file.type, upsert: false });
-
+      const { error: uploadError } = await supabase.storage.from("blog-images").upload(fileName, file, { contentType: file.type, upsert: false });
       if (uploadError) throw uploadError;
-
       const { data: urlData } = supabase.storage.from("blog-images").getPublicUrl(fileName);
-
-      return new Response(JSON.stringify({ success: true, url: urlData.publicUrl }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      await auditLog(supabase, "image_upload", { fileName });
+      return new Response(JSON.stringify({ success: true, url: urlData.publicUrl }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
-    // Handle JSON actions
     const body = await req.json();
-    const { action, secret_key, session_token, post } = body;
+    const { action, secret_key, session_token, post, lead_id, status } = body;
 
     // --- Login ---
     if (action === "verify") {
       if (isRateLimited(clientIp)) {
-        return new Response(JSON.stringify({ error: "Too many attempts. Try again later." }), {
-          status: 429,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
+        return new Response(JSON.stringify({ error: "Too many attempts. Try again later." }), { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } });
       }
-
       if (!ADMIN_KEY || secret_key !== ADMIN_KEY) {
-        return new Response(JSON.stringify({ error: "Unauthorized" }), {
-          status: 401,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
+        await auditLog(supabase, "login_failed", { ip: clientIp });
+        return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } });
       }
-
       const token = await createSession(supabase);
-      return new Response(JSON.stringify({ success: true, session_token: token }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      await auditLog(supabase, "login_success", { ip: clientIp });
+      return new Response(JSON.stringify({ success: true, session_token: token }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
     // --- All other actions require valid session ---
     if (!session_token || !(await validateSession(supabase, session_token))) {
-      return new Response(JSON.stringify({ error: "Unauthorized" }), {
-        status: 401,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
     if (action === "validate_session") {
-      return new Response(JSON.stringify({ success: true }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return new Response(JSON.stringify({ success: true }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
     if (action === "logout") {
       await invalidateSession(supabase, session_token);
-      return new Response(JSON.stringify({ success: true }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      await auditLog(supabase, "logout");
+      return new Response(JSON.stringify({ success: true }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
+    // --- Blog CRUD ---
     if (action === "create") {
       const { data, error } = await supabase.from("blog_posts").insert({
         slug: post.slug, title: post.title, date: post.date, tag: post.tag,
@@ -163,43 +127,53 @@ Deno.serve(async (req) => {
         image_url: post.image_url || "", image_alt: post.image_alt || "",
       }).select().single();
       if (error) throw error;
-      return new Response(JSON.stringify({ success: true, post: data }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      await auditLog(supabase, "blog_create", { slug: post.slug });
+      return new Response(JSON.stringify({ success: true, post: data }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
     if (action === "update") {
-      const { data, error } = await supabase.from("blog_posts")
-        .update({
-          title: post.title, date: post.date, tag: post.tag,
-          excerpt: post.excerpt, content: post.content,
-          image_url: post.image_url || "", image_alt: post.image_alt || "",
-          slug: post.slug,
-        })
-        .eq("id", post.id).select().single();
+      const { data, error } = await supabase.from("blog_posts").update({
+        title: post.title, date: post.date, tag: post.tag,
+        excerpt: post.excerpt, content: post.content,
+        image_url: post.image_url || "", image_alt: post.image_alt || "",
+        slug: post.slug,
+      }).eq("id", post.id).select().single();
       if (error) throw error;
-      return new Response(JSON.stringify({ success: true, post: data }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      await auditLog(supabase, "blog_update", { id: post.id, slug: post.slug });
+      return new Response(JSON.stringify({ success: true, post: data }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
     if (action === "delete") {
       const { error } = await supabase.from("blog_posts").delete().eq("id", post.id);
       if (error) throw error;
-      return new Response(JSON.stringify({ success: true }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      await auditLog(supabase, "blog_delete", { id: post.id });
+      return new Response(JSON.stringify({ success: true }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
-    return new Response(JSON.stringify({ error: "Invalid action" }), {
-      status: 400,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    // --- Lead management ---
+    if (action === "get_leads") {
+      const { data, error } = await supabase.from("contact_submissions").select("*").order("created_at", { ascending: false });
+      if (error) throw error;
+      return new Response(JSON.stringify({ success: true, leads: data }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+
+    if (action === "update_lead_status") {
+      if (!lead_id || !status) {
+        return new Response(JSON.stringify({ error: "Missing lead_id or status" }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+      }
+      const validStatuses = ["new", "contacted", "client"];
+      if (!validStatuses.includes(status)) {
+        return new Response(JSON.stringify({ error: "Invalid status" }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+      }
+      const { error } = await supabase.from("contact_submissions").update({ status }).eq("id", lead_id);
+      if (error) throw error;
+      await auditLog(supabase, "lead_status_update", { lead_id, status });
+      return new Response(JSON.stringify({ success: true }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+
+    return new Response(JSON.stringify({ error: "Invalid action" }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   } catch (err) {
     console.error("Admin auth error:", err);
-    return new Response(JSON.stringify({ error: "An error occurred. Please try again." }), {
-      status: 500,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    return new Response(JSON.stringify({ error: "An error occurred. Please try again." }), { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   }
 });
