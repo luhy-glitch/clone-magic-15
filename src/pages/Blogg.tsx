@@ -182,10 +182,10 @@ const Blogg = () => {
                 <h3 className="text-xl font-bold font-serif mb-3">Utforska våra tjänster</h3>
                 <p className="text-muted-foreground text-sm mb-6">Behöver du hjälp med webbutveckling eller SEO? Vi hjälper företag i hela Västmanland.</p>
                 <div className="flex flex-wrap justify-center gap-3">
-                  <Link to="/webbutveckling" className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors">
+                  <Link to="/tjanster/webbutveckling" className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors">
                     Webbutveckling
                   </Link>
-                  <Link to="/seo-optimering" className="px-5 py-2.5 rounded-full border border-border text-foreground font-medium text-sm hover:border-primary hover:text-primary transition-colors">
+                  <Link to="/tjanster/seo-optimering" className="px-5 py-2.5 rounded-full border border-border text-foreground font-medium text-sm hover:border-primary hover:text-primary transition-colors">
                     SEO-optimering
                   </Link>
                   <Link to="/kontakt" className="px-5 py-2.5 rounded-full border border-border text-foreground font-medium text-sm hover:border-primary hover:text-primary transition-colors">
