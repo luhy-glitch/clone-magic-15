@@ -73,7 +73,7 @@ export default function Hero() {
         {/* Sala – top-right area of map */}
         <Link
           to="/hemsidor-sala"
-          className="absolute top-[-5%] right-[25%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[5%] right-[28%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Hemsidor och SEO i Sala"
         >
           <div className="relative">
