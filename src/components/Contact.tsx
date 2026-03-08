@@ -1,11 +1,20 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2, Download, CheckCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
+
+const pdfTips = [
+  "Optimera bilder med AVIF & WebP – minska bildvikten med upp till 80 %",
+  "Välj rätt teknikstack – React & Next.js för blixtsnabba sidor",
+  "Eliminera JavaScript-blockeringar – nå 0ms TBT med code-splitting",
+  "Prioritera Core Web Vitals – fixa CLS, LCP och FID",
+  "Implementera strukturerad data – FAQ-schema och JSON-LD",
+];
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", website: "" });
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
