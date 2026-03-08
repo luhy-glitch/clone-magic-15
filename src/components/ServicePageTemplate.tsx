@@ -99,17 +99,27 @@ const buildServiceJsonLd = (serviceName: string, description: string, path: stri
           "addressRegion": "Västmanlands län",
           "addressCountry": "SE",
         },
-        "areaServed": [
+      "areaServed": [
           { "@type": "City", "name": "Västerås" },
           { "@type": "City", "name": "Köping" },
           { "@type": "City", "name": "Sala" },
+          { "@type": "City", "name": "Enköping" },
+          { "@type": "City", "name": "Eskilstuna" },
+          { "@type": "City", "name": "Arboga" },
+          { "@type": "City", "name": "Fagersta" },
           { "@type": "State", "name": "Västmanland" },
+          { "@type": "State", "name": "Södermanland" },
+          { "@type": "State", "name": "Uppsala län" },
         ],
       },
       "areaServed": [
         { "@type": "City", "name": "Västerås" },
         { "@type": "City", "name": "Köping" },
         { "@type": "City", "name": "Sala" },
+        { "@type": "City", "name": "Enköping" },
+        { "@type": "City", "name": "Eskilstuna" },
+        { "@type": "City", "name": "Arboga" },
+        { "@type": "City", "name": "Fagersta" },
       ],
     },
   ];
@@ -393,15 +403,15 @@ const ServicePageTemplate = ({
           </section>
         )}
 
-        {/* Din lokala partner i Västmanland */}
+        {/* Din lokala partner i Mälardalen & Västmanland */}
         <section className="py-16 sm:py-24 bg-background" aria-labelledby="local-partner-heading">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <h2 id="local-partner-heading" className="text-2xl sm:text-3xl font-bold font-serif mb-6">
-                Din lokala partner i Västmanland
+                Din lokala partner i Mälardalen & Västmanland
               </h2>
               <p className="text-muted-foreground leading-[1.8] mb-8">
-                Vi hjälper företag i hela Västmanland att växa digitalt. Oavsett om du befinner dig i Västerås, Köping, Sala, Enköping eller Eskilstuna erbjuder vi samma höga kvalitet och personliga service. Utforska våra lokala tjänster:
+                Vi hjälper företag i hela Mälardalsregionen att växa digitalt. Oavsett om du befinner dig i Västerås, Köping, Sala, Enköping (Uppsala län), Eskilstuna (Södermanland), Arboga eller Fagersta erbjuder vi samma höga kvalitet och personliga service. Utforska våra lokala tjänster:
               </p>
               <div className="flex flex-wrap gap-3">
                 {[

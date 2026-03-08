@@ -83,12 +83,24 @@ const Index = () => {
         <Suspense fallback={null}>
           <Services />
 
-          {/* Vi finns i Västmanland – lokal SEO-sektion */}
+          {/* Mid-page CTA */}
+          <section className="py-12 sm:py-16 bg-section-alt text-center">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6">
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif mb-4">Vill du se resultat?</h2>
+              <p className="text-muted-foreground mb-6">Se hur vi hjälpt företag i Västmanland att öka sin synlighet och konvertering.</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/case" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px]">Se kundcase</a>
+                <a href="/gratis-seo-analys" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border border-border text-foreground font-medium hover:bg-muted/50 transition-colors min-h-[44px]">Gratis SEO-analys</a>
+              </div>
+            </div>
+          </section>
+
+          {/* Expertis i Mälardalen & Västmanland – lokal SEO-sektion */}
           <section className="py-16 sm:py-20 bg-background">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-6">Vi finns i Västmanland</h2>
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-6">Expertis i Mälardalen & Västmanland</h2>
               <p className="text-muted-foreground leading-[1.6] mb-10">
-                LRH Konsult är din lokala partner för webbutveckling och sökmotoroptimering i hela Västmanlands län. Vi arbetar nära företag i regionen och förstår den lokala marknaden – från centrala Västerås till Köping, Sala, Enköping, Eskilstuna, Arboga och Fagersta. Oavsett var du befinner dig hjälper vi dig att synas online.
+                LRH Konsult är din lokala partner för webbutveckling och sökmotoroptimering i Mälardalsregionen. Vi arbetar nära företag i hela området och förstår den lokala marknaden – från centrala Västerås till Köping, Sala, Enköping, Eskilstuna, Arboga och Fagersta. Oavsett var du befinner dig hjälper vi dig att synas online.
               </p>
 
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Västerås</h2>
@@ -109,15 +121,15 @@ const Index = () => {
                 <a href="/hemsidor-sala" className="text-primary hover:underline font-medium">Läs mer om webbdesign i Sala</a>.
               </p>
 
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Enköping</h2>
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Enköping (Uppsala län)</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
-                Enköping växer snabbt och konkurrensen online ökar. Vi hjälper företag i Enköping att maximera sin digitala närvaro med blixtsnabba hemsidor och teknisk SEO i världsklass.{" "}
+                Enköping ligger strategiskt i Uppsala län, med närheten till Stockholm och Uppsala som en stor fördel. Vi hjälper företag i Enköping att maximera sin digitala närvaro med blixtsnabba hemsidor och teknisk SEO i världsklass.{" "}
                 <a href="/webbutveckling-enkoping" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Enköping</a>.
               </p>
 
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">SEO i Eskilstuna</h2>
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">SEO i Eskilstuna (Södermanland)</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
-                Eskilstuna är en stad i snabb tillväxt där företagens digitala närvaro är avgörande. Vi hjälper företag i Eskilstuna att dominera lokala sökresultat genom teknisk perfektion och lokal relevans.{" "}
+                Eskilstuna är en viktig knutpunkt i Södermanland med en snabbt växande företagsscen. Vi hjälper företag i Eskilstuna att dominera lokala sökresultat genom teknisk perfektion och lokal relevans.{" "}
                 <a href="/webbutveckling-eskilstuna" className="text-primary hover:underline font-medium">Läs mer om SEO i Eskilstuna</a>.
               </p>
 

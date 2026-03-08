@@ -4,12 +4,12 @@ const SITE_URL = "https://lrhkonsult.se";
 
 const staticRoutes = [
   { loc: "", changefreq: "weekly", priority: "1.0" },
-  { loc: "/webbutveckling", changefreq: "monthly", priority: "0.9" },
-  { loc: "/seo-optimering", changefreq: "monthly", priority: "0.9" },
   { loc: "/om-mig", changefreq: "monthly", priority: "0.7" },
   { loc: "/blogg", changefreq: "weekly", priority: "0.8" },
   { loc: "/kontakt", changefreq: "monthly", priority: "0.8" },
   { loc: "/integritetspolicy", changefreq: "yearly", priority: "0.3" },
+  { loc: "/case", changefreq: "monthly", priority: "0.8" },
+  { loc: "/gratis-seo-analys", changefreq: "monthly", priority: "0.8" },
   { loc: "/tjanster/webbutveckling", changefreq: "monthly", priority: "0.8" },
   { loc: "/tjanster/webbdesign", changefreq: "monthly", priority: "0.8" },
   { loc: "/tjanster/seo-optimering", changefreq: "monthly", priority: "0.8" },
@@ -38,7 +38,6 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // Require authorization via Bearer token or apikey header
   const authHeader = req.headers.get("Authorization");
   const apikeyHeader = req.headers.get("apikey");
   const anonKey = Deno.env.get("SUPABASE_ANON_KEY");

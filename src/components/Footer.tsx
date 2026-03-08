@@ -10,7 +10,7 @@ const localServices = [
   { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
   { label: "Webbdesign Fagersta", to: "/webbutveckling-fagersta" },
   { label: "Hemsidor Bygg & Hantverkare", to: "/hemsidor-bygg-hantverkare" },
-  { label: "Digital Marknadsföring", to: "/digital-marknadsforing" },
+  { label: "Digital Marknadsföring", to: "/digital-marknadsforing-butiker" },
 ];
 
 const Footer = () => {
@@ -27,7 +27,7 @@ const Footer = () => {
               <span className="font-serif font-bold text-lg text-foreground" itemProp="name">LRH Konsult</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4" itemProp="description">
-              Din lokala partner för Webbutveckling &amp; SEO i Västmanland.
+              Din lokala partner för Webbutveckling &amp; SEO i Mälardalen &amp; Västmanland.
             </p>
             <address className="not-italic text-sm text-muted-foreground space-y-1" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
               <p itemProp="addressLocality">Västerås</p>
@@ -64,16 +64,17 @@ const Footer = () => {
             <h3 className="font-serif font-bold text-foreground mb-4 text-base">Sidor</h3>
             <ul className="space-y-2">
               <li><Link to="/om-mig" className="text-sm text-muted-foreground hover:text-primary transition-colors">Om mig</Link></li>
+              <li><Link to="/case" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kundcase</Link></li>
               <li><Link to="/blogg" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blogg</Link></li>
               <li><Link to="/kontakt" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kontakt</Link></li>
+              <li><Link to="/gratis-seo-analys" className="text-sm text-muted-foreground hover:text-primary transition-colors">Gratis SEO-analys</Link></li>
               <li><Link to="/integritetspolicy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Integritetspolicy</Link></li>
-              <li><Link to="/case-studies/pagespeed-revolution" className="text-sm text-muted-foreground hover:text-primary transition-colors">Case Studies</Link></li>
             </ul>
           </nav>
 
-          {/* Lokala tjänster – SEO hub */}
-          <nav aria-label="Lokala tjänster" className="lg:col-span-2">
-            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Lokala tjänster</h3>
+          {/* Regionalt – SEO hub */}
+          <nav aria-label="Regionalt" className="lg:col-span-2">
+            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Regionalt</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {localServices.map(s => (
                 <li key={s.to}>

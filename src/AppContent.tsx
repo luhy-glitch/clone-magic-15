@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
+import RedirectRoute from "./components/RedirectRoute";
 
 // Defer heavy providers — not needed for initial paint
 const TooltipProvider = lazy(() => import("@radix-ui/react-tooltip").then(m => ({ default: m.TooltipProvider })));
@@ -36,6 +37,8 @@ const WebbutvecklingFagersta = lazy(() => import("./pages/WebbutvecklingFagersta
 const HemsidorByggHantverkare = lazy(() => import("./pages/HemsidorByggHantverkare"));
 const DigitalMarknadsforing = lazy(() => import("./pages/DigitalMarknadsforing"));
 const CaseStudyPageSpeed = lazy(() => import("./pages/CaseStudyPageSpeed"));
+const Case = lazy(() => import("./pages/Case"));
+const GratisSeoAnalys = lazy(() => import("./pages/GratisSeoAnalys"));
 
 // Lazy-init QueryClient — only needed for pages that fetch data
 const LazyQueryProvider = lazy(() =>
@@ -54,19 +57,25 @@ const DataRoutes = () => (
   <Suspense fallback={null}>
     <LazyQueryProvider>
       <Routes>
-        <Route path="/webbutveckling" element={<Webbutveckling />} />
-        <Route path="/seo-optimering" element={<SeoOptimering />} />
+        {/* 301 redirects from old root-level service paths */}
+        <Route path="/webbutveckling" element={<RedirectRoute to="/tjanster/webbutveckling" />} />
+        <Route path="/seo-optimering" element={<RedirectRoute to="/tjanster/seo-optimering" />} />
+
         <Route path="/om-mig" element={<OmMig />} />
         <Route path="/blogg" element={<Blogg />} />
         <Route path="/blogg/:slug" element={<BloggArtikel />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
+
+        {/* Service pages (canonical paths) */}
         <Route path="/tjanster/webbutveckling" element={<WebbutvecklingPage />} />
         <Route path="/tjanster/webbdesign" element={<WebbdesignPage />} />
         <Route path="/tjanster/seo-optimering" element={<SeoOptimeringPage />} />
         <Route path="/tjanster/wordpress-losningar" element={<WordpressPage />} />
         <Route path="/tjanster/underhall-support" element={<UnderhallSupportPage />} />
         <Route path="/tjanster/prestanda-optimering" element={<PrestandaOptimeringPage />} />
+
+        {/* Regional pages */}
         <Route path="/webbutveckling-vasteras" element={<WebbutvecklingVasteras />} />
         <Route path="/seo-koping" element={<SeoKoping />} />
         <Route path="/hemsidor-sala" element={<HemsidorSala />} />
@@ -74,9 +83,16 @@ const DataRoutes = () => (
         <Route path="/webbutveckling-eskilstuna" element={<WebbutvecklingEskilstuna />} />
         <Route path="/webbutveckling-arboga" element={<WebbutvecklingArboga />} />
         <Route path="/webbutveckling-fagersta" element={<WebbutvecklingFagersta />} />
+
+        {/* Niche pages */}
         <Route path="/hemsidor-bygg-hantverkare" element={<HemsidorByggHantverkare />} />
         <Route path="/digital-marknadsforing-butiker" element={<DigitalMarknadsforing />} />
         <Route path="/case-studies/pagespeed-revolution" element={<CaseStudyPageSpeed />} />
+
+        {/* New pages */}
+        <Route path="/case" element={<Case />} />
+        <Route path="/gratis-seo-analys" element={<GratisSeoAnalys />} />
+
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="*" element={<NotFound />} />

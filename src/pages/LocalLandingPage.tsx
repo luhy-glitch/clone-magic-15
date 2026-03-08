@@ -215,7 +215,7 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <h2 id="local-related-heading" className="text-xl sm:text-2xl font-bold font-serif mb-6 text-center">
-                Vi hjälper företag i hela Västmanland
+                Vi hjälper företag i hela Mälardalen & Västmanland
               </h2>
               <div className="flex flex-wrap justify-center gap-3 mb-8">
                 {ALL_LOCAL_PAGES.filter(p => p.slug !== config.slug).map((page) => (

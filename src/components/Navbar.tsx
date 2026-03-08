@@ -17,6 +17,8 @@ const regions = [
   { label: "Sala", to: "/hemsidor-sala" },
   { label: "Enköping", to: "/webbutveckling-enkoping" },
   { label: "Eskilstuna", to: "/webbutveckling-eskilstuna" },
+  { label: "Arboga", to: "/webbutveckling-arboga" },
+  { label: "Fagersta", to: "/webbutveckling-fagersta" },
 ];
 
 const Navbar = () => {
@@ -38,7 +40,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border" role="banner">
+    <header className="sticky top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border" role="banner">
       <nav aria-label="Huvudnavigering" className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
@@ -64,7 +66,7 @@ const Navbar = () => {
                     </Link>
                   ))}
                   <div className="border-t border-border my-2" />
-                  <p className="px-4 pb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Verksamma i</p>
+                  <p className="px-4 pb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Regionalt</p>
                   {regions.map(r => (
                     <Link key={r.to} to={r.to} onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
                       {r.label}
@@ -75,15 +77,16 @@ const Navbar = () => {
             )}
           </div>
 
+          <Link to="/case" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Kundcase</Link>
           <Link to="/om-mig" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Om mig</Link>
           <Link to="/#priser" onClick={() => handleNavClick("/#priser")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">Priser</Link>
           <Link to="/blogg" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Blogg</Link>
           <Link to="/kontakt" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Kontakt</Link>
           <Link
-            to="/kontakt"
+            to="/gratis-seo-analys"
             className="px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors animate-[pulse_3s_ease-in-out_infinite] hover:animate-none shadow-lg shadow-primary/25"
           >
-            Boka samtal
+            Boka gratis analys
           </Link>
         </div>
 
@@ -121,7 +124,7 @@ const Navbar = () => {
             className="flex items-center justify-between w-full py-3 text-sm font-medium text-foreground"
             aria-expanded={mobileRegionsOpen}
           >
-            Våra områden
+            Regionalt
             <ChevronDown size={16} className={`transition-transform ${mobileRegionsOpen ? "rotate-180" : ""}`} />
           </button>
           {mobileRegionsOpen && (
@@ -135,16 +138,17 @@ const Navbar = () => {
           )}
 
           <div className="border-t border-border my-1" />
+          <Link to="/case" onClick={() => setMobileOpen(false)} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Kundcase</Link>
           <Link to="/om-mig" onClick={() => setMobileOpen(false)} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Om mig</Link>
           <Link to="/#priser" onClick={() => { handleNavClick("/#priser"); setMobileOpen(false); }} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Priser</Link>
           <Link to="/blogg" onClick={() => setMobileOpen(false)} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Blogg</Link>
           <Link to="/kontakt" onClick={() => setMobileOpen(false)} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Kontakt</Link>
           <Link
-            to="/kontakt"
+            to="/gratis-seo-analys"
             onClick={() => setMobileOpen(false)}
             className="mt-2 px-5 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium w-fit min-h-[44px] flex items-center"
           >
-            Boka samtal
+            Boka gratis analys
           </Link>
         </div>
       )}
