@@ -262,7 +262,7 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <Link
               to="/gratis-seo-analys"
-              className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px]"
+              className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px] animate-[pulse_3s_ease-in-out_infinite] hover:animate-none"
             >
               Få en gratis SEO-analys <ArrowRight size={20} />
             </Link>
