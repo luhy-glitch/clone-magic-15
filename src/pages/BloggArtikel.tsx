@@ -200,6 +200,8 @@ const BloggArtikel = () => {
     }
   }
 
+  const updatedAt = (post as any).updated_at || post.date;
+
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -207,7 +209,7 @@ const BloggArtikel = () => {
       headline: post.title,
       description: post.excerpt,
       datePublished: post.date,
-      dateModified: post.date,
+      dateModified: updatedAt,
       image: post.image_url || undefined,
       author: { "@type": "Person", name: "Lucas", url: "https://lrhkonsult.se/om-mig" },
       publisher: { "@type": "Organization", name: "LRH Konsult", url: "https://lrhkonsult.se" },
