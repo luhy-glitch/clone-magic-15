@@ -145,9 +145,25 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
                 <p className="mt-6 text-lg text-hero-muted max-w-2xl leading-relaxed">
                   {config.heroDescription}
                 </p>
+
+                {/* Snabba fakta – GEO snippet hook */}
+                <ul className="mt-6 space-y-2">
+                  {[
+                    `100/100 PageSpeed – snabbast i ${config.city}`,
+                    "Lokal SEO med JSON-LD & Google Business",
+                    "React & Next.js – framtidssäker teknik",
+                    `Företag i ${config.city} får fler kunder online`,
+                  ].map((fact, i) => (
+                    <li key={i} className="flex items-center gap-2.5 text-sm text-hero-muted/90">
+                      <CheckCircle size={14} className="text-primary shrink-0" />
+                      {fact}
+                    </li>
+                  ))}
+                </ul>
+
                 <Link
                   to="/gratis-seo-analys"
-                  className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25"
+                  className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 animate-cta-pulse"
                 >
                   Få en gratis SEO-analys <ArrowRight size={18} />
                 </Link>
@@ -276,9 +292,15 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
         {/* Bottom CTA */}
         <section className="py-12 sm:py-16 bg-section-alt text-center">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif mb-4">
+              Redo att få fler kunder i {config.city}?
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              Vi analyserar din sajt gratis och visar exakt vad som behövs för att ranka högre på Google.
+            </p>
             <Link
               to="/gratis-seo-analys"
-              className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px] animate-[pulse_3s_ease-in-out_infinite] hover:animate-none"
+              className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px] animate-cta-pulse"
             >
               Få en gratis SEO-analys <ArrowRight size={20} />
             </Link>

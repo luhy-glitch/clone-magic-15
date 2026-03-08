@@ -200,6 +200,8 @@ const BloggArtikel = () => {
     }
   }
 
+  const updatedAt = (post as any).updated_at || post.date;
+
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -207,7 +209,7 @@ const BloggArtikel = () => {
       headline: post.title,
       description: post.excerpt,
       datePublished: post.date,
-      dateModified: post.date,
+      dateModified: updatedAt,
       image: post.image_url || undefined,
       author: { "@type": "Person", name: "Lucas", url: "https://lrhkonsult.se/om-mig" },
       publisher: { "@type": "Organization", name: "LRH Konsult", url: "https://lrhkonsult.se" },
@@ -267,6 +269,11 @@ const BloggArtikel = () => {
                 <span className="flex items-center gap-1.5 text-sm text-hero-muted">
                   <Calendar size={14} /> {post.date}
                 </span>
+                {updatedAt !== post.date && (
+                  <span className="flex items-center gap-1.5 text-sm text-hero-muted">
+                    Uppdaterad: {new Date(updatedAt).toLocaleDateString("sv-SE")}
+                  </span>
+                )}
                 <span className="flex items-center gap-1.5 text-sm text-hero-muted">
                   <Clock size={14} /> {readingTime} min läsning
                 </span>

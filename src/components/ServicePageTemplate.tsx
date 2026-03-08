@@ -211,10 +211,10 @@ const ServicePageTemplate = ({
                   {heroDescription}
                 </p>
                 <Link
-                  to="/kontakt"
-                  className="mt-8 inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25"
+                  to="/gratis-seo-analys"
+                  className="mt-8 inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 animate-cta-pulse"
                 >
-                  Boka fri konsultation <ArrowRight size={18} />
+                  Få gratis SEO-analys <ArrowRight size={18} />
                 </Link>
               </div>
             </AnimatedSection>
@@ -446,17 +446,25 @@ const ServicePageTemplate = ({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <AnimatedSection>
               <h2 id="service-cta-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-6">
-                Redo att ta nästa steg?
+                Redo att få fler kunder online?
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                Boka en kostnadsfri konsultation så diskuterar vi hur jag kan hjälpa ditt företag att växa online.
+                Vi analyserar din sajt gratis och ger dig konkreta åtgärder som ökar din synlighet och konvertering.
               </p>
-              <Link
-                to="/kontakt"
-                className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-primary text-primary-foreground font-medium text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25"
-              >
-                Boka fri konsultation <ArrowRight size={20} />
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/gratis-seo-analys"
+                  className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-primary text-primary-foreground font-medium text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 animate-cta-pulse"
+                >
+                  Få gratis SEO-analys <ArrowRight size={20} />
+                </Link>
+                <Link
+                  to="/kontakt"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border text-foreground font-medium hover:bg-muted/50 transition-colors"
+                >
+                  Boka samtal <ArrowRight size={18} />
+                </Link>
+              </div>
             </AnimatedSection>
           </div>
         </section>
