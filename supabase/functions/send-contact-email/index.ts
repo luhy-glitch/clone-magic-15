@@ -11,19 +11,33 @@ function escapeHtml(text: string): string {
   return text.replace(/[&<>"']/g, (m) => map[m]);
 }
 
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 5;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(ip);
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+async function isRateLimited(supabase: ReturnType<typeof createClient>, ip: string): Promise<boolean> {
+  const now = new Date();
+  const resetAt = new Date(now.getTime() + RATE_WINDOW_MS);
+
+  const { data } = await supabase
+    .from("contact_rate_limits")
+    .select("attempt_count, reset_at")
+    .eq("ip", ip)
+    .single();
+
+  if (!data || new Date(data.reset_at) < now) {
+    await supabase
+      .from("contact_rate_limits")
+      .upsert({ ip, attempt_count: 1, reset_at: resetAt.toISOString() }, { onConflict: "ip" });
     return false;
   }
-  entry.count++;
-  return entry.count > RATE_LIMIT;
+
+  const newCount = data.attempt_count + 1;
+  await supabase
+    .from("contact_rate_limits")
+    .update({ attempt_count: newCount })
+    .eq("ip", ip);
+
+  return newCount > RATE_LIMIT;
 }
 
 const corsHeaders = {
@@ -45,8 +59,9 @@ serve(async (req: Request) => {
   }
 
   try {
+    const supabaseRL = getSupabase();
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-    if (isRateLimited(clientIp)) {
+    if (await isRateLimited(supabaseRL, clientIp)) {
       return new Response(
         JSON.stringify({ error: "För många förfrågningar. Försök igen senare." }),
         { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
@@ -85,7 +100,7 @@ serve(async (req: Request) => {
     }
 
     // Save to database for CRM
-    const supabase = getSupabase();
+    const supabase = supabaseRL;
     await supabase.from("contact_submissions").insert({
       name, email, subject: subject || "", message,
     }).then(({ error: dbError }) => {
