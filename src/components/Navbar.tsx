@@ -87,7 +87,7 @@ const Navbar = () => {
             </button>
             {dropdownOpen && (
               <div className="absolute top-full -left-4 pt-2">
-                <div className="bg-card border border-border rounded-xl shadow-2xl shadow-black/40 p-5 flex gap-8 min-w-[480px]">
+                <div className="bg-card border border-border rounded-xl shadow-2xl shadow-black/40 p-5 flex gap-8 min-w-[520px]">
                   {/* Tjänster column */}
                   <div className="min-w-[180px]">
                     <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-3">Huvudtjänster</p>
