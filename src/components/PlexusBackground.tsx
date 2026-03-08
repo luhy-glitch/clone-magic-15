@@ -13,6 +13,9 @@ export default function PlexusBackground() {
   const animRef = useRef<number>(0);
 
   useEffect(() => {
+    // Respect prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -20,12 +23,9 @@ export default function PlexusBackground() {
 
     let w = 0;
     let h = 0;
-
-    // Cache DPR to avoid repeated reads
     const dpr = window.devicePixelRatio || 1;
 
     const resize = () => {
-      // Read layout props once, then batch all writes
       const rect = canvas.getBoundingClientRect();
       w = rect.width;
       h = rect.height;
@@ -45,13 +45,13 @@ export default function PlexusBackground() {
     };
 
     const isMobile = window.innerWidth < 768;
+    const shouldAnimate = !isMobile && !prefersReducedMotion;
 
     const draw = () => {
       ctx.clearRect(0, 0, w, h);
       const nodes = nodesRef.current;
       const maxDist = 160;
 
-      // Lines
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[i].x - nodes[j].x;
@@ -69,15 +69,13 @@ export default function PlexusBackground() {
         }
       }
 
-      // Dots
       for (const n of nodes) {
         ctx.fillStyle = "rgba(140, 180, 240, 0.4)";
         ctx.beginPath();
         ctx.arc(n.x, n.y, 1.8, 0, Math.PI * 2);
         ctx.fill();
 
-        // Animate positions only on desktop
-        if (!isMobile) {
+        if (shouldAnimate) {
           n.x += n.vx;
           n.y += n.vy;
           if (n.x < 0 || n.x > w) n.vx *= -1;
@@ -85,12 +83,11 @@ export default function PlexusBackground() {
         }
       }
 
-      if (!isMobile) {
+      if (shouldAnimate) {
         animRef.current = requestAnimationFrame(draw);
       }
     };
 
-    // Double-rAF: first frame lets browser finish layout, second reads geometry safely
     const initId = requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         resize();
@@ -112,6 +109,7 @@ export default function PlexusBackground() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none z-0"
+      aria-hidden="true"
     />
   );
 }

@@ -1,13 +1,14 @@
 import { CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import AnimatedSection, { FadeIn, ScaleIn } from "./AnimatedSection";
 
 const skills = ["React", "TypeScript", "Node.js", "WordPress", "SEO"];
 
-const highlights = [
-  "Över 5 års erfarenhet inom webbutveckling",
-  "Specialiserad på moderna JavaScript-ramverk",
-  "Fokus på prestanda och användarupplevelse",
-  "Personlig service och snabb kommunikation",
+const quickFacts = [
+  "Lokal förankring: Specialiserad på digital tillväxt för företag i Västerås, Sala, Köping och omnejd.",
+  "Teknisk spets: Garanterad 100/100 PageSpeed genom modern arkitektur i React och Next.js.",
+  "Affärsnytta: Fokus på mätbara resultat och lead-generering som ger direkt ROI.",
+  "Framtidssäkrat: GEO-optimerat innehåll designat för att ranka högt i både sök och AI-assistenter.",
 ];
 
 const About = () => {
@@ -43,21 +44,29 @@ const About = () => {
             <div>
               <span className="text-primary font-medium text-sm tracking-widest uppercase">Om mig</span>
               <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold leading-tight">
-                Passion för att skapa{" "}
-                <span className="text-primary">digitala upplevelser</span>
+                Din digitala expert i{" "}
+                <span className="text-primary">Västmanland och Mälardalen</span>
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
-                Som webbutvecklare och konsult hjälper jag företag att förverkliga sina digitala visioner. Med en kombination av teknisk expertis och kreativt tänkande skapar jag lösningar som inte bara ser bra ut – utan också levererar resultat.
+                LRH Konsult är din lokala partner för strategisk webbutveckling och SEO med bas i hjärtat av Västmanland. Vi hjälper små och medelstora företag i{" "}
+                <Link to="/webbutveckling-vasteras" className="text-primary hover:underline font-medium">Västerås</Link>,{" "}
+                <Link to="/hemsidor-sala" className="text-primary hover:underline font-medium">Sala</Link>,{" "}
+                <Link to="/seo-koping" className="text-primary hover:underline font-medium">Köping</Link>,{" "}
+                <Link to="/webbutveckling-enkoping" className="text-primary hover:underline font-medium">Enköping</Link> och{" "}
+                <Link to="/webbutveckling-eskilstuna" className="text-primary hover:underline font-medium">Eskilstuna</Link>{" "}
+                att transformera sin digitala närvaro från passiva visitkort till aktiva säljmotorer.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Jag tror på transparens, tydlig kommunikation och långsiktiga samarbeten. Varje projekt behandlas med samma engagemang och noggrannhet, oavsett storlek.
+                Genom att kombinera global teknisk expertis i React och Next.js med en djup förståelse för den lokala marknaden i Mälardalen, skapar vi hemsidor som inte bara laddar snabbast i regionen, utan som också dominerar sökresultaten.
               </p>
+
+              {/* Snabba fakta */}
               <ul className="mt-8 space-y-4">
-                {highlights.map((item, i) => (
+                {quickFacts.map((item, i) => (
                   <FadeIn key={item} delay={0.3 + i * 0.1}>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 size={20} className="text-primary flex-shrink-0" />
-                      <span className="text-foreground">{item}</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={20} className="text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground text-sm">{item}</span>
                     </li>
                   </FadeIn>
                 ))}

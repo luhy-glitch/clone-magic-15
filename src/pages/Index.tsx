@@ -3,14 +3,34 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PageHead from "@/components/PageHead";
+import { ArrowRight } from "lucide-react";
 
 // Lazy-load everything below the fold
 const Services = lazy(() => import("@/components/Services"));
+const About = lazy(() => import("@/components/About"));
 const Pricing = lazy(() => import("@/components/Pricing"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
+
+const ALL_CITIES = [
+  { label: "Webbutveckling Västerås", to: "/webbutveckling-vasteras" },
+  { label: "SEO Köping", to: "/seo-koping" },
+  { label: "Hemsidor Sala", to: "/hemsidor-sala" },
+  { label: "Webbutveckling Enköping", to: "/webbutveckling-enkoping" },
+  { label: "Webbutveckling Eskilstuna", to: "/webbutveckling-eskilstuna" },
+  { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
+  { label: "Webbutveckling Fagersta", to: "/webbutveckling-fagersta" },
+  { label: "Webbutveckling Hallstahammar", to: "/webbutveckling-hallstahammar" },
+  { label: "Webbutveckling Kungsör", to: "/webbutveckling-kungsor" },
+  { label: "Webbutveckling Surahammar", to: "/webbutveckling-surahammar" },
+  { label: "Webbutveckling Heby", to: "/webbutveckling-heby" },
+  { label: "Webbutveckling Norberg", to: "/webbutveckling-norberg" },
+  { label: "Webbutveckling Skinnskatteberg", to: "/webbutveckling-skinnskatteberg" },
+  { label: "Webbutveckling Uppsala", to: "/webbutveckling-uppsala" },
+  { label: "Webbutveckling Örebro", to: "/webbutveckling-orebro" },
+];
 
 const homeFaqs = [
   { question: "Vad kostar det att bygga en hemsida?", answer: "Priset varierar beroende på projektets storlek och komplexitet. Vi erbjuder tre paket – Bas (5 000 kr), Standard (12 000 kr) och Premium (25 000 kr) – som täcker de flesta behov." },
@@ -105,13 +125,28 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Expertis i Mälardalen & Västmanland – lokal SEO-sektion */}
-          <section className="py-16 sm:py-20 bg-background">
+          <About />
+
+          {/* Expertis i Mälardalen & Västmanland – all 15 cities */}
+          <section className="py-16 sm:py-20 bg-section-alt">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
               <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-6">Expertis i Mälardalen & Västmanland</h2>
               <p className="text-muted-foreground leading-[1.6] mb-10">
-                LRH Konsult är din lokala partner för webbutveckling och sökmotoroptimering i Mälardalsregionen. Vi arbetar nära företag i hela området och förstår den lokala marknaden – från centrala Västerås till Köping, Sala, Enköping, Eskilstuna, Arboga och Fagersta. Oavsett var du befinner dig hjälper vi dig att synas online.
+                LRH Konsult är din lokala partner för webbutveckling och sökmotoroptimering i Mälardalsregionen. Vi arbetar nära företag i hela området och förstår den lokala marknaden – från centrala Västerås till Köping, Sala, Enköping, Eskilstuna, Arboga, Fagersta, Hallstahammar, Kungsör, Surahammar, Heby, Norberg, Skinnskatteberg, Uppsala och Örebro. Oavsett var du befinner dig hjälper vi dig att synas online.
               </p>
+
+              {/* City links – all 15 */}
+              <div className="flex flex-wrap gap-3 mb-12">
+                {ALL_CITIES.map(c => (
+                  <Link
+                    key={c.to}
+                    to={c.to}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border bg-card text-sm text-foreground hover:bg-primary/10 hover:border-primary/30 transition-colors"
+                  >
+                    {c.label} <ArrowRight size={14} className="text-primary" />
+                  </Link>
+                ))}
+              </div>
 
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Västerås</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
