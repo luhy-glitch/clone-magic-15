@@ -91,10 +91,10 @@ const Case = () => {
               Oavsett om du befinner dig i Västerås, Köping, Sala, Enköping, Eskilstuna, Arboga eller Fagersta kan vi hjälpa ditt företag att växa digitalt. Boka en kostnadsfri konsultation så diskuterar vi hur vi kan skapa liknande resultat för dig.
             </p>
             <Link
-              to="/kontakt"
+              to="/gratis-seo-analys"
               className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px]"
             >
-              Boka samtal <ArrowRight size={20} />
+              Få en gratis SEO-analys <ArrowRight size={20} />
             </Link>
           </div>
         </section>

@@ -57,8 +57,8 @@ const DigitalMarknadsforing = () => (
               <p className="mt-6 text-lg text-hero-muted max-w-2xl leading-relaxed">
                 Öka kundflödet till din butik i Västmanland med en professionell hemsida och lokal SEO som gör att kunderna hittar dig – online och offline.
               </p>
-              <Link to="/kontakt" className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25">
-                Boka fri konsultation <ArrowRight size={18} />
+              <Link to="/gratis-seo-analys" className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25">
+                Få en gratis SEO-analys <ArrowRight size={18} />
               </Link>
             </div>
           </AnimatedSection>
