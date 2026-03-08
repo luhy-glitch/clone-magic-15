@@ -77,11 +77,15 @@ const LrhLogo = ({
         d="M2 6h4v26h10v4H2V6z"
         fill={blueColor}
       />
-      {/* R */}
+      {/* R - stem */}
+      <rect x="18" y="6" width="4" height="30" fill={blueColor} />
+      {/* R - bowl */}
       <path
-        d="M18 6h8c4 0 6.5 2.8 6.5 6.5S30 19 26 19l6.5 17h-4.5L22 19h-4V6zm4 4v9h4c2.2 0 3.5-1.8 3.5-4.5S28.2 10 26 10h-4z"
+        d="M22 6h5c3.5 0 6 2.5 6 6.5 0 4-2.5 6.5-6 6.5H22V15h5c1.5 0 2.5-1.2 2.5-2.5S28.5 10 27 10h-5V6z"
         fill={blueColor}
       />
+      {/* R - leg */}
+      <polygon points="24,19 28.5,19 33,36 28.5,36" fill={blueColor} />
       {/* H */}
       <path
         d="M34 6h4v13h8V6h4v30h-4V23h-8v13h-4V6z"
