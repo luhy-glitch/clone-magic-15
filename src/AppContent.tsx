@@ -33,6 +33,14 @@ const WebbutvecklingEnkoping = lazy(() => import("./pages/WebbutvecklingEnkoping
 const WebbutvecklingEskilstuna = lazy(() => import("./pages/WebbutvecklingEskilstuna"));
 const WebbutvecklingArboga = lazy(() => import("./pages/WebbutvecklingArboga"));
 const WebbutvecklingFagersta = lazy(() => import("./pages/WebbutvecklingFagersta"));
+const WebbutvecklingHallstahammar = lazy(() => import("./pages/WebbutvecklingHallstahammar"));
+const WebbutvecklingKungsor = lazy(() => import("./pages/WebbutvecklingKungsor"));
+const WebbutvecklingSurahammar = lazy(() => import("./pages/WebbutvecklingSurahammar"));
+const WebbutvecklingHeby = lazy(() => import("./pages/WebbutvecklingHeby"));
+const WebbutvecklingNorberg = lazy(() => import("./pages/WebbutvecklingNorberg"));
+const WebbutvecklingSkinnskatteberg = lazy(() => import("./pages/WebbutvecklingSkinnskatteberg"));
+const WebbutvecklingUppsala = lazy(() => import("./pages/WebbutvecklingUppsala"));
+const WebbutvecklingOrebro = lazy(() => import("./pages/WebbutvecklingOrebro"));
 const HemsidorByggHantverkare = lazy(() => import("./pages/HemsidorByggHantverkare"));
 const DigitalMarknadsforing = lazy(() => import("./pages/DigitalMarknadsforing"));
 const RestaurangerSala = lazy(() => import("./pages/RestaurangerSala"));
