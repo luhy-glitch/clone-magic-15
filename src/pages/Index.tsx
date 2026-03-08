@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PageHead from "@/components/PageHead";
@@ -56,7 +57,18 @@ const Index = () => {
                 { "@type": "City", "name": "Eskilstuna" },
                 { "@type": "City", "name": "Arboga" },
                 { "@type": "City", "name": "Fagersta" },
-                { "@type": "State", "name": "Västmanland" }
+                { "@type": "City", "name": "Hallstahammar" },
+                { "@type": "City", "name": "Kungsör" },
+                { "@type": "City", "name": "Surahammar" },
+                { "@type": "City", "name": "Heby" },
+                { "@type": "City", "name": "Norberg" },
+                { "@type": "City", "name": "Skinnskatteberg" },
+                { "@type": "City", "name": "Uppsala" },
+                { "@type": "City", "name": "Örebro" },
+                { "@type": "State", "name": "Västmanland" },
+                { "@type": "State", "name": "Södermanland" },
+                { "@type": "State", "name": "Uppsala län" },
+                { "@type": "State", "name": "Örebro län" }
               ],
               "priceRange": "$$",
               "sameAs": ["https://www.linkedin.com/in/lucasrosvall/"]
@@ -89,8 +101,8 @@ const Index = () => {
               <h2 className="text-2xl sm:text-3xl font-bold font-serif mb-4">Vill du se resultat?</h2>
               <p className="text-muted-foreground mb-6">Se hur vi hjälpt företag i Västmanland att öka sin synlighet och konvertering.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/case" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px]">Se kundcase</a>
-                <a href="/gratis-seo-analys" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border border-border text-foreground font-medium hover:bg-muted/50 transition-colors min-h-[44px]">Gratis SEO-analys</a>
+                <Link to="/case" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px]">Se kundcase</Link>
+                <Link to="/gratis-seo-analys" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border border-border text-foreground font-medium hover:bg-muted/50 transition-colors min-h-[44px]">Gratis SEO-analys</Link>
               </div>
             </div>
           </section>

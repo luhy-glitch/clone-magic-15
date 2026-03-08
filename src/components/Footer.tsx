@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Phone } from "lucide-react";
+import { Mail, Linkedin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import LrhLogo from "@/components/LrhLogo";
 
@@ -104,7 +104,6 @@ const Footer = () => {
                 { Icon: Mail, label: "Skicka e-post", href: "mailto:lucas@lrhkonsult.se" },
                 { Icon: Phone, label: "Ring oss", href: "tel:+46704606578" },
                 { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/lucasrosvall/" },
-                { Icon: Github, label: "GitHub", href: "#" },
               ].map(({ Icon, label, href }) => (
                 <a
                   key={label}

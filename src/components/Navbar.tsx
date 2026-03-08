@@ -20,6 +20,14 @@ const regions = [
   { label: "Eskilstuna", to: "/webbutveckling-eskilstuna" },
   { label: "Arboga", to: "/webbutveckling-arboga" },
   { label: "Fagersta", to: "/webbutveckling-fagersta" },
+  { label: "Hallstahammar", to: "/webbutveckling-hallstahammar" },
+  { label: "Kungsör", to: "/webbutveckling-kungsor" },
+  { label: "Surahammar", to: "/webbutveckling-surahammar" },
+  { label: "Heby", to: "/webbutveckling-heby" },
+  { label: "Norberg", to: "/webbutveckling-norberg" },
+  { label: "Skinnskatteberg", to: "/webbutveckling-skinnskatteberg" },
+  { label: "Uppsala", to: "/webbutveckling-uppsala" },
+  { label: "Örebro", to: "/webbutveckling-orebro" },
 ];
 
 const Navbar = () => {
