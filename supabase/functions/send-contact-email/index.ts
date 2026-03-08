@@ -59,8 +59,9 @@ serve(async (req: Request) => {
   }
 
   try {
+    const supabaseRL = getSupabase();
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-    if (isRateLimited(clientIp)) {
+    if (await isRateLimited(supabaseRL, clientIp)) {
       return new Response(
         JSON.stringify({ error: "För många förfrågningar. Försök igen senare." }),
         { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
