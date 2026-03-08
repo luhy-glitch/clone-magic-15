@@ -351,6 +351,39 @@ const AdminDashboard = () => {
     );
   }
 
+  const fetchPageSpeed = async () => {
+    setPageSpeed(prev => ({ ...prev, loading: true }));
+    try {
+      const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(speedUrl)}&category=performance&category=seo&category=accessibility&category=best-practices&strategy=mobile`;
+      const res = await fetch(apiUrl);
+      const data = await res.json();
+      const cats = data?.lighthouseResult?.categories;
+      setPageSpeed({
+        performance: cats?.performance?.score != null ? Math.round(cats.performance.score * 100) : null,
+        seo: cats?.seo?.score != null ? Math.round(cats.seo.score * 100) : null,
+        accessibility: cats?.accessibility?.score != null ? Math.round(cats.accessibility.score * 100) : null,
+        bestPractices: cats?.["best-practices"]?.score != null ? Math.round(cats["best-practices"].score * 100) : null,
+        loading: false,
+      });
+    } catch {
+      setError("Kunde inte hämta PageSpeed-data.");
+      setPageSpeed(prev => ({ ...prev, loading: false }));
+    }
+  };
+
+  const ScoreCircle = ({ score, label }: { score: number | null; label: string }) => {
+    const color = score === null ? "text-muted-foreground" : score >= 90 ? "text-green-500" : score >= 50 ? "text-yellow-500" : "text-red-500";
+    const bg = score === null ? "border-muted" : score >= 90 ? "border-green-500/30" : score >= 50 ? "border-yellow-500/30" : "border-red-500/30";
+    return (
+      <div className="flex flex-col items-center gap-2">
+        <div className={`w-20 h-20 rounded-full border-4 ${bg} flex items-center justify-center`}>
+          <span className={`text-2xl font-bold ${color}`}>{score ?? "–"}</span>
+        </div>
+        <span className="text-xs text-muted-foreground">{label}</span>
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen" style={{ background: "hsl(140 18% 12%)" }}>
       <div className="max-w-5xl mx-auto px-4 py-8">
@@ -376,6 +409,9 @@ const AdminDashboard = () => {
             {leads.filter(l => l.status === "new").length > 0 && (
               <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-primary text-primary-foreground text-xs">{leads.filter(l => l.status === "new").length}</span>
             )}
+          </button>
+          <button onClick={() => setActiveTab("speed")} className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === "speed" ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
+            <Gauge size={14} className="inline mr-1.5" />PageSpeed
           </button>
         </div>
 
@@ -448,6 +484,30 @@ const AdminDashboard = () => {
                 )}
               </TableBody>
             </Table>
+          </div>
+        )}
+
+        {activeTab === "speed" && (
+          <div className="bg-card border border-border rounded-xl p-6">
+            <h2 className="text-lg font-bold font-serif mb-4">PageSpeed Insights</h2>
+            <div className="flex gap-2 mb-6">
+              <Input value={speedUrl} onChange={(e) => setSpeedUrl(e.target.value)} placeholder="https://lrhkonsult.se" />
+              <Button onClick={fetchPageSpeed} disabled={pageSpeed.loading} size="sm" className="shrink-0">
+                <Gauge size={14} /> {pageSpeed.loading ? "Analyserar..." : "Analysera"}
+              </Button>
+            </div>
+            {pageSpeed.loading && <p className="text-sm text-muted-foreground mb-4">Kör Lighthouse-analys... detta kan ta 15-30 sekunder.</p>}
+            {pageSpeed.performance !== null && (
+              <div className="flex justify-around flex-wrap gap-6">
+                <ScoreCircle score={pageSpeed.performance} label="Prestanda" />
+                <ScoreCircle score={pageSpeed.accessibility} label="Tillgänglighet" />
+                <ScoreCircle score={pageSpeed.bestPractices} label="Bästa metoder" />
+                <ScoreCircle score={pageSpeed.seo} label="SEO" />
+              </div>
+            )}
+            {pageSpeed.performance === null && !pageSpeed.loading && (
+              <p className="text-sm text-muted-foreground text-center py-8">Klicka "Analysera" för att köra en Lighthouse-analys på valfri URL.</p>
+            )}
           </div>
         )}
       </div>
