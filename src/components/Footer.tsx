@@ -110,7 +110,7 @@ const Footer = () => {
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <span>© 2026 LRH Konsult. Alla rättigheter förbehållna.</span>
           <Link
-            to="/case-studies/pagespeed-revolution"
+            to="/case"
             className="inline-flex items-center gap-2 text-primary hover:underline transition-colors"
             aria-label="100/100 PageSpeed Guaranteed"
           >

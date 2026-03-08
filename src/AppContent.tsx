@@ -13,8 +13,6 @@ const CookieBanner = lazy(() => import("./components/CookieBanner"));
 // Lazy-load all pages except Index (landing page)
 const NotFound = lazy(() => import("./pages/NotFound"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const Webbutveckling = lazy(() => import("./pages/Webbutveckling"));
-const SeoOptimering = lazy(() => import("./pages/SeoOptimering"));
 const OmMig = lazy(() => import("./pages/OmMig"));
 const Blogg = lazy(() => import("./pages/Blogg"));
 const Kontakt = lazy(() => import("./pages/Kontakt"));
@@ -36,7 +34,6 @@ const WebbutvecklingArboga = lazy(() => import("./pages/WebbutvecklingArboga"));
 const WebbutvecklingFagersta = lazy(() => import("./pages/WebbutvecklingFagersta"));
 const HemsidorByggHantverkare = lazy(() => import("./pages/HemsidorByggHantverkare"));
 const DigitalMarknadsforing = lazy(() => import("./pages/DigitalMarknadsforing"));
-const CaseStudyPageSpeed = lazy(() => import("./pages/CaseStudyPageSpeed"));
 const Case = lazy(() => import("./pages/Case"));
 const GratisSeoAnalys = lazy(() => import("./pages/GratisSeoAnalys"));
 
@@ -87,7 +84,7 @@ const DataRoutes = () => (
         {/* Niche pages */}
         <Route path="/hemsidor-bygg-hantverkare" element={<HemsidorByggHantverkare />} />
         <Route path="/digital-marknadsforing-butiker" element={<DigitalMarknadsforing />} />
-        <Route path="/case-studies/pagespeed-revolution" element={<CaseStudyPageSpeed />} />
+        <Route path="/case-studies/pagespeed-revolution" element={<RedirectRoute to="/case" />} />
 
         {/* New pages */}
         <Route path="/case" element={<Case />} />
