@@ -4,8 +4,8 @@ import { Palette } from "lucide-react";
 const WebbdesignPage = () => (
   <ServicePageTemplate
     title="Webbdesign"
-    metaTitle="Webbdesign Sala - Användarvänliga & Snabba Hemsidor"
-    metaDescription="Professionell webbdesign i Sala som engagerar dina besökare. Vi kombinerar estetik med 100/100 prestanda."
+    metaTitle="Webbdesign & UX-design Västmanland | LRH Konsult"
+    metaDescription="Professionell webbdesign som engagerar besökare och driver konverteringar. Modern UX-design med 100/100 prestanda för företag i Västmanland."
     heroSubheading="Webbdesign"
     heroHeading="Webbdesign som engagerar & konverterar"
     heroDescription="Vi levererar modern webbdesign som kombinerar estetik med knivskarp affärsnytta. För företag i Sala, Köping och Västerås skapar vi unika digitala identiteter som stärker varumärket, bygger förtroende och driver konverteringar – allt med 100/100 i PageSpeed."
