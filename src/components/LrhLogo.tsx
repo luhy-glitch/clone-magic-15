@@ -32,12 +32,8 @@ const LrhLogo = ({
       {/* ===== R ===== */}
       {/* Vertical stem */}
       <rect x="18" y="0" width="5" height="35" fill={blue} />
-      {/* Bowl top bar */}
-      <rect x="23" y="0" width="7" height="4" fill={blue} />
-      {/* Bowl right side */}
-      <rect x="30" y="4" width="4" height="9" fill={blue} />
-      {/* Bowl bottom bar */}
-      <rect x="23" y="13" width="7" height="4" fill={blue} />
+      {/* Rounded bowl */}
+      <path d="M23,0 L29,0 Q34,0 34,5 L34,12 Q34,17 29,17 L23,17 L23,13 L28,13 Q30,13 30,11 L30,6 Q30,4 28,4 L23,4 Z" fill={blue} />
       {/* Diagonal leg */}
       <polygon points="26,17 31,17 36,35 31,35" fill={blue} />
 
