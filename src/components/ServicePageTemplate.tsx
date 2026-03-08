@@ -99,17 +99,27 @@ const buildServiceJsonLd = (serviceName: string, description: string, path: stri
           "addressRegion": "Västmanlands län",
           "addressCountry": "SE",
         },
-        "areaServed": [
+      "areaServed": [
           { "@type": "City", "name": "Västerås" },
           { "@type": "City", "name": "Köping" },
           { "@type": "City", "name": "Sala" },
+          { "@type": "City", "name": "Enköping" },
+          { "@type": "City", "name": "Eskilstuna" },
+          { "@type": "City", "name": "Arboga" },
+          { "@type": "City", "name": "Fagersta" },
           { "@type": "State", "name": "Västmanland" },
+          { "@type": "State", "name": "Södermanland" },
+          { "@type": "State", "name": "Uppsala län" },
         ],
       },
       "areaServed": [
         { "@type": "City", "name": "Västerås" },
         { "@type": "City", "name": "Köping" },
         { "@type": "City", "name": "Sala" },
+        { "@type": "City", "name": "Enköping" },
+        { "@type": "City", "name": "Eskilstuna" },
+        { "@type": "City", "name": "Arboga" },
+        { "@type": "City", "name": "Fagersta" },
       ],
     },
   ];
