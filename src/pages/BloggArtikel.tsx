@@ -484,6 +484,7 @@ const BloggArtikel = () => {
         </section>
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 };
