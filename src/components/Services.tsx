@@ -79,30 +79,66 @@ const Services = () => {
           </div>
         </AnimatedSection>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-          {services.map((service, i) => (
-            <FadeIn key={service.title} delay={i * 0.1}>
-              <div className="bg-card rounded-xl border border-border p-6 sm:p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <service.icon size={24} className="text-primary" />
+        {/* Grid – top row 3 featured, bottom row 4 compact */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-5 sm:mb-6">
+          {services.slice(0, 3).map((service, i) => (
+            <FadeIn key={service.title} delay={i * 0.08}>
+              <Link
+                to={service.link}
+                className="group relative bg-card rounded-2xl border border-border/60 p-7 sm:p-8 h-full flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_-8px_hsl(38_92%_50%/0.15)]"
+              >
+                {/* Glow accent */}
+                <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-primary/5 blur-2xl group-hover:bg-primary/10 transition-colors duration-500" />
+
+                <div className="relative z-10 flex items-start gap-4 mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
+                    <service.icon size={22} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold font-serif">{service.title}</h3>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold font-serif mb-3">{service.title}</h3>
-                <p className="text-muted-foreground text-sm mb-5">{service.description}</p>
-                <ul className="space-y-2 flex-1">
+
+                <p className="text-muted-foreground text-sm leading-relaxed mb-5 relative z-10">{service.description}</p>
+
+                <ul className="space-y-2.5 flex-1 relative z-10">
                   {service.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <li key={item} className="flex items-center gap-2.5 text-sm text-foreground/85">
+                      <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
-                {service.link && (
-                  <Link to={service.link} className="mt-5 inline-flex items-center gap-1 text-primary text-sm font-medium hover:underline">
-                    {service.linkText} <ArrowRight size={14} />
-                  </Link>
-                )}
-              </div>
+
+                <span className="mt-6 inline-flex items-center gap-1.5 text-primary text-sm font-medium relative z-10 group-hover:gap-2.5 transition-all">
+                  {service.linkText} <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            </FadeIn>
+          ))}
+        </div>
+
+        {/* Bottom row – 4 cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {services.slice(3).map((service, i) => (
+            <FadeIn key={service.title} delay={(i + 3) * 0.08}>
+              <Link
+                to={service.link}
+                className="group relative bg-card/70 rounded-xl border border-border/50 p-5 sm:p-6 h-full flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_4px_20px_-6px_hsl(38_92%_50%/0.12)]"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <service.icon size={18} className="text-primary" />
+                  </div>
+                  <h3 className="text-base font-bold font-serif">{service.title}</h3>
+                </div>
+
+                <p className="text-muted-foreground text-xs leading-relaxed mb-4 flex-1">{service.description}</p>
+
+                <span className="inline-flex items-center gap-1 text-primary text-xs font-medium group-hover:gap-2 transition-all">
+                  Läs mer <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
             </FadeIn>
           ))}
         </div>
