@@ -82,6 +82,7 @@ const AdminDashboard = () => {
   const [generating, setGenerating] = useState(false);
   const [generatingImage, setGeneratingImage] = useState(false);
   const [bulkImageProgress, setBulkImageProgress] = useState<{ running: boolean; current: number; total: number; currentTitle: string; errors: string[] }>({ running: false, current: 0, total: 0, currentTitle: "", errors: [] });
+  const [bulkPostProgress, setBulkPostProgress] = useState<{ running: boolean; current: number; total: number; currentTitle: string; errors: string[] }>({ running: false, current: 0, total: 0, currentTitle: "", errors: [] });
   const [selectedLead, setSelectedLead] = useState<ContactSubmission | null>(null);
   const [pageSpeed, setPageSpeed] = useState<{ performance: number | null; seo: number | null; accessibility: number | null; bestPractices: number | null; loading: boolean }>({ performance: null, seo: null, accessibility: null, bestPractices: null, loading: false });
   const [speedUrl, setSpeedUrl] = useState("https://lrhkonsult.se");
