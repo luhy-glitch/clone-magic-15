@@ -133,12 +133,22 @@ const SeoRoiCalculator = () => {
                       formatter={(value: number) => [formatCurrency(value), "Intäkt"]}
                       contentStyle={{
                         backgroundColor: "hsl(223, 40%, 10%)",
-                        border: "1px solid hsl(220, 16%, 16%)",
-                        borderRadius: "0.5rem",
+                        border: "1px solid hsl(220, 16%, 20%)",
+                        borderRadius: "0.75rem",
+                        padding: "12px 16px",
+                        boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
+                      }}
+                      itemStyle={{
                         color: "hsl(210, 40%, 96%)",
                         fontSize: "0.875rem",
+                        fontWeight: 600,
                       }}
-                      cursor={{ fill: "hsl(220, 16%, 12%)" }}
+                      labelStyle={{
+                        color: "hsl(218, 12%, 65%)",
+                        fontSize: "0.75rem",
+                        marginBottom: "4px",
+                      }}
+                      cursor={{ fill: "hsl(220, 16%, 14%)" }}
                     />
                     <Bar dataKey="revenue" radius={[6, 6, 0, 0]}>
                       {chartData.map((entry, index) => (
