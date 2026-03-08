@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import AnimatedSection, { FadeIn } from "@/components/AnimatedSection";
-import { Calendar, ArrowRight, Clock } from "lucide-react";
+import { Calendar, ArrowRight, Clock, RefreshCw } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
 import {
@@ -19,9 +19,18 @@ function estimateReadingTime(content: string): number {
   return Math.max(1, Math.ceil(content.split(/\s+/).length / 200));
 }
 
+function formatUpdatedDate(dateStr: string): string | null {
+  try {
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime())) return null;
+    return d.toLocaleDateString("sv-SE", { year: "numeric", month: "short", day: "numeric" });
+  } catch {
+    return null;
+  }
+}
+
 const CATEGORIES = ["Alla", "SEO", "Webbutveckling", "Prestanda", "Digital Strategi"] as const;
 
-/** Map post tags to our four canonical categories */
 function normalizeTag(tag: string): string {
   const t = tag.trim().toLowerCase();
   if (t.includes("seo")) return "SEO";
@@ -93,13 +102,16 @@ const Blogg = () => {
         <section className="py-14 sm:py-20 bg-section-alt">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             {/* Category filter */}
-            <div className="flex gap-2 overflow-x-auto pb-4 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap scrollbar-hide">
+            <div className="flex gap-2 overflow-x-auto pb-4 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap scrollbar-hide" role="tablist" aria-label="Filtrera artiklar efter kategori">
               {CATEGORIES.map((cat) => {
                 const isActive = activeCategory === cat;
                 const count = cat === "Alla" ? posts.length : posts.filter((p) => normalizeTag(p.tag) === cat).length;
                 return (
                   <button
                     key={cat}
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-pressed={isActive}
                     onClick={() => setActiveCategory(cat)}
                     className={`shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
                       isActive
@@ -171,6 +183,11 @@ const Blogg = () => {
                             <span className="flex items-center gap-1 text-xs text-muted-foreground">
                               <Clock size={13} /> {estimateReadingTime(featured.content)} min
                             </span>
+                            {featured.updated_at && formatUpdatedDate(featured.updated_at) && (
+                              <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <RefreshCw size={11} /> {formatUpdatedDate(featured.updated_at)}
+                              </span>
+                            )}
                           </div>
                           <h2 className="text-xl sm:text-2xl font-bold font-serif mb-3 group-hover:text-primary transition-colors leading-snug">{featured.title}</h2>
                           <p className="text-muted-foreground text-sm mb-5 line-clamp-3">{featured.excerpt}</p>
@@ -213,6 +230,11 @@ const Blogg = () => {
                               <span className="flex items-center gap-1 text-[11px] text-muted-foreground">
                                 <Clock size={12} /> {estimateReadingTime(post.content)} min
                               </span>
+                              {post.updated_at && formatUpdatedDate(post.updated_at) && (
+                                <span className="flex items-center gap-1 text-[11px] text-muted-foreground">
+                                  <RefreshCw size={10} /> {formatUpdatedDate(post.updated_at)}
+                                </span>
+                              )}
                             </div>
                             <h2 className="text-base sm:text-lg font-bold font-serif mb-2 group-hover:text-primary transition-colors leading-snug">{post.title}</h2>
                             <p className="text-muted-foreground text-sm mb-4 flex-1 line-clamp-2">{post.excerpt}</p>
@@ -246,6 +268,34 @@ const Blogg = () => {
                 </div>
               </div>
             </FadeIn>
+          </div>
+        </section>
+
+        {/* Blog CTA – mandatory /gratis-seo-analys section */}
+        <section className="py-16 sm:py-24 bg-background text-center" aria-labelledby="blog-cta-heading">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <AnimatedSection>
+              <h2 id="blog-cta-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-6">
+                Redo att få fler kunder online?
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto mb-8">
+                Vi analyserar din sajt gratis och ger dig konkreta åtgärder som ökar din synlighet och konvertering.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/gratis-seo-analys"
+                  className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-primary text-primary-foreground font-medium text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 animate-cta-pulse"
+                >
+                  Få gratis SEO-analys <ArrowRight size={20} />
+                </Link>
+                <Link
+                  to="/kontakt"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-border text-foreground font-medium hover:bg-muted/50 transition-colors"
+                >
+                  Boka samtal <ArrowRight size={18} />
+                </Link>
+              </div>
+            </AnimatedSection>
           </div>
         </section>
       </main>

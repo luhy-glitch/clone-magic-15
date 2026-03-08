@@ -6,10 +6,10 @@ const localServices = [
   { label: "Webbutveckling Västerås", to: "/webbutveckling-vasteras" },
   { label: "SEO Köping", to: "/seo-koping" },
   { label: "Hemsidor Sala", to: "/hemsidor-sala" },
-  { label: "Webbdesign Enköping", to: "/webbutveckling-enkoping" },
-  { label: "SEO Eskilstuna", to: "/webbutveckling-eskilstuna" },
+  { label: "Webbutveckling Enköping", to: "/webbutveckling-enkoping" },
+  { label: "Webbutveckling Eskilstuna", to: "/webbutveckling-eskilstuna" },
   { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
-  { label: "Webbdesign Fagersta", to: "/webbutveckling-fagersta" },
+  { label: "Webbutveckling Fagersta", to: "/webbutveckling-fagersta" },
   { label: "Webbutveckling Hallstahammar", to: "/webbutveckling-hallstahammar" },
   { label: "Webbutveckling Kungsör", to: "/webbutveckling-kungsor" },
   { label: "Webbutveckling Surahammar", to: "/webbutveckling-surahammar" },
@@ -89,17 +89,19 @@ const Footer = () => {
           </nav>
 
           {/* Regionalt – SEO hub */}
-          <nav aria-label="Regionalt" className="lg:col-span-2">
-            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Regionalt</h3>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
-              {localServices.map(s => (
-                <li key={s.to}>
-                  <Link to={s.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    {s.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="lg:col-span-2">
+            <nav aria-label="Regionalt">
+              <h3 className="font-serif font-bold text-foreground mb-4 text-base">Regionalt</h3>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+                {localServices.map(s => (
+                  <li key={s.to}>
+                    <Link to={s.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                      {s.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
             <div className="flex items-center gap-3 mt-6">
               {[
                 { Icon: Mail, label: "Skicka e-post", href: "mailto:lucas@lrhkonsult.se" },
@@ -118,7 +120,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-          </nav>
+          </div>
         </div>
 
         {/* Bottom */}

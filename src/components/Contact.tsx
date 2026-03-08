@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Loader2, Download, CheckCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { Input } from "@/components/ui/input";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
 
 const pdfTips = [
@@ -55,7 +56,7 @@ const Contact = () => {
                 {[
                   { icon: Mail, label: "E-post", value: "lucas@lrhkonsult.se" },
                   { icon: Phone, label: "Telefon", value: "070 460 65 78" },
-                  { icon: MapPin, label: "Plats", value: "Sverige" },
+                  { icon: MapPin, label: "Plats", value: "Västerås, Västmanland" },
                 ].map((item, i) => (
                   <FadeIn key={item.label} delay={0.2 + i * 0.1}>
                     <div className="flex items-center gap-4">
@@ -75,8 +76,8 @@ const Contact = () => {
 
           {/* Form */}
           <FadeIn delay={0.3}>
-            <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Honeypot field – hidden from real users */}
+            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+              {/* Honeypot field */}
               <div className="absolute opacity-0 pointer-events-none" aria-hidden="true" tabIndex={-1}>
                 <input
                   type="text"
@@ -89,46 +90,53 @@ const Contact = () => {
               </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">Namn</label>
-                  <input
+                  <label htmlFor="contact-name" className="text-sm font-medium text-foreground mb-1.5 block">Namn</label>
+                  <Input
+                    id="contact-name"
                     type="text"
                     placeholder="Ditt namn"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    autoComplete="name"
+                    aria-required="true"
                     required
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">E-post</label>
-                  <input
+                  <label htmlFor="contact-email" className="text-sm font-medium text-foreground mb-1.5 block">E-post</label>
+                  <Input
+                    id="contact-email"
                     type="email"
                     placeholder="din@email.se"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    autoComplete="email"
+                    aria-required="true"
                     required
                   />
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Ämne</label>
-                <input
+                <label htmlFor="contact-subject" className="text-sm font-medium text-foreground mb-1.5 block">Ämne</label>
+                <Input
+                  id="contact-subject"
                   type="text"
                   placeholder="Vad gäller det?"
                   value={form.subject}
                   onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  autoComplete="off"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Meddelande</label>
+                <label htmlFor="contact-message" className="text-sm font-medium text-foreground mb-1.5 block">Meddelande</label>
                 <textarea
+                  id="contact-message"
                   placeholder="Berätta mer om ditt projekt..."
                   rows={5}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
+                  className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm resize-none"
+                  aria-required="true"
                   required
                 />
               </div>
@@ -145,7 +153,7 @@ const Contact = () => {
               </button>
             </form>
 
-            {/* PDF Guide Incentive – shown after successful submission */}
+            {/* PDF Guide Incentive */}
             {submitted && (
               <div className="mt-8 bg-card border border-primary/20 rounded-xl p-6 animate-in fade-in slide-in-from-bottom-4">
                 <div className="flex items-start gap-4">

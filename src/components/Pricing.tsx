@@ -1,4 +1,5 @@
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
 
 const plans = [
@@ -75,7 +76,7 @@ const Pricing = () => {
                 }`}
               >
                 {plan.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full" aria-label="Mest populära paketet">
                     Populärast
                   </span>
                 )}
@@ -95,16 +96,16 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#kontakt"
-                  className={`w-full text-center py-3 rounded-lg font-medium transition-colors ${
+                <Link
+                  to="/gratis-seo-analys"
+                  className={`w-full text-center py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center gap-2 ${
                     plan.popular
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                      ? "bg-primary text-primary-foreground hover:bg-primary/90 animate-cta-pulse"
                       : "border border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   }`}
                 >
-                  Kom igång
-                </a>
+                  Kom igång <ArrowRight size={16} />
+                </Link>
               </div>
             </FadeIn>
           ))}

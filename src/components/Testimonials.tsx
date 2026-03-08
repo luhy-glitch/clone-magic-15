@@ -19,6 +19,18 @@ const testimonials = [
     quote:
       "Vi fick precis den känsla vi ville ha — en enkel och snygg hemsida som fungerar lika bra på mobilen som på datorn. Våra kunder hittar oss mycket lättare nu och vi har sett en tydlig ökning av bordsreserveringar sedan den nya sajten lanserades.",
   },
+  {
+    name: "Johan Bergström",
+    company: "Bergströms El, Hallstahammar",
+    quote:
+      "Innan vi anlitade LRH Konsult hade vi knappt någon synlighet online. Nu rankar vi på första sidan i Google för våra viktigaste sökord och får löpande förfrågningar via hemsidan. En gamechanger för vår verksamhet.",
+  },
+  {
+    name: "Sara Nilsson",
+    company: "Nilssons Trädgård & Design, Enköping",
+    quote:
+      "LRH Konsult förstod direkt vad vi behövde. Hemsidan är blixtsnabb, ser fantastisk ut och har redan genererat fler leads än vår gamla sajt gjorde på ett helt år. Rekommenderas varmt!",
+  },
 ];
 
 const Testimonials = () => {
@@ -30,7 +42,7 @@ const Testimonials = () => {
             Vad våra kunder i Västmanland säger
           </h2>
           <p className="text-muted-foreground leading-relaxed text-center mb-12">
-            Vi är stolta över att hjälpa företag i Västerås, Köping och Sala att växa digitalt. Här är vad några av våra kunder tycker om samarbetet.
+            Vi är stolta över att hjälpa företag i Västerås, Köping, Sala, Enköping och Hallstahammar att växa digitalt. Här är vad några av våra kunder tycker om samarbetet.
           </p>
         </AnimatedSection>
 
