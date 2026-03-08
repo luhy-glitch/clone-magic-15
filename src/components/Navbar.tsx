@@ -86,21 +86,34 @@ const Navbar = () => {
               <ChevronDown size={14} className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
             </button>
             {dropdownOpen && (
-              <div className="absolute top-full left-0 pt-2">
-                <div className="bg-card border border-border rounded-lg shadow-lg py-3 min-w-[240px]">
-                  <p className="px-4 pb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Huvudtjänster</p>
-                  {mainServices.map(s => (
-                    <Link key={s.to} to={s.to} onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
-                      {s.label}
-                    </Link>
-                  ))}
-                  <div className="border-t border-border my-2" />
-                  <p className="px-4 pb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Regionalt</p>
-                  {regions.map(r => (
-                    <Link key={r.to} to={r.to} onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
-                      {r.label}
-                    </Link>
-                  ))}
+              <div className="absolute top-full -left-4 pt-2">
+                <div className="bg-card border border-border rounded-xl shadow-2xl shadow-black/40 p-5 flex gap-8 min-w-[480px]">
+                  {/* Tjänster column */}
+                  <div className="min-w-[180px]">
+                    <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-3">Huvudtjänster</p>
+                    <div className="space-y-0.5">
+                      {mainServices.map(s => (
+                        <Link key={s.to} to={s.to} onClick={() => setDropdownOpen(false)} className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 rounded-lg transition-colors">
+                          {s.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="w-px bg-border self-stretch" />
+
+                  {/* Regioner column — 2-col grid */}
+                  <div className="flex-1">
+                    <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-3">Regionalt</p>
+                    <div className="grid grid-cols-2 gap-x-2 gap-y-0.5">
+                      {regions.map(r => (
+                        <Link key={r.to} to={r.to} onClick={() => setDropdownOpen(false)} className="block px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 rounded-lg transition-colors">
+                          {r.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
