@@ -3,10 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import AnimatedSection, { FadeIn } from "@/components/AnimatedSection";
-import BlogSummaryBox from "@/components/BlogSummaryBox";
 import SocialShare from "@/components/SocialShare";
 import { useBlogPost, useBlogPosts } from "@/hooks/useBlogPosts";
-import { Calendar, ArrowLeft, Tag, ArrowRight, Clock, User } from "lucide-react";
+import { Calendar, ArrowLeft, Tag, ArrowRight, Clock, User, Lightbulb } from "lucide-react";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -47,27 +46,37 @@ function estimateReadingTime(content: string): number {
   return Math.max(1, Math.ceil(content.split(/\s+/).length / 200));
 }
 
-/** Extract 3-4 key takeaways from first paragraphs */
-function extractSummaryPoints(content: string): string[] {
+/** Extract 3-5 key takeaways for GEO "Snabba fakta" section */
+function extractKeyTakeaways(content: string, title: string): string[] {
   const lines = content.split("\n").map((l) => l.trim()).filter(Boolean);
   const points: string[] = [];
+
+  // First try bullet points
   for (const line of lines) {
     if (line.startsWith("- ") || line.startsWith("* ")) {
       points.push(line.slice(2));
-      if (points.length >= 4) break;
+      if (points.length >= 5) break;
     }
   }
-  // Fallback: use first sentences from paragraphs
+
+  // Fallback: extract first sentence from each H2 section (direct answer pattern)
   if (points.length < 3) {
-    const paragraphs = lines.filter(
-      (l) => !l.startsWith("#") && !l.startsWith(">") && !l.startsWith("-") && !l.startsWith("*") && l.length > 40
-    );
-    for (const p of paragraphs.slice(0, 4 - points.length)) {
-      const sentence = p.split(/[.!?]/)[0];
-      if (sentence && sentence.length > 20) points.push(sentence.trim());
+    let currentHeading = "";
+    for (const line of lines) {
+      if (line.startsWith("## ")) {
+        currentHeading = line.slice(3);
+      } else if (currentHeading && !line.startsWith("#") && !line.startsWith(">") && line.length > 40) {
+        const sentence = line.split(/[.!?]/)[0];
+        if (sentence && sentence.length > 20 && !points.includes(sentence.trim())) {
+          points.push(sentence.trim());
+          currentHeading = "";
+          if (points.length >= 5) break;
+        }
+      }
     }
   }
-  return points.slice(0, 4);
+
+  return points.slice(0, 5);
 }
 
 /** Parse content line-by-line so headings never swallow paragraphs */
@@ -85,10 +94,7 @@ function parseContentLines(raw: string) {
 
   for (const line of lines) {
     const trimmed = line.trim();
-    if (!trimmed) {
-      flushList();
-      continue;
-    }
+    if (!trimmed) { flushList(); continue; }
 
     if (trimmed.startsWith("## ")) {
       flushList();
@@ -117,15 +123,31 @@ function parseContentLines(raw: string) {
   return elements;
 }
 
+/** Render inline markdown (bold + links) */
 function renderInline(text: string) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, j) =>
-    part.startsWith("**") && part.endsWith("**") ? (
-      <strong key={j} className="text-foreground font-semibold">{part.slice(2, -2)}</strong>
-    ) : (
-      <span key={j}>{part}</span>
-    )
-  );
+  // First handle markdown links [text](url)
+  const linkParts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+
+  return linkParts.map((part, i) => {
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      return (
+        <Link key={i} to={linkMatch[2]} className="text-primary hover:underline underline-offset-2 font-medium">
+          {linkMatch[1]}
+        </Link>
+      );
+    }
+
+    // Handle bold
+    const boldParts = part.split(/(\*\*[^*]+\*\*)/g);
+    return boldParts.map((bp, j) =>
+      bp.startsWith("**") && bp.endsWith("**") ? (
+        <strong key={`${i}-${j}`} className="text-foreground font-semibold">{bp.slice(2, -2)}</strong>
+      ) : (
+        <span key={`${i}-${j}`}>{bp}</span>
+      )
+    );
+  });
 }
 
 const BloggArtikel = () => {
@@ -152,7 +174,7 @@ const BloggArtikel = () => {
   const readingTime = estimateReadingTime(post.content);
   const parsed = parseContentLines(post.content);
   const headings = parsed.filter((e) => e.type === "h2");
-  const summaryPoints = extractSummaryPoints(post.content);
+  const keyTakeaways = extractKeyTakeaways(post.content, post.title);
 
   // Related: same tag first, then others
   const sameTag = allPosts.filter((p) => p.slug !== post.slug && p.tag === post.tag);
@@ -162,25 +184,55 @@ const BloggArtikel = () => {
   const serviceLinks = SERVICE_LINKS[post.tag] || SERVICE_LINKS["Digital Strategi"];
   const postUrl = `https://lrhkonsult.se/blogg/${post.slug}`;
 
+  // FAQ schema from H2 headings + first paragraph after each
+  const faqItems: { question: string; answer: string }[] = [];
+  for (let i = 0; i < parsed.length; i++) {
+    if (parsed[i].type === "h2" && parsed[i + 1]?.type === "p") {
+      faqItems.push({
+        question: parsed[i].text,
+        answer: parsed[i + 1].text.slice(0, 300),
+      });
+    }
+  }
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.date,
+      dateModified: post.date,
+      image: post.image_url || undefined,
+      author: { "@type": "Person", name: "Lucas", url: "https://lrhkonsult.se/om-mig" },
+      publisher: { "@type": "Organization", name: "LRH Konsult", url: "https://lrhkonsult.se" },
+      mainEntityOfPage: postUrl,
+      wordCount: post.content.split(/\s+/).length,
+      inLanguage: "sv",
+    },
+    ...(faqItems.length >= 2
+      ? [{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.slice(0, 5).map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer },
+          })),
+        }]
+      : []),
+  ];
+
   return (
     <div className="min-h-screen">
       <PageHead title={`${post.title} | LRH Konsult`} description={post.excerpt} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: post.title,
-            description: post.excerpt,
-            datePublished: post.date,
-            image: post.image_url || undefined,
-            author: { "@type": "Person", name: "Lucas", url: "https://lrhkonsult.se/om-mig" },
-            publisher: { "@type": "Organization", name: "LRH Konsult", url: "https://lrhkonsult.se" },
-            mainEntityOfPage: postUrl,
-          }),
-        }}
-      />
+      {jsonLd.map((ld, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
+      ))}
       <Navbar />
       <main>
         {/* Hero */}
@@ -251,14 +303,29 @@ const BloggArtikel = () => {
               </div>
             )}
 
-            {/* Summary box */}
-            <BlogSummaryBox points={summaryPoints} />
+            {/* GEO: Key Takeaways / Snabba fakta */}
+            {keyTakeaways.length >= 3 && (
+              <div className="bg-card border border-primary/20 rounded-xl p-6 sm:p-8 mb-10">
+                <div className="flex items-center gap-2 mb-4">
+                  <Lightbulb size={18} className="text-primary" />
+                  <h2 className="text-sm font-bold uppercase tracking-widest text-primary !mt-0 !mb-0">Snabba fakta</h2>
+                </div>
+                <ul className="space-y-2.5">
+                  {keyTakeaways.map((point, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-foreground/85 leading-relaxed">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Table of contents */}
             {headings.length >= 3 && (
               <FadeIn>
                 <nav className="bg-card/60 backdrop-blur rounded-xl border border-border p-6 mb-12" aria-label="Innehållsförteckning">
-                  <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">Innehåll</h2>
+                  <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4 !mt-0">Innehåll</h2>
                   <ol className="space-y-2.5">
                     {headings.map((h, i) => (
                       <li key={h.id}>
@@ -275,12 +342,12 @@ const BloggArtikel = () => {
 
             {/* Article content */}
             <AnimatedSection>
-              <article className="prose-article">
+              <article className="prose-article" style={{ maxWidth: "70ch" }}>
                 {parsed.map((el, i) => {
                   switch (el.type) {
                     case "h2":
                       return (
-                        <h2 key={i} id={el.id} className="text-xl sm:text-2xl font-bold font-serif mt-10 mb-4 text-foreground scroll-mt-24">
+                        <h2 key={i} id={el.id} className="text-xl sm:text-2xl font-bold font-serif mt-12 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent scroll-mt-24">
                           {el.text}
                         </h2>
                       );
@@ -314,6 +381,16 @@ const BloggArtikel = () => {
               </article>
             </AnimatedSection>
 
+            {/* Mid-article CTA */}
+            <FadeIn>
+              <div className="my-12 p-6 sm:p-8 bg-card rounded-xl border border-primary/20 text-center">
+                <p className="text-foreground font-serif font-bold text-lg mb-3">Vill du veta hur din egen sajt presterar?</p>
+                <Link to="/gratis-seo-analys" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+                  Boka en gratis SEO-analys här <ArrowRight size={16} />
+                </Link>
+              </div>
+            </FadeIn>
+
             {/* Social sharing + service links */}
             <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-8 border-b border-border">
               <SocialShare url={postUrl} title={post.title} />
@@ -343,7 +420,7 @@ const BloggArtikel = () => {
               </div>
             </FadeIn>
 
-            {/* CTA */}
+            {/* Bottom CTA */}
             <FadeIn>
               <div className="mt-14 p-8 sm:p-10 bg-card rounded-2xl border border-border text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
@@ -353,7 +430,7 @@ const BloggArtikel = () => {
                     Få en kostnadsfri SEO-analys med konkreta förbättringsförslag för din hemsida.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Link to="/gratis-seo-analys" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 animate-[pulse_3s_ease-in-out_infinite] hover:animate-none">
+                    <Link to="/gratis-seo-analys" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
                       Få gratis SEO-analys <ArrowRight size={16} />
                     </Link>
                     <Link to="/kontakt" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-border text-foreground font-medium hover:border-primary/30 hover:text-primary transition-colors">
@@ -386,7 +463,7 @@ const BloggArtikel = () => {
                             <span className="text-xs text-muted-foreground mb-2">{r.date}</span>
                             <h4 className="text-sm font-bold font-serif mb-1 group-hover:text-primary transition-colors leading-snug">{r.title}</h4>
                             <span className="inline-flex items-center gap-1 text-primary text-xs font-medium mt-auto pt-2 group-hover:gap-2 transition-all">
-                              Läs mer om {r.title.toLowerCase()} <ArrowRight size={12} />
+                              Läs mer om {r.tag.toLowerCase()} <ArrowRight size={12} />
                             </span>
                           </div>
                         </article>

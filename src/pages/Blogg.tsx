@@ -1,3 +1,4 @@
+import { useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
@@ -18,12 +19,29 @@ function estimateReadingTime(content: string): number {
   return Math.max(1, Math.ceil(content.split(/\s+/).length / 200));
 }
 
+const CATEGORIES = ["Alla", "SEO", "Webbutveckling", "Prestanda", "Digital Strategi"] as const;
+
+/** Map post tags to our four canonical categories */
+function normalizeTag(tag: string): string {
+  const t = tag.trim().toLowerCase();
+  if (t.includes("seo")) return "SEO";
+  if (t.includes("webbutveckling") || t.includes("wordpress")) return "Webbutveckling";
+  if (t.includes("prestanda")) return "Prestanda";
+  if (t.includes("design") || t.includes("webbdesign") || t.includes("strategi")) return "Digital Strategi";
+  return "Digital Strategi";
+}
+
 const Blogg = () => {
   const { data: posts = [], isLoading } = useBlogPosts();
+  const [activeCategory, setActiveCategory] = useState<string>("Alla");
 
-  // First post is featured (large), rest in 2-col grid
-  const featured = posts[0];
-  const grid = posts.slice(1);
+  const filteredPosts = useMemo(() => {
+    if (activeCategory === "Alla") return posts;
+    return posts.filter((p) => normalizeTag(p.tag) === activeCategory);
+  }, [posts, activeCategory]);
+
+  const featured = filteredPosts[0];
+  const grid = filteredPosts.slice(1);
 
   return (
     <div className="min-h-screen">
@@ -74,6 +92,30 @@ const Blogg = () => {
         {/* Articles */}
         <section className="py-14 sm:py-20 bg-section-alt">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            {/* Category filter */}
+            <div className="flex gap-2 overflow-x-auto pb-4 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap scrollbar-hide">
+              {CATEGORIES.map((cat) => {
+                const isActive = activeCategory === cat;
+                const count = cat === "Alla" ? posts.length : posts.filter((p) => normalizeTag(p.tag) === cat).length;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                      isActive
+                        ? "bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg shadow-primary/20"
+                        : "bg-card border border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                    }`}
+                  >
+                    {cat}
+                    <span className={`ml-1.5 text-xs ${isActive ? "text-primary-foreground/70" : "text-muted-foreground/60"}`}>
+                      ({count})
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
             {isLoading ? (
               <div className="grid gap-6 sm:grid-cols-2">
                 {[1, 2, 3, 4].map((i) => (
@@ -86,6 +128,16 @@ const Blogg = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            ) : filteredPosts.length === 0 ? (
+              <div className="text-center py-20">
+                <p className="text-muted-foreground text-lg">Inga artiklar hittades i kategorin "{activeCategory}".</p>
+                <button
+                  onClick={() => setActiveCategory("Alla")}
+                  className="mt-4 text-primary hover:underline text-sm font-medium"
+                >
+                  Visa alla artiklar
+                </button>
               </div>
             ) : (
               <>
@@ -112,7 +164,7 @@ const Blogg = () => {
                         </div>
                         <div className="p-6 sm:p-8 flex flex-col justify-center">
                           <div className="flex flex-wrap items-center gap-3 mb-4">
-                            <span className="px-3 py-1 rounded-full bg-primary/15 text-primary text-xs font-semibold">{featured.tag}</span>
+                            <span className="px-3 py-1 rounded-full bg-primary/15 text-primary text-xs font-semibold">{normalizeTag(featured.tag)}</span>
                             <span className="flex items-center gap-1 text-xs text-muted-foreground">
                               <Calendar size={13} /> {featured.date}
                             </span>
@@ -154,7 +206,7 @@ const Blogg = () => {
                           </div>
                           <div className="p-5 sm:p-6 flex flex-col flex-1">
                             <div className="flex flex-wrap items-center gap-2 mb-3">
-                              <span className="px-2.5 py-0.5 rounded-full bg-primary/15 text-primary text-[11px] font-semibold">{post.tag}</span>
+                              <span className="px-2.5 py-0.5 rounded-full bg-primary/15 text-primary text-[11px] font-semibold">{normalizeTag(post.tag)}</span>
                               <span className="flex items-center gap-1 text-[11px] text-muted-foreground">
                                 <Calendar size={12} /> {post.date}
                               </span>
