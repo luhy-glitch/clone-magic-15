@@ -5,26 +5,43 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 5;
 const RATE_WINDOW_MS = 15 * 60 * 1000;
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(ip);
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
-    return false;
-  }
-  entry.count++;
-  return entry.count > RATE_LIMIT;
-}
 
 function getSupabase() {
   return createClient(
     Deno.env.get("SUPABASE_URL")!,
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
   );
+}
+
+async function isRateLimited(supabase: ReturnType<typeof createClient>, ip: string): Promise<boolean> {
+  const now = new Date();
+  const resetAt = new Date(now.getTime() + RATE_WINDOW_MS);
+
+  // Check existing entry
+  const { data } = await supabase
+    .from("admin_rate_limits")
+    .select("attempt_count, reset_at")
+    .eq("ip", ip)
+    .single();
+
+  if (!data || new Date(data.reset_at) < now) {
+    // No entry or expired — upsert with count 1
+    await supabase
+      .from("admin_rate_limits")
+      .upsert({ ip, attempt_count: 1, reset_at: resetAt.toISOString() }, { onConflict: "ip" });
+    return false;
+  }
+
+  // Increment count
+  const newCount = data.attempt_count + 1;
+  await supabase
+    .from("admin_rate_limits")
+    .update({ attempt_count: newCount })
+    .eq("ip", ip);
+
+  return newCount > RATE_LIMIT;
 }
 
 async function createSession(supabase: ReturnType<typeof createClient>): Promise<string> {
@@ -62,6 +79,8 @@ Deno.serve(async (req) => {
 
   // Cleanup expired sessions occasionally
   supabase.from("admin_sessions").delete().lt("expires_at", new Date().toISOString()).then(() => {});
+  // Cleanup expired rate limits
+  supabase.from("admin_rate_limits").delete().lt("reset_at", new Date().toISOString()).then(() => {});
 
   try {
     const contentType = req.headers.get("content-type") || "";
@@ -92,7 +111,7 @@ Deno.serve(async (req) => {
 
     // --- Login ---
     if (action === "verify") {
-      if (isRateLimited(clientIp)) {
+      if (await isRateLimited(supabase, clientIp)) {
         return new Response(JSON.stringify({ error: "Too many attempts. Try again later." }), { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } });
       }
       if (!ADMIN_KEY || secret_key !== ADMIN_KEY) {
