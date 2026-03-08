@@ -24,15 +24,14 @@ export default function Hero() {
 
       {/* Main Heading - Optimized for H1 ranking */}
       <h1 className="hero-h1 font-serif-custom text-5xl md:text-6xl lg:text-7xl mb-6 leading-[1.15] max-w-4xl tracking-tight text-center z-10 relative">
-        Professionell
+        Snabba hemsidor som
         <br />
-        Webbutveckling & SEO i<br />
+        rankar på Google och ger
+        <br />
+        ditt företag{" "}
         <span className="hero-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-500 to-yellow-600">
-          Västmanland
-        </span>{" "}
-        – LRH
-        <br />
-        Konsult
+          fler kunder
+        </span>
       </h1>
 
       {/* Body text with local keywords */}
@@ -44,8 +43,8 @@ export default function Hero() {
         <Link to="/webbutveckling-enkoping" className="text-blue-400 font-medium hover:underline">Enköping</Link>,{" "}
         <Link to="/webbutveckling-eskilstuna" className="text-blue-400 font-medium hover:underline">Eskilstuna</Link>,{" "}
         <Link to="/webbutveckling-arboga" className="text-blue-400 font-medium hover:underline">Arboga</Link> och{" "}
-        <Link to="/webbutveckling-fagersta" className="text-blue-400 font-medium hover:underline">Fagersta</Link> att skapa snabba, sökmotoroptimerade webbplatser i{" "}
-        <span className="text-white font-medium">React & Next.js</span> som konverterar besökare till kunder.
+        <Link to="/webbutveckling-fagersta" className="text-blue-400 font-medium hover:underline">Fagersta</Link> att synas högre på Google och förvandla besökare till betalande kunder.
+        Byggda i <span className="text-white font-medium">React & Next.js</span> för garanterad 100/100 PageSpeed.
       </p>
 
       {/* SEAMLESS MAP SECTION - No borders or boxes */}
@@ -118,10 +117,10 @@ export default function Hero() {
         <div className="relative z-20 -translate-y-10">
           <div className="absolute -inset-3 bg-gradient-to-r from-yellow-500/30 via-amber-500/20 to-orange-500/30 rounded-full blur-xl animate-pulse"></div>
           <Link
-            to="/kontakt"
+            to="/gratis-seo-analys"
             className="relative bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-400 text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 shadow-[0_0_40px_rgba(245,158,11,0.4)] hover:shadow-[0_0_60px_rgba(245,158,11,0.6)] hover:scale-105 transition-all"
           >
-            Boka ett samtal <ArrowRight size={18} />
+            Få en gratis SEO-analys <ArrowRight size={18} />
           </Link>
         </div>
       </div>

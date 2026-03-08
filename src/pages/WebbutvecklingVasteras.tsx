@@ -5,10 +5,10 @@ const config = {
   city: "Västerås",
   slug: "webbutveckling-vasteras",
   serviceKeyword: "Webbutveckling",
-  metaTitle: "Webbutveckling Västerås - Snabba React & Next.js Sajter",
-  metaDescription: "Professionell webbutveckling i Västerås. Vi bygger moderna hemsidor med fokus på prestanda och lokal SEO.",
-  heroHeading: "Webbutveckling & SEO i Västerås",
-  heroDescription: "Västerås är Västmanlands digitala epicentrum, och konkurrensen om kundernas uppmärksamhet har aldrig varit hårdare. Vi bygger hemsidor i React och Next.js som presterar på en nivå utöver det vanliga – tekniskt fulländade, SEO-optimerade och designade för konvertering.",
+  metaTitle: "Webbutveckling Västerås - Snabba Hemsidor som Rankar | LRH Konsult",
+  metaDescription: "Snabba hemsidor i Västerås som rankar på Google och ger ditt företag fler kunder. 100/100 PageSpeed, lokal SEO och konverteringsdesign.",
+  heroHeading: "Dominera sökresultaten i Västerås",
+  heroDescription: "Sluta vara osynlig på Google. Vi bygger blixtsnabba hemsidor som rankar högst i Västerås och förvandlar besökare till betalande kunder – garanterat 100/100 PageSpeed och mätbara resultat inom 90 dagar.",
   icon: Code2,
   benefits: [
     { title: "Lokalt i Västerås", description: "Vi finns nära dig i Västerås och erbjuder personliga möten och snabb kommunikation genom hela projektet." },
@@ -16,7 +16,7 @@ const config = {
     { title: "SEO inbyggt från start", description: "Lokal SEO, strukturerad data och teknisk optimering är integrerat i varje rad kod vi skriver." },
     { title: "Framtidssäker teknik", description: "React, Next.js och TypeScript ger en skalbar plattform som växer med ditt företag utan ombyggnation." },
   ],
-  bodyTitle: "Teknisk perfektion som driver ROI för företag i Västerås",
+  bodyTitle: "Snabba hemsidor som rankar på Google och genererar fler kunder i Västerås",
   bodyParagraphs: [
     "I en stad som Västerås, där hundratals företag konkurrerar om synlighet på Google, är den tekniska prestandan den enskilt viktigaste faktorn som skiljer vinnare från förlorare i sökresultaten. En hemsida som laddar på under en sekund signalerar till Google att den erbjuder en överlägsen användarupplevelse, vilket direkt belönas med högre rankingpositioner. Vi bygger inte bara snabba hemsidor – vi bygger de snabbaste hemsidorna i Västerås.",
     "Genom att använda React och Next.js skapar vi webbplatser med server-side rendering som levererar fullständigt renderat HTML till webbläsaren innan en enda rad JavaScript har exekverats. Detta innebär att din hemsida visas omedelbart för besökaren, medan traditionella WordPress-sajter fortfarande laddar plugins och tunga teman. För företag i Västerås som vill ta marknadsandelar är denna tekniska fördel ovärderlig.",

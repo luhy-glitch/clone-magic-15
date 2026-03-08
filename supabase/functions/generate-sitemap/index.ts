@@ -25,7 +25,9 @@ const staticRoutes = [
   { loc: "/webbutveckling-fagersta", changefreq: "monthly", priority: "0.8" },
   { loc: "/hemsidor-bygg-hantverkare", changefreq: "monthly", priority: "0.7" },
   { loc: "/digital-marknadsforing-butiker", changefreq: "monthly", priority: "0.7" },
-  
+  { loc: "/restauranger-sala", changefreq: "monthly", priority: "0.7" },
+  { loc: "/frisor-koping", changefreq: "monthly", priority: "0.7" },
+  { loc: "/tjanster/vad-kostar-en-hemsida-2026", changefreq: "monthly", priority: "0.8" },
 ];
 
 const corsHeaders = {

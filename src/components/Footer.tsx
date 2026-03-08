@@ -10,7 +10,10 @@ const localServices = [
   { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
   { label: "Webbdesign Fagersta", to: "/webbutveckling-fagersta" },
   { label: "Hemsidor Bygg & Hantverkare", to: "/hemsidor-bygg-hantverkare" },
+  { label: "Restauranger Sala", to: "/restauranger-sala" },
+  { label: "Frisörer Köping", to: "/frisor-koping" },
   { label: "Digital Marknadsföring", to: "/digital-marknadsforing-butiker" },
+  { label: "Vad kostar en hemsida?", to: "/tjanster/vad-kostar-en-hemsida-2026" },
 ];
 
 const Footer = () => {

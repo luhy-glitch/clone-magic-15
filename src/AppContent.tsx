@@ -34,8 +34,11 @@ const WebbutvecklingArboga = lazy(() => import("./pages/WebbutvecklingArboga"));
 const WebbutvecklingFagersta = lazy(() => import("./pages/WebbutvecklingFagersta"));
 const HemsidorByggHantverkare = lazy(() => import("./pages/HemsidorByggHantverkare"));
 const DigitalMarknadsforing = lazy(() => import("./pages/DigitalMarknadsforing"));
+const RestaurangerSala = lazy(() => import("./pages/RestaurangerSala"));
+const FrisorKoping = lazy(() => import("./pages/FrisorKoping"));
 const Case = lazy(() => import("./pages/Case"));
 const GratisSeoAnalys = lazy(() => import("./pages/GratisSeoAnalys"));
+const VadKostarEnHemsida = lazy(() => import("./pages/tjanster/VadKostarEnHemsidaPage"));
 
 // Lazy-init QueryClient — only needed for pages that fetch data
 const LazyQueryProvider = lazy(() =>
@@ -84,7 +87,12 @@ const DataRoutes = () => (
         {/* Niche pages */}
         <Route path="/hemsidor-bygg-hantverkare" element={<HemsidorByggHantverkare />} />
         <Route path="/digital-marknadsforing-butiker" element={<DigitalMarknadsforing />} />
+        <Route path="/restauranger-sala" element={<RestaurangerSala />} />
+        <Route path="/frisor-koping" element={<FrisorKoping />} />
         <Route path="/case-studies/pagespeed-revolution" element={<RedirectRoute to="/case" />} />
+
+        {/* Pillar page */}
+        <Route path="/tjanster/vad-kostar-en-hemsida-2026" element={<VadKostarEnHemsida />} />
 
         {/* New pages */}
         <Route path="/case" element={<Case />} />

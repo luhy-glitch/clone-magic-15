@@ -5,10 +5,10 @@ const config = {
   city: "Eskilstuna",
   slug: "webbutveckling-eskilstuna",
   serviceKeyword: "Webbutveckling",
-  metaTitle: "SEO Eskilstuna - Dominera Lokala Sökresultat | LRH Konsult",
-  metaDescription: "Vi hjälper företag i Eskilstuna att ranka högt på Google genom teknisk perfektion och lokal relevans.",
-  heroHeading: "Webbutveckling & SEO i Eskilstuna",
-  heroDescription: "Eskilstuna är en viktig knutpunkt i Södermanland och en stad i snabb tillväxt. Kraven på företagens digitala närvaro har aldrig varit högre. Vi specialiserar oss på webbutveckling med fokus på Next.js och React – tekniker som möjliggör extremt snabba laddningstider och en sömlös användarupplevelse.",
+  metaTitle: "SEO Eskilstuna - Fler Kunder via Google | LRH Konsult",
+  metaDescription: "Dominera sökresultaten i Eskilstuna med snabba hemsidor och lokal SEO. 100/100 PageSpeed för företag i Södermanland.",
+  heroHeading: "Dominera sökresultaten i Eskilstuna",
+  heroDescription: "Eskilstuna är en viktig knutpunkt i Södermanland och en stad i snabb tillväxt. Vi bygger hemsidor som ger ditt företag fler kunder – med garanterat 100/100 PageSpeed och en SEO-strategi som placerar dig överst i sökresultaten.",
   icon: Code2,
   benefits: [
     { title: "Regional expertis", description: "Vi förstår den lokala marknaden i Eskilstuna och Södermanland och bygger hemsidor som talar direkt till din målgrupp." },
@@ -24,7 +24,7 @@ const config = {
   ],
   bodyExtraSections: [
     {
-      title: "Lokal SEO-strategi för ökad synlighet i Eskilstuna med omnejd",
+      title: "Lokal SEO-strategi för ökad synlighet i Eskilstuna och Södermanland",
       paragraphs: [
         "För att lyckas med SEO i Eskilstuna krävs en lokal förankring i det digitala innehållet. Det handlar om att vara relevant för de sökningar som invånarna i Eskilstuna faktiskt gör. Vi implementerar avancerad strukturerad data, såsom JSON-LD för lokala företag, vilket gör att din verksamhet kan visas med rika utdrag direkt i sökresultaten.",
         "Detta ökar klickfrekvensen och driver mer relevant trafik till din sida. Genom att strategiskt väva in Eskilstuna som en geografisk markör i kombination med dina tjänster, bygger vi en auktoritet som håller över tid. Vårt mål är att ditt företag ska vara det självklara valet när någon i Eskilstuna söker efter det du erbjuder.",
@@ -47,7 +47,7 @@ const config = {
   ],
   faq: [
     { question: "Vad kostar webbutveckling i Eskilstuna?", answer: "Våra paket börjar från 5 000 kr för enklare hemsidor. Mer avancerade lösningar med skräddarsydda funktioner prissätts utifrån projektets omfattning. Kontakta oss för en fri offert." },
-    { question: "Kan ni hjälpa företag i Eskilstuna med SEO?", answer: "Absolut. Lokal SEO är en central del av vår tjänst. Vi optimerar din hemsida för att ranka på relevanta sökord i Eskilstuna och hela Sörmland." },
+    { question: "Kan ni hjälpa företag i Eskilstuna med SEO?", answer: "Absolut. Lokal SEO är en central del av vår tjänst. Vi optimerar din hemsida för att ranka på relevanta sökord i Eskilstuna och hela Södermanland." },
     { question: "Hur skiljer sig era hemsidor från mallbaserade lösningar?", answer: "Till skillnad från WordPress-mallar eller Wix bygger vi din hemsida från grunden med React/Next.js. Det ger dig unik design, överlägsen prestanda och full kontroll utan månatliga licensavgifter." },
     { question: "Hur snabbt ser man resultat av SEO i Eskilstuna?", answer: "De första förbättringarna syns ofta inom 2–3 månader. Mer konkurrenskraftiga sökord kan ta 6–12 månader att ranka för, men den tekniska grunden ger resultat direkt." },
   ],
