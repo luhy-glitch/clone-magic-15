@@ -1,4 +1,4 @@
-import { Code2, Palette, Search, Settings, Wrench, Zap, ArrowRight } from "lucide-react";
+import { Code2, Palette, Search, Settings, Wrench, Zap, Megaphone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
 
