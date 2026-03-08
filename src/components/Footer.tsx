@@ -66,6 +66,10 @@ const Footer = () => {
               <li><Link to="/webbutveckling-vasteras" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Västerås</Link></li>
               <li><Link to="/seo-koping" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Köping</Link></li>
               <li><Link to="/hemsidor-sala" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor Sala</Link></li>
+              <li><Link to="/webbutveckling-enkoping" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Enköping</Link></li>
+              <li><Link to="/webbutveckling-eskilstuna" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Eskilstuna</Link></li>
+              <li><Link to="/webbutveckling-arboga" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Arboga</Link></li>
+              <li><Link to="/webbutveckling-fagersta" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Fagersta</Link></li>
             </ul>
             <div className="flex items-center gap-3 mt-6">
               {[

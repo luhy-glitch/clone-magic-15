@@ -70,6 +70,13 @@ const DataRoutes = () => (
         <Route path="/webbutveckling-vasteras" element={<WebbutvecklingVasteras />} />
         <Route path="/seo-koping" element={<SeoKoping />} />
         <Route path="/hemsidor-sala" element={<HemsidorSala />} />
+        <Route path="/webbutveckling-enkoping" element={<WebbutvecklingEnkoping />} />
+        <Route path="/webbutveckling-eskilstuna" element={<WebbutvecklingEskilstuna />} />
+        <Route path="/webbutveckling-arboga" element={<WebbutvecklingArboga />} />
+        <Route path="/webbutveckling-fagersta" element={<WebbutvecklingFagersta />} />
+        <Route path="/hemsidor-bygg-hantverkare" element={<HemsidorByggHantverkare />} />
+        <Route path="/digital-marknadsforing-butiker" element={<DigitalMarknadsforing />} />
+        <Route path="/case-studies/pagespeed-revolution" element={<CaseStudyPageSpeed />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="*" element={<NotFound />} />
