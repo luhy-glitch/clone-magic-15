@@ -82,8 +82,11 @@ const AdminDashboard = () => {
   const [generating, setGenerating] = useState(false);
   const [generatingImage, setGeneratingImage] = useState(false);
   const [selectedLead, setSelectedLead] = useState<ContactSubmission | null>(null);
-  const [pageSpeed, setPageSpeed] = useState<PageSpeedScore>({ performance: null, seo: null, accessibility: null, bestPractices: null, loading: false });
+  const [pageSpeed, setPageSpeed] = useState<{ performance: number | null; seo: number | null; accessibility: number | null; bestPractices: number | null; loading: boolean }>({ performance: null, seo: null, accessibility: null, bestPractices: null, loading: false });
   const [speedUrl, setSpeedUrl] = useState("https://lrhkonsult.se");
+  const [cityRankings, setCityRankings] = useState<CityRanking[]>(CITIES);
+  const [keywordSuggestions, setKeywordSuggestions] = useState<KeywordSuggestion[]>([]);
+  const [seoSubTab, setSeoSubTab] = useState<"rankings" | "keywords">("rankings");
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const doLogout = useCallback(async () => {
