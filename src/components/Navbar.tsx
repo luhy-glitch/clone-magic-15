@@ -68,6 +68,16 @@ const Navbar = () => {
                   <Link to="/tjanster/prestanda-optimering" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
                     Prestanda
                   </Link>
+                  <div className="border-t border-border my-1" />
+                  <Link to="/webbutveckling-vasteras" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                    Webbutveckling Västerås
+                  </Link>
+                  <Link to="/seo-koping" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                    SEO Köping
+                  </Link>
+                  <Link to="/hemsidor-sala" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                    Webbdesign Sala
+                  </Link>
                 </div>
               </div>
             )}
