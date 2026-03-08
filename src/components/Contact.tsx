@@ -27,6 +27,7 @@ const Contact = () => {
       if (error) throw error;
       toast({ title: "Meddelande skickat!", description: "Tack, jag återkommer så snart jag kan." });
       setForm({ name: "", email: "", subject: "", message: "", website: "" });
+      setSubmitted(true);
     } catch (err: any) {
       toast({ title: "Något gick fel", description: err.message || "Försök igen senare.", variant: "destructive" });
     } finally {
