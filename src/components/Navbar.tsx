@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import logoSrc from "@/assets/lrh-konsult-logo.png";
+import LrhLogo from "@/components/LrhLogo";
 import { Link, useLocation } from "react-router-dom";
 
 const mainServices = [
