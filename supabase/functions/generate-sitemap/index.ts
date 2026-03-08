@@ -88,13 +88,13 @@ Deno.serve(async (req) => {
     if (error) throw error;
 
     return new Response(JSON.stringify({ success: true }), {
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...corsHeaders },
     });
   } catch (err) {
     console.error("Sitemap generation failed:", err);
     return new Response(JSON.stringify({ error: "Sitemap generation failed" }), {
       status: 500,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...corsHeaders },
     });
   }
 });
