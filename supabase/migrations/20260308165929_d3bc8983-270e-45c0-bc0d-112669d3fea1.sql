@@ -1,0 +1,1 @@
+ALTER TABLE public.blog_posts ADD COLUMN IF NOT EXISTS key_takeaways text DEFAULT '' NOT NULL;

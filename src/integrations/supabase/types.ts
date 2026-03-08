@@ -77,6 +77,7 @@ export type Database = {
           id: string
           image_alt: string
           image_url: string | null
+          key_takeaways: string
           slug: string
           tag: string
           title: string
@@ -90,6 +91,7 @@ export type Database = {
           id?: string
           image_alt?: string
           image_url?: string | null
+          key_takeaways?: string
           slug: string
           tag?: string
           title: string
@@ -103,6 +105,7 @@ export type Database = {
           id?: string
           image_alt?: string
           image_url?: string | null
+          key_takeaways?: string
           slug?: string
           tag?: string
           title?: string
