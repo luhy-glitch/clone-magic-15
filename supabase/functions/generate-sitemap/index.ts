@@ -28,7 +28,28 @@ const staticRoutes = [
   { loc: "/case-studies/pagespeed-revolution", changefreq: "yearly", priority: "0.7" },
 ];
 
-Deno.serve(async () => {
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+};
+
+Deno.serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  // Require Authorization header with anon key or service role key
+  const authHeader = req.headers.get("Authorization");
+  const anonKey = Deno.env.get("SUPABASE_ANON_KEY");
+  const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  const token = authHeader?.replace("Bearer ", "");
+
+  if (!token || (token !== anonKey && token !== serviceKey)) {
+    return new Response(JSON.stringify({ error: "Unauthorized" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...corsHeaders },
+    });
+  }
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
