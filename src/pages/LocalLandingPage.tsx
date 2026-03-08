@@ -59,6 +59,16 @@ const RELATED_SERVICES = [
 
 const BASE_URL = "https://lrhkonsult.se";
 
+const CITY_REGIONS: Record<string, string> = {
+  "Enköping": "Uppsala län",
+  "Eskilstuna": "Södermanlands län",
+  "Västerås": "Västmanlands län",
+  "Köping": "Västmanlands län",
+  "Sala": "Västmanlands län",
+  "Arboga": "Västmanlands län",
+  "Fagersta": "Västmanlands län",
+};
+
 const buildLocalJsonLd = (config: LocalPageConfig) => ({
   "@context": "https://schema.org",
   "@graph": [
@@ -80,7 +90,10 @@ const buildLocalJsonLd = (config: LocalPageConfig) => ({
           "addressCountry": "SE",
         },
       },
-      "areaServed": { "@type": "City", "name": config.city },
+      "areaServed": [
+        { "@type": "City", "name": config.city },
+        { "@type": "State", "name": CITY_REGIONS[config.city] || "Västmanlands län" },
+      ],
     },
     {
       "@type": "FAQPage",
