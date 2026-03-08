@@ -1,6 +1,6 @@
 import { Mail, Linkedin, Github, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoSrc from "@/assets/lrh-konsult-logo.png";
+import LrhLogo from "@/components/LrhLogo";
 
 const localServices = [
   { label: "Webbutveckling Västerås", to: "/webbutveckling-vasteras" },
@@ -25,13 +25,11 @@ const Footer = () => {
           {/* Brand + NAP */}
           <div className="sm:col-span-2 lg:col-span-1" itemScope itemType="https://schema.org/ProfessionalService">
             <div className="mb-4">
-              <img
-                src={logoSrc}
-                alt="LRH Konsult – Webbutveckling och SEO i Västerås"
+              <LrhLogo
+                variant="white"
+                className="h-11 w-auto opacity-90"
                 width={180}
                 height={45}
-                className="h-11 w-auto brightness-0 invert opacity-80"
-                loading="lazy"
               />
               <meta itemProp="name" content="LRH Konsult" />
             </div>
