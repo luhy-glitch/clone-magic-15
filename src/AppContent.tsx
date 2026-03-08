@@ -33,6 +33,14 @@ const WebbutvecklingEnkoping = lazy(() => import("./pages/WebbutvecklingEnkoping
 const WebbutvecklingEskilstuna = lazy(() => import("./pages/WebbutvecklingEskilstuna"));
 const WebbutvecklingArboga = lazy(() => import("./pages/WebbutvecklingArboga"));
 const WebbutvecklingFagersta = lazy(() => import("./pages/WebbutvecklingFagersta"));
+const WebbutvecklingHallstahammar = lazy(() => import("./pages/WebbutvecklingHallstahammar"));
+const WebbutvecklingKungsor = lazy(() => import("./pages/WebbutvecklingKungsor"));
+const WebbutvecklingSurahammar = lazy(() => import("./pages/WebbutvecklingSurahammar"));
+const WebbutvecklingHeby = lazy(() => import("./pages/WebbutvecklingHeby"));
+const WebbutvecklingNorberg = lazy(() => import("./pages/WebbutvecklingNorberg"));
+const WebbutvecklingSkinnskatteberg = lazy(() => import("./pages/WebbutvecklingSkinnskatteberg"));
+const WebbutvecklingUppsala = lazy(() => import("./pages/WebbutvecklingUppsala"));
+const WebbutvecklingOrebro = lazy(() => import("./pages/WebbutvecklingOrebro"));
 const HemsidorByggHantverkare = lazy(() => import("./pages/HemsidorByggHantverkare"));
 const DigitalMarknadsforing = lazy(() => import("./pages/DigitalMarknadsforing"));
 const RestaurangerSala = lazy(() => import("./pages/RestaurangerSala"));
@@ -84,7 +92,14 @@ const DataRoutes = () => (
         <Route path="/webbutveckling-eskilstuna" element={<WebbutvecklingEskilstuna />} />
         <Route path="/webbutveckling-arboga" element={<WebbutvecklingArboga />} />
         <Route path="/webbutveckling-fagersta" element={<WebbutvecklingFagersta />} />
-
+        <Route path="/webbutveckling-hallstahammar" element={<WebbutvecklingHallstahammar />} />
+        <Route path="/webbutveckling-kungsor" element={<WebbutvecklingKungsor />} />
+        <Route path="/webbutveckling-surahammar" element={<WebbutvecklingSurahammar />} />
+        <Route path="/webbutveckling-heby" element={<WebbutvecklingHeby />} />
+        <Route path="/webbutveckling-norberg" element={<WebbutvecklingNorberg />} />
+        <Route path="/webbutveckling-skinnskatteberg" element={<WebbutvecklingSkinnskatteberg />} />
+        <Route path="/webbutveckling-uppsala" element={<WebbutvecklingUppsala />} />
+        <Route path="/webbutveckling-orebro" element={<WebbutvecklingOrebro />} />
         {/* Niche pages */}
         <Route path="/hemsidor-bygg-hantverkare" element={<HemsidorByggHantverkare />} />
         <Route path="/digital-marknadsforing-butiker" element={<DigitalMarknadsforing />} />

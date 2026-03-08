@@ -1,11 +1,20 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2, Download, CheckCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
+
+const pdfTips = [
+  "Optimera bilder med AVIF & WebP – minska bildvikten med upp till 80 %",
+  "Välj rätt teknikstack – React & Next.js för blixtsnabba sidor",
+  "Eliminera JavaScript-blockeringar – nå 0ms TBT med code-splitting",
+  "Prioritera Core Web Vitals – fixa CLS, LCP och FID",
+  "Implementera strukturerad data – FAQ-schema och JSON-LD",
+];
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", website: "" });
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,6 +27,7 @@ const Contact = () => {
       if (error) throw error;
       toast({ title: "Meddelande skickat!", description: "Tack, jag återkommer så snart jag kan." });
       setForm({ name: "", email: "", subject: "", message: "", website: "" });
+      setSubmitted(true);
     } catch (err: any) {
       toast({ title: "Något gick fel", description: err.message || "Försök igen senare.", variant: "destructive" });
     } finally {
@@ -134,6 +144,36 @@ const Contact = () => {
                 )}
               </button>
             </form>
+
+            {/* PDF Guide Incentive – shown after successful submission */}
+            {submitted && (
+              <div className="mt-8 bg-card border border-primary/20 rounded-xl p-6 animate-in fade-in slide-in-from-bottom-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <Download size={22} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold font-serif text-lg text-foreground mb-2">
+                      Tack! Här är din gratis guide
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      5 tips för en snabbare hemsida – direkt tillämpbara insikter:
+                    </p>
+                    <ul className="space-y-2 mb-4">
+                      {pdfTips.map((tip, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <CheckCircle size={16} className="text-primary mt-0.5 shrink-0" />
+                          <span>{tip}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-xs text-muted-foreground italic">
+                      Vi återkommer med din personliga analys inom 24 timmar.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </FadeIn>
         </div>
       </div>

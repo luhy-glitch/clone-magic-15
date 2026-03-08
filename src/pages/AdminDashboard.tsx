@@ -82,6 +82,7 @@ const AdminDashboard = () => {
   const [generating, setGenerating] = useState(false);
   const [generatingImage, setGeneratingImage] = useState(false);
   const [bulkImageProgress, setBulkImageProgress] = useState<{ running: boolean; current: number; total: number; currentTitle: string; errors: string[] }>({ running: false, current: 0, total: 0, currentTitle: "", errors: [] });
+  const [bulkPostProgress, setBulkPostProgress] = useState<{ running: boolean; current: number; total: number; currentTitle: string; errors: string[] }>({ running: false, current: 0, total: 0, currentTitle: "", errors: [] });
   const [selectedLead, setSelectedLead] = useState<ContactSubmission | null>(null);
   const [pageSpeed, setPageSpeed] = useState<{ performance: number | null; seo: number | null; accessibility: number | null; bestPractices: number | null; loading: boolean }>({ performance: null, seo: null, accessibility: null, bestPractices: null, loading: false });
   const [speedUrl, setSpeedUrl] = useState("https://lrhkonsult.se");
@@ -299,7 +300,89 @@ const AdminDashboard = () => {
     await fetchPosts();
   };
 
-  // Blog post editor view
+  const BLOG_TOPICS = [
+    "Hur du ökar hastigheten på din hemsida",
+    "Lokal SEO för småföretag i Västerås",
+    "React vs WordPress: vad passar ditt företag?",
+    "SEO för restauranger i Sala",
+    "Optimera WordPress för snabbare laddning",
+    "Så skapar du en hemsida som konverterar",
+    "Fördelarna med Next.js för svenska företag",
+    "10 tips för bättre användarupplevelse",
+    "Guide: Vad kostar en hemsida i Sverige 2026?",
+    "Digital marknadsföring för hantverkare",
+    "Lokal SEO för frisörer i Köping",
+    "5 misstag som sänker din SEO",
+    "Varför PageSpeed Insights är viktigt",
+    "Hur man får 10–50 leads per månad via SEO",
+    "Skräddarsydd webbutveckling för småföretag",
+    "Webbdesign för e-handel i Sverige",
+    "Så väljer du rätt CMS för ditt företag",
+    "Optimera din hemsida för Google Maps",
+    "Varför mobilanpassning är kritiskt",
+    "Hur du mäter ROI på din hemsida",
+    "Leadgenerering via programmatic SEO",
+    "Lokala landningssidor som konverterar",
+    "Hur schema markup förbättrar SEO",
+    "Så skapar du content som rankar",
+    "Tips för bättre CTA och konvertering",
+    "SEO för byggföretag i Mälardalen",
+    "Bloggstrategi för småföretag",
+    "Fördelar med CSS-only animationer",
+    "Hur man maximerar lokala leads",
+    "Hantering av flera lokala städer på sajten",
+  ];
+
+  const handleBulkGeneratePosts = async () => {
+    const existingSlugs = new Set(posts.map(p => p.slug));
+    const topicsToGenerate = BLOG_TOPICS.filter(t => {
+      const slug = t.toLowerCase().replace(/[åä]/g, "a").replace(/ö/g, "o").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      return !existingSlugs.has(slug);
+    });
+
+    if (topicsToGenerate.length === 0) { setError("Alla 30 blogginlägg finns redan."); return; }
+    if (!confirm(`Generera ${topicsToGenerate.length} blogginlägg med AI? Detta kan ta lång tid (ca 2 min per inlägg).`)) return;
+
+    setBulkPostProgress({ running: true, current: 0, total: topicsToGenerate.length, currentTitle: "", errors: [] });
+    const errors: string[] = [];
+
+    for (let i = 0; i < topicsToGenerate.length; i++) {
+      const topic = topicsToGenerate[i];
+      setBulkPostProgress(prev => ({ ...prev, current: i + 1, currentTitle: topic }));
+
+      try {
+        const { data, error: fnError } = await supabase.functions.invoke("generate-blog-post", {
+          body: { session_token: getSessionToken(), topic },
+        });
+
+        if (fnError || data?.error) {
+          errors.push(`${topic}: ${data?.error || "Misslyckades"}`);
+        } else if (data?.post) {
+          const slug = data.post.title.toLowerCase().replace(/[åä]/g, "a").replace(/ö/g, "o").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+          const post = {
+            ...data.post,
+            slug,
+            date: new Date().toISOString().split("T")[0],
+          };
+          await supabase.functions.invoke("admin-auth", {
+            body: { action: "create", session_token: getSessionToken(), post },
+          });
+        }
+      } catch {
+        errors.push(`${topic}: Nätverksfel`);
+      }
+
+      // Delay between requests to avoid rate limiting
+      if (i < topicsToGenerate.length - 1) {
+        await new Promise(r => setTimeout(r, 5000));
+      }
+    }
+
+    setBulkPostProgress(prev => ({ ...prev, running: false, errors }));
+    await fetchPosts();
+  };
+
+
   if (editing !== null) {
     return (
       <div className="min-h-screen" style={{ background: "hsl(140 18% 12%)" }}>
@@ -485,29 +568,50 @@ const AdminDashboard = () => {
 
         {activeTab === "blog" && (
           <>
-            <div className="flex items-center justify-between mb-4 gap-3">
-              <div className="flex-1">
-                {bulkImageProgress.running && (
-                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-3">
-                    <div className="flex items-center gap-2 mb-1">
-                      <Sparkles size={14} className="text-primary animate-spin" />
-                      <span className="text-sm font-medium">Genererar bild {bulkImageProgress.current}/{bulkImageProgress.total}</span>
-                    </div>
-                    <p className="text-xs text-muted-foreground truncate">{bulkImageProgress.currentTitle}</p>
-                    <div className="w-full bg-muted rounded-full h-1.5 mt-2">
-                      <div className="bg-primary h-1.5 rounded-full transition-all" style={{ width: `${(bulkImageProgress.current / bulkImageProgress.total) * 100}%` }} />
-                    </div>
+            <div className="flex flex-col gap-3 mb-4">
+              {/* Bulk progress indicators */}
+              {bulkImageProgress.running && (
+                <div className="bg-primary/5 border border-primary/20 rounded-lg p-3">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Sparkles size={14} className="text-primary animate-spin" />
+                    <span className="text-sm font-medium">Genererar bild {bulkImageProgress.current}/{bulkImageProgress.total}</span>
                   </div>
-                )}
-                {!bulkImageProgress.running && bulkImageProgress.errors.length > 0 && (
-                  <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-3">
-                    <p className="text-xs text-destructive font-medium mb-1">{bulkImageProgress.errors.length} bilder misslyckades:</p>
-                    {bulkImageProgress.errors.slice(0, 3).map((e, i) => <p key={i} className="text-xs text-destructive/80 truncate">{e}</p>)}
+                  <p className="text-xs text-muted-foreground truncate">{bulkImageProgress.currentTitle}</p>
+                  <div className="w-full bg-muted rounded-full h-1.5 mt-2">
+                    <div className="bg-primary h-1.5 rounded-full transition-all" style={{ width: `${(bulkImageProgress.current / bulkImageProgress.total) * 100}%` }} />
                   </div>
-                )}
-              </div>
-              <div className="flex gap-2 shrink-0">
-                <Button onClick={handleBulkGenerateImages} variant="outline" size="sm" disabled={bulkImageProgress.running}>
+                </div>
+              )}
+              {!bulkImageProgress.running && bulkImageProgress.errors.length > 0 && (
+                <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-3">
+                  <p className="text-xs text-destructive font-medium mb-1">{bulkImageProgress.errors.length} bilder misslyckades:</p>
+                  {bulkImageProgress.errors.slice(0, 3).map((e, i) => <p key={i} className="text-xs text-destructive/80 truncate">{e}</p>)}
+                </div>
+              )}
+              {bulkPostProgress.running && (
+                <div className="bg-primary/5 border border-primary/20 rounded-lg p-3">
+                  <div className="flex items-center gap-2 mb-1">
+                    <FileText size={14} className="text-primary animate-spin" />
+                    <span className="text-sm font-medium">Genererar inlägg {bulkPostProgress.current}/{bulkPostProgress.total}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground truncate">{bulkPostProgress.currentTitle}</p>
+                  <div className="w-full bg-muted rounded-full h-1.5 mt-2">
+                    <div className="bg-primary h-1.5 rounded-full transition-all" style={{ width: `${(bulkPostProgress.current / bulkPostProgress.total) * 100}%` }} />
+                  </div>
+                </div>
+              )}
+              {!bulkPostProgress.running && bulkPostProgress.errors.length > 0 && (
+                <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-3">
+                  <p className="text-xs text-destructive font-medium mb-1">{bulkPostProgress.errors.length} inlägg misslyckades:</p>
+                  {bulkPostProgress.errors.slice(0, 3).map((e, i) => <p key={i} className="text-xs text-destructive/80 truncate">{e}</p>)}
+                </div>
+              )}
+
+              <div className="flex flex-wrap gap-2">
+                <Button onClick={handleBulkGeneratePosts} variant="outline" size="sm" disabled={bulkPostProgress.running || bulkImageProgress.running}>
+                  <FileText size={14} /> {bulkPostProgress.running ? "Genererar..." : "Generera 30 blogginlägg"}
+                </Button>
+                <Button onClick={handleBulkGenerateImages} variant="outline" size="sm" disabled={bulkImageProgress.running || bulkPostProgress.running}>
                   <Sparkles size={14} /> {bulkImageProgress.running ? "Genererar..." : `Generera bilder (${posts.filter(p => !p.image_url || p.image_url.trim() === "").length})`}
                 </Button>
                 <Button onClick={() => setEditing({ ...emptyPost })} size="sm"><Plus size={16} /> Nytt inlägg</Button>
