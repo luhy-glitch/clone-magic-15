@@ -29,8 +29,8 @@ const Footer = () => {
                 src={logoSrc}
                 alt="LRH Konsult – Webbutveckling och SEO i Västerås"
                 width={180}
-                height={48}
-                className="h-12 w-auto opacity-90"
+                height={45}
+                className="h-11 w-auto brightness-0 invert opacity-80"
                 loading="lazy"
               />
               <meta itemProp="name" content="LRH Konsult" />
