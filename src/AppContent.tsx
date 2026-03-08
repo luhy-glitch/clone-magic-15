@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import RedirectRoute from "./components/RedirectRoute";
 
 // Defer heavy providers — not needed for initial paint
@@ -127,6 +128,7 @@ const AppContent = () => {
       <ScrollToTop />
       {/* Index renders immediately without waiting for QueryClient chunk */}
       {isIndex ? <Index /> : <DataRoutes />}
+      <ScrollToTopButton />
       {showOverlays && (
         <Suspense fallback={null}>
           <TooltipProvider>

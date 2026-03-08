@@ -1,14 +1,24 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import Contact from "@/components/Contact";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SeoRoiCalculator = lazy(() => import("@/components/SeoRoiCalculator"));
 
+const pdfGuideSteps = [
+  { title: "Optimera bilder med AVIF & WebP", desc: "Minska bildvikten med upp till 80 % utan kvalitetsförlust." },
+  { title: "Välj rätt teknikstack", desc: "React & Next.js för förrenderade, blixtsnabba sidor." },
+  { title: "Eliminera JavaScript-blockeringar", desc: "Nå 0ms TBT genom smart code-splitting." },
+  { title: "Prioritera Core Web Vitals", desc: "Fixa CLS, LCP och FID för bättre ranking." },
+  { title: "Implementera strukturerad data", desc: "FAQ-schema och JSON-LD för rika sökresultat." },
+];
+
 const GratisSeoAnalys = () => {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   return (
     <div className="min-h-screen">
       <PageHead
@@ -16,15 +26,29 @@ const GratisSeoAnalys = () => {
         description="Få en kostnadsfri SEO-analys av din hemsida. Se hur mycket mer trafik och intäkter du kan generera med rätt optimering."
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Gratis SEO-analys",
-          "description": "Kostnadsfri SEO-analys för företag i Västmanland och Mälardalen.",
-          "url": "https://lrhkonsult.se/gratis-seo-analys",
-          "provider": {
-            "@type": "ProfessionalService",
-            "name": "LRH Konsult",
-            "url": "https://lrhkonsult.se",
-          },
+          "@graph": [
+            {
+              "@type": "Service",
+              "name": "Gratis SEO-analys",
+              "description": "Kostnadsfri SEO-analys för företag i Västmanland och Mälardalen.",
+              "url": "https://lrhkonsult.se/gratis-seo-analys",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "LRH Konsult",
+                "url": "https://lrhkonsult.se",
+              },
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                { "@type": "Question", "name": "Vad ingår i den gratis SEO-analysen?", "acceptedAnswer": { "@type": "Answer", "text": "Vi granskar din hemsidas tekniska prestanda, laddningstider, Core Web Vitals, lokal SEO och ger konkreta rekommendationer." } },
+                { "@type": "Question", "name": "Hur lång tid tar analysen?", "acceptedAnswer": { "@type": "Answer", "text": "Vi återkommer med din personliga analys inom 24 timmar efter att du skickat in formuläret." } },
+                { "@type": "Question", "name": "Kostar det något?", "acceptedAnswer": { "@type": "Answer", "text": "Nej, analysen är helt kostnadsfri och utan förpliktelser." } },
+                { "@type": "Question", "name": "Vilka områden täcker analysen?", "acceptedAnswer": { "@type": "Answer", "text": "Vi analyserar teknisk SEO, sidprestanda, mobilanpassning, lokal synlighet och innehållsoptimering." } },
+                { "@type": "Question", "name": "Kan jag få hjälp att implementera förbättringarna?", "acceptedAnswer": { "@type": "Answer", "text": "Absolut! Vi erbjuder paket för att implementera alla rekommenderade förbättringar." } },
+              ],
+            },
+          ],
         }}
       />
       <Navbar />
@@ -48,6 +72,30 @@ const GratisSeoAnalys = () => {
               Du får en tydlig rapport med prioriterade åtgärder som kan ge dig fler besökare, bättre ranking och i slutändan fler kunder. Allt presenterat på ett sätt som är lätt att förstå, oavsett teknisk bakgrund.
             </p>
 
+            {/* PDF Guide Lead Magnet */}
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-primary mt-12 mb-4">
+              Gratis guide: 5 steg till en blixtsnabb hemsida
+            </h2>
+            <p className="text-muted-foreground leading-[1.6] mb-6">
+              I dagens digitala landskap är hastighet inte längre en lyx – det är en absolut nödvändighet. Genom att optimera din sajt för 100/100 i PageSpeed säkerställer du att du behåller besökare och konverterar dem till kunder i Västerås, Sala och Köping.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              {pdfGuideSteps.map((step, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <CheckCircle size={20} className="text-primary mt-0.5 shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Steg {i + 1}: {step.title}</p>
+                    <p className="text-sm text-muted-foreground">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-muted-foreground leading-[1.6] mb-8">
+              Fyll i formuläret nedan för att få din gratis SEO-analys – och som bonus skickar vi med vår kompletta guide med alla fem stegen i detalj.
+            </p>
+
             <h2 className="text-2xl sm:text-3xl font-bold font-serif text-primary mt-12 mb-4">
               Beräkna din potentiella SEO-avkastning
             </h2>
@@ -66,8 +114,12 @@ const GratisSeoAnalys = () => {
             <h2 className="text-2xl sm:text-3xl font-bold font-serif text-primary mb-6">
               Boka din kostnadsfria analys idag
             </h2>
-            <p className="text-muted-foreground leading-[1.6] mb-8">
+            <p className="text-muted-foreground leading-[1.6] mb-4">
               Fyll i formuläret nedan så återkommer vi med din personliga SEO-analys inom 24 timmar. Helt utan kostnad eller förpliktelser.
+            </p>
+            <p className="text-sm text-primary font-medium mb-8 flex items-center justify-center gap-2">
+              <Download size={16} />
+              Bonus: Du får även vår PDF-guide "5 steg till en blixtsnabb hemsida"
             </p>
           </div>
         </section>
