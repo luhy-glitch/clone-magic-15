@@ -19,6 +19,13 @@ const staticRoutes = [
   { loc: "/webbutveckling-vasteras", changefreq: "monthly", priority: "0.8" },
   { loc: "/seo-koping", changefreq: "monthly", priority: "0.8" },
   { loc: "/hemsidor-sala", changefreq: "monthly", priority: "0.8" },
+  { loc: "/webbutveckling-enkoping", changefreq: "monthly", priority: "0.8" },
+  { loc: "/webbutveckling-eskilstuna", changefreq: "monthly", priority: "0.8" },
+  { loc: "/webbutveckling-arboga", changefreq: "monthly", priority: "0.8" },
+  { loc: "/webbutveckling-fagersta", changefreq: "monthly", priority: "0.8" },
+  { loc: "/hemsidor-bygg-hantverkare", changefreq: "monthly", priority: "0.7" },
+  { loc: "/digital-marknadsforing-butiker", changefreq: "monthly", priority: "0.7" },
+  { loc: "/case-studies/pagespeed-revolution", changefreq: "yearly", priority: "0.7" },
 ];
 
 Deno.serve(async () => {
@@ -27,7 +34,6 @@ Deno.serve(async () => {
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Fetch blog posts
     const { data: posts } = await supabase
       .from("blog_posts")
       .select("slug, updated_at")
@@ -51,7 +57,6 @@ Deno.serve(async () => {
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>`;
 
-    // Upload to storage
     const { error } = await supabase.storage
       .from("sitemap")
       .upload("sitemap.xml", new Blob([xml], { type: "application/xml" }), {
