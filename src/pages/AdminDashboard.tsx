@@ -81,6 +81,7 @@ const AdminDashboard = () => {
   const [aiTopic, setAiTopic] = useState("");
   const [generating, setGenerating] = useState(false);
   const [generatingImage, setGeneratingImage] = useState(false);
+  const [bulkImageProgress, setBulkImageProgress] = useState<{ running: boolean; current: number; total: number; currentTitle: string; errors: string[] }>({ running: false, current: 0, total: 0, currentTitle: "", errors: [] });
   const [selectedLead, setSelectedLead] = useState<ContactSubmission | null>(null);
   const [pageSpeed, setPageSpeed] = useState<{ performance: number | null; seo: number | null; accessibility: number | null; bestPractices: number | null; loading: boolean }>({ performance: null, seo: null, accessibility: null, bestPractices: null, loading: false });
   const [speedUrl, setSpeedUrl] = useState("https://lrhkonsult.se");
@@ -257,6 +258,45 @@ const AdminDashboard = () => {
       const { error: fnError } = await supabase.functions.invoke("generate-sitemap");
       if (fnError) setError("Kunde inte generera sitemap.");
     } catch { setError("Sitemap-generering misslyckades."); }
+  };
+
+  const handleBulkGenerateImages = async () => {
+    const postsWithoutImages = posts.filter(p => !p.image_url || p.image_url.trim() === "");
+    if (postsWithoutImages.length === 0) { setError("Alla inlägg har redan bilder."); return; }
+    if (!confirm(`Generera AI-bilder för ${postsWithoutImages.length} inlägg? Detta kan ta några minuter.`)) return;
+
+    setBulkImageProgress({ running: true, current: 0, total: postsWithoutImages.length, currentTitle: "", errors: [] });
+    const errors: string[] = [];
+
+    for (let i = 0; i < postsWithoutImages.length; i++) {
+      const post = postsWithoutImages[i];
+      setBulkImageProgress(prev => ({ ...prev, current: i + 1, currentTitle: post.title }));
+
+      try {
+        const { data, error: fnError } = await supabase.functions.invoke("generate-blog-post", {
+          body: {
+            session_token: getSessionToken(),
+            action: "generate_image_for_post",
+            slug: post.slug,
+            post_title: post.title,
+            image_prompt: `Professional photorealistic blog header image for article about: ${post.title}. Swedish web development and SEO theme.`,
+          },
+        });
+        if (fnError || data?.error) {
+          errors.push(`${post.title}: ${data?.error || "Misslyckades"}`);
+        }
+      } catch {
+        errors.push(`${post.title}: Nätverksfel`);
+      }
+
+      // Small delay to avoid rate limiting
+      if (i < postsWithoutImages.length - 1) {
+        await new Promise(r => setTimeout(r, 3000));
+      }
+    }
+
+    setBulkImageProgress(prev => ({ ...prev, running: false, errors }));
+    await fetchPosts();
   };
 
   // Blog post editor view
@@ -445,8 +485,33 @@ const AdminDashboard = () => {
 
         {activeTab === "blog" && (
           <>
-            <div className="flex justify-end mb-4">
-              <Button onClick={() => setEditing({ ...emptyPost })} size="sm"><Plus size={16} /> Nytt inlägg</Button>
+            <div className="flex items-center justify-between mb-4 gap-3">
+              <div className="flex-1">
+                {bulkImageProgress.running && (
+                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-3">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Sparkles size={14} className="text-primary animate-spin" />
+                      <span className="text-sm font-medium">Genererar bild {bulkImageProgress.current}/{bulkImageProgress.total}</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground truncate">{bulkImageProgress.currentTitle}</p>
+                    <div className="w-full bg-muted rounded-full h-1.5 mt-2">
+                      <div className="bg-primary h-1.5 rounded-full transition-all" style={{ width: `${(bulkImageProgress.current / bulkImageProgress.total) * 100}%` }} />
+                    </div>
+                  </div>
+                )}
+                {!bulkImageProgress.running && bulkImageProgress.errors.length > 0 && (
+                  <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-3">
+                    <p className="text-xs text-destructive font-medium mb-1">{bulkImageProgress.errors.length} bilder misslyckades:</p>
+                    {bulkImageProgress.errors.slice(0, 3).map((e, i) => <p key={i} className="text-xs text-destructive/80 truncate">{e}</p>)}
+                  </div>
+                )}
+              </div>
+              <div className="flex gap-2 shrink-0">
+                <Button onClick={handleBulkGenerateImages} variant="outline" size="sm" disabled={bulkImageProgress.running}>
+                  <Sparkles size={14} /> {bulkImageProgress.running ? "Genererar..." : `Generera bilder (${posts.filter(p => !p.image_url || p.image_url.trim() === "").length})`}
+                </Button>
+                <Button onClick={() => setEditing({ ...emptyPost })} size="sm"><Plus size={16} /> Nytt inlägg</Button>
+              </div>
             </div>
             {loading ? <p className="text-muted-foreground">Laddar...</p> : (
               <div className="bg-card border border-border rounded-xl overflow-hidden">

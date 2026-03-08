@@ -114,6 +114,32 @@ Deno.serve(async (req) => {
       });
     }
 
+    // Generate image and save directly to a blog post
+    if (action === "generate_image_for_post") {
+      const { slug: postSlug, post_title } = await req.clone().json().catch(() => ({ slug: "", post_title: "" }));
+      const promptText = image_prompt || post_title || topic || "Professional blog header for Swedish web agency";
+      const imageUrl = await generateImage(supabase, LOVABLE_API_KEY, promptText);
+      if (!imageUrl) {
+        return new Response(JSON.stringify({ error: "Kunde inte generera bild.", slug: postSlug }), {
+          status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      // Update the post directly
+      const { error: updateError } = await supabase
+        .from("blog_posts")
+        .update({ image_url: imageUrl, image_alt: post_title || promptText })
+        .eq("slug", postSlug);
+      if (updateError) {
+        console.error("Failed to update post image:", updateError);
+        return new Response(JSON.stringify({ error: "Bild genererad men kunde inte spara.", image_url: imageUrl }), {
+          status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      return new Response(JSON.stringify({ success: true, slug: postSlug, image_url: imageUrl }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const systemPrompt = `Du är en SEO-expert och copywriter för en svensk webbyrå (LRH Konsult) i Västmanland. 
 Skriv blogginlägg på svenska som är informativa, engagerande och SEO-optimerade.
 Följ dessa regler:
