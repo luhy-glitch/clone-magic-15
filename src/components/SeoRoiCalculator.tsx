@@ -51,46 +51,57 @@ const SeoRoiCalculator = () => {
 
               <div>
                 <label htmlFor="roi-traffic" className="text-sm font-medium text-foreground mb-2 block">
-                  Månatlig trafik (besökare)
+                  Månatlig trafik: <span className="text-primary font-mono">{traffic.toLocaleString("sv-SE")}</span> besökare
                 </label>
                 <input
                   id="roi-traffic"
-                  type="number"
-                  min={0}
-                  max={1000000}
+                  type="range"
+                  min={100}
+                  max={50000}
+                  step={100}
                   value={traffic}
-                  onChange={(e) => setTraffic(Math.max(0, Math.min(1000000, Number(e.target.value))))}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 font-mono"
+                  onChange={(e) => setTraffic(Number(e.target.value))}
+                  className="w-full h-2 rounded-full appearance-none cursor-pointer bg-secondary accent-primary"
                 />
+                <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                  <span>100</span><span>50 000</span>
+                </div>
               </div>
 
               <div>
                 <label className="text-sm font-medium text-foreground mb-2 block">
-                  Konverteringsgrad (%)
+                  Konverteringsgrad: <span className="text-primary font-mono">{conversionRate}%</span>
                 </label>
                 <input
-                  type="number"
-                  min={0}
-                  max={100}
-                  step={0.1}
+                  type="range"
+                  min={0.5}
+                  max={15}
+                  step={0.5}
                   value={conversionRate}
-                  onChange={(e) => setConversionRate(Math.max(0, Math.min(100, Number(e.target.value))))}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 font-mono"
+                  onChange={(e) => setConversionRate(Number(e.target.value))}
+                  className="w-full h-2 rounded-full appearance-none cursor-pointer bg-secondary accent-primary"
                 />
+                <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                  <span>0.5%</span><span>15%</span>
+                </div>
               </div>
 
               <div>
                 <label className="text-sm font-medium text-foreground mb-2 block">
-                  Genomsnittligt kundvärde (SEK)
+                  Kundvärde: <span className="text-primary font-mono">{customerValue.toLocaleString("sv-SE")} kr</span>
                 </label>
                 <input
-                  type="number"
-                  min={0}
-                  max={10000000}
+                  type="range"
+                  min={500}
+                  max={100000}
+                  step={500}
                   value={customerValue}
-                  onChange={(e) => setCustomerValue(Math.max(0, Math.min(10000000, Number(e.target.value))))}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 font-mono"
+                  onChange={(e) => setCustomerValue(Number(e.target.value))}
+                  className="w-full h-2 rounded-full appearance-none cursor-pointer bg-secondary accent-primary"
                 />
+                <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                  <span>500 kr</span><span>100 000 kr</span>
+                </div>
               </div>
 
               <div className="pt-4 border-t border-border">
