@@ -127,6 +127,7 @@ const AppContent = () => {
       <ScrollToTop />
       {/* Index renders immediately without waiting for QueryClient chunk */}
       {isIndex ? <Index /> : <DataRoutes />}
+      <ScrollToTopButton />
       {showOverlays && (
         <Suspense fallback={null}>
           <TooltipProvider>
