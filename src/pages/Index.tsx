@@ -140,7 +140,7 @@ const Index = () => {
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">SEO i Eskilstuna (Södermanland)</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
                 Eskilstuna är en viktig knutpunkt i Södermanland med en snabbt växande företagsscen. Vi hjälper företag i Eskilstuna att dominera lokala sökresultat genom teknisk perfektion och lokal relevans.{" "}
-                <a href="/webbutveckling-eskilstuna" className="text-primary hover:underline font-medium">Läs mer om SEO i Eskilstuna</a>.
+                <Link to="/webbutveckling-eskilstuna" className="text-primary hover:underline font-medium">Läs mer om SEO i Eskilstuna</Link>.
               </p>
 
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Arboga</h2>
