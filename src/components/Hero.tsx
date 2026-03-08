@@ -114,7 +114,6 @@ export default function Hero() {
               Webbutveckling i Västerås
               <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-card/80 border-r border-b border-border rotate-45 -mt-1" />
             </div>
-            </div>
           </div>
           <span className="text-xs mt-2 text-muted-foreground group-hover:text-foreground transition-colors font-medium underline-offset-2 group-hover:underline">Västerås</span>
         </Link>
