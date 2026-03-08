@@ -100,7 +100,7 @@ serve(async (req: Request) => {
     }
 
     // Save to database for CRM
-    const supabase = getSupabase();
+    const supabase = supabaseRL;
     await supabase.from("contact_submissions").insert({
       name, email, subject: subject || "", message,
     }).then(({ error: dbError }) => {
