@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PageHead from "@/components/PageHead";
 import { ArrowRight } from "lucide-react";
+import { siteWideFaqs } from "@/data/faqData";
 
 // Lazy-load everything below the fold
 const Services = lazy(() => import("@/components/Services"));
