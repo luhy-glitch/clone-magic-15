@@ -15,7 +15,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import NotFound from "./NotFound";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const SERVICE_LINKS: Record<string, { label: string; href: string }[]> = {
   SEO: [
