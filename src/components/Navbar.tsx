@@ -56,14 +56,17 @@ const Navbar = () => {
         aria-label="Huvudnavigering"
         className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-14" : "h-16"}`}
       >
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img
-            src={logoSrc}
-            alt="LRH Konsult – Webbutveckling och SEO i Västerås"
+        <Link to="/" className="flex items-center gap-2 shrink-0" aria-label="LRH Konsult – Startsida">
+          {/* Full logo on desktop, monogram on mobile */}
+          <LrhLogo
+            className={`hidden sm:block transition-all duration-300 ${scrolled ? "h-9" : "h-[45px]"} w-auto`}
             width={200}
             height={45}
-            fetchPriority="high"
-            className={`w-auto transition-all duration-300 ${scrolled ? "h-9 sm:h-9" : "h-11 sm:h-[45px]"}`}
+          />
+          <LrhLogo
+            monogramOnly
+            className={`sm:hidden transition-all duration-300 ${scrolled ? "h-8" : "h-10"} w-auto`}
+            height={40}
           />
         </Link>
 
