@@ -146,7 +146,7 @@ const Index = () => {
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Arboga</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
                 Arboga har en rik historia och en framåtblickande företagskultur. Vi hjälper lokala företag att bygga digital auktoritet med moderna, blixtsnabba hemsidor som rankar högt.{" "}
-                <a href="/webbutveckling-arboga" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Arboga</a>.
+                <Link to="/webbutveckling-arboga" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Arboga</Link>.
               </p>
 
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbdesign i Fagersta</h2>
