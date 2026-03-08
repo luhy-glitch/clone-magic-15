@@ -15,6 +15,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import NotFound from "./NotFound";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const SERVICE_LINKS: Record<string, { label: string; href: string }[]> = {
   SEO: [
@@ -174,7 +175,12 @@ const BloggArtikel = () => {
   const readingTime = estimateReadingTime(post.content);
   const parsed = parseContentLines(post.content);
   const headings = parsed.filter((e) => e.type === "h2");
-  const keyTakeaways = extractKeyTakeaways(post.content, post.title);
+
+  // Prefer curated takeaways from DB, fall back to auto-extraction
+  const dbTakeaways = (post as any).key_takeaways
+    ? (post as any).key_takeaways.split("\n").map((l: string) => l.replace(/^[-•*]\s*/, "").trim()).filter(Boolean)
+    : [];
+  const keyTakeaways = dbTakeaways.length >= 3 ? dbTakeaways : extractKeyTakeaways(post.content, post.title);
 
   // Related: same tag first, then others
   const sameTag = allPosts.filter((p) => p.slug !== post.slug && p.tag === post.tag);
@@ -483,6 +489,7 @@ const BloggArtikel = () => {
         </section>
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 };
