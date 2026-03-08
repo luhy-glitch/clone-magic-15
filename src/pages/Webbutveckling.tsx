@@ -44,7 +44,7 @@ const pageJsonLd = {
     {
       "@type": "ProfessionalService",
       "name": "LRH Konsult – Webbutveckling",
-      "description": "Bäst webbutveckling i Västerås & Västmanland. Vi bygger blixtsnabba Next.js-sajter som rankar #1 på Google. Din lokala expert för moderna webblösningar.",
+      "description": "Professionell webbutveckling i Västerås och Västmanland. Blixtsnabba hemsidor i Next.js och React.",
       "url": "https://lrhkonsult.se/webbutveckling",
       "telephone": "+46704606578",
       "email": "lucas@lrhkonsult.se",
@@ -62,7 +62,17 @@ const pageJsonLd = {
       "image": "https://lrhkonsult.se/og-image.png",
       "sameAs": ["https://www.linkedin.com/in/lucasrosvall/"],
     },
-    faqJsonLd,
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer,
+        },
+      })),
+    },
   ],
 };
 

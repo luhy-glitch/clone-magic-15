@@ -19,6 +19,30 @@ const SeoOptimering = () => {
       <PageHead
         title="SEO-optimering Västmanland | Ranka #1 | LRH Konsult"
         description="Professionell SEO för företag i Västerås, Köping och Sala. Teknisk SEO, lokal sökmotoroptimering och innehållsstrategi som ökar din Google-synlighet."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Service",
+              "name": "SEO-optimering i Västmanland",
+              "description": "Professionell sökmotoroptimering för företag i Västerås, Köping och Sala.",
+              "url": "https://lrhkonsult.se/seo-optimering",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "LRH Konsult",
+                "url": "https://lrhkonsult.se",
+                "telephone": "+46704606578",
+                "email": "lucas@lrhkonsult.se",
+                "address": { "@type": "PostalAddress", "addressLocality": "Västerås", "addressRegion": "Västmanlands län", "addressCountry": "SE" }
+              },
+              "areaServed": [
+                { "@type": "City", "name": "Västerås" },
+                { "@type": "City", "name": "Köping" },
+                { "@type": "City", "name": "Sala" }
+              ]
+            }
+          ]
+        }}
       />
       <Navbar />
       <main>
