@@ -51,7 +51,7 @@ export default function Hero() {
       </p>
 
       {/* SEAMLESS MAP SECTION */}
-      <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-20 bg-transparent">
+      <div className="relative w-full max-w-2xl aspect-square max-h-[400px] mb-20 z-20 bg-transparent">
         <img
           src="/images/vastmanland-karta-sm.webp"
           srcSet="/images/vastmanland-karta-sm.webp 350w, /images/vastmanland-karta.avif 1024w"
@@ -63,7 +63,7 @@ export default function Hero() {
           fetchPriority="high"
           width={500}
           height={500}
-          className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.3] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_20px_hsl(38_92%_50%/0.15)] pointer-events-none z-0"
+          className="absolute inset-0 w-full h-full object-contain opacity-[0.3] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_20px_hsl(38_92%_50%/0.15)] pointer-events-none z-0"
         />
 
         {/* Glow behind CTA */}
@@ -73,7 +73,7 @@ export default function Hero() {
         {/* Sala – north, slightly right of center on the map */}
         <Link
           to="/hemsidor-sala"
-          className="absolute top-[10%] right-[32%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[10%] right-[32%] flex flex-col items-center group cursor-pointer z-50 min-w-[44px] min-h-[44px] p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Hemsidor och SEO i Sala"
         >
           <div className="relative">
@@ -89,7 +89,7 @@ export default function Hero() {
         {/* Köping – mid-left (west side of the map) */}
         <Link
           to="/seo-koping"
-          className="absolute top-[48%] left-[18%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[48%] left-[18%] flex flex-col items-center group cursor-pointer z-50 min-w-[44px] min-h-[44px] p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="SEO-optimering i Köping"
         >
           <div className="relative">
@@ -105,7 +105,7 @@ export default function Hero() {
         {/* Västerås – center-south, slightly right (south-east on the map) */}
         <Link
           to="/webbutveckling-vasteras"
-          className="absolute top-[52%] right-[22%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[52%] right-[22%] flex flex-col items-center group cursor-pointer z-50 min-w-[44px] min-h-[44px] p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Webbutveckling i Västerås"
         >
           <div className="relative">
@@ -119,7 +119,7 @@ export default function Hero() {
         </Link>
 
         {/* CTA Button */}
-        <div className="relative z-20 -translate-y-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
           <div className="absolute -inset-3 bg-gradient-to-r from-primary/30 via-primary/20 to-primary/30 rounded-full blur-xl animate-pulse" />
           <Link
             to="/gratis-seo-analys"
