@@ -75,6 +75,14 @@ const CITY_REGIONS: Record<string, string> = {
   "Sala": "Västmanlands län",
   "Arboga": "Västmanlands län",
   "Fagersta": "Västmanlands län",
+  "Hallstahammar": "Västmanlands län",
+  "Kungsör": "Västmanlands län",
+  "Surahammar": "Västmanlands län",
+  "Heby": "Uppsala län",
+  "Norberg": "Västmanlands län",
+  "Skinnskatteberg": "Västmanlands län",
+  "Uppsala": "Uppsala län",
+  "Örebro": "Örebro län",
 };
 
 const buildLocalJsonLd = (config: LocalPageConfig) => ({
