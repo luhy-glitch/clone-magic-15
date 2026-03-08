@@ -6,17 +6,12 @@ import Contact from "@/components/Contact";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { LucideIcon } from "lucide-react";
+import { ALL_CITIES, CITY_REGIONS } from "@/data/cities";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
-interface FAQItem {
-  question: string;
-  answer: string;
-}
+  ServiceFAQ,
+  ServiceCTA,
+  type FAQItem,
+} from "@/components/service-page/sections";
 
 interface ExtraSection {
   title: string;
@@ -39,24 +34,6 @@ interface LocalPageConfig {
   faq: FAQItem[];
 }
 
-const ALL_LOCAL_PAGES = [
-  { slug: "webbutveckling-vasteras", label: "Webbutveckling i Västerås", city: "Västerås" },
-  { slug: "seo-koping", label: "SEO i Köping", city: "Köping" },
-  { slug: "hemsidor-sala", label: "Hemsidor i Sala", city: "Sala" },
-  { slug: "webbutveckling-enkoping", label: "Webbutveckling i Enköping", city: "Enköping" },
-  { slug: "webbutveckling-eskilstuna", label: "Webbutveckling i Eskilstuna", city: "Eskilstuna" },
-  { slug: "webbutveckling-arboga", label: "Webbutveckling i Arboga", city: "Arboga" },
-  { slug: "webbutveckling-fagersta", label: "Webbutveckling i Fagersta", city: "Fagersta" },
-  { slug: "webbutveckling-hallstahammar", label: "Webbutveckling i Hallstahammar", city: "Hallstahammar" },
-  { slug: "webbutveckling-kungsor", label: "Webbutveckling i Kungsör", city: "Kungsör" },
-  { slug: "webbutveckling-surahammar", label: "Webbutveckling i Surahammar", city: "Surahammar" },
-  { slug: "webbutveckling-heby", label: "Webbutveckling i Heby", city: "Heby" },
-  { slug: "webbutveckling-norberg", label: "Webbutveckling i Norberg", city: "Norberg" },
-  { slug: "webbutveckling-skinnskatteberg", label: "Webbutveckling i Skinnskatteberg", city: "Skinnskatteberg" },
-  { slug: "webbutveckling-uppsala", label: "Webbutveckling i Uppsala", city: "Uppsala" },
-  { slug: "webbutveckling-orebro", label: "Webbutveckling i Örebro", city: "Örebro" },
-];
-
 const RELATED_SERVICES = [
   { href: "/tjanster/webbutveckling", label: "Webbutveckling" },
   { href: "/tjanster/seo-optimering", label: "SEO-optimering" },
@@ -66,24 +43,6 @@ const RELATED_SERVICES = [
 ];
 
 const BASE_URL = "https://lrhkonsult.se";
-
-const CITY_REGIONS: Record<string, string> = {
-  "Enköping": "Uppsala län",
-  "Eskilstuna": "Södermanlands län",
-  "Västerås": "Västmanlands län",
-  "Köping": "Västmanlands län",
-  "Sala": "Västmanlands län",
-  "Arboga": "Västmanlands län",
-  "Fagersta": "Västmanlands län",
-  "Hallstahammar": "Västmanlands län",
-  "Kungsör": "Västmanlands län",
-  "Surahammar": "Västmanlands län",
-  "Heby": "Uppsala län",
-  "Norberg": "Västmanlands län",
-  "Skinnskatteberg": "Västmanlands län",
-  "Uppsala": "Uppsala län",
-  "Örebro": "Örebro län",
-};
 
 const buildLocalJsonLd = (config: LocalPageConfig) => ({
   "@context": "https://schema.org",
@@ -126,9 +85,14 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
   const jsonLd = buildLocalJsonLd(config);
   const Icon = config.icon;
 
+  const breadcrumbs = [
+    { name: "Hem", url: BASE_URL },
+    { name: config.city, url: `${BASE_URL}/${config.slug}` },
+  ];
+
   return (
     <div className="min-h-screen">
-      <PageHead title={config.metaTitle} description={config.metaDescription} jsonLd={jsonLd} />
+      <PageHead title={config.metaTitle} description={config.metaDescription} jsonLd={jsonLd} breadcrumbs={breadcrumbs} />
       <Navbar />
       <main className="pt-16">
         {/* Hero */}
@@ -232,28 +196,11 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
           </section>
         ))}
 
-        {/* FAQ */}
-        <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="local-faq-heading">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <AnimatedSection>
-              <h2 id="local-faq-heading" className="text-2xl sm:text-3xl font-bold font-serif text-center mb-10">
-                Vanliga frågor om {config.serviceKeyword.toLowerCase()} i {config.city}
-              </h2>
-              <Accordion type="single" collapsible className="space-y-3">
-                {config.faq.map((item, i) => (
-                  <AccordionItem key={i} value={`faq-${i}`} className="bg-card border border-border rounded-xl px-6">
-                    <AccordionTrigger className="text-left font-serif font-bold text-base">
-                      {item.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground leading-relaxed">
-                      {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </AnimatedSection>
-          </div>
-        </section>
+        {/* FAQ – reuses shared ServiceFAQ with microdata */}
+        <ServiceFAQ
+          faq={config.faq}
+          title={`Vanliga frågor om ${config.serviceKeyword.toLowerCase()} i ${config.city}`}
+        />
 
         {/* Related local pages */}
         <section className="py-12 sm:py-16 bg-background border-t border-border" aria-labelledby="local-related-heading">
@@ -263,10 +210,10 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
                 Vi hjälper företag i hela Mälardalen & Västmanland
               </h2>
               <div className="flex flex-wrap justify-center gap-3 mb-8">
-                {ALL_LOCAL_PAGES.filter(p => p.slug !== config.slug).map((page) => (
+                {ALL_CITIES.filter(p => `/${p.to.replace(/^\//, '')}` !== `/${config.slug}`).map((page) => (
                   <Link
-                    key={page.slug}
-                    to={`/${page.slug}`}
+                    key={page.to}
+                    to={page.to}
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-card text-foreground font-medium hover:bg-primary/10 hover:border-primary/30 transition-colors"
                   >
                     {page.label} <ArrowRight size={16} className="text-primary" />
@@ -289,23 +236,8 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
           </div>
         </section>
 
-        {/* Bottom CTA */}
-        <section className="py-12 sm:py-16 bg-section-alt text-center">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif mb-4">
-              Redo att få fler kunder i {config.city}?
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Vi analyserar din sajt gratis och visar exakt vad som behövs för att ranka högre på Google.
-            </p>
-            <Link
-              to="/gratis-seo-analys"
-              className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px] animate-cta-pulse"
-            >
-              Få en gratis SEO-analys <ArrowRight size={20} />
-            </Link>
-          </div>
-        </section>
+        {/* Bottom CTA – reuses shared ServiceCTA */}
+        <ServiceCTA />
 
         {/* Contact */}
         <Contact />

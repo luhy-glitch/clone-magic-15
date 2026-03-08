@@ -33,7 +33,7 @@ export default function Hero() {
         </span>
       </h1>
 
-      {/* Body text with local keywords */}
+      {/* Body text with local keywords – all key cities */}
       <p className="text-muted-foreground max-w-2xl text-sm md:text-base mb-16 leading-[1.6] text-center z-10 relative">
         Jag hjälper företag i{" "}
         <Link to="/webbutveckling-vasteras" className="text-primary font-medium hover:underline">Västerås</Link>,{" "}
@@ -41,8 +41,12 @@ export default function Hero() {
         <Link to="/hemsidor-sala" className="text-primary font-medium hover:underline">Sala</Link>,{" "}
         <Link to="/webbutveckling-enkoping" className="text-primary font-medium hover:underline">Enköping</Link>,{" "}
         <Link to="/webbutveckling-eskilstuna" className="text-primary font-medium hover:underline">Eskilstuna</Link>,{" "}
-        <Link to="/webbutveckling-arboga" className="text-primary font-medium hover:underline">Arboga</Link> och{" "}
-        <Link to="/webbutveckling-fagersta" className="text-primary font-medium hover:underline">Fagersta</Link> att synas högre på Google och förvandla besökare till betalande kunder.
+        <Link to="/webbutveckling-arboga" className="text-primary font-medium hover:underline">Arboga</Link>,{" "}
+        <Link to="/webbutveckling-fagersta" className="text-primary font-medium hover:underline">Fagersta</Link>,{" "}
+        <Link to="/webbutveckling-hallstahammar" className="text-primary font-medium hover:underline">Hallstahammar</Link>,{" "}
+        <Link to="/webbutveckling-kungsor" className="text-primary font-medium hover:underline">Kungsör</Link>,{" "}
+        <Link to="/webbutveckling-uppsala" className="text-primary font-medium hover:underline">Uppsala</Link> och{" "}
+        <Link to="/webbutveckling-orebro" className="text-primary font-medium hover:underline">Örebro</Link> att synas högre på Google och förvandla besökare till betalande kunder.
         Byggda i <span className="text-foreground font-medium">React & Next.js</span> för garanterad 100/100 PageSpeed.
       </p>
 
@@ -65,11 +69,11 @@ export default function Hero() {
         {/* Glow behind CTA */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/[0.08] blur-[100px] rounded-full pointer-events-none z-0" />
 
-        {/* City nodes – 44x44px touch targets */}
-        {/* Sala */}
+        {/* City nodes – positioned relative to Västmanland map geography */}
+        {/* Sala – north-northeast */}
         <Link
           to="/hemsidor-sala"
-          className="absolute top-[15%] right-[30%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[18%] right-[28%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Hemsidor och SEO i Sala"
         >
           <div className="relative">
@@ -82,10 +86,10 @@ export default function Hero() {
           <span className="text-xs mt-2 text-muted-foreground group-hover:text-foreground transition-colors font-medium underline-offset-2 group-hover:underline">Sala</span>
         </Link>
 
-        {/* Köping */}
+        {/* Köping – southwest */}
         <Link
           to="/seo-koping"
-          className="absolute bottom-[28%] left-[22%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute bottom-[30%] left-[20%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="SEO-optimering i Köping"
         >
           <div className="relative">
@@ -98,10 +102,10 @@ export default function Hero() {
           <span className="text-xs mt-2 text-muted-foreground group-hover:text-foreground transition-colors font-medium underline-offset-2 group-hover:underline">Köping</span>
         </Link>
 
-        {/* Västerås */}
+        {/* Västerås – center-east (largest city, central position) */}
         <Link
           to="/webbutveckling-vasteras"
-          className="absolute bottom-[22%] right-[28%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute bottom-[25%] right-[25%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Webbutveckling i Västerås"
         >
           <div className="relative">

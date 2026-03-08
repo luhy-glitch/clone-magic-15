@@ -21,24 +21,32 @@ export default function PlexusBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Read design tokens from CSS custom properties
+    const rootStyles = getComputedStyle(document.documentElement);
+    const mutedFg = rootStyles.getPropertyValue("--muted-foreground").trim();
+    // Parse HSL components: "218 12% 55%"
+    const [h, s, l] = mutedFg.split(/\s+/);
+    const lineColor = (alpha: number) => `hsla(${h}, ${s}, ${l}, ${alpha})`;
+    const dotColor = lineColor(0.4);
+
     let w = 0;
-    let h = 0;
+    let h2 = 0;
     const dpr = window.devicePixelRatio || 1;
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
       w = rect.width;
-      h = rect.height;
+      h2 = rect.height;
       canvas.width = w * dpr;
-      canvas.height = h * dpr;
+      canvas.height = h2 * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
     const initNodes = () => {
-      const count = Math.min(50, Math.floor((w * h) / 15000));
+      const count = Math.min(50, Math.floor((w * h2) / 15000));
       nodesRef.current = Array.from({ length: count }, () => ({
         x: Math.random() * w,
-        y: Math.random() * h,
+        y: Math.random() * h2,
         vx: (Math.random() - 0.5) * 0.4,
         vy: (Math.random() - 0.5) * 0.4,
       }));
@@ -48,7 +56,7 @@ export default function PlexusBackground() {
     const shouldAnimate = !isMobile && !prefersReducedMotion;
 
     const draw = () => {
-      ctx.clearRect(0, 0, w, h);
+      ctx.clearRect(0, 0, w, h2);
       const nodes = nodesRef.current;
       const maxDist = 160;
 
@@ -59,7 +67,7 @@ export default function PlexusBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < maxDist) {
             const alpha = (1 - dist / maxDist) * 0.35;
-            ctx.strokeStyle = `rgba(100, 150, 220, ${alpha})`;
+            ctx.strokeStyle = lineColor(alpha);
             ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -70,7 +78,7 @@ export default function PlexusBackground() {
       }
 
       for (const n of nodes) {
-        ctx.fillStyle = "rgba(140, 180, 240, 0.4)";
+        ctx.fillStyle = dotColor;
         ctx.beginPath();
         ctx.arc(n.x, n.y, 1.8, 0, Math.PI * 2);
         ctx.fill();
@@ -79,7 +87,7 @@ export default function PlexusBackground() {
           n.x += n.vx;
           n.y += n.vy;
           if (n.x < 0 || n.x > w) n.vx *= -1;
-          if (n.y < 0 || n.y > h) n.vy *= -1;
+          if (n.y < 0 || n.y > h2) n.vy *= -1;
         }
       }
 

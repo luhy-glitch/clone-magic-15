@@ -46,15 +46,27 @@ const Testimonials = () => {
           </p>
         </AnimatedSection>
 
-        <div className="space-y-10">
+        <div className="space-y-10" itemScope itemType="https://schema.org/LocalBusiness">
+          <meta itemProp="name" content="LRH Konsult" />
           {testimonials.map((t) => (
             <AnimatedSection key={t.name}>
-              <blockquote className="border-l-4 border-primary pl-6">
-                <p className="text-foreground leading-[1.8] text-base italic mb-4">
+              <blockquote
+                className="border-l-4 border-primary pl-6"
+                itemScope
+                itemProp="review"
+                itemType="https://schema.org/Review"
+              >
+                <div itemScope itemProp="reviewRating" itemType="https://schema.org/Rating">
+                  <meta itemProp="ratingValue" content="5" />
+                  <meta itemProp="bestRating" content="5" />
+                </div>
+                <p className="text-foreground leading-[1.8] text-base italic mb-4" itemProp="reviewBody">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <footer className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">{t.name}</strong> — {t.company}
+                  <strong className="text-foreground" itemProp="author" itemScope itemType="https://schema.org/Person">
+                    <span itemProp="name">{t.name}</span>
+                  </strong> — {t.company}
                 </footer>
               </blockquote>
             </AnimatedSection>

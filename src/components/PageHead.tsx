@@ -1,18 +1,24 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+interface BreadcrumbEntry {
+  name: string;
+  url: string;
+}
+
 interface PageHeadProps {
   title: string;
   description: string;
   canonical?: string;
   ogImage?: string;
   jsonLd?: Record<string, unknown>;
+  breadcrumbs?: BreadcrumbEntry[];
 }
 
 const BASE_URL = "https://lrhkonsult.se";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/assets/og/lrh-konsult-sharing-image.png`;
 
-const PageHead = ({ title, description, canonical, ogImage, jsonLd }: PageHeadProps) => {
+const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs }: PageHeadProps) => {
   const { pathname } = useLocation();
   // Strip trailing slash to avoid duplicate canonical URLs
   const cleanPath = pathname === "/" ? "" : pathname.replace(/\/+$/, "");
@@ -66,11 +72,37 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd }: PageHeadPr
       scriptEl.remove();
     }
 
+    // BreadcrumbList JSON-LD
+    const breadcrumbId = "page-breadcrumb-ld";
+    let breadcrumbEl = document.getElementById(breadcrumbId) as HTMLScriptElement | null;
+    if (breadcrumbs && breadcrumbs.length > 0) {
+      if (!breadcrumbEl) {
+        breadcrumbEl = document.createElement("script");
+        breadcrumbEl.id = breadcrumbId;
+        breadcrumbEl.type = "application/ld+json";
+        document.head.appendChild(breadcrumbEl);
+      }
+      breadcrumbEl.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbs.map((b, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": b.name,
+          "item": b.url,
+        })),
+      });
+    } else if (breadcrumbEl) {
+      breadcrumbEl.remove();
+    }
+
     return () => {
       const el = document.getElementById(jsonLdId);
       if (el) el.remove();
+      const bEl = document.getElementById(breadcrumbId);
+      if (bEl) bEl.remove();
     };
-  }, [title, description, url, jsonLd]);
+  }, [title, description, url, jsonLd, breadcrumbs]);
 
   return null;
 };

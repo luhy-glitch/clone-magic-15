@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import LrhLogo from "@/components/LrhLogo";
 import { Link, useLocation } from "react-router-dom";
+import { CITY_NAV_ITEMS } from "@/data/cities";
 
 const mainServices = [
   { label: "Webbutveckling", to: "/tjanster/webbutveckling" },
@@ -11,24 +12,6 @@ const mainServices = [
   { label: "WordPress", to: "/tjanster/wordpress-losningar" },
   { label: "Underhåll & Support", to: "/tjanster/underhall-support" },
   { label: "Prestanda", to: "/tjanster/prestanda-optimering" },
-];
-
-const regions = [
-  { label: "Västerås", to: "/webbutveckling-vasteras" },
-  { label: "Köping", to: "/seo-koping" },
-  { label: "Sala", to: "/hemsidor-sala" },
-  { label: "Enköping", to: "/webbutveckling-enkoping" },
-  { label: "Eskilstuna", to: "/webbutveckling-eskilstuna" },
-  { label: "Arboga", to: "/webbutveckling-arboga" },
-  { label: "Fagersta", to: "/webbutveckling-fagersta" },
-  { label: "Hallstahammar", to: "/webbutveckling-hallstahammar" },
-  { label: "Kungsör", to: "/webbutveckling-kungsor" },
-  { label: "Surahammar", to: "/webbutveckling-surahammar" },
-  { label: "Heby", to: "/webbutveckling-heby" },
-  { label: "Norberg", to: "/webbutveckling-norberg" },
-  { label: "Skinnskatteberg", to: "/webbutveckling-skinnskatteberg" },
-  { label: "Uppsala", to: "/webbutveckling-uppsala" },
-  { label: "Örebro", to: "/webbutveckling-orebro" },
 ];
 
 const Navbar = () => {
@@ -107,7 +90,7 @@ const Navbar = () => {
                   <div className="flex-1">
                     <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-3">Regionalt</p>
                     <div className="grid grid-cols-2 gap-x-2 gap-y-0.5">
-                      {regions.map(r => (
+                      {CITY_NAV_ITEMS.map(r => (
                         <Link key={r.to} to={r.to} onClick={() => setDropdownOpen(false)} className="block px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 rounded-lg transition-colors">
                           {r.label}
                         </Link>
@@ -172,7 +155,7 @@ const Navbar = () => {
         </button>
         {mobileRegionsOpen && (
           <div className="pl-4 flex flex-col gap-1 pb-2">
-            {regions.map(r => (
+            {CITY_NAV_ITEMS.map(r => (
               <Link key={r.to} to={r.to} onClick={() => setMobileOpen(false)} className="py-2 text-sm text-muted-foreground min-h-[44px] flex items-center">
                 {r.label}
               </Link>

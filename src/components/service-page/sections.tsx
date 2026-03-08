@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { LucideIcon } from "lucide-react";
+import { ALL_CITIES } from "@/data/cities";
 
 /* ── Shared types ─────────────────────────────────── */
 
@@ -225,24 +226,6 @@ export const ServiceCTA = () => (
   </section>
 );
 
-const ALL_LOCAL_LINKS = [
-  { label: "Webbutveckling Västerås", to: "/webbutveckling-vasteras" },
-  { label: "SEO Köping", to: "/seo-koping" },
-  { label: "Hemsidor Sala", to: "/hemsidor-sala" },
-  { label: "Webbutveckling Enköping", to: "/webbutveckling-enkoping" },
-  { label: "Webbutveckling Eskilstuna", to: "/webbutveckling-eskilstuna" },
-  { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
-  { label: "Webbutveckling Fagersta", to: "/webbutveckling-fagersta" },
-  { label: "Webbutveckling Hallstahammar", to: "/webbutveckling-hallstahammar" },
-  { label: "Webbutveckling Kungsör", to: "/webbutveckling-kungsor" },
-  { label: "Webbutveckling Surahammar", to: "/webbutveckling-surahammar" },
-  { label: "Webbutveckling Heby", to: "/webbutveckling-heby" },
-  { label: "Webbutveckling Norberg", to: "/webbutveckling-norberg" },
-  { label: "Webbutveckling Skinnskatteberg", to: "/webbutveckling-skinnskatteberg" },
-  { label: "Webbutveckling Uppsala", to: "/webbutveckling-uppsala" },
-  { label: "Webbutveckling Örebro", to: "/webbutveckling-orebro" },
-];
-
 export const LocalPartnerSection = ({ currentPath }: { currentPath: string }) => (
   <section className="py-16 sm:py-24 bg-background" aria-labelledby="local-partner-heading">
     <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -254,7 +237,7 @@ export const LocalPartnerSection = ({ currentPath }: { currentPath: string }) =>
           Vi hjälper företag i hela Mälardalsregionen att växa digitalt. Oavsett om du befinner dig i Västerås, Köping, Sala, Enköping (Uppsala län), Eskilstuna (Södermanland), Arboga eller Fagersta erbjuder vi samma höga kvalitet och personliga service. Utforska våra lokala tjänster:
         </p>
         <div className="flex flex-wrap gap-3">
-          {ALL_LOCAL_LINKS.filter(l => l.to !== currentPath).map(l => (
+          {ALL_CITIES.filter(l => l.to !== currentPath).map(l => (
             <Link
               key={l.to}
               to={l.to}
