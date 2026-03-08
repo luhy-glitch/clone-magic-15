@@ -25,7 +25,7 @@ const staticRoutes = [
   { loc: "/webbutveckling-fagersta", changefreq: "monthly", priority: "0.8" },
   { loc: "/hemsidor-bygg-hantverkare", changefreq: "monthly", priority: "0.7" },
   { loc: "/digital-marknadsforing-butiker", changefreq: "monthly", priority: "0.7" },
-  { loc: "/case-studies/pagespeed-revolution", changefreq: "yearly", priority: "0.7" },
+  
 ];
 
 const corsHeaders = {
