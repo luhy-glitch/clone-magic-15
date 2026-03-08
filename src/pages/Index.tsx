@@ -56,7 +56,18 @@ const Index = () => {
                 { "@type": "City", "name": "Eskilstuna" },
                 { "@type": "City", "name": "Arboga" },
                 { "@type": "City", "name": "Fagersta" },
-                { "@type": "State", "name": "Västmanland" }
+                { "@type": "City", "name": "Hallstahammar" },
+                { "@type": "City", "name": "Kungsör" },
+                { "@type": "City", "name": "Surahammar" },
+                { "@type": "City", "name": "Heby" },
+                { "@type": "City", "name": "Norberg" },
+                { "@type": "City", "name": "Skinnskatteberg" },
+                { "@type": "City", "name": "Uppsala" },
+                { "@type": "City", "name": "Örebro" },
+                { "@type": "State", "name": "Västmanland" },
+                { "@type": "State", "name": "Södermanland" },
+                { "@type": "State", "name": "Uppsala län" },
+                { "@type": "State", "name": "Örebro län" }
               ],
               "priceRange": "$$",
               "sameAs": ["https://www.linkedin.com/in/lucasrosvall/"]
