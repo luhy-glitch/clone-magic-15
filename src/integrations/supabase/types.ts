@@ -35,6 +35,24 @@ export type Database = {
         }
         Relationships: []
       }
+      admin_rate_limits: {
+        Row: {
+          attempt_count: number
+          ip: string
+          reset_at: string
+        }
+        Insert: {
+          attempt_count?: number
+          ip: string
+          reset_at: string
+        }
+        Update: {
+          attempt_count?: number
+          ip?: string
+          reset_at?: string
+        }
+        Relationships: []
+      }
       admin_sessions: {
         Row: {
           expires_at: string
