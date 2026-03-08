@@ -644,6 +644,62 @@ const AdminDashboard = () => {
                     </TableBody>
                   </Table>
                 </div>
+
+                {/* Weekly Report */}
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h2 className="text-lg font-bold font-serif mb-2">Veckorapport – SEO & Leads</h2>
+                  <p className="text-sm text-muted-foreground mb-4">Sammanfattning av rankingförändringar och leadsgenerering de senaste 7 dagarna.</p>
+                  <div className="grid sm:grid-cols-3 gap-4 mb-6">
+                    <div className="border border-border rounded-lg p-4 text-center">
+                      <p className="text-xs text-muted-foreground mb-1">Totala leads (7d)</p>
+                      <p className="text-2xl font-bold text-primary">{cityRankings.reduce((s, c) => s + c.leads, 0)}</p>
+                    </div>
+                    <div className="border border-border rounded-lg p-4 text-center">
+                      <p className="text-xs text-muted-foreground mb-1">Städer i Topp 3</p>
+                      <p className="text-2xl font-bold text-green-500">{cityRankings.filter(c => c.rank !== null && c.rank <= 3).length} / {cityRankings.length}</p>
+                    </div>
+                    <div className="border border-border rounded-lg p-4 text-center">
+                      <p className="text-xs text-muted-foreground mb-1">Åtgärd krävs</p>
+                      <p className="text-2xl font-bold text-yellow-500">{cityRankings.filter(c => c.rank !== null && c.rank > 3).length}</p>
+                    </div>
+                  </div>
+                  <Button
+                    size="sm"
+                    onClick={() => {
+                      const now = new Date().toLocaleDateString("sv-SE");
+                      const totalLeads = cityRankings.reduce((s, c) => s + c.leads, 0);
+                      const top3 = cityRankings.filter(c => c.rank !== null && c.rank <= 3);
+                      const needsAction = cityRankings.filter(c => c.rank !== null && c.rank > 3);
+
+                      let content = `VECKORAPPORT – SEO & LEAD PERFORMANCE\n`;
+                      content += `Genererad: ${now}\n`;
+                      content += `${"=".repeat(50)}\n\n`;
+                      content += `SAMMANFATTNING\n`;
+                      content += `- Totala leads senaste 7 dagarna: ${totalLeads}\n`;
+                      content += `- Städer i Topp 3: ${top3.length} av ${cityRankings.length}\n`;
+                      content += `- Städer som kräver åtgärd: ${needsAction.length}\n\n`;
+                      content += `DETALJERAD RANKING\n`;
+                      content += `${"=".repeat(50)}\n`;
+                      cityRankings.forEach(c => {
+                        const status = c.rank === null ? "Ej spårad" : c.rank <= 3 ? "✓ Topp 3" : "⚠ Åtgärd krävs";
+                        content += `\n${c.city} (${c.keyword})\n`;
+                        content += `  Position: ${c.rank ?? "–"} | Leads: ${c.leads} | Status: ${status}\n`;
+                      });
+                      content += `\n${"=".repeat(50)}\n`;
+                      content += `LRH Konsult – lrhkonsult.se\n`;
+
+                      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+                      const url = URL.createObjectURL(blob);
+                      const a = document.createElement("a");
+                      a.href = url;
+                      a.download = `lrh-veckorapport-${now}.txt`;
+                      a.click();
+                      URL.revokeObjectURL(url);
+                    }}
+                  >
+                    <FileText size={14} /> Ladda ner veckorapport
+                  </Button>
+                </div>
               </>
             )}
 

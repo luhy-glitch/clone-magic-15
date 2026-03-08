@@ -108,6 +108,17 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <span>© 2026 LRH Konsult. Alla rättigheter förbehållna.</span>
+          <Link
+            to="/case-studies/pagespeed-revolution"
+            className="inline-flex items-center gap-2 text-primary hover:underline transition-colors"
+            aria-label="100/100 PageSpeed Guaranteed"
+          >
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="14" cy="14" r="13" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M8 14.5l3.5 3.5 8.5-8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span className="font-medium">100/100 PageSpeed</span>
+          </Link>
           <span>
             En del av{" "}
             <a href="https://frontiermedia.se" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
