@@ -19,25 +19,27 @@ import NotFound from "./NotFound";
 
 const SERVICE_LINKS: Record<string, { label: string; href: string }[]> = {
   SEO: [
-    { label: "SEO-optimering", href: "/seo-optimering" },
-    { label: "Kontakta oss", href: "/kontakt" },
+    { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+    { label: "Gratis SEO-analys", href: "/gratis-seo-analys" },
   ],
   "SEO & AI": [
-    { label: "SEO-optimering", href: "/seo-optimering" },
-    { label: "Webbutveckling", href: "/webbutveckling" },
+    { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+    { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+    { label: "Gratis SEO-analys", href: "/gratis-seo-analys" },
   ],
   Webbutveckling: [
-    { label: "Webbutveckling", href: "/webbutveckling" },
-    { label: "SEO-optimering", href: "/seo-optimering" },
+    { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+    { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+    { label: "Gratis SEO-analys", href: "/gratis-seo-analys" },
   ],
   "Digital Strategi": [
-    { label: "Webbutveckling", href: "/webbutveckling" },
-    { label: "SEO-optimering", href: "/seo-optimering" },
-    { label: "Om mig", href: "/om-mig" },
+    { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+    { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+    { label: "Gratis SEO-analys", href: "/gratis-seo-analys" },
   ],
   Prestanda: [
-    { label: "Webbutveckling", href: "/webbutveckling" },
-    { label: "Kontakta oss", href: "/kontakt" },
+    { label: "Prestandaoptimering", href: "/tjanster/prestanda-optimering" },
+    { label: "Gratis SEO-analys", href: "/gratis-seo-analys" },
   ],
 };
 
@@ -346,13 +348,18 @@ const BloggArtikel = () => {
               <div className="mt-14 p-8 sm:p-10 bg-card rounded-2xl border border-border text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
                 <div className="relative">
-                  <h3 className="text-2xl font-bold font-serif mb-3">Redo att ta nästa steg?</h3>
+                  <h3 className="text-2xl font-bold font-serif mb-3">Vill du se hur din sajt presterar?</h3>
                   <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-                    Boka en kostnadsfri konsultation så berättar jag hur vi kan förbättra din digitala närvaro.
+                    Få en kostnadsfri SEO-analys med konkreta förbättringsförslag för din hemsida.
                   </p>
-                  <Link to="/kontakt" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-                    Boka samtal <ArrowRight size={16} />
-                  </Link>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Link to="/gratis-seo-analys" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 animate-[pulse_3s_ease-in-out_infinite] hover:animate-none">
+                      Få gratis SEO-analys <ArrowRight size={16} />
+                    </Link>
+                    <Link to="/kontakt" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-border text-foreground font-medium hover:border-primary/30 hover:text-primary transition-colors">
+                      Boka samtal <ArrowRight size={16} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </FadeIn>
