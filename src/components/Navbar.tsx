@@ -47,9 +47,9 @@ const Navbar = () => {
           <img
             src={logoSrc}
             alt="LRH Konsult – Webbutveckling och SEO i Västerås"
-            width={160}
-            height={40}
-            className="h-9 sm:h-10 w-auto"
+            width={200}
+            height={48}
+            className="h-10 sm:h-12 w-auto"
           />
         </Link>
 
