@@ -1,29 +1,7 @@
 import { Mail, Linkedin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import LrhLogo from "@/components/LrhLogo";
-
-const localServices = [
-  { label: "Webbutveckling Västerås", to: "/webbutveckling-vasteras" },
-  { label: "SEO Köping", to: "/seo-koping" },
-  { label: "Hemsidor Sala", to: "/hemsidor-sala" },
-  { label: "Webbutveckling Enköping", to: "/webbutveckling-enkoping" },
-  { label: "Webbutveckling Eskilstuna", to: "/webbutveckling-eskilstuna" },
-  { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
-  { label: "Webbutveckling Fagersta", to: "/webbutveckling-fagersta" },
-  { label: "Webbutveckling Hallstahammar", to: "/webbutveckling-hallstahammar" },
-  { label: "Webbutveckling Kungsör", to: "/webbutveckling-kungsor" },
-  { label: "Webbutveckling Surahammar", to: "/webbutveckling-surahammar" },
-  { label: "Webbutveckling Heby", to: "/webbutveckling-heby" },
-  { label: "Webbutveckling Norberg", to: "/webbutveckling-norberg" },
-  { label: "Webbutveckling Skinnskatteberg", to: "/webbutveckling-skinnskatteberg" },
-  { label: "Webbutveckling Uppsala", to: "/webbutveckling-uppsala" },
-  { label: "Webbutveckling Örebro", to: "/webbutveckling-orebro" },
-  { label: "Hemsidor Bygg & Hantverkare", to: "/hemsidor-bygg-hantverkare" },
-  { label: "Restauranger Sala", to: "/restauranger-sala" },
-  { label: "Frisörer Köping", to: "/frisor-koping" },
-  { label: "Digital Marknadsföring", to: "/digital-marknadsforing-butiker" },
-  { label: "Vad kostar en hemsida?", to: "/tjanster/vad-kostar-en-hemsida-2026" },
-];
+import { FOOTER_LOCAL_LINKS } from "@/data/cities";
 
 const Footer = () => {
   return (
@@ -93,7 +71,7 @@ const Footer = () => {
             <nav aria-label="Regionalt">
               <h3 className="font-serif font-bold text-foreground mb-4 text-base">Regionalt</h3>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
-                {localServices.map(s => (
+                {FOOTER_LOCAL_LINKS.map(s => (
                   <li key={s.to}>
                     <Link to={s.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       {s.label}

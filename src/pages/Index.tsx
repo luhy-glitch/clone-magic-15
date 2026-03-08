@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import PageHead from "@/components/PageHead";
 import { ArrowRight } from "lucide-react";
 import { siteWideFaqs } from "@/data/faqData";
+import { ALL_CITIES } from "@/data/cities";
 
 // Lazy-load everything below the fold
 const Services = lazy(() => import("@/components/Services"));
@@ -15,24 +16,6 @@ const FAQ = lazy(() => import("@/components/FAQ"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
 
-const ALL_CITIES = [
-  { label: "Webbutveckling Västerås", to: "/webbutveckling-vasteras" },
-  { label: "SEO Köping", to: "/seo-koping" },
-  { label: "Hemsidor Sala", to: "/hemsidor-sala" },
-  { label: "Webbutveckling Enköping", to: "/webbutveckling-enkoping" },
-  { label: "Webbutveckling Eskilstuna", to: "/webbutveckling-eskilstuna" },
-  { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
-  { label: "Webbutveckling Fagersta", to: "/webbutveckling-fagersta" },
-  { label: "Webbutveckling Hallstahammar", to: "/webbutveckling-hallstahammar" },
-  { label: "Webbutveckling Kungsör", to: "/webbutveckling-kungsor" },
-  { label: "Webbutveckling Surahammar", to: "/webbutveckling-surahammar" },
-  { label: "Webbutveckling Heby", to: "/webbutveckling-heby" },
-  { label: "Webbutveckling Norberg", to: "/webbutveckling-norberg" },
-  { label: "Webbutveckling Skinnskatteberg", to: "/webbutveckling-skinnskatteberg" },
-  { label: "Webbutveckling Uppsala", to: "/webbutveckling-uppsala" },
-  { label: "Webbutveckling Örebro", to: "/webbutveckling-orebro" },
-];
-
 const homeFaqs = siteWideFaqs;
 
 const Index = () => {
@@ -41,6 +24,7 @@ const Index = () => {
       <PageHead
         title="Webbutveckling & SEO i Västmanland | LRH Konsult"
         description="Blixtsnabba hemsidor i Västerås, Köping & Sala. 100/100 PageSpeed för maximal konvertering."
+        breadcrumbs={[{ name: "Hem", url: "https://lrhkonsult.se" }]}
         jsonLd={{
           "@context": "https://schema.org",
           "@graph": [
