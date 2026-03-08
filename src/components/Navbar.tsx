@@ -7,6 +7,7 @@ const mainServices = [
   { label: "Webbutveckling", to: "/tjanster/webbutveckling" },
   { label: "Webbdesign", to: "/tjanster/webbdesign" },
   { label: "SEO-optimering", to: "/tjanster/seo-optimering" },
+  { label: "Google Ads", to: "/tjanster/google-ads" },
   { label: "WordPress", to: "/tjanster/wordpress-losningar" },
   { label: "Underhåll & Support", to: "/tjanster/underhall-support" },
   { label: "Prestanda", to: "/tjanster/prestanda-optimering" },

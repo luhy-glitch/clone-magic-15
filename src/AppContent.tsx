@@ -84,6 +84,7 @@ const DataRoutes = () => (
         <Route path="/tjanster/wordpress-losningar" element={<WordpressPage />} />
         <Route path="/tjanster/underhall-support" element={<UnderhallSupportPage />} />
         <Route path="/tjanster/prestanda-optimering" element={<PrestandaOptimeringPage />} />
+        <Route path="/tjanster/google-ads" element={<GoogleAdsPage />} />
 
         {/* Regional pages */}
         <Route path="/webbutveckling-vasteras" element={<WebbutvecklingVasteras />} />
