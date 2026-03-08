@@ -21,7 +21,6 @@ const homeFaqs = [
   { question: "Ingår hosting och domän?", answer: "Jag hjälper dig att välja rätt hosting och domänlösning. Dessa kostnader tillkommer separat men jag kan rekommendera pålitliga leverantörer." },
   { question: "Erbjuder du löpande support och underhåll?", answer: "Ja, jag erbjuder löpande support- och underhållsavtal så att din webbplats alltid är uppdaterad, säker och fungerar optimalt." },
   { question: "Vilka företag arbetar du med i Västmanland?", answer: "Jag arbetar med företag av alla storlekar i Västerås, Köping, Sala, Enköping, Eskilstuna, Arboga, Fagersta och hela Västmanlands län." },
-  { question: "Ingår support och underhåll i era priser?", answer: "Vi erbjuder dedikerade underhållspaket för att säkerställa att din sajt förblir säker och snabb efter lanseringen." },
   { question: "Finns det några dolda avgifter?", answer: "Nej, vi tror på full transparens. Alla kostnader specificeras tydligt i våra paket och offerter." },
 ];
 
