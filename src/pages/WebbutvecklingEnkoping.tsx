@@ -8,7 +8,7 @@ const config = {
   metaTitle: "Webbutveckling Enköping - Blixtsnabba Hemsidor & SEO",
   metaDescription: "Maximera din digitala närvaro i Enköping med Next.js och teknisk SEO i världsklass.",
   heroHeading: "Webbutveckling & SEO i Enköping",
-  heroDescription: "Att bygga en hemsida i dagens digitala klimat handlar om mycket mer än bara estetik. För företag i Enköping är den tekniska prestandan den enskilt viktigaste faktorn för att synas och konvertera besökare till kunder.",
+  heroDescription: "Enköping ligger strategiskt i Uppsala län, med närheten till Stockholm och Uppsala som en stor fördel. Att bygga en hemsida i dagens digitala klimat handlar om mycket mer än bara estetik. För företag i Enköping är den tekniska prestandan den enskilt viktigaste faktorn för att synas och konvertera besökare till kunder.",
   icon: Code2,
   benefits: [
     { title: "Nära Enköping", description: "Vi arbetar tätt med företag i Enköping och erbjuder personlig service och lokalkännedom för att förstå din marknad på djupet." },
