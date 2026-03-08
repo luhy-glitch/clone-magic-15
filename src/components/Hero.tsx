@@ -70,10 +70,10 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/[0.08] blur-[100px] rounded-full pointer-events-none z-0" />
 
         {/* City nodes – positioned relative to Västmanland map geography */}
-        {/* Sala – north-northeast */}
+        {/* Sala – top-right area of map */}
         <Link
           to="/hemsidor-sala"
-          className="absolute top-[18%] right-[28%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[2%] right-[22%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Hemsidor och SEO i Sala"
         >
           <div className="relative">
