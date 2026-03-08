@@ -43,8 +43,8 @@ export default function Hero() {
         <Link to="/webbutveckling-enkoping" className="text-blue-400 font-medium hover:underline">Enköping</Link>,{" "}
         <Link to="/webbutveckling-eskilstuna" className="text-blue-400 font-medium hover:underline">Eskilstuna</Link>,{" "}
         <Link to="/webbutveckling-arboga" className="text-blue-400 font-medium hover:underline">Arboga</Link> och{" "}
-        <Link to="/webbutveckling-fagersta" className="text-blue-400 font-medium hover:underline">Fagersta</Link> att skapa snabba, sökmotoroptimerade webbplatser i{" "}
-        <span className="text-white font-medium">React & Next.js</span> som konverterar besökare till kunder.
+        <Link to="/webbutveckling-fagersta" className="text-blue-400 font-medium hover:underline">Fagersta</Link> att synas högre på Google och förvandla besökare till betalande kunder.
+        Byggda i <span className="text-white font-medium">React & Next.js</span> för garanterad 100/100 PageSpeed.
       </p>
 
       {/* SEAMLESS MAP SECTION - No borders or boxes */}
