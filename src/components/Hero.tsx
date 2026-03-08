@@ -105,7 +105,7 @@ export default function Hero() {
         {/* Västerås – center-south, slightly right (south-east on the map) */}
         <Link
           to="/webbutveckling-vasteras"
-          className="absolute top-[52%] right-[22%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[52%] right-[22%] flex flex-col items-center group cursor-pointer z-50 min-w-[44px] min-h-[44px] p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Webbutveckling i Västerås"
         >
           <div className="relative">
