@@ -89,7 +89,7 @@ export default function Hero() {
         {/* Köping – southwest */}
         <Link
           to="/seo-koping"
-          className="absolute top-[50%] left-[15%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[30%] left-[12%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="SEO-optimering i Köping"
         >
           <div className="relative">
