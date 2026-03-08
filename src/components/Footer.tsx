@@ -1,13 +1,25 @@
 import { Mail, Linkedin, Github, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const localServices = [
+  { label: "Webbutveckling Västerås", to: "/webbutveckling-vasteras" },
+  { label: "SEO Köping", to: "/seo-koping" },
+  { label: "Hemsidor Sala", to: "/hemsidor-sala" },
+  { label: "Webbutveckling Enköping", to: "/webbutveckling-enkoping" },
+  { label: "Webbutveckling Eskilstuna", to: "/webbutveckling-eskilstuna" },
+  { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
+  { label: "Webbutveckling Fagersta", to: "/webbutveckling-fagersta" },
+  { label: "Hemsidor Bygg & Hantverkare", to: "/hemsidor-bygg-hantverkare" },
+  { label: "Digital Marknadsföring", to: "/digital-marknadsforing" },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-background border-t border-border py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Brand + NAP */}
-          <div className="sm:col-span-2 md:col-span-1" itemScope itemType="https://schema.org/ProfessionalService">
+          <div className="sm:col-span-2 lg:col-span-1" itemScope itemType="https://schema.org/ProfessionalService">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-serif font-bold text-sm">LR</span>
@@ -15,9 +27,8 @@ const Footer = () => {
               <span className="font-serif font-bold text-lg text-foreground" itemProp="name">LRH Konsult</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4" itemProp="description">
-              Din lokala partner för Webbutveckling &amp; SEO i Västmanland. Vi hjälper företag i Västerås, Köping och Sala att växa genom moderna Next.js-lösningar och datadriven optimering.
+              Din lokala partner för Webbutveckling &amp; SEO i Västmanland.
             </p>
-            {/* Structured NAP */}
             <address className="not-italic text-sm text-muted-foreground space-y-1" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
               <p itemProp="addressLocality">Västerås</p>
               <p><span itemProp="addressRegion">Västmanlands län</span>, <span itemProp="addressCountry">Sverige</span></p>
@@ -56,20 +67,21 @@ const Footer = () => {
               <li><Link to="/blogg" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blogg</Link></li>
               <li><Link to="/kontakt" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kontakt</Link></li>
               <li><Link to="/integritetspolicy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Integritetspolicy</Link></li>
+              <li><Link to="/case-studies/pagespeed-revolution" className="text-sm text-muted-foreground hover:text-primary transition-colors">Case Studies</Link></li>
             </ul>
           </nav>
 
-          {/* Lokala sidor */}
-          <div>
-            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Lokalt</h3>
-            <ul className="space-y-2">
-              <li><Link to="/webbutveckling-vasteras" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Västerås</Link></li>
-              <li><Link to="/seo-koping" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Köping</Link></li>
-              <li><Link to="/hemsidor-sala" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor Sala</Link></li>
-              <li><Link to="/webbutveckling-enkoping" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Enköping</Link></li>
-              <li><Link to="/webbutveckling-eskilstuna" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Eskilstuna</Link></li>
-              <li><Link to="/webbutveckling-arboga" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Arboga</Link></li>
-              <li><Link to="/webbutveckling-fagersta" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Fagersta</Link></li>
+          {/* Lokala tjänster – SEO hub */}
+          <nav aria-label="Lokala tjänster" className="lg:col-span-2">
+            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Lokala tjänster</h3>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+              {localServices.map(s => (
+                <li key={s.to}>
+                  <Link to={s.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
             <div className="flex items-center gap-3 mt-6">
               {[
@@ -90,7 +102,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </nav>
         </div>
 
         {/* Bottom */}
