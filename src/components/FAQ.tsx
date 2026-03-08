@@ -8,9 +8,14 @@ import AnimatedSection, { FadeIn } from "./AnimatedSection";
 
 const faqs = [
   {
-    question: "Vad kostar det att bygga en hemsida?",
+    question: "Vad kostar en professionell hemsida?",
     answer:
-      "Priset varierar beroende på projektets storlek och komplexitet. Jag erbjuder tre paket – Bas (5 000 kr), Standard (12 000 kr) och Premium (25 000 kr) – som täcker de flesta behov. Kontakta mig för en kostnadsfri offert anpassad efter ditt projekt.",
+      "Priset varierar beroende på projektets omfattning. Vi erbjuder paket från 5 000 kr för enklare sidor upp till skräddarsydda premiumlösningar för 25 000 kr och uppåt.",
+  },
+  {
+    question: "Hur snabb är en hemsida från LRH Konsult?",
+    answer:
+      "Vi siktar alltid på 100/100 i Google PageSpeed Insights för att garantera bästa möjliga användarupplevelse och SEO-rankning.",
   },
   {
     question: "Hur lång tid tar det att bygga en webbplats?",
@@ -28,24 +33,19 @@ const faqs = [
       "Absolut! Jag bygger webbplatser med användarvänliga CMS-lösningar så att du enkelt kan uppdatera innehåll, bilder och texter utan teknisk kunskap.",
   },
   {
-    question: "Ingår hosting och domän?",
+    question: "Ingår support och underhåll i era priser?",
     answer:
-      "Jag hjälper dig att välja rätt hosting och domänlösning, men dessa kostnader tillkommer separat. Jag kan rekommendera pålitliga leverantörer som passar ditt projekt.",
+      "Vi erbjuder dedikerade underhållspaket för att säkerställa att din sajt förblir säker och snabb efter lanseringen. Det ingår i Premium-paketet eller kan läggas till separat.",
   },
   {
-    question: "Erbjuder du löpande support och underhåll?",
+    question: "Finns det några dolda avgifter?",
     answer:
-      "Ja, jag erbjuder löpande support- och underhållsavtal så att din webbplats alltid är uppdaterad, säker och fungerar optimalt. Detta ingår i Premium-paketet eller kan läggas till separat.",
+      "Nej, vi tror på full transparens. Alla kostnader specificeras tydligt i våra paket och offerter.",
   },
   {
     question: "Vilka företag arbetar du med i Västmanland?",
     answer:
       "Jag arbetar med företag av alla storlekar i Västerås, Köping, Sala och hela Västmanlands län. Oavsett om du är en enskild firma eller ett större företag kan jag hjälpa dig med webbutveckling och SEO.",
-  },
-  {
-    question: "Vad händer om jag inte är nöjd med resultatet?",
-    answer:
-      "Din nöjdhet är viktig för mig. Under projektets gång har vi regelbundna avstämningar och du får möjlighet att ge feedback i varje fas. Jag gör justeringar tills du är helt nöjd.",
   },
 ];
 
