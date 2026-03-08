@@ -92,7 +92,14 @@ const DataRoutes = () => (
         <Route path="/webbutveckling-eskilstuna" element={<WebbutvecklingEskilstuna />} />
         <Route path="/webbutveckling-arboga" element={<WebbutvecklingArboga />} />
         <Route path="/webbutveckling-fagersta" element={<WebbutvecklingFagersta />} />
-
+        <Route path="/webbutveckling-hallstahammar" element={<WebbutvecklingHallstahammar />} />
+        <Route path="/webbutveckling-kungsor" element={<WebbutvecklingKungsor />} />
+        <Route path="/webbutveckling-surahammar" element={<WebbutvecklingSurahammar />} />
+        <Route path="/webbutveckling-heby" element={<WebbutvecklingHeby />} />
+        <Route path="/webbutveckling-norberg" element={<WebbutvecklingNorberg />} />
+        <Route path="/webbutveckling-skinnskatteberg" element={<WebbutvecklingSkinnskatteberg />} />
+        <Route path="/webbutveckling-uppsala" element={<WebbutvecklingUppsala />} />
+        <Route path="/webbutveckling-orebro" element={<WebbutvecklingOrebro />} />
         {/* Niche pages */}
         <Route path="/hemsidor-bygg-hantverkare" element={<HemsidorByggHantverkare />} />
         <Route path="/digital-marknadsforing-butiker" element={<DigitalMarknadsforing />} />
