@@ -110,3 +110,16 @@
 .animate-city-pulse {
   animation: city-pulse 2.5s ease-in-out infinite;
 }
+
+/* CTA pulse animation for primary buttons */
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(38 92% 50% / 0.4); }
+  50% { box-shadow: 0 0 0 12px hsl(38 92% 50% / 0); }
+}
+
+.animate-cta-pulse {
+  animation: cta-pulse 2.5s ease-in-out infinite;
+}
+.animate-cta-pulse:hover {
+  animation: none;
+}

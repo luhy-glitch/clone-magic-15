@@ -145,9 +145,25 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
                 <p className="mt-6 text-lg text-hero-muted max-w-2xl leading-relaxed">
                   {config.heroDescription}
                 </p>
+
+                {/* Snabba fakta – GEO snippet hook */}
+                <ul className="mt-6 space-y-2">
+                  {[
+                    `100/100 PageSpeed – snabbast i ${config.city}`,
+                    "Lokal SEO med JSON-LD & Google Business",
+                    "React & Next.js – framtidssäker teknik",
+                    `Företag i ${config.city} får fler kunder online`,
+                  ].map((fact, i) => (
+                    <li key={i} className="flex items-center gap-2.5 text-sm text-hero-muted/90">
+                      <CheckCircle size={14} className="text-primary shrink-0" />
+                      {fact}
+                    </li>
+                  ))}
+                </ul>
+
                 <Link
                   to="/gratis-seo-analys"
-                  className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25"
+                  className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 animate-cta-pulse"
                 >
                   Få en gratis SEO-analys <ArrowRight size={18} />
                 </Link>

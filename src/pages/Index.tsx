@@ -96,11 +96,11 @@ const Index = () => {
           {/* Mid-page CTA */}
           <section className="py-12 sm:py-16 bg-section-alt text-center">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif mb-4">Vill du se resultat?</h2>
-              <p className="text-muted-foreground mb-6">Se hur vi hjälpt företag i Västmanland att öka sin synlighet och konvertering.</p>
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif mb-4">Få fler kunder – börja med en gratis analys</h2>
+              <p className="text-muted-foreground mb-6">Vi analyserar din sajt kostnadsfritt och visar exakt vad som krävs för att ranka högre och konvertera mer.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/case" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px]">Se kundcase</Link>
-                <Link to="/gratis-seo-analys" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border border-border text-foreground font-medium hover:bg-muted/50 transition-colors min-h-[44px]">Gratis SEO-analys</Link>
+                <Link to="/gratis-seo-analys" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px] animate-cta-pulse">Få gratis SEO-analys</Link>
+                <Link to="/case" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border border-border text-foreground font-medium hover:bg-muted/50 transition-colors min-h-[44px]">Se kundcase</Link>
               </div>
             </div>
           </section>

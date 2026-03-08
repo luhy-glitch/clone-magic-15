@@ -269,6 +269,11 @@ const BloggArtikel = () => {
                 <span className="flex items-center gap-1.5 text-sm text-hero-muted">
                   <Calendar size={14} /> {post.date}
                 </span>
+                {updatedAt !== post.date && (
+                  <span className="flex items-center gap-1.5 text-sm text-hero-muted">
+                    Uppdaterad: {new Date(updatedAt).toLocaleDateString("sv-SE")}
+                  </span>
+                )}
                 <span className="flex items-center gap-1.5 text-sm text-hero-muted">
                   <Clock size={14} /> {readingTime} min läsning
                 </span>
