@@ -211,10 +211,10 @@ const ServicePageTemplate = ({
                   {heroDescription}
                 </p>
                 <Link
-                  to="/kontakt"
-                  className="mt-8 inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25"
+                  to="/gratis-seo-analys"
+                  className="mt-8 inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 animate-cta-pulse"
                 >
-                  Boka fri konsultation <ArrowRight size={18} />
+                  Få gratis SEO-analys <ArrowRight size={18} />
                 </Link>
               </div>
             </AnimatedSection>
