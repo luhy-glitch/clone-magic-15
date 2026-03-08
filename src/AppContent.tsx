@@ -26,6 +26,7 @@ const SeoOptimeringPage = lazy(() => import("./pages/tjanster/SeoOptimeringPage"
 const WordpressPage = lazy(() => import("./pages/tjanster/WordpressPage"));
 const UnderhallSupportPage = lazy(() => import("./pages/tjanster/UnderhallSupportPage"));
 const PrestandaOptimeringPage = lazy(() => import("./pages/tjanster/PrestandaOptimeringPage"));
+const GoogleAdsPage = lazy(() => import("./pages/tjanster/GoogleAdsPage"));
 const WebbutvecklingVasteras = lazy(() => import("./pages/WebbutvecklingVasteras"));
 const SeoKoping = lazy(() => import("./pages/SeoKoping"));
 const HemsidorSala = lazy(() => import("./pages/HemsidorSala"));
