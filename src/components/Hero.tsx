@@ -51,7 +51,7 @@ export default function Hero() {
       </p>
 
       {/* SEAMLESS MAP SECTION */}
-      <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-20 bg-transparent">
+      <div className="relative w-full max-w-2xl aspect-square max-h-[400px] mb-20 z-20 bg-transparent">
         <img
           src="/images/vastmanland-karta-sm.webp"
           srcSet="/images/vastmanland-karta-sm.webp 350w, /images/vastmanland-karta.avif 1024w"
@@ -63,7 +63,7 @@ export default function Hero() {
           fetchPriority="high"
           width={500}
           height={500}
-          className="absolute w-[350px] md:w-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.3] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_20px_hsl(38_92%_50%/0.15)] pointer-events-none z-0"
+          className="absolute inset-0 w-full h-full object-contain opacity-[0.3] brightness-[150%] contrast-[130%] mix-blend-screen drop-shadow-[0_0_20px_hsl(38_92%_50%/0.15)] pointer-events-none z-0"
         />
 
         {/* Glow behind CTA */}
