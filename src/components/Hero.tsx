@@ -24,15 +24,14 @@ export default function Hero() {
 
       {/* Main Heading - Optimized for H1 ranking */}
       <h1 className="hero-h1 font-serif-custom text-5xl md:text-6xl lg:text-7xl mb-6 leading-[1.15] max-w-4xl tracking-tight text-center z-10 relative">
-        Professionell
+        Snabba hemsidor som
         <br />
-        Webbutveckling & SEO i<br />
+        rankar på Google och ger
+        <br />
+        ditt företag{" "}
         <span className="hero-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-500 to-yellow-600">
-          Västmanland
-        </span>{" "}
-        – LRH
-        <br />
-        Konsult
+          fler kunder
+        </span>
       </h1>
 
       {/* Body text with local keywords */}
