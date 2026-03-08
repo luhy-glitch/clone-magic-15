@@ -36,9 +36,10 @@ export default function Hero() {
       </h1>
 
       {/* Body text with local keywords */}
-      <p className="text-gray-400 max-w-2xl text-sm md:text-base mb-16 leading-relaxed text-center z-10 relative">
-        Jag hjälper företag i <span className="text-blue-400 font-medium">Västerås, Köping</span> och{" "}
-        <span className="text-blue-400 font-medium">Sala</span> att skapa snabba, sökmotoroptimerade webbplatser i{" "}
+      <p className="text-gray-400 max-w-2xl text-sm md:text-base mb-16 leading-[1.6] text-center z-10 relative">
+        Jag hjälper företag i <span className="text-blue-400 font-medium">Västerås, Köping, Sala</span>,{" "}
+        <span className="text-blue-400 font-medium">Enköping, Eskilstuna, Arboga</span> och{" "}
+        <span className="text-blue-400 font-medium">Fagersta</span> att skapa snabba, sökmotoroptimerade webbplatser i{" "}
         <span className="text-white font-medium">React & Next.js</span> som konverterar besökare till kunder.
       </p>
 

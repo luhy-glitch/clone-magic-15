@@ -20,7 +20,7 @@ const homeFaqs = [
   { question: "Kan jag uppdatera webbplatsen själv efteråt?", answer: "Absolut! Jag bygger webbplatser med användarvänliga CMS-lösningar så att du enkelt kan uppdatera innehåll utan teknisk kunskap." },
   { question: "Ingår hosting och domän?", answer: "Jag hjälper dig att välja rätt hosting och domänlösning. Dessa kostnader tillkommer separat men jag kan rekommendera pålitliga leverantörer." },
   { question: "Erbjuder du löpande support och underhåll?", answer: "Ja, jag erbjuder löpande support- och underhållsavtal så att din webbplats alltid är uppdaterad, säker och fungerar optimalt." },
-  { question: "Vilka företag arbetar du med i Västmanland?", answer: "Jag arbetar med företag av alla storlekar i Västerås, Köping, Sala och hela Västmanlands län." },
+  { question: "Vilka företag arbetar du med i Västmanland?", answer: "Jag arbetar med företag av alla storlekar i Västerås, Köping, Sala, Enköping, Eskilstuna, Arboga, Fagersta och hela Västmanlands län." },
   { question: "Ingår support och underhåll i era priser?", answer: "Vi erbjuder dedikerade underhållspaket för att säkerställa att din sajt förblir säker och snabb efter lanseringen." },
   { question: "Finns det några dolda avgifter?", answer: "Nej, vi tror på full transparens. Alla kostnader specificeras tydligt i våra paket och offerter." },
 ];
@@ -30,7 +30,7 @@ const Index = () => {
     <div className="min-h-screen">
       <PageHead
         title="Webbutveckling & SEO i Västmanland | LRH Konsult"
-        description="Din partner för blixtsnabba hemsidor och SEO i Västerås, Köping & Sala. 100/100 PageSpeed för maximal konvertering. Boka en fri analys idag!"
+        description="Blixtsnabba hemsidor i Västerås, Köping & Sala. 100/100 PageSpeed för maximal konvertering."
         jsonLd={{
           "@context": "https://schema.org",
           "@graph": [
@@ -41,7 +41,7 @@ const Index = () => {
               "telephone": "+46704606578",
               "email": "lucas@lrhkonsult.se",
               "image": "https://lrhkonsult.se/assets/og/lrh-konsult-sharing-image.png",
-              "description": "Din partner för blixtsnabba hemsidor och SEO i Västerås, Köping & Sala. 100/100 PageSpeed för maximal konvertering.",
+              "description": "Blixtsnabba hemsidor i Västerås, Köping & Sala. 100/100 PageSpeed för maximal konvertering.",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Västerås",
@@ -52,6 +52,10 @@ const Index = () => {
                 { "@type": "City", "name": "Västerås" },
                 { "@type": "City", "name": "Köping" },
                 { "@type": "City", "name": "Sala" },
+                { "@type": "City", "name": "Enköping" },
+                { "@type": "City", "name": "Eskilstuna" },
+                { "@type": "City", "name": "Arboga" },
+                { "@type": "City", "name": "Fagersta" },
                 { "@type": "State", "name": "Västmanland" }
               ],
               "priceRange": "$$",
@@ -82,27 +86,51 @@ const Index = () => {
           {/* Vi finns i Västmanland – lokal SEO-sektion */}
           <section className="py-16 sm:py-20 bg-background">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-foreground mb-6">Vi finns i Västmanland</h2>
-              <p className="text-muted-foreground leading-relaxed mb-10">
-                LRH Konsult är din lokala partner för webbutveckling och sökmotoroptimering i hela Västmanlands län. Vi arbetar nära företag i regionen och förstår den lokala marknaden – från centrala Västerås till mindre orter som Köping, Sala, Enköping och Eskilstuna. Oavsett var du befinner dig hjälper vi dig att synas online.
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-6">Vi finns i Västmanland</h2>
+              <p className="text-muted-foreground leading-[1.6] mb-10">
+                LRH Konsult är din lokala partner för webbutveckling och sökmotoroptimering i hela Västmanlands län. Vi arbetar nära företag i regionen och förstår den lokala marknaden – från centrala Västerås till Köping, Sala, Enköping, Eskilstuna, Arboga och Fagersta. Oavsett var du befinner dig hjälper vi dig att synas online.
               </p>
 
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4">Webbutveckling i Västerås</h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Västerås</h2>
+              <p className="text-muted-foreground leading-[1.6] mb-8">
                 Västerås är Västmanlands största stad och en viktig marknad för lokala företag. Vi bygger moderna, snabbladdade hemsidor med React och Next.js som hjälper företag i Västerås att sticka ut i konkurrensen. Från restauranger och hantverkare till techbolag – vi skräddarsyr lösningar som konverterar besökare till kunder.{" "}
-                <a href="/webbutveckling-vasteras" className="text-primary hover:underline">Läs mer om webbutveckling i Västerås</a>.
+                <a href="/webbutveckling-vasteras" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Västerås</a>.
               </p>
 
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4">SEO-optimering i Köping</h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">SEO-optimering i Köping</h2>
+              <p className="text-muted-foreground leading-[1.6] mb-8">
                 Köping har en aktiv företagsscen där lokal synlighet är avgörande. Genom teknisk SEO, Google Business-optimering och innehållsstrategier hjälper vi företag i Köping att ranka högre i sökresultaten och nå fler lokala kunder.{" "}
-                <a href="/seo-koping" className="text-primary hover:underline">Läs mer om SEO i Köping</a>.
+                <a href="/seo-koping" className="text-primary hover:underline font-medium">Läs mer om SEO i Köping</a>.
               </p>
 
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4">Webbdesign i Sala</h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbdesign i Sala</h2>
+              <p className="text-muted-foreground leading-[1.6] mb-8">
                 I Sala kombinerar vi lokal kännedom med modern webbdesign för att skapa hemsidor som verkligen representerar ditt företag. Vi fokuserar på snabb laddningstid, responsiv design och SEO-vänlig struktur som ger resultat.{" "}
-                <a href="/hemsidor-sala" className="text-primary hover:underline">Läs mer om webbdesign i Sala</a>.
+                <a href="/hemsidor-sala" className="text-primary hover:underline font-medium">Läs mer om webbdesign i Sala</a>.
+              </p>
+
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Enköping</h2>
+              <p className="text-muted-foreground leading-[1.6] mb-8">
+                Enköping växer snabbt och konkurrensen online ökar. Vi hjälper företag i Enköping att maximera sin digitala närvaro med blixtsnabba hemsidor och teknisk SEO i världsklass.{" "}
+                <a href="/webbutveckling-enkoping" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Enköping</a>.
+              </p>
+
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">SEO i Eskilstuna</h2>
+              <p className="text-muted-foreground leading-[1.6] mb-8">
+                Eskilstuna är en stad i snabb tillväxt där företagens digitala närvaro är avgörande. Vi hjälper företag i Eskilstuna att dominera lokala sökresultat genom teknisk perfektion och lokal relevans.{" "}
+                <a href="/webbutveckling-eskilstuna" className="text-primary hover:underline font-medium">Läs mer om SEO i Eskilstuna</a>.
+              </p>
+
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Arboga</h2>
+              <p className="text-muted-foreground leading-[1.6] mb-8">
+                Arboga har en rik historia och en framåtblickande företagskultur. Vi hjälper lokala företag att bygga digital auktoritet med moderna, blixtsnabba hemsidor som rankar högt.{" "}
+                <a href="/webbutveckling-arboga" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Arboga</a>.
+              </p>
+
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbdesign i Fagersta</h2>
+              <p className="text-muted-foreground leading-[1.6]">
+                Fagersta och norra Västmanland förtjänar moderna, snabba hemsidor. Vi hjälper företag i Fagersta att byta från föråldrade system till blixtsnabba lösningar med 100/100 PageSpeed.{" "}
+                <a href="/webbutveckling-fagersta" className="text-primary hover:underline font-medium">Läs mer om webbdesign i Fagersta</a>.
               </p>
             </div>
           </section>

@@ -5,10 +5,10 @@ const localServices = [
   { label: "Webbutveckling Västerås", to: "/webbutveckling-vasteras" },
   { label: "SEO Köping", to: "/seo-koping" },
   { label: "Hemsidor Sala", to: "/hemsidor-sala" },
-  { label: "Webbutveckling Enköping", to: "/webbutveckling-enkoping" },
-  { label: "Webbutveckling Eskilstuna", to: "/webbutveckling-eskilstuna" },
+  { label: "Webbdesign Enköping", to: "/webbutveckling-enkoping" },
+  { label: "SEO Eskilstuna", to: "/webbutveckling-eskilstuna" },
   { label: "Webbutveckling Arboga", to: "/webbutveckling-arboga" },
-  { label: "Webbutveckling Fagersta", to: "/webbutveckling-fagersta" },
+  { label: "Webbdesign Fagersta", to: "/webbutveckling-fagersta" },
   { label: "Hemsidor Bygg & Hantverkare", to: "/hemsidor-bygg-hantverkare" },
   { label: "Digital Marknadsföring", to: "/digital-marknadsforing" },
 ];

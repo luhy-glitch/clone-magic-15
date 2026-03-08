@@ -157,10 +157,10 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
         <section className="py-16 sm:py-24 bg-background" aria-labelledby="local-body-heading">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
-              <h2 id="local-body-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-8">
+              <h2 id="local-body-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">
                 {config.bodyTitle}
               </h2>
-              <div className="space-y-5 text-muted-foreground leading-[1.8] text-base">
+              <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
                 {config.bodyParagraphs.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
@@ -174,10 +174,10 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
           <section key={idx} className={`py-16 sm:py-24 ${idx % 2 === 0 ? "bg-section-alt" : "bg-background"}`}>
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
               <AnimatedSection>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-8">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">
                   {section.title}
                 </h2>
-                <div className="space-y-5 text-muted-foreground leading-[1.8] text-base">
+                <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
                   {section.paragraphs.map((p, i) => (
                     <p key={i}>{p}</p>
                   ))}
@@ -241,6 +241,18 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
                 ))}
               </div>
             </AnimatedSection>
+          </div>
+        </section>
+
+        {/* Bottom CTA */}
+        <section className="py-12 sm:py-16 bg-section-alt text-center">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <Link
+              to="/kontakt"
+              className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px]"
+            >
+              Boka samtal <ArrowRight size={20} />
+            </Link>
           </div>
         </section>
 
