@@ -300,7 +300,89 @@ const AdminDashboard = () => {
     await fetchPosts();
   };
 
-  // Blog post editor view
+  const BLOG_TOPICS = [
+    "Hur du ökar hastigheten på din hemsida",
+    "Lokal SEO för småföretag i Västerås",
+    "React vs WordPress: vad passar ditt företag?",
+    "SEO för restauranger i Sala",
+    "Optimera WordPress för snabbare laddning",
+    "Så skapar du en hemsida som konverterar",
+    "Fördelarna med Next.js för svenska företag",
+    "10 tips för bättre användarupplevelse",
+    "Guide: Vad kostar en hemsida i Sverige 2026?",
+    "Digital marknadsföring för hantverkare",
+    "Lokal SEO för frisörer i Köping",
+    "5 misstag som sänker din SEO",
+    "Varför PageSpeed Insights är viktigt",
+    "Hur man får 10–50 leads per månad via SEO",
+    "Skräddarsydd webbutveckling för småföretag",
+    "Webbdesign för e-handel i Sverige",
+    "Så väljer du rätt CMS för ditt företag",
+    "Optimera din hemsida för Google Maps",
+    "Varför mobilanpassning är kritiskt",
+    "Hur du mäter ROI på din hemsida",
+    "Leadgenerering via programmatic SEO",
+    "Lokala landningssidor som konverterar",
+    "Hur schema markup förbättrar SEO",
+    "Så skapar du content som rankar",
+    "Tips för bättre CTA och konvertering",
+    "SEO för byggföretag i Mälardalen",
+    "Bloggstrategi för småföretag",
+    "Fördelar med CSS-only animationer",
+    "Hur man maximerar lokala leads",
+    "Hantering av flera lokala städer på sajten",
+  ];
+
+  const handleBulkGeneratePosts = async () => {
+    const existingSlugs = new Set(posts.map(p => p.slug));
+    const topicsToGenerate = BLOG_TOPICS.filter(t => {
+      const slug = t.toLowerCase().replace(/[åä]/g, "a").replace(/ö/g, "o").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      return !existingSlugs.has(slug);
+    });
+
+    if (topicsToGenerate.length === 0) { setError("Alla 30 blogginlägg finns redan."); return; }
+    if (!confirm(`Generera ${topicsToGenerate.length} blogginlägg med AI? Detta kan ta lång tid (ca 2 min per inlägg).`)) return;
+
+    setBulkPostProgress({ running: true, current: 0, total: topicsToGenerate.length, currentTitle: "", errors: [] });
+    const errors: string[] = [];
+
+    for (let i = 0; i < topicsToGenerate.length; i++) {
+      const topic = topicsToGenerate[i];
+      setBulkPostProgress(prev => ({ ...prev, current: i + 1, currentTitle: topic }));
+
+      try {
+        const { data, error: fnError } = await supabase.functions.invoke("generate-blog-post", {
+          body: { session_token: getSessionToken(), topic },
+        });
+
+        if (fnError || data?.error) {
+          errors.push(`${topic}: ${data?.error || "Misslyckades"}`);
+        } else if (data?.post) {
+          const slug = data.post.title.toLowerCase().replace(/[åä]/g, "a").replace(/ö/g, "o").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+          const post = {
+            ...data.post,
+            slug,
+            date: new Date().toISOString().split("T")[0],
+          };
+          await supabase.functions.invoke("admin-auth", {
+            body: { action: "create", session_token: getSessionToken(), post },
+          });
+        }
+      } catch {
+        errors.push(`${topic}: Nätverksfel`);
+      }
+
+      // Delay between requests to avoid rate limiting
+      if (i < topicsToGenerate.length - 1) {
+        await new Promise(r => setTimeout(r, 5000));
+      }
+    }
+
+    setBulkPostProgress(prev => ({ ...prev, running: false, errors }));
+    await fetchPosts();
+  };
+
+
   if (editing !== null) {
     return (
       <div className="min-h-screen" style={{ background: "hsl(140 18% 12%)" }}>
