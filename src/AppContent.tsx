@@ -13,8 +13,6 @@ const CookieBanner = lazy(() => import("./components/CookieBanner"));
 // Lazy-load all pages except Index (landing page)
 const NotFound = lazy(() => import("./pages/NotFound"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const Webbutveckling = lazy(() => import("./pages/Webbutveckling"));
-const SeoOptimering = lazy(() => import("./pages/SeoOptimering"));
 const OmMig = lazy(() => import("./pages/OmMig"));
 const Blogg = lazy(() => import("./pages/Blogg"));
 const Kontakt = lazy(() => import("./pages/Kontakt"));
