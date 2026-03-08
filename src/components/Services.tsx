@@ -28,6 +28,14 @@ const services = [
     linkText: "Optimera din synlighet med SEO",
   },
   {
+    icon: Megaphone,
+    title: "Google Ads",
+    description: "Syns högst upp på Google direkt. Fasta månadspaket för lokala företag i Mälardalen.",
+    items: ["Sökordsannonsering", "Remarketing", "Konverteringsspårning"],
+    link: "/tjanster/google-ads",
+    linkText: "Läs mer om Google Ads-förvaltning",
+  },
+  {
     icon: Settings,
     title: "WordPress-lösningar",
     description: "Snabba och kostnadseffektiva WordPress-sajter med anpassade teman och plugins.",
