@@ -120,7 +120,7 @@ export default function Hero() {
             to="/kontakt"
             className="relative bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-400 text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 shadow-[0_0_40px_rgba(245,158,11,0.4)] hover:shadow-[0_0_60px_rgba(245,158,11,0.6)] hover:scale-105 transition-all"
           >
-            Boka ett samtal <ArrowRight size={18} />
+            Få en gratis SEO-analys <ArrowRight size={18} />
           </Link>
         </div>
       </div>
