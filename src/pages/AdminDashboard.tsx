@@ -536,6 +536,179 @@ const AdminDashboard = () => {
             )}
           </div>
         )}
+
+        {activeTab === "seo" && (
+          <div className="space-y-6">
+            {/* Sub-tabs */}
+            <div className="flex gap-2">
+              <Button size="sm" variant={seoSubTab === "rankings" ? "default" : "outline"} onClick={() => setSeoSubTab("rankings")}>
+                <TrendingUp size={14} /> Ranking Tracker
+              </Button>
+              <Button size="sm" variant={seoSubTab === "keywords" ? "default" : "outline"} onClick={() => setSeoSubTab("keywords")}>
+                <Search size={14} /> Nyckelordsgenerator
+              </Button>
+            </div>
+
+            {seoSubTab === "rankings" && (
+              <>
+                {/* Heat Map */}
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h2 className="text-lg font-bold font-serif mb-2">SEO Heat Map – Västmanland</h2>
+                  <p className="text-sm text-muted-foreground mb-6">Visuell översikt av SEO-styrka per stad. Grön = Topp 3, Gul = Topp 10, Röd = Utanför topp 10.</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {cityRankings.map(c => {
+                      const bg = c.rank === null ? "border-muted bg-muted/10" : c.rank <= 3 ? "border-green-500/40 bg-green-500/10" : c.rank <= 10 ? "border-yellow-500/40 bg-yellow-500/10" : "border-red-500/40 bg-red-500/10";
+                      const textColor = c.rank === null ? "text-muted-foreground" : c.rank <= 3 ? "text-green-500" : c.rank <= 10 ? "text-yellow-500" : "text-red-500";
+                      return (
+                        <div key={c.city} className={`border-2 rounded-xl p-4 text-center ${bg}`}>
+                          <MapPin size={18} className={`mx-auto mb-2 ${textColor}`} />
+                          <p className="font-serif font-bold text-sm">{c.city}</p>
+                          <p className={`text-2xl font-bold mt-1 ${textColor}`}>{c.rank ?? "–"}</p>
+                          <p className="text-xs text-muted-foreground mt-1">{c.keyword}</p>
+                          {c.leads > 0 && <p className="text-xs text-primary mt-1">{c.leads} leads</p>}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Ranking Table */}
+                <div className="bg-card border border-border rounded-xl overflow-hidden">
+                  <h2 className="text-lg font-bold font-serif p-6 pb-3">SERP-positioner</h2>
+                  <p className="text-sm text-muted-foreground px-6 pb-4">Manuellt uppdaterbara rankingpositioner per stad och sökord.</p>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Stad</TableHead>
+                        <TableHead>Sökord</TableHead>
+                        <TableHead>Position</TableHead>
+                        <TableHead>7d trend</TableHead>
+                        <TableHead>30d trend</TableHead>
+                        <TableHead>Leads</TableHead>
+                        <TableHead>Status</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {cityRankings.map((c, i) => {
+                        const TrendIcon = c.rank !== null && c.prev7 !== null ? (c.rank < c.prev7 ? TrendingUp : c.rank > c.prev7 ? TrendingDown : Minus) : Minus;
+                        const trendColor = c.rank !== null && c.prev7 !== null ? (c.rank < c.prev7 ? "text-green-500" : c.rank > c.prev7 ? "text-red-500" : "text-muted-foreground") : "text-muted-foreground";
+                        return (
+                          <TableRow key={c.city}>
+                            <TableCell className="font-medium">{c.city}</TableCell>
+                            <TableCell className="text-sm">{c.keyword}</TableCell>
+                            <TableCell>
+                              <Input
+                                type="number"
+                                min={1}
+                                max={100}
+                                value={c.rank ?? ""}
+                                onChange={(e) => {
+                                  const val = e.target.value ? parseInt(e.target.value) : null;
+                                  setCityRankings(prev => prev.map((r, idx) => idx === i ? { ...r, rank: val } : r));
+                                }}
+                                className="w-20 h-8 text-center"
+                                placeholder="–"
+                              />
+                            </TableCell>
+                            <TableCell><TrendIcon size={16} className={trendColor} /></TableCell>
+                            <TableCell>
+                              {c.rank !== null && c.prev30 !== null ? (
+                                <span className={c.rank < c.prev30 ? "text-green-500" : c.rank > c.prev30 ? "text-red-500" : "text-muted-foreground"}>
+                                  {c.rank < c.prev30 ? `↑${c.prev30 - c.rank}` : c.rank > c.prev30 ? `↓${c.rank - c.prev30}` : "–"}
+                                </span>
+                              ) : "–"}
+                            </TableCell>
+                            <TableCell>
+                              <Input
+                                type="number"
+                                min={0}
+                                value={c.leads}
+                                onChange={(e) => {
+                                  const val = parseInt(e.target.value) || 0;
+                                  setCityRankings(prev => prev.map((r, idx) => idx === i ? { ...r, leads: val } : r));
+                                }}
+                                className="w-16 h-8 text-center"
+                              />
+                            </TableCell>
+                            <TableCell>
+                              {c.rank !== null && c.rank > 3 && (
+                                <span className="inline-flex items-center gap-1 text-xs text-yellow-500">
+                                  <AlertTriangle size={12} /> Åtgärd krävs
+                                </span>
+                              )}
+                              {c.rank !== null && c.rank <= 3 && <span className="text-xs text-green-500">✓ Topp 3</span>}
+                            </TableCell>
+                          </TableRow>
+                        );
+                      })}
+                    </TableBody>
+                  </Table>
+                </div>
+              </>
+            )}
+
+            {seoSubTab === "keywords" && (
+              <div className="space-y-6">
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h2 className="text-lg font-bold font-serif mb-2">Lokal nyckelordsgenerator</h2>
+                  <p className="text-sm text-muted-foreground mb-6">Generera SEO-titlar och metabeskrivningar för nya potentiella målstäder i Västmanland.</p>
+                  <Button
+                    onClick={() => {
+                      const expansionCities = ["Hallstahammar", "Surahammar", "Norberg", "Skinnskatteberg"];
+                      const templates = [
+                        { kw: "Snabba hemsidor för småföretag", service: "Webbutveckling" },
+                        { kw: "SEO-optimering för lokala företag", service: "SEO" },
+                        { kw: "Modern webbdesign med 100/100 PageSpeed", service: "Webbdesign" },
+                      ];
+                      const suggestions: KeywordSuggestion[] = [];
+                      expansionCities.forEach(city => {
+                        templates.forEach(t => {
+                          suggestions.push({
+                            keyword: `${t.kw} i ${city}`,
+                            metaTitle: `${t.service} ${city} | ${t.kw} | LRH Konsult`,
+                            metaDescription: `Professionell ${t.service.toLowerCase()} i ${city}. ${t.kw} med React & Next.js. Boka fri konsultation!`,
+                            city,
+                          });
+                        });
+                      });
+                      setKeywordSuggestions(suggestions);
+                    }}
+                    size="sm"
+                  >
+                    <Sparkles size={14} /> Generera förslag
+                  </Button>
+                </div>
+
+                {keywordSuggestions.length > 0 && (
+                  <div className="bg-card border border-border rounded-xl overflow-hidden">
+                    <h2 className="text-lg font-bold font-serif p-6 pb-3">Expansionsförslag</h2>
+                    <p className="text-sm text-muted-foreground px-6 pb-4">Long-tail nyckelord för nya målstäder.</p>
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Stad</TableHead>
+                          <TableHead>Nyckelord</TableHead>
+                          <TableHead>Meta Title</TableHead>
+                          <TableHead>Meta Description</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {keywordSuggestions.map((s, i) => (
+                          <TableRow key={i}>
+                            <TableCell className="font-medium">{s.city}</TableCell>
+                            <TableCell className="text-sm">{s.keyword}</TableCell>
+                            <TableCell className="text-xs max-w-[200px] truncate" title={s.metaTitle}>{s.metaTitle}</TableCell>
+                            <TableCell className="text-xs max-w-[250px] truncate" title={s.metaDescription}>{s.metaDescription}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
