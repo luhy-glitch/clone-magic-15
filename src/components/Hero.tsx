@@ -69,11 +69,11 @@ export default function Hero() {
         {/* Glow behind CTA */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/[0.08] blur-[100px] rounded-full pointer-events-none z-0" />
 
-        {/* City nodes – positioned relative to Västmanland map geography */}
-        {/* Sala – top-right area of map */}
+        {/* City nodes – geographic positions on Västmanland map */}
+        {/* Sala – north, slightly right of center on the map */}
         <Link
           to="/hemsidor-sala"
-          className="absolute top-[2%] right-[22%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[10%] right-[32%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Hemsidor och SEO i Sala"
         >
           <div className="relative">
@@ -86,10 +86,10 @@ export default function Hero() {
           <span className="text-xs mt-2 text-muted-foreground group-hover:text-foreground transition-colors font-medium underline-offset-2 group-hover:underline">Sala</span>
         </Link>
 
-        {/* Köping – southwest */}
+        {/* Köping – mid-left (west side of the map) */}
         <Link
           to="/seo-koping"
-          className="absolute bottom-[30%] left-[20%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[48%] left-[18%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="SEO-optimering i Köping"
         >
           <div className="relative">
@@ -102,10 +102,10 @@ export default function Hero() {
           <span className="text-xs mt-2 text-muted-foreground group-hover:text-foreground transition-colors font-medium underline-offset-2 group-hover:underline">Köping</span>
         </Link>
 
-        {/* Västerås – center-east (largest city, central position) */}
+        {/* Västerås – center-south, slightly right (south-east on the map) */}
         <Link
           to="/webbutveckling-vasteras"
-          className="absolute bottom-[25%] right-[25%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
+          className="absolute top-[52%] right-[22%] flex flex-col items-center group cursor-pointer z-50 p-3 rounded-xl hover:bg-card/5 transition-all duration-300"
           aria-label="Webbutveckling i Västerås"
         >
           <div className="relative">
