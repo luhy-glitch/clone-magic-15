@@ -34,17 +34,17 @@ const LrhLogo = ({
       >
         {/* L */}
         <path
-          d="M6 8h5v24h12v5H6V8z"
+          d="M2 6h4v26h10v4H2V6z"
           fill={blueColor}
         />
         {/* R */}
         <path
-          d="M16 8h10c4.5 0 7 2.5 7 6.5s-2.5 6.5-7 6.5h-5v16h-5V8zm5 9h4.5c1.8 0 2.5-1 2.5-2.5S27.3 12 25.5 12H21v5z"
+          d="M18 6h8c4 0 6.5 2.8 6.5 6.5S30 19 26 19h-4v17h-4V6zm4 4v9h4c2.2 0 3.5-1.8 3.5-4.5S28.2 10 26 10h-4z"
           fill={blueColor}
         />
         {/* H */}
         <path
-          d="M30 8h5v12h8V8h5v29h-5V25h-8v12h-5V8z"
+          d="M34 6h4v13h8V6h4v30h-4V23h-8v13h-4V6z"
           fill="url(#lrh-gold-grad)"
         />
         <defs>
@@ -70,17 +70,17 @@ const LrhLogo = ({
       <title>LRH Konsult – Webbutveckling och SEO i Västerås</title>
       {/* L */}
       <path
-        d="M6 8h5v24h12v5H6V8z"
+        d="M2 6h4v26h10v4H2V6z"
         fill={blueColor}
       />
       {/* R */}
       <path
-        d="M16 8h10c4.5 0 7 2.5 7 6.5s-2.5 6.5-7 6.5h-5v16h-5V8zm5 9h4.5c1.8 0 2.5-1 2.5-2.5S27.3 12 25.5 12H21v5z"
+        d="M18 6h8c4 0 6.5 2.8 6.5 6.5S30 19 26 19h-4v17h-4V6zm4 4v9h4c2.2 0 3.5-1.8 3.5-4.5S28.2 10 26 10h-4z"
         fill={blueColor}
       />
       {/* H */}
       <path
-        d="M30 8h5v12h8V8h5v29h-5V25h-8v12h-5V8z"
+        d="M34 6h4v13h8V6h4v30h-4V23h-8v13h-4V6z"
         fill="url(#lrh-gold-full)"
       />
       {/* KONSULT text */}
