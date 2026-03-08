@@ -39,9 +39,17 @@ function getSessionToken(): string | null {
   return sessionStorage.getItem("admin_session_token");
 }
 
+interface PageSpeedScore {
+  performance: number | null;
+  seo: number | null;
+  accessibility: number | null;
+  bestPractices: number | null;
+  loading: boolean;
+}
+
 const AdminDashboard = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<"blog" | "leads">("blog");
+  const [activeTab, setActiveTab] = useState<"blog" | "leads" | "speed">("blog");
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [leads, setLeads] = useState<ContactSubmission[]>([]);
   const [loading, setLoading] = useState(true);
@@ -54,6 +62,8 @@ const AdminDashboard = () => {
   const [generating, setGenerating] = useState(false);
   const [generatingImage, setGeneratingImage] = useState(false);
   const [selectedLead, setSelectedLead] = useState<ContactSubmission | null>(null);
+  const [pageSpeed, setPageSpeed] = useState<PageSpeedScore>({ performance: null, seo: null, accessibility: null, bestPractices: null, loading: false });
+  const [speedUrl, setSpeedUrl] = useState("https://lrhkonsult.se");
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const doLogout = useCallback(async () => {
