@@ -29,6 +29,13 @@ const PrestandaOptimeringPage = lazy(() => import("./pages/tjanster/PrestandaOpt
 const WebbutvecklingVasteras = lazy(() => import("./pages/WebbutvecklingVasteras"));
 const SeoKoping = lazy(() => import("./pages/SeoKoping"));
 const HemsidorSala = lazy(() => import("./pages/HemsidorSala"));
+const WebbutvecklingEnkoping = lazy(() => import("./pages/WebbutvecklingEnkoping"));
+const WebbutvecklingEskilstuna = lazy(() => import("./pages/WebbutvecklingEskilstuna"));
+const WebbutvecklingArboga = lazy(() => import("./pages/WebbutvecklingArboga"));
+const WebbutvecklingFagersta = lazy(() => import("./pages/WebbutvecklingFagersta"));
+const HemsidorByggHantverkare = lazy(() => import("./pages/HemsidorByggHantverkare"));
+const DigitalMarknadsforing = lazy(() => import("./pages/DigitalMarknadsforing"));
+const CaseStudyPageSpeed = lazy(() => import("./pages/CaseStudyPageSpeed"));
 
 // Lazy-init QueryClient — only needed for pages that fetch data
 const LazyQueryProvider = lazy(() =>
@@ -63,6 +70,13 @@ const DataRoutes = () => (
         <Route path="/webbutveckling-vasteras" element={<WebbutvecklingVasteras />} />
         <Route path="/seo-koping" element={<SeoKoping />} />
         <Route path="/hemsidor-sala" element={<HemsidorSala />} />
+        <Route path="/webbutveckling-enkoping" element={<WebbutvecklingEnkoping />} />
+        <Route path="/webbutveckling-eskilstuna" element={<WebbutvecklingEskilstuna />} />
+        <Route path="/webbutveckling-arboga" element={<WebbutvecklingArboga />} />
+        <Route path="/webbutveckling-fagersta" element={<WebbutvecklingFagersta />} />
+        <Route path="/hemsidor-bygg-hantverkare" element={<HemsidorByggHantverkare />} />
+        <Route path="/digital-marknadsforing-butiker" element={<DigitalMarknadsforing />} />
+        <Route path="/case-studies/pagespeed-revolution" element={<CaseStudyPageSpeed />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="*" element={<NotFound />} />

@@ -43,6 +43,10 @@ const ALL_LOCAL_PAGES = [
   { slug: "webbutveckling-vasteras", label: "Webbutveckling i Västerås", city: "Västerås" },
   { slug: "seo-koping", label: "SEO i Köping", city: "Köping" },
   { slug: "hemsidor-sala", label: "Hemsidor i Sala", city: "Sala" },
+  { slug: "webbutveckling-enkoping", label: "Webbutveckling i Enköping", city: "Enköping" },
+  { slug: "webbutveckling-eskilstuna", label: "Webbutveckling i Eskilstuna", city: "Eskilstuna" },
+  { slug: "webbutveckling-arboga", label: "Webbutveckling i Arboga", city: "Arboga" },
+  { slug: "webbutveckling-fagersta", label: "Webbutveckling i Fagersta", city: "Fagersta" },
 ];
 
 const RELATED_SERVICES = [
