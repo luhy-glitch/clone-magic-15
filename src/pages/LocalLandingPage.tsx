@@ -117,10 +117,10 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
                   {config.heroDescription}
                 </p>
                 <Link
-                  to="/kontakt"
+                  to="/gratis-seo-analys"
                   className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25"
                 >
-                  Boka fri konsultation <ArrowRight size={18} />
+                  Få en gratis SEO-analys <ArrowRight size={18} />
                 </Link>
               </div>
             </AnimatedSection>
