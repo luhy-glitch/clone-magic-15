@@ -128,7 +128,7 @@ const Index = () => {
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbdesign i Sala</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
                 I Sala kombinerar vi lokal kännedom med modern webbdesign för att skapa hemsidor som verkligen representerar ditt företag. Vi fokuserar på snabb laddningstid, responsiv design och SEO-vänlig struktur som ger resultat.{" "}
-                <a href="/hemsidor-sala" className="text-primary hover:underline font-medium">Läs mer om webbdesign i Sala</a>.
+                <Link to="/hemsidor-sala" className="text-primary hover:underline font-medium">Läs mer om webbdesign i Sala</Link>.
               </p>
 
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Enköping (Uppsala län)</h2>
