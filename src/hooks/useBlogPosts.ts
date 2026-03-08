@@ -11,6 +11,8 @@ export interface DbBlogPost {
   content: string;
   image_url: string;
   image_alt: string;
+  updated_at: string;
+  key_takeaways: string;
 }
 
 export const useBlogPosts = () => {
