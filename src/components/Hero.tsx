@@ -37,9 +37,14 @@ export default function Hero() {
 
       {/* Body text with local keywords */}
       <p className="text-gray-400 max-w-2xl text-sm md:text-base mb-16 leading-[1.6] text-center z-10 relative">
-        Jag hjälper företag i <span className="text-blue-400 font-medium">Västerås, Köping, Sala</span>,{" "}
-        <span className="text-blue-400 font-medium">Enköping, Eskilstuna, Arboga</span> och{" "}
-        <span className="text-blue-400 font-medium">Fagersta</span> att skapa snabba, sökmotoroptimerade webbplatser i{" "}
+        Jag hjälper företag i{" "}
+        <Link to="/webbutveckling-vasteras" className="text-blue-400 font-medium hover:underline">Västerås</Link>,{" "}
+        <Link to="/seo-koping" className="text-blue-400 font-medium hover:underline">Köping</Link>,{" "}
+        <Link to="/hemsidor-sala" className="text-blue-400 font-medium hover:underline">Sala</Link>,{" "}
+        <Link to="/webbutveckling-enkoping" className="text-blue-400 font-medium hover:underline">Enköping</Link>,{" "}
+        <Link to="/webbutveckling-eskilstuna" className="text-blue-400 font-medium hover:underline">Eskilstuna</Link>,{" "}
+        <Link to="/webbutveckling-arboga" className="text-blue-400 font-medium hover:underline">Arboga</Link> och{" "}
+        <Link to="/webbutveckling-fagersta" className="text-blue-400 font-medium hover:underline">Fagersta</Link> att skapa snabba, sökmotoroptimerade webbplatser i{" "}
         <span className="text-white font-medium">React & Next.js</span> som konverterar besökare till kunder.
       </p>
 
