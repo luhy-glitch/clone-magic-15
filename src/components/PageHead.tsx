@@ -10,7 +10,7 @@ interface PageHeadProps {
 }
 
 const BASE_URL = "https://lrhkonsult.se";
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
+const DEFAULT_OG_IMAGE = `${BASE_URL}/assets/og/lrh-konsult-sharing-image.png`;
 
 const PageHead = ({ title, description, canonical, ogImage, jsonLd }: PageHeadProps) => {
   const { pathname } = useLocation();
