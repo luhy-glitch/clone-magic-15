@@ -1,4 +1,4 @@
-import { Code2, Palette, Search, Settings, Wrench, Zap, ArrowRight } from "lucide-react";
+import { Code2, Palette, Search, Settings, Wrench, Zap, Megaphone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
 
@@ -26,6 +26,14 @@ const services = [
     items: ["Teknisk SEO", "Innehållsoptimering", "Lokal SEO"],
     link: "/tjanster/seo-optimering",
     linkText: "Optimera din synlighet med SEO",
+  },
+  {
+    icon: Megaphone,
+    title: "Google Ads",
+    description: "Syns högst upp på Google direkt. Fasta månadspaket för lokala företag i Mälardalen.",
+    items: ["Sökordsannonsering", "Remarketing", "Konverteringsspårning"],
+    link: "/tjanster/google-ads",
+    linkText: "Läs mer om Google Ads-förvaltning",
   },
   {
     icon: Settings,

@@ -16,6 +16,7 @@ const staticRoutes = [
   { loc: "/tjanster/wordpress-losningar", changefreq: "monthly", priority: "0.8" },
   { loc: "/tjanster/underhall-support", changefreq: "monthly", priority: "0.8" },
   { loc: "/tjanster/prestanda-optimering", changefreq: "monthly", priority: "0.8" },
+  { loc: "/tjanster/google-ads", changefreq: "monthly", priority: "0.8" },
   { loc: "/webbutveckling-vasteras", changefreq: "monthly", priority: "0.8" },
   { loc: "/seo-koping", changefreq: "monthly", priority: "0.8" },
   { loc: "/hemsidor-sala", changefreq: "monthly", priority: "0.8" },
