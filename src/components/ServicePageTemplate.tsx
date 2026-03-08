@@ -140,9 +140,15 @@ const ServicePageTemplate = ({
   const { pathname } = useLocation();
   const jsonLd = buildServiceJsonLd(breadcrumbLabel, metaDescription, pathname, faq);
 
+  const breadcrumbs = [
+    { name: "Hem", url: BASE_URL },
+    { name: "Tjänster", url: `${BASE_URL}/#tjanster` },
+    { name: breadcrumbLabel, url: `${BASE_URL}${pathname}` },
+  ];
+
   return (
     <div className="min-h-screen">
-      <PageHead title={metaTitle} description={metaDescription} jsonLd={jsonLd} />
+      <PageHead title={metaTitle} description={metaDescription} jsonLd={jsonLd} breadcrumbs={breadcrumbs} />
       <Navbar />
       <main className="pt-16">
         {/* Breadcrumbs */}

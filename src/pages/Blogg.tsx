@@ -57,6 +57,10 @@ const Blogg = () => {
       <PageHead
         title="Blogg – Webb & SEO-insikter | LRH Konsult"
         description="Artiklar om webbutveckling, SEO och digitala strategier från LRH Konsult. Tips för att bygga hemsida och ranka högre på Google i Västmanland."
+        breadcrumbs={[
+          { name: "Hem", url: "https://lrhkonsult.se" },
+          { name: "Blogg", url: "https://lrhkonsult.se/blogg" },
+        ]}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Blog",
