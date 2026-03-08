@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { supabase } from "@/integrations/supabase/client";
-import { Plus, LogOut, Pencil, Trash2, ArrowLeft, Save, Upload, X, Eye, Code, Sparkles, Users, FileText, RefreshCw, Gauge } from "lucide-react";
+import { Plus, LogOut, Pencil, Trash2, ArrowLeft, Save, Upload, X, Eye, Code, Sparkles, Users, FileText, RefreshCw, Gauge, MapPin, Search, TrendingUp, TrendingDown, Minus, AlertTriangle } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
 interface BlogPost {
