@@ -125,14 +125,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Video Facade – lazy loaded, zero LCP impact */}
-      <div className="w-full max-w-2xl mb-16 z-10 relative">
-        <Suspense fallback={
-          <div className="w-full aspect-video rounded-2xl bg-card/30 border border-border/20 animate-pulse" />
-        }>
-          <VideoFacade />
-        </Suspense>
-      </div>
 
       {/* Trust Indicators - Glass cards */}
       <div className="flex flex-wrap justify-center gap-6 w-full max-w-4xl relative z-10">
