@@ -174,10 +174,10 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
           <section key={idx} className={`py-16 sm:py-24 ${idx % 2 === 0 ? "bg-section-alt" : "bg-background"}`}>
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
               <AnimatedSection>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-8">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">
                   {section.title}
                 </h2>
-                <div className="space-y-5 text-muted-foreground leading-[1.8] text-base">
+                <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
                   {section.paragraphs.map((p, i) => (
                     <p key={i}>{p}</p>
                   ))}
