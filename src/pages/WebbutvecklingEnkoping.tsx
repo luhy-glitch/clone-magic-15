@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Dominera sökresultaten i Enköping",
   heroDescription: "Enköping ligger strategiskt i Uppsala län, med närheten till Stockholm och Uppsala som en stor fördel. Vi bygger hemsidor som presterar på toppnivå – tekniskt fulländade, SEO-optimerade och designade för att ge ditt företag fler kunder.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – snabbast i parkernas stad",
+    "Fastighetsmäklare ökade visningsbokningarna med 90%",
+    "Fånga pendlares lokala sökningar längs E18",
+    "RealEstateAgent & LocalBusiness JSON-LD-schema",
+  ],
   benefits: [
     { title: "Nära Enköping", description: "Vi arbetar tätt med företag i Enköping och erbjuder personlig service och lokalkännedom för att förstå din marknad på djupet." },
     { title: "100/100 PageSpeed", description: "Varje hemsida vi bygger är optimerad för maximal hastighet och prestanda, vilket ger dig bättre ranking på Google." },

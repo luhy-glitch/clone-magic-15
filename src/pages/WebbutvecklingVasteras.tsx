@@ -10,9 +10,15 @@ const config = {
   heroHeading: "Dominera sökresultaten i Västerås",
   heroDescription: "Sluta vara osynlig på Google. Vi bygger blixtsnabba hemsidor som rankar högst i Västerås och förvandlar besökare till betalande kunder – garanterat 100/100 PageSpeed och mätbara resultat inom 90 dagar.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – snabbast i Västerås",
+    "JSON-LD AccountingService & LocalBusiness-schema",
+    "Server-side rendering med Next.js & React",
+    "Mätbara resultat inom 90 dagar för företag i Västerås",
+  ],
   benefits: [
     { title: "Lokalt i Västerås", description: "Vi finns nära dig i Västerås och erbjuder personliga möten och snabb kommunikation genom hela projektet." },
-    { title: "100/100 PageSpeed", description: "Varje hemsida vi bygger når konsekvent toppresultat i Google PageSpeed Insights, vilket ger dig en direkt rankingfördel." },
+    { title: "100/100 PageSpeed", description: "Toppresultat i samtliga fyra Lighthouse-kategorier ger dig en direkt rankingfördel mot konkurrenterna i Västerås." },
     { title: "SEO inbyggt från start", description: "Lokal SEO, strukturerad data och teknisk optimering är integrerat i varje rad kod vi skriver." },
     { title: "Framtidssäker teknik", description: "React, Next.js och TypeScript ger en skalbar plattform som växer med ditt företag utan ombyggnation." },
   ],

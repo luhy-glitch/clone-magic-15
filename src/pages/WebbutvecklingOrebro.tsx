@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Webbutveckling & SEO i Örebro",
   heroDescription: "Örebro är en av Sveriges snabbast växande städer med över 160 000 invånare. Vi hjälper företag i Örebro att bygga blixtsnabba hemsidor med 100/100 PageSpeed som dominerar sökresultaten och genererar fler kunder.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed i Mellansveriges mest dynamiska stad",
+    "Tandläkarklinik halverade annonskostnaden med organisk SEO",
+    "JSON-LD Dentist, Restaurant & Service-schema",
+    "Digital dominans längs E18/E20-korridoren från Örebro",
+  ],
   benefits: [
     { title: "Regional expertis", description: "Vi täcker hela Mälardalen och Örebro-regionen med djup förståelse för den lokala marknadens dynamik och utmaningar." },
     { title: "100/100 PageSpeed", description: "Garanterat toppresultat i Google PageSpeed som ger dig en mätbar konkurrensfördel i Örebros dynamiska marknad." },

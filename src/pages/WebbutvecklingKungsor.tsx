@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Webbutveckling & SEO i Kungsör",
   heroDescription: "Kungsör förtjänar moderna, snabba hemsidor. Vi hjälper lokala företag att bygga digital auktoritet med blixtsnabba webbplatser som rankar högt på Google och genererar fler kunder.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – snabbast vid Mälarens strand",
+    "Nå kunder i tre län från Kungsörs strategiska position",
+    "Koddelad JavaScript under 100 kB per sida",
+    "Båtservice och lokala företag fångar säsongstrafiken",
+  ],
   benefits: [
     { title: "Lokalt engagemang", description: "Vi arbetar nära företag i Kungsör och förstår den lokala marknadens unika förutsättningar vid Mälarens strand." },
     { title: "100/100 PageSpeed", description: "Toppresultat i Google PageSpeed Insights som ger dig en omedelbar rankingfördel gentemot konkurrenter." },

@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Webbutveckling & SEO i Surahammar",
   heroDescription: "Vi hjälper företag i Surahammar att synas online med blixtsnabba hemsidor och lokal SEO. 100/100 PageSpeed garanterat – din digitala partner i Västmanland.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – snabbast i Surahammar",
+    "Hantverksföretag i Surahammar rankar #1 inom 6 veckor",
+    "Effektiv kod under 100 kB – snabb även på 4G",
+    "Från stålverkets arv till digital framkant",
+  ],
   benefits: [
     { title: "Lokalt i Surahammar", description: "Vi förstår Surahammars industriella arv och hjälper företag att digitalisera sin kundkontakt med moderna lösningar." },
     { title: "100/100 PageSpeed", description: "Varje hemsida vi bygger når toppresultat i Google PageSpeed Insights – din snabbaste väg till bättre ranking." },

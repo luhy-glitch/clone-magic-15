@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Webbutveckling & SEO i Skinnskatteberg",
   heroDescription: "Företag i Skinnskatteberg förtjänar moderna, blixtsnabba hemsidor. Vi bygger webbplatser med 100/100 PageSpeed och lokal SEO som ger ditt företag fler kunder i hela västra Västmanland.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – fungerar även på svag mobiluppkoppling",
+    "Stuguthyrning fyllde sommarbokningarna före april",
+    "Turism-SEO med TouristAttraction & LodgingBusiness-schema",
+    "Nå kunder från Köping till Ludvika utan annonsering",
+  ],
   benefits: [
     { title: "Lokalt fokus", description: "Vi förstår företagsklimatet i Skinnskatteberg och de unika utmaningarna för landsbygdsföretag med regionalt upptagningsområde." },
     { title: "100/100 PageSpeed", description: "Garanterat toppresultat i Google PageSpeed som ger dig en direkt rankingfördel gentemot konkurrenter med äldre sajter." },

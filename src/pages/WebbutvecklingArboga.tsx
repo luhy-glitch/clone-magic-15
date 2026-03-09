@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Få en modern hemsida som faktiskt säljer i Arboga",
   heroDescription: "Arboga har en rik historia och en framåtblickande företagskultur. Vi hjälper lokala företag att bygga digital auktoritet med moderna, blixtsnabba hemsidor som rankar högt på Google och ger dig fler kunder varje månad.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – snabbast i Arboga",
+    "JSON-LD Restaurant & LocalBusiness-schema",
+    "Inkrementell statisk regenerering med Next.js",
+    "Restauranger och tjänsteföretag i Arboga syns på Google",
+  ],
   benefits: [
     { title: "Lokalt engagemang", description: "Vi arbetar nära företag i Arboga och förstår den lokala marknadens unika förutsättningar och möjligheter." },
     { title: "100/100 PageSpeed", description: "Alla våra hemsidor optimeras för toppresultat i PageSpeed, vilket ger dig en tydlig fördel gentemot konkurrenter." },

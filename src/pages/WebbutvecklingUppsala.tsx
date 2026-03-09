@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Webbutveckling & SEO i Uppsala",
   heroDescription: "Uppsala är Sveriges fjärde största stad och en av landets mest konkurrensutsatta marknader. Vi hjälper företag i Uppsala att sticka ut med blixtsnabba hemsidor som rankar högst på Google och konverterar besökare till kunder.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed i Sveriges fjärde största stad",
+    "Restauranggrupp fyrdubblade lunchbokningarna",
+    "Headless CMS-lösningar för tech-startups vid Science Park",
+    "Regional räckvidd från Uppsala till hela Mälardalen",
+  ],
   benefits: [
     { title: "Regionalt fokus", description: "Vi täcker hela Mälardalen, från Uppsala till Västerås, med samma höga kvalitet och personliga service." },
     { title: "100/100 PageSpeed", description: "Garanterat toppresultat som ger dig en tydlig konkurrensfördel i Uppsalas intensiva marknad." },

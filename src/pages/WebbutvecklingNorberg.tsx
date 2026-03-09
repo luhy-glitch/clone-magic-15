@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Webbutveckling & SEO i Norberg",
   heroDescription: "Vi hjälper företag i Norberg att bygga moderna hemsidor som laddar blixtsnabbt och rankar högt på Google. 100/100 PageSpeed garanterat – din lokala webbpartner i norra Västmanland.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – snabbast i norra Västmanland",
+    "CNC-verkstäder i Norberg når kunder digitalt",
+    "First-mover-advantage med låg lokal konkurrens",
+    "Konverteringsdesign med click-to-call och minimala formulär",
+  ],
   benefits: [
     { title: "Lokalt i Norberg", description: "Vi arbetar nära företag i Norberg och förstår norra Västmanlands unika företagsklimat och marknad." },
     { title: "100/100 PageSpeed", description: "Toppresultat i Google PageSpeed Insights som ger dig en mätbar rankingfördel gentemot konkurrenter." },

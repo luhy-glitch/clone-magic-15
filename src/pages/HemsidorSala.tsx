@@ -10,11 +10,17 @@ const config = {
   heroHeading: "Få en modern hemsida som faktiskt säljer i Sala",
   heroDescription: "I Sala vet vi att en hemsida inte bara ska vara snygg – den ska arbeta för dig. Vi skapar konverteringsoptimerade hemsidor med mobil-först-design och prestanda i världsklass som förvandlar besökare till betalande kunder.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – snabbast i Sala kommun",
+    "Online-bokningssystem integrerat i hemsidan",
+    "Mobil-först-design för 70%+ mobilanvändare",
+    "Konverteringsoptimerad design som fyller bokningskalendern",
+  ],
   benefits: [
     { title: "Anpassat för Sala", description: "Vi förstår den lokala marknaden i Sala och skapar hemsidor som tilltalar dina kunder med relevant design och lokal SEO." },
     { title: "Konverteringsfokus", description: "Varje element på din hemsida är designat med ett syfte – att leda besökaren mot kontakt, bokning eller köp." },
     { title: "Mobil-först-design", description: "Över 70% av alla besök sker via mobilen. Vi designar alltid för mobilen först och säkerställer en perfekt upplevelse." },
-    { title: "Prestanda i världsklass", description: "100/100 i PageSpeed Insights innebär snabbare laddning, bättre ranking och fler nöjda besökare." },
+    { title: "Prestanda i världsklass", description: "Perfekta PageSpeed-poäng innebär snabbare laddning, bättre ranking och fler nöjda besökare i Sala." },
   ],
   bodyTitle: "Konverteringsoptimerad webbdesign som driver affärer i Sala",
   bodyParagraphs: [
