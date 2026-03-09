@@ -1,131 +1,75 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import PageHead from "@/components/PageHead";
-import AnimatedSection from "@/components/AnimatedSection";
-import Contact from "@/components/Contact";
-import { Link } from "react-router-dom";
-import { ArrowRight, Scissors } from "lucide-react";
+import { Scissors } from "lucide-react";
+import LocalLandingPage from "./LocalLandingPage";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
+const config = {
+  city: "Köping",
+  slug: "frisor-koping",
+  serviceKeyword: "Hemsidor för frisörer",
+  metaTitle: "Hemsida & SEO för Frisörer i Köping | LRH Konsult",
+  metaDescription: "Lokal SEO och moderna hemsidor för frisörsalonger i Köping. Dominera Google, fyll bokningskalendern och slipp provisioner till tredjepartsplattformar.",
+  heroHeading: "Fyll din bokningskalender med en hemsida som syns i Köping",
+  heroDescription: "De flesta som söker efter en frisör i Köping gör det direkt på mobilen i farten. Vi bygger blixtsnabba, mobiloptimerade hemsidor som rankar överst på Google och gör det enkelt att boka tid – direkt från sökresultatet.",
+  icon: Scissors,
+  heroFacts: [
+    "100/100 PageSpeed – snabbast bland Köpings frisörsalonger",
+    "JSON-LD HairSalon-schema med priser och öppettider",
+    "Online-bokning utan provision till tredjepartsplattformar",
+    "Topp 1 för 'frisör Köping' som realistiskt mål",
+  ],
+  benefits: [
+    { title: "Mobilanpassad bokning", description: "Klickbar bokning direkt från Google-sökresultatet. Kunden behöver aldrig ens besöka din hemsida för att boka tid." },
+    { title: "Google Business-optimering", description: "Vi kopplar ihop din hemsida med Google Business-profilen så att din salong visas med betyg, bilder och öppettider i Google Maps." },
+    { title: "Stylist-presentationer", description: "Varje stylist får en personlig profilsida med specialkompetenser, galleri och egen bokningslänk som bygger personligt förtroende." },
+    { title: "Tjänstespecifika sidor", description: "Separata SEO-optimerade sidor för herrklippning, damklippning, slingor och färgning fångar upp specifika sökningar." },
+  ],
+  bodyTitle: "Varför hastighet och mobilvänlighet avgör din ranking i Köping",
+  bodyParagraphs: [
+    "De flesta som söker efter en frisör i Köping gör det direkt i farten via sin smartphone, vilket ställer extremt höga krav på din hemsidas hastighet. En sökning på 'frisör Köping' eller 'klippning nära mig' sker ofta spontant – kunden vill boka direkt och har noll tålamod för en sida som laddar långsamt. Genom att optimera din sajt till 100/100 i PageSpeed ser vi till att dina tjänster och priser visas omedelbart.",
+    "En långsam sida skapar irritation och leder ofta till att kunden väljer en annan salong i Köping som har en mer lättillgänglig webbplats. Google har bekräftat att Core Web Vitals – inklusive LCP under 1,2 sekunder och CLS på noll – är direkta rankningsfaktorer. En frisörsalong med en blixtsnabb hemsida har alltså en konkret, mätbar fördel gentemot salonger som fortfarande kör på gamla WordPress-installationer med tunga bildgallerier.",
+    "Vi bygger hemsidor för frisörer i Köping med React och server-side rendering, vilket innebär att sidan renderas fullständigt innan den når kundens webbläsare. Bilder av frisyrer och behandlingar optimeras i AVIF-format med explicita dimensioner så att layouten aldrig hoppar – en vanlig frustration på äldre sajter som direkt skadar din Google-ranking.",
+  ],
+  bodyExtraSections: [
     {
-      "@type": "Service",
-      "name": "Lokal SEO för frisörer i Köping",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "LRH Konsult",
-        "telephone": "+46704606578",
-        "email": "lucas@lrhkonsult.se",
-      },
-      "areaServed": { "@type": "City", "name": "Köping" },
+      title: "Google Business-optimering för frisörsalonger i Köping",
+      paragraphs: [
+        "För lokala tjänsteföretag som frisörer är integrationen mellan din hemsida och din Google Business-profil helt avgörande. Kartpaketet – de tre listningarna som visas ovanför de organiska sökresultaten – är ofta det första en potentiell kund ser. Vi ser till att din salong i Köping visas med korrekta öppettider, adress, professionella bilder och direktlänk till bokning.",
+        "Genom att implementera JSON-LD HairSalon-schema på din hemsida kan vi dessutom visa dina tjänster med priser, kundrecensioner och ditt betyg direkt i sökresultatet. Detta skapar ett omedelbart förtroende som drastiskt ökar sannolikheten att kunden väljer just din salong framför de andra alternativen i Köping.",
+        "Vi arbetar också med en aktiv recensionsstrategi. Autentiska kundrecensioner är en av de starkaste rankingfaktorerna för lokala företag. Vi hjälper dig skapa en enkel process där nöjda kunder naturligt lämnar recensioner – utan att det känns påtvingat eller jobbigt. Varje femstjärnig recension stärker din position i Köpings lokala sökresultat.",
+      ],
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Vad kostar en hemsida för en frisörsalong i Köping?", "acceptedAnswer": { "@type": "Answer", "text": "Vi erbjuder paket från 5 000 kr anpassade för skönhetsbranschen. Kontakta oss för en skräddarsydd offert." } },
-        { "@type": "Question", "name": "Kan ni integrera mitt bokningssystem?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, vi integrerar populära bokningssystem direkt i din hemsida för en sömlös kundupplevelse." } },
+      title: "Innehåll som konverterar besökare till lojala salonggäster",
+      paragraphs: [
+        "En bra hemsida för en frisör i Köping ska inte bara vara tekniskt perfekt – den måste också sälja din expertis genom relevant innehåll. Vi skapar innehåll som svarar på de frågor dina potentiella kunder ställer: 'Vad kostar slingor i Köping?', 'Vilken frisör är bäst på balayage?', 'Herrfrisör nära mig med drop-in'. Varje fråga är en sökning, och varje sökning är en potentiell ny kund.",
+        "Genom att använda tydliga call-to-actions som 'Boka tid', 'Se våra priser' och 'Visa stylisternas arbeten' guidar vi besökaren genom hela bokningsprocessen utan friktion. Kontaktuppgifter och bokningsknappar är alltid synliga – oavsett var på sidan besökaren befinner sig. På mobilen är telefonnumret klickbart och bokningsknappen har en minsta toucharea på 44 pixlar.",
+        "Vi producerar även galleri-sidor med bilder på verkliga klippningar och behandlingar utförda i din salong. Till skillnad från stockfoton bygger detta autentiskt förtroende och ger Google unikt bildinnehåll som kan ranka i bildsökningar – en ofta förbisedd trafikkanal för frisörer i Köping.",
+      ],
+    },
+    {
+      title: "Framtidssäker teknik som befriar din salong från plattformsberoende",
+      paragraphs: [
+        "Många frisörsalonger i Köping betalar månatliga avgifter till bokningsplattformar och webbhotell med begränsade designmöjligheter. Med en skräddarsydd React-hemsida äger du din digitala närvaro fullt ut. Ingen månadsavgift till en mallplattform, inga provisioner per bokning och ingen risk att plattformen ändrar villkor eller höjer priserna.",
+        "Vi bygger bokningsfunktionalitet direkt i din hemsida, anpassad efter din salongs specifika behov. Vill du ha drop-in-kö? Tidsbokning per stylist? Paketpriser för behandlingar? Vi skräddarsyr lösningen efter hur din salong i Köping faktiskt fungerar – inte efter en generisk mall som tvingar dig att anpassa dig.",
+        "Investering istället för prenumeration – det är filosofin. En React-hemsida med 100/100 PageSpeed, komplett SEO och bokningssystem kostar en engångsinvestering som betalar sig genom ökad synlighet, fler bokningar och eliminerade plattformsavgifter. Det är den smartaste digitala investering en frisörsalong i Köping kan göra.",
       ],
     },
   ],
+  caseStudy: {
+    title: "Projektinsikt: Frisörsalong i Köping fyllde kalendern genom Google",
+    problem: "En frisörsalong i centrala Köping med två stylister förlitade sig helt på Instagram och mun-till-mun för att få nya kunder. De hade ingen hemsida och var osynliga för Google-sökningar som 'frisör Köping', 'herrklippning Köping' och 'boka frisör Köping'. Bokningskalendern hade regelbundna luckor, särskilt på vardagförmiddagar.",
+    solution: "Vi byggde en visuell React-hemsida med online-bokning per stylist, detaljerad prislista, stylist-presentationer med personliga gallerier och separata landningssidor för varje tjänst (herrklippning, damklippning, slingor, färgning, klippning barn). JSON-LD HairSalon-schema med öppettider, priser och adress implementerades tillsammans med en aktiv Google Business-strategi.",
+    result: "Hemsidan rankade topp 1 för 'frisör Köping' inom fyra veckor. Online-bokningarna tog fart omedelbart – inom den första månaden kom 55 procent av alla bokningar via hemsidan. Vardagsluckorna fylldes helt och salongen kunde höja priserna med 10 procent utan att tappa bokningar tack vare den ökade efterfrågan.",
+  },
+  faq: [
+    { question: "Vad kostar en hemsida för en frisörsalong i Köping?", answer: "Vi erbjuder paket från 5 000 kr som inkluderar prislista, stylist-sidor, bildgalleri och fullständig SEO-optimering. Lösningar med integrerat bokningssystem prissätts separat beroende på komplexitet." },
+    { question: "Kan ni integrera mitt befintliga bokningssystem?", answer: "Ja, vi kan integrera populära bokningssystem som Timma, Bokadirekt eller Fresha i din hemsida. Vi kan även bygga ett skräddarsytt bokningssystem utan löpande provisionsavgifter." },
+    { question: "Hur snabbt kan hemsidan vara klar?", answer: "En frisörsalong-hemsida med prislista, gallerier och SEO tar normalt 2–3 veckor. Med integrerat bokningssystem kan det ta 3–5 veckor beroende på önskade funktioner." },
+    { question: "Behöver jag professionella bilder av mitt arbete?", answer: "Ja, autentiska bilder av dina klippningar och behandlingar bygger förtroende och rankar i Google-bildsök. Vi hjälper gärna med bildoptimering och kan rekommendera fotografer i Köping." },
+    { question: "Hur hjälper en hemsida om jag redan har många följare på Instagram?", answer: "Instagram når dina befintliga följare, men Google når kunder som aktivt söker efter en frisör i Köping – de mest köpredo kunderna. En hemsida fångar sökningar som 'frisör nära mig' som Instagram aldrig kan fånga." },
+    { question: "Kan ni hjälpa med Google-recensioner?", answer: "Ja, vi skapar en strategi för att naturligt samla kundrecensioner och integrerar dem på din hemsida med JSON-LD Review-schema. Recensioner är en av de viktigaste rankingfaktorerna för lokala tjänsteföretag." },
+    { question: "Erbjuder ni support och uppdateringar efter lansering?", answer: "Ja, vi erbjuder flexibla supportavtal som inkluderar prisuppdateringar, nya galleribilder, säkerhetsövervakning och löpande SEO-optimering. Vi vill vara din salongens digitala partner i Köping." },
+  ],
 };
 
-const FrisorKoping = () => (
-  <div className="min-h-screen">
-    <PageHead
-      title="Hemsida & SEO för Frisörer i Köping | LRH Konsult"
-      description="Lokal SEO och moderna hemsidor för frisörsalonger i Köping. Dominera Google och fyll din bokningskalender."
-      jsonLd={jsonLd}
-    />
-    <Navbar />
-    <main className="pt-16">
-      <section className="relative bg-hero text-hero-foreground py-16 sm:py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                <Scissors size={28} className="text-primary" />
-              </div>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight font-serif">
-                Lokal SEO för frisörer i Köping
-              </h1>
-              <p className="mt-6 text-lg text-hero-muted max-w-2xl leading-relaxed">
-                Dominera sökresultaten i Köping och fyll din bokningskalender med en blixtsnabb hemsida och lokal SEO i världsklass.
-              </p>
-              <Link to="/gratis-seo-analys" className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25">
-                Få en gratis SEO-analys <ArrowRight size={18} />
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-24 bg-background">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">Varför hastighet och mobilvänlighet avgör din ranking</h2>
-            <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
-              <p>De flesta som söker efter en frisör i Köping gör det direkt i farten via sin smartphone, vilket ställer extremt höga krav på din hemsidas hastighet. Genom att optimera din sajt till 100/100 i PageSpeed ser vi till att dina kunder aldrig behöver vänta på att din meny eller dina priser ska laddas.</p>
-              <p>En långsam sida skapar irritation och leder ofta till att kunden väljer en annan salong i Köping som har en mer lättillgänglig webbplats. Med en LCP under 1.5 sekunder garanterar vi en sömlös användarupplevelse som Google premierar med högre placeringar i sökresultaten, vilket direkt ökar antalet bokade tider för din verksamhet.</p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-24 bg-section-alt">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">Optimering för Google Business Profile i Köping</h2>
-            <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
-              <p>För lokala tjänsteföretag som frisörer är integrationen mellan din hemsida och din Google Business Profile (GBP) helt avgörande. Vi ser till att din salong i Köping visas med korrekta öppettider, adress och fina bilder direkt i Google Maps när någon befinner sig i närområdet.</p>
-              <p>Genom att använda strategisk Schema Markup på din webbplats kan vi dessutom visa dina kundrecensioner och ditt betyg direkt i sökresultatet, vilket skapar ett omedelbart förtroende. Lokal SEO för frisörer i Köping handlar om att äga hela sökupplevelsen så att du blir det självklara valet för alla som behöver en klippning eller färgning.</p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-24 bg-background">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">Innehåll som konverterar besökare till lojala kunder</h2>
-            <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
-              <p>En bra hemsida för en frisör i Köping ska inte bara vara tekniskt perfekt, den måste också sälja din expertis genom relevant innehåll. Vi producerar djupa texter på över 800 ord som svarar på kundernas vanligaste frågor om hårvård och trender, vilket bygger din auktoritet som expert i regionen.</p>
-              <p>Genom att använda tydliga Call-To-Action (CTA) punkter som "Boka tid" eller "Se våra priser" guidar vi besökaren genom hela bokningsprocessen utan friktion. Detta fokus på konverteringsdesign gör att din investering i SEO ger en direkt avkastning genom fler nya kunder till salongen i Köping.</p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-24 bg-section-alt">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">Framtidssäker teknik för skönhetsbranschen i Mälardalen</h2>
-            <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
-              <p>När du anlitar LRH Konsult får du tillgång till samma moderna teknik som används av de största globala varumärkena, inklusive React och Next.js. Denna arkitektur gör din hemsida för salongen i Köping betydligt säkrare och snabbare än traditionella lösningar som WordPress.</p>
-              <p>Med vår skräddarsydda utveckling kan vi eliminera onödig kod och bygga en plattform som är optimerad för framtidens krav på digital synlighet och prestanda. Vi är din digitala partner i Västmanland som förstår att din framgång bygger på en kombination av hantverksskicklighet och en tekniskt fulländad digital närvaro.</p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-12 sm:py-16 bg-background text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold font-serif mb-4">Få en kostnadsfri SEO-analys för din salong i Köping</h2>
-          <p className="text-muted-foreground mb-6">Vi granskar din prestanda, dina placeringar och ger dig konkreta tips på fler bokningar.</p>
-          <Link
-            to="/gratis-seo-analys"
-            className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px]"
-          >
-            Få en gratis SEO-analys <ArrowRight size={20} />
-          </Link>
-        </div>
-      </section>
-
-      <Contact />
-    </main>
-    <Footer />
-  </div>
-);
-
+const FrisorKoping = () => <LocalLandingPage config={config} />;
 export default FrisorKoping;
