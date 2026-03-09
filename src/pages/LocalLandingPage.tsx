@@ -189,12 +189,12 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
         {/* Extra body sections */}
         {config.bodyExtraSections?.map((section, idx) => (
           <section key={idx} className={`py-16 sm:py-24 ${idx % 2 === 0 ? "bg-section-alt" : "bg-background"}`}>
-            <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <div className="max-w-[70ch] mx-auto px-4 sm:px-6">
               <AnimatedSection>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">
                   {section.title}
                 </h2>
-                <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
+                <div className="space-y-5 text-muted-foreground leading-[1.7] text-base">
                   {section.paragraphs.map((p, i) => (
                     <p key={i}>{p}</p>
                   ))}
@@ -203,6 +203,24 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
             </div>
           </section>
         ))}
+
+        {/* Projektinsikt – Case Study */}
+        {config.caseStudy && (
+          <section className={`py-16 sm:py-24 ${(config.bodyExtraSections?.length ?? 0) % 2 === 0 ? "bg-section-alt" : "bg-background"}`} aria-labelledby="local-case-heading">
+            <div className="max-w-[70ch] mx-auto px-4 sm:px-6">
+              <AnimatedSection>
+                <h2 id="local-case-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">
+                  {config.caseStudy.title}
+                </h2>
+                <div className="space-y-5 text-muted-foreground leading-[1.7] text-base">
+                  <p><strong className="text-foreground">Utmaning:</strong> {config.caseStudy.problem}</p>
+                  <p><strong className="text-foreground">Lösning:</strong> {config.caseStudy.solution}</p>
+                  <p><strong className="text-foreground">Resultat:</strong> {config.caseStudy.result}</p>
+                </div>
+              </AnimatedSection>
+            </div>
+          </section>
+        )}
 
         {/* FAQ – reuses shared ServiceFAQ with microdata */}
         <ServiceFAQ
