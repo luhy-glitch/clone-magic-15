@@ -172,12 +172,12 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
 
         {/* Body content */}
         <section className="py-16 sm:py-24 bg-background" aria-labelledby="local-body-heading">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <div className="max-w-[70ch] mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <h2 id="local-body-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">
                 {config.bodyTitle}
               </h2>
-              <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
+              <div className="space-y-5 text-muted-foreground leading-[1.7] text-base">
                 {config.bodyParagraphs.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
