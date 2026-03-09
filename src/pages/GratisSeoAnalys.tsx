@@ -17,8 +17,6 @@ const pdfGuideSteps = [
 ];
 
 const GratisSeoAnalys = () => {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
   return (
     <div className="min-h-screen">
       <PageHead
