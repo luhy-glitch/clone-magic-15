@@ -34,6 +34,7 @@ interface LocalPageConfig {
   heroDescription: string;
   serviceKeyword: string;
   icon: LucideIcon;
+  heroFacts?: string[];
   benefits: { title: string; description: string }[];
   bodyTitle: string;
   bodyParagraphs: string[];
