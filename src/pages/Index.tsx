@@ -88,7 +88,7 @@ const Index = () => {
         <Hero />
         <Suspense fallback={null}>
           <Services />
-
+          <Process />
           {/* Mid-page CTA */}
           <section className="py-12 sm:py-16 bg-section-alt text-center">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
