@@ -46,11 +46,20 @@ const config = {
       ],
     },
   ],
+  caseStudy: {
+    title: "Projektinsikt: Redovisningsbyrå i Västerås ökade kundbasen med 60 procent",
+    problem: "En redovisningsbyrå med kontor i centrala Västerås hade en fem år gammal WordPress-sajt som tog 3,8 sekunder att ladda på mobilen. De rankade på sida två för 'redovisningsbyrå Västerås' och 'bokföring Västerås' och förlorade potentiella kunder till tre konkurrerande byråer som syntes högre i sökresultaten.",
+    solution: "Vi byggde en konverteringsoptimerad React-hemsida med dedikerade tjänstesidor för bokföring, lönehantering, årsredovisning och skatterådgivning. Varje sida fick unik content optimerad för specifika söktermer. JSON-LD AccountingService-schema implementerades med prissättning och serviceArea för hela Västerås och Västmanland. Kundrecensioner lades in med Review-schema.",
+    result: "Hemsidan nådde 100/100 i PageSpeed vid lansering. Inom två månader rankade byrån topp 1 för 'redovisningsbyrå Västerås' och topp 3 för 'bokföring Västerås'. Under de första sex månaderna ökade antalet nya kundförfrågningar via hemsidan med 60 procent, och byrån behövde rekrytera ytterligare en redovisningskonsult.",
+  },
   faq: [
-    { question: "Vad kostar en hemsida i Västerås?", answer: "Våra paket börjar från 5 000 kr för enklare hemsidor till mer avancerade lösningar från 15 000 kr. Kontakta oss för en kostnadsfri offert anpassad efter dina specifika behov." },
-    { question: "Hur lång tid tar det att bygga en hemsida i Västerås?", answer: "En standardhemsida tar vanligtvis 2–4 veckor från start till lansering. Mer komplexa projekt med skräddarsydda funktioner kan ta 6–8 veckor." },
-    { question: "Varför är 100/100 PageSpeed viktigt?", answer: "Google använder Core Web Vitals som rankingfaktor. En hemsida med 100/100 laddar snabbare, rankar högre och konverterar bättre – det är en direkt investering i fler kunder." },
-    { question: "Erbjuder ni SEO-tjänster i Västerås?", answer: "Ja, alla våra hemsidor byggs med lokal SEO integrerad från start. Vi erbjuder även dedikerade SEO-paket för företag som vill öka sin organiska synlighet i Västerås och Mälardalen." },
+    { question: "Vad kostar en hemsida i Västerås?", answer: "Våra paket börjar från 5 000 kr för professionella hemsidor till mer avancerade lösningar från 15 000 kr med skräddarsydda funktioner. Kontakta oss för en kostnadsfri offert anpassad efter dina specifika behov." },
+    { question: "Hur lång tid tar det att bygga en hemsida i Västerås?", answer: "En standardhemsida tar vanligtvis 2–4 veckor från start till lansering. Mer komplexa projekt med e-handel eller skräddarsydda funktioner kan ta 6–8 veckor. Vi kommunicerar alltid en tydlig tidplan." },
+    { question: "Varför är 100/100 PageSpeed viktigt för mitt företag?", answer: "Google använder Core Web Vitals som rankingfaktor. En hemsida med 100/100 laddar snabbare, rankar högre och konverterar bättre. Studier visar att varje sekunds fördröjning kostar dig 7 procent i konverteringar." },
+    { question: "Erbjuder ni SEO-tjänster i Västerås?", answer: "Ja, alla våra hemsidor byggs med lokal SEO integrerad från start. Vi erbjuder även dedikerade SEO-paket för företag som vill ha en mer aggressiv strategi för att dominera sökresultaten i Västerås och Mälardalen." },
+    { question: "Kan ni hjälpa mitt företag att sluta betala för Google Ads?", answer: "Organisk SEO kan gradvis minska ditt beroende av betald annonsering. Många av våra kunder i Västerås har kunnat halvera eller helt eliminera sin Google Ads-budget efter att deras organiska ranking förbättrats avsevärt." },
+    { question: "Vad händer efter lansering – erbjuder ni support?", answer: "Ja, vi erbjuder löpande support- och underhållsavtal med prestandaövervakning, säkerhetsuppdateringar, innehållsändringar och kontinuerlig SEO-optimering. Vi är din långsiktiga digitala partner i Västerås." },
+    { question: "Hur skiljer sig era lösningar från en WordPress-byrå i Västerås?", answer: "Våra React-hemsidor når 100/100 i PageSpeed jämfört med typiskt 30-50 för WordPress. Du får bättre säkerhet utan pluginberoenden, snabbare laddningstider, lägre driftskostnader och en kodbas som är byggd specifikt för ditt företag." },
   ],
 };
 
