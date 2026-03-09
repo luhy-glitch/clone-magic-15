@@ -9,6 +9,7 @@ import { ALL_CITIES } from "@/data/cities";
 
 // Lazy-load everything below the fold
 const Services = lazy(() => import("@/components/Services"));
+const Process = lazy(() => import("@/components/Process"));
 const About = lazy(() => import("@/components/About"));
 const Pricing = lazy(() => import("@/components/Pricing"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
