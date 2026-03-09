@@ -65,6 +65,11 @@ const Testimonials = () => {
                   <meta itemProp="ratingValue" content="5" />
                   <meta itemProp="bestRating" content="5" />
                 </div>
+                {t.highlight && (
+                  <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-4 border border-primary/20">
+                    {t.highlight}
+                  </span>
+                )}
                 <p className="text-foreground leading-[1.8] text-base italic mb-4" itemProp="reviewBody">
                   &ldquo;{t.quote}&rdquo;
                 </p>
