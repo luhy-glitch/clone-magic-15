@@ -136,7 +136,7 @@ export default function Hero() {
           <div className="text-3xl font-bold text-primary mb-1 flex items-baseline relative z-10">
             50<span className="text-xl">+</span>
           </div>
-          <span className="text-xs text-muted-foreground font-medium tracking-wide relative z-10">Projekt</span>
+          <span className="text-xs text-muted-foreground font-medium tracking-wide relative z-10">Projekt levererade</span>
         </div>
 
         <div className="bg-card/30 border border-border rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-2xl shadow-xl relative overflow-hidden group hover:bg-card/50 transition-all duration-300">
@@ -149,18 +149,28 @@ export default function Hero() {
 
         <div className="bg-card/30 border border-border rounded-2xl p-6 w-[160px] flex flex-col items-center justify-center backdrop-blur-2xl shadow-xl relative overflow-hidden group hover:bg-card/50 transition-all duration-300">
           <div className="text-2xl font-bold text-primary mb-2 flex items-baseline relative z-10">
-            5<span className="text-lg ml-1">+</span>
+            100<span className="text-lg">/100</span>
           </div>
-          <span className="text-xs text-muted-foreground mb-3 font-medium tracking-wide text-center relative z-10">
-            År i branschen
+          <span className="text-xs text-muted-foreground font-medium tracking-wide text-center relative z-10">
+            Google PageSpeed
           </span>
-          <div className="flex gap-1 text-primary relative z-10">
+          <div className="flex gap-1 text-primary relative z-10 mt-2">
             <Star size={12} fill="currentColor" />
             <Star size={12} fill="currentColor" />
             <Star size={12} fill="currentColor" />
             <Star size={12} fill="currentColor" />
             <Star size={12} fill="currentColor" />
           </div>
+        </div>
+      </div>
+
+      {/* Trust Logos */}
+      <div className="mt-14 w-full max-w-3xl relative z-10 text-center">
+        <p className="text-xs text-muted-foreground uppercase tracking-widest mb-6 font-medium">Företag som valt LRH Konsult</p>
+        <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 opacity-50">
+          {["Johansson Redovisning", "Lindströms Bygg", "Café Solsidan", "Bergströms El", "Nilssons Trädgård"].map((name) => (
+            <span key={name} className="text-sm font-serif font-medium text-muted-foreground whitespace-nowrap">{name}</span>
+          ))}
         </div>
       </div>
     </section>
