@@ -18,6 +18,13 @@ interface ExtraSection {
   paragraphs: string[];
 }
 
+interface CaseStudy {
+  title: string;
+  problem: string;
+  solution: string;
+  result: string;
+}
+
 interface LocalPageConfig {
   city: string;
   slug: string;
@@ -31,6 +38,7 @@ interface LocalPageConfig {
   bodyTitle: string;
   bodyParagraphs: string[];
   bodyExtraSections?: ExtraSection[];
+  caseStudy?: CaseStudy;
   faq: FAQItem[];
 }
 
