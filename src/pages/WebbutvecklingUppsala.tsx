@@ -26,23 +26,42 @@ const config = {
     {
       title: "Lokal SEO-strategi för Uppsalas konkurrensutsatta marknad",
       paragraphs: [
-        "Att ranka på Google i Uppsala kräver mer än en snygg hemsida. Det kräver en genomtänkt lokal SEO-strategi med korrekt JSON-LD strukturerad data, optimerade metadata och en intern länkstruktur som fördelar auktoritet effektivt. Vi analyserar dina konkurrenter i Uppsala, identifierar sökord med hög kommersiell intention och bygger en strategi som positionerar dig som det självklara valet.",
-        "Vi implementerar Google Business-optimering, lokala landningssidor och innehållsstrategier som bygger din digitala auktoritet i Uppsala över tid. SEO är en långsiktig investering – och vi är den partner som ser till att den ger avkastning.",
+        "Att ranka på Google i Uppsala kräver mer än en snygg hemsida – det kräver en sofistikerad lokal SEO-strategi. Med hundratals företag som konkurrerar om samma söktermer är den tekniska grunden avgörande. Vi implementerar korrekt JSON-LD strukturerad data med LocalBusiness-schema, optimerade metadata och en intern länkstruktur som fördelar auktoritet effektivt mellan dina viktigaste sidor.",
+        "Vi analyserar dina konkurrenter i Uppsala på djupet, identifierar sökord med hög kommersiell intention och bygger en innehållsstrategi som positionerar dig som det självklara valet. Uppsalas studentpopulation skapar dessutom unika sökmönster – en restaurang nära Carolina Rediviva har andra optimeringsmöjligheter än en bilverkstad i Boländerna.",
+        "Google Business-optimering är en central del av vår strategi i Uppsala. Vi säkerställer att din profil har rätt kategorier, professionella bilder, uppdaterade öppettider och en strategi för att bygga autentiska kundrecensioner. I en stad som Uppsala, där kartpaketet ofta dominerar ovanför de organiska resultaten, kan en väloptimerad Google Business-profil vara skillnaden mellan synlighet och osynlighet.",
       ],
     },
     {
-      title: "Från Uppsala till hela Mälardalen – regional räckvidd",
+      title: "Från Uppsala till hela Mälardalen – regional räckvidd med lokal precision",
       paragraphs: [
-        "Uppsala är navet i en region med över en miljon invånare. Med rätt digital strategi kan ditt företag nå kunder inte bara i Uppsala stad utan i hela Uppsala län och Mälardalen. Vi bygger hemsidor som fungerar som digitala magneter och attraherar organisk trafik från hela regionen.",
-        "Vår expertis sträcker sig över hela Mälardalen – från Västerås och Enköping till Sala och Köping. Denna regionala kunskap gör oss till den ideala partnern för företag i Uppsala som vill expandera sin digitala räckvidd.",
+        "Uppsala är navet i en region med över en miljon invånare. Med rätt digital strategi kan ditt företag nå kunder inte bara i Uppsala stad utan i hela Uppsala län, Knivsta, Enköping och ner mot Mälardalen. Vi bygger hemsidor som fungerar som digitala magneter och attraherar organisk trafik från hela regionen.",
+        "Vår unika position med expertis i hela Mälardalen – från Västerås och Enköping till Sala och Köping – ger oss en insikt i regionala sökmönster som få andra byråer kan matcha. Vi förstår att en konsult i Uppsala som vill nå kunder i Stockholm har andra behov än en hantverkare som opererar inom 5 mils radie.",
+        "Vi skapar dedikerade landningssidor för de geografiska områden du vill dominera, var och en optimerad med unik content och lokalt relevant strukturerad data. Denna strategi bygger topisk och geografisk auktoritet som stärks över tid.",
+      ],
+    },
+    {
+      title: "Uppsalas tech-scen förtjänar tech-först-webbutveckling",
+      paragraphs: [
+        "Uppsala är hem för ett av Sveriges mest dynamiska tech-ekosystem, med företag som vuxit ur universitetet och Science Park. Ändå har många lokala tjänsteföretag och restauranger hemsidor byggda med WordPress-mallar som inte ens klarar grundläggande prestandatester. Kontrasten är slående – och det skapar en möjlighet.",
+        "Vi erbjuder tech-först-webbutveckling som matchar Uppsalas ambitionsnivå. Server-side rendering med Next.js, TypeScript för typesäker kod, automatisk koddelning och inkrementell statisk regenerering. Bilder i AVIF-format, fonter med preload och font-display swap, och CSS som inlinas i HTML för omedelbar rendering. Resultatet är hemsidor som laddar snabbare än blinkat.",
+        "För tech-bolag och startups i Uppsala erbjuder vi dessutom headless CMS-lösningar som separerar innehåll från presentation. Detta ger dina content-creators friheten att publicera utan att behöva bry sig om tekniken, samtidigt som frontend-prestandan förblir perfekt.",
       ],
     },
   ],
+  caseStudy: {
+    title: "Projektinsikt: Restauranggrupp i Uppsala fyrdubblade lunchbokningarna",
+    problem: "En restauranggrupp med tre lokaler i centrala Uppsala hade separata WordPress-sajter som laddade långsamt och rankade på sida 2-3 för nyckeltermer som 'restaurang Uppsala centrum' och 'lunch Uppsala'. De betalade 25 000 kr/månad i Google Ads för att kompensera den svaga organiska synligheten.",
+    solution: "Vi konsoliderade alla tre restauranger till en snabb React-hemsida med dedikerade sidor per lokal, JSON-LD Restaurant-schema med menyer och öppettider, och en lunchmenysida som uppdaterades dagligen. Intern länkning mellan restaurangerna byggde samlad auktoritet.",
+    result: "Inom tre månader rankade alla tre restauranger topp 3 för sina respektive lunchrelaterade söktermer. Lunchbokningarna via hemsidan fyrdubblade och Google Ads-budgeten kunde reduceras med 80 procent. Den organiska trafiken ökade med 340 procent jämfört med de tidigare WordPress-sajterna.",
+  },
   faq: [
-    { question: "Vad kostar en hemsida i Uppsala?", answer: "Våra paket börjar från 5 000 kr för enklare hemsidor till premiumlösningar från 25 000 kr. Vi anpassar alltid efter dina specifika behov." },
-    { question: "Hur snabbt kan min hemsida vara klar?", answer: "En standardhemsida tar 2–4 veckor. Mer avancerade projekt med e-handel kan ta 4–8 veckor." },
-    { question: "Varför ska jag välja LRH Konsult framför en byrå i Uppsala?", answer: "Vi erbjuder samma tekniska kvalitet som storstadsbyråer men med personlig service och konkurrenskraftiga priser. Våra hemsidor når konsekvent 100/100 PageSpeed." },
-    { question: "Erbjuder ni SEO-optimering separat?", answer: "Ja, vi erbjuder både teknisk SEO och lokal sökmotoroptimering som separata tjänster. Kontakta oss för mer information." },
+    { question: "Vad kostar en hemsida i Uppsala?", answer: "Våra paket börjar från 5 000 kr för enklare hemsidor till premiumlösningar från 25 000 kr med avancerad funktionalitet. Vi anpassar alltid efter dina specifika behov och din branschs krav i Uppsala." },
+    { question: "Hur snabbt kan min hemsida vara klar?", answer: "En standardhemsida tar 2–4 veckor. Mer avancerade projekt med e-handel, bokningssystem eller headless CMS kan ta 4–8 veckor. Vi kommunicerar alltid en tydlig tidplan från start." },
+    { question: "Varför ska jag välja LRH Konsult framför en byrå i Uppsala?", answer: "Vi erbjuder samma tekniska kvalitet som storstadsbyråer men med personlig service och konkurrenskraftiga priser. Våra hemsidor når konsekvent 100/100 PageSpeed – något som de flesta byråer i Uppsala inte kan garantera." },
+    { question: "Erbjuder ni SEO-optimering som separat tjänst?", answer: "Ja, vi erbjuder både teknisk SEO och lokal sökmotoroptimering som fristående tjänster. Vi kan optimera din befintliga hemsida eller kombinera SEO med en nyutveckling." },
+    { question: "Kan ni hjälpa restauranger i Uppsala med digital synlighet?", answer: "Absolut! Vi har specifik erfarenhet av restaurang-SEO i Uppsala med JSON-LD Restaurant-schema, menyoptimering och Google Business-strategier. Vi vet vilka söktermer som konverterar i restaurangbranschen." },
+    { question: "Hur hanterar ni den hårda konkurrensen i Uppsala?", answer: "Genom teknisk överlägsenhet. Medan konkurrenternas sajter kämpar med 40-60 i PageSpeed levererar vi 100/100. Kombinerat med strategisk lokal SEO ger detta en omedelbar konkurrensfördel även i Uppsalas tuffa marknad." },
+    { question: "Erbjuder ni löpande underhåll och support?", answer: "Ja, vi erbjuder supportavtal som inkluderar prestandaövervakning, säkerhetsuppdateringar, innehållsändringar och löpande SEO-optimering. Vi är din långsiktiga digitala partner i Uppsala." },
   ],
 };
 
