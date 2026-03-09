@@ -46,11 +46,20 @@ const config = {
       ],
     },
   ],
+  caseStudy: {
+    title: "Projektinsikt: Bilverkstad i Köping gick från sida 4 till topp 1 på Google",
+    problem: "En familjeägd bilverkstad i Köping med tre mekaniker och 30 års erfarenhet hade en statisk HTML-hemsida från 2014 utan mobilanpassning. De rankade på sida 4 för 'bilverkstad Köping' och fick inga digitala kundförfrågningar. Nyare kedjor med starkare digital närvaro tog allt fler av deras potentiella kunder.",
+    solution: "Vi genomförde en komplett SEO-transformation: ny blixtsnabb React-hemsida med tjänstesidor för besiktning, service, däckbyte och plåtarbeten. JSON-LD AutoRepair-schema med priser, öppettider och serviceArea implementerades. Vi skapade lokalt förankrat innehåll om vanliga bilproblem i Köpingsområdet och optimerade Google Business-profilen med professionella bilder och uppdaterade tjänstebeskrivningar.",
+    result: "Hemsidan rankade topp 1 för 'bilverkstad Köping' inom tio veckor och topp 3 för 'bilservice Västmanland'. Google Business-profilen genererade 40+ samtal per månad. Verkstaden rapporterade en ökning på 85 procent i nya kunder under de första sex månaderna och kunde utöka med en fjärde mekaniker.",
+  },
   faq: [
-    { question: "Hur mycket kostar SEO i Köping?", answer: "Vi erbjuder skräddarsydda SEO-paket från 3 000 kr/månad, anpassade efter ditt företags behov, konkurrenssituation och budget i Köping." },
-    { question: "Hur lång tid tar det att se resultat av SEO i Köping?", answer: "Första förbättringarna syns inom 2–3 månader. Mer konkurrenskraftiga sökord i Köping kan ta 6–12 månader att ranka för, men tekniska förbättringar ger ofta omedelbar effekt." },
-    { question: "Behöver jag en ny hemsida för bättre SEO?", answer: "Inte nödvändigtvis. Vi kan optimera din befintliga sajt. Men om tekniken är föråldrad eller sajten är byggd på en långsam plattform kan en ny hemsida ge markant bättre resultat." },
-    { question: "Vad skiljer er från andra SEO-byråer?", answer: "Vi är lokalt förankrade i Västmanland med djup kunskap om den regionala marknaden. Vi jobbar transparent med mätbara resultat, ingen bindningstid och fokuserar på teknisk SEO som ger bestående resultat." },
+    { question: "Hur mycket kostar SEO i Köping?", answer: "Vi erbjuder skräddarsydda SEO-paket från 3 000 kr/månad, anpassade efter ditt företags behov, konkurrenssituation och budget i Köping. Engångsoptimering av en befintlig hemsida börjar från 5 000 kr." },
+    { question: "Hur lång tid tar det att se resultat av SEO i Köping?", answer: "Tekniska förbättringar ger ofta omedelbar effekt på PageSpeed och indexering. Första rankingförbättringarna syns inom 2–3 månader. Mer konkurrenskraftiga sökord i Köping kan ta 6–12 månader att nå toppen för." },
+    { question: "Behöver jag en ny hemsida för bättre SEO?", answer: "Inte nödvändigtvis. Vi kan optimera din befintliga sajt. Men om tekniken är föråldrad, sajten bygger på WordPress med tunga plugins eller saknar mobilanpassning kan en ny hemsida ge markant bättre resultat till ett rimligt pris." },
+    { question: "Vad skiljer er från andra SEO-byråer som erbjuder tjänster i Köping?", answer: "Vi är lokalt förankrade i Västmanland med djup kunskap om den regionala marknaden. Vi jobbar transparent med mätbara resultat, erbjuder ingen bindningstid och fokuserar på teknisk SEO som ger bestående resultat – inte kortsiktiga genvägar." },
+    { question: "Kan jag se exakt vad ni gör varje månad?", answer: "Ja, vi levererar detaljerade månadsrapporter som visar rankingförändringar, organisk trafik, genomförda optimeringar och planerade åtgärder. Full transparens är grundläggande för oss – du vet alltid vad din investering ger." },
+    { question: "Fungerar SEO för alla branscher i Köping?", answer: "Ja, lokal SEO fungerar för alla branscher – från bilverkstäder och frisörer till advokater och restauranger. Strategin anpassas efter din branschs specifika söklandskap och konkurrensintensitet i Köping." },
+    { question: "Kan ni hjälpa med Google Ads parallellt med SEO i Köping?", answer: "Ja, vi kan köra Google Ads-kampanjer som komplement medan SEO-arbetet bygger upp organisk synlighet. Målet är att gradvis minska annonsberoendet i takt med att du rankar högre – så att din marknadsbudget ger bättre ROI." },
   ],
 };
 

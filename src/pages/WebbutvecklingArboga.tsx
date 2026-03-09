@@ -46,11 +46,20 @@ const config = {
       ],
     },
   ],
+  caseStudy: {
+    title: "Projektinsikt: Restaurang i Arboga tredubblad sin lunchgästvolym online",
+    problem: "En restaurang i Arboga med hemlagad husmanskost och daglig lunch hade ingen digital närvaro utöver en sporadiskt uppdaterad Facebook-sida. De rankade inte alls för 'restaurang Arboga', 'lunch Arboga' eller 'mat Arboga' och missade den ständigt växande gruppen kunder som söker restauranger via Google istället för sociala medier.",
+    solution: "Vi skapade en visuellt tilltalande React-hemsida med dagens lunch som uppdaterades dagligen, meny, kontaktinformation och vägbeskrivning med Google Maps-integration. JSON-LD Restaurant-schema med öppettider, prisintervall och meny implementerades. Vi skapade även en enkel blogg med 'Veckans lunch i Arboga'-inlägg optimerade för lokala söktermer.",
+    result: "Hemsidan rankade topp 1 för 'lunch Arboga' och 'restaurang Arboga' inom sex veckor. Restaurangen rapporterade att nya gäster som hittade dem via Google ökade med över 200 procent under de första tre månaderna. Lunchservicen gick från att ha lediga bord till att behöva reservation på populära dagar.",
+  },
   faq: [
-    { question: "Behöver mitt företag i Arboga verkligen en ny hemsida?", answer: "Om din nuvarande hemsida är långsam, inte mobilanpassad eller inte rankar på Google – ja. En modern hemsida kan dramatiskt öka din synlighet och kundtillströmning." },
-    { question: "Vad kostar en hemsida för företag i Arboga?", answer: "Vi erbjuder paket från 5 000 kr. Priset baseras på projektets omfattning och dina specifika behov. Kontakta oss för en kostnadsfri offert." },
-    { question: "Hur snabbt kan min nya hemsida vara klar?", answer: "En standardhemsida tar 2–4 veckor. Vi prioriterar kvalitet och prestanda i varje steg av processen." },
-    { question: "Arbetar ni med företag utanför Arboga?", answer: "Ja, vi hjälper företag i hela Västmanland och Mälardalen. Vi erbjuder både fysiska och digitala möten beroende på vad som passar bäst." },
+    { question: "Behöver mitt företag i Arboga verkligen en ny hemsida?", answer: "Om din nuvarande hemsida är långsam, inte mobilanpassad eller inte rankar på Google – ja. En modern hemsida kan dramatiskt öka din synlighet och kundtillströmning. Och om du inte har någon hemsida alls missar du varje Google-sökning." },
+    { question: "Vad kostar en hemsida för företag i Arboga?", answer: "Vi erbjuder paket från 5 000 kr för professionella hemsidor med SEO-optimering. Priset baseras på projektets omfattning och dina specifika behov. Kontakta oss för en kostnadsfri offert." },
+    { question: "Hur snabbt kan min nya hemsida vara klar?", answer: "En standardhemsida tar 2–4 veckor från godkänd design till lansering. Enklare presentationssidor kan vara klara ännu snabbare. Vi prioriterar kvalitet och prestanda i varje steg." },
+    { question: "Arbetar ni med företag utanför Arboga?", answer: "Ja, vi hjälper företag i hela Västmanland och Mälardalen – från Arboga och Kungsör till Köping, Västerås och bortom. Vi erbjuder både fysiska och digitala möten beroende på vad som passar bäst." },
+    { question: "Kan ni hjälpa restauranger i Arboga med digital synlighet?", answer: "Absolut! Vi har specifik erfarenhet av restaurang-SEO med JSON-LD Restaurant-schema, menyoptimering, Google Business-profiler och strategier för att synas i 'restaurang nära mig'-sökningar." },
+    { question: "Vad innebär mobil-först-indexering för mitt företag?", answer: "Det innebär att Google bedömer din ranking baserat på mobilversionen av din hemsida. Om mobilupplevelsen är dålig – långsam, svårnavigerad eller med för liten text – påverkas din ranking negativt, oavsett hur bra desktopversionen ser ut." },
+    { question: "Erbjuder ni löpande support efter lansering i Arboga?", answer: "Ja, vi erbjuder flexibla supportavtal som inkluderar teknisk underhåll, innehållsuppdateringar, prestandaövervakning och löpande SEO-optimering. Vi vill vara din långsiktiga digitala partner." },
   ],
 };
 

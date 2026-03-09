@@ -45,11 +45,20 @@ const config = {
       ],
     },
   ],
+  caseStudy: {
+    title: "Projektinsikt: Frisörsalong i Sala fyllde bokningskalendern på tre veckor",
+    problem: "En etablerad frisörsalong i centrala Sala med tre stylister förlitade sig helt på drop-in-kunder och Instagram för marknadsföring. De hade ingen hemsida och var osynliga för Google-sökningar som 'frisör Sala', 'herrklippning Sala' och 'boka frisör Sala'. Bokningskalendern hade luckor, särskilt på vardagar.",
+    solution: "Vi byggde en visuell React-hemsida med online-bokningsfunktion, prislista, stylistpresentationer och ett galleri med faktiska klippningar. JSON-LD HairSalon-schema implementerades med öppettider, priser och adress. Varje tjänst (herrklippning, damklippning, slingor, färgning) fick en egen optimerad landningssida.",
+    result: "Hemsidan rankade topp 1 för 'frisör Sala' inom tre veckor. Online-bokningarna tog fart direkt – inom den första månaden kom 45 procent av alla bokningar via hemsidan istället för telefon. Vardagsluckorna fylldes och salongen rapporterade sin bästa omsättningsmånad någonsin under den tredje månaden.",
+  },
   faq: [
-    { question: "Vad kostar en hemsida i Sala?", answer: "Vi erbjuder paket från 5 000 kr till 25 000 kr beroende på projektets storlek och komplexitet. Kontakta oss för en offert anpassad för ditt företag i Sala." },
-    { question: "Hur snabbt kan ni leverera en hemsida i Sala?", answer: "En enkel hemsida kan vara klar inom 2–3 veckor. Mer komplexa projekt med skräddarsydda funktioner tar 4–8 veckor." },
-    { question: "Kan ni hjälpa med SEO för företag i Sala?", answer: "Absolut! Alla hemsidor vi bygger är SEO-optimerade från grunden med strukturerad data, rätt metadata och lokal optimering." },
-    { question: "Hur mäter ni att designen verkligen konverterar?", answer: "Vi analyserar besökardata, klickmönster och konverteringsgrad för att kontinuerligt optimera din hemsida efter lansering. Data ljuger aldrig." },
+    { question: "Vad kostar en hemsida i Sala?", answer: "Vi erbjuder paket från 5 000 kr till 25 000 kr beroende på projektets storlek och komplexitet. Hemsidor med bokningsfunktion eller e-handel prissätts individuellt. Kontakta oss för en offert anpassad för ditt företag i Sala." },
+    { question: "Hur snabbt kan ni leverera en hemsida i Sala?", answer: "En enkel presentationshemsida kan vara klar inom 2–3 veckor. Mer komplexa projekt med bokningssystem, bildgallerier eller e-handel tar 4–8 veckor. Vi prioriterar alltid kvalitet och prestanda." },
+    { question: "Kan ni hjälpa med SEO för företag i Sala?", answer: "Absolut! Alla hemsidor vi bygger är SEO-optimerade från grunden med JSON-LD strukturerad data, optimerade metadata och lokal optimering som gör att du syns i Sala och hela Västmanland." },
+    { question: "Hur mäter ni att designen verkligen konverterar?", answer: "Vi analyserar besökardata, klickmönster och konverteringsgrad med verktyg som Google Analytics. Efter lansering kan vi A/B-testa olika element för att kontinuerligt förbättra konverteringsgraden. Data ljuger aldrig." },
+    { question: "Kan ni bygga en hemsida med online-bokning för mitt företag i Sala?", answer: "Ja, vi bygger skräddarsydda bokningslösningar som integreras sömlöst i din hemsida. Det kan handla om tidsbokningar för frisörer, tidsbokning för konsulter eller restaurangbokningar – vi anpassar efter ditt behov." },
+    { question: "Behöver jag en hemsida om jag redan syns bra på Instagram?", answer: "Ja! Instagram är bra för engagemang, men Google indexerar inte Instagram-inlägg. En hemsida fångar kunder som aktivt söker efter dina tjänster – de mest köpredo kunderna. De två kanalerna kompletterar varandra." },
+    { question: "Erbjuder ni löpande support för hemsidor i Sala?", answer: "Ja, vi erbjuder flexibla supportavtal med teknisk underhåll, innehållsuppdateringar, prestandaövervakning och SEO-optimering. Vi finns här som din långsiktiga digitala partner i Sala." },
   ],
 };
 
