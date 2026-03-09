@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Dominera sökresultaten i Eskilstuna",
   heroDescription: "Eskilstuna är en viktig knutpunkt i Södermanland med över 100 000 invånare och en snabbt växande företagsscen. Vi bygger hemsidor som ger ditt företag fler kunder – med garanterat 100/100 PageSpeed och en SEO-strategi som placerar dig överst i sökresultaten.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed i Södermanlands största stad",
+    "Byggföretag dubblerade offertförfrågningarna",
+    "TBT på 0 ms och LCP under 1,2 sekunder",
+    "Digital hållbarhet – hemsidor under 100 kB",
+  ],
   benefits: [
     { title: "Regional expertis", description: "Vi förstår den lokala marknaden i Eskilstuna och Södermanland och bygger hemsidor som talar direkt till din målgrupp." },
     { title: "Prestanda i världsklass", description: "Våra hemsidor når konsekvent 100/100 i Google PageSpeed, vilket ger dig en avgörande fördel i sökresultaten." },

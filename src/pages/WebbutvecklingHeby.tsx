@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Webbutveckling & SEO i Heby",
   heroDescription: "Vi hjälper företag i Heby att synas online med blixtsnabba hemsidor och lokal SEO. Byggda i React med 100/100 PageSpeed – din digitala partner i Mälardalen.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – optimerat för varierande bandbredd i Heby",
+    "Gårdsbutiker och lantbruk når kunder i Uppsala och Sala",
+    "AVIF-bilder med responsiva srcset för snabb rendering",
+    "Topp 1 för 'gårdsbutik Heby' inom fyra veckor",
+  ],
   benefits: [
     { title: "Lokalt fokus", description: "Vi förstår Hebys unika position i gränslandet mellan Uppsala och Västmanland och bygger hemsidor som når kunder i hela regionen." },
     { title: "100/100 PageSpeed", description: "Garanterat toppresultat i Google PageSpeed Insights som ger dig en omedelbar konkurrensfördel." },

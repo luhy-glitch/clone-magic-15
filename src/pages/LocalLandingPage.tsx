@@ -34,6 +34,7 @@ interface LocalPageConfig {
   heroDescription: string;
   serviceKeyword: string;
   icon: LucideIcon;
+  heroFacts?: string[];
   benefits: { title: string; description: string }[];
   bodyTitle: string;
   bodyParagraphs: string[];
@@ -120,12 +121,12 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
 
                 {/* Snabba fakta – GEO snippet hook */}
                 <ul className="mt-6 space-y-2">
-                  {[
+                  {(config.heroFacts || [
                     `100/100 PageSpeed – snabbast i ${config.city}`,
-                    "Lokal SEO med JSON-LD & Google Business",
-                    "React & Next.js – framtidssäker teknik",
+                    `Lokal SEO anpassad för ${config.city}`,
+                    `Modern React-teknik utan WordPress-begränsningar`,
                     `Företag i ${config.city} får fler kunder online`,
-                  ].map((fact, i) => (
+                  ]).map((fact, i) => (
                     <li key={i} className="flex items-center gap-2.5 text-sm text-hero-muted/90">
                       <CheckCircle size={14} className="text-primary shrink-0" />
                       {fact}

@@ -10,9 +10,15 @@ const config = {
   heroHeading: "Webbutveckling & SEO i Hallstahammar",
   heroDescription: "Vi hjälper företag i Hallstahammar att bygga blixtsnabba hemsidor som rankar högst på Google. Garanterat 100/100 PageSpeed och mätbara resultat – din lokala digitala partner i Västmanland.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – snabbast längs E18-korridoren",
+    "JSON-LD ProductSchema & LocalBusiness för tillverkare",
+    "Migrering från WordPress utan SEO-förlust",
+    "Nå kunder i hela Västerås-Köping-korridoren",
+  ],
   benefits: [
     { title: "Lokalt i Hallstahammar", description: "Vi förstår den lokala marknaden i Hallstahammar och skräddarsyr lösningar som ger ditt företag en tydlig konkurrensfördel." },
-    { title: "100/100 PageSpeed", description: "Varje hemsida vi bygger når konsekvent toppresultat i Google PageSpeed Insights, vilket ger dig en direkt rankingfördel." },
+    { title: "100/100 PageSpeed", description: "Perfekta resultat i Google PageSpeed ger dig en direkt rankingfördel mot konkurrenter med äldre, långsammare sajter." },
     { title: "SEO från grunden", description: "Lokal SEO, strukturerad data och teknisk optimering är integrerat i varje rad kod vi skriver." },
     { title: "React & Next.js", description: "Framtidssäkra tekniker som ger en skalbar plattform utan begränsningar." },
   ],

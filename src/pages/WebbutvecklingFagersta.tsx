@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Få en modern hemsida som faktiskt säljer i Fagersta",
   heroDescription: "Fagersta har en stolt industritradition och en växande företagsscen. Det är dags att din digitala närvaro matchar ambitionen. Vi bygger blixtsnabba hemsidor som rankar högt på Google och ger ditt företag fler kunder.",
   icon: Code2,
+  heroFacts: [
+    "100/100 PageSpeed – från legacy till toppresultat",
+    "Industriservice i Fagersta fick kunder i hela norra Mälardalen",
+    "Semantisk HTML med korrekt heading-hierarki och ARIA",
+    "UNESCO-kulturarv som turism-SEO med Event-schema",
+  ],
   benefits: [
     { title: "Lokal förståelse", description: "Vi känner Västmanland och förstår de specifika utmaningarna och möjligheterna för företag i Fagersta och norra Västmanland." },
     { title: "Från legacy till modern", description: "Vi migrerar din hemsida från tunga, föråldrade plattformar till en blixtsnabb React-lösning utan att förlora innehåll eller SEO-värde." },

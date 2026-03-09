@@ -10,6 +10,12 @@ const config = {
   heroHeading: "Få en modern hemsida som faktiskt säljer i Köping",
   heroDescription: "Att synas på Google i Köping är inte en fråga om tur – det är en fråga om rätt teknik och strategi. Vi hjälper företag att gå från osynlighet till att dominera sökresultaten och få fler kunder varje månad.",
   icon: Search,
+  heroFacts: [
+    "Topp 1-ranking för 'bilverkstad Köping' inom 10 veckor",
+    "Fullständig teknisk SEO-audit med åtgärdsplan",
+    "JSON-LD AutoRepair, FAQ & LocalBusiness-schema",
+    "Mätbara KPI:er med månatliga rankingrapporter",
+  ],
   benefits: [
     { title: "Lokal SEO i Köping", description: "Vi optimerar din närvaro för lokala sökningar så att kunder i Köping hittar dig först på Google och Google Maps." },
     { title: "Teknisk SEO-expertis", description: "Djupgående analys av webbplatsstruktur, hastighet, indexering och Core Web Vitals för att eliminera tekniska hinder." },
