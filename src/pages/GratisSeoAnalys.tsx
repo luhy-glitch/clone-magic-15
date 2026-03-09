@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
@@ -17,8 +17,6 @@ const pdfGuideSteps = [
 ];
 
 const GratisSeoAnalys = () => {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
   return (
     <div className="min-h-screen">
       <PageHead
