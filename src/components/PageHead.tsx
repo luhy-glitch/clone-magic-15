@@ -94,11 +94,69 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs 
       breadcrumbEl.remove();
     }
 
+    // LocalBusiness JSON-LD
+    const localBusinessId = "local-business-json-ld";
+    let localBusinessEl = document.getElementById(localBusinessId) as HTMLScriptElement | null;
+    if (!localBusinessEl) {
+      localBusinessEl = document.createElement("script");
+      localBusinessEl.id = localBusinessId;
+      localBusinessEl.type = "application/ld+json";
+      document.head.appendChild(localBusinessEl);
+    }
+    localBusinessEl.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "LRH Konsult",
+      "url": "https://www.lrhkonsult.se",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Västerås",
+        "addressRegion": "Västmanland",
+        "addressCountry": "SE"
+      },
+      "areaServed": ["Västerås", "Köping", "Sala", "Enköping", "Eskilstuna"],
+      "priceRange": "$$",
+      "description": "Webbutveckling och SEO-optimering för företag i Västmanland"
+    });
+
+    // Default BreadcrumbList JSON-LD
+    const defaultBreadcrumbId = "default-breadcrumb-json-ld";
+    let defaultBreadcrumbEl = document.getElementById(defaultBreadcrumbId) as HTMLScriptElement | null;
+    if (!defaultBreadcrumbEl) {
+      defaultBreadcrumbEl = document.createElement("script");
+      defaultBreadcrumbEl.id = defaultBreadcrumbId;
+      defaultBreadcrumbEl.type = "application/ld+json";
+      document.head.appendChild(defaultBreadcrumbEl);
+    }
+    defaultBreadcrumbEl.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hem",
+          "item": "https://www.lrhkonsult.se"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": title,
+          "item": url
+        }
+      ]
+    });
+
     return () => {
       const el = document.getElementById(jsonLdId);
       if (el) el.remove();
       const bEl = document.getElementById(breadcrumbId);
       if (bEl) bEl.remove();
+      const lbEl = document.getElementById(localBusinessId);
+      if (lbEl) lbEl.remove();
+      const dbEl = document.getElementById(defaultBreadcrumbId);
+      if (dbEl) dbEl.remove();
     };
   }, [title, description, url, jsonLd, breadcrumbs]);
 
