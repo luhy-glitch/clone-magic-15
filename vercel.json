@@ -10,7 +10,7 @@
     },
     { "source": "/webbutveckling", "destination": "/tjanster/webbutveckling", "permanent": true },
     { "source": "/seo-optimering", "destination": "/tjanster/seo-optimering", "permanent": true },
-    { "source": "/:path+/", "destination": "/:path+", "permanent": true }
+    { "source": "/:path+\/", "destination": "/:path+", "permanent": true }
   ],
   "headers": [
     {
@@ -48,8 +48,5 @@
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
     }
-  ],
-  "rewrites": [
-    { "source": "/((?!assets/|robots\\.txt|favicon\\.png|og-image\\.png|images/|sitemap\\.xml|9406de9457c9438591b38836b21210e7\\.txt).*)", "destination": "/index.html" }
   ]
 }
