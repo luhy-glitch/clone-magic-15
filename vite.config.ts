@@ -95,7 +95,54 @@ function ssgPlugin(): Plugin {
         // Clean up <noscript> wrappers left by deferCssPlugin
         template = template.replace(/<noscript><link\b[^>]*\.css[^>]*><\/noscript>/gi, "");
 
-        const routes = ["/", "/webbutveckling", "/seo-optimering", "/om-mig", "/blogg", "/blogg/oka-hemsidans-hastighet", "/blogg/lokal-seo-smaforetag", "/blogg/react-vs-wordpress", "/kontakt", "/integritetspolicy"];
+        const routes = [
+          // Core
+          "/",
+          "/om-mig",
+          "/kontakt",
+          "/integritetspolicy",
+          "/case",
+          "/gratis-seo-analys",
+
+          // Tjänster
+          "/tjanster/webbutveckling",
+          "/tjanster/webbdesign",
+          "/tjanster/seo-optimering",
+          "/tjanster/wordpress-losningar",
+          "/tjanster/underhall-support",
+          "/tjanster/prestanda-optimering",
+          "/tjanster/google-ads",
+          "/tjanster/vad-kostar-en-hemsida-2026",
+
+          // Blogg
+          "/blogg",
+          "/blogg/oka-hemsidans-hastighet",
+          "/blogg/lokal-seo-smaforetag",
+          "/blogg/react-vs-wordpress",
+
+          // Stadssidor
+          "/webbutveckling-vasteras",
+          "/webbutveckling-enkoping",
+          "/webbutveckling-eskilstuna",
+          "/webbutveckling-arboga",
+          "/webbutveckling-fagersta",
+          "/webbutveckling-hallstahammar",
+          "/webbutveckling-kungsor",
+          "/webbutveckling-surahammar",
+          "/webbutveckling-heby",
+          "/webbutveckling-norberg",
+          "/webbutveckling-skinnskatteberg",
+          "/webbutveckling-uppsala",
+          "/webbutveckling-orebro",
+          "/seo-koping",
+          "/hemsidor-sala",
+
+          // Nischsidor
+          "/hemsidor-bygg-hantverkare",
+          "/digital-marknadsforing-butiker",
+          "/restauranger-sala",
+          "/frisor-koping",
+        ];
 
         for (const route of routes) {
           const appHtml = render(route);
