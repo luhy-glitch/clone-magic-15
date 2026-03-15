@@ -1,7 +1,7 @@
-import { createRequire } from "module";
-import { fileURLToPath, pathToFileURL } from "url";
+import { pathToFileURL } from "url";
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
@@ -37,7 +37,7 @@ if (!g.addEventListener) g.addEventListener = () => {};
 if (!g.removeEventListener) g.removeEventListener = () => {};
 if (!g.innerWidth) g.innerWidth = 1024;
 
-const { render } = await import(pathToFileURL(serverOutFile).href);
+const { render, getPageTitle } = await import(pathToFileURL(serverOutFile).href);
 
 const templatePath = path.resolve(distDir, "index.html");
 let template = fs.readFileSync(templatePath, "utf-8");
@@ -71,7 +71,22 @@ console.log("\n🔄 Pre-rendering static pages...");
 
 for (const route of routes) {
   const appHtml = render(route);
-  const html = template.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+  const pageTitle = getPageTitle(route);
+
+  // Replace title in template BEFORE injecting app HTML (avoids SVG title conflict)
+  let html = template.replace(
+    '<title>Webbutveckling &amp; SEO i V\u00e4stmanland | LRH Konsult</title>',
+    `<title>${pageTitle}</title>`
+  );
+  // Fallback om den inte hittas
+  if (html === template) {
+    html = template.replace(
+      '<title>Webbutveckling & SEO i Västmanland | LRH Konsult</title>',
+      `<title>${pageTitle}</title>`
+    );
+  }
+  html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+
   if (route === "/") {
     fs.writeFileSync(path.resolve(distDir, "index.html"), html);
   } else {
