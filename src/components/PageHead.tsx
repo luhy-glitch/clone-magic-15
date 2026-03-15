@@ -15,7 +15,7 @@ interface PageHeadProps {
   breadcrumbs?: BreadcrumbEntry[];
 }
 
-const BASE_URL = "https://lrhkonsult.se";
+const BASE_URL = "https://www.lrhkonsult.se";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/assets/og/lrh-konsult-sharing-image.png`;
 
 const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs }: PageHeadProps) => {

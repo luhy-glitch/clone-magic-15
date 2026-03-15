@@ -187,7 +187,7 @@ const BloggArtikel = () => {
   const related = [...sameTag, ...otherTag].slice(0, 3);
 
   const serviceLinks = SERVICE_LINKS[post.tag] || SERVICE_LINKS["Digital Strategi"];
-  const postUrl = `https://lrhkonsult.se/blogg/${post.slug}`;
+  const postUrl = `https://www.lrhkonsult.se/blogg/${post.slug}`;
 
   // FAQ schema from H2 headings + first paragraph after each
   const faqItems: { question: string; answer: string }[] = [];
@@ -211,8 +211,8 @@ const BloggArtikel = () => {
       datePublished: post.date,
       dateModified: updatedAt,
       image: post.image_url || undefined,
-      author: { "@type": "Person", name: "Lucas", url: "https://lrhkonsult.se/om-mig" },
-      publisher: { "@type": "Organization", name: "LRH Konsult", url: "https://lrhkonsult.se" },
+      author: { "@type": "Person", name: "Lucas", url: "https://www.lrhkonsult.se/om-mig" },
+      publisher: { "@type": "Organization", name: "LRH Konsult", url: "https://www.lrhkonsult.se" },
       mainEntityOfPage: postUrl,
       wordCount: post.content.split(/\s+/).length,
       inLanguage: "sv",

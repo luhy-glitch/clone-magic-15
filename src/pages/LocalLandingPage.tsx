@@ -51,7 +51,7 @@ const RELATED_SERVICES = [
   { href: "/blogg", label: "Blogg" },
 ];
 
-const BASE_URL = "https://lrhkonsult.se";
+const BASE_URL = "https://www.lrhkonsult.se";
 
 const buildLocalJsonLd = (config: LocalPageConfig) => ({
   "@context": "https://schema.org",

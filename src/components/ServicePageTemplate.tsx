@@ -55,7 +55,7 @@ interface ServicePageProps {
   contentSections?: ContentSection[];
 }
 
-const BASE_URL = "https://lrhkonsult.se";
+const BASE_URL = "https://www.lrhkonsult.se";
 
 const buildServiceJsonLd = (serviceName: string, description: string, path: string, faq?: FAQItem[]) => {
   const graph: Record<string, unknown>[] = [

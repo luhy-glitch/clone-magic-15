@@ -36,7 +36,7 @@ const Footer = () => {
                 </a>
               </p>
             </address>
-            <meta itemProp="url" content="https://lrhkonsult.se" />
+            <meta itemProp="url" content="https://www.lrhkonsult.se" />
           </div>
 
           {/* Tjänster */}

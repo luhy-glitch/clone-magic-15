@@ -19,7 +19,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const BASE_URL = "https://lrhkonsult.se";
+const BASE_URL = "https://www.lrhkonsult.se";
 
 const packages = [
   {

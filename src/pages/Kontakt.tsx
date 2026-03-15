@@ -46,10 +46,10 @@ const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "LRH Konsult",
-  "url": "https://lrhkonsult.se",
+  "url": "https://www.lrhkonsult.se",
   "telephone": "+46704606578",
   "email": "lucas@lrhkonsult.se",
-  "image": "https://lrhkonsult.se/og-image.png",
+  "image": "https://www.lrhkonsult.se/og-image.png",
   "description": "Webbutveckling och SEO-konsult i Västmanland. Kontakta oss för en kostnadsfri konsultation.",
   "address": {
     "@type": "PostalAddress",

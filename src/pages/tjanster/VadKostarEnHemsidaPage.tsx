@@ -6,7 +6,7 @@ import Contact from "@/components/Contact";
 import { Link } from "react-router-dom";
 import { ArrowRight, DollarSign } from "lucide-react";
 
-const BASE_URL = "https://lrhkonsult.se";
+const BASE_URL = "https://www.lrhkonsult.se";
 
 const jsonLd = {
   "@context": "https://schema.org",
