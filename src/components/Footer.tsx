@@ -1,13 +1,12 @@
 import { Mail, Linkedin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import LrhLogo from "@/components/LrhLogo";
-import { FOOTER_LOCAL_LINKS } from "@/data/cities";
 
 const Footer = () => {
   return (
     <footer className="bg-background border-t border-border py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand + NAP */}
           <div className="sm:col-span-2 lg:col-span-1" itemScope itemType="https://schema.org/ProfessionalService">
             <div className="mb-4">
@@ -44,61 +43,56 @@ const Footer = () => {
             <h3 className="font-serif font-bold text-foreground mb-4 text-base">Tjänster</h3>
             <ul className="space-y-2">
               <li><Link to="/tjanster/webbutveckling" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling</Link></li>
-              <li><Link to="/tjanster/webbdesign" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbdesign</Link></li>
               <li><Link to="/tjanster/seo-optimering" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO-optimering</Link></li>
+              <li><Link to="/tjanster/webbdesign" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbdesign</Link></li>
               <li><Link to="/tjanster/google-ads" className="text-sm text-muted-foreground hover:text-primary transition-colors">Google Ads</Link></li>
-              <li><Link to="/tjanster/wordpress-losningar" className="text-sm text-muted-foreground hover:text-primary transition-colors">WordPress</Link></li>
-              <li><Link to="/tjanster/underhall-support" className="text-sm text-muted-foreground hover:text-primary transition-colors">Underhåll & Support</Link></li>
-              <li><Link to="/tjanster/prestanda-optimering" className="text-sm text-muted-foreground hover:text-primary transition-colors">Prestanda</Link></li>
+              <li><Link to="/tjanster/wordpress-losningar" className="text-sm text-muted-foreground hover:text-primary transition-colors">WordPress-lösningar</Link></li>
             </ul>
           </nav>
 
-          {/* Sidor */}
-          <nav aria-label="Sidor">
-            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Sidor</h3>
+          {/* Städer */}
+          <nav aria-label="Städer">
+            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Städer</h3>
+            <ul className="space-y-2">
+              <li><Link to="/webbutveckling-vasteras" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Västerås</Link></li>
+              <li><Link to="/webbutveckling-enkoping" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Enköping</Link></li>
+              <li><Link to="/webbutveckling-eskilstuna" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling Eskilstuna</Link></li>
+              <li><Link to="/seo-koping" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Köping</Link></li>
+              <li><Link to="/hemsidor-sala" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor Sala</Link></li>
+            </ul>
+          </nav>
+
+          {/* Övrigt */}
+          <nav aria-label="Övrigt">
+            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Övrigt</h3>
             <ul className="space-y-2">
               <li><Link to="/om-mig" className="text-sm text-muted-foreground hover:text-primary transition-colors">Om mig</Link></li>
-              <li><Link to="/case" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kundcase</Link></li>
               <li><Link to="/blogg" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blogg</Link></li>
               <li><Link to="/kontakt" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kontakt</Link></li>
               <li><Link to="/gratis-seo-analys" className="text-sm text-muted-foreground hover:text-primary transition-colors">Gratis SEO-analys</Link></li>
-              <li><Link to="/integritetspolicy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Integritetspolicy</Link></li>
+              <li><Link to="/case" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kundcase</Link></li>
             </ul>
           </nav>
+        </div>
 
-          {/* Regionalt – SEO hub */}
-          <div className="lg:col-span-2">
-            <nav aria-label="Regionalt">
-              <h3 className="font-serif font-bold text-foreground mb-4 text-base">Regionalt</h3>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
-                {FOOTER_LOCAL_LINKS.map(s => (
-                  <li key={s.to}>
-                    <Link to={s.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                      {s.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <div className="flex items-center gap-3 mt-6">
-              {[
-                { Icon: Mail, label: "Skicka e-post", href: "mailto:lucas@lrhkonsult.se" },
-                { Icon: Phone, label: "Ring oss", href: "tel:+46704606578" },
-                { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/lucasrosvall/" },
-              ].map(({ Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div>
-          </div>
+        {/* Social links */}
+        <div className="flex items-center justify-center gap-3 mb-6">
+          {[
+            { Icon: Mail, label: "Skicka e-post", href: "mailto:lucas@lrhkonsult.se" },
+            { Icon: Phone, label: "Ring oss", href: "tel:+46704606578" },
+            { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/lucasrosvall/" },
+          ].map(({ Icon, label, href }) => (
+            <a
+              key={label}
+              href={href}
+              aria-label={label}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+            >
+              <Icon size={16} />
+            </a>
+          ))}
         </div>
 
         {/* Bottom */}
