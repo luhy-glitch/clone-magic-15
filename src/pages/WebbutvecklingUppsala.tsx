@@ -22,11 +22,14 @@ const config = {
     { title: "Konverteringsdesign", description: "Hemsidor designade för att inte bara synas, utan faktiskt generera leads och kunder." },
     { title: "Framtidssäker teknik", description: "React och Next.js med server-side rendering för maximal hastighet och SEO-kraft." },
   ],
-  bodyTitle: "Dominera Uppsalas digitala landskap med en hemsida i världsklass",
+  bodyTitle: "Webbutveckling Uppsala - Moderna Hemsidor för Lokala Företag",
   bodyParagraphs: [
     "Uppsala är en stad med en unik mix av universitet, tech-bolag, restauranger och lokala tjänsteföretag. Konkurrensen om digital synlighet är hård, och bara de snabbaste och mest relevanta hemsidorna hamnar på Googles förstasida. Med över 230 000 invånare och ett starkt lokalt köpmönster är insatserna höga – men belöningen för de som investerar i rätt digital strategi är enorm.",
     "Vi bygger hemsidor med React och Next.js som levererar sub-sekundsladdningstider och 100/100 i alla Lighthouse-kategorier. Detta är inte bara teknisk jargong – det är den direkta anledningen till att våra kunders hemsidor rankar högre än deras konkurrenter i Uppsala. Google har gjort Core Web Vitals till en central rankingfaktor, och vi säkerställer att din hemsida överträffar varje gränsvärde.",
     "Oavsett om du driver en advokatbyrå vid Fyrisån, en restaurang i centrum eller ett tech-startup vid Science Park kan vi skapa en hemsida som fångar Uppsalas unika karaktär och konverterar digitala besökare till fysiska kunder.",
+    "Som experter i Mälardalsregionen förstår vi de unika utmaningarna och möjligheterna för företag i Uppsala. Vi erbjuder inte bara teknisk expertis utan också kunskap om den lokala marknaden. Genom att kombinera vår erfarenhet från [tjanster/webbutveckling](https://lrhkonsult.se/tjanster/webbutveckling) med insikter om Uppsalas näringsliv kan vi skapa hemsidor som verkligen resonerar med din målgrupp.",
+    "För att säkerställa att din hemsida presterar optimalt i Uppsalas konkurrensutsatta marknad använder vi de senaste optimeringsteknikerna. Detta inkluderar server-side rendering, AVIF-bilder och andra tekniker som garanterar snabba laddningstider och hög användarupplevelse. Resultatet är hemsidor som inte bara ser bra ut utan också konverterar besökare till kunder.",
+    "Vi rekommenderar alltid att börja med en gratis SEO-analys för att förstå din nuvarande digitala position. Genom vår [gratis-seo-analys](https://lrhkonsult.se/gratis-seo-analys) får du en detaljerad rapport över styrkor och förbättringsområden för din hemsida. Detta ger dig en solid grund att stå på innan vi påbörjar arbetet med din nya hemsida eller optimering av den befintliga.",
   ],
   bodyExtraSections: [
     {
@@ -53,6 +56,17 @@ const config = {
         "För tech-bolag och startups i Uppsala erbjuder vi dessutom headless CMS-lösningar som separerar innehåll från presentation. Detta ger dina content-creators friheten att publicera utan att behöva bry sig om tekniken, samtidigt som frontend-prestandan förblir perfekt.",
       ],
     },
+    {
+      title: "Lokala Företag i Uppsala som Behöver Professionella Hemsidor",
+      paragraphs: [
+        "Uppsala är hem för en mångfald av lokala företag som alla kan dra nytta av en stark digital närvaro. Från universitetets forskningsmiljö till centrala restauranger och lokala tjänsteföretag – varje verksamhet har unika behov och möjligheter i den digitala världen. En professionell hemsida hjälper dem att nå kunder från hela Mälardalsregionen och bygga långsiktiga relationer.",
+        "Restaurang- och besöksnäringen är välutvecklad i Uppsala med många etablerade verksamheter kring Fyrisån och i centrum. Från familjedrivna restauranger till caféer och barer behöver dessa företag moderna hemsidor med menyer, bokningsmöjligheter och information om öppettider för att attrahera både lokalbefolkning och besökare.",
+        "Utbildnings- och forskningssektorn är en viktig del av Uppsalas identitet med universitetet som nav. Företag som erbjuder utbildningar, konsulttjänster inom forskning eller tjänster till akademin behöver hemsidor som kommunicerar deras expertis och bygger förtroende inom den akademiska världen.",
+        "Hälso- och sjukvårdssektorn är omfattande i Uppsala med flera sjukhus och privata kliniker. Tandläkare, fysioterapeuter, psykologer och andra vårdgivare behöver hemsidor som inte bara informerar om tjänster utan också underlättar bokningar och bygger förtroende genom patientrecensioner och certifieringar.",
+        "Tech- och startup-sektorn växer snabbt i Uppsala, särskilt kring Science Park. Startups, IT-konsulter och tech-företag behöver moderna hemsidor som visar upp deras innovationer, team och tjänster för att attrahera talanger och kunder från hela regionen.",
+        "Hantverks- och tjänsteföretag inom olika branscher kompletterar Uppsalas företagslandskap. Från byggföretag och konsulter till specialiserade tjänsteleverantörer behöver dessa företag professionella hemsidor som visar upp deras arbete och underlättar kundkontakt.",
+      ],
+    },
   ],
   caseStudy: {
     title: "Projektinsikt: Restauranggrupp i Uppsala fyrdubblade lunchbokningarna",
@@ -61,13 +75,11 @@ const config = {
     result: "Inom tre månader rankade alla tre restauranger topp 3 för sina respektive lunchrelaterade söktermer. Lunchbokningarna via hemsidan fyrdubblade och Google Ads-budgeten kunde reduceras med 80 procent. Den organiska trafiken ökade med 340 procent jämfört med de tidigare WordPress-sajterna.",
   },
   faq: [
-    { question: "Vad kostar en hemsida i Uppsala?", answer: "Våra paket börjar från 5 000 kr för enklare hemsidor till premiumlösningar från 25 000 kr med avancerad funktionalitet. Vi anpassar alltid efter dina specifika behov och din branschs krav i Uppsala." },
-    { question: "Hur snabbt kan min hemsida vara klar?", answer: "En standardhemsida tar 2–4 veckor. Mer avancerade projekt med e-handel, bokningssystem eller headless CMS kan ta 4–8 veckor. Vi kommunicerar alltid en tydlig tidplan från start." },
-    { question: "Varför ska jag välja LRH Konsult framför en byrå i Uppsala?", answer: "Vi erbjuder samma tekniska kvalitet som storstadsbyråer men med personlig service och konkurrenskraftiga priser. Våra hemsidor når konsekvent 100/100 PageSpeed – något som de flesta byråer i Uppsala inte kan garantera." },
-    { question: "Erbjuder ni SEO-optimering som separat tjänst?", answer: "Ja, vi erbjuder både teknisk SEO och lokal sökmotoroptimering som fristående tjänster. Vi kan optimera din befintliga hemsida eller kombinera SEO med en nyutveckling." },
-    { question: "Kan ni hjälpa restauranger i Uppsala med digital synlighet?", answer: "Absolut! Vi har specifik erfarenhet av restaurang-SEO i Uppsala med JSON-LD Restaurant-schema, menyoptimering och Google Business-strategier. Vi vet vilka söktermer som konverterar i restaurangbranschen." },
-    { question: "Hur hanterar ni den hårda konkurrensen i Uppsala?", answer: "Genom teknisk överlägsenhet. Medan konkurrenternas sajter kämpar med 40-60 i PageSpeed levererar vi 100/100. Kombinerat med strategisk lokal SEO ger detta en omedelbar konkurrensfördel även i Uppsalas tuffa marknad." },
-    { question: "Erbjuder ni löpande underhåll och support?", answer: "Ja, vi erbjuder supportavtal som inkluderar prestandaövervakning, säkerhetsuppdateringar, innehållsändringar och löpande SEO-optimering. Vi är din långsiktiga digitala partner i Uppsala." },
+    { question: "Varför behöver företag i Uppsala en professionell hemsida?", answer: "I Uppsalas konkurrensutsatta marknad är en professionell hemsida avgörande för att synas bland hundratals konkurrenter. Våra hemsidor levererar 100/100 PageSpeed och är optimerade för lokal SEO, vilket ger företag en betydande fördel. Genom vår [tjanster/seo-optimering](https://lrhkonsult.se/tjanster/seo-optimering) hjälper vi dig att dominera sökresultaten i Mälardalsregionen." },
+    { question: "Hur kan en hemsida hjälpa mitt företag i Uppsala att växa?", answer: "En välbyggd hemsida fungerar som ditt digitala skyltfönster dygnet runt och når kunder från hela regionen. För företag i Uppsala innebär det möjlighet att nå kunder från Stockholm till Västerås. Vi bygger hemsidor med React och Next.js som konverterar besökare till kunder genom optimerade kontaktformulär. Vår [tjanster/webbutveckling](https://lrhkonsult.se/tjanster/webbutveckling) inkluderar allt från design till lansering med fokus på prestanda." },
+    { question: "Vad kostar webbutveckling för företag i Uppsala?", answer: "Våra paket börjar från 5 000 kr för en professionell hemsida med SEO. För företag i Uppsala erbjuder vi skräddarsydda lösningar som tar hänsyn till den konkurrensutsatta marknadens behov. Kontakta oss för en kostnadsfri offert – våra priser är transparenta och konkurrenskraftiga för Mälardalsregionen." },
+    { question: "Hur snabbt kan min hemsida i Uppsala vara klar?", answer: "En standardhemsida tar vanligtvis 2–4 veckor från start till lansering. För företag i Uppsala som behöver avancerade funktioner som headless CMS eller e-handel kan det ta 4–8 veckor. Vi kommunicerar alltid tydliga tidplaner och håller dig uppdaterad genom hela processen." },
+    { question: "Erbjuder ni SEO-tjänster specifikt för Uppsala?", answer: "Ja, vi erbjuder lokal SEO-optimerad för Uppsalas stora marknad. Detta inkluderar optimering för söktermer som 'företag Uppsala', 'tjänster Mälardalen' och branschspecifika termer. Vår [gratis-seo-analys](https://lrhkonsult.se/gratis-seo-analys) ger dig en detaljerad översikt över förbättringsmöjligheter i denna konkurrensutsatta region." },
   ],
 };
 

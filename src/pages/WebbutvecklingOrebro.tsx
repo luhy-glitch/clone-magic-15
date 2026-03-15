@@ -22,11 +22,14 @@ const config = {
     { title: "Konverteringsfokus", description: "Hemsidor designade för att generera leads, bokningar och försäljning – inte bara för att se snygga ut." },
     { title: "React & Next.js", description: "Framtidssäker teknik med server-side rendering för maximal hastighet och oöverträffad SEO-kapacitet." },
   ],
-  bodyTitle: "Moderna hemsidor som driver tillväxt för företag i Örebro",
+  bodyTitle: "Webbutveckling Örebro - Moderna Hemsidor för Lokala Företag",
   bodyParagraphs: [
     "Örebro har under de senaste åren cementerat sin position som en av Sveriges mest dynamiska städer. Med Örebro universitet som kunskapsmotor, en blomstrande handelsscen kring Drottninggatan och ett växande startup-ekosystem finns en unik energi som lockar både företag och kompetens. Men med tillväxten ökar också konkurrensen om digital synlighet – och bara de företag med den starkaste tekniska grunden står kvar på Googles förstasida.",
     "Vi bygger hemsidor med React och Next.js som levererar sub-sekundsladdningstider och perfekta Lighthouse-resultat. Medan majoriteten av företag i Örebro fortfarande förlitar sig på WordPress-installationer som knappt klarar 50 poäng i PageSpeed, når våra lösningar konsekvent 100 av 100. Google har gjort Core Web Vitals till en central rankingfaktor, och denna tekniska överlägsenhet ger våra kunder en omedelbar fördel.",
-    "Oavsett om du driver en restaurang vid Svartån, en butik i Marieberg, ett hantverksföretag i Bista eller en konsultfirma vid Stortorget kan vi skapa en digital närvaro som speglar kvaliteten på ditt arbete och attraherar nya kunder dygnet runt, året runt.",
+    "Oavsett om du driver en restaurang vid Svartån, en butik i Marieberg, ett hantverksföretag i Bista eller en konsultfirma vid Stortorget kan vi skapa en digital närvaro som speglar kvaliteten på ditt arbete och attraherar nya kunder dygnet runt, året runt. Våra hemsidor är byggda för att konvertera besökare till kunder genom strategiska call-to-action och optimerade kontaktformulär.",
+    "Som lokal aktör i Örebro förstår vi de unika utmaningarna och möjligheterna i regionen. Vi erbjuder inte bara teknisk expertis utan också djup kunskap om den lokala marknaden. Genom att kombinera vår erfarenhet från [tjanster/webbutveckling](https://lrhkonsult.se/tjanster/webbutveckling) med insikter om Örebros näringsliv kan vi skapa hemsidor som verkligen resonerar med din målgrupp.",
+    "För att säkerställa att din hemsida inte bara ser bra ut utan också presterar optimalt erbjuder vi omfattande SEO-optimering från start. Vår process inkluderar teknisk SEO, lokal sökoptimering och innehållsstrategi som hjälper företag i Örebro att synas bättre på Google. Många av våra kunder upptäcker att de kan minska sina annonskostnader avsevärt genom att investera i organisk synlighet istället.",
+    "Vi rekommenderar alltid att börja med en gratis SEO-analys för att förstå din nuvarande digitala position. Genom vår [gratis-seo-analys](https://lrhkonsult.se/gratis-seo-analys) får du en detaljerad rapport över styrkor och förbättringsområden för din hemsida. Detta ger dig en solid grund att stå på innan vi påbörjar arbetet med din nya hemsida eller optimering av den befintliga.",
   ],
   bodyExtraSections: [
     {
@@ -53,6 +56,17 @@ const config = {
         "Vår expertis sträcker sig över hela Mälardalsregionen. Vi hjälper företag i Örebro att nå kunder i Kumla, Hallsberg, Lindesberg och bortom – med samma tekniska kvalitet och personliga service som vi levererar till alla våra kunder i regionen.",
       ],
     },
+    {
+      title: "Lokala Företag i Örebro som Behöver Professionella Hemsidor",
+      paragraphs: [
+        "Örebro är hem för en mångfald av lokala företag som alla kan dra nytta av en stark digital närvaro. Från familjeägda restauranger längs Svartån till specialiserade hantverksföretag i Bista och moderna konsultfirmor vid Stortorget – varje företag har sin unika historia att berätta. En professionell hemsida blir deras digitala skyltfönster som visar upp deras expertis och värde för kunderna.",
+        "Handelsföretag i Marieberg Galleria och centrumhandel kring Drottninggatan möter hård konkurrens från både lokala aktörer och stora kedjor. En optimerad hemsida med e-handelsfunktionalitet och lokal SEO hjälper dessa företag att sticka ut och attrahera kunder som söker specifika produkter eller tjänster i Örebro-regionen.",
+        "Universitetsstaden Örebro har också ett rikt utbildnings- och forskningslandskap som skapar behov för specialiserade tjänster. Företag som erbjuder språkutbildning, yrkesutbildning eller konsulttjänster inom forskning kan använda sina hemsidor för att nå studenter, forskare och andra akademiska aktörer i regionen.",
+        "Hälso- och sjukvårdssektorn i Örebro är välutvecklad med flera sjukhus och privata kliniker. Tandläkare, fysioterapeuter och andra vårdgivare behöver hemsidor som inte bara informerar om tjänster utan också underlättar bokningar och bygger förtroende genom patientrecensioner och certifieringar.",
+        "Turism och upplevelser är en växande sektor i Örebro med Slottet, Wadköping och andra attraktioner. Hotell, restauranger och upplevelseföretag kan använda sina hemsidor för att marknadsföra paket, evenemang och säsongserbjudanden till både lokalbefolkning och besökare.",
+        "Teknik- och IT-sektorn växer snabbt i Örebro tack vare universitetet och närheten till Stockholm. Startups och etablerade tech-företag behöver moderna hemsidor som visar upp deras innovationer, team och tjänster för att attrahera talanger och kunder.",
+      ],
+    },
   ],
   caseStudy: {
     title: "Projektinsikt: Tandläkarklinik i Örebro halverade sin annonskostnad",
@@ -61,13 +75,11 @@ const config = {
     result: "Hemsidan nådde 100/100 i PageSpeed vid lansering. Inom fyra månader rankade kliniken topp 3 för 'tandläkare Örebro' och topp 1 för 'akut tandläkare Örebro'. Google Ads-budgeten halverades till 15 000 kr/månad, och det totala antalet nya patientbokningar ökade ändå med 35 procent tack vare den organiska trafiken.",
   },
   faq: [
-    { question: "Vad kostar en hemsida i Örebro?", answer: "Våra paket börjar från 5 000 kr för en professionell hemsida med SEO. Premiumlösningar med bokningssystem, e-handel eller headless CMS prissätts individuellt. Vi erbjuder alltid en kostnadsfri offert anpassad för ditt företag i Örebro." },
-    { question: "Varför välja LRH Konsult för webbutveckling i Örebro?", answer: "Vi levererar hemsidor med garanterat 100/100 PageSpeed, lokal SEO-expertis och personlig service till konkurrenskraftiga priser. Vår regionala kunskap i Mälardalen ger oss en unik fördel i att förstå Örebros marknad." },
-    { question: "Hur snabbt kan min hemsida vara klar?", answer: "En standardhemsida tar 2–4 veckor. Komplexa projekt med e-handel eller bokningssystem kan ta 4–8 veckor. Vi kommunicerar alltid en tydlig tidplan och håller dig uppdaterad genom hela processen." },
-    { question: "Erbjuder ni SEO som separat tjänst i Örebro?", answer: "Ja, vi erbjuder både teknisk SEO och lokal sökmotoroptimering som fristående tjänster. Vi kan optimera din befintliga hemsida eller kombinera SEO med en nyutveckling för maximalt resultat." },
-    { question: "Kan ni hjälpa med Google Ads parallellt med SEO?", answer: "Ja, vi kan hantera Google Ads-kampanjer som komplement till SEO. Målet är dock att gradvis minska beroendet av betald annonsering i takt med att den organiska synligheten ökar – så att din marknadsföringsbudget ger bättre ROI." },
-    { question: "Hur hanterar ni den intensiva konkurrensen i Örebro?", answer: "Genom teknisk överlägsenhet och smart sökordsval. Vi identifierar söktermer med hög konvertering men lägre konkurrens, bygger auktoritet systematiskt och levererar en teknisk grund som majoriteten av Örebros hemsidor inte kan matcha." },
-    { question: "Erbjuder ni löpande underhåll och support?", answer: "Ja, vi erbjuder flexibla supportavtal med prestandaövervakning, säkerhetsuppdateringar, innehållsändringar och kontinuerlig SEO-optimering. Vi vill vara din långsiktiga digitala partner i Örebro." },
+    { question: "Varför behöver företag i Örebro en professionell hemsida?", answer: "I Örebros konkurrensutsatta marknad är en professionell hemsida avgörande för att synas och attrahera kunder. Våra hemsidor levererar 100/100 PageSpeed och är optimerade för lokal SEO, vilket ger företag i Örebro en betydande fördel över konkurrenter. Genom vår [tjanster/seo-optimering](https://lrhkonsult.se/tjanster/seo-optimering) hjälper vi dig att dominera sökresultaten lokalt." },
+    { question: "Hur kan en hemsida hjälpa mitt företag i Örebro att växa?", answer: "En välbyggd hemsida fungerar som ditt digitala skyltfönster dygnet runt. För företag i Örebro innebär det möjlighet att nå kunder från hela Mälardalsregionen. Vi bygger hemsidor med React och Next.js som konverterar besökare till kunder genom optimerade kontaktformulär och tydliga call-to-action. Vår [tjanster/webbutveckling](https://lrhkonsult.se/tjanster/webbutveckling) inkluderar allt från design till lansering." },
+    { question: "Vad kostar webbutveckling för företag i Örebro?", answer: "Våra paket börjar från 5 000 kr för en professionell hemsida med SEO. För företag i Örebro erbjuder vi skräddarsydda lösningar som tar hänsyn till den lokala marknadens behov. Kontakta oss för en kostnadsfri offert – våra priser är transparenta och konkurrenskraftiga för Mellansveriges marknad." },
+    { question: "Hur snabbt kan min hemsida i Örebro vara klar?", answer: "En standardhemsida tar vanligtvis 2–4 veckor från start till lansering. För företag i Örebro som behöver komplexa funktioner som e-handel eller bokningssystem kan det ta 4–8 veckor. Vi kommunicerar alltid tydliga tidplaner och håller dig uppdaterad genom hela processen för att säkerställa att ditt projekt levereras i tid." },
+    { question: "Erbjuder ni SEO-tjänster specifikt för Örebro?", answer: "Ja, vi erbjuder lokal SEO-optimerad för Örebros marknad. Detta inkluderar optimering för söktermer som 'företag Örebro', 'tjänster Örebro' och branschspecifika termer. Vår [gratis-seo-analys](https://lrhkonsult.se/gratis-seo-analys) ger dig en detaljerad översikt över din nuvarande SEO-status och förbättringsmöjligheter i Örebros konkurrensutsatta digitala landskap." },
   ],
 };
 

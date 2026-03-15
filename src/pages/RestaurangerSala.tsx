@@ -22,11 +22,14 @@ const config = {
     { title: "Lokal SEO för matgäster", description: "Vi optimerar för söktermer som 'lunch Sala', 'restaurang nära mig' och 'boka bord Sala' med JSON-LD Restaurant-schema." },
     { title: "Daglig lunchmeny-uppdatering", description: "En enkel lösning som gör det möjligt att uppdatera dagens lunch snabbt, så att 'lunch Sala'-sökningar alltid visar aktuell meny." },
   ],
-  bodyTitle: "Blixtsnabb laddningstid ger fler bordsbokningar i Sala",
+  bodyTitle: "Restauranger Sala - Moderna Hemsidor för Restauranger",
   bodyParagraphs: [
     "När en hungrig kund i Sala söker efter en restaurang har du bara bråkdelen av en sekund på dig att fånga deras intresse. Studier visar att 53 procent av mobilanvändare lämnar en sida som tar mer än tre sekunder att ladda – och för en restaurang innebär varje tappad besökare ett tomt bord. Genom att nå 100/100 i PageSpeed säkerställer vi att din restaurangsida laddar omedelbart, oavsett om gästen sitter på tåget eller promenerar på Stora Torget i Sala.",
     "En snabb webbplats med en LCP under 1,2 sekunder är avgörande för din SEO-ranking, då Google premierar sidor som ger en sömlös användarupplevelse. Vi bygger inte WordPress-sidor med tunga bildspel – vi skapar optimerade React-applikationer där varje bild serveras i AVIF-format med exakta dimensioner, lazy-loading och responsiva srcset-attribut. Resultatet är en hemsida som visar din mat i bästa möjliga kvalitet utan att kompromissa med laddningstiden.",
     "Sala har ett rikt utbud av restauranger, caféer och lunchställen – från Stora Torget till de mysiga gatorna kring Aguélimuseet. Den restaurang som syns överst på Google när en hungrig kund söker är den som fyller sina bord. Vi ser till att det blir din restaurang.",
+    "Lokala restauranger i Sala behöver moderna hemsidor för att nå kunder som söker efter mat och dryck online. Med konkurrens från andra etablissemang är det viktigt att ha en professionell närvaro som visar meny, priser och bokningsmöjligheter. Vi hjälper restauranger att skapa hemsidor som lockar fler gäster.",
+    "Hos LRH Konsult erbjuder vi specialiserade webbutvecklingslösningar för restauranger. Våra tjänster inkluderar responsiva menyer, bokningssystem och lokal SEO som säkerställer att din restaurang syns för sökningar som 'restaurang Sala'. Vi använder moderna tekniker för att skapa snabba och användarvänliga hemsidor.",
+    "För att förbättra din online-närvaro rekommenderar vi att börja med en gratis SEO-analys. Detta hjälper dig att förstå hur din restaurang syns online idag. Besök vår sida för [gratis SEO-analys](/gratis-seo-analys) för att få en detaljerad rapport. För mer avancerade tjänster, utforska våra erbjudanden inom [webbutveckling](/tjanster/webbutveckling) och [SEO-optimering](/tjanster/seo-optimering), som hjälper restauranger i Sala att nå toppen av Googles sökresultat.",
   ],
   bodyExtraSections: [
     {
@@ -53,6 +56,13 @@ const config = {
         "Med React som grund kan din hemsida enkelt vidareutvecklas: online-beställningar, lojalitetsprogram, presentkort eller catering-formulär. Du betalar bara för det du behöver, när du behöver det – utan att vara låst till en plattforms funktionslista eller prissättning.",
       ],
     },
+    {
+      title: "Lokala Restauranger i Sala som Behöver Moderna Hemsidor",
+      paragraphs: [
+        "Sala har en mångsidig restaurangscen med allt från traditionella svenska rätter till internationell mat. Restauranger, caféer och lunchställen behöver hemsidor som visar upp deras meny, öppettider och atmosfär för att attrahera kunder. En modern hemsida kan hjälpa etablissemang att sticka ut och öka bokningarna.",
+        "Andra viktiga aspekter inkluderar presentation av specialerbjudanden, recensioner och kontaktinformation. För restauranger är en hemsida ett viktigt verktyg för att bygga förtroende och skapa en lockande image. Genom att inkludera lokal SEO och bokningsfunktioner kan restauranger i Sala öka sin synlighet och driva fler gäster.",
+      ],
+    },
   ],
   caseStudy: {
     title: "Projektinsikt: Lunchrestaurang i Sala gick från tomma bord till reservation",
@@ -61,13 +71,11 @@ const config = {
     result: "Hemsidan rankade topp 1 för 'lunch Sala' och 'restaurang Sala' inom sex veckor. Nya gäster som hittade restaurangen via Google ökade med över 200 procent under de första tre månaderna. Lunchserveringen gick från att ha lediga bord till att kräva reservation på populära dagar.",
   },
   faq: [
-    { question: "Vad kostar en hemsida för en restaurang i Sala?", answer: "Vi erbjuder restaurangpaket från 5 000 kr som inkluderar responsiv menyvisning, Google Maps-integration, kontaktformulär och fullständig SEO-optimering med JSON-LD Restaurant-schema. Lösningar med bokningssystem prissätts individuellt." },
-    { question: "Kan jag själv uppdatera dagens lunch på hemsidan?", answer: "Ja, vi bygger en enkel uppdateringslösning där du snabbt kan ändra dagens meny. Det tar bara en minut att uppdatera, och ändringen syns omedelbart på hemsidan utan att påverka prestandan." },
-    { question: "Kan ni integrera ett online-bokningssystem?", answer: "Ja, vi bygger skräddarsydda bokningslösningar direkt i din hemsida. Till skillnad från TheFork eller andra plattformar slipper du provisioner per bokning – du äger hela systemet och kundrelationen." },
-    { question: "Hur snabbt kan hemsidan vara klar?", answer: "En restauranghemsida med meny, bokning och SEO-optimering tar normalt 2–3 veckor. Om du behöver avancerade funktioner som online-beställning eller catering-formulär kan det ta 4–6 veckor." },
-    { question: "Behöver jag professionella matbilder?", answer: "Bra bilder gör stor skillnad för konvertering. Vi kan rekommendera lokala fotografer i Sala, och vi optimerar alla bilder i AVIF-format med responsiva storlekar för perfekt visning utan att påverka laddningstiden." },
-    { question: "Hur hjälper ni med Google Business-profilen?", answer: "Vi optimerar din profil med rätt restaurangkategori, professionella bilder, komplett menylänk, korrekta öppettider och en strategi för att bygga autentiska kundrecensioner som stärker din lokala synlighet." },
-    { question: "Kan jag sluta använda Facebook som enda kanal?", answer: "En egen hemsida ger dig kontroll som Facebook aldrig erbjuder: du äger datan, Google indexerar ditt innehåll, och du slipper algoritmförändringar som minskar din räckvidd. Facebook blir ett komplement, inte din enda närvaro." },
+    { question: "Vad kostar en hemsida för en restaurang i Sala?", answer: "Vi erbjuder paket från 5 000 kr. För mer information om våra tjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
+    { question: "Kan jag själv uppdatera dagens lunch på hemsidan?", answer: "Ja, vi bygger en enkel lösning. För SEO-tjänster, kolla in [SEO-optimering](/tjanster/seo-optimering)." },
+    { question: "Kan ni integrera ett online-bokningssystem?", answer: "Ja, vi bygger skräddarsydda system. Börja med en [gratis SEO-analys](/gratis-seo-analys) för att förbättra din synlighet." },
+    { question: "Hur snabbt kan hemsidan vara klar?", answer: "En hemsida tar normalt 2–3 veckor. Vi prioriterar kvalitet." },
+    { question: "Erbjuder ni support och uppdateringar efter lansering?", answer: "Ja, vi erbjuder supportavtal för långsiktig framgång i Sala." },
   ],
 };
 

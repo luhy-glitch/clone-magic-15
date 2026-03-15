@@ -22,11 +22,14 @@ const config = {
     { title: "Lokal bransch-SEO", description: "Optimering för söktermer som 'elektriker Västerås', 'snickare Köping' och 'målare Sala' med JSON-LD HomeAndConstructionBusiness-schema." },
     { title: "ROT-avdragsinformation", description: "Tydlig information om ROT-avdrag direkt på hemsidan, med korrekt belopp och villkor – en av de mest sökta frågorna bland hantverkskunder." },
   ],
-  bodyTitle: "Varför hantverkare i Västmanland behöver en professionell hemsida",
+  bodyTitle: "Hemsidor Bygg & Hantverkare - Moderna Webbplatser för Hantverksföretag",
   bodyParagraphs: [
     "Bygg- och hantverksbranschen i Västmanland är starkt konkurrensutsatt. Oavsett om du är elektriker i Västerås, snickare i Köping, målare i Sala eller rörmokare i Hallstahammar söker dina potentiella kunder efter dig på Google innan de lyfter luren. Faktum är att 97 procent av konsumenterna söker efter lokala tjänster online, och de företag som syns högst i sökresultaten får flest förfrågningar.",
     "Problemet är att många hantverkare och byggföretag antingen saknar en hemsida helt eller har en föråldrad sajt som laddar långsamt och inte är anpassad för mobila enheter. I en bransch där förtroende är allt kan en dålig hemsida kosta dig fler kunder än du tror – en långsam, oprofessionell sajt signalerar att ditt hantverk kanske håller samma standard. En snabb, professionell hemsida signalerar kvalitet och seriositet redan innan kunden har ringt.",
     "Vi specialiserar oss på att bygga hemsidor för hantverkare och byggföretag i Västmanland. Vi förstår branschens behov: du behöver visa upp dina projekt med högkvalitativa bilder, presentera dina tjänster tydligt och göra det enkelt för kunder att begära offert. Allt detta paketerar vi i en hemsida som laddar på under en sekund och rankar högt i lokala sökresultat.",
+    "Lokala bygg- och hantverksföretag i Västmanland som elektriker, snickare, målare och rörmokare behöver moderna hemsidor för att nå fler kunder. Med en växande befolkning och många renoveringsprojekt är efterfrågan hög, men utan en stark online-närvaro riskerar företag att förlora kunder till konkurrenter som redan har optimerade hemsidor med projektgallerier och offertformulär.",
+    "Hos LRH Konsult erbjuder vi specialiserade webbutvecklingslösningar för bygg- och hantverksbranschen. Våra tjänster inkluderar projektgallerier, offertformulär och lokal SEO-optimering som hjälper företag att ranka högt för sökningar som 'snickare Västerås' eller 'målare Köping'. Vi använder moderna tekniker för att skapa hemsidor som inte bara ser professionella ut utan också konverterar besökare till kunder.",
+    "För att förbättra din online-närvaro rekommenderar vi att börja med en gratis SEO-analys. Detta ger dig insikter i hur ditt företag syns online idag. Besök vår sida för [gratis SEO-analys](/gratis-seo-analys) för att få en detaljerad rapport. För mer avancerade tjänster, utforska våra erbjudanden inom [webbutveckling](/tjanster/webbutveckling) och [SEO-optimering](/tjanster/seo-optimering), som är skräddarsydda för hantverksföretag i Västmanland.",
   ],
   bodyExtraSections: [
     {
@@ -53,6 +56,13 @@ const config = {
         "Offertformuläret är designat för att minimera friktion och maximera kvaliteten på förfrågningarna. Kunden kan beskriva sitt projekt, ladda upp bilder och välja tjänstekategori – allt i ett formulär som tar under en minut att fylla i. Du får en notifiering direkt till din telefon med all information du behöver för att ge en preliminär bedömning.",
       ],
     },
+    {
+      title: "Lokala Bygg- och Hantverksföretag i Västmanland",
+      paragraphs: [
+        "Västmanland har en stark bygg- och hantverkssektor med företag som specialiserar sig på allt från små renoveringar till stora byggprojekt. Elektriker, snickare, målare och rörmokare är eftertraktade tjänster, och många företag kämpar med att nå kunder utanför sina lokala nätverk. En modern hemsida kan hjälpa dessa företag att presentera sina tjänster, visa upp tidigare projekt och erbjuda enkla sätt att begära offert.",
+        "Andra viktiga områden inkluderar golvläggare, plåtslagare och byggnadsarbetare som bidrar till regionens utveckling. För dessa företag är en hemsida ett viktigt verktyg för att bygga varumärke och attrahera kunder från hela Västmanland. Genom att inkludera lokal SEO och branschspecifika funktioner kan företag öka sin synlighet och driva fler förfrågningar.",
+      ],
+    },
   ],
   caseStudy: {
     title: "Projektinsikt: Byggfirma i Västmanland ökade offertförfrågningarna med 300 procent",
@@ -61,13 +71,11 @@ const config = {
     result: "Hemsidan rankade topp 3 för 'badrumsrenovering Västerås' inom åtta veckor och topp 1 för 'byggfirma Västmanland' inom tre månader. Offertförfrågningarna via hemsidan ökade med 300 procent under det första kvartalet. Företaget kunde för första gången välja sina projekt istället för att tacka ja till allt, och genomsnittligt projektvärde ökade med 40 procent.",
   },
   faq: [
-    { question: "Behöver hantverkare verkligen en hemsida?", answer: "Ja, 97 procent av konsumenterna söker efter lokala tjänster online. Utan en hemsida är du osynlig för dessa kunder. En professionell hemsida med projektbilder och kundrecensioner bygger förtroende innan kunden ens ringer – och det förtroendet avgör ofta vem som får uppdraget." },
-    { question: "Vad kostar en hemsida för ett byggföretag?", answer: "Vi erbjuder paket från 5 000 kr med projektgalleri, offertformulär och fullständig SEO-optimering. Mer avancerade lösningar med kundportaler eller integrerade offertkalkylatorer prissätts individuellt baserat på projektets omfattning." },
-    { question: "Kan ni visa mina projekt med före-och-efter-bilder?", answer: "Absolut. Vi skapar professionella projektgallerier med optimerade AVIF-bilder, slider-jämförelser och detaljerade projektbeskrivningar som visar kvaliteten på ditt arbete och rankar i Google-bildsök." },
-    { question: "Hur snabbt kan hemsidan vara klar?", answer: "En hantverkshemsida med projektgalleri, tjänstesidor och SEO tar normalt 3–4 veckor. Vi arbetar effektivt och prioriterar kvalitet – din hemsida ska vara ett verktyg du är stolt över att visa för kunder." },
-    { question: "Kan ni hjälpa med information om ROT-avdrag på hemsidan?", answer: "Ja, vi skapar en dedikerad ROT-avdragssida med aktuella beloppsgränser, villkor och vanliga frågor. Denna sida rankar ofta högt i sökresultaten och driver kvalificerad trafik från kunder som planerar renoveringar." },
-    { question: "Fungerar hemsidan för alla typer av hantverkare?", answer: "Ja, vi anpassar design och innehåll efter din specifika bransch – elektriker, snickare, målare, rörmokare, plåtslagare, golvläggare eller byggnadsarbetare. Varje bransch har unika söktermer och kundförväntningar som vi optimerar för." },
-    { question: "Erbjuder ni support och uppdateringar efter lansering?", answer: "Ja, vi erbjuder supportavtal som inkluderar uppdatering av projektgallerier, prisändringar, nya tjänstesidor och löpande SEO-optimering. Vi är din långsiktiga digitala partner i Västmanland." },
+    { question: "Behöver hantverkare verkligen en hemsida?", answer: "Ja, 97 procent av konsumenterna söker efter lokala tjänster online. För att förbättra din synlighet, överväg våra [SEO-optimeringstjänster](/tjanster/seo-optimering)." },
+    { question: "Vad kostar en hemsida för ett byggföretag?", answer: "Vi erbjuder paket från 5 000 kr. För detaljer om våra webbutvecklingstjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
+    { question: "Kan ni visa mina projekt med före-och-efter-bilder?", answer: "Absolut. Vi skapar professionella projektgallerier som hjälper dig att sticka ut online." },
+    { question: "Kan ni hjälpa med information om ROT-avdrag på hemsidan?", answer: "Ja, vi skapar en dedikerad sida. Börja med en [gratis SEO-analys](/gratis-seo-analys) för att se förbättringsmöjligheter." },
+    { question: "Erbjuder ni support och uppdateringar efter lansering?", answer: "Ja, vi erbjuder supportavtal för långsiktig framgång i Västmanland." },
   ],
 };
 

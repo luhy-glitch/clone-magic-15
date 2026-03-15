@@ -22,11 +22,14 @@ const config = {
     { title: "Lokal SEO", description: "Strukturerad data, lokal optimering och Google Business-strategi som gör att kunderna hittar dig oavsett var de söker." },
     { title: "Modern teknik", description: "React och Next.js – samma teknik som Netflix och Spotify – anpassad för ditt företag i Skinnskatteberg." },
   ],
-  bodyTitle: "Professionella hemsidor för företag i Skinnskatteberg",
+  bodyTitle: "Webbutveckling Skinnskatteberg - Moderna Hemsidor för Lokala Företag",
   bodyParagraphs: [
     "Skinnskatteberg ligger i västra Västmanland, omgivet av skogar och sjöar som lockar turister och naturälskare. Kommunen har en aktiv företagarkultur med verksamheter inom skogsbruk, turism, hantverk och lokala tjänster. Trots det blygsamma invånarantalet finns det en enorm digital potential – de företag som syns online fångar kunder från ett stort geografiskt område som sträcker sig från Köping till Ludvika.",
     "Problemet är att många företag i Skinnskatteberg fortfarande saknar en modern digital närvaro. Utan en hemsida som rankar på Google är du osynlig för alla de kunder som aktivt söker efter dina tjänster. Och med över 90 procent av alla köpresor som börjar online är invisibilitet lika med förlorade intäkter – varje dag, varje vecka, varje månad.",
     "Vi bygger hemsidor med React och Next.js som når 100/100 i Google PageSpeed och laddar på under en sekund, oavsett om besökaren sitter med fiber i Västerås eller på mobilnätet i Riddarhyttan. Varje hemsida vi skapar för företag i Skinnskatteberg är unik, SEO-optimerad från grunden och designad med konvertering som slutmål.",
+    "Som lokala experter förstår vi utmaningarna för företag i glesbygdskommuner som Skinnskatteberg. Vi erbjuder inte bara teknisk expertis utan också kunskap om hur man når kunder i hela Västmanland. Genom att kombinera vår erfarenhet från [tjanster/webbutveckling](https://lrhkonsult.se/tjanster/webbutveckling) med lokal marknadskunskap kan vi skapa hemsidor som verkligen fungerar för ditt företag.",
+    "För att säkerställa att din hemsida presterar optimalt även med varierande uppkoppling i Skinnskatteberg använder vi avancerade optimeringstekniker. Detta inkluderar server-side rendering, AVIF-bilder och andra tekniker som garanterar snabba laddningstider oavsett besökarens internetanslutning.",
+    "Vi rekommenderar alltid att börja med en gratis SEO-analys för att förstå din nuvarande digitala position. Genom vår [gratis-seo-analys](https://lrhkonsult.se/gratis-seo-analys) får du en detaljerad rapport över styrkor och förbättringsområden för din hemsida. Detta ger dig en solid grund att stå på innan vi påbörjar arbetet med din nya hemsida eller optimering av den befintliga.",
   ],
   bodyExtraSections: [
     {
@@ -53,6 +56,17 @@ const config = {
         "Vi ser oss som en långsiktig partner för ditt företags digitala tillväxt i Skinnskatteberg. Från den första behovsanalysen till lansering och löpande support finns vi vid din sida. Vi mäter resultat, optimerar kontinuerligt och ser till att din investering i en modern hemsida ger maximal avkastning.",
       ],
     },
+    {
+      title: "Lokala Företag i Skinnskatteberg som Behöver Professionella Hemsidor",
+      paragraphs: [
+        "Skinnskatteberg är hem för många lokala företag inom olika branscher som alla kan dra nytta av en stark digital närvaro. Från skogsentreprenörer och hantverkare till turismföretag och lokala tjänsteleverantörer – varje företag har unika behov och möjligheter i den digitala världen. En professionell hemsida hjälper dem att nå kunder från hela Västmanland och bortom.",
+        "Skogs- och naturbruket är en viktig näring i Skinnskatteberg, med företag som erbjuder skogsskötsel, trädgårdstjänster och naturupplevelser. Dessa företag behöver hemsidor som visar upp deras expertis, tjänsteutbud och kontaktinformation för att attrahera kunder som söker professionella tjänster i regionen.",
+        "Turism och rekreation är en växande sektor med stuguthyrning, guideturer och naturupplevelser. Företag inom denna bransch behöver visuellt tilltalande hemsidor med bokningsmöjligheter, bildgallerier och information om lokala attraktioner för att locka besökare från hela Mellansverige.",
+        "Lokala hantverkare och småföretag inom olika branscher utgör ryggraden i Skinnskattebergs ekonomi. Från byggnadsarbetare till konsulter behöver dessa företag moderna hemsidor som bygger förtroende, visar upp tidigare arbeten och underlättar kundkontakt.",
+        "Handel och serviceföretag i Skinnskatteberg möter konkurrens från större städer men kan använda digital marknadsföring för att nå kunder som värdesätter lokal service och personlig kontakt. En optimerad hemsida blir deras verktyg för att sticka ut i den digitala konkurrensen.",
+        "Teknik- och IT-tjänster växer också i Skinnskatteberg, med företag som erbjuder konsultation, support och digitala lösningar. Dessa företag behöver professionella hemsidor som visar upp deras tekniska kompetens och tjänsteutbud för att attrahera kunder från regionen.",
+      ],
+    },
   ],
   caseStudy: {
     title: "Projektinsikt: Stuguthyrning i Skinnskatteberg fyllde sommarens bokningar före april",
@@ -61,13 +75,11 @@ const config = {
     result: "Hemsidan rankade topp 1 för 'stuguthyrning Skinnskatteberg' inom fem veckor. Direktbokningarna ökade från noll till 70 procent av total beläggning under det första året, vilket eliminerade provisioner på cirka 80 000 kr. Sommarens alla stugor var fullbokade redan i april.",
   },
   faq: [
-    { question: "Vad kostar en hemsida i Skinnskatteberg?", answer: "Våra paket börjar från 5 000 kr för en professionell hemsida med SEO-optimering. Turism- och bokningslösningar prissätts individuellt. Kontakta oss för en kostnadsfri offert anpassad för ditt företag." },
-    { question: "Kan ni hjälpa företag i glesbygd som Skinnskatteberg?", answer: "Absolut! Vi arbetar med företag i hela Västmanland oavsett storlek eller plats. Möten kan ske digitalt via videolänk, och vi optimerar specifikt för varierande uppkoppling i landsbygdsområden." },
-    { question: "Hur lång tid tar det att bygga en hemsida?", answer: "En standardhemsida tar 2–4 veckor. Mer komplexa lösningar med bokningssystem eller e-handel kan ta 4–8 veckor. Vi prioriterar alltid kvalitet och prestanda framför snabbhet." },
-    { question: "Ingår support efter lansering?", answer: "Ja, vi erbjuder flexibla supportavtal som inkluderar teknisk underhåll, innehållsuppdateringar, säkerhetsövervakning och löpande SEO-optimering. Vi är din långsiktiga partner." },
-    { question: "Kan ni hjälpa turismföretag med bokningssystem?", answer: "Ja, vi bygger skräddarsydda bokningslösningar som integreras sömlöst i din hemsida. Direktbokningar eliminerar provisioner till tredjepartsplattformar och ger dig full kontroll över kundrelationen." },
-    { question: "Hur fungerar det med bilder och film av naturen?", answer: "Vi optimerar alla bilder i AVIF-format med explicita dimensioner och lazy-loading för maximal prestanda. Videor undviks i favör för högkvalitativa bilder för att behålla 100/100 PageSpeed." },
-    { question: "Varför är React bättre än WordPress för mitt företag?", answer: "React ger 100/100 i PageSpeed vs. typiskt 30-50 för WordPress, har minimala säkerhetsrisker utan pluginberoenden, och kostar ingenting i löpande licensavgifter. Det är en modern teknik som helt enkelt levererar bättre resultat." },
+    { question: "Varför behöver företag i Skinnskatteberg en professionell hemsida?", answer: "I Skinnskattebergs glesbygdsområde är en professionell hemsida avgörande för att nå kunder från hela Västmanland. Våra hemsidor levererar 100/100 PageSpeed och är optimerade för lokal SEO, vilket ger företag en betydande fördel. Genom vår [tjanster/seo-optimering](https://lrhkonsult.se/tjanster/seo-optimering) hjälper vi dig att synas för kunder från Köping till Ludvika." },
+    { question: "Hur kan en hemsida hjälpa mitt företag i Skinnskatteberg att växa?", answer: "En välbyggd hemsida fungerar som ditt digitala skyltfönster dygnet runt och når kunder utanför det lokala området. För företag i Skinnskatteberg innebär det möjlighet att nå kunder från hela regionen. Vi bygger hemsidor med React och Next.js som konverterar besökare till kunder. Vår [tjanster/webbutveckling](https://lrhkonsult.se/tjanster/webbutveckling) inkluderar allt från design till lansering med fokus på prestanda." },
+    { question: "Vad kostar webbutveckling för företag i Skinnskatteberg?", answer: "Våra paket börjar från 5 000 kr för en professionell hemsida med SEO. För företag i Skinnskatteberg erbjuder vi skräddarsydda lösningar som tar hänsyn till glesbygdsutmaningar som varierande uppkoppling. Kontakta oss för en kostnadsfri offert – våra priser är transparenta och anpassade för regionala företag." },
+    { question: "Hur snabbt kan min hemsida i Skinnskatteberg vara klar?", answer: "En standardhemsida tar vanligtvis 2–4 veckor från start till lansering. För företag i Skinnskatteberg som behöver komplexa funktioner som bokningssystem kan det ta 4–8 veckor. Vi kommunicerar alltid tydliga tidplaner och kan arbeta digitalt för att passa ditt schema i glesbygden." },
+    { question: "Erbjuder ni SEO-tjänster specifikt för Skinnskatteberg?", answer: "Ja, vi erbjuder lokal SEO-optimerad för Skinnskattebergs geografiska område. Detta inkluderar optimering för söktermer som 'företag västra Västmanland', 'tjänster Skinnskatteberg' och branschspecifika termer. Vår [gratis-seo-analys](https://lrhkonsult.se/gratis-seo-analys) ger dig en detaljerad översikt över förbättringsmöjligheter i din region." },
   ],
 };
 

@@ -22,11 +22,14 @@ const config = {
     { title: "JSON-LD & Schema", description: "Vi implementerar strukturerad data som ger ditt företag rika utdrag i sökresultaten och ökar klickfrekvensen." },
     { title: "Mätbara resultat", description: "Månatliga rapporter med tydliga KPI:er som visar rankingpositioner, organisk trafik och konverteringar." },
   ],
-  bodyTitle: "Från osynlighet till att dominera sökresultaten i Köping",
+  bodyTitle: "SEO Köping - Få Fler Kunder via Google",
   bodyParagraphs: [
     "Många företagare i Köping upplever samma frustration: de vet att de har bra produkter och tjänster, men potentiella kunder hittar dem inte på Google. Problemet ligger sällan i innehållet utan i den tekniska grunden. Sökmotorer som Google använder hundratals rankingfaktorer, och de mest avgörande handlar om hur snabb, tillgänglig och tekniskt korrekt din hemsida är. Det är här vår expertis gör skillnad.",
     "Vi börjar varje SEO-uppdrag i Köping med en omfattande teknisk audit där vi kartlägger varje aspekt av din hemsidas hälsa. Vi analyserar Core Web Vitals, crawlbarhet, indexeringsstatus, metadata, intern länkstruktur och mobilvänlighet. Varje problem vi identifierar prioriteras efter dess potentiella påverkan på din ranking, och vi presenterar en tydlig åtgärdsplan med förväntade resultat.",
     "Till skillnad från betald annonsering ger sökmotoroptimering en bestående synlighet som fortsätter att leverera leads och kunder månad efter månad utan löpande annonskostnader. För företag i Köping är det den mest kostnadseffektiva marknadsföringskanalen som finns, och med rätt teknisk grund kan du dominera sökresultaten i din bransch under lång tid framöver.",
+    "Lokala företag i Köping som bilverkstäder, frisörer, restauranger och butiker behöver stark SEO för att nå kunder. Med konkurrens från större städer som Västerås är det viktigt att synas lokalt. Vi hjälper företag att optimera för sökningar som 'frisör Köping' eller 'restaurang Köping'.",
+    "Hos LRH Konsult erbjuder vi omfattande SEO-tjänster skräddarsydda för Köping. Våra tjänster inkluderar teknisk optimering, innehållsstrategi och lokal SEO som säkerställer att ditt företag rankar högt. Vi använder moderna tekniker för att förbättra din online-närvaro.",
+    "För att komma igång med SEO rekommenderar vi att börja med en gratis SEO-analys. Detta ger dig insikter i din nuvarande ranking och förbättringsområden. Besök vår sida för [gratis SEO-analys](/gratis-seo-analys) för att få en detaljerad rapport. För mer avancerade tjänster, kolla in våra erbjudanden inom [webbutveckling](/tjanster/webbutveckling) och [SEO-optimering](/tjanster/seo-optimering), som hjälper företag i Köping att nå toppen av Googles sökresultat.",
   ],
   bodyExtraSections: [
     {
@@ -51,6 +54,13 @@ const config = {
         "Vi säkerställer också att din NAP-data (namn, adress, telefonnummer) är konsekvent på alla plattformar – från din hemsida och Google Business till branschkataloger och sociala medier. Inkonsekvent information förvirrar sökmotorer och kan skada din lokala ranking. Med en systematisk approach till lokal SEO i Köping bygger vi en digital trovärdighet som gör ditt företag till det självklara valet för kunder i regionen.",
       ],
     },
+    {
+      title: "Lokala Företag i Köping som Behöver SEO",
+      paragraphs: [
+        "Köping är en dynamisk stad med en blandning av traditionella och moderna företag. Bilverkstäder, frisörer, restauranger och lokala butiker utgör en stor del av ekonomin, och många av dessa företag kämpar med att nå kunder online. SEO kan hjälpa dem att synas för sökningar som 'bilverkstad Köping' eller 'frisör Köping'.",
+        "Andra viktiga sektorer inkluderar hantverkare, läkare och tjänsteföretag som bidrar till stadens utveckling. För dessa företag är SEO ett viktigt verktyg för att bygga varumärke och attrahera kunder från hela Västmanland. Genom att optimera för lokala sökningar kan företag i Köping öka sin synlighet och driva mer trafik till sina fysiska platser.",
+      ],
+    },
   ],
   caseStudy: {
     title: "Projektinsikt: Bilverkstad i Köping gick från sida 4 till topp 1 på Google",
@@ -59,13 +69,11 @@ const config = {
     result: "Hemsidan rankade topp 1 för 'bilverkstad Köping' inom tio veckor och topp 3 för 'bilservice Västmanland'. Google Business-profilen genererade 40+ samtal per månad. Verkstaden rapporterade en ökning på 85 procent i nya kunder under de första sex månaderna och kunde utöka med en fjärde mekaniker.",
   },
   faq: [
-    { question: "Hur mycket kostar SEO i Köping?", answer: "Vi erbjuder skräddarsydda SEO-paket från 3 000 kr/månad, anpassade efter ditt företags behov, konkurrenssituation och budget i Köping. Engångsoptimering av en befintlig hemsida börjar från 5 000 kr." },
-    { question: "Hur lång tid tar det att se resultat av SEO i Köping?", answer: "Tekniska förbättringar ger ofta omedelbar effekt på PageSpeed och indexering. Första rankingförbättringarna syns inom 2–3 månader. Mer konkurrenskraftiga sökord i Köping kan ta 6–12 månader att nå toppen för." },
-    { question: "Behöver jag en ny hemsida för bättre SEO?", answer: "Inte nödvändigtvis. Vi kan optimera din befintliga sajt. Men om tekniken är föråldrad, sajten bygger på WordPress med tunga plugins eller saknar mobilanpassning kan en ny hemsida ge markant bättre resultat till ett rimligt pris." },
-    { question: "Vad skiljer er från andra SEO-byråer som erbjuder tjänster i Köping?", answer: "Vi är lokalt förankrade i Västmanland med djup kunskap om den regionala marknaden. Vi jobbar transparent med mätbara resultat, erbjuder ingen bindningstid och fokuserar på teknisk SEO som ger bestående resultat – inte kortsiktiga genvägar." },
-    { question: "Kan jag se exakt vad ni gör varje månad?", answer: "Ja, vi levererar detaljerade månadsrapporter som visar rankingförändringar, organisk trafik, genomförda optimeringar och planerade åtgärder. Full transparens är grundläggande för oss – du vet alltid vad din investering ger." },
-    { question: "Fungerar SEO för alla branscher i Köping?", answer: "Ja, lokal SEO fungerar för alla branscher – från bilverkstäder och frisörer till advokater och restauranger. Strategin anpassas efter din branschs specifika söklandskap och konkurrensintensitet i Köping." },
-    { question: "Kan ni hjälpa med Google Ads parallellt med SEO i Köping?", answer: "Ja, vi kan köra Google Ads-kampanjer som komplement medan SEO-arbetet bygger upp organisk synlighet. Målet är att gradvis minska annonsberoendet i takt med att du rankar högre – så att din marknadsbudget ger bättre ROI." },
+    { question: "Hur mycket kostar SEO i Köping?", answer: "Vi erbjuder paket från 3 000 kr/månad. För mer information om våra tjänster, besök [SEO-optimering](/tjanster/seo-optimering)." },
+    { question: "Hur lång tid tar det att se resultat av SEO i Köping?", answer: "Första förbättringarna syns inom 2–3 månader. För konkurrenskraftiga sökord kan det ta 6–12 månader." },
+    { question: "Behöver jag en ny hemsida för bättre SEO?", answer: "Inte nödvändigtvis, men en modern hemsida hjälper. Kolla in våra [webbutvecklingstjänster](/tjanster/webbutveckling)." },
+    { question: "Kan jag se exakt vad ni gör varje månad?", answer: "Ja, vi levererar detaljerade månadsrapporter med full transparens." },
+    { question: "Kan ni hjälpa med Google Ads parallellt med SEO i Köping?", answer: "Ja, vi kan köra Google Ads som komplement. Börja med en [gratis SEO-analys](/gratis-seo-analys) för att se förbättringsområden." },
   ],
 };
 

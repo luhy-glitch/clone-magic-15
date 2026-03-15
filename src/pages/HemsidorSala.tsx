@@ -22,11 +22,14 @@ const config = {
     { title: "Mobil-först-design", description: "Över 70% av alla besök sker via mobilen. Vi designar alltid för mobilen först och säkerställer en perfekt upplevelse." },
     { title: "Prestanda i världsklass", description: "Perfekta PageSpeed-poäng innebär snabbare laddning, bättre ranking och fler nöjda besökare i Sala." },
   ],
-  bodyTitle: "Konverteringsoptimerad webbdesign som driver affärer i Sala",
+  bodyTitle: "Hemsidor Sala - Moderna Webbplatser för Lokala Företag",
   bodyParagraphs: [
     "En snygg hemsida som ingen hittar är värdelös. En snabb hemsida med rörig design är lika meningslös. I Sala ser vi till att kombinera det bästa av två världar – estetisk design som bygger förtroende och teknisk prestanda som säkerställer att Google rankar dig högt. Resultatet är hemsidor som inte bara ser professionella ut utan som faktiskt genererar fler telefonsamtal, fler e-postförfrågningar och fler bokningar för ditt företag.",
     "Konverteringsoptimerad design handlar om att förstå psykologin bakom hur besökare interagerar med en hemsida. Vi studerar hur ögat naturligt rör sig över en skärm, var besökare klickar och vilka element som skapar förtroende. Genom att strategiskt placera kontaktformulär, telefonnummer och tydliga call-to-actions på rätt ställen kan vi dramatiskt öka andelen besökare som faktiskt tar kontakt med ditt företag i Sala.",
     "Majoriteten av dina potentiella kunder surfar via mobilen. Därför designar vi alltid med en mobil-först-strategi, vilket innebär att mobilupplevelsen aldrig är en eftertanke utan alltid utgångspunkten. Vi testar på riktiga enheter och säkerställer att knappar är tillräckligt stora, att text är läsbar utan att zooma och att navigationen fungerar intuitivt med tummen. För företag i Sala innebär detta att du aldrig missar en kund på grund av en frustrerande mobilupplevelse.",
+    "Lokala företag i Sala som frisörer, restauranger, hantverkare och butiker behöver moderna hemsidor för att synas online. I en stad med cirka 12 000 invånare är konkurrensen hård, och många kunder söker efter tjänster via Google. Utan en professionell närvaro online riskerar du att förlora kunder till konkurrenter som redan har optimerade hemsidor. Vi hjälper företag i Sala att skapa hemsidor som inte bara presenterar deras tjänster utan också konverterar besökare till lojala kunder.",
+    "Hos LRH Konsult erbjuder vi skräddarsydda webbutvecklingslösningar för företag i Sala och hela Västmanland. Våra tjänster inkluderar allt från enkla presentationssidor till avancerade e-handelsplattformar med bokningssystem. Vi använder moderna tekniker som React och TypeScript för att skapa snabba, säkra och skalbara hemsidor. Dessutom integrerar vi lokal SEO för att säkerställa att ditt företag rankar högt för sökningar som 'frisör Sala' eller 'restaurang Sala'.",
+    "För att komma igång med din nya hemsida rekommenderar vi att börja med en gratis SEO-analys. Detta hjälper oss att förstå din nuvarande online-närvaro och identifiera förbättringsområden. Besök vår sida för [gratis SEO-analys](/gratis-seo-analys) för att få en detaljerad rapport. För mer avancerade lösningar, kolla in våra tjänster inom [webbutveckling](/tjanster/webbutveckling) och [SEO-optimering](/tjanster/seo-optimering), där vi hjälper företag i Sala att nå toppen av Googles sökresultat.",
   ],
   bodyExtraSections: [
     {
@@ -50,6 +53,13 @@ const config = {
         "Resultatet är hemsidor som når 100/100 i Google PageSpeed Insights samtidigt som de levererar en visuell upplevelse som får dina konkurrenter i Sala att undra hur du gjorde det. Det är inte magi – det är teknisk expertis kombinerat med designkompetens. Och det är precis det vi levererar till varje kund i Sala och Västmanland.",
       ],
     },
+    {
+      title: "Lokala Företag i Sala som Behöver Moderna Hemsidor",
+      paragraphs: [
+        "Sala är en dynamisk stad med en blandning av traditionella och moderna företag. Frisörer, restauranger och caféer utgör en stor del av den lokala ekonomin, och många av dessa företag kämpar med att nå ut till kunder utanför stadens gränser. En modern hemsida kan hjälpa dessa verksamheter att presentera sina tjänster, visa upp recensioner och erbjuda online-bokningar, vilket gör det enklare för kunder att hitta och välja dem.",
+        "Andra viktiga sektorer inkluderar hantverkare, byggföretag och lokala butiker som säljer allt från kläder till livsmedel. För dessa företag är en hemsida inte bara en digital skylt utan ett verktyg för att bygga relationer med kunder. Genom att inkludera lokal SEO-optimerade sidor kan företag i Sala nå kunder från hela Västmanland-regionen, öka sin synlighet och driva mer trafik till sina fysiska platser.",
+      ],
+    },
   ],
   caseStudy: {
     title: "Projektinsikt: Frisörsalong i Sala fyllde bokningskalendern på tre veckor",
@@ -58,13 +68,11 @@ const config = {
     result: "Hemsidan rankade topp 1 för 'frisör Sala' inom tre veckor. Online-bokningarna tog fart direkt – inom den första månaden kom 45 procent av alla bokningar via hemsidan istället för telefon. Vardagsluckorna fylldes och salongen rapporterade sin bästa omsättningsmånad någonsin under den tredje månaden.",
   },
   faq: [
-    { question: "Vad kostar en hemsida i Sala?", answer: "Vi erbjuder paket från 5 000 kr till 25 000 kr beroende på projektets storlek och komplexitet. Hemsidor med bokningsfunktion eller e-handel prissätts individuellt. Kontakta oss för en offert anpassad för ditt företag i Sala." },
-    { question: "Hur snabbt kan ni leverera en hemsida i Sala?", answer: "En enkel presentationshemsida kan vara klar inom 2–3 veckor. Mer komplexa projekt med bokningssystem, bildgallerier eller e-handel tar 4–8 veckor. Vi prioriterar alltid kvalitet och prestanda." },
-    { question: "Kan ni hjälpa med SEO för företag i Sala?", answer: "Absolut! Alla hemsidor vi bygger är SEO-optimerade från grunden med JSON-LD strukturerad data, optimerade metadata och lokal optimering som gör att du syns i Sala och hela Västmanland." },
-    { question: "Hur mäter ni att designen verkligen konverterar?", answer: "Vi analyserar besökardata, klickmönster och konverteringsgrad med verktyg som Google Analytics. Efter lansering kan vi A/B-testa olika element för att kontinuerligt förbättra konverteringsgraden. Data ljuger aldrig." },
-    { question: "Kan ni bygga en hemsida med online-bokning för mitt företag i Sala?", answer: "Ja, vi bygger skräddarsydda bokningslösningar som integreras sömlöst i din hemsida. Det kan handla om tidsbokningar för frisörer, tidsbokning för konsulter eller restaurangbokningar – vi anpassar efter ditt behov." },
-    { question: "Behöver jag en hemsida om jag redan syns bra på Instagram?", answer: "Ja! Instagram är bra för engagemang, men Google indexerar inte Instagram-inlägg. En hemsida fångar kunder som aktivt söker efter dina tjänster – de mest köpredo kunderna. De två kanalerna kompletterar varandra." },
-    { question: "Erbjuder ni löpande support för hemsidor i Sala?", answer: "Ja, vi erbjuder flexibla supportavtal med teknisk underhåll, innehållsuppdateringar, prestandaövervakning och SEO-optimering. Vi finns här som din långsiktiga digitala partner i Sala." },
+    { question: "Vad kostar en hemsida för företag i Sala?", answer: "Vi erbjuder paket från 5 000 kr till 25 000 kr beroende på projektets storlek. För mer information om våra webbutvecklingstjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
+    { question: "Kan ni hjälpa med SEO för företag i Sala?", answer: "Ja, alla våra hemsidor är SEO-optimerade. För djupgående SEO-tjänster som hjälper ditt företag att ranka högt i Sala, kolla in vår [SEO-optimering](/tjanster/seo-optimering)." },
+    { question: "Erbjuder ni gratis SEO-analys för Sala-företag?", answer: "Absolut! Vi erbjuder en gratis SEO-analys som hjälper dig att förstå din nuvarande online-närvaro. Besök [gratis SEO-analys](/gratis-seo-analys) för att komma igång." },
+    { question: "Hur snabbt kan ni leverera en hemsida i Sala?", answer: "En enkel hemsida kan vara klar inom 2–3 veckor. Mer komplexa projekt tar 4–8 veckor. Vi prioriterar alltid kvalitet för företag i Sala." },
+    { question: "Kan ni bygga hemsidor med online-bokning för Sala-företag?", answer: "Ja, vi integrerar skräddarsydda bokningssystem. Detta är perfekt för frisörer, restauranger och andra tjänsteföretag i Sala som vill förenkla bokningar." },
   ],
 };
 
