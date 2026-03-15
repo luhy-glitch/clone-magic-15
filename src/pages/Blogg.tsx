@@ -58,16 +58,16 @@ const Blogg = () => {
         title="Blogg – Webb & SEO-insikter | LRH Konsult"
         description="Artiklar om webbutveckling, SEO och digitala strategier från LRH Konsult. Tips för att bygga hemsida och ranka högre på Google i Västmanland."
         breadcrumbs={[
-          { name: "Hem", url: "https://lrhkonsult.se" },
-          { name: "Blogg", url: "https://lrhkonsult.se/blogg" },
+          { name: "Hem", url: "https://www.lrhkonsult.se" },
+          { name: "Blogg", url: "https://www.lrhkonsult.se/blogg" },
         ]}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Blog",
           "name": "LRH Konsult Blogg",
-          "url": "https://lrhkonsult.se/blogg",
+          "url": "https://www.lrhkonsult.se/blogg",
           "description": "Artiklar om webbutveckling, SEO och digitala strategier.",
-          "publisher": { "@type": "Organization", "name": "LRH Konsult", "url": "https://lrhkonsult.se" }
+          "publisher": { "@type": "Organization", "name": "LRH Konsult", "url": "https://www.lrhkonsult.se" }
         }}
       />
       <Navbar />

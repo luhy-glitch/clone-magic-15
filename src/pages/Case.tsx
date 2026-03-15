@@ -15,7 +15,7 @@ const Case = () => {
           "@type": "CollectionPage",
           "name": "Kundcase & Referenser",
           "description": "Se hur vi hjälpt företag i Västmanland att öka sin digitala närvaro.",
-          "url": "https://lrhkonsult.se/case",
+          "url": "https://www.lrhkonsult.se/case",
         }}
       />
       <Navbar />

@@ -27,8 +27,8 @@ const OmMig = () => {
           "@type": "Person",
           "name": "Lucas",
           "jobTitle": "Webbutvecklare & SEO-konsult",
-          "worksFor": { "@type": "Organization", "name": "LRH Konsult", "url": "https://lrhkonsult.se" },
-          "url": "https://lrhkonsult.se/om-mig",
+          "worksFor": { "@type": "Organization", "name": "LRH Konsult", "url": "https://www.lrhkonsult.se" },
+          "url": "https://www.lrhkonsult.se/om-mig",
           "knowsAbout": ["React", "Next.js", "TypeScript", "SEO", "WordPress", "Tailwind CSS"],
           "address": { "@type": "PostalAddress", "addressRegion": "Västmanlands län", "addressCountry": "SE" }
         }}

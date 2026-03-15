@@ -29,11 +29,11 @@ const GratisSeoAnalys = () => {
               "@type": "Service",
               "name": "Gratis SEO-analys",
               "description": "Kostnadsfri SEO-analys för företag i Västmanland och Mälardalen.",
-              "url": "https://lrhkonsult.se/gratis-seo-analys",
+              "url": "https://www.lrhkonsult.se/gratis-seo-analys",
               "provider": {
                 "@type": "ProfessionalService",
                 "name": "LRH Konsult",
-                "url": "https://lrhkonsult.se",
+                "url": "https://www.lrhkonsult.se",
               },
             },
             {

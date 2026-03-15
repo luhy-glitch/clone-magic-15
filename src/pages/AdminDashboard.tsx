@@ -85,7 +85,7 @@ const AdminDashboard = () => {
   const [bulkPostProgress, setBulkPostProgress] = useState<{ running: boolean; current: number; total: number; currentTitle: string; errors: string[] }>({ running: false, current: 0, total: 0, currentTitle: "", errors: [] });
   const [selectedLead, setSelectedLead] = useState<ContactSubmission | null>(null);
   const [pageSpeed, setPageSpeed] = useState<{ performance: number | null; seo: number | null; accessibility: number | null; bestPractices: number | null; loading: boolean }>({ performance: null, seo: null, accessibility: null, bestPractices: null, loading: false });
-  const [speedUrl, setSpeedUrl] = useState("https://lrhkonsult.se");
+  const [speedUrl, setSpeedUrl] = useState("https://www.lrhkonsult.se");
   const [cityRankings, setCityRankings] = useState<CityRanking[]>(CITIES);
   const [keywordSuggestions, setKeywordSuggestions] = useState<KeywordSuggestion[]>([]);
   const [seoSubTab, setSeoSubTab] = useState<"rankings" | "keywords">("rankings");
@@ -686,7 +686,7 @@ const AdminDashboard = () => {
           <div className="bg-card border border-border rounded-xl p-6">
             <h2 className="text-lg font-bold font-serif mb-4">PageSpeed Insights</h2>
             <div className="flex gap-2 mb-6">
-              <Input value={speedUrl} onChange={(e) => setSpeedUrl(e.target.value)} placeholder="https://lrhkonsult.se" />
+              <Input value={speedUrl} onChange={(e) => setSpeedUrl(e.target.value)} placeholder="https://www.lrhkonsult.se" />
               <Button onClick={fetchPageSpeed} disabled={pageSpeed.loading} size="sm" className="shrink-0">
                 <Gauge size={14} /> {pageSpeed.loading ? "Analyserar..." : "Analysera"}
               </Button>
