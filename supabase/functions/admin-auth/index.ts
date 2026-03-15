@@ -69,7 +69,7 @@ async function auditLog(supabase: ReturnType<typeof createClient>, action: strin
   await supabase.from("admin_audit_log").insert({ action, details }).catch(() => {});
 }
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
