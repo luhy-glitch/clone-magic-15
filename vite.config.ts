@@ -31,7 +31,7 @@ function ssgPlugin(): Plugin {
           entryPoints: [path.resolve(rootDir, "src/entry-server.tsx")],
           bundle: true,
           format: "esm",
-          platform: "node",
+          platform: "browser",
           outfile: serverOutFile,
           jsx: "automatic",
           jsxImportSource: "react",
@@ -41,6 +41,13 @@ function ssgPlugin(): Plugin {
           external: [
             "@supabase/supabase-js",
             "sonner",
+            "stream",
+            "http",
+            "https",
+            "zlib",
+            "util",
+            "url",
+            "crypto",
           ],
           define: {
             "window": "globalThis",

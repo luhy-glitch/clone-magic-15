@@ -3,6 +3,18 @@ import { useLocation } from "react-router-dom";
 import { SITE_URL as BASE_URL, DEFAULT_OG_IMAGE } from "@/lib/constants";
 
 interface BreadcrumbEntry {
+  name: string;
+  url: string;
+}
+
+interface PageHeadProps {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  jsonLd?: Record<string, unknown>;
+  breadcrumbs?: BreadcrumbEntry[];
+}
 
 const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs }: PageHeadProps) => {
   const { pathname } = useLocation();
