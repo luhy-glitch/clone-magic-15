@@ -36,6 +36,6 @@ const urls = SITEMAP_ROUTES.map(
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`;
 
-const dest = path.resolve(rootDir, "public/sitemap.xml");
+const dest = path.resolve(rootDir, "dist/sitemap.xml");
 fs.writeFileSync(dest, xml, "utf-8");
 console.log(`✅ Sitemap generated: ${dest} (${SITEMAP_ROUTES.length} URLs)`);

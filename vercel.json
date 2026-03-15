@@ -50,5 +50,8 @@
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
     }
+  ],
+  "rewrites": [
+    { "source": "/((?!assets/|robots\\.txt|favicon\\.png|og-image\\.png|images/|9406de9457c9438591b38836b21210e7\\.txt).*)", "destination": "/index.html" }
   ]
 }
