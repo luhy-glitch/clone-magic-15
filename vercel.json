@@ -1,4 +1,9 @@
 {
+  "redirects": [
+    { "source": "/webbutveckling", "destination": "/tjanster/webbutveckling", "permanent": true },
+    { "source": "/seo-optimering", "destination": "/tjanster/seo-optimering", "permanent": true },
+    { "source": "/:path+/", "destination": "/:path+", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
