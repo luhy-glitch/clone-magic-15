@@ -87,13 +87,8 @@ for (const route of routes) {
   }
   html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
 
-  if (route === "/") {
-    fs.writeFileSync(path.resolve(distDir, "index.html"), html);
-  } else {
-    const routeDir = path.resolve(distDir, route.slice(1));
-    fs.mkdirSync(routeDir, { recursive: true });
-    fs.writeFileSync(path.resolve(routeDir, "index.html"), html);
-  }
+  const filePath = path.join(distDir, route === "/" ? "index.html" : `${route}.html`);
+  fs.writeFileSync(filePath, html);
   console.log(`  ✅ ${route}`);
 }
 
