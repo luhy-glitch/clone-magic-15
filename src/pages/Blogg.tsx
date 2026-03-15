@@ -44,10 +44,38 @@ const Blogg = () => {
   const { data: posts = [], isLoading } = useBlogPosts();
   const [activeCategory, setActiveCategory] = useState<string>("Alla");
 
+  // Static “pillar” articles that live outside the CMS but should still appear in the blog list
+  const staticPosts = [
+    {
+      title: "Komplett SEO-guide för småföretag 2025",
+      excerpt: "Lär dig allt om SEO för småföretag – från nyckelord till länkbygge.",
+      date: "2026-03-16",
+      slug: "komplett-seo-guide-smaforetag",
+      tag: "SEO",
+      metaDescription: "Lär dig allt om SEO för småföretag – från nyckelord till länkbygge.",
+      content: [
+        "En komplett SEO-guide för att hjälpa småföretag synas bättre i sökmotorer.",
+      ],
+    },
+    {
+      title: "Så skapar du en hemsida för ditt företag 2025",
+      excerpt: "Steg-för-steg guide för att skapa en professionell företagshemsida.",
+      date: "2026-03-16",
+      slug: "skapa-hemsida-foretag-guide",
+      tag: "Webbutveckling",
+      metaDescription: "Steg-för-steg guide för att skapa en professionell företagshemsida.",
+      content: [
+        "En komplett guide för att planera, bygga och lansera en professionell hemsida för ditt företag.",
+      ],
+    },
+  ];
+
+  const allPosts = [...staticPosts, ...posts];
+
   const filteredPosts = useMemo(() => {
-    if (activeCategory === "Alla") return posts;
-    return posts.filter((p) => normalizeTag(p.tag) === activeCategory);
-  }, [posts, activeCategory]);
+    if (activeCategory === "Alla") return allPosts;
+    return allPosts.filter((p) => normalizeTag(p.tag) === activeCategory);
+  }, [allPosts, activeCategory]);
 
   const featured = filteredPosts[0];
   const grid = filteredPosts.slice(1);
@@ -109,7 +137,7 @@ const Blogg = () => {
             <div className="flex gap-2 overflow-x-auto pb-4 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap scrollbar-hide" role="tablist" aria-label="Filtrera artiklar efter kategori">
               {CATEGORIES.map((cat) => {
                 const isActive = activeCategory === cat;
-                const count = cat === "Alla" ? posts.length : posts.filter((p) => normalizeTag(p.tag) === cat).length;
+                const count = cat === "Alla" ? allPosts.length : allPosts.filter((p) => normalizeTag(p.tag) === cat).length;
                 return (
                   <button
                     key={cat}

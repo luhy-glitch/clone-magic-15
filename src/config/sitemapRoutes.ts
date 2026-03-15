@@ -20,6 +20,8 @@ export const SITEMAP_ROUTES = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/om-mig", changefreq: "monthly", priority: "0.7" },
   { path: "/blogg", changefreq: "weekly", priority: "0.8" },
+  { path: "/blogg/komplett-seo-guide-smaforetag", changefreq: "monthly", priority: "0.7" },
+  { path: "/blogg/skapa-hemsida-foretag-guide", changefreq: "monthly", priority: "0.7" },
   { path: "/kontakt", changefreq: "monthly", priority: "0.8" },
   { path: "/integritetspolicy", changefreq: "yearly", priority: "0.3" },
   { path: "/case", changefreq: "monthly", priority: "0.8" },

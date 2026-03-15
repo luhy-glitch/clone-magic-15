@@ -18,6 +18,8 @@ const OmMig = lazy(() => import("./pages/OmMig"));
 const Blogg = lazy(() => import("./pages/Blogg"));
 const Kontakt = lazy(() => import("./pages/Kontakt"));
 const BloggArtikel = lazy(() => import("./pages/BloggArtikel"));
+const BloggArtikelSeoGuide = lazy(() => import("./pages/BloggArtikelSeoGuide"));
+const BloggArtikelHemsidaGuide = lazy(() => import("./pages/BloggArtikelHemsidaGuide"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const WebbutvecklingPage = lazy(() => import("./pages/tjanster/WebbutvecklingPage"));
@@ -76,6 +78,8 @@ const DataRoutes = () => (
 
         <Route path="/om-mig" element={<OmMig />} />
         <Route path="/blogg" element={<Blogg />} />
+        <Route path="/blogg/komplett-seo-guide-smaforetag" element={<BloggArtikelSeoGuide />} />
+        <Route path="/blogg/skapa-hemsida-foretag-guide" element={<BloggArtikelHemsidaGuide />} />
         <Route path="/blogg/:slug" element={<BloggArtikel />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/integritetspolicy" element={<PrivacyPolicy />} />

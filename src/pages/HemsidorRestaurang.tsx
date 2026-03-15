@@ -1,5 +1,6 @@
 import { UtensilsCrossed } from "lucide-react";
 import LocalLandingPage from "./LocalLandingPage";
+import PageHead from "@/components/PageHead";
 
 const config = {
   city: "Västmanland",
@@ -80,5 +81,14 @@ const config = {
   ],
 };
 
-const HemsidorRestaurang = () => <LocalLandingPage config={config} />;
+const HemsidorRestaurang = () => (
+  <>
+    <PageHead
+      title="Hemsida för restaurang Västmanland | LRH Konsult"
+      description="Professionell restauranghemsida med meny och bokningssystem. LRH Konsult hjälper restauranger i Västmanland."
+    />
+    <LocalLandingPage config={config} />
+  </>
+);
+
 export default HemsidorRestaurang;

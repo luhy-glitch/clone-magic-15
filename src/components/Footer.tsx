@@ -62,6 +62,17 @@ const Footer = () => {
             </ul>
           </nav>
 
+          {/* Branscher */}
+          <nav aria-label="Branscher">
+            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Branscher</h3>
+            <ul className="space-y-2">
+              <li><Link to="/hemsidor-restaurang" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor restaurang</Link></li>
+              <li><Link to="/hemsidor-redovisning" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor redovisning</Link></li>
+              <li><Link to="/hemsidor-ehandel" className="text-sm text-muted-foreground hover:text-primary transition-colors">E-handel hemsida</Link></li>
+              <li><Link to="/hemsidor-bygg-hantverkare" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor bygg &amp; hantverkare</Link></li>
+            </ul>
+          </nav>
+
           {/* Övrigt */}
           <nav aria-label="Övrigt">
             <h3 className="font-serif font-bold text-foreground mb-4 text-base">Övrigt</h3>

@@ -124,6 +124,43 @@ const Index = () => {
                 ))}
               </div>
 
+              <section className="py-12 sm:py-14 bg-section-alt rounded-3xl border border-border mb-12">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6">
+                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4">Branschspecifika lösningar</h2>
+                  <p className="text-muted-foreground leading-[1.7] mb-8">
+                    Vissa branscher har unika behov. Här är tre skräddarsydda lösningar för restaurang, redovisning och e-handel som hjälper dig att ranka högre, konvertera fler kunder och bygga en starkare digital närvaro.
+                  </p>
+                  <div className="grid gap-6 md:grid-cols-3">
+                    <Link
+                      to="/hemsidor-restaurang"
+                      className="group block rounded-2xl border border-border bg-card p-6 hover:border-primary hover:bg-primary/5 transition-colors"
+                    >
+                      <h3 className="text-lg font-semibold text-foreground mb-2">Hemsidor restaurang</h3>
+                      <p className="text-muted-foreground mb-4">Mobilvänlig meny, bokningssystem och lokal SEO som fyller borden.</p>
+                      <span className="inline-flex items-center gap-2 text-primary font-medium">Läs mer <ArrowRight size={14} /></span>
+                    </Link>
+
+                    <Link
+                      to="/hemsidor-redovisning"
+                      className="group block rounded-2xl border border-border bg-card p-6 hover:border-primary hover:bg-primary/5 transition-colors"
+                    >
+                      <h3 className="text-lg font-semibold text-foreground mb-2">Hemsidor redovisning</h3>
+                      <p className="text-muted-foreground mb-4">Bygg förtroende med professionell design, klientportaler och säkra flöden.</p>
+                      <span className="inline-flex items-center gap-2 text-primary font-medium">Läs mer <ArrowRight size={14} /></span>
+                    </Link>
+
+                    <Link
+                      to="/hemsidor-ehandel"
+                      className="group block rounded-2xl border border-border bg-card p-6 hover:border-primary hover:bg-primary/5 transition-colors"
+                    >
+                      <h3 className="text-lg font-semibold text-foreground mb-2">E-handel hemsida</h3>
+                      <p className="text-muted-foreground mb-4">Optimerad för konvertering, lokal leverans och snabb checkout.</p>
+                      <span className="inline-flex items-center gap-2 text-primary font-medium">Läs mer <ArrowRight size={14} /></span>
+                    </Link>
+                  </div>
+                </div>
+              </section>
+
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Västerås</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
                 Västerås är Västmanlands största stad och en viktig marknad för lokala företag. Vi bygger moderna, snabbladdade hemsidor med React och Next.js som hjälper företag i Västerås att sticka ut i konkurrensen. Från restauranger och hantverkare till techbolag – vi skräddarsyr lösningar som konverterar besökare till kunder.{" "}

@@ -1,5 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 import LocalLandingPage from "./LocalLandingPage";
+import PageHead from "@/components/PageHead";
 
 const config = {
   city: "Västmanland",
@@ -80,5 +81,14 @@ const config = {
   ],
 };
 
-const HemsidorEhandel = () => <LocalLandingPage config={config} />;
+const HemsidorEhandel = () => (
+  <>
+    <PageHead
+      title="E-handel hemsida Västmanland | LRH Konsult"
+      description="Professionell e-handelshemsida för företag i Västmanland. WooCommerce och Shopify-lösningar av LRH Konsult."
+    />
+    <LocalLandingPage config={config} />
+  </>
+);
+
 export default HemsidorEhandel;

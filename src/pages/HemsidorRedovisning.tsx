@@ -1,5 +1,6 @@
 import { ShieldCheck } from "lucide-react";
 import LocalLandingPage from "./LocalLandingPage";
+import PageHead from "@/components/PageHead";
 
 const config = {
   city: "Västmanland",
@@ -80,5 +81,14 @@ const config = {
   ],
 };
 
-const HemsidorRedovisning = () => <LocalLandingPage config={config} />;
+const HemsidorRedovisning = () => (
+  <>
+    <PageHead
+      title="Hemsida för redovisningsbyrå Västmanland | LRH Konsult"
+      description="Professionell hemsida för redovisningsbyråer i Västmanland. Bygg förtroende och få fler kunder online."
+    />
+    <LocalLandingPage config={config} />
+  </>
+);
+
 export default HemsidorRedovisning;
