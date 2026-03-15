@@ -46,6 +46,9 @@ const HemsidorByggHantverkare = lazy(() => import("./pages/HemsidorByggHantverka
 const DigitalMarknadsforing = lazy(() => import("./pages/DigitalMarknadsforing"));
 const RestaurangerSala = lazy(() => import("./pages/RestaurangerSala"));
 const FrisorKoping = lazy(() => import("./pages/FrisorKoping"));
+const HemsidorRestaurang = lazy(() => import("./pages/HemsidorRestaurang"));
+const HemsidorRedovisning = lazy(() => import("./pages/HemsidorRedovisning"));
+const HemsidorEhandel = lazy(() => import("./pages/HemsidorEhandel"));
 const Case = lazy(() => import("./pages/Case"));
 const GratisSeoAnalys = lazy(() => import("./pages/GratisSeoAnalys"));
 const VadKostarEnHemsida = lazy(() => import("./pages/tjanster/VadKostarEnHemsidaPage"));
@@ -107,6 +110,9 @@ const DataRoutes = () => (
         <Route path="/digital-marknadsforing-butiker" element={<DigitalMarknadsforing />} />
         <Route path="/restauranger-sala" element={<RestaurangerSala />} />
         <Route path="/frisor-koping" element={<FrisorKoping />} />
+        <Route path="/hemsidor-restaurang" element={<HemsidorRestaurang />} />
+        <Route path="/hemsidor-redovisning" element={<HemsidorRedovisning />} />
+        <Route path="/hemsidor-ehandel" element={<HemsidorEhandel />} />
         <Route path="/case-studies/pagespeed-revolution" element={<RedirectRoute to="/case" />} />
 
         {/* Pillar page */}

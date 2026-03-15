@@ -57,4 +57,7 @@ export const SITEMAP_ROUTES = [
   { path: "/digital-marknadsforing-butiker", changefreq: "monthly", priority: "0.7" },
   { path: "/restauranger-sala", changefreq: "monthly", priority: "0.7" },
   { path: "/frisor-koping", changefreq: "monthly", priority: "0.7" },
+  { path: "/hemsidor-restaurang", changefreq: "monthly", priority: "0.7" },
+  { path: "/hemsidor-redovisning", changefreq: "monthly", priority: "0.7" },
+  { path: "/hemsidor-ehandel", changefreq: "monthly", priority: "0.7" },
 ];
