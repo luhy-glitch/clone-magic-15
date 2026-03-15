@@ -1,5 +1,13 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "lrhkonsult.se" }],
+      "destination": "https://www.lrhkonsult.se/:path*",
+      "permanent": true
+    },
     { "source": "/webbutveckling", "destination": "/tjanster/webbutveckling", "permanent": true },
     { "source": "/seo-optimering", "destination": "/tjanster/seo-optimering", "permanent": true },
     { "source": "/:path+/", "destination": "/:path+", "permanent": true }
