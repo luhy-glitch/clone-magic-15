@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import { ALL_CITIES, CITY_REGIONS } from "@/data/cities";
+import { SITE_URL as BASE_URL } from "@/lib/constants";
 import {
   ServiceFAQ,
   ServiceCTA,
@@ -50,8 +51,6 @@ const RELATED_SERVICES = [
   { href: "/tjanster/prestanda-optimering", label: "Prestandaoptimering" },
   { href: "/blogg", label: "Blogg" },
 ];
-
-const BASE_URL = "https://www.lrhkonsult.se";
 
 const buildLocalJsonLd = (config: LocalPageConfig) => ({
   "@context": "https://schema.org",

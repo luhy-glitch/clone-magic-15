@@ -18,8 +18,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const BASE_URL = "https://www.lrhkonsult.se";
+import { SITE_URL as BASE_URL } from "@/lib/constants";
 
 const packages = [
   {

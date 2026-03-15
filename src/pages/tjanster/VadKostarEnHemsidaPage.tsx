@@ -5,8 +5,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Contact from "@/components/Contact";
 import { Link } from "react-router-dom";
 import { ArrowRight, DollarSign } from "lucide-react";
-
-const BASE_URL = "https://www.lrhkonsult.se";
+import { SITE_URL as BASE_URL } from "@/lib/constants";
 
 const jsonLd = {
   "@context": "https://schema.org",

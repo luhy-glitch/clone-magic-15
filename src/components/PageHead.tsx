@@ -1,22 +1,8 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { SITE_URL as BASE_URL, DEFAULT_OG_IMAGE } from "@/lib/constants";
 
 interface BreadcrumbEntry {
-  name: string;
-  url: string;
-}
-
-interface PageHeadProps {
-  title: string;
-  description: string;
-  canonical?: string;
-  ogImage?: string;
-  jsonLd?: Record<string, unknown>;
-  breadcrumbs?: BreadcrumbEntry[];
-}
-
-const BASE_URL = "https://www.lrhkonsult.se";
-const DEFAULT_OG_IMAGE = `${BASE_URL}/assets/og/lrh-konsult-sharing-image.png`;
 
 const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs }: PageHeadProps) => {
   const { pathname } = useLocation();

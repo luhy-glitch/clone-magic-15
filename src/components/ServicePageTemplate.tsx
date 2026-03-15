@@ -4,6 +4,7 @@ import PageHead from "@/components/PageHead";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { SITE_URL as BASE_URL } from "@/lib/constants";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -54,8 +55,6 @@ interface ServicePageProps {
   caseStudies?: CaseStudy[];
   contentSections?: ContentSection[];
 }
-
-const BASE_URL = "https://www.lrhkonsult.se";
 
 const buildServiceJsonLd = (serviceName: string, description: string, path: string, faq?: FAQItem[]) => {
   const graph: Record<string, unknown>[] = [
