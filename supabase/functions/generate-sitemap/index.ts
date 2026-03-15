@@ -1,6 +1,6 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const SITE_URL = "https://lrhkonsult.se";
+const SITE_URL = "https://www.lrhkonsult.se";
 
 const staticRoutes = [
   { loc: "", changefreq: "weekly", priority: "1.0" },

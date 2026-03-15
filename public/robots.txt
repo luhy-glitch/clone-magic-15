@@ -15,4 +15,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 
-Sitemap: https://lrhkonsult.se/sitemap.xml
+Sitemap: https://www.lrhkonsult.se/sitemap.xml
