@@ -100,9 +100,9 @@ const Footer = () => {
           {[
             { Icon: Mail, label: "Skicka e-post", href: "mailto:lucas@lrhkonsult.se" },
             { Icon: Phone, label: "Ring oss", href: "tel:+46704606578" },
-            { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/lucasrosvall/" },
+            { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/" },
           ].map(({ Icon, label, href }) => (
-            
+            <a
               key={label}
               href={href}
               aria-label={label}
