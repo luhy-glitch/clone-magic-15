@@ -190,59 +190,58 @@ const BloggArtikel = () => {
   const postUrl = `https://www.lrhkonsult.se/blogg/${post.slug}`;
 
   // FAQ schema from H2 headings + first paragraph after each
+  // FAQ schema from H2 headings + first paragraph after each
   const faqItems: { question: string; answer: string }[] = [];
-for (let i = 0; i < parsed.length; i++) {
-  if (parsed[i].type === "h2" && parsed[i + 1]?.type === "p") {
-    const answer = parsed[i + 1].text.slice(0, 300).trim();
-    if (answer.length > 10) {
-      faqItems.push({
-        question: parsed[i].text,
-        answer,
-      }); 
-
+  for (let i = 0; i < parsed.length; i++) {
+    if (parsed[i].type === "h2" && parsed[i + 1]?.type === "p") {
+      const answer = parsed[i + 1].text.slice(0, 300).trim();
+      if (answer.length > 10) {
+        faqItems.push({
+          question: parsed[i].text,
+          answer,
+        });
+      }
     }
   }
 
   const updatedAt = (post as any).updated_at || post.date;
 
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      headline: post.title,
-      description: post.excerpt,
-      datePublished: post.date,
-      dateModified: updatedAt,
-      image: post.image_url || undefined,
-      author: { "@type": "Person", name: "Lucas", url: "https://www.lrhkonsult.se/om-mig" },
-      publisher: { "@type": "Organization", name: "LRH Konsult", url: "https://www.lrhkonsult.se" },
-      mainEntityOfPage: postUrl,
-      wordCount: post.content.split(/\s+/).length,
-      inLanguage: "sv",
-    },
-    ...(faqItems.length >= 2
-      ? [{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqItems.slice(0, 5).map((f) => ({
-            "@type": "Question",
-            name: f.question,
-            acceptedAnswer: { "@type": "Answer", text: f.answer },
-          })),
-        }]
-      : []),
-  ];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.excerpt,
+        datePublished: post.date,
+        dateModified: updatedAt,
+        image: post.image_url || undefined,
+        author: { "@type": "Person", name: "Lucas", url: "https://www.lrhkonsult.se/om-mig" },
+        publisher: { "@type": "Organization", name: "LRH Konsult", url: "https://www.lrhkonsult.se" },
+        mainEntityOfPage: postUrl,
+        wordCount: post.content.split(/\s+/).length,
+        inLanguage: "sv",
+      },
+      ...(faqItems.length >= 2
+        ? [{
+            "@type": "FAQPage",
+            mainEntity: faqItems.slice(0, 5).map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          }]
+        : []),
+    ],
+  };
 
   return (
     <div className="min-h-screen">
-      <PageHead title={`${post.title} | LRH Konsult`} description={post.excerpt} />
-      {jsonLd.map((ld, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
-        />
-      ))}
+      <PageHead
+        title={`${post.title} | LRH Konsult`}
+        description={post.excerpt}
+        jsonLd={jsonLd}
+      />
       <Navbar />
       <main>
         {/* Hero */}
