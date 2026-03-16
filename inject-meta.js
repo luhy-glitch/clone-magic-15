@@ -15,22 +15,22 @@ function inject() {
         if (fs.existsSync(filePath)) {
             let html = fs.readFileSync(filePath, 'utf8');
 
-            // Skapa blocket
+            const canonicalSlug = page.slug === 'index' ? '' : page.slug;
+            const canonicalUrl = `https://www.lrhkonsult.se/${canonicalSlug}`;
+
             const seoBlock = `
     <title>${page.title}</title>
     <meta name="description" content="${page.description}" />
-    <link rel="canonical" href="https://www.lrhkonsult.se/${page.slug}" />
+    <link rel="canonical" href="${canonicalUrl}" />
     <meta property="og:title" content="${page.title}" />
     <meta property="og:description" content="${page.description}" />
-    <meta property="og:url" content="https://www.lrhkonsult.se/${page.slug}" />
+    <meta property="og:url" content="${canonicalUrl}" />
     `;
 
-            // Rensa gamla titlar och meta för att undvika dubbletter
             html = html.replace(/<title>.*?<\/title>/gi, '');
             html = html.replace(/<meta name="description".*?>/gi, '');
             html = html.replace(/<link rel="canonical".*?>/gi, '');
 
-            // Injicera blocket sist i head
             html = html.replace('</head>', `${seoBlock}\n  </head>`);
 
             fs.writeFileSync(filePath, html);
