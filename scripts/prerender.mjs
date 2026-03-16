@@ -40,9 +40,10 @@ if (!g.innerWidth) g.innerWidth = 1024;
 const { render, getPageTitle } = await import(pathToFileURL(serverOutFile).href);
 
 const templatePath = path.resolve(distDir, "index.html");
-let template = fs.readFileSync(templatePath, "utf-8");
+const rawTemplate = fs.readFileSync(templatePath, "utf-8");
+const cleanedRaw = rawTemplate.replace(/<link rel="canonical"[^>]*\/?>\n?/g, "");
 
-template = template.replace(/<link\b[^>]*?href=["']([^"']*\.css[^"']*)["'][^>]*>/gi, (linkTag, cssHref) => {
+let template = cleanedRaw.replace(/<link\b[^>]*?href=["']([^"']*\.css[^"']*)["'][^>]*>/gi, (linkTag, cssHref) => {
   const actualHref = cssHref.startsWith("/") ? cssHref.slice(1) : cssHref;
   const cssFilePath = path.resolve(distDir, actualHref);
   if (fs.existsSync(cssFilePath)) {
@@ -58,13 +59,15 @@ const routes = [
   "/tjanster/webbutveckling", "/tjanster/webbdesign", "/tjanster/seo-optimering",
   "/tjanster/wordpress-losningar", "/tjanster/underhall-support", "/tjanster/prestanda-optimering",
   "/tjanster/google-ads", "/tjanster/vad-kostar-en-hemsida-2026",
-  "/blogg", "/blogg/oka-hemsidans-hastighet", "/blogg/lokal-seo-smaforetag", "/blogg/react-vs-wordpress", "/blogg/komplett-seo-guide-smaforetag", "/blogg/skapa-hemsida-foretag-guide",
+  "/blogg", "/blogg/oka-hemsidans-hastighet", "/blogg/lokal-seo-smaforetag", "/blogg/react-vs-wordpress",
+  "/blogg/komplett-seo-guide-smaforetag", "/blogg/skapa-hemsida-foretag-guide",
   "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna",
   "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar",
   "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby",
   "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala",
   "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala",
-  "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel",
+  "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping",
+  "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel",
 ];
 
 console.log("\n🔄 Pre-rendering static pages...");
@@ -72,13 +75,12 @@ console.log("\n🔄 Pre-rendering static pages...");
 for (const route of routes) {
   const appHtml = render(route);
   const pageTitle = getPageTitle(route);
+  const canonicalUrl = `https://www.lrhkonsult.se${route === "/" ? "" : route}`;
 
-  // Replace title in template BEFORE injecting app HTML (avoids SVG title conflict)
   let html = template.replace(
     '<title>Webbutveckling &amp; SEO i V\u00e4stmanland | LRH Konsult</title>',
     `<title>${pageTitle}</title>`
   );
-  // Fallback om den inte hittas
   if (html === template) {
     html = template.replace(
       '<title>Webbutveckling & SEO i Västmanland | LRH Konsult</title>',
@@ -86,6 +88,7 @@ for (const route of routes) {
     );
   }
   html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+  html = html.replace('\n  </head>', `\n  <link rel="canonical" href="${canonicalUrl}" />\n  </head>`);
 
   const filePath = path.join(distDir, route === "/" ? "index.html" : `${route}.html`);
   fs.writeFileSync(filePath, html);
