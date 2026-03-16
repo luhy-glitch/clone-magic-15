@@ -215,7 +215,7 @@ const Blogg = () => {
                               <Calendar size={13} /> {featured.date}
                             </span>
                             <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                              <Clock size={13} /> {estimateReadingTime(featured.content)} min
+                              <Clock size={13} /> {estimateReadingTime(Array.isArray(featured.content) ? featured.content.join(' ') : featured.content as string)} min
                             </span>
                             {featured.updated_at && formatUpdatedDate(featured.updated_at) && (
                               <span className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -262,7 +262,7 @@ const Blogg = () => {
                                 <Calendar size={12} /> {post.date}
                               </span>
                               <span className="flex items-center gap-1 text-[11px] text-muted-foreground">
-                                <Clock size={12} /> {estimateReadingTime(post.content)} min
+                                <Clock size={12} /> {estimateReadingTime(Array.isArray(post.content) ? post.content.join(' ') : post.content as string)} min
                               </span>
                               {post.updated_at && formatUpdatedDate(post.updated_at) && (
                                 <span className="flex items-center gap-1 text-[11px] text-muted-foreground">
