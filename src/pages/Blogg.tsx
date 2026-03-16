@@ -53,9 +53,10 @@ const Blogg = () => {
       slug: "komplett-seo-guide-smaforetag",
       tag: "SEO",
       metaDescription: "Lär dig allt om SEO för småföretag – från nyckelord till länkbygge.",
-      content: [
-        "En komplett SEO-guide för att hjälpa småföretag synas bättre i sökmotorer.",
-      ],
+      content: ["En komplett SEO-guide för att hjälpa småföretag synas bättre i sökmotorer."],
+      image_url: null,
+      image_alt: null,
+      updated_at: null,
     },
     {
       title: "Så skapar du en hemsida för ditt företag 2025",
@@ -64,9 +65,10 @@ const Blogg = () => {
       slug: "skapa-hemsida-foretag-guide",
       tag: "Webbutveckling",
       metaDescription: "Steg-för-steg guide för att skapa en professionell företagshemsida.",
-      content: [
-        "En komplett guide för att planera, bygga och lansera en professionell hemsida för ditt företag.",
-      ],
+      content: ["En komplett guide för att planera, bygga och lansera en professionell hemsida för ditt företag."],
+      image_url: null,
+      image_alt: null,
+      updated_at: null,
     },
   ];
 
