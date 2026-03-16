@@ -18,7 +18,6 @@ interface PageHeadProps {
 
 const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs }: PageHeadProps) => {
   const { pathname } = useLocation();
-  // Strip trailing slash to avoid duplicate canonical URLs
   const cleanPath = pathname === "/" ? "" : pathname.replace(/\/+$/, "");
   const url = canonical || `${BASE_URL}${cleanPath}`;
   const image = ogImage || DEFAULT_OG_IMAGE;
@@ -45,6 +44,8 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs 
     setMeta("og:image:width", "1200", "property");
     setMeta("og:image:height", "630", "property");
     setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", title);
+    setMeta("twitter:description", description);
     setMeta("twitter:image", image);
 
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
@@ -55,7 +56,6 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs 
     }
     link.href = url;
 
-    // JSON-LD structured data
     const jsonLdId = "page-json-ld";
     let scriptEl = document.getElementById(jsonLdId) as HTMLScriptElement | null;
     if (jsonLd) {
@@ -70,7 +70,6 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs 
       scriptEl.remove();
     }
 
-    // BreadcrumbList JSON-LD
     const breadcrumbId = "page-breadcrumb-ld";
     let breadcrumbEl = document.getElementById(breadcrumbId) as HTMLScriptElement | null;
     if (breadcrumbs && breadcrumbs.length > 0) {
@@ -94,7 +93,6 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs 
       breadcrumbEl.remove();
     }
 
-    // LocalBusiness JSON-LD
     const localBusinessId = "local-business-json-ld";
     let localBusinessEl = document.getElementById(localBusinessId) as HTMLScriptElement | null;
     if (!localBusinessEl) {
@@ -120,7 +118,6 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs 
       "description": "Webbutveckling och SEO-optimering för företag i Västmanland"
     });
 
-    // Default BreadcrumbList JSON-LD
     const defaultBreadcrumbId = "default-breadcrumb-json-ld";
     let defaultBreadcrumbEl = document.getElementById(defaultBreadcrumbId) as HTMLScriptElement | null;
     if (!defaultBreadcrumbEl) {
