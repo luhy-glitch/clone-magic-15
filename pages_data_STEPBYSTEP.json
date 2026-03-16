@@ -208,8 +208,8 @@
     "slug": "integritetspolicy",
     "title": "Integritetspolicy | Hur vi hanterar dina data",
     "description": "Läs om hur LRH Konsult hanterar personuppgifter, cookies och din integritet på vår webbplats. Vi värnar om din personliga integritet."
-  }
-{
+  },
+  {
     "slug": "blogg/framtidsakra-foretag-react-malardalen",
     "title": "Framtidssäkra ditt företag i Mälardalen med React | LRH Konsult",
     "description": "Lär dig hur React hjälper företag i Mälardalen att bygga snabba, skalbara hemsidor som håller i framtiden. Tekniska fördelar förklarade."
@@ -384,3 +384,4 @@
     "title": "3 sätt att framtidssäkra ditt företag i Västmanland inför 2026 | LRH Konsult",
     "description": "Tre konkreta strategier för att framtidssäkra ditt Västmanland-företag inför 2026 med modern webbutveckling och SEO."
   }
+]
