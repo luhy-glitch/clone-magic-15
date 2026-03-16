@@ -72,6 +72,24 @@ const internalLinks = `
   <a href="/gratis-seo-analys">Gratis SEO-analys</a>
   <a href="/integritetspolicy">Integritetspolicy</a>
 </nav>`;
+// Lägg till aggregateRating JSON-LD för startsidan
+if (page.slug === 'index') {
+  const aggregateRatingLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "LRH Konsult",
+    "url": "https://www.lrhkonsult.se",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "5",
+      "reviewCount": "5"
+    }
+  });
+  html = html.replace('</head>', `<script type="application/ld+json">${aggregateRatingLd}</script>\n</head>`);
+}
 html = html.replace('</body>', `${internalLinks}\n</body>`);
 
             fs.writeFileSync(filePath, html);
