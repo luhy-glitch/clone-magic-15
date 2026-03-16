@@ -191,12 +191,15 @@ const BloggArtikel = () => {
 
   // FAQ schema from H2 headings + first paragraph after each
   const faqItems: { question: string; answer: string }[] = [];
-  for (let i = 0; i < parsed.length; i++) {
-    if (parsed[i].type === "h2" && parsed[i + 1]?.type === "p") {
+for (let i = 0; i < parsed.length; i++) {
+  if (parsed[i].type === "h2" && parsed[i + 1]?.type === "p") {
+    const answer = parsed[i + 1].text.slice(0, 300).trim();
+    if (answer.length > 10) {
       faqItems.push({
         question: parsed[i].text,
-        answer: parsed[i + 1].text.slice(0, 300),
-      });
+        answer,
+      }); 
+
     }
   }
 

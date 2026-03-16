@@ -42,17 +42,7 @@ const { render, getPageTitle, getPageDescription } = await import(pathToFileURL(
 const templatePath = path.resolve(distDir, "index.html");
 const rawTemplate = fs.readFileSync(templatePath, "utf-8");
 const cleanedRaw = rawTemplate.replace(/<link rel="canonical"[^>]*\/?>\n?/g, "");
-
-let template = cleanedRaw.replace(/<link\b[^>]*?href=["']([^"']*\.css[^"']*)["'][^>]*>/gi, (linkTag, cssHref) => {
-  const actualHref = cssHref.startsWith("/") ? cssHref.slice(1) : cssHref;
-  const cssFilePath = path.resolve(distDir, actualHref);
-  if (fs.existsSync(cssFilePath)) {
-    const cssContent = fs.readFileSync(cssFilePath, "utf-8");
-    return `<style>${cssContent}</style>`;
-  }
-  return linkTag;
-});
-template = template.replace(/<noscript><link\b[^>]*\.css[^>]*><\/noscript>/gi, "");
+const template = cleanedRaw;
 
 const routes = [
   "/", "/om-mig", "/kontakt", "/integritetspolicy", "/case", "/gratis-seo-analys",
@@ -135,5 +125,6 @@ for (const route of routes) {
   fs.writeFileSync(filePath, html);
   console.log(`  ✅ ${route}`);
 }
+
 fs.rmSync(path.resolve(rootDir, "dist-server"), { recursive: true, force: true });
 console.log("✅ Static site generation complete!\n");
