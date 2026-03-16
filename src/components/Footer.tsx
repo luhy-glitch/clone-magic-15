@@ -34,7 +34,7 @@ const Footer = () => {
               <li><Link to="/tjanster/webbdesign" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbdesign</Link></li>
               <li><Link to="/tjanster/google-ads" className="text-sm text-muted-foreground hover:text-primary transition-colors">Google Ads</Link></li>
               <li><Link to="/tjanster/wordpress-losningar" className="text-sm text-muted-foreground hover:text-primary transition-colors">WordPress-lösningar</Link></li>
-              <li><Link to="/tjanster/underhall-support" className="text-sm text-muted-foreground hover:text-primary transition-colors">Underhåll & Support</Link></li>
+              <li><Link to="/tjanster/underhall-support" className="text-sm text-muted-foreground hover:text-primary transition-colors">Underhåll &amp; Support</Link></li>
               <li><Link to="/tjanster/prestanda-optimering" className="text-sm text-muted-foreground hover:text-primary transition-colors">Prestandaoptimering</Link></li>
               <li><Link to="/tjanster/vad-kostar-en-hemsida-2026" className="text-sm text-muted-foreground hover:text-primary transition-colors">Vad kostar en hemsida?</Link></li>
             </ul>
@@ -67,7 +67,7 @@ const Footer = () => {
               <li><Link to="/hemsidor-restaurang" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor restaurang</Link></li>
               <li><Link to="/hemsidor-redovisning" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor redovisning</Link></li>
               <li><Link to="/hemsidor-ehandel" className="text-sm text-muted-foreground hover:text-primary transition-colors">E-handel hemsida</Link></li>
-              <li><Link to="/hemsidor-bygg-hantverkare" className="text-sm text-muted-foreground hover:text-primary transition-colors">Bygg & Hantverkare</Link></li>
+              <li><Link to="/hemsidor-bygg-hantverkare" className="text-sm text-muted-foreground hover:text-primary transition-colors">Bygg &amp; Hantverkare</Link></li>
               <li><Link to="/hemsidor-sala" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor Sala</Link></li>
               <li><Link to="/seo-koping" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Köping</Link></li>
               <li><Link to="/frisor-koping" className="text-sm text-muted-foreground hover:text-primary transition-colors">Frisör Köping</Link></li>
