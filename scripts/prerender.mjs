@@ -58,13 +58,13 @@ const routes = [
   "/tjanster/webbutveckling", "/tjanster/webbdesign", "/tjanster/seo-optimering",
   "/tjanster/wordpress-losningar", "/tjanster/underhall-support", "/tjanster/prestanda-optimering",
   "/tjanster/google-ads", "/tjanster/vad-kostar-en-hemsida-2026",
-  "/blogg", "/blogg/oka-hemsidans-hastighet", "/blogg/lokal-seo-smaforetag", "/blogg/react-vs-wordpress",
+  "/blogg", "/blogg/oka-hemsidans-hastighet", "/blogg/lokal-seo-smaforetag", "/blogg/react-vs-wordpress", "/blogg/komplett-seo-guide-smaforetag", "/blogg/skapa-hemsida-foretag-guide",
   "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna",
   "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar",
   "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby",
   "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala",
   "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala",
-  "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping",
+  "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel",
 ];
 
 console.log("\n🔄 Pre-rendering static pages...");
