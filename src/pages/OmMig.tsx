@@ -45,7 +45,7 @@ const OmMig = () => {
                     <div className="mx-auto w-28 h-28 rounded-full bg-primary flex items-center justify-center mb-6">
                       <span className="text-primary-foreground font-serif text-4xl font-bold">LR</span>
                     </div>
-                    <h2 className="font-serif font-bold text-xl">Lucas – LRH Konsult</h2>
+                    <p className="font-serif font-bold text-xl">Lucas – LRH Konsult</p>
                     <p className="text-muted-foreground text-sm mt-1">Webbutvecklare & SEO-konsult</p>
                     <p className="text-muted-foreground text-xs mt-1">Västmanlands län, Sverige</p>
                     <div className="flex flex-wrap justify-center gap-2 mt-6">

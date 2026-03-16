@@ -37,7 +37,7 @@ if (!g.addEventListener) g.addEventListener = () => {};
 if (!g.removeEventListener) g.removeEventListener = () => {};
 if (!g.innerWidth) g.innerWidth = 1024;
 
-const { render, getPageTitle } = await import(pathToFileURL(serverOutFile).href);
+const { render, getPageTitle, getPageDescription } = await import(pathToFileURL(serverOutFile).href);
 
 const templatePath = path.resolve(distDir, "index.html");
 const rawTemplate = fs.readFileSync(templatePath, "utf-8");
@@ -75,6 +75,7 @@ console.log("\n🔄 Pre-rendering static pages...");
 for (const route of routes) {
   const appHtml = render(route);
   const pageTitle = getPageTitle(route);
+  const pageDescription = getPageDescription(route);
   const canonicalUrl = `https://www.lrhkonsult.se${route === "/" ? "" : route}`;
 
   let html = template.replace(
@@ -88,6 +89,11 @@ for (const route of routes) {
     );
   }
   html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+  html = html.replace(/property="og:title" content="[^"]*"/, `property="og:title" content="${pageTitle}"`);
+  html = html.replace(/property="og:description" content="[^"]*"/, `property="og:description" content="${pageDescription}"`);
+  html = html.replace(/property="og:url" content="[^"]*"/, `property="og:url" content="${canonicalUrl}"`);
+  html = html.replace(/name="description" content="[^"]*"/, `name="description" content="${pageDescription}"`);
+  html = html.replace(/<link rel="canonical"[^>]*\/?>/g, '');
   html = html.replace('\n  </head>', `\n  <link rel="canonical" href="${canonicalUrl}" />\n  </head>`);
 
   const filePath = path.join(distDir, route === "/" ? "index.html" : `${route}.html`);
