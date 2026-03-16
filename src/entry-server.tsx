@@ -47,5 +47,5 @@ export function getPageTitle(url: string): string {
     "/restauranger-sala": "Hemsidor för Restauranger i Sala | LRH Konsult",
     "/frisor-koping": "Hemsidor för Frisörer i Köping | LRH Konsult",
   };
-  return titles[url] || "LRH Konsult – Webbutveckling & SEO";
+  return titles[url] || "LRH Konsult – Webbutveckling & SEO i Västmanland";
 }

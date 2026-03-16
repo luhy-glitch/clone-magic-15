@@ -19,7 +19,7 @@ const Footer = () => {
               <meta itemProp="name" content="LRH Konsult" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4" itemProp="description">
-              Din lokala partner för Webbutveckling &amp; SEO i Mälardalen &amp; Västmanland.
+              Din lokala partner för Webbutveckling &amp; SEO i Västmanland.
             </p>
             <address className="not-italic text-sm text-muted-foreground space-y-1" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
               <p itemProp="addressLocality">Västerås</p>
@@ -108,7 +108,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <span>© 2026 LRH Konsult. Alla rättigheter förbehållna.</span>
+          <span>© 2025 LRH Konsult. Alla rättigheter förbehållna.</span>
           <Link
             to="/case"
             className="inline-flex items-center gap-2 text-primary hover:underline transition-colors"
