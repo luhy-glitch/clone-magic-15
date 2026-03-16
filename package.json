@@ -9,13 +9,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run generate:sitemap",
-    "postbuild": "node scripts/prerender.mjs",
+    "postbuild": "node scripts/prerender.mjs && node inject-meta.js",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
     "generate:sitemap": "node scripts/generate-sitemap.mjs"
+  
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

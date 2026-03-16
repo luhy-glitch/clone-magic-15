@@ -1,0 +1,212 @@
+[
+  {
+    "slug": "index",
+    "title": "Webbutveckling & SEO i Västmanland | LRH Konsult",
+    "description": "Blixtsnabba hemsidor i Västerås, Köping & Sala. Vi bygger i React för 100/100 PageSpeed och maximal konvertering. Boka en gratis analys!"
+  },
+  {
+    "slug": "om-mig",
+    "title": "Om mig | LRH Konsult - Din Webbutvecklare & SEO-partner",
+    "description": "Lär känna ansiktet bakom LRH Konsult. Jag hjälper lokala företag att växa genom teknisk expertis och datadriven sökordsoptimering."
+  },
+  {
+    "slug": "kontakt",
+    "title": "Kontakta LRH Konsult | Webbutveckling i Västerås",
+    "description": "Redo för en snabbare hemsida? Kontakta oss för rådgivning kring webbutveckling, SEO-optimering eller digital strategi."
+  },
+  {
+    "slug": "case",
+    "title": "Kundcase & Framgångshistorier | LRH Konsult",
+    "description": "Se konkreta resultat där vi tagit företag till toppen av Google och optimerat deras PageSpeed till max. Läs våra kundcase här."
+  },
+  {
+    "slug": "gratis-seo-analys",
+    "title": "Gratis SEO-test | Analysera din hemsida kostnadsfritt",
+    "description": "Få en djupgående analys av din sökbarhet, tekniska prestanda och mobilvänlighet. Vi visar hur du kan slå dina konkurrenter."
+  },
+  {
+    "slug": "tjanster/webbutveckling",
+    "title": "Skräddarsydd Webbutveckling & System | LRH Konsult",
+    "description": "Vi bygger framtidens webbplatser i React och Next.js. Fokus på extrem prestanda, säkerhet och skalbarhet för ditt företag."
+  },
+  {
+    "slug": "tjanster/seo-optimering",
+    "title": "Sökordsoptimering (SEO) som ökar din försäljning",
+    "description": "Låt inte dina kunder hamna hos konkurrenten. Vi optimerar din hemsida för att dominera sökresultaten på Google långsiktigt."
+  },
+  {
+    "slug": "tjanster/webbdesign",
+    "title": "Modern Webbdesign & UX för företag | LRH Konsult",
+    "description": "Design som inte bara är snygg, utan som leder besökaren till köp. Vi skapar användarvänliga gränssnitt som konverterar."
+  },
+  {
+    "slug": "tjanster/wordpress-losningar",
+    "title": "Snabba WordPress-hemsidor & Support | LRH Konsult",
+    "description": "Vi tar WordPress till nästa nivå. Snabba teman, säkra plugins och professionell support för din existerande eller nya sajt."
+  },
+  {
+    "slug": "tjanster/underhall-support",
+    "title": "Hemsideservice & Trygghetsavtal | LRH Konsult",
+    "description": "Slipp tekniskt krångel. Vi sköter uppdateringar, backuper och säkerhet så att du kan fokusera på att driva ditt företag."
+  },
+  {
+    "slug": "tjanster/prestanda-optimering",
+    "title": "Hastighetsoptimering - Nå 100/100 på PageSpeed",
+    "description": "En långsam sida tappar kunder. Vi optimerar din kod, server och bilder för att ge dina besökare en blixtsnabb upplevelse."
+  },
+  {
+    "slug": "tjanster/google-ads",
+    "title": "Google Ads & Digital Annonsering (SEM) | LRH Konsult",
+    "description": "Få kunder direkt med träffsäker annonsering. Vi hanterar dina Google Ads-kampanjer för maximal ROI och lägsta klickkostnad."
+  },
+  {
+    "slug": "tjanster/vad-kostar-en-hemsida-2026",
+    "title": "Pris för hemsida 2026? Se priser & paket | LRH Konsult",
+    "description": "Vad kostar en professionell webbplats egentligen? Vi går igenom priser för allt från enkla landningssidor till e-handel."
+  },
+  {
+    "slug": "blogg",
+    "title": "SEO-bloggen | Tips om Webbutveckling & Google",
+    "description": "Håll dig uppdaterad med de senaste strategierna inom sökordsoptimering, webbdesign och digital marknadsföring."
+  },
+  {
+    "slug": "blogg/oka-hemsidans-hastighet",
+    "title": "Guide: Så får du en snabbare hemsida | LRH Konsult",
+    "description": "Lär dig knepen som gör din webbplats snabbare. Allt från bildoptimering till teknisk caching för bättre rankning."
+  },
+  {
+    "slug": "blogg/lokal-seo-smaforetag",
+    "title": "Dominera lokalt: SEO-tips för småföretag",
+    "description": "Hur syns man i Google Maps och på lokala sökningar? Vi delar 5 konkreta tips för småföretagare i Västmanland."
+  },
+  {
+    "slug": "blogg/react-vs-wordpress",
+    "title": "React vs WordPress - Vilken plattform är bäst 2026?",
+    "description": "En djupgående jämförelse mellan världens största CMS och framtidens teknologier. Vi hjälper dig välja rätt."
+  },
+  {
+    "slug": "blogg/komplett-seo-guide-smaforetag",
+    "title": "Den ultimata SEO-guiden för nybörjare | LRH Konsult",
+    "description": "Allt du behöver veta för att börja synas på Google. Sökordsanalys, on-page och länkstrategier förklarat enkelt."
+  },
+  {
+    "slug": "blogg/skapa-hemsida-foretag-guide",
+    "title": "Checklista: Skapa hemsida till företag | Steg-för-steg",
+    "description": "Från domänköp till lanseringsfest. Vi går igenom hela processen för att bygga en framgångsrik företagssida."
+  },
+  {
+    "slug": "webbutveckling-vasteras",
+    "title": "Webbutveckling i Västerås | Blixtsnabba Hemsidor",
+    "description": "Behöver du en ny hemsida i Västerås? Vi bygger SEO-optimerade webbplatser som laddar omedelbart och driver affärer."
+  },
+  {
+    "slug": "webbutveckling-enkoping",
+    "title": "Hemsidor i Enköping | Webbutveckling & Design",
+    "description": "Professionell webbpartner i Enköping. Vi hjälper lokala verksamheter att modernisera sin digitala närvaro."
+  },
+  {
+    "slug": "webbutveckling-eskilstuna",
+    "title": "Webbyrå Eskilstuna | SEO-vänliga Hemsidor",
+    "description": "Vi skapar kraftfulla hemsidor i Eskilstuna med fokus på konvertering och högsta möjliga Google-rankning."
+  },
+  {
+    "slug": "webbutveckling-arboga",
+    "title": "Webbutveckling Arboga | Din lokala digitala partner",
+    "description": "Snabba, mobilvänliga och snygga hemsidor för företag i Arboga. Vi ser till att du syns där dina kunder letar."
+  },
+  {
+    "slug": "webbutveckling-fagersta",
+    "title": "Hemsidor Fagersta | Utveckling & Sökmotoroptimering",
+    "description": "Vi bygger din nästa hemsida i Fagersta. Modern teknik möter lokal expertis för bästa möjliga resultat online."
+  },
+  {
+    "slug": "webbutveckling-hallstahammar",
+    "title": "Webbutveckling i Hallstahammar | Syns på Google",
+    "description": "Optimera din verksamhet i Hallstahammar med en ny hemsida. Vi fokuserar på snabbhet och lokal relevans."
+  },
+  {
+    "slug": "webbutveckling-kungsor",
+    "title": "Hemsidor Kungsör | Webbutveckling för småföretag",
+    "description": "Vill du ha fler kunder i Kungsör? En SEO-optimerad hemsida från LRH Konsult är lösningen. Kontakta oss idag."
+  },
+  {
+    "slug": "webbutveckling-surahammar",
+    "title": "Webbutveckling Surahammar | Modern design & Teknik",
+    "description": "Vi levererar högpresterande webblösningar till företag i Surahammar. Alltid med 100/100 i PageSpeed-mål."
+  },
+  {
+    "slug": "webbutveckling-heby",
+    "title": "Hemsidor i Heby | Webbutveckling & Lokal SEO",
+    "description": "Stärk din digitala profil i Heby. Vi bygger sajter som laddar snabbt och rankar högt på sökorden som räknas."
+  },
+  {
+    "slug": "webbutveckling-norberg",
+    "title": "Webbutveckling Norberg | Din partner för digital tillväxt",
+    "description": "Vi hjälper företag i Norberg att nå ut till fler kunder genom moderna hemsidor och strategisk sökoptimering."
+  },
+  {
+    "slug": "webbutveckling-skinnskatteberg",
+    "title": "Hemsidor Skinnskatteberg | Webb & Marknadsföring",
+    "description": "Professionell webbutveckling för företag i Skinnskatteberg. Vi bygger hemsidor som fungerar som säljverktyg."
+  },
+  {
+    "slug": "webbutveckling-uppsala",
+    "title": "Webbutveckling Uppsala | Avancerade Webblösningar",
+    "description": "Vi bygger blixtsnabba React-sidor för krävande företag i Uppsala som vill ligga i framkant digitalt."
+  },
+  {
+    "slug": "webbutveckling-orebro",
+    "title": "Webbutveckling Örebro | Hemsidor med fokus på SEO",
+    "description": "Maximera din synlighet i Örebro. Vi utvecklar webbplatser som kombinerar estetik med teknisk briljans."
+  },
+  {
+    "slug": "seo-koping",
+    "title": "SEO i Köping | Hamna högst upp i sökresultaten",
+    "description": "Sökordsoptimering för företag i Köping. Vi hjälper dig att dominera lokala sökningar och driva mer trafik."
+  },
+  {
+    "slug": "hemsidor-sala",
+    "title": "Hemsidor Sala | Webbdesign & Lokal Marknadsföring",
+    "description": "Snabba och snygga hemsidor för företagare i Sala. Vi ser till att dina lokala kunder hittar dig först."
+  },
+  {
+    "slug": "hemsidor-bygg-hantverkare",
+    "title": "Hemsidor för Byggföretag & Hantverkare | SEO",
+    "description": "Vi bygger sidor som ger fler offertförfrågningar. Specialanpassat för hantverkare som vill växa."
+  },
+  {
+    "slug": "digital-marknadsforing-butiker",
+    "title": "Digital marknadsföring för butiker & Handel",
+    "description": "Få fler besökare till din butik med lokal SEO och smart digital annonsering. Vi vet vad som fungerar."
+  },
+  {
+    "slug": "restauranger-sala",
+    "title": "Hemsida för restaurang i Sala | Menyer & Bokning",
+    "description": "Gör det enkelt för gäster att hitta din meny och boka bord online. Vi bygger restaurangsajter i Sala."
+  },
+  {
+    "slug": "frisor-koping",
+    "title": "Hemsida för frisör i Köping | Boka klippning online",
+    "description": "Visa upp dina arbeten och låt kunder boka tid direkt. Moderna hemsidor för frisörsalonger i Köping."
+  },
+  {
+    "slug": "hemsidor-restaurang",
+    "title": "Professionella Hemsidor för Restauranger | SEO",
+    "description": "Vi bygger snygga och hungerskapande webbplatser för restauranger. Inkluderar digitala menyer och bokningslänkar."
+  },
+  {
+    "slug": "hemsidor-redovisning",
+    "title": "Hemsidor för Redovisningsbyråer & Konsulter",
+    "description": "Skapa förtroende med en professionell hemsida för din redovisningsbyrå. Vi fokuserar på seriositet och SEO."
+  },
+  {
+    "slug": "hemsidor-ehandel",
+    "title": "E-handel & Webbutik | Sälj mer med snabbare laddning",
+    "description": "Vi bygger konverteringsoptimerade webbutiker. Snabb kassa, mobilvänlig design och sökordsoptimerade produkter."
+  },
+  {
+    "slug": "integritetspolicy",
+    "title": "Integritetspolicy | Hur vi hanterar dina data",
+    "description": "Läs om hur LRH Konsult hanterar personuppgifter, cookies och din integritet på vår webbplats."
+  }
+]
