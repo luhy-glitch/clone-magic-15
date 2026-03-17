@@ -80,14 +80,7 @@ const Index = () => {
               "name": "LRH Konsult",
               "url": "https://www.lrhkonsult.se"
             },
-            {
-              "@type": "FAQPage",
-              "mainEntity": homeFaqs.map(f => ({
-                "@type": "Question",
-                "name": f.question,
-                "acceptedAnswer": { "@type": "Answer", "text": f.answer }
-              }))
-            }
+       
           ]
         }}
       />
