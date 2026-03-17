@@ -166,27 +166,19 @@ export const ServiceFAQ = ({ faq, title }: { faq: FAQItem[]; title?: string }) =
         <h2 id="service-faq-heading" className="text-2xl sm:text-3xl font-bold font-serif text-center mb-10">
           {title || "Vanliga frågor"}
         </h2>
-        <div itemScope itemType="https://schema.org/FAQPage">
+        <div>
           <Accordion type="single" collapsible className="space-y-3">
             {faq.map((item, i) => (
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
                 className="bg-card border border-border rounded-xl px-6"
-                itemScope
-                itemProp="mainEntity"
-                itemType="https://schema.org/Question"
               >
                 <AccordionTrigger className="text-left font-serif font-bold text-base">
-                  <span itemProp="name">{item.question}</span>
+                  <span>{item.question}</span>
                 </AccordionTrigger>
-                <AccordionContent
-                  className="text-muted-foreground leading-relaxed"
-                  itemScope
-                  itemProp="acceptedAnswer"
-                  itemType="https://schema.org/Answer"
-                >
-                  <span itemProp="text">{item.answer}</span>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  <span>{item.answer}</span>
                 </AccordionContent>
               </AccordionItem>
             ))}

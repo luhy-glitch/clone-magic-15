@@ -8,21 +8,19 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Brand + NAP */}
-          <div className="sm:col-span-2 lg:col-span-1" itemScope itemType="https://schema.org/ProfessionalService">
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4">
               <LrhLogo variant="white" className="h-11 w-auto opacity-90" width={180} height={45} />
-              <meta itemProp="name" content="LRH Konsult" />
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4" itemProp="description">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Din lokala partner för Webbutveckling &amp; SEO i Västmanland.
             </p>
-            <address className="not-italic text-sm text-muted-foreground space-y-1" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-              <p itemProp="addressLocality">Västerås</p>
-              <p><span itemProp="addressRegion">Västmanlands län</span>, <span itemProp="addressCountry">Sverige</span></p>
-              <p><a href="tel:+46704606578" className="hover:text-primary transition-colors" itemProp="telephone">070 460 65 78</a></p>
-              <p><a href="mailto:lucas@lrhkonsult.se" className="hover:text-primary transition-colors" itemProp="email">lucas@lrhkonsult.se</a></p>
+            <address className="not-italic text-sm text-muted-foreground space-y-1">
+              <p>Västerås</p>
+              <p><span>Västmanlands län</span>, <span>Sverige</span></p>
+              <p><a href="tel:+46704606578" className="hover:text-primary transition-colors">070 460 65 78</a></p>
+              <p><a href="mailto:lucas@lrhkonsult.se" className="hover:text-primary transition-colors">lucas@lrhkonsult.se</a></p>
             </address>
-            <meta itemProp="url" content="https://www.lrhkonsult.se" />
           </div>
 
           {/* Tjänster */}

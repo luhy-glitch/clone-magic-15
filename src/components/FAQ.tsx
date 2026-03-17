@@ -26,27 +26,19 @@ const FAQ = () => {
         </AnimatedSection>
 
         <FadeIn delay={0.2}>
-          <div itemScope itemType="https://schema.org/FAQPage">
+          <div>
             <Accordion type="single" collapsible className="space-y-3">
               {siteWideFaqs.map((faq, i) => (
                 <AccordionItem
                   key={i}
                   value={`item-${i}`}
                   className="bg-card border border-border rounded-lg px-6"
-                  itemScope
-                  itemProp="mainEntity"
-                  itemType="https://schema.org/Question"
                 >
                   <AccordionTrigger className="text-left text-foreground font-medium py-5 hover:no-underline">
-                    <span itemProp="name">{faq.question}</span>
+                    <span>{faq.question}</span>
                   </AccordionTrigger>
-                  <AccordionContent
-                    className="text-muted-foreground pb-5 leading-relaxed"
-                    itemScope
-                    itemProp="acceptedAnswer"
-                    itemType="https://schema.org/Answer"
-                  >
-                    <span itemProp="text">{faq.answer}</span>
+                  <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                    <span>{faq.answer}</span>
                   </AccordionContent>
                 </AccordionItem>
               ))}

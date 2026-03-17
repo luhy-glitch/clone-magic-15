@@ -51,31 +51,21 @@ const Testimonials = () => {
           </p>
         </AnimatedSection>
 
-        <div className="space-y-10" itemScope itemType="https://schema.org/LocalBusiness">
-          <meta itemProp="name" content="LRH Konsult" />
+        <div className="space-y-10">
           {testimonials.map((t) => (
             <AnimatedSection key={t.name}>
-              <blockquote
-                className="border-l-4 border-primary pl-6"
-                itemScope
-                itemProp="review"
-                itemType="https://schema.org/Review"
-              >
-                <div itemScope itemProp="reviewRating" itemType="https://schema.org/Rating">
-                  <meta itemProp="ratingValue" content="5" />
-                  <meta itemProp="bestRating" content="5" />
-                </div>
+              <blockquote className="border-l-4 border-primary pl-6">
                 {t.highlight && (
                   <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-4 border border-primary/20">
                     {t.highlight}
                   </span>
                 )}
-                <p className="text-foreground leading-[1.8] text-base italic mb-4" itemProp="reviewBody">
+                <p className="text-foreground leading-[1.8] text-base italic mb-4">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <footer className="text-sm text-muted-foreground">
-                  <strong className="text-foreground" itemProp="author" itemScope itemType="https://schema.org/Person">
-                    <span itemProp="name">{t.name}</span>
+                  <strong className="text-foreground">
+                    <span>{t.name}</span>
                   </strong> — {t.company}
                 </footer>
               </blockquote>
