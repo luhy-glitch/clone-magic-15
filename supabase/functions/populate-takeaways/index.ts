@@ -122,7 +122,7 @@ const TAKEAWAYS: Record<string, string[]> = {
     "Hyper-lokalt: Dominera ditt län genom att väva in lokala landmärken i din SEO.",
     "Expertis: Bli en auktoritet genom att kombinera teknisk spets med lokal kännedom.",
   ],
-  "Maximera din digitala synlighet i Västmanland – Nya trender inom SEO och AI": [
+  "Digital synlighet & AI-trender i Västmanland": [
     "SGE: Googles AI-sök sammanfattar svar och kräver auktoritärt innehåll för att citera dig.",
     "Strukturerad data: JSON-LD är nyckeln för att AI ska förstå din tjänst och plats.",
     "Lokal dominans: Företag i Västerås och Sala kan snabbt bli auktoriteter med rätt SEO.",

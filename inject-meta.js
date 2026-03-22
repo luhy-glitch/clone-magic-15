@@ -32,8 +32,9 @@ function inject() {
             html = html.replace(/<link rel="canonical".*?>/gi, '');
 
             html = html.replace('</head>', `${seoBlock}\n  </head>`);
+
             // Injicera statiska interna länkar för SEO-crawlers
-const internalLinks = `
+            const internalLinks = `
 <nav aria-hidden="true" style="display:none" id="seo-internal-links">
   <a href="/tjanster/webbutveckling">Webbutveckling</a>
   <a href="/tjanster/seo-optimering">SEO-optimering</a>
@@ -71,26 +72,68 @@ const internalLinks = `
   <a href="/kontakt">Kontakt</a>
   <a href="/gratis-seo-analys">Gratis SEO-analys</a>
   <a href="/integritetspolicy">Integritetspolicy</a>
+  <a href="/blogg/komplett-seo-guide-smaforetag">SEO-guide småföretag</a>
+  <a href="/blogg/skapa-hemsida-foretag-guide">Skapa hemsida guide</a>
+  <a href="/blogg/oka-hemsidans-hastighet">Öka hemsidans hastighet</a>
+  <a href="/blogg/lokal-seo-smaforetag">Lokal SEO småföretag</a>
+  <a href="/blogg/react-vs-wordpress">React vs WordPress</a>
+  <a href="/blogg/framtidsakra-foretag-react-malardalen">Framtidssäkra React Mälardalen</a>
+  <a href="/blogg/lokal-sokmotoroptimering-vastmanland-2026">Lokal SEO Västmanland 2026</a>
+  <a href="/blogg/digital-tillvaxt-smaforetag-malardalen">Digital tillväxt Mälardalen</a>
+  <a href="/blogg/dominera-google-enkoping">Dominera Google Enköping</a>
+  <a href="/blogg/webbutveckling-enkoping-partner">Webbutveckling Enköping</a>
+  <a href="/blogg/komplett-guide-digital-narvaro-malardalen">Digital närvaro Mälardalen</a>
+  <a href="/blogg/webbutveckling-eskilstuna-guide">Webbutveckling Eskilstuna</a>
+  <a href="/blogg/moderna-hemsidor-vastmanland">Moderna hemsidor Västmanland</a>
+  <a href="/blogg/seo-strategi-eskilstuna">SEO strategi Eskilstuna</a>
+  <a href="/blogg/lokal-seo-tips-vastmanland">Lokal SEO tips Västmanland</a>
+  <a href="/blogg/frisor-koping-dominera-google">Frisör Köping Google</a>
+  <a href="/blogg/digital-marknadsforing-cafeer">Digital marknadsföring caféer</a>
+  <a href="/blogg/webbdesign-advokatbyraer-vasteras">Webbdesign advokatbyråer</a>
+  <a href="/blogg/bokningssystem-frisorer-vastmanland">Bokningssystem frisörer</a>
+  <a href="/blogg/e-handel-butiker-sala">E-handel butiker Sala</a>
+  <a href="/blogg/restauranghemsida-online-meny-sala">Restauranghemsida Sala</a>
+  <a href="/blogg/seo-byggforetag-malardalen">SEO byggföretag Mälardalen</a>
+  <a href="/blogg/hemsida-hantverkare-vasteras">Hemsida hantverkare Västerås</a>
+  <a href="/blogg/byggfirma-vasteras-fler-kunder">Byggfirma Västerås</a>
+  <a href="/blogg/restaurang-sala-snabb-hemsida">Restaurang Sala hemsida</a>
+  <a href="/blogg/hastighetsoptimering-foretag-sala">Hastighetsoptimering Sala</a>
+  <a href="/blogg/wordpress-vs-react-vasteras">WordPress vs React Västerås</a>
+  <a href="/blogg/oka-hemsidans-hastighet-koping">Hastighet Köping</a>
+  <a href="/blogg/hur-lang-tid-bygga-hemsida-vasteras">Byggtid hemsida Västerås</a>
+  <a href="/blogg/pris-professionell-hemsida-2026">Pris hemsida 2026</a>
+  <a href="/blogg/minska-bounce-rate-vasteras">Bounce rate Västerås</a>
+  <a href="/blogg/core-web-vitals-vastmanland">Core Web Vitals Västmanland</a>
+  <a href="/blogg/react-vs-wordpress-koping">React vs WordPress Köping</a>
+  <a href="/blogg/billig-vs-professionell-hemsida">Billig vs professionell hemsida</a>
+  <a href="/blogg/vad-kostar-hemsida-smaforetag-sala">Vad kostar hemsida Sala</a>
+  <a href="/blogg/resan-till-100-pagespeed">100/100 PageSpeed</a>
+  <a href="/blogg/framtidssakra-din-digitala-narvaro-i-vastmanland">Digital närvaro Västmanland</a>
+  <a href="/blogg/effektiv-webbutveckling-ai-verktyg-vastmanland">Webbutveckling AI Västmanland</a>
+  <a href="/blogg/digital-synlighet-vastmanland-seo-ai">Digital synlighet SEO AI</a>
+  <a href="/blogg/framtidssakra-foretag-vastmanland-2026">Framtidssäkra företag 2026</a>
 </nav>`;
-// Lägg till aggregateRating JSON-LD för startsidan
-if (page.slug === 'index') {
-  const aggregateRatingLd = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "LRH Konsult",
-    "url": "https://www.lrhkonsult.se",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "5",
-      "reviewCount": "5"
-    }
-  });
-  html = html.replace('</head>', `<script type="application/ld+json">${aggregateRatingLd}</script>\n</head>`);
-}
-html = html.replace('</body>', `${internalLinks}\n</body>`);
+
+            // Lägg till aggregateRating JSON-LD för startsidan
+            if (page.slug === 'index') {
+                const aggregateRatingLd = JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "ProfessionalService",
+                    "name": "LRH Konsult",
+                    "url": "https://www.lrhkonsult.se",
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "5",
+                        "bestRating": "5",
+                        "worstRating": "1",
+                        "ratingCount": "5",
+                        "reviewCount": "5"
+                    }
+                });
+                html = html.replace('</head>', `<script type="application/ld+json">${aggregateRatingLd}</script>\n</head>`);
+            }
+
+            html = html.replace('</body>', `${internalLinks}\n</body>`);
 
             fs.writeFileSync(filePath, html);
             console.log(`✅ Injicerat i: ${fileName}`);
