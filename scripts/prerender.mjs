@@ -86,6 +86,7 @@ const routes = [
   "/blogg/effektiv-webbutveckling-ai-verktyg-vastmanland",
   "/blogg/digital-synlighet-vastmanland-seo-ai",
   "/blogg/framtidssakra-foretag-vastmanland-2026",
+  "/blogg/seo-vasteras",
   "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna",
   "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar",
   "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby",

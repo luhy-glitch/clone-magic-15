@@ -112,6 +112,7 @@ function inject() {
   <a href="/blogg/effektiv-webbutveckling-ai-verktyg-vastmanland">Webbutveckling AI Västmanland</a>
   <a href="/blogg/digital-synlighet-vastmanland-seo-ai">Digital synlighet SEO AI</a>
   <a href="/blogg/framtidssakra-foretag-vastmanland-2026">Framtidssäkra företag 2026</a>
+  <a href="/blogg/seo-vasteras">SEO Västerås – Ranka högst på Google 2026</a>  
 </nav>`;
 
             // Lägg till aggregateRating JSON-LD för startsidan
