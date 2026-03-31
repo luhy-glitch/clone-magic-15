@@ -1,10 +1,3 @@
-/**
- * Local sitemap generator
- *
- * Reads routes from src/config/sitemapRoutes.ts and writes public/sitemap.xml.
- * Run: npm run generate:sitemap
- */
-
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
@@ -14,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const outFile = path.resolve(rootDir, ".sitemap-tmp.mjs");
 
-// Bundle the TS config so we can import it in Node
+// Buntlar din TS-konfiguration
 await build({
   entryPoints: [path.resolve(rootDir, "src/config/sitemapRoutes.ts")],
   bundle: true,
@@ -36,6 +29,15 @@ const urls = SITEMAP_ROUTES.map(
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`;
 
-const dest = path.resolve(rootDir, "dist/sitemap.xml");
-fs.writeFileSync(dest, xml, "utf-8");
-console.log(`✅ Sitemap generated: ${dest} (${SITEMAP_ROUTES.length} URLs)`);
+// Vi definierar båda platserna där filen ska sparas
+const destinations = [
+  path.resolve(rootDir, "public/sitemap.xml"),
+  path.resolve(rootDir, "dist/sitemap.xml")
+];
+
+destinations.forEach(dest => {
+  fs.writeFileSync(dest, xml, "utf-8");
+  console.log(`✅ Sitemap uppdaterad: ${dest}`);
+});
+
+console.log(`🚀 Totalt ${SITEMAP_ROUTES.length} URL:er inlagda med dagens datum (${today}).`);
