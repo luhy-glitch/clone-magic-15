@@ -27,7 +27,7 @@ globalThis.Element = dom.window.Element;
 globalThis.HTMLElement = dom.window.HTMLElement;
 globalThis.localStorage = { getItem: () => null, setItem: () => {}, removeItem: () => {}, clear: () => {} };
 
-console.log("📦 Bygger renderings-motor för Vercel (med require-shim)...");
+console.log("📦 Bygger renderings-motor för Vercel...");
 
 await build({
   entryPoints: [path.resolve(rootDir, "src/entry-server.tsx")],
@@ -39,7 +39,6 @@ await build({
   jsxImportSource: "react",
   alias: { "@": path.resolve(rootDir, "src") },
   external: ["@supabase/supabase-js"],
-  // DENNA BANNER FIXAR "DYNAMIC REQUIRE" FELET
   banner: {
     js: `
       import { createRequire } from 'module';
@@ -56,19 +55,32 @@ const { render, getPageTitle } = await import(pathToFileURL(serverOutFile).href 
 const template = fs.readFileSync(path.resolve(distDir, "index.html"), "utf-8");
 
 const routes = ["/", "/om-mig", "/kontakt", "/integritetspolicy", "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna", "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar", "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby", "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala", "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala", "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel"];
+const blogPosts = ["oka-hemsidans-hastighet", "lokal-seo-smaforetag", "react-vs-wordpress", "komplett-seo-guide-smaforetag", "skapa-hemsida-foretag-guide", "framtidsakra-foretag-react-malardalen", "lokal-sokmotoroptimering-vastmanland-2026", "digital-tillvaxt-smaforetag-malardalen", "dominera-google-enkoping", "webbutveckling-enkoping-partner", "komplett-guide-digital-narvaro-malardalen", "webbutveckling-eskilstuna-guide", "moderna-hemsidor-vastmanland", "seo-strategi-eskilstuna", "lokal-seo-tips-vastmanland", "frisor-koping-dominera-google", "digital-marknadsforing-cafeer", "webbdesign-advokatbyraer-vasteras", "bokningssystem-frisorer-vastmanland", "e-handel-butiker-sala", "restauranghemsida-online-meny-sala", "seo-byggforetag-malardalen", "hemsida-hantverkare-vasteras", "byggfirma-vasteras-fler-kunder", "restaurang-sala-snabb-hemsida", "hastighetsoptimering-foretag-sala", "wordpress-vs-react-vasteras", "oka-hemsidans-hastighet-koping", "hur-lang-tid-bygga-hemsida-vasteras", "pris-professionell-hemsida-2026", "minska-bounce-rate-vasteras", "core-web-vitals-vastmanland", "react-vs-wordpress-koping", "billig-vs-professionell-hemsida", "vad-kostar-hemsida-smaforetag-sala", "resan-till-100-pagespeed", "framtidssakra-din-digitala-narvaro-i-vastmanland", "effektiv-webbutveckling-ai-verktyg-vastmanland", "digital-synlighet-vastmanland-seo-ai", "framtidssakra-foretag-vastmanland-2026", "seo-vasteras"];
 
-console.log(`🚀 Startar SEO-rendering av ${routes.length} sidor...`);
+// Alla 78 sidor!
+const allRoutes = [...routes, ...blogPosts.map(p => `/blogg/${p}`)];
 
-for (const route of routes) {
+console.log(`🚀 Startar SEO-rendering av ${allRoutes.length} sidor...`);
+
+for (const route of allRoutes) {
   try {
     const appHtml = render(route);
     const html = template
       .replace(/<title>.*?<\/title>/, `<title>${getPageTitle(route)}</title>`)
       .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
 
+    // Spara som root-fil (ex. webbutveckling-vasteras.html)
     const filePath = path.join(distDir, route === "/" ? "index.html" : `${route}.html`);
     if (!fs.existsSync(path.dirname(filePath))) fs.mkdirSync(path.dirname(filePath), { recursive: true });
     fs.writeFileSync(filePath, html);
+
+    // FIXEN FÖR VERCEL/AHREFS: Spara Också som index.html i en undermapp!
+    if (route !== "/") {
+      const folderPath = path.join(distDir, route);
+      if (!fs.existsSync(folderPath)) fs.mkdirSync(folderPath, { recursive: true });
+      fs.writeFileSync(path.join(folderPath, "index.html"), html);
+    }
+
     console.log(`  ✅ ${route}`);
   } catch (err) {
     console.error(`  ❌ Fel på ${route}:`, err.message);
