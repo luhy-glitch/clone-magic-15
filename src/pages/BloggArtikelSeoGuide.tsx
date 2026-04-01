@@ -93,7 +93,7 @@ function renderInline(text: string) {
 
 const TITLE = "Komplett SEO-guide för småföretag 2025";
 const DESCRIPTION = "Lär dig allt om SEO för småföretag – från nyckelord till länkbygge.";
-const PATH = "/blogg/komplett-seo-guide-smaforetag";
+const PATH = "/blogg/seo-vasteras";
 
 const CONTENT = `
 Att driva ett litet företag idag innebär att du måste konkurrera om uppmärksamhet på internet. Sökmotoroptimering (SEO) är det verktyg som hjälper dig att synas när dina framtida kunder söker efter tjänster och produkter som du erbjuder. Den här guiden är skriven för 2025 och tar dig steg för steg genom allt du behöver veta för att börja ranka bättre i Google – från grunderna till mer avancerade strategier.

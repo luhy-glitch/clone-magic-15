@@ -93,7 +93,7 @@ function renderInline(text: string) {
 
 const TITLE = "Så skapar du en hemsida för ditt företag 2025";
 const DESCRIPTION = "Steg-för-steg guide för att skapa en professionell företagshemsida.";
-const PATH = "/blogg/skapa-hemsida-foretag-guide";
+const PATH = "/blogg/lokal-seo-smaforetag";
 
 const CONTENT = `
 Att skapa en hemsida för ditt företag kan kännas överväldigande – särskilt om du inte är van vid tekniken. Den här guiden tar dig igenom processen från idé till lansering och vidare till långsiktigt underhåll. Den är skriven med 2025 års krav i åtanke, när mobilanvändare, SEO och säkerhet är viktigare än någonsin.

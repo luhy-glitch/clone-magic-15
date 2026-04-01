@@ -6,21 +6,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const distDir = path.resolve(__dirname, '../dist');
 
-const staticRoutes = [
-  "/", "/om-mig", "/kontakt", "/integritetspolicy", "/case", "/gratis-seo-analys",
-  "/tjanster/webbutveckling", "/tjanster/webbdesign", "/tjanster/seo-optimering", 
-  "/tjanster/wordpress-losningar", "/tjanster/underhall-support", 
-  "/tjanster/prestanda-optimering", "/tjanster/google-ads", "/tjanster/vad-kostar-en-hemsida-2026",
-  "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna", 
-  "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar", 
-  "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby", 
-  "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala", 
-  "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala", "/hemsidor-bygg-hantverkare", 
-  "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", 
-  "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel"
-];
+const staticRoutes = ["/", "/blogg", "/om-mig", "/kontakt", "/integritetspolicy", "/case", "/gratis-seo-analys", "/tjanster/webbutveckling", "/tjanster/webbdesign", "/tjanster/seo-optimering", "/tjanster/wordpress-losningar", "/tjanster/underhall-support", "/tjanster/prestanda-optimering", "/tjanster/google-ads", "/tjanster/vad-kostar-en-hemsida-2026", "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna", "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar", "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby", "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala", "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala", "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel"];
 
-// LÄS IN BLOGGINLÄGG DYNAMISKT
 let blogPosts = [];
 const blogDataPath = path.resolve(rootDir, "src/data/blogPosts.json");
 if (fs.existsSync(blogDataPath)) {

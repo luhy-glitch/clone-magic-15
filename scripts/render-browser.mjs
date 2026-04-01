@@ -7,10 +7,8 @@ import { chromium } from 'playwright';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '../dist');
 
-// Fasta sidor
-const staticRoutes = ["/", "/om-mig", "/kontakt", "/integritetspolicy", "/case", "/gratis-seo-analys", "/tjanster/webbutveckling", "/tjanster/webbdesign", "/tjanster/seo-optimering", "/tjanster/wordpress-losningar", "/tjanster/underhall-support", "/tjanster/prestanda-optimering", "/tjanster/google-ads", "/tjanster/vad-kostar-en-hemsida-2026", "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna", "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar", "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby", "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala", "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala", "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel"];
+const staticRoutes = ["/", "/blogg", "/om-mig", "/kontakt", "/integritetspolicy", "/case", "/gratis-seo-analys", "/tjanster/webbutveckling", "/tjanster/webbdesign", "/tjanster/seo-optimering", "/tjanster/wordpress-losningar", "/tjanster/underhall-support", "/tjanster/prestanda-optimering", "/tjanster/google-ads", "/tjanster/vad-kostar-en-hemsida-2026", "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna", "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar", "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby", "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala", "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala", "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel"];
 
-// Läs in blogginlägg dynamiskt varje gång du bygger!
 let blogPosts = [];
 const blogDataPath = path.resolve(__dirname, "../src/data/blogPosts.json");
 if (fs.existsSync(blogDataPath)) {
@@ -28,15 +26,13 @@ async function renderPages() {
   for (const route of routes) {
     try {
       await page.goto(`http://localhost:4173${route}`, { waitUntil: 'networkidle' });
-      await page.waitForTimeout(500); // Låt React Suspense ladda klart
+      await page.waitForTimeout(500);
       const html = await page.content();
 
-      // Spara root-fil
       const filePath = path.join(distDir, route === "/" ? "index.html" : `${route}.html`);
       if (!fs.existsSync(path.dirname(filePath))) fs.mkdirSync(path.dirname(filePath), { recursive: true });
       fs.writeFileSync(filePath, html);
 
-      // Spara undermapp för Vercel
       if (route !== "/") {
         const folderPath = path.join(distDir, route);
         if (!fs.existsSync(folderPath)) fs.mkdirSync(folderPath, { recursive: true });
@@ -47,10 +43,8 @@ async function renderPages() {
       console.error(`  ❌ Misslyckades med: ${route}`, err);
     }
   }
-
   await browser.close();
   server.httpServer.close();
   console.log("✨ Alla filer klara och sparade!");
 }
-
 renderPages();
