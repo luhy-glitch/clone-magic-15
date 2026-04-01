@@ -3,6 +3,7 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import { JSDOM } from "jsdom";
+import { createRequire } from "module";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
@@ -11,7 +12,6 @@ const serverOutFile = path.resolve(rootDir, "dist-server", "entry-server.mjs");
 
 const { build } = await import("esbuild");
 
-// --- MOCK ENVIRONMENT FOR NODE 20+ & VERCEL ---
 const dom = new JSDOM('<!DOCTYPE html><html><body><div id="root"></div></body></html>', {
   url: "https://www.lrhkonsult.se",
   pretendToBeVisual: true
@@ -19,24 +19,14 @@ const dom = new JSDOM('<!DOCTYPE html><html><body><div id="root"></div></body></
 
 globalThis.window = dom.window;
 globalThis.document = dom.window.document;
+Object.defineProperty(globalThis, 'navigator', { value: dom.window.navigator, configurable: true });
+Object.defineProperty(globalThis, 'location', { value: dom.window.location, configurable: true });
 globalThis.Node = dom.window.Node;
 globalThis.Element = dom.window.Element;
 globalThis.HTMLElement = dom.window.HTMLElement;
 globalThis.localStorage = { getItem: () => null, setItem: () => {}, removeItem: () => {}, clear: () => {} };
 
-Object.defineProperty(globalThis, 'navigator', {
-  value: dom.window.navigator,
-  writable: true,
-  configurable: true
-});
-
-Object.defineProperty(globalThis, 'location', {
-  value: dom.window.location,
-  writable: true,
-  configurable: true
-});
-
-console.log("📦 Building rendering engine for Vercel...");
+console.log("📦 Bygger renderings-motor för Vercel...");
 
 await build({
   entryPoints: [path.resolve(rootDir, "src/entry-server.tsx")],
@@ -69,7 +59,7 @@ const blogPosts = ["oka-hemsidans-hastighet", "lokal-seo-smaforetag", "react-vs-
 
 const allRoutes = [...routes, ...blogPosts.map(p => `/blogg/${p}`)];
 
-console.log(`🚀 Generating HTML for ${allRoutes.length} pages...`);
+console.log(`🚀 Startar SEO-rendering av ${allRoutes.length} sidor...`);
 
 for (const route of allRoutes) {
   try {
@@ -81,12 +71,11 @@ for (const route of allRoutes) {
       .replace(/<title>.*?<\/title>/, `<title>${getPageTitle(route)}</title>`)
       .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
 
-    // 1. Create the .html file (e.g., dist/om-mig.html)
+    // Vercel fix: Spara både som .html och undermapp/index.html
     const filePath = path.join(distDir, route === "/" ? "index.html" : `${route}.html`);
     if (!fs.existsSync(path.dirname(filePath))) fs.mkdirSync(path.dirname(filePath), { recursive: true });
     fs.writeFileSync(filePath, html);
 
-    // 2. Create the folder/index.html structure (e.g., dist/om-mig/index.html)
     if (route !== "/") {
       const folderPath = path.join(distDir, route);
       if (!fs.existsSync(folderPath)) fs.mkdirSync(folderPath, { recursive: true });
@@ -95,7 +84,7 @@ for (const route of allRoutes) {
 
     console.log(`  ✅ ${route}`);
   } catch (err) {
-    console.error(`  ❌ Error on ${route}:`, err.message);
+    console.error(`  ❌ Fel på ${route}:`, err.message);
   }
 }
-console.log("\n✨ SEO Rendering complete!");
+console.log("\n✨ SEO Rendering komplett!");
