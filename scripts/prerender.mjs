@@ -10,122 +10,55 @@ const serverOutFile = path.resolve(rootDir, "dist-server", "entry-server.mjs");
 
 const { build } = await import("esbuild");
 
+// Mocka Node v24 miljö för att slippa TypeError
+const g = globalThis;
+const noop = () => ({});
+const mockDoc = { createElement: () => ({ setAttribute: noop, style: {} }), querySelector: () => null, getElementsByTagName: () => [{ appendChild: noop }] };
+Object.defineProperty(g, 'window', { value: g, writable: true });
+Object.defineProperty(g, 'document', { value: mockDoc, writable: true });
+Object.defineProperty(g, 'navigator', { value: { userAgent: "node" }, writable: true, configurable: true });
+Object.defineProperty(g, 'location', { value: { href: "https://www.lrhkonsult.se", pathname: "/" }, writable: true });
+Object.defineProperty(g, 'localStorage', { value: { getItem: () => null, setItem: noop }, writable: true });
+
+console.log("📦 Bygger server-bundle...");
+
 await build({
   entryPoints: [path.resolve(rootDir, "src/entry-server.tsx")],
-  bundle: true,
-  format: "esm",
-  platform: "browser",
-  outfile: serverOutFile,
-  jsx: "automatic",
-  jsxImportSource: "react",
+  bundle: true, format: "esm", platform: "node", outfile: serverOutFile,
+  jsx: "automatic", jsxImportSource: "react",
   alias: { "@": path.resolve(rootDir, "src") },
-  external: ["@supabase/supabase-js", "sonner", "stream", "http", "https", "zlib", "util", "url", "crypto"],
-  define: {
-    "window": "globalThis",
-    "document": "globalThis.__document__",
-    "localStorage": "globalThis.__localStorage__",
-  },
-  logLevel: "warning",
+  external: ["@supabase/supabase-js", "sonner"],
+  define: { "import.meta.env.MODE": JSON.stringify("production") },
+  logLevel: "error",
 });
 
-const g = globalThis;
-g.__document__ = { getElementById: () => null, querySelector: () => null, querySelectorAll: () => [], createElement: () => ({ setAttribute: () => {}, style: {} }), cookie: "", addEventListener: () => {}, removeEventListener: () => {} };
-g.__localStorage__ = { getItem: () => null, setItem: () => {}, removeItem: () => {} };
-if (!g.navigator) g.navigator = { userAgent: "" };
-if (!g.matchMedia) g.matchMedia = () => ({ matches: false, addEventListener: () => {}, removeEventListener: () => {} });
-if (!g.addEventListener) g.addEventListener = () => {};
-if (!g.removeEventListener) g.removeEventListener = () => {};
-if (!g.innerWidth) g.innerWidth = 1024;
+const { render, getPageTitle, getPageDescription } = await import(pathToFileURL(serverOutFile).href + '?t=' + Date.now());
+const template = fs.readFileSync(path.resolve(distDir, "index.html"), "utf-8");
 
-const { render, getPageTitle, getPageDescription } = await import(pathToFileURL(serverOutFile).href);
+const staticRoutes = ["/", "/om-mig", "/kontakt", "/integritetspolicy", "/webbutveckling-vasteras", "/seo-koping", "/hemsidor-sala", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna", "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar", "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby", "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala", "/webbutveckling-orebro", "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel"];
+const blogPosts = ["oka-hemsidans-hastighet", "lokal-seo-smaforetag", "react-vs-wordpress", "komplett-seo-guide-smaforetag", "skapa-hemsida-foretag-guide", "framtidsakra-foretag-react-malardalen", "lokal-sokmotoroptimering-vastmanland-2026", "digital-tillvaxt-smaforetag-malardalen", "dominera-google-enkoping", "webbutveckling-enkoping-partner", "komplett-guide-digital-narvaro-malardalen", "webbutveckling-eskilstuna-guide", "moderna-hemsidor-vastmanland", "seo-strategi-eskilstuna", "lokal-seo-tips-vastmanland", "frisor-koping-dominera-google", "digital-marknadsforing-cafeer", "webbdesign-advokatbyraer-vasteras", "bokningssystem-frisorer-vastmanland", "e-handel-butiker-sala", "restauranghemsida-online-meny-sala", "seo-byggforetag-malardalen", "hemsida-hantverkare-vasteras", "byggfirma-vasteras-fler-kunder", "restaurang-sala-snabb-hemsida", "hastighetsoptimering-foretag-sala", "wordpress-vs-react-vasteras", "oka-hemsidans-hastighet-koping", "hur-lang-tid-bygga-hemsida-vasteras", "pris-professionell-hemsida-2026", "minska-bounce-rate-vasteras", "core-web-vitals-vastmanland", "react-vs-wordpress-koping", "billig-vs-professionell-hemsida", "vad-kostar-hemsida-smaforetag-sala", "resan-till-100-pagespeed", "framtidssakra-din-digitala-narvaro-i-vastmanland", "effektiv-webbutveckling-ai-verktyg-vastmanland", "digital-synlighet-vastmanland-seo-ai", "framtidssakra-foretag-vastmanland-2026", "seo-vasteras"];
 
-const templatePath = path.resolve(distDir, "index.html");
-const rawTemplate = fs.readFileSync(templatePath, "utf-8");
-const cleanedRaw = rawTemplate.replace(/<link rel="canonical"[^>]*\/?>\n?/g, "");
-const template = cleanedRaw;
+const allRoutes = [...staticRoutes, ...blogPosts.map(p => "/blogg/" + p)];
 
-const routes = [
-  "/", "/om-mig", "/kontakt", "/integritetspolicy", "/case", "/gratis-seo-analys",
-  "/tjanster/webbutveckling", "/tjanster/webbdesign", "/tjanster/seo-optimering",
-  "/tjanster/wordpress-losningar", "/tjanster/underhall-support", "/tjanster/prestanda-optimering",
-  "/tjanster/google-ads", "/tjanster/vad-kostar-en-hemsida-2026",
-  "/blogg", "/blogg/oka-hemsidans-hastighet", "/blogg/lokal-seo-smaforetag", "/blogg/react-vs-wordpress",
-  "/blogg/komplett-seo-guide-smaforetag", "/blogg/skapa-hemsida-foretag-guide",
-  "/blogg/framtidsakra-foretag-react-malardalen",
-  "/blogg/lokal-sokmotoroptimering-vastmanland-2026",
-  "/blogg/digital-tillvaxt-smaforetag-malardalen",
-  "/blogg/dominera-google-enkoping",
-  "/blogg/webbutveckling-enkoping-partner",
-  "/blogg/komplett-guide-digital-narvaro-malardalen",
-  "/blogg/webbutveckling-eskilstuna-guide",
-  "/blogg/moderna-hemsidor-vastmanland",
-  "/blogg/seo-strategi-eskilstuna",
-  "/blogg/lokal-seo-tips-vastmanland",
-  "/blogg/frisor-koping-dominera-google",
-  "/blogg/digital-marknadsforing-cafeer",
-  "/blogg/webbdesign-advokatbyraer-vasteras",
-  "/blogg/bokningssystem-frisorer-vastmanland",
-  "/blogg/e-handel-butiker-sala",
-  "/blogg/restauranghemsida-online-meny-sala",
-  "/blogg/seo-byggforetag-malardalen",
-  "/blogg/hemsida-hantverkare-vasteras",
-  "/blogg/byggfirma-vasteras-fler-kunder",
-  "/blogg/restaurang-sala-snabb-hemsida",
-  "/blogg/hastighetsoptimering-foretag-sala",
-  "/blogg/wordpress-vs-react-vasteras",
-  "/blogg/oka-hemsidans-hastighet-koping",
-  "/blogg/hur-lang-tid-bygga-hemsida-vasteras",
-  "/blogg/pris-professionell-hemsida-2026",
-  "/blogg/minska-bounce-rate-vasteras",
-  "/blogg/core-web-vitals-vastmanland",
-  "/blogg/react-vs-wordpress-koping",
-  "/blogg/billig-vs-professionell-hemsida",
-  "/blogg/vad-kostar-hemsida-smaforetag-sala",
-  "/blogg/resan-till-100-pagespeed",
-  "/blogg/framtidssakra-din-digitala-narvaro-i-vastmanland",
-  "/blogg/effektiv-webbutveckling-ai-verktyg-vastmanland",
-  "/blogg/digital-synlighet-vastmanland-seo-ai",
-  "/blogg/framtidssakra-foretag-vastmanland-2026",
-  "/blogg/seo-vasteras",
-  "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna",
-  "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar",
-  "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby",
-  "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala",
-  "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala",
-  "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping",
-  "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel",
-];
+console.log("\n🔄 Prerendering av " + allRoutes.length + " sidor...");
 
-console.log("\n🔄 Pre-rendering static pages...");
+for (const route of allRoutes) {
+  try {
+    // Vi renderar, väntar 20ms på att lazy-imports ska "sätta sig", och renderar igen
+    render(route);
+    await new Promise(r => setTimeout(r, 20));
+    const appHtml = render(route);
 
-for (const route of routes) {
-  const appHtml = render(route);
-  const pageTitle = getPageTitle(route);
-  const pageDescription = getPageDescription(route);
-  const canonicalUrl = `https://www.lrhkonsult.se${route === "/" ? "" : route}`;
+    const html = template
+      .replace(/<title>.*?<\/title>/, `<title>${getPageTitle(route)}</title>`)
+      .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
 
-  let html = template.replace(
-    '<title>Webbutveckling &amp; SEO i V\u00e4stmanland | LRH Konsult</title>',
-    `<title>${pageTitle}</title>`
-  );
-  if (html === template) {
-    html = template.replace(
-      '<title>Webbutveckling & SEO i Västmanland | LRH Konsult</title>',
-      `<title>${pageTitle}</title>`
-    );
+    const filePath = path.join(distDir, route === "/" ? "index.html" : `${route}.html`);
+    if (!fs.existsSync(path.dirname(filePath))) fs.mkdirSync(path.dirname(filePath), { recursive: true });
+    fs.writeFileSync(filePath, html);
+    console.log(`  ✅ ${route}`);
+  } catch (err) {
+    console.error(`  ❌ Fel på ${route}:`, err.message);
   }
-  html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
-  html = html.replace(/property="og:title" content="[^"]*"/, `property="og:title" content="${pageTitle}"`);
-  html = html.replace(/property="og:description" content="[^"]*"/, `property="og:description" content="${pageDescription}"`);
-  html = html.replace(/property="og:url" content="[^"]*"/, `property="og:url" content="${canonicalUrl}"`);
-  html = html.replace(/name="description" content="[^"]*"/, `name="description" content="${pageDescription}"`);
-  html = html.replace(/<link rel="canonical"[^>]*\/?>/g, '');
-  html = html.replace('\n  </head>', `\n  <link rel="canonical" href="${canonicalUrl}" />\n  </head>`);
-
-  const filePath = path.join(distDir, route === "/" ? "index.html" : `${route}.html`);
-  fs.writeFileSync(filePath, html);
-  console.log(`  ✅ ${route}`);
 }
-
-fs.rmSync(path.resolve(rootDir, "dist-server"), { recursive: true, force: true });
-console.log("✅ Static site generation complete!\n");
+console.log("\n🚀 Klart! Allt renderat.");
