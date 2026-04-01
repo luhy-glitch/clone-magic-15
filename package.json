@@ -14,7 +14,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "generate:sitemap": "node scripts/generate-sitemap.mjs"
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
+    "download-blog-images": "node scripts/download-blog-images.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
