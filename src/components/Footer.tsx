@@ -113,7 +113,7 @@ const Footer = () => {
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
             <span className="font-medium">100/100 PageSpeed</span>
           </Link>
-          <span>En del av <a href="https://frontiermedia.se" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Frontier Media</a></span>
+          <span>En del av <a href="https://www.frontiermedia.se" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Frontier Media</a></span>
         </div>
       </div>
     </footer>
