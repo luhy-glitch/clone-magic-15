@@ -3,7 +3,6 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import { JSDOM } from "jsdom";
-import { createRequire } from "module";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
@@ -12,7 +11,7 @@ const serverOutFile = path.resolve(rootDir, "dist-server", "entry-server.mjs");
 
 const { build } = await import("esbuild");
 
-// --- MOCKA MILJÖN FÖR NODE 20+ ---
+// --- MOCK ENVIRONMENT FOR NODE 20+ & VERCEL ---
 const dom = new JSDOM('<!DOCTYPE html><html><body><div id="root"></div></body></html>', {
   url: "https://www.lrhkonsult.se",
   pretendToBeVisual: true
@@ -20,14 +19,24 @@ const dom = new JSDOM('<!DOCTYPE html><html><body><div id="root"></div></body></
 
 globalThis.window = dom.window;
 globalThis.document = dom.window.document;
-Object.defineProperty(globalThis, 'navigator', { value: dom.window.navigator, configurable: true });
-Object.defineProperty(globalThis, 'location', { value: dom.window.location, configurable: true });
 globalThis.Node = dom.window.Node;
 globalThis.Element = dom.window.Element;
 globalThis.HTMLElement = dom.window.HTMLElement;
 globalThis.localStorage = { getItem: () => null, setItem: () => {}, removeItem: () => {}, clear: () => {} };
 
-console.log("📦 Bygger renderings-motor för Vercel...");
+Object.defineProperty(globalThis, 'navigator', {
+  value: dom.window.navigator,
+  writable: true,
+  configurable: true
+});
+
+Object.defineProperty(globalThis, 'location', {
+  value: dom.window.location,
+  writable: true,
+  configurable: true
+});
+
+console.log("📦 Building rendering engine for Vercel...");
 
 await build({
   entryPoints: [path.resolve(rootDir, "src/entry-server.tsx")],
@@ -47,6 +56,7 @@ await build({
   },
   define: {
     "import.meta.env.MODE": JSON.stringify("production"),
+    "process.env.NODE_ENV": JSON.stringify("production")
   },
   logLevel: "error",
 });
@@ -54,27 +64,29 @@ await build({
 const { render, getPageTitle } = await import(pathToFileURL(serverOutFile).href + '?t=' + Date.now());
 const template = fs.readFileSync(path.resolve(distDir, "index.html"), "utf-8");
 
-const routes = ["/", "/om-mig", "/kontakt", "/integritetspolicy", "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna", "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar", "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby", "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala", "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala", "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel"];
+const routes = ["/", "/om-mig", "/kontakt", "/integritetspolicy", "/case", "/gratis-seo-analys", "/tjanster/webbutveckling", "/tjanster/webbdesign", "/tjanster/seo-optimering", "/tjanster/wordpress-losningar", "/tjanster/underhall-support", "/tjanster/prestanda-optimering", "/tjanster/google-ads", "/tjanster/vad-kostar-en-hemsida-2026", "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna", "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar", "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby", "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala", "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala", "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel"];
 const blogPosts = ["oka-hemsidans-hastighet", "lokal-seo-smaforetag", "react-vs-wordpress", "komplett-seo-guide-smaforetag", "skapa-hemsida-foretag-guide", "framtidsakra-foretag-react-malardalen", "lokal-sokmotoroptimering-vastmanland-2026", "digital-tillvaxt-smaforetag-malardalen", "dominera-google-enkoping", "webbutveckling-enkoping-partner", "komplett-guide-digital-narvaro-malardalen", "webbutveckling-eskilstuna-guide", "moderna-hemsidor-vastmanland", "seo-strategi-eskilstuna", "lokal-seo-tips-vastmanland", "frisor-koping-dominera-google", "digital-marknadsforing-cafeer", "webbdesign-advokatbyraer-vasteras", "bokningssystem-frisorer-vastmanland", "e-handel-butiker-sala", "restauranghemsida-online-meny-sala", "seo-byggforetag-malardalen", "hemsida-hantverkare-vasteras", "byggfirma-vasteras-fler-kunder", "restaurang-sala-snabb-hemsida", "hastighetsoptimering-foretag-sala", "wordpress-vs-react-vasteras", "oka-hemsidans-hastighet-koping", "hur-lang-tid-bygga-hemsida-vasteras", "pris-professionell-hemsida-2026", "minska-bounce-rate-vasteras", "core-web-vitals-vastmanland", "react-vs-wordpress-koping", "billig-vs-professionell-hemsida", "vad-kostar-hemsida-smaforetag-sala", "resan-till-100-pagespeed", "framtidssakra-din-digitala-narvaro-i-vastmanland", "effektiv-webbutveckling-ai-verktyg-vastmanland", "digital-synlighet-vastmanland-seo-ai", "framtidssakra-foretag-vastmanland-2026", "seo-vasteras"];
 
-// Alla 78 sidor!
 const allRoutes = [...routes, ...blogPosts.map(p => `/blogg/${p}`)];
 
-console.log(`🚀 Startar SEO-rendering av ${allRoutes.length} sidor...`);
+console.log(`🚀 Generating HTML for ${allRoutes.length} pages...`);
 
 for (const route of allRoutes) {
   try {
+    render(route);
+    await new Promise(r => setTimeout(r, 10));
     const appHtml = render(route);
+
     const html = template
       .replace(/<title>.*?<\/title>/, `<title>${getPageTitle(route)}</title>`)
       .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
 
-    // Spara som root-fil (ex. webbutveckling-vasteras.html)
+    // 1. Create the .html file (e.g., dist/om-mig.html)
     const filePath = path.join(distDir, route === "/" ? "index.html" : `${route}.html`);
     if (!fs.existsSync(path.dirname(filePath))) fs.mkdirSync(path.dirname(filePath), { recursive: true });
     fs.writeFileSync(filePath, html);
 
-    // FIXEN FÖR VERCEL/AHREFS: Spara Också som index.html i en undermapp!
+    // 2. Create the folder/index.html structure (e.g., dist/om-mig/index.html)
     if (route !== "/") {
       const folderPath = path.join(distDir, route);
       if (!fs.existsSync(folderPath)) fs.mkdirSync(folderPath, { recursive: true });
@@ -83,6 +95,7 @@ for (const route of allRoutes) {
 
     console.log(`  ✅ ${route}`);
   } catch (err) {
-    console.error(`  ❌ Fel på ${route}:`, err.message);
+    console.error(`  ❌ Error on ${route}:`, err.message);
   }
 }
+console.log("\n✨ SEO Rendering complete!");
