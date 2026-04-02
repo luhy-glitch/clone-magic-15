@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-export const AnimatedSection = ({ children, className, id }: any) => {
-  return <div className={className} id={id}>{children}</div>;
-};
+export const AnimatedSection = forwardRef(({ children, className, id, ...props }: any, ref: any) => {
+  return (
+    <div ref={ref} className={className} id={id} {...props}>
+      {children}
+    </div>
+  );
+});
 
+AnimatedSection.displayName = 'AnimatedSection';
 export default AnimatedSection;
