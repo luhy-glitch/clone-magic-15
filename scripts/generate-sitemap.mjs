@@ -70,7 +70,16 @@ const xslContent = `<?xml version="1.0" encoding="UTF-8"?>
             <table>
               <thead><tr><th>URL</th><th>Prioritet</th><th>Uppdaterad</th></tr></thead>
               <tbody>
-                <xsl:for-each select="sitemap:urlset/sitemap:url[not(contains(sitemap:loc, '/tjanster/')) and not(contains(sitemap:loc, 'webbutveckling-')) and not(contains(sitemap:loc, 'hemsidor-')) and not(contains(sitemap:loc, 'seo-koping')) and not(contains(sitemap:loc, 'digital-marknadsforing-')) and not(contains(sitemap:loc, 'restauranger-')) and not(contains(sitemap:loc, 'frisor-')) and (sitemap:loc = 'https://www.lrhkonsult.se/blogg' or not(contains(sitemap:loc, '/blogg/')))]">
+                <xsl:for-each select="sitemap:urlset/sitemap:url[
+                  sitemap:loc = 'https://www.lrhkonsult.se' or 
+                  sitemap:loc = 'https://www.lrhkonsult.se/blogg' or 
+                  sitemap:loc = 'https://www.lrhkonsult.se/om-mig' or 
+                  sitemap:loc = 'https://www.lrhkonsult.se/kontakt' or 
+                  sitemap:loc = 'https://www.lrhkonsult.se/integritetspolicy' or 
+                  sitemap:loc = 'https://www.lrhkonsult.se/case' or 
+                  sitemap:loc = 'https://www.lrhkonsult.se/gratis-seo-analys'
+                ]">
+                  <xsl:sort select="sitemap:loc"/>
                   <tr>
                     <td><a href="{sitemap:loc}" target="_blank"><xsl:value-of select="sitemap:loc"/></a></td>
                     <td><span class="badge"><xsl:value-of select="sitemap:priority"/></span></td>
@@ -87,6 +96,7 @@ const xslContent = `<?xml version="1.0" encoding="UTF-8"?>
               <thead><tr><th>URL</th><th>Prioritet</th><th>Uppdaterad</th></tr></thead>
               <tbody>
                 <xsl:for-each select="sitemap:urlset/sitemap:url[contains(sitemap:loc, '/tjanster/')]">
+                  <xsl:sort select="sitemap:loc"/>
                   <tr>
                     <td><a href="{sitemap:loc}" target="_blank"><xsl:value-of select="sitemap:loc"/></a></td>
                     <td><span class="badge"><xsl:value-of select="sitemap:priority"/></span></td>
@@ -102,7 +112,18 @@ const xslContent = `<?xml version="1.0" encoding="UTF-8"?>
             <table>
               <thead><tr><th>URL</th><th>Prioritet</th><th>Uppdaterad</th></tr></thead>
               <tbody>
-                <xsl:for-each select="sitemap:urlset/sitemap:url[contains(sitemap:loc, 'webbutveckling-') or contains(sitemap:loc, 'hemsidor-') or contains(sitemap:loc, 'seo-koping') or contains(sitemap:loc, 'digital-marknadsforing-') or contains(sitemap:loc, 'restauranger-') or contains(sitemap:loc, 'frisor-')]">
+                <xsl:for-each select="sitemap:urlset/sitemap:url[
+                  not(sitemap:loc = 'https://www.lrhkonsult.se') and 
+                  not(sitemap:loc = 'https://www.lrhkonsult.se/blogg') and 
+                  not(sitemap:loc = 'https://www.lrhkonsult.se/om-mig') and 
+                  not(sitemap:loc = 'https://www.lrhkonsult.se/kontakt') and 
+                  not(sitemap:loc = 'https://www.lrhkonsult.se/integritetspolicy') and 
+                  not(sitemap:loc = 'https://www.lrhkonsult.se/case') and 
+                  not(sitemap:loc = 'https://www.lrhkonsult.se/gratis-seo-analys') and 
+                  not(contains(sitemap:loc, '/tjanster/')) and 
+                  not(contains(sitemap:loc, '/blogg/'))
+                ]">
+                  <xsl:sort select="sitemap:loc"/>
                   <tr>
                     <td><a href="{sitemap:loc}" target="_blank"><xsl:value-of select="sitemap:loc"/></a></td>
                     <td><span class="badge"><xsl:value-of select="sitemap:priority"/></span></td>
@@ -119,6 +140,7 @@ const xslContent = `<?xml version="1.0" encoding="UTF-8"?>
               <thead><tr><th>URL</th><th>Prioritet</th><th>Uppdaterad</th></tr></thead>
               <tbody>
                 <xsl:for-each select="sitemap:urlset/sitemap:url[contains(sitemap:loc, '/blogg/') and sitemap:loc != 'https://www.lrhkonsult.se/blogg']">
+                  <xsl:sort select="sitemap:loc"/>
                   <tr>
                     <td><a href="{sitemap:loc}" target="_blank"><xsl:value-of select="sitemap:loc"/></a></td>
                     <td><span class="badge"><xsl:value-of select="sitemap:priority"/></span></td>
@@ -139,4 +161,4 @@ if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
 fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapContent);
 fs.writeFileSync(path.join(distDir, 'sitemap.xsl'), xslContent);
 
-console.log(`✅ Sitemap genererad framgångsrikt med XSLT-mappar!`);
+console.log(`✅ Sitemap genererad framgångsrikt med sorterade XSLT-mappar!`);
