@@ -8,7 +8,6 @@ const distDir = path.resolve(__dirname, '../dist');
 
 const staticRoutes = ["/", "/blogg", "/om-mig", "/kontakt", "/integritetspolicy", "/case", "/gratis-seo-analys", "/tjanster/webbutveckling", "/tjanster/webbdesign", "/tjanster/seo-optimering", "/tjanster/wordpress-losningar", "/tjanster/underhall-support", "/tjanster/prestanda-optimering", "/tjanster/google-ads", "/tjanster/vad-kostar-en-hemsida-2026", "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna", "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar", "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby", "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala", "/webbutveckling-orebro", "/seo-koping", "/hemsidor-sala", "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel"];
 
-// Läs in blogginlägg dynamiskt
 let blogPosts = [];
 const blogDataPath = path.resolve(rootDir, "src/data/blogPosts.json");
 if (fs.existsSync(blogDataPath)) {
@@ -17,25 +16,6 @@ if (fs.existsSync(blogDataPath)) {
 }
 
 const allRoutes = [...staticRoutes, ...blogPosts.map(p => `/blogg/${p}`)];
-
-// MAGIN: Sortera länkarna så de hamnar i snygga block!
-allRoutes.sort((a, b) => {
-  if (a === "/") return -1;
-  if (b === "/") return 1;
-  
-  const aTjanst = a.startsWith("/tjanster/");
-  const bTjanst = b.startsWith("/tjanster/");
-  if (aTjanst && !bTjanst) return -1;
-  if (!aTjanst && bTjanst) return 1;
-  
-  const aBlogg = a.startsWith("/blogg/");
-  const bBlogg = b.startsWith("/blogg/");
-  if (aBlogg && !bBlogg) return 1; // Bloggen hamnar längst ner
-  if (!aBlogg && bBlogg) return -1;
-  
-  return a.localeCompare(b); // Bokstavsordning för resten
-});
-
 const SITE_URL = 'https://www.lrhkonsult.se';
 const TODAY = new Date().toISOString().split('T')[0];
 
@@ -53,7 +33,6 @@ sitemapContent += `</urlset>`;
 const xslContent = `<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" 
     xmlns:html="http://www.w3.org/TR/REC-html40"
-    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
@@ -74,30 +53,82 @@ const xslContent = `<?xml version="1.0" encoding="UTF-8"?>
           a { color: #2563eb; text-decoration: none; font-weight: 500; }
           a:hover { text-decoration: underline; color: #1d4ed8; }
           .badge { background: #e2e8f0; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600; color: #475569; }
+          details { margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+          summary { padding: 1rem; background: #f8fafc; font-weight: 600; font-size: 16px; cursor: pointer; outline: none; list-style: none; }
+          summary::-webkit-details-marker { display: none; }
+          summary:hover { background: #f1f5f9; }
+          details[open] summary { border-bottom: 1px solid #e2e8f0; }
         </style>
       </head>
       <body>
         <div class="container">
           <h1>🗺️ LRH Konsult Sitemap</h1>
-          <p class="desc">Denna sitemap används främst av sökmotorer, men visas här i ett läsbart format. Länkarna är prydligt sorterade i grupper (Tjänster, Städer, Blogg). Totalt <strong><xsl:value-of select="count(sitemap:urlset/sitemap:url)"/></strong> sidor.</p>
-          <table>
-            <thead>
-              <tr>
-                <th>URL (Klicka för att öppna)</th>
-                <th>Prioritet</th>
-                <th>Senast uppdaterad</th>
-              </tr>
-            </thead>
-            <tbody>
-              <xsl:for-each select="sitemap:urlset/sitemap:url">
-                <tr>
-                  <td><a href="{sitemap:loc}" target="_blank"><xsl:value-of select="sitemap:loc"/></a></td>
-                  <td><span class="badge"><xsl:value-of select="sitemap:priority"/></span></td>
-                  <td><xsl:value-of select="sitemap:lastmod"/></td>
-                </tr>
-              </xsl:for-each>
-            </tbody>
-          </table>
+          <p class="desc">Denna sitemap används av sökmotorer, men visas här i mappar för enkel överblick. Totalt <strong><xsl:value-of select="count(sitemap:urlset/sitemap:url)"/></strong> sidor.</p>
+          
+          <details open="open">
+            <summary>📁 Huvudsidor</summary>
+            <table>
+              <thead><tr><th>URL</th><th>Prioritet</th><th>Uppdaterad</th></tr></thead>
+              <tbody>
+                <xsl:for-each select="sitemap:urlset/sitemap:url[not(contains(sitemap:loc, '/tjanster/')) and not(contains(sitemap:loc, 'webbutveckling-')) and not(contains(sitemap:loc, 'hemsidor-')) and not(contains(sitemap:loc, 'seo-koping')) and not(contains(sitemap:loc, 'digital-marknadsforing-')) and not(contains(sitemap:loc, 'restauranger-')) and not(contains(sitemap:loc, 'frisor-')) and (sitemap:loc = 'https://www.lrhkonsult.se/blogg' or not(contains(sitemap:loc, '/blogg/')))]">
+                  <tr>
+                    <td><a href="{sitemap:loc}" target="_blank"><xsl:value-of select="sitemap:loc"/></a></td>
+                    <td><span class="badge"><xsl:value-of select="sitemap:priority"/></span></td>
+                    <td><xsl:value-of select="sitemap:lastmod"/></td>
+                  </tr>
+                </xsl:for-each>
+              </tbody>
+            </table>
+          </details>
+
+          <details>
+            <summary>📁 Tjänster</summary>
+            <table>
+              <thead><tr><th>URL</th><th>Prioritet</th><th>Uppdaterad</th></tr></thead>
+              <tbody>
+                <xsl:for-each select="sitemap:urlset/sitemap:url[contains(sitemap:loc, '/tjanster/')]">
+                  <tr>
+                    <td><a href="{sitemap:loc}" target="_blank"><xsl:value-of select="sitemap:loc"/></a></td>
+                    <td><span class="badge"><xsl:value-of select="sitemap:priority"/></span></td>
+                    <td><xsl:value-of select="sitemap:lastmod"/></td>
+                  </tr>
+                </xsl:for-each>
+              </tbody>
+            </table>
+          </details>
+
+          <details>
+            <summary>📁 Lokala Landningssidor (Städer)</summary>
+            <table>
+              <thead><tr><th>URL</th><th>Prioritet</th><th>Uppdaterad</th></tr></thead>
+              <tbody>
+                <xsl:for-each select="sitemap:urlset/sitemap:url[contains(sitemap:loc, 'webbutveckling-') or contains(sitemap:loc, 'hemsidor-') or contains(sitemap:loc, 'seo-koping') or contains(sitemap:loc, 'digital-marknadsforing-') or contains(sitemap:loc, 'restauranger-') or contains(sitemap:loc, 'frisor-')]">
+                  <tr>
+                    <td><a href="{sitemap:loc}" target="_blank"><xsl:value-of select="sitemap:loc"/></a></td>
+                    <td><span class="badge"><xsl:value-of select="sitemap:priority"/></span></td>
+                    <td><xsl:value-of select="sitemap:lastmod"/></td>
+                  </tr>
+                </xsl:for-each>
+              </tbody>
+            </table>
+          </details>
+
+          <details>
+            <summary>📁 Blogginlägg</summary>
+            <table>
+              <thead><tr><th>URL</th><th>Prioritet</th><th>Uppdaterad</th></tr></thead>
+              <tbody>
+                <xsl:for-each select="sitemap:urlset/sitemap:url[contains(sitemap:loc, '/blogg/') and sitemap:loc != 'https://www.lrhkonsult.se/blogg']">
+                  <tr>
+                    <td><a href="{sitemap:loc}" target="_blank"><xsl:value-of select="sitemap:loc"/></a></td>
+                    <td><span class="badge"><xsl:value-of select="sitemap:priority"/></span></td>
+                    <td><xsl:value-of select="sitemap:lastmod"/></td>
+                  </tr>
+                </xsl:for-each>
+              </tbody>
+            </table>
+          </details>
+
         </div>
       </body>
     </html>
@@ -108,4 +139,4 @@ if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
 fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapContent);
 fs.writeFileSync(path.join(distDir, 'sitemap.xsl'), xslContent);
 
-console.log(`✅ Sitemap genererad framgångsrikt med sorterade block!`);
+console.log(`✅ Sitemap genererad framgångsrikt med XSLT-mappar!`);
