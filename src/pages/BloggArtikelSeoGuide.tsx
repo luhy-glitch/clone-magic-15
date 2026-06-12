@@ -92,7 +92,7 @@ function renderInline(text: string) {
 }
 
 const TITLE = "Komplett SEO-guide för småföretag 2025";
-const DESCRIPTION = "Lär dig allt om SEO för småföretag – från nyckelord till länkbygge.";
+const DESCRIPTION = "Komplett SEO-guide för småföretag i Västerås och Västmanland – från nyckelordsanalys och on-page till lokal SEO och länkbygge. Så syns du högre på Google.";
 const PATH = "/blogg/seo-vasteras";
 
 const CONTENT = `

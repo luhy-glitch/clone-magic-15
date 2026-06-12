@@ -24,7 +24,7 @@ const Index = () => {
     <div className="min-h-screen">
       <PageHead
         title="Webbutveckling & SEO i Västmanland | LRH Konsult"
-        description="Blixtsnabba hemsidor i Västerås, Köping & Sala. 100/100 PageSpeed för maximal konvertering."
+        description="Blixtsnabba hemsidor och lokal SEO för företag i Västerås, Köping och Sala. 100/100 PageSpeed och design som ger fler kunder och högre ranking på Google."
         breadcrumbs={[{ name: "Hem", url: "https://www.lrhkonsult.se" }]}
         jsonLd={{
           "@context": "https://schema.org",
@@ -36,7 +36,7 @@ const Index = () => {
               "telephone": "+46704606578",
               "email": "lucas@lrhkonsult.se",
               "image": "https://www.lrhkonsult.se/assets/og/lrh-konsult-sharing-image.png",
-              "description": "Blixtsnabba hemsidor i Västerås, Köping & Sala. 100/100 PageSpeed för maximal konvertering.",
+              "description": "Blixtsnabba hemsidor och lokal SEO för företag i Västerås, Köping och Sala. 100/100 PageSpeed och design som ger fler kunder och högre ranking på Google.",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Västerås",

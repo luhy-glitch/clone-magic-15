@@ -52,7 +52,7 @@ const Blogg = () => {
       date: "2026-03-16",
       slug: "seo-vasteras",
       tag: "SEO",
-      metaDescription: "Lär dig allt om SEO för småföretag – från nyckelord till länkbygge.",
+      metaDescription: "Komplett SEO-guide för småföretag i Västerås och Västmanland – från nyckelordsanalys och on-page till lokal SEO och länkbygge. Så syns du högre på Google.",
       content: ["En komplett SEO-guide för att hjälpa småföretag synas bättre i sökmotorer."],
       image_url: null,
       image_alt: null,

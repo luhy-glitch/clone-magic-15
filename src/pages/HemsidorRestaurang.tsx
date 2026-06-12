@@ -1,12 +1,11 @@
 import { UtensilsCrossed } from "lucide-react";
 import LocalLandingPage from "./LocalLandingPage";
-import PageHead from "@/components/PageHead";
 
 const config = {
   city: "Västmanland",
   slug: "hemsidor-restaurang",
   serviceKeyword: "Hemsida restaurang",
-  metaTitle: "Hemsida Restaurang Västmanland – Fyll fler bord | LRH Konsult",
+  metaTitle: "Hemsida för restaurang i Västmanland | LRH Konsult",
   metaDescription: "Vi bygger snabba, bokningsvänliga hemsidor för restauranger i Västmanland. Få fler bord med lokal SEO, mobil meny och online-bokning.",
   heroHeading: "Hemsida restaurang som fyller borden i Västmanland",
   heroDescription: "Hungriga gäster söker efter lunch och middag online. Vi bygger restauranghemsidor som syns i Google, visar din meny och tar emot bokningar – utan att tappa prestanda.",
@@ -81,14 +80,6 @@ const config = {
   ],
 };
 
-const HemsidorRestaurang = () => (
-  <>
-    <PageHead
-      title="Hemsida för restaurang Västmanland | LRH Konsult"
-      description="Professionell restauranghemsida med meny och bokningssystem. LRH Konsult hjälper restauranger i Västmanland."
-    />
-    <LocalLandingPage config={config} />
-  </>
-);
+const HemsidorRestaurang = () => <LocalLandingPage config={config} />;
 
 export default HemsidorRestaurang;

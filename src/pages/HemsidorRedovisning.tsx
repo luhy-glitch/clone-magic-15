@@ -1,12 +1,11 @@
 import { ShieldCheck } from "lucide-react";
 import LocalLandingPage from "./LocalLandingPage";
-import PageHead from "@/components/PageHead";
 
 const config = {
   city: "Västmanland",
   slug: "hemsidor-redovisning",
   serviceKeyword: "Hemsida redovisningsbyrå",
-  metaTitle: "Hemsida Redovisningsbyrå Västmanland – Professionell & Trygg | LRH Konsult",
+  metaTitle: "Hemsida för redovisningsbyrå i Västmanland | LRH Konsult",
   metaDescription: "Skapa förtroende med en modern hemsida för din redovisningsbyrå. Vi bygger säkra, användarvänliga och SEO-optimerade sidor för redovisningsbyråer i Västmanland.",
   heroHeading: "Hemsida redovisningsbyrå som bygger förtroende i Västmanland",
   heroDescription: "Kunder vill känna sig trygga innan de väljer redovisningsbyrå. Vi bygger hemsidor som kommunicerar professionalitet, säkerhet och enkel åtkomst till klientportaler.",
@@ -81,14 +80,6 @@ const config = {
   ],
 };
 
-const HemsidorRedovisning = () => (
-  <>
-    <PageHead
-      title="Hemsida för redovisningsbyrå Västmanland | LRH Konsult"
-      description="Professionell hemsida för redovisningsbyråer i Västmanland. Bygg förtroende och få fler kunder online."
-    />
-    <LocalLandingPage config={config} />
-  </>
-);
+const HemsidorRedovisning = () => <LocalLandingPage config={config} />;
 
 export default HemsidorRedovisning;

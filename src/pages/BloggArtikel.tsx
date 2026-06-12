@@ -182,9 +182,34 @@ const BloggArtikel = () => {
   const keyTakeaways = dbTakeaways.length >= 3 ? dbTakeaways : extractKeyTakeaways(post.content, post.title);
 
   // Related: same tag first, then others
-  const sameTag = allPosts.filter((p) => p.slug !== post.slug && p.tag === post.tag);
-  const otherTag = allPosts.filter((p) => p.slug !== post.slug && p.tag !== post.tag);
-  const related = [...sameTag, ...otherTag].slice(0, 3);
+  // Pick related posts as the NEXT items within the same tag group (wraparound),
+  // so every post receives inbound internal links instead of always linking the
+  // first 3 in the list (which left later posts with a single inbound link).
+  const tagGroup = allPosts.filter((p) => p.tag === post.tag);
+  const selfInTag = Math.max(0, tagGroup.findIndex((p) => p.slug === post.slug));
+  const nextInTag = [];
+  for (let k = 1; k < tagGroup.length && nextInTag.length < 3; k++) {
+    nextInTag.push(tagGroup[(selfInTag + k) % tagGroup.length]);
+  }
+  // Fill remaining slots with the globally NEXT posts (wraparound). Using global
+  // neighbours guarantees every post is linked from ~3 others, so no post is left
+  // with only a single inbound internal link.
+  const postIndex = Math.max(0, allPosts.findIndex((p) => p.slug === post.slug));
+  const globalNext = allPosts.length
+    ? allPosts.map((_, i) => allPosts[(postIndex + 1 + i) % allPosts.length])
+    : [];
+  // Always include the immediate next post first: this guarantees every post is
+  // linked by its predecessor (so no post is left with a single inbound link),
+  // then fill the rest with same-tag posts for topical relevance.
+  const related: typeof allPosts = [];
+  const addRelated = (p?: (typeof allPosts)[number]) => {
+    if (p && p.slug !== post.slug && !related.some((r) => r.slug === p.slug) && related.length < 3) {
+      related.push(p);
+    }
+  };
+  addRelated(globalNext[0]);
+  nextInTag.forEach(addRelated);
+  globalNext.forEach(addRelated);
 
   const serviceLinks = SERVICE_LINKS[post.tag] || SERVICE_LINKS["Digital Strategi"];
   const postUrl = `https://www.lrhkonsult.se/blogg/${post.slug}`;
@@ -238,8 +263,8 @@ const BloggArtikel = () => {
   return (
     <div className="min-h-screen">
       <PageHead
-        title={`${post.title} | LRH Konsult`}
-        description={post.excerpt}
+        title={post.metaTitle || `${post.title} | LRH Konsult`}
+        description={post.metaDescription || post.excerpt}
         jsonLd={jsonLd}
       />
       <Navbar />

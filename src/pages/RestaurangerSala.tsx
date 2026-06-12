@@ -5,7 +5,7 @@ const config = {
   city: "Sala",
   slug: "restauranger-sala",
   serviceKeyword: "Hemsidor för restauranger",
-  metaTitle: "Hemsida för Restauranger i Sala – Fyll Fler Bord | LRH Konsult",
+  metaTitle: "Hemsida för restauranger i Sala | LRH Konsult",
   metaDescription: "Snabba hemsidor för restauranger och caféer i Sala. Mobilanpassad design med menyvisning, bordsbokningar och lokal SEO som fyller dina bord.",
   heroHeading: "Hemsidor som fyller borden för restauranger i Sala",
   heroDescription: "Hungriga kunder i Sala söker på Google efter lunch och middag – och de väljer den restaurang som dyker upp först med en inbjudande meny och enkel bokning. Vi bygger blixtsnabba hemsidor som gör din restaurang till det självklara valet.",

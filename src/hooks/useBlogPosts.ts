@@ -13,6 +13,10 @@ export interface DbBlogPost {
   image_alt: string;
   updated_at: string;
   key_takeaways: string;
+  /** Optional concise SEO title (≤60 chars). Falls back to `${title} | LRH Konsult`. */
+  metaTitle?: string;
+  /** Optional SEO meta description (≤160 chars). Falls back to `excerpt`. */
+  metaDescription?: string;
 }
 
 export const useBlogPosts = () => {

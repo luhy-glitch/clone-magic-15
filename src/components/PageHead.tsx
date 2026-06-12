@@ -103,10 +103,13 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs 
     }
     localBusinessEl.textContent = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "ProfessionalService",
+      "@id": "https://www.lrhkonsult.se/#business",
       "name": "LRH Konsult",
       "url": "https://www.lrhkonsult.se",
-      "telephone": "",
+      "image": DEFAULT_OG_IMAGE,
+      "telephone": "+46704606578",
+      "email": "lucas@lrhkonsult.se",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Västerås",
@@ -118,32 +121,39 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs 
       "description": "Webbutveckling och SEO-optimering för företag i Västmanland"
     });
 
+    // Only emit a default breadcrumb when the page did NOT supply its own,
+    // to avoid two BreadcrumbList blocks on the same page (schema validation error).
     const defaultBreadcrumbId = "default-breadcrumb-json-ld";
     let defaultBreadcrumbEl = document.getElementById(defaultBreadcrumbId) as HTMLScriptElement | null;
-    if (!defaultBreadcrumbEl) {
-      defaultBreadcrumbEl = document.createElement("script");
-      defaultBreadcrumbEl.id = defaultBreadcrumbId;
-      defaultBreadcrumbEl.type = "application/ld+json";
-      document.head.appendChild(defaultBreadcrumbEl);
+    const hasCustomBreadcrumbs = breadcrumbs && breadcrumbs.length > 0;
+    if (hasCustomBreadcrumbs) {
+      if (defaultBreadcrumbEl) defaultBreadcrumbEl.remove();
+    } else {
+      if (!defaultBreadcrumbEl) {
+        defaultBreadcrumbEl = document.createElement("script");
+        defaultBreadcrumbEl.id = defaultBreadcrumbId;
+        defaultBreadcrumbEl.type = "application/ld+json";
+        document.head.appendChild(defaultBreadcrumbEl);
+      }
+      defaultBreadcrumbEl.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://www.lrhkonsult.se"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": title,
+            "item": url
+          }
+        ]
+      });
     }
-    defaultBreadcrumbEl.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Hem",
-          "item": "https://www.lrhkonsult.se"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": title,
-          "item": url
-        }
-      ]
-    });
 
     return () => {
       const el = document.getElementById(jsonLdId);

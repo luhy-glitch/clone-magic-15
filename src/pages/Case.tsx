@@ -9,7 +9,7 @@ const Case = () => {
     <div className="min-h-screen">
       <PageHead
         title="Kundcase & Referenser | LRH Konsult"
-        description="Se hur vi hjälpt företag i Västmanland att öka sin digitala närvaro med snabba hemsidor och lokal SEO."
+        description="Se hur vi hjälpt företag i Västmanland öka sin digitala närvaro med snabba hemsidor och lokal SEO – med högre ranking, mer trafik och fler kunder som resultat."
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",

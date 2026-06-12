@@ -6,7 +6,7 @@ const config = {
   slug: "seo-koping",
   serviceKeyword: "SEO-optimering",
   metaTitle: "SEO Köping - Fler Kunder via Google | LRH Konsult",
-  metaDescription: "Få en modern hemsida som faktiskt säljer i Köping. Lokal SEO som ger mätbara resultat och fler kunder.",
+  metaDescription: "Få en modern hemsida som faktiskt säljer i Köping. Lokal SEO och teknisk optimering som ger mätbara resultat, högre ranking och fler kunder.",
   heroHeading: "Få en modern hemsida som faktiskt säljer i Köping",
   heroDescription: "Att synas på Google i Köping är inte en fråga om tur – det är en fråga om rätt teknik och strategi. Vi hjälper företag att gå från osynlighet till att dominera sökresultaten och få fler kunder varje månad.",
   icon: Search,

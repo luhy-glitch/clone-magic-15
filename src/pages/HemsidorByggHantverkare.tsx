@@ -6,7 +6,7 @@ const config = {
   slug: "hemsidor-bygg-hantverkare",
   serviceKeyword: "Hemsidor för bygg & hantverkare",
   metaTitle: "Hemsidor för Bygg & Hantverkare i Västmanland | LRH Konsult",
-  metaDescription: "Professionella hemsidor för byggföretag och hantverkare i Västmanland. 100/100 PageSpeed, lokal SEO, projektgallerier och offertformulär som genererar fler uppdrag.",
+  metaDescription: "Professionella hemsidor för byggföretag och hantverkare i Västmanland. 100/100 PageSpeed, lokal SEO och offertformulär som genererar fler uppdrag.",
   heroHeading: "Hemsidor som ger hantverkare fler uppdrag i Västmanland",
   heroDescription: "Dina kunder söker redan efter dig online. Med en professionell, blixtsnabb hemsida fångar du upp fler uppdrag i Västmanland – utan att behöva tänka på tekniken. Vi bygger hemsidor specifikt anpassade för bygg- och hantverksbranschen.",
   icon: Hammer,

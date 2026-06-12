@@ -1,12 +1,11 @@
 import { ShoppingCart } from "lucide-react";
 import LocalLandingPage from "./LocalLandingPage";
-import PageHead from "@/components/PageHead";
 
 const config = {
   city: "Västmanland",
   slug: "hemsidor-ehandel",
   serviceKeyword: "E-handel hemsida",
-  metaTitle: "E-handel hemsida Västmanland – Konverterande Webbutiker | LRH Konsult",
+  metaTitle: "E-handel hemsida i Västmanland | LRH Konsult",
   metaDescription: "Vi bygger snabba och skalbara e-handelshemsidor för företag i Västmanland. Få fler köp med bättre konvertering, lokal leverans och smarta checkout-flöden.",
   heroHeading: "E-handel hemsida som säljer i Västmanland",
   heroDescription: "En modern webbutik måste vara snabb, säker och optimerad för konvertering. Vi bygger e-handelshemsidor som tar kunder hela vägen från sökning till betalning.",
@@ -81,14 +80,6 @@ const config = {
   ],
 };
 
-const HemsidorEhandel = () => (
-  <>
-    <PageHead
-      title="E-handel hemsida Västmanland | LRH Konsult"
-      description="Professionell e-handelshemsida för företag i Västmanland. WooCommerce och Shopify-lösningar av LRH Konsult."
-    />
-    <LocalLandingPage config={config} />
-  </>
-);
+const HemsidorEhandel = () => <LocalLandingPage config={config} />;
 
 export default HemsidorEhandel;

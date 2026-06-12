@@ -54,7 +54,8 @@
       "AI-sök: Stark positionering krävs för att bli citerad i AI-genererade sökresultat.",
       "E-E-A-T: Unikt och lokalt förankrat innehåll är nyckeln till auktoritet.",
       "Röstsök: Strukturering för naturligt språk och FAQ-schema blir kritiskt för lokala frågor."
-    ]
+    ],
+    "metaDescription": "Uppdaterad guide till lokal SEO i Västmanland 2026 – nya strategier, AI-verktyg och möjligheter för att synas högre på Google och nå fler lokala kunder."
   },
   {
     "id": "da5d24e4-31bd-4586-b689-b4debe8f32bf",
@@ -92,7 +93,8 @@
       "Prestanda: En React-sajt ger en omedelbar fördel genom laddtider under en sekund.",
       "Säkerhet: Arkitekturen eliminerar vanliga säkerhetshål som finns i traditionella CMS.",
       "Skalbarhet: Enkel utbyggnad av funktioner utan att prestandan försämras över tid."
-    ]
+    ],
+    "metaDescription": "Varför React och Next.js är det framtidssäkra valet för företag i Mälardalen som vill växa digitalt – snabbare sidor, bättre SEO och lägre underhållskostnad."
   },
   {
     "id": "ab1ddde2-0534-48e9-9969-69497288de20",
@@ -111,7 +113,8 @@
       "Lokal SEO: Möjlighet att dominera lokala sökresultat med relativt små medel.",
       "Mobilitet: Över 60 % av sökningarna sker via mobilen, vilket kräver perfekt mobilanpassning.",
       "Auktoritet: Personligt innehåll och kundrelationer särskiljer småföretag från anonyma jättar."
-    ]
+    ],
+    "metaDescription": "Så använder småföretag i Mälardalen digitala verktyg för att växa, nå fler kunder och stärka sin lokala synlighet på Google. Konkreta steg du kan ta idag."
   },
   {
     "id": "003b252d-f9fa-4267-a8f5-cf235abc943f",
@@ -130,7 +133,8 @@
       "Teknik: Användning av React och Next.js för 100/100 i PageSpeed som standard.",
       "Lokalt fokus: Innehåll och metadata optimeras specifikt för Eskilstuna och Södermanlands län.",
       "Lansering: Inkluderar full teknisk testning och verifiering av Core Web Vitals."
-    ]
+    ],
+    "metaDescription": "Komplett guide till webbutveckling i Eskilstuna – från process och teknikval till lansering. Så får ditt företag en snabb hemsida som rankar och konverterar."
   },
   {
     "id": "b8347cf6-def3-4b4b-b55f-98b319c7d628",
@@ -149,7 +153,8 @@
       "Modernitet: En modern sajt laddar under 1,5 sekunder och är byggd med säker arkitektur.",
       "Kostnad: En föråldrad hemsida kostar i form av förlorade leads och sämre ranking.",
       "Förtroende: Professionell design bygger omedelbar trovärdighet vid första kontakten."
-    ]
+    ],
+    "metaDescription": "Företag i Västmanland som investerar i moderna hemsidor får fler kunder, bättre ranking och högre omsättning. Så vet du när det är dags att uppgradera."
   },
   {
     "id": "5298c98a-56fc-4b36-b444-4b322182de0d",
@@ -168,7 +173,8 @@
       "Lokalitet: Google Business Profile är hörnstenen för synlighet i Uppsala län.",
       "Struktur: Dedikerade landningssidor för lokala tjänster stärker relevansen.",
       "Social Proof: Recensioner är en avgörande rankingfaktor i de lokala kartresultaten."
-    ]
+    ],
+    "metaDescription": "Steg-för-steg-guide till att ranka högst på Google för företag i Enköping och Uppsala län. Lokal SEO, Google Business-profil och innehåll som driver kunder."
   },
   {
     "id": "0550baec-5606-4b3e-b41e-186a5905637f",
@@ -187,7 +193,8 @@
       "Noggrannhet: Korrekt identifiering av Södermanland som region är ett krav för lokal ranking.",
       "Teknik: React-baserad webbutveckling ger den tekniska grund Google premierar.",
       "Innehåll: Djupgående lokalt innehåll bygger auktoritet och rankar bättre."
-    ]
+    ],
+    "metaDescription": "Komplett SEO-guide för företag i Eskilstuna och Södermanland. Så bygger du en lokal sökstrategi som ger högre ranking, mer trafik och fler kunder från Google."
   },
   {
     "id": "5d5d2443-91d4-4d92-862c-fac394c7c796",
@@ -206,7 +213,8 @@
       "Prestanda: Next.js-teknik ger 100/100 PageSpeed och en tydlig fördel mot WordPress-sajter.",
       "Geografi: JSON-LD implementeras för att korrekt identifiera staden inom Uppsala län.",
       "UX: Mobile-first-design säkerställer att lokala användare på språng kan navigera enkelt."
-    ]
+    ],
+    "metaDescription": "Modern webbutveckling för företag i Enköping och Uppsala län – snabba hemsidor som genererar kunder. Så väljer du rätt lokal partner för ditt webbprojekt."
   },
   {
     "id": "8d1ca6a8-7651-4feb-8551-a0f5d86bf4d1",
@@ -225,7 +233,8 @@
       "Innehåll: Skapa specifika landningssidor för orter som Västerås, Sala och Köping.",
       "Omdömen: Systematisk insamling av recensioner ökar rankingen i kartresultaten.",
       "Teknik: LocalBusiness Schema Markup är avgörande för hur Google tolkar din sajt."
-    ]
+    ],
+    "metaDescription": "10 konkreta tips för bättre lokal synlighet på Google som företagare i Västmanland – från Google Business-profil till recensioner och lokalt innehåll."
   },
   {
     "id": "9a4b6320-4f56-40ea-ad95-77a9e4e33312",
@@ -244,7 +253,8 @@
       "Synlighet: En indexerbar meny låter Google visa specifika maträtter i sökresultaten.",
       "Mobilitet: Över 80 % av restaurangsökningar sker via mobilen.",
       "Uppdatering: Menyer byggda i kod kan uppdateras i realtid utan teknisk kunskap."
-    ]
+    ],
+    "metaDescription": "Så bygger restauranger i Sala en hemsida med digital meny som ökar synligheten och driver fler gäster – med online-bokning, bilder och lokal SEO."
   },
   {
     "id": "411e91bf-51c0-4df1-a869-2571f408e165",
@@ -263,7 +273,8 @@
       "Strategi: Specifika sökord för renoveringstjänster konverterar bättre än breda termer.",
       "Innehåll: Varje tjänst kräver en unik sida med minst 800 ord djupt innehåll.",
       "Förtroende: Systematisk användning av recensioner och projektbilder stänger affärer."
-    ]
+    ],
+    "metaDescription": "Komplett SEO-guide för byggföretag i Mälardalen – dominera sökresultaten, fyll orderböckerna och få fler offertförfrågningar med rätt lokal sökstrategi."
   },
   {
     "id": "37627960-aea8-485a-b536-30e5095b09be",
@@ -282,7 +293,8 @@
       "Minskade bortfall: Automatiska påminnelser minskar 'no-shows' med upp till 90 %.",
       "Integration: Bokningsfunktionen bör vara en sömlös del av din hemsida, inte en extern länk.",
       "Mobilanpassning: Bokningsflödet måste vara optimerat för snabb touch-interaktion."
-    ]
+    ],
+    "metaDescription": "Sluta missa bokningar. Guide till digitala bokningssystem för frisörer i Västmanland – fyll kalendern, minska no-shows och ge kunderna en smidigare upplevelse."
   },
   {
     "id": "193c2be5-36d4-4994-80a8-d7c4a40498f7",
@@ -320,7 +332,8 @@
       "Tydlighet: Navigering och innehåll struktureras för att klienten snabbt ska hitta rätt hjälp.",
       "Säkerhet: Strikta krav på GDPR och dataskydd hanteras genom teknisk webbutveckling.",
       "Lokal SEO: Optimering för att synas när klienter i Västerås söker juridisk hjälp."
-    ]
+    ],
+    "metaDescription": "Professionell webbdesign för advokatbyråer i Västerås – bygg trovärdighet, öka konverteringen och stärk din lokala synlighet med en modern, säker hemsida."
   },
   {
     "id": "b4c44705-a759-482b-acbd-70152158f5ca",
@@ -339,7 +352,8 @@
       "Prestanda: Varje sekunds fördröjning minskar konverteringen avsevärt i e-handeln.",
       "Mobilhandel: Mer än hälften av all e-handel sker via mobila enheter 2026.",
       "SEO: Produktsidor optimeras med Schema Markup för priser och betyg i Google."
-    ]
+    ],
+    "metaDescription": "Så bygger butiker i Sala en snabb e-handelshemsida som ökar försäljningen och når kunder i hela Sverige. Tips om plattform, konvertering och frakt."
   },
   {
     "id": "8cb861e3-cdbb-479d-8f1d-21f4c4a4a925",
@@ -434,7 +448,9 @@
       "Lead-gen: Offertformulär måste vara korta och optimerade för mobilen.",
       "Portfölj: Före-och-efter-bilder i snabba gallerier är ditt starkaste säljargument.",
       "Lokal SEO: Separata tjänstesidor för olika arbeten maximerar din synlighet."
-    ]
+    ],
+    "metaTitle": "Hemsida för hantverkare i Västerås | LRH Konsult",
+    "metaDescription": "Så bygger du en hemsida som genererar offertförfrågningar och stänger affärer för hantverkare i Västerås – från projektgalleri till tydliga kontaktvägar."
   },
   {
     "id": "f38c54e7-66b4-460a-872b-24aa04aeb8cf",
@@ -491,7 +507,8 @@
       "UX: Digitala menyer direkt i kod är lättare att navigera än PDF-filer.",
       "Laddtid: En sajt som tar mer än 2 sekunder att ladda kostar gäster.",
       "Lokal SEO: Google Business Profile med aktuella öppettider är avgörande."
-    ]
+    ],
+    "metaDescription": "Så skapar du en hemsida som driver bordsbokningar och ökar omsättningen för din restaurang i Sala – snabb laddtid, mobil meny och tydlig online-bokning."
   },
   {
     "id": "5f49df27-0ca8-47c3-917a-66e0eedbd25a",
@@ -510,7 +527,8 @@
       "AI-verktyg: Accelererar utveckling och SEO-optimering utan att ersätta mänsklig expertis.",
       "Headless CMS: Eliminerar teknisk skuld och ger redaktörer flexibilitet utan prestandaförlust.",
       "Konvertering: Varje sekunds laddtidsförbättring ökar konverteringsgraden med 7 procent."
-    ]
+    ],
+    "metaTitle": "Webbutveckling med AI i Västmanland | LRH Konsult"
   },
   {
     "id": "d8852493-5432-4f6b-9905-529299cf3b45",
@@ -548,7 +566,8 @@
       "Utveckling: Fokus på hastighet (Next.js), säkerhet och konverteringsdesign.",
       "SEO: Sökmotoroptimering och Schema Markup ingår som standard.",
       "Lansering: Fullständig testning, analytik och indexering hos Google."
-    ]
+    ],
+    "metaDescription": "Detaljerad genomgång av vad som faktiskt ingår när du investerar i en professionell hemsida under 2026 – design, teknik, SEO, innehåll och löpande support."
   },
   {
     "id": "e4c82af6-289e-46c8-9662-151fcd01009a",
@@ -567,7 +586,9 @@
       "Laddtid: Sannolikheten att en besökare lämnar ökar med 90 % om sidan tar 5 sekunder.",
       "Första intrycket: Besökare bildar sig en uppfattning på under en halv sekund.",
       "Lösning: React och Next.js ger laddtider under en sekund som standard."
-    ]
+    ],
+    "metaTitle": "Minska bounce rate i Västerås | LRH Konsult",
+    "metaDescription": "Hög bounce rate kostar dig kunder. Så optimerar du din hemsida i Västerås för snabbare laddtid, tydligare budskap och fler besökare som stannar och konverterar."
   },
   {
     "id": "90c2e221-f664-4e80-b873-01262f0e173f",
@@ -605,7 +626,9 @@
       "Underhåll: WordPress kräver ständiga uppdateringar av plugins och säkerhet.",
       "Lokal fördel: Snabbare sajter rankar bättre i lokala sökresultat i Köping.",
       "Framtid: React-arkitekturen möjliggör enkel utbyggnad utan prestandaförlust."
-    ]
+    ],
+    "metaTitle": "React vs WordPress för Köping | LRH Konsult",
+    "metaDescription": "Ärlig jämförelse av React och WordPress för lokala företag i Köping som vill bygga ny hemsida – prestanda, SEO, kostnad och underhåll vägs mot varandra."
   },
   {
     "id": "d00a501e-6b67-4289-b927-4589d0063caa",
@@ -624,7 +647,9 @@
       "Bilder: Optimering av media kan minska filstorleken med 70-90 %.",
       "Hosting: Nordiska servrar med CDN är kritiska för prestanda i Sala.",
       "Skript: Minimera tunga tredjepartsskript för att nå 100/100 i PageSpeed."
-    ]
+    ],
+    "metaTitle": "Snabbare hemsida för företag i Sala | LRH Konsult",
+    "metaDescription": "Så förvandlar du långsamma laddtider till snabba konverteringar för ditt företag i Sala. Praktiska tips för Core Web Vitals, bilder och kod som lyfter ranking."
   },
   {
     "id": "93bd8856-2f0b-44c3-a8c1-f8ec97436d69",
@@ -643,7 +668,8 @@
       "Synlighet: En sajt som inte rankar på Google är i praktiken osynlig.",
       "ROI: Professionellt byggda sajter betalar sig snabbt genom högre lead-generering.",
       "Underhåll: Skräddarsydd kod kräver mindre teknisk akuthjälp över tid."
-    ]
+    ],
+    "metaTitle": "Billig vs professionell hemsida | LRH Konsult"
   },
   {
     "id": "840f39d1-b572-4c55-aec3-4b0134615b2c",
@@ -681,7 +707,8 @@
       "Prestanda: 95-100 vs 40-65 i PageSpeed – en skillnad som syns i leads och konvertering.",
       "Säkerhet: React eliminerar WordPress vanligaste attackvektorer utan plugins.",
       "Kalkyl: Räknat på leads-värde betalar sig React-investeringen snabbt för aktiva företag."
-    ]
+    ],
+    "metaTitle": "WordPress vs React i Västerås | LRH Konsult"
   },
   {
     "id": "95b206e5-af92-4cd7-bc3e-acbb507c4ceb",
@@ -700,7 +727,8 @@
       "Rendering: Inlina kritisk CSS för att visa innehåll omedelbart.",
       "JavaScript: Minimera och fördröj icke-kritiska skript.",
       "CDN: Nordiska servrar minskar latensen för besökare i Köping."
-    ]
+    ],
+    "metaDescription": "Konkreta tips för företag i Köping som vill snabba upp sin hemsida och förbättra rankingen på Google – bilder, kod, caching och Core Web Vitals förklarat."
   },
   {
     "id": "85de2dd4-0086-460f-a851-05ec278d514e",
@@ -719,7 +747,8 @@
       "WordPress: Professionell hjälp ligger normalt mellan 15 000 – 45 000 kr.",
       "React: Skräddarsydda lösningar från 50 000 kr för maximal ROI.",
       "Värde: Fokusera på vad det kostar att inte synas på Google."
-    ]
+    ],
+    "metaDescription": "Komplett prisguide för hemsidor i Sala 2026 – från enkla DIY-lösningar till skräddarsydd React-utveckling. Så vet du vad du betalar för och vad som lönar sig."
   },
   {
     "id": "d3ba2ef4-293d-40ed-948c-ce4e4ab31ed7",

@@ -12,7 +12,8 @@ const pdfTips = [
   "Implementera strukturerad data – FAQ-schema och JSON-LD",
 ];
 
-const Contact = () => {
+const Contact = ({ asH1 = false }: { asH1?: boolean } = {}) => {
+  const Heading = asH1 ? "h1" : "h2";
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", website: "" });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -44,10 +45,10 @@ const Contact = () => {
           <AnimatedSection>
             <div>
               <span className="text-primary font-medium text-sm tracking-widest uppercase">Kontakt</span>
-              <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold leading-tight">
+              <Heading className="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold leading-tight">
                 Låt oss prata om ditt{" "}
                 <span className="text-primary">nästa projekt</span>
-              </h2>
+              </Heading>
               <p className="mt-6 text-muted-foreground leading-relaxed">
                 Har du en idé du vill förverkliga? Behöver du hjälp med din befintliga webbplats? Tveka inte att höra av dig – jag ser fram emot att höra från dig.
               </p>

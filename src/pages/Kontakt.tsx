@@ -80,7 +80,7 @@ const Kontakt = () => {
       />
       <Navbar />
       <main className="pt-16">
-        <Contact />
+        <Contact asH1 />
 
         {/* Google Maps placeholder */}
         <LazyMap />

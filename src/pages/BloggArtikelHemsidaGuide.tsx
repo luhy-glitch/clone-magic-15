@@ -92,7 +92,7 @@ function renderInline(text: string) {
 }
 
 const TITLE = "Så skapar du en hemsida för ditt företag 2025";
-const DESCRIPTION = "Steg-för-steg guide för att skapa en professionell företagshemsida.";
+const DESCRIPTION = "Steg-för-steg-guide för att skapa en professionell företagshemsida 2025 – från planering och innehåll till teknik, SEO och lansering. För småföretag.";
 const PATH = "/blogg/lokal-seo-smaforetag";
 
 const CONTENT = `
