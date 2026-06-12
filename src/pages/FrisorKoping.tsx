@@ -7,7 +7,7 @@ const config = {
   serviceKeyword: "Hemsidor för frisörer",
   metaTitle: "Hemsida & SEO för Frisörer i Köping | LRH Konsult",
   metaDescription: "Lokal SEO och moderna hemsidor för frisörsalonger i Köping. Dominera Google, fyll bokningskalendern och slipp provisioner till tredjepartsplattformar.",
-  heroHeading: "Fyll din bokningskalender med en hemsida som syns i Köping",
+  heroHeading: "Hemsida för frisörer i Köping som fyller kalendern",
   heroDescription: "De flesta som söker efter en frisör i Köping gör det direkt på mobilen i farten. Vi bygger blixtsnabba, mobiloptimerade hemsidor som rankar överst på Google och gör det enkelt att boka tid – direkt från sökresultatet.",
   icon: Scissors,
   heroFacts: [

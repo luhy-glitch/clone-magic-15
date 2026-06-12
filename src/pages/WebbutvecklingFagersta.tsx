@@ -7,7 +7,7 @@ const config = {
   serviceKeyword: "Webbdesign",
   metaTitle: "Webbdesign Fagersta - Hemsidor som Ger Resultat | LRH Konsult",
   metaDescription: "Moderna hemsidor i Fagersta som rankar på Google. 100/100 PageSpeed och lokal SEO för företag i norra Västmanland.",
-  heroHeading: "Få en modern hemsida som faktiskt säljer i Fagersta",
+  heroHeading: "Webbdesign i Fagersta som ger resultat",
   heroDescription: "Fagersta har en stolt industritradition och en växande företagsscen. Det är dags att din digitala närvaro matchar ambitionen. Vi bygger blixtsnabba hemsidor som rankar högt på Google och ger ditt företag fler kunder.",
   icon: Code2,
   heroFacts: [

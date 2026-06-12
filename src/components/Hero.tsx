@@ -23,11 +23,9 @@ export default function Hero() {
 
       {/* Main Heading */}
       <h1 className="hero-h1 font-serif-custom text-5xl md:text-6xl lg:text-7xl mb-6 leading-[1.15] max-w-4xl tracking-tight text-center z-10 relative">
-        Snabba hemsidor som
+        Webbutveckling &amp; SEO i Västerås{" "}
         <br />
-        rankar på Google och ger
-        <br />
-        ditt företag{" "}
+        som ger ditt företag{" "}
         <span className="hero-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-primary/80 via-primary to-primary/70">
           fler kunder
         </span>

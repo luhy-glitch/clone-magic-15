@@ -7,7 +7,7 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Arboga – Fler Kunder Online | LRH Konsult",
   metaDescription: "Moderna hemsidor i Arboga som rankar högt på Google. 100/100 PageSpeed och lokal SEO för företag i Västmanland.",
-  heroHeading: "Få en modern hemsida som faktiskt säljer i Arboga",
+  heroHeading: "Webbutveckling i Arboga som ger fler kunder",
   heroDescription: "Arboga har en rik historia och en framåtblickande företagskultur. Vi hjälper lokala företag att bygga digital auktoritet med moderna, blixtsnabba hemsidor som rankar högt på Google och ger dig fler kunder varje månad.",
   icon: Code2,
   heroFacts: [

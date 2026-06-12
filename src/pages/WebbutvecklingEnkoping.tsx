@@ -7,7 +7,7 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Enköping - Hemsidor som Rankar | LRH Konsult",
   metaDescription: "Dominera sökresultaten i Enköping med blixtsnabba hemsidor och teknisk SEO. 100/100 PageSpeed – modern webbutveckling som ger ditt företag fler kunder.",
-  heroHeading: "Dominera sökresultaten i Enköping",
+  heroHeading: "Webbutveckling i Enköping som ger fler kunder",
   heroDescription: "Enköping ligger strategiskt i Uppsala län, med närheten till Stockholm och Uppsala som en stor fördel. Vi bygger hemsidor som presterar på toppnivå – tekniskt fulländade, SEO-optimerade och designade för att ge ditt företag fler kunder.",
   icon: Code2,
   heroFacts: [

@@ -7,7 +7,7 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Västerås – Snabba Hemsidor | LRH Konsult",
   metaDescription: "Snabba hemsidor i Västerås som rankar på Google och ger ditt företag fler kunder. 100/100 PageSpeed, lokal SEO och konverteringsdesign.",
-  heroHeading: "Dominera sökresultaten i Västerås",
+  heroHeading: "Webbutveckling i Västerås som ger fler kunder",
   heroDescription: "Sluta vara osynlig på Google. Vi bygger blixtsnabba hemsidor som rankar högst i Västerås och förvandlar besökare till betalande kunder – garanterat 100/100 PageSpeed och mätbara resultat inom 90 dagar.",
   icon: Code2,
   heroFacts: [

@@ -120,7 +120,7 @@ const GoogleAdsPage = () => {
   return (
     <div className="min-h-screen">
       <PageHead
-        title="Google Ads för lokala företag | LRH Konsult"
+        title="Google Ads för företag i Västmanland | LRH Konsult"
         description="Professionell Google Ads-förvaltning för företag i Västerås, Köping och Mälardalen. Fasta månadspaket från 2 490 kr. Resultat direkt."
         jsonLd={jsonLd}
       />
