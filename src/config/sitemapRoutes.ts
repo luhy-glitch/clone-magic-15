@@ -40,6 +40,7 @@ export const SITEMAP_ROUTES = [
   // ── Regionala sidor ──
   { path: "/webbutveckling-vasteras", changefreq: "monthly", priority: "0.8" },
   { path: "/seo-koping", changefreq: "monthly", priority: "0.8" },
+  { path: "/seo-vasteras", changefreq: "monthly", priority: "0.9" },
   { path: "/hemsidor-sala", changefreq: "monthly", priority: "0.8" },
   { path: "/webbutveckling-enkoping", changefreq: "monthly", priority: "0.8" },
   { path: "/webbutveckling-eskilstuna", changefreq: "monthly", priority: "0.8" },

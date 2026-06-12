@@ -31,6 +31,7 @@ const PrestandaOptimeringPage = lazy(() => import("./pages/tjanster/PrestandaOpt
 const GoogleAdsPage = lazy(() => import("./pages/tjanster/GoogleAdsPage"));
 const WebbutvecklingVasteras = lazy(() => import("./pages/WebbutvecklingVasteras"));
 const SeoKoping = lazy(() => import("./pages/SeoKoping"));
+const SeoVasteras = lazy(() => import("./pages/SeoVasteras"));
 const HemsidorSala = lazy(() => import("./pages/HemsidorSala"));
 const WebbutvecklingEnkoping = lazy(() => import("./pages/WebbutvecklingEnkoping"));
 const WebbutvecklingEskilstuna = lazy(() => import("./pages/WebbutvecklingEskilstuna"));
@@ -96,6 +97,7 @@ const DataRoutes = () => (
         {/* Regional pages */}
         <Route path="/webbutveckling-vasteras" element={<WebbutvecklingVasteras />} />
         <Route path="/seo-koping" element={<SeoKoping />} />
+        <Route path="/seo-vasteras" element={<SeoVasteras />} />
         <Route path="/hemsidor-sala" element={<HemsidorSala />} />
         <Route path="/webbutveckling-enkoping" element={<WebbutvecklingEnkoping />} />
         <Route path="/webbutveckling-eskilstuna" element={<WebbutvecklingEskilstuna />} />
