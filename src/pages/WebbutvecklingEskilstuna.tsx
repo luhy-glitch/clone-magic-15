@@ -5,9 +5,9 @@ const config = {
   city: "Eskilstuna",
   slug: "webbutveckling-eskilstuna",
   serviceKeyword: "Webbutveckling",
-  metaTitle: "SEO Eskilstuna - Fler Kunder via Google | LRH Konsult",
-  metaDescription: "Dominera sökresultaten i Eskilstuna med snabba hemsidor och lokal SEO. 100/100 PageSpeed för företag i Södermanland.",
-  heroHeading: "SEO & webbutveckling i Eskilstuna",
+  metaTitle: "Webbutveckling Eskilstuna – Snabba Hemsidor | LRH Konsult",
+  metaDescription: "Webbutveckling i Eskilstuna med blixtsnabba hemsidor och teknisk SEO. 100/100 PageSpeed och modern React-utveckling som ger företag i Södermanland fler kunder.",
+  heroHeading: "Webbutveckling i Eskilstuna som ger fler kunder",
   heroDescription: "Eskilstuna är en viktig knutpunkt i Södermanland med över 100 000 invånare och en snabbt växande företagsscen. Vi bygger hemsidor som ger ditt företag fler kunder – med garanterat 100/100 PageSpeed och en SEO-strategi som placerar dig överst i sökresultaten.",
   icon: Code2,
   heroFacts: [

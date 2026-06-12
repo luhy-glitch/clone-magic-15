@@ -68,6 +68,7 @@ const Footer = () => {
               <li><Link to="/hemsidor-bygg-hantverkare" className="text-sm text-muted-foreground hover:text-primary transition-colors">Bygg & Hantverkare</Link></li>
               <li><Link to="/hemsidor-sala" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor Sala</Link></li>
               <li><Link to="/seo-vasteras" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Västerås</Link></li>
+              <li><Link to="/seo-eskilstuna" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Eskilstuna</Link></li>
               <li><Link to="/seo-koping" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Köping</Link></li>
               <li><Link to="/frisor-koping" className="text-sm text-muted-foreground hover:text-primary transition-colors">Frisör Köping</Link></li>
               <li><Link to="/restauranger-sala" className="text-sm text-muted-foreground hover:text-primary transition-colors">Restauranger Sala</Link></li>
