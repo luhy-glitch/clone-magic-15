@@ -6,11 +6,16 @@ export type { DbBlogPost };
 
 const posts = blogPostsData as DbBlogPost[];
 
+const today = new Date().toISOString().slice(0, 10);
+const publishedPosts = posts.filter(
+  (p) => !(p as any).scheduled_date || (p as any).scheduled_date <= today
+);
+
 export const useBlogPosts = () => {
   return useQuery({
     queryKey: ["blog-posts-local"],
-    queryFn: () => posts,
-    initialData: posts,
+    queryFn: () => publishedPosts,
+    initialData: publishedPosts,
   });
 };
 

@@ -12,8 +12,9 @@ const staticRoutes = ["/", "/blogg", "/om-mig", "/kontakt", "/integritetspolicy"
 let blogPosts = [];
 const blogDataPath = path.resolve(__dirname, "../src/data/blogPosts.json");
 if (fs.existsSync(blogDataPath)) {
+  const today = new Date().toISOString().slice(0, 10);
   const posts = JSON.parse(fs.readFileSync(blogDataPath, "utf-8"));
-  blogPosts = posts.map(p => p.slug);
+  blogPosts = posts.filter(p => !p.scheduled_date || p.scheduled_date <= today).map(p => p.slug);
 }
 const routes = [...staticRoutes, ...blogPosts.map(p => `/blogg/${p}`)];
 
