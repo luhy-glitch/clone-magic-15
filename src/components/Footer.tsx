@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-background border-t border-border py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-8 mb-8">
           {/* Brand + NAP */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4">
@@ -76,7 +76,7 @@ const Footer = () => {
             </ul>
           </nav>
 
-          {/* Övrigt + Blogg - ALLA 11 LÄNKAR ÅTERSTÄLLDA */}
+          {/* Övrigt */}
           <nav aria-label="Övrigt">
             <h3 className="font-serif font-bold text-foreground mb-4 text-base">Övrigt</h3>
             <ul className="space-y-2">
@@ -85,12 +85,20 @@ const Footer = () => {
               <li><Link to="/kontakt" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kontakt</Link></li>
               <li><Link to="/gratis-seo-analys" className="text-sm text-muted-foreground hover:text-primary transition-colors">Gratis SEO-analys</Link></li>
               <li><Link to="/integritetspolicy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Integritetspolicy</Link></li>
-              <li><Link to="/blogg" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">Blogg</Link></li>
+            </ul>
+            <h3 className="font-serif font-bold text-foreground mt-6 mb-4 text-base">Populära guider</h3>
+            <ul className="space-y-2">
+              <li><Link to="/blogg" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">Alla artiklar</Link></li>
               <li><Link to="/blogg/seo-vasteras-guide" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">SEO-guide småföretag</Link></li>
               <li><Link to="/blogg/lokal-seo-smaforetag" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Skapa hemsida guide</Link></li>
               <li><Link to="/blogg/oka-hemsidans-hastighet" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Öka hemsidans hastighet</Link></li>
-              <li><Link to="/blogg/lokal-seo-smaforetag" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Lokal SEO</Link></li>
               <li><Link to="/blogg/react-vs-wordpress" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">React vs WordPress</Link></li>
+              <li><Link to="/blogg/google-business-profil-guide" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Google Business-guide</Link></li>
+              <li><Link to="/blogg/resan-till-100-pagespeed" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Nå 100/100 PageSpeed</Link></li>
+              <li><Link to="/blogg/core-web-vitals-vastmanland" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Core Web Vitals guide</Link></li>
+              <li><Link to="/blogg/hur-vanja-seo-byra" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Välja SEO-byrå 2026</Link></li>
+              <li><Link to="/blogg/billig-vs-professionell-hemsida" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Billig vs proffs hemsida</Link></li>
+              <li><Link to="/blogg/seo-priser-vad-kostar-seo" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">SEO-priser 2026</Link></li>
             </ul>
           </nav>
         </div>
