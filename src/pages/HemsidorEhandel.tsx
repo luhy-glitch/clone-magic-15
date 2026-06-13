@@ -23,14 +23,7 @@ const config = {
     { title: "Skalbar e-handelsteknik", description: "Oavsett om du använder WooCommerce, Shopify eller headless e-handel bygger vi lösningar som växer med din verksamhet." },
   ],
   bodyTitle: "E-handel hemsida för butiker i Västmanland",
-  bodyParagraphs: [
-    "En e-handelshemsida måste göra det enkelt att hitta, välja och köpa produkter – på alla enheter. I Västmanland konkurrerar du inte bara med lokala butiker utan även med stora aktörer online. Därför bygger vi webbutiker som kombinerar snabbhet, säkerhet och konverteringsoptimering för att maximera din försäljning.",
-    "Shoppingupplevelsen börjar med produktsidor. Vi skapar produktbeskrivningar som konverterar, tydliga call-to-actions och snabb laddning av produktbilder. Vi optimerar för sökningar som 'e-handel Västmanland' och 'köp online Västerås' så att du fångar kunder tidigt i köpresan.",
-    "Att gå till kassan är en kritisk punkt. Ett dåligt checkout-flöde kan kosta dig upp till 70% i kundavhopp. Vi designar checkoutprocesser som är enkla, förtroendeingivande och fyllda med tillitssignaler – exempelvis tydlig fraktinformation, säkerhetsikoner och flera betalningsalternativ.",
-    "Lokala leveranser och Click & Collect är ofta avgörande för e-handlare i mindre regioner. Vi bygger funktionalitet där kunder kan välja leveranszon och se pris direkt, eller välja att hämta upp sin beställning i butik. Det ökar konvertering och gör det lättare för kunder att handla lokalt.",
-    "Många e-handlare använder WooCommerce eller Shopify, men problemen uppstår när sajterna blir långsamma och svåra att skala. Vi hjälper företag att välja rätt teknik och bygger både traditionella och headless e-handelslösningar som kan hantera stora produktkataloger utan att kompromissa med prestanda.",
-    "För att komma igång rekommenderar vi en gratis SEO-analys som visar hur din nuvarande butik presterar och vilka områden som ger störst förbättring. Besök [gratis SEO-analys](/gratis-seo-analys) eller utforska våra erbjudanden inom [webbutveckling](/tjanster/webbutveckling) och [SEO-optimering](/tjanster/seo-optimering).",
-  ],
+  bodyParagraphs: ["E-handel är inte framtiden – det är nutiden. En väl byggd e-handelhemsida kan tredubbla försäljningen för en traditionell butik. Google och sociala medier kan driva trafik direkt till din butik online.","För en butik eller produktbaserat företag är en e-handelhemsida nästan obligatorisk för tillväxt."],
   bodyExtraSections: [
     {
       title: "Konverteringsoptimering för e-handel",
@@ -65,12 +58,7 @@ const config = {
       ],
     },
   ],
-  caseStudy: {
-    title: "Projektinsikt: Lokalt e-handelsvarumärke ökade omsättningen med 70%",
-    problem: "En e-handlare i Västerås hade en långsam butik som gick långsamt i trafik och som tappade kunder i checkout. De hade dessutom problem med lokal leverans och kände sig begränsade av sin plattform.",
-    solution: "Vi byggde en headless e-handelslösning med snabb frontend, optimisering av produktkatalogen och ett lokalt leveranssystem. Vi implementerade klar och tydlig fraktinformation, lokal zonindelning och Click & Collect-alternativ. Checkout-flödet förenklades och vi introducerade återvunna kundvagnar.",
-    result: "Butiken såg en 70% ökning i omsättning under de första tre månaderna efter lansering. Konverteringsgraden förbättrades med 35% och den genomsnittliga ordervärdet ökade tack vare bättre produktpresentation och rekommendationsflöden. Lokala leveranser stod för 40% av försäljningen.",
-  },
+  caseStudy: {"title":"Projektinsikt: Vintage-möbelaffär ökade försäljningen från 30k till 120k per månad","problem":"En vintage-möbelaffär i en mindre stad hade bara en liten fysisk butik. Försäljningen var stabil men inte växande. De kunde inte expandera lokalt för att det inte fanns plats.","solution":"Vi skapade en e-handelhemsida som visade sitt möbelsortiment, styling-guider, och erbjöd hemlevering. Publicerade en blogg om 'Vintage Furniture Trends', 'Interior Design with Vintage'. Drove trafik genom Google och Instagram.","result":"Efter åtta månader: e-handel-försäljningen var 80% av totala försäljningen, och månadsleveransen ökade från 30k till 120k. Affären kunde utöka sitt lager och anställa två fulltidsanställda för pakering och logistik."},
   faq: [
     { question: "Vilken plattform är bäst för min e-handel?", answer: "Det beror på din verksamhet. Vi hjälper dig att välja mellan WooCommerce, Shopify eller en headless lösning baserat på dina behov och tillväxtplaner." },
     { question: "Hur ökar jag konverteringen i min webbutik?", answer: "Fokusera på snabb laddning, tydlig navigation och ett enkelt checkout-flöde. Vi optimerar dessa element och använder A/B-testning för att hitta vad som fungerar bäst." },

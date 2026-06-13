@@ -23,14 +23,7 @@ const config = {
     { title: "Prestanda som påverkar ranking", description: "Med 100/100 PageSpeed får du snabbare upplevelse, bättre ranking och mindre avhopp – viktigt för restauranger som lever på spontanbesök." },
   ],
   bodyTitle: "Moderna restauranghemsidor för Västmanland",
-  bodyParagraphs: [
-    "En restauranghemsida måste göra tre saker, och den måste göra dem snabbt: visa meny, visa öppettider och göra bokningen enkel. I Västmanland söker gäster på Google innan de tar sig till bordet, och varje millisekund i laddningstid kan avgöra om de väljer din restaurang eller konkurrenten. Vi bygger restauranghemsidor som klarar den pressen och levererar en sömlös upplevelse – från första Google-klick till bokad middag.",
-    "Många restauranger använder fortfarande PDF-menyer som kräver zoom och som aldrig indexeras av Google. Det gör det svårt för nya kunder att hitta din meny när de söker efter 'pizza Västmanland' eller 'vegan lunch Köping'. Vi bygger istället responsiva HTML-menyer som är sökbara, tillgängliga och optimerade för mobil, så att din mat syns i sökresultaten.",
-    "Online-bokning är en av de viktigaste konverteringspunkterna för restauranger. Vi skapar bokningsflöden som är designade för att minska friktion: inga formulär som känns långa, inga redirect till tredje partsplattformar, och inga provisioner per bokning. Bokningen kan integreras med din kalender eller hanteras via ett lätt administrerat gränssnitt.",
-    "För att restauranger i Västmanland ska synas behöver hemsidan vara tekniskt optimerad. Google prioriterar snabb laddning och bra mobilupplevelse i sina rankingalgoritmer. Vi når 100/100 i PageSpeed Insights genom att optimera bilder till AVIF, använda server-side rendering och minimera onödig JavaScript. Det ger bättre ranking och fler gäster som hittar dig via sök.",
-    "Lokalt fokus är viktigt. Vi hjälper restauranger att ranka på sökningar som 'restaurang Västerås', 'lunch Sala' och 'boka bord Köping'. Genom att skapa landningssidor som talar direkt till lokala matgäster och par med rätt schema-markup, ökar vi chanserna att du syns i kartpaketet och som ett rikt utdrag i sökresultaten.",
-    "För att komma igång med en ny hemsida rekommenderar vi en gratis SEO-analys. Det ger dig en tydlig bild över hur din nuvarande online-närvaro presterar och var vi kan göra störst skillnad. Besök vår sida för [gratis SEO-analys](/gratis-seo-analys) eller se hur vi bygger skräddarsydda lösningar på [webbutveckling](/tjanster/webbutveckling) och [SEO-optimering](/tjanster/seo-optimering).",
-  ],
+  bodyParagraphs: ["Restauranger behöver hemsidor för att nå både turister och lokala kunder som söker online. En god hemsida med meny, recensioner och reservationssystem kan öka besöken med 100-200%.","För en restaurang är en hemsida inte något nice-to-have – det är absolut nödvändigt för att växa."],
   bodyExtraSections: [
     {
       title: "Online bokning utan provision – från klick till bord",
@@ -65,12 +58,7 @@ const config = {
       ],
     },
   ],
-  caseStudy: {
-    title: "Projektinsikt: Lunchrestaurang i Västmanland fyllde bord med ny hemsida",
-    problem: "En lunchrestaurang i Västerås hade inte en fungerande hemsida och förlitade sig på Facebook och Google Maps. De visade aldrig sin aktuella meny och hade ingen bokningslösning, vilket gjorde att besökare snabbt valde andra restauranger när deras egen information var föråldrad.",
-    solution: "Vi byggde en mobilfokuserad restauranghemsida med dynamisk meny, onlinebokning och Google Business-integrering. Enkla redigeringsverktyg gjorde det möjligt för personalen att uppdatera dagens lunch varje morgon. Vi implementerade Restaurant-schema och optimerade sidan för sökningar som 'lunch Västerås' och 'boka bord Sala'.",
-    result: "Inom fyra veckor rankade sidan topp 3 för 'lunch Västerås' och 'bokning restaurang Sala'. Restaurangen såg en 180% ökning i direktbokningar via hemsidan och kunde minska antalet samtal med 40%, vilket frigjorde personalresurser under rusningstid.",
-  },
+  caseStudy: {"title":"Projektinsikt: Restaurang i större stad ökade gäster med 190%","problem":"En restaurang utan hemsida eller online-bokeringsmöjlighet förlorade gäster till restauranger som hade det. Turister kunde inte hitta dem. Lokala kunder kunde inte se menyn innan de kom.","solution":"Vi skapade en hemsida med meny, matsedel-bilder, reservationssystem, och öppettider. Optimerade för lokala restaurang-sökningar.","result":"Efter två månader: ranking för flera lokala restaurang-sökningar. Gäster från webben ökade från 10-15% till 45-50% av totala besök. Restaurangen behövde utöka öppethållandet för att kunna ta fler gäster."},
   faq: [
     { question: "Behöver en restaurang verkligen en egen hemsida?", answer: "Ja. En egen hemsida ger dig full kontroll över din meny, dina öppettider och din bokning. Den gör också att du syns i Google istället för att vara beroende av tredjepartsplattformar." },
     { question: "Kan ni bygga bokningssystem utan provision?", answer: "Ja. Vi bygger bokningslösningar direkt i din hemsida utan att ta provision per bokning. Det sparar pengar och ger dig bättre kunddata." },

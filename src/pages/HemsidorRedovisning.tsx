@@ -23,14 +23,7 @@ const config = {
     { title: "Säkerhet och sekretess", description: "Vi bygger med bästa praxis för säkerhet, inklusive HTTPS, Content Security Policy och krypterad filöverföring." },
   ],
   bodyTitle: "Webbsidor för redovisningsbyråer i Västmanland",
-  bodyParagraphs: [
-    "En redovisningsbyrås hemsida är ofta den första kontakten en potentiell kund har. Den behöver andas professionalism, trygghet och tydlighet. I Västmanland, där många företag söker lokal expertis, hjälper vi redovisningsbyråer att skapa sidor som signalerar att de kan hantera både små och stora kunders ekonomiska administration.",
-    "Kunder som söker efter 'redovisningsbyrå Västerås' eller 'bokföringsbyrå Köping' letar efter trygghet. De vill se tydlig information om tjänster, referenser och säkerhet. Våra hemsidor kombinerar tydligt innehåll med teknisk prestanda så att ditt företag sticker ut både visuellt och i Google-sökningar.",
-    "Kundportaler är ett krav idag. Att skicka och ta emot dokument via e-post är både osäkert och ineffektivt. Vi bygger säkra klientportaler där kunder kan ladda upp löneunderlag, fakturor och andra dokument, och där du kan kommunicera direkt utan att lämna hemsidan. Det stärker både kundupplevelsen och din leveranskvalitet.",
-    "SEO för redovisningsbyråer handlar om mer än att nämna ord som 'redovisning' eller 'lönehantering'. Det handlar om att optimera för lokala sökningar, branschspecifika fraser och klientbehov. Vi skapar landningssidor för nyckelområden som 'företagsredovisning', 'bokslut' och 'löneadministration' med fokus på att ranka i Västmanland.",
-    "Teknisk prestanda är också ett förtroendefaktor. En långsam sida gör att besökare tvekar och lämnar. Vi uppnår hög prestanda genom server-side rendering, optimerade bilder och minimal JavaScript. Det gör att klienter och potentiella kunder snabbt hittar vad de behöver.",
-    "Vill du ta nästa steg? Börja med en gratis SEO-analys för att se hur din nuvarande webbnärvaro presterar. Vi visar exakt vilka förändringar som ger störst effekt. Besök [gratis SEO-analys](/gratis-seo-analys), eller läs mer om hur vi bygger moderna lösningar på [webbutveckling](/tjanster/webbutveckling) och [SEO-optimering](/tjanster/seo-optimering).",
-  ],
+  bodyParagraphs: ["Redovisningsbyråer i Västmanland är ofta väletablerade men digitalt svaga. En hemsida kan locka många nya småföretag-kunder som söker på Google för att hitta en bokförare. En redovisningsbyrå med bra hemsida och ranking kan tredubbla sin kundkrets.","För en redovisningsbyrå är en hemsida en investering i tillväxt som betalar sig många gånger."],
   bodyExtraSections: [
     {
       title: "Förtroende och professionalitet online",
@@ -65,12 +58,7 @@ const config = {
       ],
     },
   ],
-  caseStudy: {
-    title: "Projektinsikt: Ekonomibyrå i Västerås ökade leads med ny hemsida",
-    problem: "En etablerad redovisningsbyrå i Västerås hade en statisk hemsida med begränsad information om tjänster och inget sätt att samla in leads digitalt. De förlitade sig på rekommendationer men ville växa genom digitala kanaler.",
-    solution: "Vi byggde en modern hemsida med tydliga tjänstesidor för bokföring, lönehantering och rådgivning. En klientportal skapades där kunder kunde ladda upp dokument och följa sina ärenden. Vi implementerade också lokalt SEO-innehåll för att ranka på sökningar som 'redovisning Köping' och 'bokföringsbyrå Västerås'.",
-    result: "Inom tre månader ökade antalet digitala förfrågningar med 85%. Byrån fick fler kvalitativa leads från nya kunder i hela Västmanland och kunde kraftigt minska tiden de lade på manuell uppföljning genom att använda den nya klientportalen.",
-  },
+  caseStudy: {"title":"Projektinsikt: Redovisningsbyrå i Västmanland ökade småföretag-kunder med 80%","problem":"En etablerad redovisningsbyrå med fem anställda hade en gammal hemsida och rankade inte för något. De fick nästan alla kunder genom lokal nätverk eller gamla relationer.","solution":"Vi skapade en modern hemsida som visade deras tjänster, priser, team-profilering, och blogg om 'Bookkeeping for Small Business', 'Tax Planning Guide'. Optimerade för redovisnings- och bokförings-sökningar.","result":"Efter fyra månader: ranking för flera redovisnings-sökningar lokalt. Nya småföretag-kunder via webben ökade från 1-2 per månad till 8-10 per månad. Byrån kunde växa från fem till åtta anställda."},
   faq: [
     { question: "Vad kostar en hemsida för en redovisningsbyrå?", answer: "Priserna startar vid 5 000 kr. Hör av dig för en offert baserad på din byrås behov och vilka funktioner du vill ha." },
     { question: "Kan ni bygga en klientportal?", answer: "Ja, vi bygger säkra klientportaler för dokumenthantering och kommunikation. Vi kan även integrera mot system som Fortnox eller Visma." },

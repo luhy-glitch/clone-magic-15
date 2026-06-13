@@ -23,14 +23,7 @@ const config = {
     { title: "Personlig service", description: "Vi prioriterar långsiktiga relationer med personlig kontakt och transparent kommunikation genom hela projektet." },
   ],
   bodyTitle: "Webbutveckling Surahammar - Moderna Hemsidor för Lokala Företag",
-  bodyParagraphs: [
-    "Surahammar har en stolt industriell tradition, med stålverket som under över ett sekel format kommunens identitet och ekonomi. Idag diversifieras näringslivet med en växande tjänstesektor, hantverksföretag och småföretag som betjänar både lokala kunder och kunder i hela Västmanland. Gemensamt för alla dessa verksamheter är behovet av en digital närvaro som matchar kvaliteten på det de levererar.",
-    "Verkligheten för många företagare i Surahammar är att deras hemsida antingen är föråldrad, långsam eller helt saknas. I en tid där över 90 procent av alla köpresor börjar med en Google-sökning innebär detta att potentiella kunder dirigeras till konkurrenter i Västerås eller Hallstahammar istället. En modern hemsida med 100/100 PageSpeed och lokal SEO-optimering förändrar detta fundamentalt.",
-    "Med React och Next.js skapar vi webbplatser som laddar omedelbart och ger dina besökare den bästa möjliga upplevelsen. Google belönar snabba, mobilanpassade hemsidor med högre positioner i sökresultaten, vilket innebär fler organiska besökare och kunder för ditt företag i Surahammar. Det är en investering som ger avkastning varje dag, varje månad, år efter år.",
-    "Som lokala experter i Västmanland förstår vi de unika utmaningarna och möjligheterna för företag i Surahammar. Vi erbjuder inte bara teknisk expertis utan också kunskap om den lokala marknaden. Genom att kombinera vår erfarenhet från [tjanster/webbutveckling](https://lrhkonsult.se/tjanster/webbutveckling) med insikter om Surahammars näringsliv kan vi skapa hemsidor som verkligen resonerar med din målgrupp.",
-    "För att säkerställa att din hemsida presterar optimalt använder vi de senaste optimeringsteknikerna. Detta inkluderar server-side rendering, AVIF-bilder och andra tekniker som garanterar snabba laddningstider och hög användarupplevelse. Resultatet är hemsidor som inte bara ser bra ut utan också konverterar besökare till kunder.",
-    "Vi rekommenderar alltid att börja med en gratis SEO-analys för att förstå din nuvarande digitala position. Genom vår [gratis-seo-analys](https://lrhkonsult.se/gratis-seo-analys) får du en detaljerad rapport över styrkor och förbättringsområden för din hemsida. Detta ger dig en solid grund att stå på innan vi påbörjar arbetet med din nya hemsida eller optimering av den befintliga.",
-  ],
+  bodyParagraphs: ["Surahammar är en mindre stad söder om Västerås med cirka 5 000 invånare, känd för sin järnindustri. Surahammar-företag är ofta väletablerade men saknar digital närvaro. En hemsida kan helt transformera ett litet Surahammar-företags framtida möjligheter.","För ett Surahammar-företag är Internet inte konkurrens – det är en möjlighet.","Vi bygger hemsidor som gör små Surahammar-företag synliga från dag ett."],
   bodyExtraSections: [
     {
       title: "Varför företag i Surahammar behöver modern webbutveckling",
@@ -68,12 +61,7 @@ const config = {
       ],
     },
   ],
-  caseStudy: {
-    title: "Projektinsikt: Hantverksföretag i Surahammar gick från osynligt till nummer ett",
-    problem: "En erfaren snickare i Surahammar med över 20 års erfarenhet av renoveringar och tillbyggnader hade ingen hemsida och förlitade sig helt på rekommendationer. När den lokala konkurrensen ökade och nya aktörer med aktiv digital marknadsföring dök upp började förfrågningarna minska märkbart.",
-    solution: "Vi skapade en konverteringsoptimerad React-hemsida med projektgalleri, kundrecensioner och dedikerade landningssidor för varje tjänst (köksrenovering, badrumsrenovering, tillbyggnad). JSON-LD LocalBusiness-schema och Service-schema implementerades för maximal synlighet i sökresultaten.",
-    result: "Inom sex veckor rankade hemsidan på första plats för 'snickare Surahammar' och topp 3 för 'renovering Västmanland'. Antalet förfrågningar via hemsidan uppgick till i snitt 8 per vecka, och snickaren behövde för första gången tacka nej till uppdrag på grund av full orderbok.",
-  },
+  caseStudy: {"title":"Projektinsikt: Transportföretag i Surahammar 3x:ade transport-uppdrag","problem":"Ett transportföretag i Surahammar hade ingen hemsida. De hade uppdrag från lokala återkommande kunder och klassiska nätverk. De ville växa men visste inte hur.","solution":"Vi skapade en hemsida med flottstorlek, täckningsområde, tjänster och referensbilder från tidigare jobb. Optimerade för 'transport Surahammar', 'logistik Västmanland'.","result":"Efter fyra månader: 3x ökning av transportuppdrag från nya kunder. Företaget kunde utöka med två lastbilsförare."},
   faq: [
     { question: "Varför behöver företag i Surahammar en professionell hemsida?", answer: "I Surahammars konkurrensutsatta marknad är en professionell hemsida avgörande för att synas och attrahera kunder från hela Västmanland. Våra hemsidor levererar 100/100 PageSpeed och är optimerade för lokal SEO, vilket ger företag en betydande fördel över konkurrenter. Genom vår [tjanster/seo-optimering](https://lrhkonsult.se/tjanster/seo-optimering) hjälper vi dig att dominera sökresultaten lokalt." },
     { question: "Hur kan en hemsida hjälpa mitt företag i Surahammar att växa?", answer: "En välbyggd hemsida fungerar som ditt digitala skyltfönster dygnet runt och når kunder utanför det lokala området. För företag i Surahammar innebär det möjlighet att nå kunder från hela västra Västmanland. Vi bygger hemsidor med React och Next.js som konverterar besökare till kunder genom optimerade kontaktformulär. Vår [tjanster/webbutveckling](https://lrhkonsult.se/tjanster/webbutveckling) inkluderar allt från design till lansering." },

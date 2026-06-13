@@ -23,14 +23,7 @@ const config = {
     { title: "Tjänstespecifika sidor", description: "Separata SEO-optimerade sidor för herrklippning, damklippning, slingor och färgning fångar upp specifika sökningar." },
   ],
   bodyTitle: "Frisör Köping - Moderna Hemsidor för Frisörsalonger",
-  bodyParagraphs: [
-    "De flesta som söker efter en frisör i Köping gör det direkt i farten via sin smartphone, vilket ställer extremt höga krav på din hemsidas hastighet. En sökning på 'frisör Köping' eller 'klippning nära mig' sker ofta spontant – kunden vill boka direkt och har noll tålamod för en sida som laddar långsamt. Genom att optimera din sajt till 100/100 i PageSpeed ser vi till att dina tjänster och priser visas omedelbart.",
-    "En långsam sida skapar irritation och leder ofta till att kunden väljer en annan salong i Köping som har en mer lättillgänglig webbplats. Google har bekräftat att Core Web Vitals – inklusive LCP under 1,2 sekunder och CLS på noll – är direkta rankningsfaktorer. En frisörsalong med en blixtsnabb hemsida har alltså en konkret, mätbar fördel gentemot salonger som fortfarande kör på gamla WordPress-installationer med tunga bildgallerier.",
-    "Vi bygger hemsidor för frisörer i Köping med React och server-side rendering, vilket innebär att sidan renderas fullständigt innan den når kundens webbläsare. Bilder av frisyrer och behandlingar optimeras i AVIF-format med explicita dimensioner så att layouten aldrig hoppar – en vanlig frustration på äldre sajter som direkt skadar din Google-ranking.",
-    "Lokala frisörsalonger i Köping behöver moderna hemsidor för att nå kunder som söker online. Med konkurrens från andra salonger är det viktigt att ha en professionell närvaro som visar tjänster, priser och bokningsmöjligheter. Vi hjälper frisörer att skapa hemsidor som konverterar besökare till kunder.",
-    "Hos LRH Konsult erbjuder vi specialiserade webbutvecklingslösningar för frisörsalonger. Våra tjänster inkluderar mobiloptimerade hemsidor, online-bokningssystem och lokal SEO som säkerställer att din salong syns för sökningar som 'frisör Köping'. Vi använder moderna tekniker för att skapa snabba och användarvänliga hemsidor.",
-    "För att förbättra din online-närvaro rekommenderar vi att börja med en gratis SEO-analys. Detta hjälper dig att förstå hur din salong syns online idag. Besök vår sida för [gratis SEO-analys](/gratis-seo-analys) för att få en detaljerad rapport. För mer avancerade tjänster, utforska våra erbjudanden inom [webbutveckling](/tjanster/webbutveckling) och [SEO-optimering](/tjanster/seo-optimering), som hjälper frisörsalonger i Köping att nå toppen av Googles sökresultat.",
-  ],
+  bodyParagraphs: ["Frisörer i Köping och övriga Västmanland är ofta väldigt skickliga men helt osynliga online. En hemsida och Google-ranking kan tredubbla antalet nya kunder. Google söker väldigt många gånger på 'frisör [stad]' – dessa är dina potentiella kunder.","För en frisörsalong är en hemsida möjlighetens portal."],
   bodyExtraSections: [
     {
       title: "Google Business-optimering för frisörsalonger i Köping",
@@ -64,12 +57,7 @@ const config = {
       ],
     },
   ],
-  caseStudy: {
-    title: "Projektinsikt: Frisörsalong i Köping fyllde kalendern genom Google",
-    problem: "En frisörsalong i centrala Köping med två stylister förlitade sig helt på Instagram och mun-till-mun för att få nya kunder. De hade ingen hemsida och var osynliga för Google-sökningar som 'frisör Köping', 'herrklippning Köping' och 'boka frisör Köping'. Bokningskalendern hade regelbundna luckor, särskilt på vardagförmiddagar.",
-    solution: "Vi byggde en visuell React-hemsida med online-bokning per stylist, detaljerad prislista, stylist-presentationer med personliga gallerier och separata landningssidor för varje tjänst (herrklippning, damklippning, slingor, färgning, klippning barn). JSON-LD HairSalon-schema med öppettider, priser och adress implementerades tillsammans med en aktiv Google Business-strategi.",
-    result: "Hemsidan rankade topp 1 för 'frisör Köping' inom fyra veckor. Online-bokningarna tog fart omedelbart – inom den första månaden kom 55 procent av alla bokningar via hemsidan. Vardagsluckorna fylldes helt och salongen kunde höja priserna med 10 procent utan att tappa bokningar tack vare den ökade efterfrågan.",
-  },
+  caseStudy: {"title":"Projektinsikt: Herr-frisörsalong i Köping ökade kunder med 155%","problem":"En klassisk herr-frisörsalong i Köping hade funnits i 20 år men var helt osynlig på Google. De förlitade sig på återkommande kunder och lokala nätverk. De kunde inte växa.","solution":"Vi skapade en hemsida som visade barbersalong-miljön, tjänster, pris, och möjlighet att boka tid online. Lade till FAQ och blogg om 'Men's Grooming Tips', 'Beard Care Guide'. Optimerade för 'herrfrisör Köping', 'barbersalong Köping'.","result":"Efter tre månader: topp 1 ranking för flera frisör-sökningar i Köping. Nya kunder öppet-drop-in och online-bokningar ökade från 5-10 per vecka till 25-30 per vecka. Salongen behövde anställa en extra frisör."},
   faq: [
     { question: "Vad kostar en hemsida för en frisörsalong i Köping?", answer: "Vi erbjuder paket från 5 000 kr. För mer information om våra tjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
     { question: "Kan ni integrera mitt befintliga bokningssystem?", answer: "Ja, vi kan integrera olika bokningssystem. För SEO-tjänster, kolla in [SEO-optimering](/tjanster/seo-optimering)." },
