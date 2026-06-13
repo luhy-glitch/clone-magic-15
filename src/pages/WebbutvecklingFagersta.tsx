@@ -4,17 +4,17 @@ import LocalLandingPage from "./LocalLandingPage";
 const config = {
   city: "Fagersta",
   slug: "webbutveckling-fagersta",
-  serviceKeyword: "Webbdesign",
-  metaTitle: "Webbdesign Fagersta - Hemsidor som Ger Resultat | LRH Konsult",
-  metaDescription: "Moderna hemsidor i Fagersta som rankar på Google. 100/100 PageSpeed och lokal SEO för företag i norra Västmanland.",
-  heroHeading: "Webbdesign i Fagersta som ger resultat",
-  heroDescription: "Fagersta har en stolt industritradition och en växande företagsscen. Det är dags att din digitala närvaro matchar ambitionen. Vi bygger blixtsnabba hemsidor som rankar högt på Google och ger ditt företag fler kunder.",
+  serviceKeyword: "Webbutveckling",
+  metaTitle: "Webbutveckling Fagersta – Industriservice & Hantverkare | LRH Konsult",
+  metaDescription: "Hemsidor för industriföretag och hantverkare i Fagersta. Nå kunder från Norberg till Avesta. React, 100/100 PageSpeed, lokal SEO.",
+  heroHeading: "Från lokal industri till regional räckvidd – via rätt hemsida",
+  heroDescription: "Fagersta är industrins hjärta i norra Västmanland. Din expertis är välkänd lokalt – men Google hittar dig inte när potentiella B2B-kunder söker från Norberg, Avesta eller Västerås. Vi bygger hemsidor som gör din industri- eller handverkskompetens synlig regionalt.",
   icon: Code2,
   heroFacts: [
-    "100/100 PageSpeed – från legacy till toppresultat",
-    "Industriservice i Fagersta fick kunder i hela norra Mälardalen",
-    "Semantisk HTML med korrekt heading-hierarki och ARIA",
-    "UNESCO-kulturarv som turism-SEO med Event-schema",
+    "Industriservice i Fagersta fick nya kunder från hele norra Mälardalen",
+    "100/100 PageSpeed ger fördel mot större städers konkurrenter",
+    "Specialiserade sökord som 'metallbearbetning Västmanland' rankar högre",
+    "Engelsbergs bruk-turism kan integreras i din B2B-hemsida",
   ],
   benefits: [
     { title: "Lokal förståelse", description: "Vi känner Västmanland och förstår de specifika utmaningarna och möjligheterna för företag i Fagersta och norra Västmanland." },
@@ -61,11 +61,11 @@ const config = {
   ],
   caseStudy: {"title":"Projektinsikt: Elmontörbyrå i Fagersta ökade uppdrag med 95%","problem":"En lokalt etablerad elmontörbyrå i Fagersta hade arbete från grannar och lokala nätverk, men kunde inte växa. De visste inte hur man skulle synas på Google. Konkurrenter från närliggande större städer rankade högt för 'elektriker Fagersta' och tog många av de potentiella jobben.","solution":"Vi skapade en hemsida som visade deras arbetsexempel (före/efter-bilder av installationer), lagade ett FAQ om elektriska problem hemma och skrev en blogg om 'Electricity Safety at Home' och 'Modern Home Automation'. Optimerade för 'elektriker Fagersta', 'elanläggning Västmanland' och serviceutrop.","result":"Efter fyra månader rankade de topp 1 för 'elektriker Fagersta' och topp 3 för 'elanläggning reparation Västmanland'. Antalet uppdrag från webben ökade med 95% första året, och byrån kunde utöka med en heltidsanställd elektriker."},
   faq: [
-    { question: "Vilka företag i Fagersta kan dra nytta av er webbutveckling?", answer: "Alla typer av företag i Fagersta – från industriföretag och hantverkare till butiker, restauranger och konsulter. Vi anpassar våra lösningar efter din bransch och hjälper dig att nå kunder i hela norra Västmanland genom lokal SEO." },
-    { question: "Hur kan min hemsida hjälpa mig att nå kunder utanför Fagersta?", answer: "Genom att optimera för regionala söktermer som 'industriservice norra Västmanland' och implementera serviceArea i strukturerad data kan ditt företag synas för sökningar från Norberg, Avesta, Skinnskatteberg och andra närliggande kommuner." },
-    { question: "Vad kostar en professionell hemsida för ett företag i Fagersta?", answer: "Våra paket börjar från 5 000 kr för grundläggande hemsidor med SEO. Priset beror på komplexitet och funktioner, men vi erbjuder alltid kostnadsfri konsultation för att hitta rätt lösning för ditt företag." },
-    { question: "Kan ni hjälpa mig att synas bättre på Google för sökningar i Fagersta?", answer: "Absolut! Vi erbjuder komplett <a href=\"/tjanster/seo-optimering\">SEO-optimering</a> inklusive lokal SEO, teknisk optimering och innehållsstrategi. Börja med vår <a href=\"/gratis-seo-analys\">gratis SEO-analys</a> för att se förbättringsmöjligheterna." },
-    { question: "Hur snabbt kan ni leverera en ny hemsida för mitt företag i Fagersta?", answer: "Beroende på komplexitet levererar vi ofta inom 2-4 veckor från design till lansering. Vi arbetar effektivt för att minimera din väntetid och få din digitala närvaro igång så snabbt som möjligt." },
+    { question: "Fagersta är en liten stad – kan en hemsida verkligen hjälpa?", answer: "Ja, speciellt för små industri- och hantverksföretag i Fagersta. Du kan nå kunder från Norberg, Avesta, Kolmården och hela norra Västmanland utan att behöva flytta eller öka lokal marknadsföring. En hemsida som rankar är din digitala expansion." },
+    { question: "Vi är känd lokalt – behövs en hemsida?", answer: "Det lokala nätverket fyller ut. Men när B2B-köpare från andra orter söker på Google hittar de dig inte. En hantverkare, industriservice eller specialiserad leverantör från Fagersta kan ta helt nya marknader genom rätt hemsida och SEO." },
+    { question: "Hur länge tar det innan vi ser resultat?", answer: "Hemsidan är live: 2-4 veckor. Google-indexering: 1-2 veckor. Ranking för lokala sökord: 2-4 månader (Fagersta är en mindre marknad med lägre konkurrens än Stockholm). Nya leads från webben: ofta redan från dag 1 för populära sökord." },
+    { question: "Vilken bransch är bäst för webbutveckling?", answer: "Industriservice, hantverkare, specialisttjänster, och butiker med regional räckvidd ser bäst resultat. Men alla företag som säljer tjänster eller produkter lokalt kan växa regionalt med rätt hemsida och SEO." },
+    { question: "Kan jag se exempel på vad ni byggt för andra Fagersta-företag?", answer: "Vi arbetar med många Fagersta-företag men kan av sekretessåll inte namnge dem offentligt. Börja med en gratis SEO-analys av din befintliga (eller framtida) hemsida så kan vi visa dig specifika exempel och potentialer." },
   ],
 };
 
