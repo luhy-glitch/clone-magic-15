@@ -51,8 +51,8 @@ export default function Hero() {
       {/* SEAMLESS MAP SECTION */}
       <div className="relative w-full max-w-2xl h-72 mb-20 flex items-center justify-center z-20 bg-transparent">
         <img
-          src="/images/vastmanland-karta-sm.webp"
-          srcSet="/images/vastmanland-karta-sm.webp 350w, /images/vastmanland-karta.avif 1024w"
+          src="/images/vastmanland-karta.avif"
+          srcSet="/images/vastmanland-karta.avif"
           sizes="(max-width: 768px) 350px, 500px"
           alt="Karta över Västmanland med fokus på Västerås, Köping och Sala"
           aria-hidden="true"
