@@ -15,8 +15,26 @@ const jsonLd = {
       "headline": "Vad kostar en hemsida i Sverige 2026?",
       "description": "En komplett guide till priser för hemsidor 2026 – från DIY till skräddarsydd React/Next.js-utveckling.",
       "url": `${BASE_URL}/tjanster/vad-kostar-en-hemsida-2026`,
-      "author": { "@type": "Person", "name": "Lucas Rosvall" },
-      "publisher": { "@type": "Organization", "name": "LRH Konsult", "url": BASE_URL },
+      "image": {
+        "@type": "ImageObject",
+        "url": `${BASE_URL}/og-image.png`,
+        "width": 1200,
+        "height": 630,
+      },
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-06-14",
+      "author": { "@type": "Person", "name": "Lucas Rosvall", "url": `${BASE_URL}/om-mig` },
+      "publisher": {
+        "@type": "Organization",
+        "name": "LRH Konsult",
+        "url": BASE_URL,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${BASE_URL}/og-image.png`,
+          "width": 1200,
+          "height": 630,
+        },
+      },
     },
     {
       "@type": "FAQPage",

@@ -280,6 +280,8 @@ const BloggArtikelHemsidaGuide = () => {
             headline: TITLE,
             description: DESCRIPTION,
             datePublished: "2026-03-16",
+            dateModified: "2026-03-16",
+            image: { "@type": "ImageObject", url: "https://www.lrhkonsult.se/og-image.png", width: 1200, height: 630 },
             author: { "@type": "Person", name: "Lucas", url: "https://www.lrhkonsult.se/om-mig" },
             publisher: {
               "@type": "Organization",
