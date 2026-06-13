@@ -253,7 +253,7 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
                   ) : null;
                 })()}
               </div>
-              <h3 className="text-lg font-bold font-serif mb-4 text-center text-muted-foreground">Se även</h3>
+              <h2 className="text-lg font-bold font-serif mb-4 text-center text-muted-foreground">Se även</h2>
               <div className="flex flex-wrap justify-center gap-3">
                 {RELATED_SERVICES.map((s) => (
                   <Link
