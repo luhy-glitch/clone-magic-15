@@ -53,6 +53,7 @@ const FrisorKoping = lazy(() => import("./pages/FrisorKoping"));
 const HemsidorRestaurang = lazy(() => import("./pages/HemsidorRestaurang"));
 const HemsidorRedovisning = lazy(() => import("./pages/HemsidorRedovisning"));
 const HemsidorEhandel = lazy(() => import("./pages/HemsidorEhandel"));
+const DesignbyraVasteras = lazy(() => import("./pages/DesignbyraVasteras"));
 const Case = lazy(() => import("./pages/Case"));
 const GratisSeoAnalys = lazy(() => import("./pages/GratisSeoAnalys"));
 const VadKostarEnHemsida = lazy(() => import("./pages/tjanster/VadKostarEnHemsidaPage"));
@@ -127,6 +128,7 @@ const DataRoutes = () => (
         <Route path="/tjanster/vad-kostar-en-hemsida-2026" element={<VadKostarEnHemsida />} />
 
         {/* New pages */}
+        <Route path="/designbyra-vasteras" element={<DesignbyraVasteras />} />
         <Route path="/case" element={<Case />} />
         <Route path="/gratis-seo-analys" element={<GratisSeoAnalys />} />
 

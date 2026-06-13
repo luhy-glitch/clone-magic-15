@@ -73,6 +73,7 @@ const Footer = () => {
               <li><Link to="/frisor-koping" className="text-sm text-muted-foreground hover:text-primary transition-colors">Frisör Köping</Link></li>
               <li><Link to="/restauranger-sala" className="text-sm text-muted-foreground hover:text-primary transition-colors">Restauranger Sala</Link></li>
               <li><Link to="/digital-marknadsforing-butiker" className="text-sm text-muted-foreground hover:text-primary transition-colors">Digital marknadsföring</Link></li>
+              <li><Link to="/designbyra-vasteras" className="text-sm text-muted-foreground hover:text-primary transition-colors">Designbyrå Västerås</Link></li>
             </ul>
           </nav>
 

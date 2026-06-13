@@ -2,6 +2,10 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/blogg/seo-vasteras", "destination": "/blogg/seo-vasteras-guide", "permanent": true },
+    { "source": "/images/vastmanland-karta-sm.webp", "destination": "/images/vastmanland-karta.avif", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

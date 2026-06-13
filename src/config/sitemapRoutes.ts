@@ -56,6 +56,8 @@ export const SITEMAP_ROUTES = [
   { path: "/webbutveckling-uppsala", changefreq: "monthly", priority: "0.8" },
   { path: "/webbutveckling-orebro", changefreq: "monthly", priority: "0.8" },
 
+  { path: "/designbyra-vasteras", changefreq: "monthly", priority: "0.8" },
+
   // ── Branschsidor ──
   { path: "/hemsidor-bygg-hantverkare", changefreq: "monthly", priority: "0.7" },
   { path: "/digital-marknadsforing-butiker", changefreq: "monthly", priority: "0.7" },
