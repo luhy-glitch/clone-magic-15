@@ -72,7 +72,10 @@ const Blogg = () => {
     },
   ];
 
-  const allPosts = [...staticPosts, ...posts];
+  const allPosts = useMemo(() =>
+    [...staticPosts, ...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+    [posts]
+  );
 
   const filteredPosts = useMemo(() => {
     if (activeCategory === "Alla") return allPosts;

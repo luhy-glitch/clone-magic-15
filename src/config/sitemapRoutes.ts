@@ -106,4 +106,11 @@ export const SITEMAP_ROUTES = [
   { path: "/blogg/digital-synlighet-vastmanland-seo-ai", changefreq: "monthly", priority: "0.7" },
   { path: "/blogg/framtidssakra-foretag-vastmanland-2026", changefreq: "monthly", priority: "0.7" },
   { path: "/blogg/seo-vasteras-guide", changefreq: "monthly", priority: "0.7" },
+  { path: "/blogg/webflow-konsult-vasteras", changefreq: "monthly", priority: "0.7" },
+  { path: "/blogg/webbdesign-vasteras-guide-2026", changefreq: "monthly", priority: "0.7" },
+  { path: "/blogg/wordpress-konsult-vasteras", changefreq: "monthly", priority: "0.7" },
+  { path: "/blogg/kommunikationsbyra-vastmanland", changefreq: "monthly", priority: "0.7" },
+  { path: "/blogg/google-business-profil-guide", changefreq: "monthly", priority: "0.7" },
+  { path: "/blogg/hur-vanja-seo-byra", changefreq: "monthly", priority: "0.7" },
+  { path: "/blogg/seo-priser-vad-kostar-seo", changefreq: "monthly", priority: "0.7" },
 ];
