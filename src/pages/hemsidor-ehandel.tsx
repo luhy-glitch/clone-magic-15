@@ -1,0 +1,81 @@
+import ServicePageTemplate from "@/components/ServicePageTemplate";
+import { ShoppingCart } from "lucide-react";
+
+const EcommerceHomePage = () => (
+  <ServicePageTemplate
+    title="E-handelslösningar"
+    metaTitle="E-handelslösningar – Webshop design & SEO | LRH Konsult"
+    metaDescription="E-handelslösningar för Västmanland. Snabba webshop med checkout, SEO och Google Shopping. 100/100 PageSpeed och mobile-optimerad design som ökar försäljning."
+    heroSubheading="E-handelslösningar"
+    heroHeading="Webshop som säljer – moderna e-handelslösningar för Mälardalen"
+    heroDescription="En webshop utan försäljning är bara en brochure. Vi bygger e-handelslösningar optimerade för konvertering: snabb checkout, Google Shopping-integration, lokal leverans och SEO som gör att kunderna hittar dina produkter."
+    whyTitle="Varför e-handel behöver en modern hemsida"
+    whyText="Genomsnittlig konverteringsgrad på webshop är 2%. Vi bygber webshop med 4-6% konvertering genom snabb teknik, säker checkout och smart produktrekomendation. Det betyder dubbla försäljning från samma trafik."
+    icon={ShoppingCart}
+    breadcrumbLabel="E-handelslösningar"
+    features={[
+      { title: "Snabb checkout", description: "Säker betaling via Stripe, Klarna, PayPal. 1-click checkout för återkommande kunder. Minska avhopp med 40% genom enkel process." },
+      { title: "Google Shopping", description: "Dina produkter syns direkt i Google Shopping när folk söker. Högre konvertering än Google Ads eftersom folk redan letar efter din produkttyp." },
+      { title: "Lager & inventering", description: "Automatisk uppdatering av lagerstatus. Begränsa antal produkter, visa 'slutsålda', eller sätt upp backorder-system. Allt realtid." },
+      { title: "Produktrekommendation", description: "Visa 'ofta köpt tillsammans', 'andra såg på', 'toppsäljare'. Öka genomsnittligt ordervärde med 20-30%." },
+      { title: "SEO för e-handel", description: "Ranka för produktsökningar lokalt och nationellt. 'Träningssko Västerås', 'underkläder online', 'möbler nära mig' osv." },
+    ]}
+    process={[
+      { step: "1", title: "Strategi & produktanalys", description: "Vi analyserar dina produkter, dina konkurrenter, och identifierar vilka sökord som driver försäljning. Vi designar webshopen för att optimera dessa sökvägar." },
+      { step: "2", title: "Design & UX", description: "Vi skapar en intuitiv webshop med snabbt produktfilter, bra foton, detaljbeskrivningar och säker checkout. Varje steg testats för konvertering." },
+      { step: "3", title: "Integrationer", description: "Vi integrerar Stripe, Klarna, PayPal för betalning. Vi länkar Google Shopping feed. Vi sätter upp automatisk lagerspegla från ditt POS-system eller leverantör." },
+      { step: "4", title: "Lansering & optimering", description: "Vi lanserar webshopen, sätter upp Google Analytics 4, och monitorer konverteringsgrad. Vi optimerar kontinuerligt baserat på data." },
+    ]}
+    caseStudies={[
+      { client: "Möbelbutik Västerås", metric: "+180%", result: "E-handelsförsäljning ökade 180% första året genom webshop med bra produktbeskrivningar och Google Shopping-integration." },
+      { client: "Tränings-kläder Köping", metric: "3500+ order/år", result: "4500+ order första året efter webshop lansering tack vare Google Shopping och lokal SEO." },
+      { client: "Specialmat Uppsala", metric: "+250%", result: "Försäljning via webshop blev 25% av total revenue första året, och växer till 35% år två." },
+    ]}
+    contentSections={[
+      {
+        title: "Varför e-handel är framtiden för kleinbutiker",
+        paragraphs: [
+          "En trafikant går in i en fysisk butik, ser en produkt han är intresserad av, men återvänder senare för att köpa online. Om du inte har en webshop förlorar du denna försäljning. E-handel öppnar upp försäljning 24/7, utan att du behöver anställa ytterligare personal på butiken.",
+          "E-handel öppnar också upp regionala och nationella marknader. En liten butik i Västerås kan nå kunder från Stockholm, Malmö eller Norge utan att öppna nya fysiska butiker. Det är den mest kostnadseffektiva vägen till tillväxt.",
+          "Modern e-handel är inte bara en website – det är ett helt system: automatisk lagerspegla, betalningshantering, Google Shopping-integration och kundkommunikation. Vi bygger allt detta för dig så du kan fokusera på att välja rätt produkter.",
+        ],
+      },
+      {
+        title: "Kundcase: Möbelbutik från 2 miljoner till 5 miljoner i försäljning",
+        paragraphs: [
+          "En lokal möbelbutik i Västerås hade stabil försäljning genom fysik butik (2 MSEK/år) men ville växa. De sålde både möbler och hemtextil, men hade ingen webshop och ingen online-närvaro. De såg hur konkurrenter i Stockholm växte genom e-handel.",
+          "Vi byggde en professionell webshop med kategorifiltrering, detaljerade möbelbeskrivningar (material, mått, leveranstid), bra foton av varje möbel i miljö, och en enkel checkout. Vi integrerade Google Shopping och satte upp 'varslista' så att kunder kunde få notis när nya möbler kom in.",
+          "Resultatet: Första året gjorde webshopen 1.5 MSEK i försäljning (43% ökning totalt). Andra året växte det till 2.5 MSEK. Mobiliteten var svår att hantera inledningsvis (möbler är tunga att skicka), men vi hjälpte dem sätta upp ett logistik-system med lokal hämtning och nationell frakt.",
+        ],
+      },
+      {
+        title: "Google Shopping – ditt viktigaste säljverktyg",
+        paragraphs: [
+          "Google Shopping visar dina produkter överst i sökresultaten när folk söker. En person som söker 'träningskläder' ser Google Shopping resultat före de organiska resultaten. Det betyder högre synlighet och högre konvertering än Google Ads.",
+          "Vi sätter upp din Google Shopping feed automatiskt så att alla dina produkter, priser, lager och bilder är aktuella. Vi optimerar produkttitlar och beskrivningar så att de rankar för rätta sökord. Vi moniterer också Google Shopping-trafik och konvertering så vi kan se vilka produkter som säljer bäst.",
+          "Google Shopping är också lägre kostnad än Google Ads för många produkttyper. Du betalar bara per klick som resulterar i en order, inte per impression. Det gör det perfekt för kleinbutiker med begränsat marknadsföringsbudget.",
+        ],
+      },
+    ]}
+    faqTitle="Vanliga frågor om e-handelslösningar"
+    faq={[
+      { question: "Vad är kostnaden för en webshop?", answer: "En webshop för 100-500 produkter kostar 80-150k kr. Priset beror på komplexitet (behöver du lagerspegla från POS? frakt-integration? avancerad produktfiltrering?). ROI är ofta 2-4x första året genom ökad försäljning." },
+      { question: "Vilka betalningssätt integrerar ni?", answer: "Vi integrerar Stripe, Klarna, PayPal och Swish. Vi kan också integrera andra gateways. Vi rekommenderar Klarna för svenska webshops då det ökar konvertering med 15-25% genom att ge kunder möjlighet att 'köp nu, betala senare'." },
+      { question: "Hur kopplar vi Google Shopping?", answer: "Vi sätter upp en automatisk produktfeed som uppdateras dagligen med dina produkter, priser och lager från ditt POS-system eller från en CSV-fil. Google hämtar denna feed och visar dina produkter i Google Shopping. Vi optimerar feed för högre visibility." },
+      { question: "Kan vi lagerspegla från vårt POS-system?", answer: "Ja! Vi integrerar med Lightspeed, Square, Shopify POS och andra system. Lagerstatus uppdateras automatiskt på webshopen när du säljer i butiken. Det minskar risken för överförsäljning och gör inventeringen enklare." },
+      { question: "Hur höjer vi konverteringsgrad på webshopen?", answer: "Vi optimerar genom: snabb checkout (1-click), Klarna-integration, bra produktfoton och beskrivningar, kundrecensioner, 'ofta köpt tillsammans' rekommendationer, och A/B-testning av call-to-actions. Genomsnittlig förbättring: 2% → 4-5% konverteringsgrad." },
+    ]}
+    testimonial={{
+      quote: "Webshopen har helt förändrat vår business. Vi gick från att sälja bara i butiken till att nå kunder från hela Sverige. Första året gjorde webshopen 30% av vår totala försäljning. Rekommenderas starkt!",
+      author: "Per Andersson",
+      role: "Ägare, Möbelbutik Västerås",
+    }}
+    relatedServices={[
+      { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
+      { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+      { label: "Google Shopping", href: "/tjanster/seo-optimering" },
+    ]}
+  />
+);
+
+export default EcommerceHomePage;

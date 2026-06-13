@@ -1,6 +1,7 @@
 import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedSection, { FadeIn } from "./AnimatedSection";
+import { trackCTAClick } from "@/lib/analytics";
 
 const plans = [
   {
@@ -98,6 +99,7 @@ const Pricing = () => {
                 </ul>
                 <Link
                   to="/gratis-seo-analys"
+                  onClick={() => trackCTAClick(`pricing-${plan.name.toLowerCase()}-cta`, "pricing")}
                   className={`w-full text-center py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center gap-2 ${
                     plan.popular
                       ? "bg-primary text-primary-foreground hover:bg-primary/90 animate-cta-pulse"

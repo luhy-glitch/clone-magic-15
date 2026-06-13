@@ -5,7 +5,7 @@ const config = {
   city: "Västerås",
   slug: "designbyra-vasteras",
   serviceKeyword: "Designbyrå",
-  metaTitle: "Designbyrå Västerås & Västmanland – Webbdesign som Konverterar | LRH Konsult",
+  metaTitle: "Designbyrå Västerås – Webbdesign som säljer | LRH Konsult",
   metaDescription: "Designbyrå i Västerås med fokus på webbdesign, grafisk profil och UX som ger fler kunder. Vi bygger snabba, moderna sajter med React, Figma och Webflow.",
   heroHeading: "Designbyrå i Västerås – Design som driver affärer",
   heroDescription: "En vacker hemsida räcker inte – den måste också konvertera. Som designbyrå i Västerås kombinerar vi estetik med strategi: snabb React-kod, genomtänkt UX och en grafisk profil som sticker ut i Västmanland.",

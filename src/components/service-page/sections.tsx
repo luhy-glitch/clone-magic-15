@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { LucideIcon } from "lucide-react";
 import { ALL_CITIES } from "@/data/cities";
+import { trackCTAClick } from "@/lib/analytics";
 
 /* ── Shared types ─────────────────────────────────── */
 
@@ -72,6 +73,7 @@ export const ServiceHero = ({ icon: Icon, subheading, heading, description }: He
           </p>
           <Link
             to="/gratis-seo-analys"
+            onClick={() => trackCTAClick("service-hero-cta", "service-hero")}
             className="mt-8 inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 animate-cta-pulse"
           >
             Få gratis SEO-analys <ArrowRight size={18} />
@@ -197,20 +199,22 @@ export const ServiceCTA = () => (
           Redo att få fler kunder online?
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-          Vi analyserar din sajt gratis och ger dig konkreta åtgärder som ökar din synlighet och konvertering.
+          Vi analyserar din sajt kostnadsfritt och visar exakt vad som krävs för att ranka högre och få fler kunder.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/gratis-seo-analys"
+            onClick={() => trackCTAClick("footer-seo-analys", "footer")}
             className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-primary text-primary-foreground font-medium text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 animate-cta-pulse"
           >
-            Få gratis SEO-analys <ArrowRight size={20} />
+            Gratis analys (ingen bindning) <ArrowRight size={20} />
           </Link>
           <Link
             to="/kontakt"
+            onClick={() => trackCTAClick("footer-booking", "footer")}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border text-foreground font-medium hover:bg-muted/50 transition-colors"
           >
-            Boka samtal <ArrowRight size={18} />
+            Boka konsultsamtal <ArrowRight size={18} />
           </Link>
         </div>
       </AnimatedSection>

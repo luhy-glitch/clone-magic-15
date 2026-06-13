@@ -14,6 +14,7 @@ import {
   type FAQItem,
 } from "@/components/service-page/sections";
 import { RELATED_CITIES } from "@/data/cities";
+import { trackCTAClick } from "@/lib/analytics";
 
 interface ExtraSection {
   title: string;
@@ -81,11 +82,35 @@ const buildLocalJsonLd = (config: LocalPageConfig) => ({
     },
     {
       "@type": "FAQPage",
-      "mainEntity": config.faq.map((item) => ({
-        "@type": "Question",
-        "name": item.question,
-        "acceptedAnswer": { "@type": "Answer", "text": item.answer },
-      })),
+      "mainEntity": [
+        // People Also Ask questions
+        {
+          "@type": "Question",
+          "name": `Hur mycket kostar ${config.serviceKeyword.toLowerCase()} i ${config.city}?`,
+          "acceptedAnswer": { "@type": "Answer", "text": `Priset beror på omfattning och komplexitet. Grundläggande ${config.serviceKeyword.toLowerCase()} börjar från 45 000 kr. Mer avancerade lösningar kostar 75-150 000 kr. Vi erbjuder alltid en kostnadsfri konsultation för att ge ett exakt pris.` },
+        },
+        {
+          "@type": "Question",
+          "name": `Hur länge tar det att bygga en hemsida i ${config.city}?`,
+          "acceptedAnswer": { "@type": "Answer", "text": `En standard hemsida tar 6-10 veckor från första möte till lansering. Vi arbetar i två-veckors sprintar så du ser framsteg kontinuerligt. Du är involverad i varje steg och kan ge feedback.` },
+        },
+        {
+          "@type": "Question",
+          "name": `Rankar ${config.serviceKeyword.toLowerCase()} högt på Google för ${config.city}?`,
+          "acceptedAnswer": { "@type": "Answer", "text": `Ja, vi specialiserar oss på lokal SEO för ${config.city}. Med rätt optimering och innehål rankar hemsidor typiskt första eller andra sidan för lokala sökningar inom 2-4 månader.` },
+        },
+        {
+          "@type": "Question",
+          "name": `Vad ingår i underhållet efter lansering?`,
+          "acceptedAnswer": { "@type": "Answer", "text": `Vi erbjuder support-paket från 2 000 kr/månad som inkluderar: säkerhetsuppdateringar, prestandaövervakning, mindre ändringar och löpande SEO-optimering. Du får också månatliga rapporter om ranking och trafik.` },
+        },
+        // Main FAQ
+        ...config.faq.map((item) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+        })),
+      ],
     },
   ],
 });
@@ -136,9 +161,10 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
 
                 <Link
                   to="/gratis-seo-analys"
+                  onClick={() => trackCTAClick("hero-seo-analys", "hero", `${config.serviceKeyword} i ${config.city}`)}
                   className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 animate-cta-pulse"
                 >
-                  Få en gratis SEO-analys <ArrowRight size={18} />
+                  Gratis analys för {config.city} <ArrowRight size={18} />
                 </Link>
               </div>
             </AnimatedSection>
@@ -223,6 +249,70 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
           </section>
         )}
 
+        {/* People Also Ask Section */}
+        <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="paa-heading">
+          <div className="max-w-[70ch] mx-auto px-4 sm:px-6">
+            <AnimatedSection>
+              <h2 id="paa-heading" className="text-2xl sm:text-3xl font-bold font-serif text-primary mb-10">
+                Andra frågor om {config.serviceKeyword} i {config.city}
+              </h2>
+              <div className="space-y-6">
+                {[
+                  {
+                    q: `Hur mycket kostar ${config.serviceKeyword.toLowerCase()} i ${config.city}?`,
+                    a: `Priset beror på omfattning och komplexitet. Grundläggande ${config.serviceKeyword.toLowerCase()} börjar från 45 000 kr. Mer avancerade lösningar med e-handel eller integrations kostar 75-150 000 kr. Vi erbjuder alltid en kostnadsfri konsultation för att ge ett exakt pris.`,
+                  },
+                  {
+                    q: `Hur länge tar det att bygga en hemsida i ${config.city}?`,
+                    a: `En standard hemsida tar 6-10 veckor från första möte till lansering. Vi arbetar i två-veckors sprintar så du ser framsteg kontinuerligt. Du är involverad i varje steg och kan ge feedback.`,
+                  },
+                  {
+                    q: `Rankar ${config.serviceKeyword.toLowerCase()} högt på Google för ${config.city}?`,
+                    a: `Ja, vi specialiserar oss på lokal SEO för ${config.city}. Med rätt optimering och innehål rankar hemsidor typiskt första eller andra sidan för lokala sökningar inom 2-4 månader. Konkurrensen i ${config.city} är ofta lägre än i större städer.`,
+                  },
+                  {
+                    q: `Vad ingår i underhållet efter lansering?`,
+                    a: `Vi erbjuder support-paket från 2 000 kr/månad som inkluderar: säkerhetsuppdateringar, prestandaövervakning, mindre ändringar och löpande SEO-optimering. Du får också månatliga rapporter om ranking och trafik.`,
+                  },
+                ].map((item, i) => (
+                  <details key={i} className="group border border-border rounded-lg overflow-hidden">
+                    <summary className="flex items-center justify-between w-full px-6 py-4 cursor-pointer hover:bg-muted/50 transition-colors">
+                      <h3 className="font-medium text-foreground pr-4">{item.q}</h3>
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-open:bg-primary/20">
+                        <ArrowRight size={16} className="text-primary group-open:rotate-90 transition-transform" />
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-4 text-muted-foreground leading-relaxed border-t border-border bg-background/50">
+                      {item.a}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
+        {/* Mid-page CTA – City specific */}
+        <section className="py-12 sm:py-16 bg-primary/5 border-t border-b border-border">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <AnimatedSection>
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif mb-4 text-foreground">
+                Klara för att växa digitalt i {config.city}?
+              </h2>
+              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Börja med en gratis SEO-analys. Vi visar exakt vad som krävs för att ditt företag ska ranka högre på Google och attrahera fler kunder från {config.city} och omgivande områden.
+              </p>
+              <Link
+                to="/gratis-seo-analys"
+                onClick={() => trackCTAClick("mid-page-seo-analys", "mid-page", `${config.serviceKeyword} i ${config.city}`)}
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25"
+              >
+                Få gratis analys → <ArrowRight size={18} />
+              </Link>
+            </AnimatedSection>
+          </div>
+        </section>
+
         {/* FAQ – reuses shared ServiceFAQ with microdata */}
         <ServiceFAQ
           faq={config.faq}
@@ -255,15 +345,36 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
               </div>
               <h2 className="text-lg font-bold font-serif mb-4 text-center text-muted-foreground">Se även</h2>
               <div className="flex flex-wrap justify-center gap-3">
-                {RELATED_SERVICES.map((s) => (
-                  <Link
-                    key={s.href}
-                    to={s.href}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
-                  >
-                    {s.label} <ArrowRight size={14} className="text-primary" />
-                  </Link>
-                ))}
+                <Link
+                  to="/tjanster/seo-optimering"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                >
+                  SEO-optimering <ArrowRight size={14} className="text-primary" />
+                </Link>
+                <Link
+                  to="/tjanster/webbutveckling"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                >
+                  Webbutveckling <ArrowRight size={14} className="text-primary" />
+                </Link>
+                <Link
+                  to="/tjanster/webbdesign"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                >
+                  Webbdesign <ArrowRight size={14} className="text-primary" />
+                </Link>
+                <Link
+                  to="/tjanster/prestanda-optimering"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                >
+                  Prestandaoptimering <ArrowRight size={14} className="text-primary" />
+                </Link>
+                <Link
+                  to="/blogg"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                >
+                  Blogg <ArrowRight size={14} className="text-primary" />
+                </Link>
               </div>
             </AnimatedSection>
           </div>

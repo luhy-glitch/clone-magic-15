@@ -1,6 +1,7 @@
 import { Mail, Linkedin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import LrhLogo from "@/components/LrhLogo";
+import { trackCTAClick } from "@/lib/analytics";
 
 const Footer = () => {
   return (
@@ -25,7 +26,7 @@ const Footer = () => {
 
           {/* Tjänster */}
           <nav aria-label="Tjänster">
-            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Tjänster</h3>
+            <h2 className="font-serif font-bold text-foreground mb-4 text-base">Tjänster</h2>
             <ul className="space-y-2">
               <li><Link to="/tjanster/webbutveckling" className="text-sm text-muted-foreground hover:text-primary transition-colors">Webbutveckling</Link></li>
               <li><Link to="/tjanster/seo-optimering" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO-optimering</Link></li>
@@ -40,7 +41,7 @@ const Footer = () => {
 
           {/* Städer - ALLA 13 STÄDER ÅTERSTÄLLDA */}
           <nav aria-label="Städer">
-            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Städer</h3>
+            <h2 className="font-serif font-bold text-foreground mb-4 text-base">Städer</h2>
             <ul className="space-y-2">
               <li><Link to="/webbutveckling-vasteras" className="text-sm text-muted-foreground hover:text-primary transition-colors">Västerås</Link></li>
               <li><Link to="/webbutveckling-enkoping" className="text-sm text-muted-foreground hover:text-primary transition-colors">Enköping</Link></li>
@@ -60,7 +61,7 @@ const Footer = () => {
 
           {/* Branscher - ALLA 9 BRANSCHER ÅTERSTÄLLDA */}
           <nav aria-label="Branscher">
-            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Branscher</h3>
+            <h2 className="font-serif font-bold text-foreground mb-4 text-base">Branscher</h2>
             <ul className="space-y-2">
               <li><Link to="/hemsidor-restaurang" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor restaurang</Link></li>
               <li><Link to="/hemsidor-redovisning" className="text-sm text-muted-foreground hover:text-primary transition-colors">Hemsidor redovisning</Link></li>
@@ -79,15 +80,15 @@ const Footer = () => {
 
           {/* Övrigt */}
           <nav aria-label="Övrigt">
-            <h3 className="font-serif font-bold text-foreground mb-4 text-base">Övrigt</h3>
+            <h2 className="font-serif font-bold text-foreground mb-4 text-base">Övrigt</h2>
             <ul className="space-y-2">
               <li><Link to="/om-mig" className="text-sm text-muted-foreground hover:text-primary transition-colors">Om mig</Link></li>
               <li><Link to="/case" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kundcase</Link></li>
               <li><Link to="/kontakt" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kontakt</Link></li>
-              <li><Link to="/gratis-seo-analys" className="text-sm text-muted-foreground hover:text-primary transition-colors">Gratis SEO-analys</Link></li>
+              <li><Link to="/gratis-seo-analys" onClick={() => trackCTAClick("footer-nav-seo-analys", "footer-nav")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Gratis SEO-analys</Link></li>
               <li><Link to="/integritetspolicy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Integritetspolicy</Link></li>
             </ul>
-            <h3 className="font-serif font-bold text-foreground mt-6 mb-4 text-base">Populära guider</h3>
+            <h2 className="font-serif font-bold text-foreground mt-6 mb-4 text-base">Populära guider</h2>
             <ul className="space-y-2">
               <li><Link to="/blogg" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">Alla artiklar</Link></li>
               <li><Link to="/blogg/seo-vasteras-guide" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">SEO-guide småföretag</Link></li>

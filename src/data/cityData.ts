@@ -160,20 +160,4 @@ export const CITY_DATA: Record<string, CityData> = {
     localSearchExamples: ["seo västerås", "webbutveckling västerås", "tjänster västerås"],
     regionalContext: "Egen stor marknad - kan rankas både lokalt starkt och nationellt"
   },
-
-  "Hallstahammar": {
-    city: "Hallstahammar",
-    population: "~7 000",
-    description: "Väg- och järnvägsstad mellan Stockholm och Västerås. Växande företagscommunity med både industri och tjänster.",
-    industries: ["logistik", "transport", "industri", "tjänster", "handel", "restauranger"],
-    uniqueCharacteristic: "Strategisk trafikpunkt för järnvägs- och vägtransport - många logistik- och transportföretag",
-    caseStudy: {
-      industry: "logistik/transport",
-      problem: "Logistikföretag helt osynligt för B2B-sökningar på Google",
-      solution: "Hemsida optimerad för 'logistics Stockholm-Västerås corridor' och transport-relaterade sökord",
-      result: "Nya B2B-kunder från hela Sverige söker och hittar via hemsidan"
-    },
-    localSearchExamples: ["logistik Hallstahammar", "transport Västerås-Stockholm", "distributioncenter Sverige"],
-    regionalContext: "Kritisk position mellan två stora regioner - naturlig hub för logistik och transport"
-  },
 };

@@ -1,23 +1,35 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { staticRoutes } from './static-routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const distDir = path.resolve(__dirname, '../dist');
 
-const staticRoutes = ["/", "/blogg", "/om-mig", "/kontakt", "/integritetspolicy", "/case", "/gratis-seo-analys", "/tjanster/webbutveckling", "/tjanster/webbdesign", "/tjanster/seo-optimering", "/tjanster/wordpress-losningar", "/tjanster/underhall-support", "/tjanster/prestanda-optimering", "/tjanster/google-ads", "/tjanster/vad-kostar-en-hemsida-2026", "/webbutveckling-vasteras", "/webbutveckling-enkoping", "/webbutveckling-eskilstuna", "/webbutveckling-arboga", "/webbutveckling-fagersta", "/webbutveckling-hallstahammar", "/webbutveckling-kungsor", "/webbutveckling-surahammar", "/webbutveckling-heby", "/webbutveckling-norberg", "/webbutveckling-skinnskatteberg", "/webbutveckling-uppsala", "/webbutveckling-orebro", "/seo-koping", "/seo-vasteras", "/seo-eskilstuna", "/hemsidor-sala", "/hemsidor-bygg-hantverkare", "/digital-marknadsforing-butiker", "/restauranger-sala", "/frisor-koping", "/hemsidor-restaurang", "/hemsidor-redovisning", "/hemsidor-ehandel"];
+const SITE_URL = 'https://www.lrhkonsult.se';
+const TODAY = new Date().toISOString().split('T')[0];
 
 let blogPosts = [];
+// Real per-post lastmod (updated_at || date) so Google gets accurate freshness
+// signals instead of "today" on every build.
+const lastmodByRoute = {};
 const blogDataPath = path.resolve(rootDir, "src/data/blogPosts.json");
 if (fs.existsSync(blogDataPath)) {
   const posts = JSON.parse(fs.readFileSync(blogDataPath, "utf-8"));
-  blogPosts = posts.map(p => p.slug);
+  // Only published posts belong in the sitemap. Future scheduled_date posts are
+  // NOT prerendered (see render-browser.mjs), so including them here would put
+  // URLs with no static HTML in the sitemap → 404 / 4XX-in-sitemap crawl errors.
+  blogPosts = posts
+    .filter(p => !p.scheduled_date || p.scheduled_date <= TODAY)
+    .map(p => {
+      const route = `/blogg/${p.slug}`;
+      lastmodByRoute[route] = (p.updated_at || p.date || TODAY).slice(0, 10);
+      return p.slug;
+    });
 }
 
 const allRoutes = [...staticRoutes, ...blogPosts.map(p => `/blogg/${p}`)];
-const SITE_URL = 'https://www.lrhkonsult.se';
-const TODAY = new Date().toISOString().split('T')[0];
 
 let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n`;
 sitemapContent += `<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n`;
@@ -26,7 +38,8 @@ sitemapContent += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\
 for (const route of allRoutes) {
   const priority = route === "/" ? "1.0" : route.startsWith("/blogg") ? "0.8" : "0.9";
   const url = `${SITE_URL}${route === "/" ? "" : route}`;
-  sitemapContent += `  <url>\n    <loc>${url}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`;
+  const lastmod = lastmodByRoute[route] || TODAY;
+  sitemapContent += `  <url>\n    <loc>${url}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`;
 }
 sitemapContent += `</urlset>`;
 

@@ -3,6 +3,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import LrhLogo from "@/components/LrhLogo";
 import { Link, useLocation } from "react-router-dom";
 import { CITY_NAV_ITEMS } from "@/data/cities";
+import { trackCTAClick } from "@/lib/analytics";
 
 const mainServices = [
   { label: "Webbutveckling", to: "/tjanster/webbutveckling" },
@@ -109,6 +110,7 @@ const Navbar = () => {
           <Link to="/kontakt" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Kontakt</Link>
           <Link
             to="/gratis-seo-analys"
+            onClick={() => trackCTAClick("navbar-desktop-cta", "navbar")}
             className="px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors animate-cta-pulse shadow-lg shadow-primary/25"
           >
             Boka gratis analys
@@ -171,7 +173,10 @@ const Navbar = () => {
         <Link to="/kontakt" onClick={() => setMobileOpen(false)} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Kontakt</Link>
         <Link
           to="/gratis-seo-analys"
-          onClick={() => setMobileOpen(false)}
+          onClick={() => {
+            setMobileOpen(false);
+            trackCTAClick("navbar-mobile-cta", "navbar-mobile");
+          }}
           className="mt-2 px-5 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium w-fit min-h-[44px] flex items-center"
         >
           Boka gratis analys

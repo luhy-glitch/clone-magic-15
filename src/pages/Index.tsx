@@ -6,6 +6,7 @@ import PageHead from "@/components/PageHead";
 import { ArrowRight } from "lucide-react";
 import { siteWideFaqs } from "@/data/faqData";
 import { ALL_CITIES } from "@/data/cities";
+import { trackCTAClick } from "@/lib/analytics";
 
 // Lazy-load everything below the fold
 const Services = lazy(() => import("@/components/Services"));
@@ -43,6 +44,19 @@ const Index = () => {
                 "addressRegion": "Västmanlands län",
                 "addressCountry": "SE"
               },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 59.6099,
+                "longitude": 16.5448
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "09:00",
+                  "closes": "17:00"
+                }
+              ],
               "areaServed": [
                 { "@type": "City", "name": "Västerås" },
                 { "@type": "City", "name": "Köping" },
@@ -96,8 +110,8 @@ const Index = () => {
               <h2 className="text-2xl sm:text-3xl font-bold font-serif mb-4">Få fler kunder – börja med en gratis analys</h2>
               <p className="text-muted-foreground mb-6">Vi analyserar din sajt kostnadsfritt och visar exakt vad som krävs för att ranka högre och konvertera mer.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/gratis-seo-analys" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px] animate-cta-pulse">Få gratis SEO-analys</Link>
-                <Link to="/case" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border border-border text-foreground font-medium hover:bg-muted/50 transition-colors min-h-[44px]">Se kundcase</Link>
+                <Link to="/gratis-seo-analys" onClick={() => trackCTAClick("home-mid-seo-analys", "home-mid")} className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 min-h-[44px] animate-cta-pulse">Få gratis SEO-analys</Link>
+                <Link to="/case" onClick={() => trackCTAClick("home-mid-case", "home-mid")} className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border border-border text-foreground font-medium hover:bg-muted/50 transition-colors min-h-[44px]">Se kundcase</Link>
               </div>
             </div>
           </section>
@@ -168,16 +182,16 @@ const Index = () => {
                 <Link to="/webbutveckling-vasteras" className="text-primary hover:underline font-medium">Läs mer om webbutveckling i Västerås</Link>.
               </p>
 
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">SEO-optimering i Köping</h2>
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Hemsidor för restauranger</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
-                Köping har en aktiv företagsscen där lokal synlighet är avgörande. Genom teknisk SEO, Google Business-optimering och innehållsstrategier hjälper vi företag i Köping att ranka högre i sökresultaten och nå fler lokala kunder.{" "}
-                <Link to="/seo-koping" className="text-primary hover:underline font-medium">Läs mer om SEO i Köping</Link>.
+                Restauranger behöver hemsidor med bokningssystem, online-meny och Google Maps-ranking. Vi bygger webbar som fyller borden.{" "}
+                <Link to="/hemsidor-restaurang" className="text-primary hover:underline font-medium">Läs mer om hemsidor för restauranger</Link>.
               </p>
 
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbdesign i Sala</h2>
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Hemsidor för redovisningsbyråer</h2>
               <p className="text-muted-foreground leading-[1.6] mb-8">
-                I Sala kombinerar vi lokal kännedom med modern webbdesign för att skapa hemsidor som verkligen representerar ditt företag. Vi fokuserar på snabb laddningstid, responsiv design och SEO-vänlig struktur som ger resultat.{" "}
-                <Link to="/hemsidor-sala" className="text-primary hover:underline font-medium">Läs mer om webbdesign i Sala</Link>.
+                Redovisningsbyråer behöver professionella hemsidor med klientportaler och säkra dokumentöverföringar. Vi bygber sajter som attraherar nya uppdrag.{" "}
+                <Link to="/hemsidor-redovisning" className="text-primary hover:underline font-medium">Läs mer om hemsidor för redovisning</Link>.
               </p>
 
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mt-12 mb-4">Webbutveckling i Enköping (Uppsala län)</h2>
