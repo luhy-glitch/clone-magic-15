@@ -7,8 +7,8 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Hallstahammar - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Professionella hemsidor i Hallstahammar som rankar på Google. 100/100 PageSpeed, lokal SEO och skräddarsydd webbutveckling i Västmanland.",
-  heroHeading: "Webbutveckling & SEO i Hallstahammar",
-  heroDescription: "Vi hjälper företag i Hallstahammar att bygga blixtsnabba hemsidor som rankar högst på Google. Garanterat 100/100 PageSpeed och mätbara resultat – din lokala digitala partner i Västmanland.",
+  heroHeading: "Logistik-hub mellan två storstäder – rätt hemsida = regionalt nätverk",
+  heroDescription: "Hallstahammar är kritisk för transport och logistik mellan Stockholm och Västerås. Företag här kan med rätt hemsida och B2B-SEO nå hela korridoren. Vi hjälper logistik-, transport- och industriföretag att expandera regionalt.",
   icon: Code2,
   heroFacts: [
     "100/100 PageSpeed – snabbast längs E18-korridoren",
@@ -61,11 +61,11 @@ const config = {
   ],
   caseStudy: {"title":"Projektinsikt: Logistikföretag i Hallstahammar ökade uppdrag från 3 till 15 nya per månad","problem":"Ett logistik- och transportföretag i Hallstahammar hade knappt någon hemsida – bara ett gammalt kontaktformulär. De fick nästan all verksamhet från återkommande kunder och klassiska nätverk. De såg möjligheter att växa men visste inte hur man nås.","solution":"Vi byggde en hemsida som visade deras flottstorlek, geografiska täckningsområde och tjänsteerbjudanden (lagring, distribution, transportövervakning). Lade till blogg om 'Supply Chain Optimization' och 'Logistics Best Practices' för att ranka för B2B-sökord.","result":"Efter tre månader: ranking för 'logistik Västmanland', 'transport och lagring Hallstahammar', och relaterade sökord. Inkommande lead-förfrågningar ökade från cirka 2-3 per månad till 12-15 per månad. Företaget kunde ta på större kunder från Stockholm och Uppsala-regionen."},
   faq: [
-    { question: "Vilka företag i Hallstahammar kan dra nytta av er webbutveckling?", answer: "Alla typer av företag i Hallstahammar – från industriföretag och verkstäder till butiker, restauranger och konsulter. Vi anpassar våra lösningar efter din bransch och hjälper dig att nå kunder längs E18-korridoren genom lokal SEO." },
-    { question: "Hur kan min hemsida hjälpa mig att nå kunder utanför Hallstahammar?", answer: "Genom att optimera för regionala söktermer som 'industriservice Västmanland' och implementera serviceArea i strukturerad data kan ditt företag synas för sökningar från Västerås, Köping, Arboga och andra närliggande kommuner." },
-    { question: "Vad kostar en professionell hemsida för ett företag i Hallstahammar?", answer: "Våra paket börjar från 5 000 kr för grundläggande hemsidor med SEO. Priset beror på komplexitet och funktioner, men vi erbjuder alltid kostnadsfri konsultation för att hitta rätt lösning för ditt företag." },
-    { question: "Kan ni hjälpa mig att synas bättre på Google för sökningar i Hallstahammar?", answer: "Absolut! Vi erbjuder komplett <a href=\"/tjanster/seo-optimering\">SEO-optimering</a> inklusive lokal SEO, teknisk optimering och innehållsstrategi. Börja med vår <a href=\"/gratis-seo-analys\">gratis SEO-analys</a> för att se förbättringsmöjligheterna." },
-    { question: "Hur snabbt kan ni leverera en ny hemsida för mitt företag i Hallstahammar?", answer: "Beroende på komplexitet levererar vi ofta inom 2-4 veckor från design till lansering. Vi arbetar effektivt för att minimera din väntetid och få din digitala närvaro igång så snabbt som möjligt." },
+    { question: "Vi är logistik/transport i Hallstahammar – vem är vår marknad?", answer: "Stockholm-Västerås-korridoren. Du kan med rätt hemsida nå både lokal och större regionen. B2B-sökord som 'logistics Hallstahammar', 'transport Stockholm Västerås', 'distribution Mälardalen' rankar bra." },
+    { question: "Är en hemsida värt det för ett transportföretag?", answer: "Ja, speciellt B2B. En transportföretag utan hemsida tappar 50%+ av potentiella större uppdrag – köpare söker online innan de kontaktar. Hemsidan är din sales-maskin för 24/7 lead-generering." },
+    { question: "Vad rankas bäst för Hallstahammar?", answer: "'Logistik Hallstahammar', 'transport Västmanland', 'lagring distribution E18', 'supply chain lösningar'. Fokus på B2B-sökord med köpintention, inte bara volym." },
+    { question: "Hur länge innan ranking?", answer: "Hemsida live: 2-4 veckor. Indexering: 1-2 veckor. Ranking för specialiserade ord: 1-3 månader (mindre konkurrens än stora städer). Nya leads: ofta dag 1 för nischade sökningar." },
+    { question: "Kan vi nå både lokal och större region?", answer: "Ja. Med serviceArea-schema i strukturerad data + regionalt anpassat innehåll rankar du både 'Hallstahammar' och 'Stockholm-Västerås'. En hemsida kan tjäna båda marknaderna samtidigt." },
   ],
 };
 

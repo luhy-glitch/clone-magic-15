@@ -7,8 +7,8 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Skinnskatteberg - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Moderna hemsidor i Skinnskatteberg som rankar på Google. 100/100 PageSpeed, lokal SEO och professionell webbutveckling i Västmanland.",
-  heroHeading: "Webbutveckling & SEO i Skinnskatteberg",
-  heroDescription: "Företag i Skinnskatteberg förtjänar moderna, blixtsnabba hemsidor. Vi bygger webbplatser med 100/100 PageSpeed och lokal SEO som ger ditt företag fler kunder i hela västra Västmanland.",
+  heroHeading: "Från industri-småstad till digital pionjär – Skinnskatteberg kan nå större",
+  heroDescription: "Skinnskatteberg är känt för sin industri och bergslagstradition. Med rätt hemsida och SEO kan lokala företag nå Västerås, Norberg och större marknader. Digital närvaro = regional expansion.",
   icon: Code2,
   heroFacts: [
     "100/100 PageSpeed – fungerar även på svag mobiluppkoppling",

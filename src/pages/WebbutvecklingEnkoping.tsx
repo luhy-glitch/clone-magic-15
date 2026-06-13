@@ -7,8 +7,8 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Enköping - Hemsidor som Rankar | LRH Konsult",
   metaDescription: "Dominera sökresultaten i Enköping med blixtsnabba hemsidor och teknisk SEO. 100/100 PageSpeed – modern webbutveckling som ger ditt företag fler kunder.",
-  heroHeading: "Webbutveckling i Enköping som ger fler kunder",
-  heroDescription: "Enköping ligger strategiskt i Uppsala län, med närheten till Stockholm och Uppsala som en stor fördel. Vi bygger hemsidor som presterar på toppnivå – tekniskt fulländade, SEO-optimerade och designade för att ge ditt företag fler kunder.",
+  heroHeading: "Gateway mellan Uppsala och Stockholm – från lokal till regional med rätt hemsida",
+  heroDescription: "Enköping är strategiskt placerat mellan två stora marknader. Din konkurrens är både lokal och stor. Vi bygger hemsidor som gör Enköping-bolag attraktiva för både Uppsala-länet och Stockholm-området – utan att behöva flytta eller expandera lokalt.",
   icon: Code2,
   heroFacts: [
     "100/100 PageSpeed – snabbast i parkernas stad",
@@ -61,11 +61,11 @@ const config = {
   ],
   caseStudy: {"title":"Projektinsikt: Handelsträdgård i Enköping tredubblade online-försäljningen","problem":"En familjeägd handelsträdgård i Enköping med 35 år historia hade ingen synlighet online. De förlitade sig på walk-in-kunder och hade ingen hemsida. Under pandemin förlorade de många säsongsbesökare när folk höll sig hemma. Konkurrenter i närliggande städer med bra hemsidor tog de besökare de hade.","solution":"Vi skapade en snabb React-hemsida med visuell fokus – högkvalitativa bilder av blommor, växter och säsongsdekorationer. Integrerade online-beställningssystem för lokal leverans och upphämtning. Lade till blogg om trädgårdsodling och säsongsplanterings-tips för att locka sökande från hela Mälardalen. Google Business-profil optimerades med veckoliga posts om nya varor och erbjudanden.","result":"Första månaden efter lansering: 2x fler besökare från sökningar som 'juldekorationer Enköping' och 'växter Uppsala län'. Efter sex månader: tredubbla försäljning från online-beställningar och 45% ökning av fysiska besök från webbkunder som ville se växterna personligen. Handelsträdgården kunde utöka med två säsongarbetare på sommaren."},
   faq: [
-    { question: "Vilka företag i Enköping kan dra nytta av er webbutveckling?", answer: "Alla typer av företag i Enköping – från handelsträdgårdar och tjänsteföretag till butiker, småindustrier och konsulter. Vi anpassar våra lösningar efter din bransch och hjälper dig att nå kunder från hela Mälardalen genom lokal SEO." },
-    { question: "Hur kan min hemsida hjälpa mig att nå kunder utanför Enköping?", answer: "Genom att optimera för regionala söktermer som 'blomster Uppsala län' och implementera serviceArea i strukturerad data kan ditt företag synas för sökningar från Stockholm, Uppsala, Västerås och andra närliggande områden." },
-    { question: "Vad kostar en professionell hemsida för ett företag i Enköping?", answer: "Våra paket börjar från 5 000 kr för grundläggande hemsidor med SEO. Priset beror på komplexitet och funktioner, men vi erbjuder alltid kostnadsfri konsultation för att hitta rätt lösning för ditt företag." },
-    { question: "Kan ni hjälpa mig att synas bättre på Google för sökningar i Enköping?", answer: "Absolut! Vi erbjuder komplett <a href=\"/tjanster/seo-optimering\">SEO-optimering</a> inklusive lokal SEO, teknisk optimering och innehållsstrategi. Börja med vår <a href=\"/gratis-seo-analys\">gratis SEO-analys</a> för att se förbättringsmöjligheterna." },
-    { question: "Hur snabbt kan ni leverera en ny hemsida för mitt företag i Enköping?", answer: "Beroende på komplexitet levererar vi ofta inom 2-4 veckor från design till lansering. Vi arbetar effektivt för att minimera din väntetid och få din digitala närvaro igång så snabbt som möjligt." },
+    { question: "Enköping är mellan två stora städer – vem är vår marknad?", answer: "Både Uppsala-länet och Stockholm-området. En Enköping-expert kan med rätt hemsida och SEO-fokus nå båda marknaderna. Du får 'hemma-fördelen' lokalt + åtkomst till större regionen utan att konkurrera huvudsakligen mot Stockholm-bolag." },
+    { question: "Vi är etablerad lokalt men växer inte längre – varför hemsida?", answer: "Lokal marknad har gräns. Online kan du nå 10x större publik från samma kontor. En blomsterhandel i Enköping kan sälja till Stockholm + Uppsala. En tjänstebyrå kan få kunder från hela Mälardalen. Hemsidan är din digitala expansion." },
+    { question: "Vilka branscher i Enköping rankar bäst?", answer: "Handelsträdgårdar, tjänsteföretag, småindustri och specialistbutiker. Sökord som 'blomster Enköping', 'tjänster Uppsala län', 'leverantör E18-korridoren' rankar redan bra – du behöver bara synas där." },
+    { question: "Hur länge innan vi ser resultat från hemsidan?", answer: "Hemsida live: 2-4 veckor. Google indexering: 1-2 veckor. Ranking för lokala ord: 1-3 månader (Enköping är mindre marknad). Nya leads från webben: ofta redan dag 1 för populära lokala sökord." },
+    { question: "Vad skiljer en bra hemsida från en billig mall?", answer: "Bra hemsida: rankar på Google, konverterar besökare, laddar under 1 sekund, ägs av dig. Mall: ser okej ut, rankar inte, laddas långsamt, du är låst till plattform. Vi bygger för långsiktig värde, inte snabb billig lösning." },
   ],
 };
 

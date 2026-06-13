@@ -7,8 +7,8 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Norberg - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Snabba hemsidor i Norberg som rankar på Google. 100/100 PageSpeed, lokal SEO och modern webbutveckling i Västmanland.",
-  heroHeading: "Webbutveckling & SEO i Norberg",
-  heroDescription: "Vi hjälper företag i Norberg att bygga moderna hemsidor som laddar blixtsnabbt och rankar högt på Google. 100/100 PageSpeed garanterat – din lokala webbpartner i norra Västmanland.",
+  heroHeading: "Norbergs bergslagstradition möter digital framtid – regional räckvidd nu möjligt",
+  heroDescription: "Norberg har rik gruvhistoria och starkt näringsliv. Företag här kan med rätt hemsida nå hela norra Västmanland utan att lämna kontoret. Vi hjälper Norberg-bolag expandera regionalt genom digital närvaro.",
   icon: Code2,
   heroFacts: [
     "100/100 PageSpeed – snabbast i norra Västmanland",

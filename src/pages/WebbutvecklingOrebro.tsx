@@ -7,8 +7,8 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Örebro - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Professionell webbutveckling i Örebro med 100/100 PageSpeed. Blixtsnabba hemsidor i React & Next.js, lokal SEO och konverteringsoptimering.",
-  heroHeading: "Webbutveckling & SEO i Örebro",
-  heroDescription: "Örebro är en av Sveriges snabbast växande städer med över 160 000 invånare. Vi hjälper företag i Örebro att bygga blixtsnabba hemsidor med 100/100 PageSpeed som dominerar sökresultaten och genererar fler kunder.",
+  heroHeading: "Örebro växer snabbt – större konkurrens men också större möjligheter",
+  heroDescription: "Örebro är växande och attraherar företag från större städer. För att stå ut behövs bättre teknik än standard-hemsidor. Vi hjälper Örebro-bolag ranka högt både lokalt och i större västra Mälardalen-region.",
   icon: Code2,
   heroFacts: [
     "100/100 PageSpeed i Mellansveriges mest dynamiska stad",

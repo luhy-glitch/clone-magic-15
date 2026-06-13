@@ -7,8 +7,8 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Surahammar - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Snabba hemsidor i Surahammar som rankar på Google. 100/100 PageSpeed, lokal SEO och modern webbutveckling för företag i Västmanland.",
-  heroHeading: "Webbutveckling & SEO i Surahammar",
-  heroDescription: "Vi hjälper företag i Surahammar att synas online med blixtsnabba hemsidor och lokal SEO. 100/100 PageSpeed garanterat – din digitala partner i Västmanland.",
+  heroHeading: "Små stad, stor potential – rätt hemsida = flera marknader",
+  heroDescription: "Surahammar är liten men strategiskt placerat. Företag här kan med rätt hemsida nå både lokal och större Västmanland-region. Vi hjälper småstad-bolag att tänka större digital.",
   icon: Code2,
   heroFacts: [
     "100/100 PageSpeed – snabbast i Surahammar",

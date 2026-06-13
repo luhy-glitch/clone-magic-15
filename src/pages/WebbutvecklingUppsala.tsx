@@ -7,8 +7,8 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Uppsala - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Professionell webbutveckling i Uppsala med 100/100 PageSpeed. Blixtsnabba hemsidor i React & Next.js, lokal SEO och konverteringsoptimering.",
-  heroHeading: "Webbutveckling & SEO i Uppsala",
-  heroDescription: "Uppsala är Sveriges fjärde största stad och en av landets mest konkurrensutsatta marknader. Vi hjälper företag i Uppsala att sticka ut med blixtsnabba hemsidor som rankar högst på Google och konverterar besökare till kunder.",
+  heroHeading: "Uppsala växer med universitet + tech – högre konkurrens, större möjligheter",
+  heroDescription: "Uppsala attraherar både akademisk talang och tech-investeringar. För att stå ut mot Stockholm-konkurrenter behövs en hemsida som både rankar högt och demonstrerar din tekniska kompetens. Vi hjälper Uppsala-bolag nå både lokalt och nationellt.",
   icon: Code2,
   heroFacts: [
     "100/100 PageSpeed i Sveriges fjärde största stad",
@@ -63,11 +63,11 @@ const config = {
   ],
   caseStudy: {"title":"Projektinsikt: Konsultbyrå i Uppsala ökade uppdrag från 2 till 8 per månad","problem":"En konsultbyrå i Uppsala med två konsulter hade en väldigt generisk WordPress-hemsida. De rankade inte för något relevant. De fick nästan alla uppdrag via nätverk.","solution":"Vi skapade en hemsida som visade deras expertis, fallstudier från tidigare uppdrag, och en blogg om 'Management Consulting Best Practices'. Optimerade för Uppsala-baserade managementkonsult-sökningar.","result":"Efter sex månader: ranking för flera Uppsala-baserade konsult-sökningar. Uppdrag från nya kunder via webben ökade från 2 till 8 per månad. Byrån kunde växa från två till fyra konsulter."},
   faq: [
-    { question: "Varför behöver företag i Uppsala en professionell hemsida?", answer: "I Uppsalas konkurrensutsatta marknad är en professionell hemsida avgörande för att synas bland hundratals konkurrenter. Våra hemsidor levererar 100/100 PageSpeed och är optimerade för lokal SEO, vilket ger företag en betydande fördel. Genom vår [tjanster/seo-optimering](https://lrhkonsult.se/tjanster/seo-optimering) hjälper vi dig att dominera sökresultaten i Mälardalsregionen." },
-    { question: "Hur kan en hemsida hjälpa mitt företag i Uppsala att växa?", answer: "En välbyggd hemsida fungerar som ditt digitala skyltfönster dygnet runt och når kunder från hela regionen. För företag i Uppsala innebär det möjlighet att nå kunder från Stockholm till Västerås. Vi bygger hemsidor med React och Next.js som konverterar besökare till kunder genom optimerade kontaktformulär. Vår [tjanster/webbutveckling](https://lrhkonsult.se/tjanster/webbutveckling) inkluderar allt från design till lansering med fokus på prestanda." },
-    { question: "Vad kostar webbutveckling för företag i Uppsala?", answer: "Våra paket börjar från 5 000 kr för en professionell hemsida med SEO. För företag i Uppsala erbjuder vi skräddarsydda lösningar som tar hänsyn till den konkurrensutsatta marknadens behov. Kontakta oss för en kostnadsfri offert – våra priser är transparenta och konkurrenskraftiga för Mälardalsregionen." },
-    { question: "Hur snabbt kan min hemsida i Uppsala vara klar?", answer: "En standardhemsida tar vanligtvis 2–4 veckor från start till lansering. För företag i Uppsala som behöver avancerade funktioner som headless CMS eller e-handel kan det ta 4–8 veckor. Vi kommunicerar alltid tydliga tidplaner och håller dig uppdaterad genom hela processen." },
-    { question: "Erbjuder ni SEO-tjänster specifikt för Uppsala?", answer: "Ja, vi erbjuder lokal SEO-optimerad för Uppsalas stora marknad. Detta inkluderar optimering för söktermer som 'företag Uppsala', 'tjänster Mälardalen' och branschspecifika termer. Vår [gratis-seo-analys](https://lrhkonsult.se/gratis-seo-analys) ger dig en detaljerad översikt över förbättringsmöjligheter i denna konkurrensutsatta region." },
+    { question: "Uppsala är stor och konkurrensutsatt – möjligt att ranka?", answer: "Ja, med bättre teknik och strategi än konkurrenterna. En generisk WordPress-mall räcker inte. Med React + nischerade sökord + unikt innehåll kan Uppsala-bolag slå både lokala konkurrenter och stockholm-baserade byrå er." },
+    { question: "Vi är tech-startup vid Science Park – vad behöver vi?", answer: "En hemsida som själv demonstrerar din tech-kompetens: ultrasnabb, mobil-perfekt, modernt design. Det är ditt recruitment-verktyg och sales-maskin för B2B-kunder. Din hemsida är din bästa marknadsföring av din egen teknik." },
+    { question: "Vilka sökord rankar vi för?", answer: "Beror på bransch men exempel: 'tech startup Uppsala', 'konsult Stockholm-Uppsala', 'utveckling Mälardalen'. Vi fokuserar på höga köp-intentionsord, inte bara volym. Stockholm-konkurrenter har tung webbhistoria – vi använder snabbare teknik för att slå dem." },
+    { question: "Hur länge innan ranking i Uppsala?", answer: "Hemsida live: 2-4 veckor. Indexering: 1-2 veckor. Ranking för nischerade ord: 2-4 månader. Ranking för breda ord: 4-6 månader (högre konkurrens än små städer). Leads från webben: ofta dag 1 för specialiserade sökord." },
+    { question: "Kan vi ranka både Uppsala och nationellt?", answer: "Ja. Med rätt innehålls-strategi rankar du lokalt för 'Uppsala-sökord' och nationellt för bredare terms. Många Uppsala-baserade tech-startups får 40%+ trafik från nationella sökningar – det är en hidden opportunity." },
   ],
 };
 

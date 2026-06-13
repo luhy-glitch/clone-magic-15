@@ -7,8 +7,8 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Heby - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Professionella hemsidor i Heby som rankar på Google. 100/100 PageSpeed, lokal SEO och modern webbutveckling i Uppsala län.",
-  heroHeading: "Webbutveckling & SEO i Heby",
-  heroDescription: "Vi hjälper företag i Heby att synas online med blixtsnabba hemsidor och lokal SEO. Byggda i React med 100/100 PageSpeed – din digitala partner i Mälardalen.",
+  heroHeading: "Från lokal småstad till regional spelare – webbutveckling för Heby",
+  heroDescription: "Heby är liten men växande. Många företag här är helt beroende av lokalt nätverk. En hemsida kan ändra allt – plötsligt når du Västerås, Enköping och större marknader utan att expandera lokalt.",
   icon: Code2,
   heroFacts: [
     "100/100 PageSpeed – optimerat för varierande bandbredd i Heby",

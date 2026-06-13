@@ -7,8 +7,8 @@ const config = {
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Eskilstuna – Snabba Hemsidor | LRH Konsult",
   metaDescription: "Webbutveckling i Eskilstuna med blixtsnabba hemsidor och teknisk SEO. 100/100 PageSpeed och modern React-utveckling som ger företag i Södermanland fler kunder.",
-  heroHeading: "Webbutveckling i Eskilstuna som ger fler kunder",
-  heroDescription: "Eskilstuna är en viktig knutpunkt i Södermanland med över 100 000 invånare och en snabbt växande företagsscen. Vi bygger hemsidor som ger ditt företag fler kunder – med garanterat 100/100 PageSpeed och en SEO-strategi som placerar dig överst i sökresultaten.",
+  heroHeading: "Eskilstuna växer som tech-hub – din konkurrens ökar, dina möjligheter också",
+  heroDescription: "Eskilstuna attraherar både lokala och externa tech-bolag. Konkurrensnivån är högre än småstäder – men för dem som investerar i rätt hemsida finns också större möjligheter. Vi hjälper Eskilstuna-bolag att stå ut både lokalt och nationellt.",
   icon: Code2,
   heroFacts: [
     "100/100 PageSpeed i Södermanlands största stad",
@@ -73,11 +73,11 @@ const config = {
     result: "Hemsidan rankade topp 3 för 'badrumsrenovering Eskilstuna' inom sex veckor och topp 1 för 'renovering Eskilstuna' inom tre månader. Offertförfrågningarna via hemsidan dubblerades under det första kvartalet, och företaget kunde för första gången välja sina projekt istället för att tacka ja till allt.",
   },
   faq: [
-    { question: "Vilka företag i Eskilstuna kan dra nytta av er webbutveckling?", answer: "Alla typer av företag i Eskilstuna – från industriföretag och byggföretag till butiker, tjänsteföretag och konsulter. Vi anpassar våra lösningar efter din bransch och hjälper dig att nå kunder i hela Södermanland genom lokal SEO." },
-    { question: "Hur kan min hemsida hjälpa mig att nå kunder utanför Eskilstuna?", answer: "Genom att optimera för regionala söktermer som 'industri Södermanland' och implementera serviceArea i strukturerad data kan ditt företag synas för sökningar från Strängnäs, Katrineholm, Nyköping och andra närliggande områden." },
-    { question: "Vad kostar en professionell hemsida för ett företag i Eskilstuna?", answer: "Våra paket börjar från 5 000 kr för grundläggande hemsidor med SEO. Priset beror på komplexitet och funktioner, men vi erbjuder alltid kostnadsfri konsultation för att hitta rätt lösning för ditt företag." },
-    { question: "Kan ni hjälpa mig att synas bättre på Google för sökningar i Eskilstuna?", answer: "Absolut! Vi erbjuder komplett <a href=\"/tjanster/seo-optimering\">SEO-optimering</a> inklusive lokal SEO, teknisk optimering och innehållsstrategi. Börja med vår <a href=\"/gratis-seo-analys\">gratis SEO-analys</a> för att se förbättringsmöjligheterna." },
-    { question: "Hur snabbt kan ni leverera en ny hemsida för mitt företag i Eskilstuna?", answer: "Beroende på komplexitet levererar vi ofta inom 2-4 veckor från design till lansering. Vi arbetar effektivt för att minimera din väntetid och få din digitala närvaro igång så snabbt som möjligt." },
+    { question: "Eskilstuna växer snabbt – är det fortfarande möjligt att ranka?", answer: "Ja, men det kräver bättre teknik och strategi än i mindre städer. En generisk mall-hemsida räcker inte. Med React + nischerade sökord + unikt innehåll kan Eskilstuna-bolag slå både lokala och större Stockholm-konkurrenter." },
+    { question: "Vi är teknik-startup i Eskilstuna – räcker en enkel hemsida?", answer: "Nej, inte för tech-bolag. Du behöver en hemsida som själv demonstrerar dina tekniska förmågor: ultrasnabb, mobilperfekt, modernt design. Det är ditt sales-verktyg för att attrahera B2B-kunder och talent." },
+    { question: "Vilka sökord rankar vi för i Eskilstuna?", answer: "Beror på bransch, men exempel: 'byggföretag Eskilstuna', 'webbutveckling Södermanland', 'industri Eskilstuna', 'tjänster Mälardalen'. Vi fokuserar på ord med hög köpintention, inte bara volym." },
+    { question: "Hur länge innan vi ser resultat?", answer: "Live: 2-4 veckor. Indexering: 1-2 veckor. Ranking för nischerade ord: 2-3 månader. Ranking för breda ord: 3-6 månader (högre konkurrens än små städer). Leads från webben: ofta dag 1 för specialiserade sökord." },
+    { question: "Kan vi nå både lokalt och nationellt med samma hemsida?", answer: "Ja. Med rätt struktur kan en Eskilstuna-hemsida ranka lokalt för 'tjänst Eskilstuna' och nationellt för 'tjänst Sverige' eller 'specialiserad lösning'. Det handlar om innehålls-strategi och teknik." },
   ],
 };
 
