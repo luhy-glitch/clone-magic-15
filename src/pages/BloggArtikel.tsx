@@ -240,10 +240,27 @@ const BloggArtikel = () => {
         description: post.excerpt,
         datePublished: post.date,
         dateModified: updatedAt,
-        image: post.image_url || undefined,
+        ...(post.image_url ? {
+          image: {
+            "@type": "ImageObject",
+            "url": post.image_url.startsWith("http") ? post.image_url : `https://www.lrhkonsult.se${post.image_url}`,
+            "width": 1200,
+            "height": 630,
+          }
+        } : {}),
         author: { "@type": "Person", name: "Lucas", url: "https://www.lrhkonsult.se/om-mig" },
-        publisher: { "@type": "Organization", name: "LRH Konsult", url: "https://www.lrhkonsult.se" },
-        mainEntityOfPage: postUrl,
+        publisher: {
+          "@type": "Organization",
+          name: "LRH Konsult",
+          url: "https://www.lrhkonsult.se",
+          logo: {
+            "@type": "ImageObject",
+            "url": "https://www.lrhkonsult.se/og-image.png",
+            "width": 1200,
+            "height": 630,
+          },
+        },
+        mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
         wordCount: post.content.split(/\s+/).length,
         inLanguage: "sv",
       },
