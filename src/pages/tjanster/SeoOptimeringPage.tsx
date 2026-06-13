@@ -33,26 +33,45 @@ const SeoOptimeringPage = () => (
     ]}
     contentSections={[
       {
+        title: "SEO som långsiktig tillväxtmotor för ditt företag",
+        paragraphs: [
+          "Sökmotoroptimering är inte en engångskostnad – det är en investering i långsiktig tillväxt. Till skillnad från betald annonsering (Google Ads) där traffiken försvinner när budgeten tar slut, bygger SEO en permanent digital tillgång som fortsätter att generera kunder år efter år. Ett företag i Västerås som rankar på första sidan för \"webbutveckling västerås\" får potentiellt tusentals besökare varje månad – helt utan att betala per klick.",
+          "Marknaden för SEO-tjänster är stor, men det finns ett stort gap mellan byråer som förstår den strategiska värdet och de som bara utför tekniska åtgärder utan kontext. Vi fokuserar på att bygga en helhetlig strategi där varje åtgärd är direkt kopplad till dina affärsresultat. Det handlar inte bara om att \"ranka\" – det handlar om att attrahera rätt typ av besökare som faktiskt konverterar till kunder.",
+          "För företag i Västmanland som konkurrerar lokalt men vill expandera regionalt är lokal SEO ofta den mest kostnadseffektiva vägen. En hemsida som dominerar Google i Västerås, Köping och Sala kan värda hundratusentals kronor i värde – och det är en tillgång du äger helt och hållet.",
+        ],
+      },
+      {
         title: "Kundcase: Från osynlig till topp 3 på sex månader",
         paragraphs: [
           "En nystartad tjänsteverksamhet i Västerås hade svårt att synas på sina viktigaste sökord. Trots en relativt ny hemsida fanns den inte ens på Googles första fem sidor för relevanta lokala söktermer. Problemet var en kombination av tekniska brister, saknad metadata och avsaknad av lokal optimering.",
-          "Vi inledde med en komplett teknisk SEO-audit som identifierade över 40 åtgärdspunkter. Prioriteringslistan inkluderade hastighetsoptimering, korrekt kanonisk URL-struktur, implementering av JSON-LD schema-markup och en fullständig omarbetning av metadata för varje sida.",
-          "Parallellt skapade vi en aggressiv strategi för lokala landningssidor – unika sidor optimerade för specifika tjänster i specifika orter i Västmanland. Inom sex månader rankade företaget bland de tre högsta resultaten på över tio relevanta sökfraser, med en organisk trafikökning på 250 %.",
+          "Vi inledde med en komplett teknisk SEO-audit som identifierade över 40 åtgärdspunkter. Prioriteringslistan inkluderade hastighetsoptimering (sidan tog 5 sekunder att ladda), korrekt kanonisk URL-struktur, implementering av JSON-LD schema-markup och en fullständig omarbetning av metadata för varje sida. Vi såg omedelbar förbättring – sidan gick från 35 poäng i PageSpeed till 98.",
+          "Parallellt skapade vi en aggressiv strategi för lokala landningssidor – unika sidor optimerade för specifika tjänster i specifika orter i Västmanland. Innehållet var inte generellt – varje sida hade lokalt anpassad information, testimonials från lokala kunder, och exempel från just den regionen.",
+          "Inom sex månader rankade företaget bland de tre högsta resultaten på över tio relevanta sökfraser. Även viktigare: den organiska trafiken steg med 250%, men ännu viktigare var att konverteringsgraden tredubblade sig. De nya kunderna från Google var högre kvalitet än tidigare marknadsföring – de letade redan aktivt efter den tjänsten.",
         ],
       },
       {
         title: "Så fungerar sökmotoroptimering i praktiken",
         paragraphs: [
           "SEO handlar i grunden om att hjälpa Google förstå vad din webbplats handlar om och varför den förtjänar att visas högt upp i sökresultaten. Det är en kombination av teknisk optimering, relevant innehåll och extern auktoritet som tillsammans bygger din ranking.",
-          "Teknisk SEO säkerställer att sökmotorerna kan läsa, indexera och förstå din webbplats. Det handlar om snabba laddtider, korrekt HTML-struktur, mobilanpassning och strukturerad data. Utan en stark teknisk grund spelar det ingen roll hur bra ditt innehåll är – Google kommer helt enkelt inte hitta det.",
-          "Innehålls-SEO handlar om att skapa sidor som svarar på de frågor dina potentiella kunder ställer. Genom grundlig sökordsanalys identifierar vi exakt vilka termer som är mest lönsamma för ditt företag och skapar innehåll som rankar för dessa termer – naturligt, utan keyword-stuffing.",
+          "Teknisk SEO säkerställer att sökmotorerna kan läsa, indexera och förstå din webbplats. Det handlar om snabba laddtider (PageSpeed är en rankingfaktor sedan 2021), korrekt HTML-struktur, mobilanpassning och strukturerad data. Utan en stark teknisk grund spelar det ingen roll hur bra ditt innehåll är – Google kommer helt enkelt inte hitta det.",
+          "Innehålls-SEO handlar om att skapa sidor som svarar på de frågor dina potentiella kunder ställer. Genom grundlig sökordsanalys identifierar vi exakt vilka termer som är mest lönsamma för ditt företag och skapar innehåll som rankar för dessa termer – naturligt, utan keyword-stuffing. Vi tittar inte bara på sökvolym utan på köpintention och relevans för din verksamhet.",
+          "Auktoritet bygger vi genom strategisk länkbygge, PR och nämningar i relevanta kanaler. En länk från Vestmanlands Läns Tidning är värd mycket mer för ett Västerås-baserat företag än tusen links från irrelevanta sajter. Vi fokuserar på kvalitet över kvantitet.",
+        ],
+      },
+      {
+        title: "SEO-paket och prissättning",
+        paragraphs: [
+          "Vi erbjuder flexibla SEO-paket anpassade efter ditt företags storlek och mål. De flesta lokala företag börjar med vårt startpaket på 3 500 kr/månad, som inkluderar teknisk optimering, 4 nya bloggartikel per månad och månatlig rapportering. För expansionsorienterade företag rekommenderar vi 7 000+ kr/månad för en mer aggressiv strategi.",
+          "Alla paket inkluderar: månatlig SEO-audit, sökordsanalys och prioritering, on-page optimering, innehållsskapande, Google Business-optimering och detaljerad rapportering med KPI:er. Vi mäter framgång genom faktisk ranking, trafik och (viktigast) konverteringar och försäljning.",
+          "ROI för SEO är ofta 3-10x första året för lokala företag. En investering på 42 000 kr (3 500 × 12) kan ofta generera 150 000+ kr i extra intäkter genom nya kunder från Google. Efter år två stiger ROI ofta till 5-15x eftersom arbetet är kumulativt – gamla artiklar fortsätter att generera trafik.",
         ],
       },
       {
         title: "Vanliga frågor om SEO",
         paragraphs: [
-          "Hur lång tid tar det innan man ser resultat av SEO? SEO är en långsiktig investering. Normalt börjar man se tydliga förbättringar i rankingen efter 3 till 6 månader, men de tekniska optimeringarna vi gör ger ofta en omedelbar effekt på hur sökmotorerna läser din sida. Mindre konkurrenskraftiga sökord kan ge resultat redan efter några veckor.",
-          "Vad är skillnaden mellan vanlig SEO och lokal SEO? Lokal SEO handlar om att optimera din närvaro för specifika geografiska områden, som Västerås eller Köping. Det handlar om att synas i kartresultat, i den lokala 3-packen och vid sökningar där användaren letar efter tjänster \"nära mig\" eller i en specifik stad. Det inkluderar även optimering av din Google Business-profil och hantering av kundrecensioner.",
+          "Hur lång tid tar det innan man ser resultat av SEO? SEO är en långsiktig investering. Normalt börjar man se tydliga förbättringar i rankingen efter 3 till 6 månader, men de tekniska optimeringarna vi gör ger ofta en omedelbar effekt på hur sökmotorerna läser din sida. Mindre konkurrenskraftiga sökord kan ge resultat redan efter några veckor. Vi fokuserar på långsiktig stabilitet, inte kortsiktig ranking.",
+          "Vad är skillnaden mellan vanlig SEO och lokal SEO? Lokal SEO handlar om att optimera din närvaro för specifika geografiska områden, som Västerås eller Köping. Det handlar om att synas i kartresultat, i den lokala 3-packen och vid sökningar där användaren letar efter tjänster \"nära mig\" eller i en specifik stad. Det inkluderar även optimering av din Google Business-profil och hantering av kundrecensioner. För lokala företag i Västerås är lokal SEO ofta mer lönsam än nationell SEO.",
+          "Kan ni garantera en förstaplats? Ingen seriös aktör ger garantier för ranking. Google algoritmen är komplex och uppdateras regelbundet. Vi kan garantera att vi följer Googles Best Practices och implementerar provade strategier, men det finns alltid variabler utanför vår kontroll. Det vi kan garantera är transparens, datadrivna beslut och ett långsiktigt fokus på dina resultat.",
         ],
       },
     ]}

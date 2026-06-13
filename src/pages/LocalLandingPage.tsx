@@ -13,6 +13,7 @@ import {
   ServiceCTA,
   type FAQItem,
 } from "@/components/service-page/sections";
+import { RELATED_CITIES } from "@/data/cities";
 
 interface ExtraSection {
   title: string;
@@ -233,18 +234,24 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <h2 id="local-related-heading" className="text-xl sm:text-2xl font-bold font-serif mb-6 text-center">
-                Vi hjälper företag i hela Mälardalen & Västmanland
+                Relaterade städer och regioner
               </h2>
               <div className="flex flex-wrap justify-center gap-3 mb-8">
-                {ALL_CITIES.filter(p => `/${p.to.replace(/^\//, '')}` !== `/${config.slug}`).map((page) => (
-                  <Link
-                    key={page.to}
-                    to={page.to}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-card text-foreground font-medium hover:bg-primary/10 hover:border-primary/30 transition-colors"
-                  >
-                    {page.label} <ArrowRight size={16} className="text-primary" />
-                  </Link>
-                ))}
+                {(() => {
+                  const relatedCityNames = RELATED_CITIES[config.city] || [];
+                  const relatedPages = ALL_CITIES.filter(p => relatedCityNames.includes(p.city));
+                  return relatedPages.length > 0 ? (
+                    relatedPages.map((page) => (
+                      <Link
+                        key={page.to}
+                        to={page.to}
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-card text-foreground font-medium hover:bg-primary/10 hover:border-primary/30 transition-colors"
+                      >
+                        {page.city} <ArrowRight size={16} className="text-primary" />
+                      </Link>
+                    ))
+                  ) : null;
+                })()}
               </div>
               <h3 className="text-lg font-bold font-serif mb-4 text-center text-muted-foreground">Se även</h3>
               <div className="flex flex-wrap justify-center gap-3">

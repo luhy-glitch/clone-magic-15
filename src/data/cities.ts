@@ -55,3 +55,22 @@ export const CITY_REGIONS: Record<string, string> = {
   "Uppsala": "Uppsala län",
   "Örebro": "Örebro län",
 };
+
+/** Related cities mapping for smart internal linking – each city links to geographically nearby cities */
+export const RELATED_CITIES: Record<string, string[]> = {
+  "Västerås": ["Köping", "Sala", "Enköping", "Hallstahammar"],
+  "Köping": ["Västerås", "Sala", "Arboga", "Kungsör"],
+  "Sala": ["Västerås", "Köping", "Surahammar", "Enköping"],
+  "Enköping": ["Uppsala", "Västerås", "Heby", "Sala"],
+  "Eskilstuna": ["Hallstahammar", "Surahammar", "Västerås", "Strängnäs"],
+  "Arboga": ["Köping", "Kungsör", "Fagersta", "Västerås"],
+  "Fagersta": ["Norberg", "Arboga", "Skinnskatteberg", "Västerås"],
+  "Hallstahammar": ["Västerås", "Eskilstuna", "Kungsör", "Surahammar"],
+  "Kungsör": ["Köping", "Arboga", "Hallstahammar", "Västerås"],
+  "Surahammar": ["Skinnskatteberg", "Hallstahammar", "Sala", "Västerås"],
+  "Heby": ["Enköping", "Uppsala", "Västerås", "Sala"],
+  "Norberg": ["Fagersta", "Skinnskatteberg", "Västerås", "Arboga"],
+  "Skinnskatteberg": ["Fagersta", "Norberg", "Surahammar", "Västerås"],
+  "Uppsala": ["Enköping", "Heby", "Västerås", "Stockholm"],
+  "Örebro": ["Västerås", "Hallstahammar", "Köping", "Stockholm"],
+};
