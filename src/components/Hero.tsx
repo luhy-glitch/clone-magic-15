@@ -13,8 +13,8 @@ export default function Hero() {
         <PlexusBackground />
       </Suspense>
 
-      {/* Soft glow for depth */}
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-accent/5 blur-[150px] rounded-full pointer-events-none z-0" />
+      {/* Soft glow for depth - darkened for better text readability */}
+      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-accent/15 blur-[150px] rounded-full pointer-events-none z-0" />
 
       {/* Badge - Local SEO Focus */}
       <div className="border border-border rounded-full px-4 py-1.5 text-xs text-muted-foreground mb-8 flex items-center gap-2 bg-card/30 backdrop-blur-md shadow-lg z-10 relative">
