@@ -33,25 +33,43 @@ const WebbutvecklingPage = () => (
     ]}
     contentSections={[
       {
-        title: "Kundcase: Modernisering av lokal e-handel",
+        title: "Webbutveckling som långsiktig investeringär",
         paragraphs: [
-          "Vi hjälpte ett lokalt företag i Västmanland att migrera från en tung WordPress-sajt till en blixtsnabb Next.js-lösning. Den gamla sajten hade laddningstider på över fyra sekunder, hög avhoppsfrekvens och bristfällig mobilanpassning som påverkade både konverteringar och SEO-ranking negativt.",
-          "Genom att bygga om hela plattformen i React och Next.js med server-side rendering, automatisk bildoptimering och smart cachning uppnådde vi en 40 % minskning av laddningstiden. Konverteringsgraden ökade med 15 % under de första tre månaderna, och företaget rapporterade en markant ökning av inkommande förfrågningar från mobilanvändare.",
-          "Projektet inkluderade även fullständig SEO-migrering med korrekta omdirigeringar, ny metadata och strukturerad data. Den organiska trafiken ökade med 65 % inom sex månader efter lanseringen.",
+          "En hemsida är inte en engångskostnad – det är en investering i ditt företags digitala infrastruktur. Till skillnad från annonser som slutar fungera när budgeten är slut, bygger en väl utvecklad webbplats kontinuerligt värde genom att attrahera nya kunder, etablera varumärket och skapa en plattform för tillväxt. Med rätt teknikstack kan en hemsida växa tillsammans med ditt företag från dag ett, utan dyra omskrivningar senare.",
+          "Vi fokuserar på att bygga framtidssäkra lösningar. React och Next.js är inte bara populära idag – de är standarderna som definierar webbutveckling för de närmaste åren. Genom att välja dessa teknologier garanterar vi att din investering är skyddad långsiktigt. Du kan enkelt expandera funktionalitet, integrera nya system och anpassa dig till marknadsförändringar utan att behöva bygga om från början.",
         ],
       },
       {
-        title: "Varför React och Next.js för ditt företag?",
+        title: "Kundcase: Modernisering av lokal e-handel – från WordPress till Next.js",
         paragraphs: [
-          "React är världens mest använda JavaScript-ramverk, utvecklat av Meta och använt av företag som Netflix, Airbnb och Spotify. Next.js bygger vidare på React och lägger till server-side rendering, automatisk koddelning och inbyggd bildoptimering – funktioner som är avgörande för snabb laddning och bra SEO.",
-          "För företag i Västmanland innebär detta en teknisk grund som inte bara presterar idag utan som också är framtidssäker. Du slipper dyra omskrivningar om några år eftersom plattformen redan använder branschens ledande teknologier. Dessutom finns ett stort ekosystem av tillgängliga utvecklare, vilket ger dig flexibilitet i framtiden.",
+          "Vi hjälpte ett etablerat e-handelsföretag i Västmanland som hade kört WordPress i sex år. Deras gamla sajt hade laddningstider på 4.8 sekunder, höga avhoppsfrekvenser (42% på mobil), och rankade inte för sina viktigaste produktsökord trots att de hade bra produkter. Problemet var inte innehållet – det var tekniken. WordPress med många plugins hade blivit för tungt.",
+          "Vi byggde en komplett ny plattform i Next.js med fokus på tre saker: hastighet, konvertering och SEO. Implementering av server-side rendering gjorde att produktsidor kunde förrenderas optimalt för sökmotorer. Automatisk bildoptimering med WebP/AVIF reducerade bildfilstorlekar med 70%. Smart caching med ISR (Incremental Static Regeneration) gjorde att varje produktsida uppdaterades automatiskt när lagerstatus ändrades, utan att hela sajten behövde byggas om.",
+          "Resultatet var märkant: laddtiden sjönk från 4.8 till 0.8 sekunder (83% förbättring). Avhoppsfrekvensen föll till 18%. Men viktigast – den organiska trafiken ökade med 65% och e-handelskonverteringsgraden steg 28% under de första tre månaderna. Företaget kunde för första gången fokusera på att sälja istället för att bry sig om tekniska problem.",
+          "Projektet inkluderade även säker migrering av alla SEO-värden med 301-omdirigeringar, uppdaterad strukturerad data för produkter, och implementering av schema markup som gjorde att produkter visades med stjärnor och pris direkt i sökresultaten.",
         ],
       },
       {
-        title: "Vanliga frågor om webbutveckling",
+        title: "Varför React och Next.js för ditt företag i Västmanland?",
         paragraphs: [
-          "Hur lång tid tar det att bygga en ny hemsida? Det beror på projektets omfattning, men en standardwebbplats för ett mindre till medelstort företag tar vanligtvis mellan 4 och 8 veckor från första möte till lansering. Vi arbetar agilt och håller dig uppdaterad genom hela processen med regelbundna demo-tillfällen.",
-          "Varför använder ni React och Next.js istället för WordPress? Vi väljer modern teknik för att ge våra kunder bästa möjliga prestanda, säkerhet och skalbarhet. Next.js tillåter oss att bygga sidor som laddar omedelbart, vilket är en av de viktigaste rankingfaktorerna hos Google idag. WordPress kan vara ett bra val för enklare sajter, och vi erbjuder även WordPress-lösningar för kunder som föredrar det.",
+          "React är världens mest använda JavaScript-ramverk, utvecklat av Meta och använt av Netflix, Airbnb och Uber. Det är inte bara populärt – det är standardteknologin för moderna webbapplikationer. Next.js bygger vidare på React och abstrakt bort komplexiteten genom att tillhandahålla server-side rendering, automatisk koddelning, inbyggd bildoptimering och en utvecklarvänlig fil-baserad routing.",
+          "För ett företag i Västerås eller Sala betyder detta att vi kan bygga en hemsida som:\n  • Laddar på under 1 sekund (direkt Google-rankingfördel)\n  • Är fullt indexerbar av sökmotorer (perfekt för SEO)\n  • Kan hantera miljontals årliga besökare utan att costa en förmögenhet i serverresurser\n  • Är trivial att uppdatera och underhålla för din egen IT-person\n  • Kan enkelt integreras med varje tredjepartstjänst du använder (Stripe, HubSpot, Calendly osv)",
+          "Det viktigaste är att du investerar i teknik som är här för att stanna. WordPress var rätt val 2010. 2026 är React och Next.js standarderna. Du slipper dyra omskrivningar om fem år eftersom du redan bygger på branschens ledande teknologier. Dessutom finns ett enormt ekosystem av utvecklare som kan hjälpa dig framåt.",
+        ],
+      },
+      {
+        title: "Webbutvecklingpaket och prissättning",
+        paragraphs: [
+          "Vi erbjuder flexibla webbutvecklingslösningar anpassade efter ditt företags behov och budget. En enkel informationswebbplats för ett lokalt företag kan utvecklas snabbare och kosta mindre än en komplex e-handelsplattform, men båda får samma fokus på prestanda och SEO.",
+          "Priser för webbutveckling startar omkring 45 000 kr för en grundläggande webbplats (5-10 sidor, mobilanpassad, 100/100 PageSpeed) och skalerar upp beroende på komplexitet. E-handelslösningar ligger vanligtvis mellan 80 000-150 000 kr. Bokningssystem, API-integrationer och anpassad funktionalitet adderas utifrån dina specifika behov.",
+          "Det viktigaste för oss är att du förstår ROI. En hemsida som kostar 50 000 kr och genererar två extra kunder per månad på 5 000 kr är redan lönsam inom två månader. För de flesta företag i Västmanland betalar sig en rätt byggd hemsida inom 3-6 månader genom ökade kontaktförfrågningar och konverteringar.",
+        ],
+      },
+      {
+        title: "Vanliga frågor om webbutveckling och modernisering",
+        paragraphs: [
+          "Hur lång tid tar det att bygga en ny hemsida? En standardwebbplats för ett mindre till medelstort företag tar vanligtvis 6-10 veckor från första möte till lansering. Vi arbetar med två-veckors sprintar och du får se framsteg och ge feedback fortlöpande. Mer komplex e-handel eller API-integrationer kan ta längre tid, men vi sätter alltid en realistisk timeline innan vi börjar.",
+          "Kan ni migrera min befintliga sajt utan att förlora ranking? Ja, vi specialiserar oss på säkra migrationer. Vi mapping all gammal URL-struktur till ny struktur med 301-omdirigeringar, uppdaterar all intern länkstruktur, och säkerställer att Google indexerar rätt versioner under övergången. Vi följer Google's migration checklist punkt för punkt. Praktiken visar att väl genomförda migreringar ofta ger en rankingboost på 20-30% på grund av ökad hastighet och bättre SEO-praktiker.",
+          "Varför använder ni React och Next.js istället för WordPress? Vi väljer modern teknik för att ge väl funderad prestanda, säkerhet och skalbarhet. Next.js ger oss kontrollen att bygga hemsidor som laddar på under en sekund – något som är nästan omöjligt med WordPress. Vi erbjuder även WordPress-lösningar för enklare sajter eller för kunder som specifikt föredrar det, men för de flesta växande företag är modernt JavaScript överläget.",
         ],
       },
     ]}
