@@ -78,8 +78,7 @@ const Index = () => {
                 { "@type": "State", "name": "Uppsala län" },
                 { "@type": "State", "name": "Örebro län" }
               ],
-              "priceRange": "$$",
-              "sameAs": ["https://www.linkedin.com/in/lucasrosvall/"]
+              "priceRange": "$$"
             },
             {
               "@type": "WebSite",
