@@ -80,7 +80,7 @@ const DataRoutes = () => (
 
         <Route path="/om-mig" element={<OmMig />} />
         <Route path="/blogg" element={<Blogg />} />
-        <Route path="/blogg/seo-vasteras" element={<BloggArtikelSeoGuide />} />
+        <Route path="/blogg/seo-vasteras-guide" element={<BloggArtikelSeoGuide />} />
         <Route path="/blogg/lokal-seo-smaforetag" element={<BloggArtikelHemsidaGuide />} />
         <Route path="/blogg/:slug" element={<BloggArtikel />} />
         <Route path="/kontakt" element={<Kontakt />} />

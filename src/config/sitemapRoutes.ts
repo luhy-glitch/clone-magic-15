@@ -103,5 +103,5 @@ export const SITEMAP_ROUTES = [
   { path: "/blogg/effektiv-webbutveckling-ai-verktyg-vastmanland", changefreq: "monthly", priority: "0.7" },
   { path: "/blogg/digital-synlighet-vastmanland-seo-ai", changefreq: "monthly", priority: "0.7" },
   { path: "/blogg/framtidssakra-foretag-vastmanland-2026", changefreq: "monthly", priority: "0.7" },
-  { path: "/blogg/seo-vasteras", changefreq: "monthly", priority: "0.7" },
+  { path: "/blogg/seo-vasteras-guide", changefreq: "monthly", priority: "0.7" },
 ];

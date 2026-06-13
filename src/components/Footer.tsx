@@ -86,7 +86,7 @@ const Footer = () => {
               <li><Link to="/gratis-seo-analys" className="text-sm text-muted-foreground hover:text-primary transition-colors">Gratis SEO-analys</Link></li>
               <li><Link to="/integritetspolicy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Integritetspolicy</Link></li>
               <li><Link to="/blogg" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">Blogg</Link></li>
-              <li><Link to="/blogg/seo-vasteras" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">SEO-guide småföretag</Link></li>
+              <li><Link to="/blogg/seo-vasteras-guide" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">SEO-guide småföretag</Link></li>
               <li><Link to="/blogg/lokal-seo-smaforetag" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Skapa hemsida guide</Link></li>
               <li><Link to="/blogg/oka-hemsidans-hastighet" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Öka hemsidans hastighet</Link></li>
               <li><Link to="/blogg/lokal-seo-smaforetag" className="text-sm text-muted-foreground hover:text-primary transition-colors italic">Lokal SEO</Link></li>
