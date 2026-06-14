@@ -1,49 +1,84 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
 
-// Vestigiala animationsprops (delay/direction) accepteras men strippas från DOM:en.
-type AnimatedProps = React.HTMLAttributes<HTMLDivElement> & {
+interface AnimatedProps extends React.HTMLAttributes<HTMLDivElement> {
   delay?: number;
-  direction?: string;
-};
+  direction?: "left" | "right";
+}
 
-// Huvudkomponenten
-export const AnimatedSection = forwardRef<HTMLDivElement, AnimatedProps>(
-  ({ children, className, id, ...props }, ref) => (
-    <div ref={ref} className={className} id={id} {...props}>{children}</div>
-  )
-);
-AnimatedSection.displayName = 'AnimatedSection';
+function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
+  return (node: T) => {
+    for (const ref of refs) {
+      if (typeof ref === "function") ref(node);
+      else if (ref && typeof ref === "object") (ref as React.MutableRefObject<T>).current = node;
+    }
+  };
+}
 
-// FadeIn
-export const FadeIn = forwardRef<HTMLDivElement, AnimatedProps>(
-  ({ children, className, id, delay, ...props }, ref) => (
-    <div ref={ref} className={className} id={id} {...props}>{children}</div>
-  )
-);
-FadeIn.displayName = 'FadeIn';
+/**
+ * Scroll-reveal som är SEO- och prestandasäker:
+ * - Effekten läggs på via JS EFTER hydrering → statisk HTML är fullt synlig (crawlers + no-JS).
+ * - Endast element UNDER fold animeras → above-fold/hero visas direkt (ingen LCP-påverkan, ingen FOUC).
+ * - opacity + transform (GPU, 0 layout shift). Respekterar prefers-reduced-motion.
+ */
+function useReveal(animClass: string, delay = 0) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    // Hoppa över under prerender (Playwright) → statisk HTML blir fullt synlig för crawlers/no-JS.
+    if (navigator.webdriver) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    // Above-fold visas direkt – animera bara det som ligger under första vyn.
+    if (el.getBoundingClientRect().top < window.innerHeight * 0.95) return;
+    el.classList.add("lrh-reveal", animClass);
+    if (delay) el.style.transitionDelay = `${delay}s`;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            el.classList.add("lrh-reveal--in");
+            obs.unobserve(el);
+          }
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [animClass, delay]);
+  return ref;
+}
 
-// ScaleIn
-export const ScaleIn = forwardRef<HTMLDivElement, AnimatedProps>(
-  ({ children, className, id, delay, ...props }, ref) => (
-    <div ref={ref} className={className} id={id} {...props}>{children}</div>
-  )
-);
-ScaleIn.displayName = 'ScaleIn';
+function makeReveal(animClass: string) {
+  const Comp = forwardRef<HTMLDivElement, AnimatedProps>(
+    ({ children, className, id, delay, direction, ...props }, forwardedRef) => {
+      const cls = animClass === "lrh-reveal-slide"
+        ? `lrh-reveal-slide-${direction === "right" ? "right" : "left"}`
+        : animClass;
+      const internalRef = useReveal(cls, delay);
+      return (
+        <div ref={mergeRefs(internalRef, forwardedRef)} className={className} id={id} {...props}>
+          {children}
+        </div>
+      );
+    }
+  );
+  return Comp;
+}
 
-// SlideIn (ifall den används någonstans)
-export const SlideIn = forwardRef<HTMLDivElement, AnimatedProps>(
-  ({ children, className, id, delay, direction, ...props }, ref) => (
-    <div ref={ref} className={className} id={id} {...props}>{children}</div>
-  )
-);
-SlideIn.displayName = 'SlideIn';
+export const AnimatedSection = makeReveal("lrh-reveal-fade");
+AnimatedSection.displayName = "AnimatedSection";
 
-// StaggerContainer (vanlig i liknande teman)
-export const StaggerContainer = forwardRef<HTMLDivElement, AnimatedProps>(
-  ({ children, className, id, ...props }, ref) => (
-    <div ref={ref} className={className} id={id} {...props}>{children}</div>
-  )
-);
-StaggerContainer.displayName = 'StaggerContainer';
+export const FadeIn = makeReveal("lrh-reveal-fade");
+FadeIn.displayName = "FadeIn";
+
+export const ScaleIn = makeReveal("lrh-reveal-scale");
+ScaleIn.displayName = "ScaleIn";
+
+export const SlideIn = makeReveal("lrh-reveal-slide");
+SlideIn.displayName = "SlideIn";
+
+export const StaggerContainer = makeReveal("lrh-reveal-fade");
+StaggerContainer.displayName = "StaggerContainer";
 
 export default AnimatedSection;
