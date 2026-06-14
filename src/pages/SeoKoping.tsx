@@ -62,12 +62,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {
-    title: "Projektinsikt: Bilverkstad i Köping gick från sida 4 till topp 1 på Google",
-    problem: "En familjeägd bilverkstad i Köping med tre mekaniker och 30 års erfarenhet hade en statisk HTML-hemsida från 2014 utan mobilanpassning. De rankade på sida 4 för 'bilverkstad Köping' och fick inga digitala kundförfrågningar. Nyare kedjor med starkare digital närvaro tog allt fler av deras potentiella kunder.",
-    solution: "Vi genomförde en komplett SEO-transformation: ny blixtsnabb React-hemsida med tjänstesidor för besiktning, service, däckbyte och plåtarbeten. JSON-LD AutoRepair-schema med priser, öppettider och serviceArea implementerades. Vi skapade lokalt förankrat innehåll om vanliga bilproblem i Köpingsområdet och optimerade Google Business-profilen med professionella bilder och uppdaterade tjänstebeskrivningar.",
-    result: "Hemsidan rankade topp 1 för 'bilverkstad Köping' inom tio veckor och topp 3 för 'bilservice Västmanland'. Google Business-profilen genererade 40+ samtal per månad. Verkstaden rapporterade en ökning på 85 procent i nya kunder under de första sex månaderna och kunde utöka med en fjärde mekaniker.",
-  },
   faq: [
     { question: "Hur mycket kostar SEO i Köping?", answer: "Vi erbjuder paket från 3 000 kr/månad. För mer information om våra tjänster, besök [SEO-optimering](/tjanster/seo-optimering)." },
     { question: "Hur lång tid tar det att se resultat av SEO i Köping?", answer: "Första förbättringarna syns inom 2–3 månader. För konkurrenskraftiga sökord kan det ta 6–12 månader." },

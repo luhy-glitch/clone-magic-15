@@ -55,12 +55,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {
-    title: "Projektinsikt: Redovisningsbyrå i Västerås ökade kundbasen med 60 procent",
-    problem: "En redovisningsbyrå med kontor i centrala Västerås hade en fem år gammal WordPress-sajt som tog 3,8 sekunder att ladda på mobilen. De rankade på sida två för 'redovisningsbyrå Västerås' och 'bokföring Västerås' och förlorade potentiella kunder till tre konkurrerande byråer som syntes högre i sökresultaten.",
-    solution: "Vi byggde en konverteringsoptimerad React-hemsida med dedikerade tjänstesidor för bokföring, lönehantering, årsredovisning och skatterådgivning. Varje sida fick unik content optimerad för specifika söktermer. JSON-LD AccountingService-schema implementerades med prissättning och serviceArea för hela Västerås och Västmanland. Kundrecensioner lades in med Review-schema.",
-    result: "Hemsidan nådde 100/100 i PageSpeed vid lansering. Inom två månader rankade byrån topp 1 för 'redovisningsbyrå Västerås' och topp 3 för 'bokföring Västerås'. Under de första sex månaderna ökade antalet nya kundförfrågningar via hemsidan med 60 procent, och byrån behövde rekrytera ytterligare en redovisningskonsult.",
-  },
   faq: [
     { question: "Vad kostar en hemsida i Västerås?", answer: "Prissättningen beror på projektets omfattning. En grundläggande hemsida för ett lokalt företag (5-10 sidor, mobilanpassad, SEO) kostar cirka 45 000 kr. E-handelslösningar med betalintegration och produkthantering ligger på 80 000-150 000 kr. För företag i Västerås som redan har en hemsida kan vi även göra en kostnadsfri audit och offerta baserad på era specifika behov. Vi erbjuder flexibla betalningsplaner och kan ibland dela upp större projekt för att anpassa budgeten. Det viktigaste är att förstå ROI: många Västerås-företag tjänar tillbaka sin investering inom 2-3 månader genom ökade leads från Google." },
     { question: "Hur lång tid tar det att bygga en hemsida i Västerås?", answer: "En standardhemsida för ett Västerås-företag tar vanligtvis 6-8 veckor från initialt möte till lansering. Vi arbetar med två-veckors sprintar där du får se framsteg och ge feedback kontinuerligt. Du behöver aldrig vänta länge på uppdateringar. Mer komplexa projekt med e-handel, API-integrationer eller skräddarsydda funktioner kan ta 10-12 veckor, men vi sätter alltid en realistisk tidplan innan vi börjar. Vi kommunicerar transparant om varje milstolpe så att du alltid vet exakt var vi befinner oss i processen." },

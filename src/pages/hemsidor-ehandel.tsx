@@ -26,11 +26,6 @@ const EcommerceHomePage = () => (
       { step: "3", title: "Integrationer", description: "Vi integrerar Stripe, Klarna, PayPal för betalning. Vi länkar Google Shopping feed. Vi sätter upp automatisk lagerspegla från ditt POS-system eller leverantör." },
       { step: "4", title: "Lansering & optimering", description: "Vi lanserar webshopen, sätter upp Google Analytics 4, och monitorer konverteringsgrad. Vi optimerar kontinuerligt baserat på data." },
     ]}
-    caseStudies={[
-      { client: "Möbelbutik Västerås", metric: "+180%", result: "E-handelsförsäljning ökade 180% första året genom webshop med bra produktbeskrivningar och Google Shopping-integration." },
-      { client: "Tränings-kläder Köping", metric: "3500+ order/år", result: "4500+ order första året efter webshop lansering tack vare Google Shopping och lokal SEO." },
-      { client: "Specialmat Uppsala", metric: "+250%", result: "Försäljning via webshop blev 25% av total revenue första året, och växer till 35% år två." },
-    ]}
     contentSections={[
       {
         title: "Varför e-handel är framtiden för kleinbutiker",
@@ -65,11 +60,6 @@ const EcommerceHomePage = () => (
       { question: "Kan vi lagerspegla från vårt POS-system?", answer: "Ja! Vi integrerar med Lightspeed, Square, Shopify POS och andra system. Lagerstatus uppdateras automatiskt på webshopen när du säljer i butiken. Det minskar risken för överförsäljning och gör inventeringen enklare." },
       { question: "Hur höjer vi konverteringsgrad på webshopen?", answer: "Vi optimerar genom: snabb checkout (1-click), Klarna-integration, bra produktfoton och beskrivningar, kundrecensioner, 'ofta köpt tillsammans' rekommendationer, och A/B-testning av call-to-actions. Genomsnittlig förbättring: 2% → 4-5% konverteringsgrad." },
     ]}
-    testimonial={{
-      quote: "Webshopen har helt förändrat vår business. Vi gick från att sälja bara i butiken till att nå kunder från hela Sverige. Första året gjorde webshopen 30% av vår totala försäljning. Rekommenderas starkt!",
-      author: "Per Andersson",
-      role: "Ägare, Möbelbutik Västerås",
-    }}
     relatedServices={[
       { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
       { label: "Webbutveckling", href: "/tjanster/webbutveckling" },

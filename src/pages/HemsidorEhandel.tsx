@@ -58,7 +58,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {"title":"Projektinsikt: Vintage-möbelaffär ökade försäljningen från 30k till 120k per månad","problem":"En vintage-möbelaffär i en mindre stad hade bara en liten fysisk butik. Försäljningen var stabil men inte växande. De kunde inte expandera lokalt för att det inte fanns plats.","solution":"Vi skapade en e-handelhemsida som visade sitt möbelsortiment, styling-guider, och erbjöd hemlevering. Publicerade en blogg om 'Vintage Furniture Trends', 'Interior Design with Vintage'. Drove trafik genom Google och Instagram.","result":"Efter åtta månader: e-handel-försäljningen var 80% av totala försäljningen, och månadsleveransen ökade från 30k till 120k. Affären kunde utöka sitt lager och anställa två fulltidsanställda för pakering och logistik."},
   faq: [
     { question: "Vilken plattform är bäst för min e-handel?", answer: "Det beror på din verksamhet. Vi hjälper dig att välja mellan WooCommerce, Shopify eller en headless lösning baserat på dina behov och tillväxtplaner." },
     { question: "Hur ökar jag konverteringen i min webbutik?", answer: "Fokusera på snabb laddning, tydlig navigation och ett enkelt checkout-flöde. Vi optimerar dessa element och använder A/B-testning för att hitta vad som fungerar bäst." },

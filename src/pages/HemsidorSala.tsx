@@ -54,7 +54,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {"title":"Projektinsikt: Liten hotell i Sala ökade bookningar med 110%","problem":"En liten familjeägd hotell i Sala centrum hade ingen hemsida. De var listad på booking.com och airbnb men helt osynliga för turister som sökte på Google. Många turister boekade hos andra hotell för att de inte kunde hitta dem.","solution":"Vi skapade en hemsida som visade alla rum med foton, facilities, närhet till Sala silvergruva och andra attraktioner. Integrerade booking-system. Optimerade för 'hotell Sala', 'boende Sala', 'Sala silvergruva nära'.","result":"Efter tre månader: ranking för flera turism-relaterade sökningar i Sala. Direkta bookningar via hemsidan ökade från nästan noll till 40% av total bookningar. Hotellet var ofta fullt på helger och kunde sätta upp priserna något.","note":"Hotellet är redan uppdaterat med detta case study, så vi lämnar det som är."},
   faq: [
     { question: "Vad kostar en hemsida för företag i Sala?", answer: "Vi erbjuder paket från 5 000 kr till 25 000 kr beroende på projektets storlek. För mer information om våra webbutvecklingstjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
     { question: "Kan ni hjälpa med SEO för företag i Sala?", answer: "Ja, alla våra hemsidor är SEO-optimerade. För djupgående SEO-tjänster som hjälper ditt företag att ranka högt i Sala, kolla in vår [SEO-optimering](/tjanster/seo-optimering)." },

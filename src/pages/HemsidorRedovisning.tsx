@@ -58,7 +58,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {"title":"Projektinsikt: Redovisningsbyrå i Västmanland ökade småföretag-kunder med 80%","problem":"En etablerad redovisningsbyrå med fem anställda hade en gammal hemsida och rankade inte för något. De fick nästan alla kunder genom lokal nätverk eller gamla relationer.","solution":"Vi skapade en modern hemsida som visade deras tjänster, priser, team-profilering, och blogg om 'Bookkeeping for Small Business', 'Tax Planning Guide'. Optimerade för redovisnings- och bokförings-sökningar.","result":"Efter fyra månader: ranking för flera redovisnings-sökningar lokalt. Nya småföretag-kunder via webben ökade från 1-2 per månad till 8-10 per månad. Byrån kunde växa från fem till åtta anställda."},
   faq: [
     { question: "Vad kostar en hemsida för en redovisningsbyrå?", answer: "Priserna startar vid 5 000 kr. Hör av dig för en offert baserad på din byrås behov och vilka funktioner du vill ha." },
     { question: "Kan ni bygga en klientportal?", answer: "Ja, vi bygger säkra klientportaler för dokumenthantering och kommunikation. Vi kan även integrera mot system som Fortnox eller Visma." },

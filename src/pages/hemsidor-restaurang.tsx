@@ -26,11 +26,6 @@ const RestaurantHomePage = () => (
       { step: "3", title: "SEO & Google Maps", description: "Vi optimerar din Google Business-profil, säkerställer rätt NAP-data (namn, adress, telefon) och implementerar lokal schema markup för restauranger." },
       { step: "4", title: "Lansering & support", description: "Vi lanserar hemsidan, tränar ditt personal att uppdatera menyn, och moniterar ranking för lokala sökningar." },
     ]}
-    caseStudies={[
-      { client: "Restaurang Västerås", metric: "+60%", result: "Bordsreservationer ökade med 60% första året efter hemsida lansering." },
-      { client: "Café Sala", metric: "+45%", result: "Online-beställningar och take-away-försäljning ökade med 45% tack vare integrerad beställningsfunktion." },
-      { client: "Kungsör Matsalong", metric: "Topp 3", result: "Rankade topp 3 på 'restaurang Kungsör' inom 3 månader med lokal SEO." },
-    ]}
     contentSections={[
       {
         title: "Varför restauranger behöver en hemsida 2026",
@@ -65,11 +60,6 @@ const RestaurantHomePage = () => (
       { question: "Kan vi uppdatera menyn själva?", answer: "Ja! Vi bygger ett enkelt admin-gränssnitt där du kan uppdatera menyn, priser, allergi-information och foto utan teknisk kunskap. Du kan också publicera vecko-specialer, happy hour-info och andra uppdateringar direkt." },
       { question: "Behöver vi uppdatera Google Maps regelbundet?", answer: "Ja, det hjälper ranking. Vi sätter upp ett system så du kan lägga upp posts på Google Business-profilen (foto av ny rätt, special menu osv) direkt från ditt telefon. Det tar 30 sekunder och boost din synlighet på Google Maps." },
     ]}
-    testimonial={{
-      quote: "Vår nye hemsida har helt förändrat vår business. Bokningarna ökade med 150% första året och vi kan nu välja mellan vilka gäster vi vill ha. Rekommenderas starkt!",
-      author: "Magnus Bergström",
-      role: "Ägare, Restaurang Västerås",
-    }}
     relatedServices={[
       { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
       { label: "Webbutveckling", href: "/tjanster/webbutveckling" },

@@ -26,11 +26,6 @@ const WebbutvecklingPage = () => (
       { step: "3", title: "Utveckling & optimering", description: "Vi bygger din hemsida i React/Next.js med fokus på prestanda, tillgänglighet och SEO. Varje sida optimeras för snabbast möjliga laddtid och bästa Core Web Vitals." },
       { step: "4", title: "Lansering & uppföljning", description: "Vi lanserar din nya sajt, konfigurerar analytics och ger dig en genomgång. Efter lansering följer vi upp med support och kontinuerliga justeringar." },
     ]}
-    caseStudies={[
-      { client: "TechStart Västerås", metric: "+65%", result: "Ökning i organisk trafik inom 3 månader efter lansering av ny Next.js-sajt." },
-      { client: "Bygg & Design AB", metric: "0.8s", result: "Laddtid på startsidan efter optimering – ner från 4.2 sekunder." },
-      { client: "Sala Restaurang", metric: "+40%", result: "Fler kontaktförfrågningar efter lansering av mobilanpassad hemsida." },
-    ]}
     contentSections={[
       {
         title: "Webbutveckling som långsiktig investeringär",
@@ -80,11 +75,6 @@ const WebbutvecklingPage = () => (
       { question: "Ingår mobiloptimering i er webbutveckling?", answer: "Självklart, alla våra projekt bygger på en mobil-först-strategi för maximal räckvidd och bästa möjliga användarupplevelse på alla enheter." },
       { question: "Hur ser er process ut för ett webbutvecklingsprojekt?", answer: "Vi arbetar i fyra steg: behovsanalys, design/prototyp, utveckling/optimering och lansering/uppföljning. Du är involverad i varje fas." },
     ]}
-    testimonial={{
-      quote: "Lucas levererade en webbplats som överträffade alla våra förväntningar. Snabb, modern och enkel att uppdatera.",
-      author: "Erik Johansson",
-      role: "VD, TechStart Västerås",
-    }}
     relatedServices={[
       { label: "Webbdesign", href: "/tjanster/webbdesign" },
       { label: "Prestanda-optimering", href: "/tjanster/prestanda-optimering" },

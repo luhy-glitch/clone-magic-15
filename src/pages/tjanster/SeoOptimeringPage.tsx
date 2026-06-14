@@ -26,11 +26,6 @@ const SeoOptimeringPage = () => (
       { step: "3", title: "Implementering", description: "Vi optimerar din webbplats tekniskt, förbättrar innehåll och metadata, och bygger en stark intern länkstruktur." },
       { step: "4", title: "Mätning & rapport", description: "Månatlig uppföljning med tydliga KPI:er och löpande optimering baserat på data och resultat." },
     ]}
-    caseStudies={[
-      { client: "Köpings Rörmokare", metric: "Topp 3", result: "Gick från sida 3 till topp 3 på Google inom 4 månader med lokal SEO." },
-      { client: "Sala Trädgård", metric: "+120%", result: "Ökning i organisk trafik efter 6 månaders SEO-arbete med lokalt fokus." },
-      { client: "Västerås El & VVS", metric: "+85%", result: "Fler inkommande samtal tack vare optimerad Google Business-profil." },
-    ]}
     contentSections={[
       {
         title: "SEO som långsiktig tillväxtmotor för ditt företag",
@@ -82,11 +77,6 @@ const SeoOptimeringPage = () => (
       { question: "Kan ni garantera en förstaplats?", answer: "Ingen seriös aktör ger garantier, men våra metoder följer Googles Best Practices för att ge dig absolut bäst förutsättningar att nå toppresultaten." },
       { question: "Hur mäter ni resultaten av SEO?", answer: "Vi följer upp med månatliga rapporter som visar rankingpositioner, organisk trafik, konverteringar och andra relevanta KPI:er med full transparens." },
     ]}
-    testimonial={{
-      quote: "Inom 4 månader gick vi från sida 3 till topp 3 på Google för våra viktigaste sökord. Fantastiskt arbete!",
-      author: "Marcus Ek",
-      role: "Ägare, Köpings Rörmokare",
-    }}
     relatedServices={[
       { label: "Prestanda-optimering", href: "/tjanster/prestanda-optimering" },
       { label: "Webbutveckling", href: "/tjanster/webbutveckling" },

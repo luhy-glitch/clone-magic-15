@@ -27,11 +27,6 @@ const UnderhallSupportPage = () => (
       { question: "Hur kontaktar jag supporten?", answer: "Du når oss via mejl eller telefon. Vi finns lokalt i Västmanland för snabb hantering och personlig kontakt." },
       { question: "Kan ni ta över en sajt byggd av annan byrå?", answer: "Ja, vi tar regelbundet över webbplatser från andra leverantörer. Vi gör alltid en teknisk genomgång först för att säkerställa full kontroll." },
     ]}
-    testimonial={{
-      quote: "Vi sover gott om natten nu. Lucas sköter allt tekniskt och vi kan fokusera på våra kunder istället.",
-      author: "Peter Nilsson",
-      role: "VD, Nilssons Fastigheter",
-    }}
     contentSections={[
       {
         title: "Kundcase: Trygg drift för fastighetsbolag",

@@ -26,11 +26,6 @@ const AccountingHomePage = () => (
       { step: "3", title: "Innehål & SEO", description: "Vi skriver guider om bokföring, skatt och redovisning optimerade för Google. Din hemsida rankar för 'redovisningsbyrå [stad]', 'bokföring för startups' osv." },
       { step: "4", title: "Lansering & training", description: "Vi lanserar hemsidan och tränar ditt personal att uppdatera priser, lägga till nya testimon och hantera klientportaler." },
     ]}
-    caseStudies={[
-      { client: "Redovisningsbyrå Västerås", metric: "+60%", result: "Nya klientförfrågningar ökade 60% första året tack vare högre ranking och professionell hemsida." },
-      { client: "Revisionsbyrå Köping", metric: "+45%", result: "Klientportalen minskade administrativ belastning med 45% genom automation av dokumentöverföring." },
-      { client: "Startup Konsult Uppsala", metric: "Topp 1", result: "Rankade topp 1 på 'bokföring startups Uppsala' och nådde helt ny kundsegment." },
-    ]}
     contentSections={[
       {
         title: "Varför hemsida för redovisningsbyråer är kritisk",
@@ -65,11 +60,6 @@ const AccountingHomePage = () => (
       { question: "Vilka sökord rankar vi för som redovisningsbyrå?", answer: "Det beror på din nisch. Allmäna: 'redovisningsbyrå [stad]', 'bokföring [stad]'. Nischerade: 'bokföring startup', 'skatterådgivning egenföretagare', 'årsredovisning [stad]'. Vi gör sökordsanalys för din specifika byrå och bransch." },
       { question: "Kan vi erbjuda self-service bokföring till klienter?", answer: "Ja! Vi kan integrera bokföringsjournaler direkt i klientportalen så att klienter kan mata in dagliga transaktioner själva. Det minskar arbetet på din byrå och gör klienterna mer engagerade i sin redovisning." },
     ]}
-    testimonial={{
-      quote: "Hemsidan och klientportalen har helt transformerat hur vi arbetar. Klienter älskar att kunna ladda upp dokument själva och se status på sin årsredovisning. Vi får också mycket fler nya förfrågningar från Google. Mycket nöjd!",
-      author: "Annika Bergström",
-      role: "VD, Redovisningsbyrå Västerås",
-    }}
     relatedServices={[
       { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
       { label: "Webbutveckling", href: "/tjanster/webbutveckling" },

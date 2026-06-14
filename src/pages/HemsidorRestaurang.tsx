@@ -58,7 +58,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {"title":"Projektinsikt: Restaurang i större stad ökade gäster med 190%","problem":"En restaurang utan hemsida eller online-bokeringsmöjlighet förlorade gäster till restauranger som hade det. Turister kunde inte hitta dem. Lokala kunder kunde inte se menyn innan de kom.","solution":"Vi skapade en hemsida med meny, matsedel-bilder, reservationssystem, och öppettider. Optimerade för lokala restaurang-sökningar.","result":"Efter två månader: ranking för flera lokala restaurang-sökningar. Gäster från webben ökade från 10-15% till 45-50% av totala besök. Restaurangen behövde utöka öppethållandet för att kunna ta fler gäster."},
   faq: [
     { question: "Behöver en restaurang verkligen en egen hemsida?", answer: "Ja. En egen hemsida ger dig full kontroll över din meny, dina öppettider och din bokning. Den gör också att du syns i Google istället för att vara beroende av tredjepartsplattformar." },
     { question: "Kan ni bygga bokningssystem utan provision?", answer: "Ja. Vi bygger bokningslösningar direkt i din hemsida utan att ta provision per bokning. Det sparar pengar och ger dig bättre kunddata." },

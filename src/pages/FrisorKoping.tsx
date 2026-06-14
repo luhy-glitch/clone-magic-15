@@ -57,7 +57,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {"title":"Projektinsikt: Herr-frisörsalong i Köping ökade kunder med 155%","problem":"En klassisk herr-frisörsalong i Köping hade funnits i 20 år men var helt osynlig på Google. De förlitade sig på återkommande kunder och lokala nätverk. De kunde inte växa.","solution":"Vi skapade en hemsida som visade barbersalong-miljön, tjänster, pris, och möjlighet att boka tid online. Lade till FAQ och blogg om 'Men's Grooming Tips', 'Beard Care Guide'. Optimerade för 'herrfrisör Köping', 'barbersalong Köping'.","result":"Efter tre månader: topp 1 ranking för flera frisör-sökningar i Köping. Nya kunder öppet-drop-in och online-bokningar ökade från 5-10 per vecka till 25-30 per vecka. Salongen behövde anställa en extra frisör."},
   faq: [
     { question: "Vad kostar en hemsida för en frisörsalong i Köping?", answer: "Vi erbjuder paket från 5 000 kr. För mer information om våra tjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
     { question: "Kan ni integrera mitt befintliga bokningssystem?", answer: "Ja, vi kan integrera olika bokningssystem. För SEO-tjänster, kolla in [SEO-optimering](/tjanster/seo-optimering)." },

@@ -58,12 +58,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {
-    title: "Projektinsikt: Hantverksföretag i Västerås fick modern grafisk identitet",
-    problem: "Ett hantverksföretag i Västerås med 8 anställda använde en logotyp från 2008 och en WordPress-sajt som laddade på 6 sekunder. De fick inga förfrågningar via webben trots att de aktivt marknadsförde sig via Google Ads.",
-    solution: "Vi skapade en ny grafisk profil med logotyp, färgpalett och typografi. Sajten byggdes om i React med 100/100 PageSpeed, och vi lade till lokal SEO-struktur med Google Business-optimering och lokala landningssidor för deras tjänstekommuner.",
-    result: "Sajten laddade nu på under 0,8 sekunder och Google Ads-konverteringsgraden tredubblades. Organisk trafik ökade med 180 procent på sex månader och de fick dagliga förfrågningar via kontaktformuläret för första gången.",
-  },
   faq: [
     {
       question: "Vad kostar det att anlita en designbyrå i Västerås?",

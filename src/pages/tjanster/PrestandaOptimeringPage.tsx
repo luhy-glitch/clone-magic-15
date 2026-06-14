@@ -26,11 +26,6 @@ const PrestandaOptimeringPage = () => (
       { step: "3", title: "Teknisk optimering", description: "Vi implementerar åtgärder: bildkomprimering till AVIF/WebP, koddelning, cachning, CDN-konfiguration, skriptoptimering och rendering-förbättringar." },
       { step: "4", title: "Verifiering & rapport", description: "Vi mäter resultaten med en detaljerad före/efter-rapport som visar konkreta förbättringar i Lighthouse-poäng och laddtider." },
     ]}
-    caseStudies={[
-      { client: "FastTrack AB", metric: "42→98", result: "Lighthouse-poäng efter fullständig prestandaoptimering. Laddtid under 1 sekund." },
-      { client: "Västerås Handel", metric: "-3.4s", result: "Minskad laddtid från 4.2s till 0.8s med bildoptimering och koddelning." },
-      { client: "Sala Bygg", metric: "+25%", result: "Ökning i konverteringsgrad efter att Core Web Vitals nådde gröna tröskelvärden." },
-    ]}
     contentSections={[
       {
         title: "Kundcase: Från rött till grönt i Lighthouse",
@@ -56,11 +51,6 @@ const PrestandaOptimeringPage = () => (
       { question: "Kan ni optimera min befintliga sajt?", answer: "Ja, vi utför prestandaanalyser på alla typer av plattformar – WordPress, React, Shopify och mer – och implementerar konkreta förbättringar." },
       { question: "Vad är Core Web Vitals?", answer: "Det är Googles mätvärden för användarupplevelse: LCP (laddtid), INP (interaktivitet) och CLS (visuell stabilitet). Bra poäng ger direkt bättre ranking i sökresultaten." },
     ]}
-    testimonial={{
-      quote: "Vår Lighthouse-poäng gick från 42 till 98. Sajten laddar nu på under en sekund och vi ser direkt fler förfrågningar.",
-      author: "Karin Olsson",
-      role: "Marknadschef, FastTrack AB",
-    }}
     relatedServices={[
       { label: "SEO-optimering", href: "/tjanster/seo-optimering" },
       { label: "Webbutveckling", href: "/tjanster/webbutveckling" },

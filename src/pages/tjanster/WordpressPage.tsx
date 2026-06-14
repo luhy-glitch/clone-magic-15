@@ -26,11 +26,6 @@ const WordpressPage = () => (
       { question: "Kan jag byta från WordPress till Next.js senare?", answer: "Ja, vi kan hjälpa dig med en smidig migration inklusive SEO-omdirigeringar när ditt företag växer och behöver mer kraft och flexibilitet." },
       { question: "Behöver jag ett underhållsavtal?", answer: "Vi rekommenderar det starkt. WordPress kräver regelbundna uppdateringar och säkerhetsövervakning för att förbli säkert och snabbt." },
     ]}
-    testimonial={{
-      quote: "Äntligen en WordPress-sajt som känns snabb och säker. Lucas fixade allt vi behövde och mer därtill.",
-      author: "Sofia Berg",
-      role: "Grundare, Bergström Design",
-    }}
     contentSections={[
       {
         title: "Kundcase: Säkerhetsöversyn och prestandalyft",

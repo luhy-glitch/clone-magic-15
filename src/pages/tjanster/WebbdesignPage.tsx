@@ -28,11 +28,6 @@ const WebbdesignPage = () => (
       { question: "Är designen unik för mitt företag?", answer: "Ja, vi arbetar aldrig med färdiga mallar. Varje pixel är anpassad efter din specifika verksamhet, målgrupp och varumärkesidentitet." },
       { question: "Hur lång tid tar en designprocess?", answer: "En komplett designprocess tar vanligtvis 2–4 veckor, beroende på projektets omfattning. Du får löpande presentationer och möjlighet att ge feedback." },
     ]}
-    testimonial={{
-      quote: "Den nya designen har gett oss 40% fler förfrågningar. Kunderna säger att sidan känns proffsig och trovärdig.",
-      author: "Anna Lindström",
-      role: "Marknadschef, Sala Bygg AB",
-    }}
     contentSections={[
       {
         title: "Kundcase: Ny digital identitet för lokal byrå",

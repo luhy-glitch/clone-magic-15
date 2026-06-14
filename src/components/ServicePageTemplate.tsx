@@ -23,7 +23,6 @@ import {
   LocalPartnerSection,
   type ServiceFeature,
   type ProcessStep,
-  type CaseStudy,
   type RelatedService,
   type FAQItem,
   type ContentSection,
@@ -39,11 +38,6 @@ interface ServicePageProps {
   whyTitle: string;
   whyText: string;
   features: ServiceFeature[];
-  testimonial?: {
-    quote: string;
-    author: string;
-    role: string;
-  };
   icon: LucideIcon;
   breadcrumbLabel: string;
   serviceType?: string;
@@ -51,7 +45,6 @@ interface ServicePageProps {
   faq?: FAQItem[];
   faqTitle?: string;
   process?: ProcessStep[];
-  caseStudies?: CaseStudy[];
   contentSections?: ContentSection[];
 }
 

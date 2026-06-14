@@ -48,12 +48,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {
-    title: "Projektinsikt: Byggföretag i Eskilstuna gick från sida 4 till topp 3",
-    problem: "Ett byggföretag i Eskilstuna med starkt lokalt rykte hade en långsam, föråldrad hemsida som rankade på sida fyra för sina viktigaste sökord. Trots full orderbok via rekommendationer fick de nästan inga förfrågningar online och var osynliga för nya kunder som sökte på Google.",
-    solution: "Vi byggde om sajten i React med 100/100 PageSpeed, genomförde en fullständig teknisk SEO-audit och åtgärdade indexerings- och strukturproblem. Vi implementerade LocalBusiness- och Service-schema, optimerade Google Business-profilen och skapade lokalt förankrade tjänstesidor för deras kärnområden i Eskilstuna och Södermanland.",
-    result: "Inom fem månader rankade företaget topp 3 för sina primära Eskilstuna-sökord och topp 1 för flera nischade fraser. Organisk trafik ökade med 180 procent och antalet offertförfrågningar via webben mer än fördubblades.",
-  },
   faq: [
     { question: "Hur mycket kostar SEO i Eskilstuna?", answer: "Vi erbjuder SEO-paket från 3 000 kr/månad anpassade efter konkurrens och mål. Se våra [SEO-tjänster](/tjanster/seo-optimering) eller börja med en [gratis SEO-analys](/gratis-seo-analys)." },
     { question: "Hur lång tid tar det att se resultat av SEO i Eskilstuna?", answer: "De första förbättringarna syns oftast inom 2–3 månader. För konkurrensutsatta sökord som 'seo eskilstuna' kan det ta 6–12 månader att nå toppositionerna – men resultatet håller sedan över tid." },

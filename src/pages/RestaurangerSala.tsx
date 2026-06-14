@@ -57,7 +57,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {"title":"Projektinsikt: Italiensk restaurang i Sala ökade reservationer med 125%","problem":"En nyöppnad italiensk restaurang i Sala centrum hade ingen hemsida. Turister kunde inte hitta dem. Lokala kunder visste knappt att de fanns.","solution":"Vi skapade en hemsida med menyer, fotobeskrivningar av rätter, reservationssystem, och information om special events. Optimerade för 'restaurang Sala', 'italiensk mat Sala', 'lunch Sala'.","result":"Efter tre månader: ranking för flera lokala restaurang-sökningar. Reservationer via hemsida ökade från nästan noll till 60-70% av totala reservationer. Restaurangen var ofta fullt bokad på helger.","note":"Redan uppdaterad med detta case study, lämnar som är."},
   faq: [
     { question: "Vad kostar en hemsida för en restaurang i Sala?", answer: "Vi erbjuder paket från 5 000 kr. För mer information om våra tjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
     { question: "Kan jag själv uppdatera dagens lunch på hemsidan?", answer: "Ja, vi bygger en enkel lösning. För SEO-tjänster, kolla in [SEO-optimering](/tjanster/seo-optimering)." },

@@ -48,12 +48,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {
-    title: "Projektinsikt: Tjänsteföretag i Västerås gick från sida 5 till topp 3",
-    problem: "Ett etablerat tjänsteföretag i Västerås med 12 anställda hade en WordPress-sajt som laddade på över fem sekunder och rankade på sida fem för sina viktigaste sökord. Trots gott rykte lokalt fick de nästan inga förfrågningar via webben – kunderna hittade konkurrenterna först.",
-    solution: "Vi byggde om sajten i React med 100/100 PageSpeed, genomförde en fullständig teknisk SEO-audit och åtgärdade indexerings- och struktur­problem. Vi implementerade LocalBusiness- och Service-schema, optimerade Google Business-profilen och skapade lokalt förankrade landningssidor för deras kärntjänster i Västerås.",
-    result: "Inom fyra månader rankade företaget topp 3 för sina primära Västerås-sökord och topp 1 för flera nischade fraser. Organisk trafik ökade med 210 procent och antalet webbförfrågningar tredubblades, vilket gjorde organisk sökning till deras främsta kanal för nya kunder.",
-  },
   faq: [
     { question: "Hur mycket kostar SEO i Västerås?", answer: "Vi erbjuder SEO-paket från 3 000 kr/månad anpassade efter konkurrens och mål. Se våra [SEO-tjänster](/tjanster/seo-optimering) för mer information, eller börja med en [gratis SEO-analys](/gratis-seo-analys)." },
     { question: "Hur lång tid tar det att se resultat av SEO i Västerås?", answer: "De första förbättringarna syns oftast inom 2–3 månader. För konkurrensutsatta sökord som 'seo västerås' kan det ta 6–12 månader att nå toppositionerna – men resultatet håller sedan över tid." },

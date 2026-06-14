@@ -57,7 +57,6 @@ const config = {
       ],
     },
   ],
-  caseStudy: {"title":"Projektinsikt: Renovationsbyrå i Västmanland 4x:ade uppdrag från webbsidor","problem":"En renovationsbyrå med tre anställda arbetade endast genom lokal marknadsföring och mun-till-mun. De kunde inte växa för att de var helt osynliga för nya potentiella kunder som sökte på Google.","solution":"Vi skapade en portfolihemsida med före/efter-bilder från renovationsprojekt, FAQ om renovering, och blogg om 'Kitchen Renovation Trends', 'Bathroom Remodeling Guide'. Optimerade för renoverings-sökningar i alla städer i Västmanland.","result":"Efter sex månader: topp 3 ranking för flera renoverings-sökningar i Västmanland-städer. Uppdrag från webben ökade från 1-2 per månad till 8-10 per månad. Byrån kunde växa från tre till sex anställda."},
   faq: [
     { question: "Behöver hantverkare verkligen en hemsida?", answer: "Ja, 97 procent av konsumenterna söker efter lokala tjänster online. För att förbättra din synlighet, överväg våra [SEO-optimeringstjänster](/tjanster/seo-optimering)." },
     { question: "Vad kostar en hemsida för ett byggföretag?", answer: "Vi erbjuder paket från 5 000 kr. För detaljer om våra webbutvecklingstjänster, besök [webbutveckling](/tjanster/webbutveckling)." },

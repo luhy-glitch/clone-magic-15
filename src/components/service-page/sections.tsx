@@ -24,12 +24,6 @@ export interface ProcessStep {
   description: string;
 }
 
-export interface CaseStudy {
-  client: string;
-  result: string;
-  metric: string;
-}
-
 export interface RelatedService {
   label: string;
   href: string;
@@ -138,28 +132,6 @@ export const ServiceProcess = ({ steps }: { steps: ProcessStep[] }) => (
   </section>
 );
 
-export const ServiceCaseStudies = ({ cases }: { cases: CaseStudy[] }) => (
-  <section className="py-16 sm:py-24 bg-background" aria-labelledby="service-cases-heading">
-    <div className="max-w-4xl mx-auto px-4 sm:px-6">
-      <AnimatedSection>
-        <h2 id="service-cases-heading" className="text-2xl sm:text-3xl font-bold font-serif text-center mb-12">
-          Kundcase med mätbara resultat
-        </h2>
-      </AnimatedSection>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {cases.map((cs, i) => (
-          <FadeIn key={cs.client} delay={i * 0.1}>
-            <article className="bg-card border border-border rounded-xl p-6 text-center">
-              <div className="text-3xl font-bold text-primary font-serif mb-2">{cs.metric}</div>
-              <p className="text-foreground font-medium mb-1">{cs.client}</p>
-              <p className="text-muted-foreground text-sm leading-relaxed">{cs.result}</p>
-            </article>
-          </FadeIn>
-        ))}
-      </div>
-    </div>
-  </section>
-);
 
 export const ServiceFAQ = ({ faq, title }: { faq: FAQItem[]; title?: string }) => (
   <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="service-faq-heading">
