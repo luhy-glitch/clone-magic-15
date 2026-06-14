@@ -18,7 +18,9 @@ const posts: LocalBlogPost[] = (blogPostsData as RawPost[]).map((p) => ({
   content: Array.isArray(p.content) ? p.content.join("\n\n") : p.content,
 }));
 
-const today = new Date().toISOString().slice(0, 10);
+// Swedish local date (Europe/Stockholm, DST-safe) so a post scheduled for
+// "today" isn't hidden client-side until 02:00 CEST / 01:00 CET.
+const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Stockholm" });
 const publishedPosts = posts.filter(
   (p) => !p.scheduled_date || p.scheduled_date <= today
 );

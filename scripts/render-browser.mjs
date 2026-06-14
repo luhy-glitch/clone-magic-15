@@ -11,7 +11,9 @@ const distDir = path.resolve(__dirname, '../dist');
 let blogPosts = [];
 const blogDataPath = path.resolve(__dirname, "../src/data/blogPosts.json");
 if (fs.existsSync(blogDataPath)) {
-  const today = new Date().toISOString().slice(0, 10);
+  // Swedish local date (Europe/Stockholm, DST-safe). UTC would hide a post
+  // scheduled for "today" until 02:00 CEST / 01:00 CET. sv-SE => YYYY-MM-DD.
+  const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Stockholm' });
   const posts = JSON.parse(fs.readFileSync(blogDataPath, "utf-8"));
   blogPosts = posts.filter(p => !p.scheduled_date || p.scheduled_date <= today).map(p => p.slug);
 }

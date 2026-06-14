@@ -8,7 +8,9 @@ const rootDir = path.resolve(__dirname, "..");
 const distDir = path.resolve(__dirname, '../dist');
 
 const SITE_URL = 'https://www.lrhkonsult.se';
-const TODAY = new Date().toISOString().split('T')[0];
+// Swedish local date (Europe/Stockholm, DST-safe). UTC would exclude a post
+// scheduled for "today" from the sitemap until 02:00 CEST / 01:00 CET.
+const TODAY = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Stockholm' });
 
 let blogPosts = [];
 // Real per-post lastmod (updated_at || date) so Google gets accurate freshness
