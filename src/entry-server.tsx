@@ -6,7 +6,7 @@ import { StaticRouter } from "react-router-dom/server";
 // Vi tvingar React att bli 100% synkront innan AppContent laddas
 (React as any).lazy = (factory: () => Promise<any>) => {
   let Component: any = null;
-  let promise = factory().then((m) => { Component = m.default || m; });
+  const promise = factory().then((m) => { Component = m.default || m; });
   return (props: any) => Component ? React.createElement(Component, props) : null;
 };
 (React as any).Suspense = ({ children }: any) => children;

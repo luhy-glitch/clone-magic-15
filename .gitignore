@@ -26,3 +26,10 @@ dist-server/
 # NOTE: dist/ is intentionally committed — Vercel serves the prerendered
 # dist/ as-is (build-smart.mjs skips building on Vercel). Do not gitignore it,
 # or rebuilt asset/image files silently won't deploy.
+
+# Lokala miljövariabler (avtrackad av Claude 2026-06-14)
+.env
+.env.local
+
+# TypeScript build-cache
+*.tsbuildinfo
