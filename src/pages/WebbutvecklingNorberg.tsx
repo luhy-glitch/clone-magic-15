@@ -4,6 +4,7 @@ import LocalLandingPage from "./LocalLandingPage";
 const config = {
   city: "Norberg",
   slug: "webbutveckling-norberg",
+  noindex: true,
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Norberg - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Snabba hemsidor i Norberg som rankar på Google. 100/100 PageSpeed, lokal SEO och modern webbutveckling i Västmanland.",

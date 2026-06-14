@@ -14,9 +14,10 @@ interface PageHeadProps {
   ogImage?: string;
   jsonLd?: Record<string, unknown>;
   breadcrumbs?: BreadcrumbEntry[];
+  noindex?: boolean;
 }
 
-const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs }: PageHeadProps) => {
+const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs, noindex }: PageHeadProps) => {
   const { pathname } = useLocation();
   const cleanPath = pathname === "/" ? "" : pathname.replace(/\/+$/, "");
   const url = canonical || `${BASE_URL}${cleanPath}`;
@@ -47,6 +48,14 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs 
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
     setMeta("twitter:image", image);
+
+    // Robots: noindex för tunna/lågvärdessidor (behåll follow så länkvärde flödar)
+    const robotsEl = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    if (noindex) {
+      setMeta("robots", "noindex,follow");
+    } else if (robotsEl) {
+      robotsEl.remove();
+    }
 
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
@@ -165,7 +174,7 @@ const PageHead = ({ title, description, canonical, ogImage, jsonLd, breadcrumbs 
       const dbEl = document.getElementById(defaultBreadcrumbId);
       if (dbEl) dbEl.remove();
     };
-  }, [title, description, url, jsonLd, breadcrumbs]);
+  }, [title, description, url, jsonLd, breadcrumbs, noindex]);
 
   return null;
 };

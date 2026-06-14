@@ -44,6 +44,7 @@ interface LocalPageConfig {
   bodyExtraSections?: ExtraSection[];
   caseStudy?: CaseStudy;
   faq: FAQItem[];
+  noindex?: boolean;
 }
 
 const RELATED_SERVICES = [
@@ -126,7 +127,7 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
 
   return (
     <div className="min-h-screen">
-      <PageHead title={config.metaTitle} description={config.metaDescription} jsonLd={jsonLd} breadcrumbs={breadcrumbs} />
+      <PageHead title={config.metaTitle} description={config.metaDescription} jsonLd={jsonLd} breadcrumbs={breadcrumbs} noindex={config.noindex} />
       <Navbar />
       <main className="pt-16">
         {/* Hero */}
@@ -230,24 +231,6 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
             </div>
           </section>
         ))}
-
-        {/* Projektinsikt – Case Study */}
-        {config.caseStudy && (
-          <section className={`py-16 sm:py-24 ${(config.bodyExtraSections?.length ?? 0) % 2 === 0 ? "bg-section-alt" : "bg-background"}`} aria-labelledby="local-case-heading">
-            <div className="max-w-[70ch] mx-auto px-4 sm:px-6">
-              <AnimatedSection>
-                <h2 id="local-case-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">
-                  {config.caseStudy.title}
-                </h2>
-                <div className="space-y-5 text-muted-foreground leading-[1.7] text-base">
-                  <p><strong className="text-foreground">Utmaning:</strong> {config.caseStudy.problem}</p>
-                  <p><strong className="text-foreground">Lösning:</strong> {config.caseStudy.solution}</p>
-                  <p><strong className="text-foreground">Resultat:</strong> {config.caseStudy.result}</p>
-                </div>
-              </AnimatedSection>
-            </div>
-          </section>
-        )}
 
         {/* People Also Ask Section */}
         <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="paa-heading">

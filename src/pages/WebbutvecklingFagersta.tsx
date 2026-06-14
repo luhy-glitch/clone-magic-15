@@ -4,6 +4,7 @@ import LocalLandingPage from "./LocalLandingPage";
 const config = {
   city: "Fagersta",
   slug: "webbutveckling-fagersta",
+  noindex: true,
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Fagersta – Industriservice & Hantverkare | LRH Konsult",
   metaDescription: "Hemsidor för industriföretag och hantverkare i Fagersta. Nå kunder från Norberg till Avesta. React, 100/100 PageSpeed, lokal SEO.",

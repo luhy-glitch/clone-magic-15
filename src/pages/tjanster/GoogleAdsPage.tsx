@@ -293,24 +293,6 @@ const GoogleAdsPage = () => {
           </div>
         </section>
 
-        {/* Testimonial */}
-        <section className="py-16 sm:py-24 bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <AnimatedSection>
-              <div className="max-w-2xl mx-auto text-center">
-                <div className="text-4xl text-primary mb-6" aria-hidden="true">"</div>
-                <blockquote className="text-lg sm:text-xl font-serif italic leading-relaxed text-foreground">
-                  Vi fick in tre nya kunder redan första veckan med Google Ads. Lucas hjälpte oss att rikta annonserna exakt rätt och vi ser en tydlig ROI varje månad.
-                </blockquote>
-                <div className="mt-6">
-                  <p className="font-bold text-foreground">Erik Lindström</p>
-                  <p className="text-sm text-muted-foreground">VD, Lindström Bygg AB, Västerås</p>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
         {/* Related services */}
         <section className="py-12 sm:py-16 bg-section-alt border-t border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">

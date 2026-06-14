@@ -4,6 +4,7 @@ import LocalLandingPage from "./LocalLandingPage";
 const config = {
   city: "Kungsör",
   slug: "webbutveckling-kungsor",
+  noindex: true,
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Kungsör - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Professionella hemsidor i Kungsör som rankar på Google. 100/100 PageSpeed, lokal SEO och modern webbutveckling i Västmanland.",

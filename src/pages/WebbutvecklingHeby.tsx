@@ -4,6 +4,7 @@ import LocalLandingPage from "./LocalLandingPage";
 const config = {
   city: "Heby",
   slug: "webbutveckling-heby",
+  noindex: true,
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Heby - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Professionella hemsidor i Heby som rankar på Google. 100/100 PageSpeed, lokal SEO och modern webbutveckling i Uppsala län.",

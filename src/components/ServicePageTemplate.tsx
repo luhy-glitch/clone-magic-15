@@ -18,7 +18,6 @@ import {
   ServiceHero,
   ServiceFeatures,
   ServiceProcess,
-  ServiceCaseStudies,
   ServiceFAQ,
   ServiceCTA,
   LocalPartnerSection,
@@ -40,7 +39,7 @@ interface ServicePageProps {
   whyTitle: string;
   whyText: string;
   features: ServiceFeature[];
-  testimonial: {
+  testimonial?: {
     quote: string;
     author: string;
     role: string;
@@ -126,14 +125,12 @@ const ServicePageTemplate = ({
   whyTitle,
   whyText,
   features,
-  testimonial,
   icon: Icon,
   breadcrumbLabel,
   relatedServices,
   faq,
   faqTitle,
   process,
-  caseStudies,
   contentSections,
 }: ServicePageProps) => {
   const { pathname } = useLocation();
@@ -197,7 +194,6 @@ const ServicePageTemplate = ({
 
         {process && process.length > 0 && <ServiceProcess steps={process} />}
 
-        {caseStudies && caseStudies.length > 0 && <ServiceCaseStudies cases={caseStudies} />}
 
         {/* Content sections */}
         {contentSections && contentSections.length > 0 && contentSections.map((section, idx) => (
@@ -218,25 +214,6 @@ const ServicePageTemplate = ({
         ))}
 
         {faq && faq.length > 0 && <ServiceFAQ faq={faq} title={faqTitle} />}
-
-        {/* Testimonial */}
-        <section className="py-16 sm:py-24 bg-background" aria-labelledby="service-testimonial-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <AnimatedSection>
-              <div className="max-w-2xl mx-auto text-center">
-                <h2 id="service-testimonial-heading" className="sr-only">Kundrecension</h2>
-                <div className="text-4xl text-primary mb-6" aria-hidden="true">"</div>
-                <blockquote className="text-lg sm:text-xl font-serif italic leading-relaxed text-foreground">
-                  {testimonial.quote}
-                </blockquote>
-                <div className="mt-6">
-                  <p className="font-bold text-foreground">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
 
         {/* Related services */}
         {relatedServices && relatedServices.length > 0 && (

@@ -162,15 +162,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Trust Logos */}
-      <div className="mt-14 w-full max-w-3xl relative z-10 text-center">
-        <p className="text-xs text-muted-foreground uppercase tracking-widest mb-6 font-medium">Företag som valt LRH Konsult</p>
-        <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 opacity-50">
-          {["Johansson Redovisning", "Lindströms Bygg", "Café Solsidan", "Bergströms El", "Nilssons Trädgård"].map((name) => (
-            <span key={name} className="text-sm font-serif font-medium text-muted-foreground whitespace-nowrap">{name}</span>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }

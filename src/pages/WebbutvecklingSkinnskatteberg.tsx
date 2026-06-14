@@ -4,6 +4,7 @@ import LocalLandingPage from "./LocalLandingPage";
 const config = {
   city: "Skinnskatteberg",
   slug: "webbutveckling-skinnskatteberg",
+  noindex: true,
   serviceKeyword: "Webbutveckling",
   metaTitle: "Webbutveckling Skinnskatteberg - Hemsidor & SEO | LRH Konsult",
   metaDescription: "Moderna hemsidor i Skinnskatteberg som rankar på Google. 100/100 PageSpeed, lokal SEO och professionell webbutveckling i Västmanland.",
