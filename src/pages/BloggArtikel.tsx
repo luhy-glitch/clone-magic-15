@@ -244,7 +244,7 @@ const BloggArtikel = () => {
           "@type": "ImageObject",
           "url": post.image_url
             ? (post.image_url.startsWith("http") ? post.image_url : `https://www.lrhkonsult.se${post.image_url}`)
-            : "https://www.lrhkonsult.se/og-image.png",
+            : "https://www.lrhkonsult.se/og-image.jpg",
           "width": 1200,
           "height": 630,
         },
@@ -255,7 +255,7 @@ const BloggArtikel = () => {
           url: "https://www.lrhkonsult.se",
           logo: {
             "@type": "ImageObject",
-            "url": "https://www.lrhkonsult.se/og-image.png",
+            "url": "https://www.lrhkonsult.se/og-image.jpg",
             "width": 1200,
             "height": 630,
           },

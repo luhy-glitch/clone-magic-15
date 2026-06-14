@@ -49,7 +49,7 @@ const localBusinessJsonLd = {
   "url": "https://www.lrhkonsult.se",
   "telephone": "+46704606578",
   "email": "lucas@lrhkonsult.se",
-  "image": "https://www.lrhkonsult.se/og-image.png",
+  "image": "https://www.lrhkonsult.se/og-image.jpg",
   "description": "Webbutveckling och SEO-konsult i Västmanland. Kontakta oss för en kostnadsfri konsultation.",
   "address": {
     "@type": "PostalAddress",
