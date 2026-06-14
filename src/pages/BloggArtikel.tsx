@@ -176,8 +176,8 @@ const BloggArtikel = () => {
   const headings = parsed.filter((e) => e.type === "h2");
 
   // Prefer curated takeaways from DB, fall back to auto-extraction
-  const dbTakeaways = (post as any).key_takeaways
-    ? (post as any).key_takeaways.split("\n").map((l: string) => l.replace(/^[-•*]\s*/, "").trim()).filter(Boolean)
+  const dbTakeaways = (post as { key_takeaways?: string }).key_takeaways
+    ? (post as { key_takeaways?: string }).key_takeaways.split("\n").map((l: string) => l.replace(/^[-•*]\s*/, "").trim()).filter(Boolean)
     : [];
   const keyTakeaways = dbTakeaways.length >= 3 ? dbTakeaways : extractKeyTakeaways(post.content, post.title);
 
@@ -229,7 +229,7 @@ const BloggArtikel = () => {
     }
   }
 
-  const updatedAt = (post as any).updated_at || post.date;
+  const updatedAt = (post as { updated_at?: string }).updated_at || post.date;
 
   const jsonLd = {
     "@context": "https://schema.org",

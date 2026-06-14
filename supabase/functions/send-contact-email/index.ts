@@ -125,7 +125,7 @@ serve(async (req: Request) => {
     return new Response(JSON.stringify(data), {
       status: 200, headers: { "Content-Type": "application/json", ...corsHeaders },
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error sending email:", error);
     return new Response(
       JSON.stringify({ error: "Det gick inte att skicka meddelandet. Försök igen senare eller kontakta oss direkt via e-post." }),

@@ -66,7 +66,7 @@ function parseContentLines(raw: string) {
 }
 
 function renderInline(text: string) {
-  const linkParts = text.split(/(\[[^\]]+\]\([^\)]+\))/g);
+  const linkParts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
 
   return linkParts.map((part, i) => {
     const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);

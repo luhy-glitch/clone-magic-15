@@ -30,8 +30,9 @@ const Contact = ({ asH1 = false }: { asH1?: boolean } = {}) => {
       toast({ title: "Meddelande skickat!", description: "Tack, jag återkommer så snart jag kan." });
       setForm({ name: "", email: "", subject: "", message: "", website: "" });
       setSubmitted(true);
-    } catch (err: any) {
-      toast({ title: "Något gick fel", description: err.message || "Försök igen senare.", variant: "destructive" });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Försök igen senare.";
+      toast({ title: "Något gick fel", description: message, variant: "destructive" });
     } finally {
       setLoading(false);
     }
