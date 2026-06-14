@@ -30,11 +30,11 @@ const WebbdesignPage = () => (
     ]}
     contentSections={[
       {
-        title: "Kundcase: Ny digital identitet för lokal byrå",
+        title: "Så arbetar vi med din webbdesign",
         paragraphs: [
-          "En etablerad redovisningsbyrå i Mälardalen behövde en ny webbplats som speglade deras professionalism och byggde förtroende hos potentiella kunder. Den gamla sajten var föråldrad, långsam och saknade en tydlig struktur som ledde besökare till kontakt.",
-          "Vi genomförde en komplett designprocess med research, wireframes och prototyper innan vi gick in i utvecklingsfasen. Genom att analysera byråns målgrupp och lokala konkurrenter identifierade vi de viktigaste konverteringspunkterna och designade en användarresa som ledde besökare naturligt mot kontaktformuläret.",
-          "Den nya designen fokuserade på tydliga call-to-actions, en varm men professionell färgpalett och en mobilanpassad layout som fungerade felfritt på alla enheter. Resultatet blev en 55 % ökning av kontaktförfrågningar och en avhoppsfrekvens som sjönk med 30 % under de första två månaderna.",
+          "En lyckad design börjar långt innan den första pixeln ritas. Vi inleder varje projekt med att förstå ditt företag, din målgrupp och vad som faktiskt får en besökare att ta kontakt. Genom att kartlägga dina kunders behov och hur dina lokala konkurrenter presenterar sig identifierar vi vad som får just ditt företag att sticka ut.",
+          "Därefter skissar vi upp strukturen i wireframes och bygger interaktiva prototyper. Det innebär att du får se och känna på hur sidan kommer att fungera – och ge feedback – innan en enda rad kod skrivs. Det sparar tid, pengar och missförstånd, och säkerställer att slutresultatet matchar din vision.",
+          "När designen är godkänd översätter vi den till en snabb, responsiv hemsida. Eftersom vi både designar och utvecklar internt finns ingen friktion mellan ritbord och kod – designen blir exakt som tänkt och prestandan därefter. Du får löpande avstämningar genom hela processen och äger allt material när vi är klara.",
         ],
       },
       {
