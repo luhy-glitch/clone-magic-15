@@ -4,7 +4,12 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/blogg/seo-vasteras", "destination": "/blogg/seo-vasteras-guide", "permanent": true },
-    { "source": "/images/vastmanland-karta-sm.webp", "destination": "/images/vastmanland-karta.avif", "permanent": true }
+    { "source": "/images/vastmanland-karta-sm.webp", "destination": "/images/vastmanland-karta.avif", "permanent": true },
+    { "source": "/webbutveckling", "destination": "/tjanster/webbutveckling", "permanent": true },
+    { "source": "/Webbutveckling", "destination": "/tjanster/webbutveckling", "permanent": true },
+    { "source": "/seo-optimering", "destination": "/tjanster/seo-optimering", "permanent": true },
+    { "source": "/blogg/komplett-seo-guide-smaforetag", "destination": "/blogg/lokal-seo-smaforetag", "permanent": true },
+    { "source": "/case-studies/pagespeed-revolution", "destination": "/case", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
