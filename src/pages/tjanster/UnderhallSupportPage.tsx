@@ -44,6 +44,14 @@ const UnderhallSupportPage = () => (
           "Kan ni ta över driften av en sajt som någon annan har byggt? Ja, vi tar regelbundet över webbplatser som byggts av andra byråer eller frilansare. Vi börjar alltid med en teknisk genomgång för att identifiera eventuella problem, säkerhetsluckor och prestandaflaskhalsar innan vi lägger in sajten i vårt övervaknings- och underhållssystem.",
         ],
       },
+      {
+        title: "Vad det kostar att inte underhålla sin sajt",
+        paragraphs: [
+          "Många företag ser underhåll som en valfri kostnad – ända tills något går fel. En sajt utan löpande uppdateringar blir med tiden en måltavla: kända säkerhetshål i föråldrade plugins och teman utnyttjas av automatiserade attacker, och en hackad sajt kan innebära allt från spam-injektioner till att Google flaggar din webbplats som osäker.",
+          "Utöver säkerheten tappar en oövervakad sajt gradvis prestanda och ranking. Plugins slutar fungera tillsammans, laddtiderna kryper uppåt och trasiga sidor upptäcks ofta först när en kund hör av sig – eller värre, när de redan vänt sig till en konkurrent. Ett enda obemärkt driftstopp kan kosta mer än ett helt års underhåll.",
+          "Med ett underhållsavtal hos oss byter du oförutsägbara akutkostnader mot en förutsägbar månadsavgift och vetskapen att någon håller koll. Du får en kontaktperson som känner din sajt, snabb hjälp när du behöver ändra något, och en plattform som förblir snabb, säker och synlig på Google år efter år.",
+        ],
+      },
     ]}
     relatedServices={[
       { label: "Prestanda-optimering", href: "/tjanster/prestanda-optimering" },

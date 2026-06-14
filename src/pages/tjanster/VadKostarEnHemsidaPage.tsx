@@ -135,9 +135,21 @@ const VadKostarEnHemsida = () => (
       <section className="py-16 sm:py-24 bg-section-alt">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <AnimatedSection>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">Löpande kostnader att räkna med</h2>
+            <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
+              <p>Engångskostnaden för att bygga sajten är bara en del av bilden. För att din hemsida ska fortsätta vara snabb, säker och synlig behöver du räkna med några löpande kostnader: domännamn (några hundralappar per år), webbhotell eller hosting (från ett par hundra kronor i månaden beroende på lösning) samt löpande underhåll och säkerhetsuppdateringar.</p>
+              <p>För en WordPress-sajt tillkommer ofta licenser för premium-plugins och ett underhållsavtal, eftersom plattformen kräver regelbundna uppdateringar för att förbli säker. En modern, skräddarsydd lösning i React eller Next.js har oftast lägre löpande kostnader eftersom den inte är beroende av en flora av plugins – men kräver fortfarande hosting och tillsyn. Vi är alltid transparenta med vad som ingår och vad som tillkommer, så att du slipper överraskningar längre fram.</p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-background">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <AnimatedSection>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-primary mt-12 mb-4">ROI: Varför prestanda är din bästa investering</h2>
             <div className="space-y-5 text-muted-foreground leading-[1.6] text-base">
-              <p>En hemsida som kostar 10 000 kr men inte genererar några leads är en ren förlust. En hemsida som kostar 50 000 kr men dubblar din organiska trafik och ökar antalet förfrågningar med 40 % är en vinstmaskin. Genom att fokusera på Core Web Vitals och lokal SEO i Mälardalen säkerställer vi att din digitala närvaro blir en lönsam del av ditt företag.</p>
+              <p>En hemsida som kostar 10 000 kr men inte genererar några leads är en ren förlust. En hemsida som kostar mer men kraftigt ökar din organiska trafik och dina förfrågningar är i stället en vinstmaskin. Genom att fokusera på Core Web Vitals och lokal SEO i Mälardalen säkerställer vi att din digitala närvaro blir en lönsam del av ditt företag snarare än en kostnad.</p>
             </div>
           </AnimatedSection>
         </div>

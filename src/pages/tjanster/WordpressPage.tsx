@@ -43,6 +43,14 @@ const WordpressPage = () => (
           "Hur skyddar vi din WordPress-sajt mot hackare? Vi implementerar en flerlagersäkerhet som inkluderar brandvägg på servernivå, tvåfaktorsautentisering, begränsade inloggningsförsök, automatiska säkerhetsuppdateringar och dagliga backuper. Vi övervakar sajten löpande för att upptäcka och åtgärda hot innan de hinner orsaka skada.",
         ],
       },
+      {
+        title: "WordPress eller skräddarsytt – vad passar ditt företag?",
+        paragraphs: [
+          "WordPress är ett utmärkt val när du vill kunna uppdatera innehåll själv, har en blogg eller nyhetssektion, eller driver en webbutik med WooCommerce. Det är välbekant, flexibelt och har ett enormt ekosystem. För många små och medelstora företag i Västerås och Västmanland är en välbyggd WordPress-sajt den perfekta balansen mellan kontroll, kostnad och funktionalitet.",
+          "När verksamheten växer och kraven på hastighet, säkerhet och skalbarhet ökar kan det bli aktuellt att gå över till en skräddarsydd lösning i React eller Next.js. Vi hjälper dig att fatta rätt beslut från början – och om du redan har WordPress kan vi antingen optimera det du har eller planera en framtida migrering utan att du tappar din SEO.",
+          "Oavsett vilken väg du väljer levererar vi en sajt som laddar snabbt, ser professionell ut och är byggd för att synas på Google för lokala sökord som 'wordpress Västerås'. Vi sköter allt från design och uppsättning till löpande underhåll, så att du kan fokusera på din verksamhet i stället för på tekniken.",
+        ],
+      },
     ]}
     relatedServices={[
       { label: "Underhåll & Support", href: "/tjanster/underhall-support" },

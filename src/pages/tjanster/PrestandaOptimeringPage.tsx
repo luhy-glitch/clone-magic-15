@@ -43,6 +43,14 @@ const PrestandaOptimeringPage = () => (
           "Behöver du bygga om hela sidan för att få den snabb? Inte alltid. Ofta kan vi göra stora förbättringar genom att optimera befintlig kod, komprimera tunga bilder, se över hur resurser laddas och implementera rätt cachning-strategi. Vi börjar alltid med en analys för att identifiera var de största vinsterna finns.",
         ],
       },
+      {
+        title: "Vanliga orsaker till en långsam hemsida",
+        paragraphs: [
+          "Innan vi optimerar vill vi veta varför sajten är långsam – och orsakerna går nästan alltid att hänföra till några återkommande bovar. Den största är ofta bilder: okomprimerade foton i fel format kan ensamma stå för flera megabyte per sidladdning. Vi konverterar dem till moderna format och serverar rätt storlek för varje skärm.",
+          "Näst på listan kommer tung JavaScript. Många sajter laddar stora skript och tredjepartsverktyg – chattwidgetar, spårningsskript, animationsbibliotek – som blockerar renderingen. Vi delar upp koden, skjuter upp det som inte behövs direkt och tar bort det som inte tillför värde.",
+          "Slutligen handlar det om hur servern levererar innehållet: saknad cachning, utebliven komprimering och avsaknad av CDN gör att varje besökare får vänta i onödan. Med rätt konfiguration levereras sidan snabbt oavsett var i landet besökaren befinner sig – avgörande för lokala företag som vill nå kunder i hela Mälardalen.",
+        ],
+      },
     ]}
     faqTitle="Vanliga frågor om sidhastighet"
     faq={[
