@@ -107,6 +107,7 @@ const jsonLd = {
       },
       "provider": {
         "@type": "ProfessionalService",
+        "address": { "@type": "PostalAddress", "addressLocality": "Västerås", "addressRegion": "Västmanland", "addressCountry": "SE" },
         "name": "LRH Konsult",
         "url": BASE_URL,
         "telephone": "+46704606578",

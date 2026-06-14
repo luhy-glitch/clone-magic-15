@@ -14,6 +14,7 @@ const jsonLd = {
       "name": "Digital Marknadsföring för Lokala Butiker i Västmanland",
       "provider": {
         "@type": "ProfessionalService",
+        "address": { "@type": "PostalAddress", "addressLocality": "Västerås", "addressRegion": "Västmanland", "addressCountry": "SE" },
         "name": "LRH Konsult",
         "telephone": "+46704606578",
         "email": "lucas@lrhkonsult.se",

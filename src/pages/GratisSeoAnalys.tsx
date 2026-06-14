@@ -32,6 +32,7 @@ const GratisSeoAnalys = () => {
               "url": "https://www.lrhkonsult.se/gratis-seo-analys",
               "provider": {
                 "@type": "ProfessionalService",
+        "address": { "@type": "PostalAddress", "addressLocality": "Västerås", "addressRegion": "Västmanland", "addressCountry": "SE" },
                 "name": "LRH Konsult",
                 "url": "https://www.lrhkonsult.se",
               },

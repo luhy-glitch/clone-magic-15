@@ -31,11 +31,22 @@ if (fs.existsSync(blogDataPath)) {
 
 const allRoutes = [...staticRoutes, ...blogPosts.map(p => `/blogg/${p}`)];
 
+// Uteslut noindex-sidor ur sitemap (en sitemap ska bara lista indexerbara URL:er –
+// annars motsägelsefull signal). Läser den prerendrade HTML:en så alla noindex-sidor
+// (de 6 minsta stadssidorna, /case och ev. framtida) exkluderas automatiskt.
+const isNoindex = (route) => {
+  const file = route === "/" ? path.join(distDir, "index.html") : path.join(distDir, route.replace(/^\//, ""), "index.html");
+  try { return /name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(fs.readFileSync(file, "utf8")); }
+  catch { return false; }
+};
+const indexableRoutes = allRoutes.filter((r) => !isNoindex(r));
+const excludedCount = allRoutes.length - indexableRoutes.length;
+
 let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n`;
 sitemapContent += `<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n`;
 sitemapContent += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
-for (const route of allRoutes) {
+for (const route of indexableRoutes) {
   const priority = route === "/" ? "1.0" : route.startsWith("/blogg") ? "0.8" : "0.9";
   const url = `${SITE_URL}${route === "/" ? "" : route}`;
   const lastmod = lastmodByRoute[route] || TODAY;
@@ -174,4 +185,4 @@ if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
 fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapContent);
 fs.writeFileSync(path.join(distDir, 'sitemap.xsl'), xslContent);
 
-console.log(`✅ Sitemap genererad framgångsrikt med sorterade XSLT-mappar!`);
+console.log(`✅ Sitemap genererad (${indexableRoutes.length} URL:er, ${excludedCount} noindex-sidor exkluderade).`);
