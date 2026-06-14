@@ -36,11 +36,11 @@ const RestaurantHomePage = () => (
         ],
       },
       {
-        title: "Kundcase: Från 5 bokningar/vecka till 25",
+        title: "Så får din restaurang fler bokningar online",
         paragraphs: [
-          "En mysig restaurang i centrala Västerås hade stabil kundkår men ville växa. Deras gamla WordPress-sajt tog 4 sekunder att ladda, menyn var föråldrad och de hade ingen bokningsfunktion – bara ett kontaktformulär som de knappt checkade.",
-          "Vi byggde en modern hemsida med live-meny (från deras POS-system), integrerad bokningsfunktion (via Dine), och professionella maträtter-foton. Hemsidan rankar nu på första sidan för 'restaurang Västerås' och 'brunch centrum västerås'.",
-          "Resultatet: Bokningar ökade från 5/vecka till 25/vecka första året. Restaurangen kunde sälja ett bord två gånger per kväll istället för en gång. ROI var över 800%.",
+          "Många restauranger har en trogen kundkrets men en föråldrad hemsida som laddar långsamt, saknar uppdaterad meny och inte har någon riktig bokningsfunktion – bara ett kontaktformulär som sällan kollas. Det innebär missade bokningar varje vecka.",
+          "Vi bygger moderna restauranghemsidor med levande meny, integrerad bokningsfunktion och aptitliga maträttsfoton. Sidan optimeras för lokala sökningar – som restaurang Västerås eller brunch i centrum – så att hungriga gäster hittar dig i exakt rätt ögonblick.",
+          "Med en snabb, mobilanpassad sida och bokning direkt på webben blir det lika lätt för gästen att boka bord som att tänka tanken – vilket gör att fler av besöken på sajten faktiskt blir gäster vid bordet.",
         ],
       },
       {

@@ -11,7 +11,7 @@ const config = {
   heroDescription: "Arboga-företag är skickliga – problemet är att de är för lokala. En snickare, elektriker eller småindustriföretag i Arboga kan nå kunder från hela Västmanland om du syns på Google. Vi bygger hemsidor som gör detta möjligt.",
   icon: Code2,
   heroFacts: [
-    "Småindustriföretag i Arboga fick 140% mer B2B-leads",
+    "Småindustriföretag i Arboga kan nå B2B-kunder i hela regionen",
     "Hantverkare från Arboga når kunder i Köping, Västerås, Stockholm",
     "React + lokalt SEO = regional räckvidd från lokal bas",
     "100/100 PageSpeed ger fördel mot större konkurrenter",

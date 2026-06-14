@@ -36,11 +36,11 @@ const EcommerceHomePage = () => (
         ],
       },
       {
-        title: "Kundcase: Möbelbutik från 2 miljoner till 5 miljoner i försäljning",
+        title: "Så bygger vi en webshop som säljer",
         paragraphs: [
-          "En lokal möbelbutik i Västerås hade stabil försäljning genom fysik butik (2 MSEK/år) men ville växa. De sålde både möbler och hemtextil, men hade ingen webshop och ingen online-närvaro. De såg hur konkurrenter i Stockholm växte genom e-handel.",
-          "Vi byggde en professionell webshop med kategorifiltrering, detaljerade möbelbeskrivningar (material, mått, leveranstid), bra foton av varje möbel i miljö, och en enkel checkout. Vi integrerade Google Shopping och satte upp 'varslista' så att kunder kunde få notis när nya möbler kom in.",
-          "Resultatet: Första året gjorde webshopen 1.5 MSEK i försäljning (43% ökning totalt). Andra året växte det till 2.5 MSEK. Mobiliteten var svår att hantera inledningsvis (möbler är tunga att skicka), men vi hjälpte dem sätta upp ett logistik-system med lokal hämtning och nationell frakt.",
+          "Många lokala butiker har stabil försäljning i den fysiska butiken men saknar online-närvaro – och ser samtidigt hur konkurrenter växer genom e-handel. Steget till en egen webshop behöver inte vara komplicerat, men det måste göras rätt för att faktiskt generera försäljning.",
+          "Vi bygger professionella webshoppar med tydlig kategorifiltrering, detaljerade produktbeskrivningar, snygga produktfoton och en enkel, snabb checkout. Vi integrerar Google Shopping och funktioner som bevakningslistor så att kunder får notis när nya produkter kommer in.",
+          "Lika viktigt som butiken är logistiken och betalflödet. Vi hjälper dig sätta upp smidiga fraktlösningar – från lokal hämtning till nationell frakt – och betalmetoder som Klarna och Swish, så att kunderna kan handla utan friktion oavsett enhet.",
         ],
       },
       {

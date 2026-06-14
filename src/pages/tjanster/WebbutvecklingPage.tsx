@@ -35,12 +35,11 @@ const WebbutvecklingPage = () => (
         ],
       },
       {
-        title: "Kundcase: Modernisering av lokal e-handel – från WordPress till Next.js",
+        title: "Från tung WordPress till blixtsnabb Next.js",
         paragraphs: [
-          "Vi hjälpte ett etablerat e-handelsföretag i Västmanland som hade kört WordPress i sex år. Deras gamla sajt hade laddningstider på 4.8 sekunder, höga avhoppsfrekvenser (42% på mobil), och rankade inte för sina viktigaste produktsökord trots att de hade bra produkter. Problemet var inte innehållet – det var tekniken. WordPress med många plugins hade blivit för tungt.",
-          "Vi byggde en komplett ny plattform i Next.js med fokus på tre saker: hastighet, konvertering och SEO. Implementering av server-side rendering gjorde att produktsidor kunde förrenderas optimalt för sökmotorer. Automatisk bildoptimering med WebP/AVIF reducerade bildfilstorlekar med 70%. Smart caching med ISR (Incremental Static Regeneration) gjorde att varje produktsida uppdaterades automatiskt när lagerstatus ändrades, utan att hela sajten behövde byggas om.",
-          "Resultatet var märkant: laddtiden sjönk från 4.8 till 0.8 sekunder (83% förbättring). Avhoppsfrekvensen föll till 18%. Men viktigast – den organiska trafiken ökade med 65% och e-handelskonverteringsgraden steg 28% under de första tre månaderna. Företaget kunde för första gången fokusera på att sälja istället för att bry sig om tekniska problem.",
-          "Projektet inkluderade även säker migrering av alla SEO-värden med 301-omdirigeringar, uppdaterad strukturerad data för produkter, och implementering av schema markup som gjorde att produkter visades med stjärnor och pris direkt i sökresultaten.",
+          "Ett vanligt scenario: en e-handel eller företagssajt som kört WordPress i flera år har blivit långsam, har höga avhoppsfrekvenser på mobil och rankar inte för sina viktigaste sökord – trots bra produkter och innehåll. Problemet är sällan innehållet, utan tekniken. WordPress med många plugins blir helt enkelt för tungt.",
+          "Vår lösning är att bygga en ny plattform i Next.js med fokus på tre saker: hastighet, konvertering och SEO. Server-side rendering gör att sidor förrenderas optimalt för sökmotorer, automatisk bildoptimering (WebP/AVIF) krymper bildstorlekarna rejält, och smart caching med ISR (Incremental Static Regeneration) håller innehållet färskt utan att hela sajten behöver byggas om.",
+          "En sådan migrering inkluderar alltid säker överföring av befintliga SEO-värden med 301-omdirigeringar, uppdaterad strukturerad data för produkter och schema-markup som kan få produkter att visas med pris och betyg direkt i sökresultaten. Slutresultatet: en sajt som laddar på bråkdelen av tiden – så att du kan fokusera på att sälja i stället för att felsöka teknik.",
         ],
       },
       {

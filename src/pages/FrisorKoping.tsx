@@ -23,7 +23,7 @@ const config = {
     { title: "Tjänstespecifika sidor", description: "Separata SEO-optimerade sidor för herrklippning, damklippning, slingor och färgning fångar upp specifika sökningar." },
   ],
   bodyTitle: "Frisör Köping - Moderna Hemsidor för Frisörsalonger",
-  bodyParagraphs: ["Frisörer i Köping och övriga Västmanland är ofta väldigt skickliga men helt osynliga online. En hemsida och Google-ranking kan tredubbla antalet nya kunder. Google söker väldigt många gånger på 'frisör [stad]' – dessa är dina potentiella kunder.","För en frisörsalong är en hemsida möjlighetens portal."],
+  bodyParagraphs: ["Frisörer i Köping och övriga Västmanland är ofta väldigt skickliga men helt osynliga online. En hemsida och Google-ranking kan öka antalet nya kunder rejält. Google söker väldigt många gånger på 'frisör [stad]' – dessa är dina potentiella kunder.","För en frisörsalong är en hemsida möjlighetens portal."],
   bodyExtraSections: [
     {
       title: "Google Business-optimering för frisörsalonger i Köping",

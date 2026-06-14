@@ -36,11 +36,11 @@ const AccountingHomePage = () => (
         ],
       },
       {
-        title: "Kundcase: Från 2 nya klienter/månad till 8",
+        title: "Så hjälper vi redovisningsbyråer att växa online",
         paragraphs: [
-          "En redovisningsbyrå i Västerås med två revisorer hade stabil basklient-pool men ville växa. De hade en gammal hemsida utan prisinfo och utan någon säkerhet kring dokumentöverföring. Nya klienter var huvudsakligen från äldre nätverk, vilket limiterade tillväxt.",
-          "Vi byggde en modern hemsida med klientportal, transparenta paketpriser (startup 3000 kr/mån, SME 7500 kr/mån), och guider om bokföring för startups. Vi optimerade också Google Business-profilen och lade in Customer Review Schema för de befintliga testimon de hade.",
-          "Resultatet: Nya klientförfrågningar gick från 2/månad till 8/månad. Många nya klienter kom från Google sökningar på 'bokföring startup Västerås'. Byråns revenue öka med 60% första året och de behövde anställa en ny revisor för att klara workload.",
+          "Många redovisningsbyråer får sina nya klienter via äldre nätverk och rekommendationer – vilket fungerar, men begränsar tillväxten. En modern hemsida som syns på Google öppnar en helt ny kanal för klienter som aktivt söker en byrå.",
+          "Vi bygger trygga, professionella hemsidor med säker klientportal för dokumentöverföring, transparenta paketpriser och innehåll som svarar på vad potentiella klienter faktiskt undrar – exempelvis bokföring för startups. Tydlighet och trygghet är avgörande i en förtroendebransch.",
+          "Vi optimerar också för lokala sökningar som bokföring Västerås och hjälper dig sätta upp en stark Google Business-profil. Målet är att din byrå ska hittas av rätt klienter i rätt ögonblick – och att första intrycket på webben bygger samma förtroende som ett personligt möte.",
         ],
       },
       {

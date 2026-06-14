@@ -28,11 +28,11 @@ const WordpressPage = () => (
     ]}
     contentSections={[
       {
-        title: "Kundcase: Säkerhetsöversyn och prestandalyft",
+        title: "Så lyfter vi en tung eller osäker WordPress-sajt",
         paragraphs: [
-          "Ett medelstort företag i Köping hade en WordPress-sajt som drabbats av upprepade säkerhetsincidenter och hade laddningstider på över sex sekunder. Deras befintliga webbyrå hade staplat plugin på plugin utan att tänka på helheten, vilket resulterade i en instabil och sårbar plattform.",
-          "Vi genomförde en total genomgång av installationen: tog bort 15 onödiga plugins, bytte till ett lättviktstema byggt specifikt för deras verksamhet, implementerade server-side cachning och härdade hela WordPress-kärnan med flerlagersäkerhet.",
-          "Laddningstiden sjönk till under 1,5 sekunder och sajten har varit fri från säkerhetsincidenter i över 12 månader. Dessutom förbättrades den organiska trafiken med 35 % tack vare snabbare sidladdning och bättre Core Web Vitals-poäng.",
+          "Den vanligaste orsaken till en långsam och sårbar WordPress-sajt är plugins staplade på plugins, utan tanke på helheten. Resultatet blir en instabil plattform med långa laddningstider och säkerhetshål. Vi börjar med en total genomgång av installationen för att se vad som faktiskt behövs.",
+          "Vi rensar bort onödiga plugins, byter vid behov till ett lättviktstema byggt specifikt för din verksamhet, implementerar server-side cachning och härdar hela WordPress-kärnan med flerlagersäkerhet.",
+          "Resultatet är en snabbare, stabilare och säkrare sajt med bättre Core Web Vitals – och en plattform som är enkel att underhålla i stället för att ständigt brandsläcka.",
         ],
       },
       {

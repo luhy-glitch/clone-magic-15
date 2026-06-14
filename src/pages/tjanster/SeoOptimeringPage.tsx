@@ -36,12 +36,11 @@ const SeoOptimeringPage = () => (
         ],
       },
       {
-        title: "Kundcase: Från osynlig till topp 3 på sex månader",
+        title: "Så bygger vi din lokala synlighet på Google",
         paragraphs: [
-          "En nystartad tjänsteverksamhet i Västerås hade svårt att synas på sina viktigaste sökord. Trots en relativt ny hemsida fanns den inte ens på Googles första fem sidor för relevanta lokala söktermer. Problemet var en kombination av tekniska brister, saknad metadata och avsaknad av lokal optimering.",
-          "Vi inledde med en komplett teknisk SEO-audit som identifierade över 40 åtgärdspunkter. Prioriteringslistan inkluderade hastighetsoptimering (sidan tog 5 sekunder att ladda), korrekt kanonisk URL-struktur, implementering av JSON-LD schema-markup och en fullständig omarbetning av metadata för varje sida. Vi såg omedelbar förbättring – sidan gick från 35 poäng i PageSpeed till 98.",
-          "Parallellt skapade vi en aggressiv strategi för lokala landningssidor – unika sidor optimerade för specifika tjänster i specifika orter i Västmanland. Innehållet var inte generellt – varje sida hade lokalt anpassad information, testimonials från lokala kunder, och exempel från just den regionen.",
-          "Inom sex månader rankade företaget bland de tre högsta resultaten på över tio relevanta sökfraser. Även viktigare: den organiska trafiken steg med 250%, men ännu viktigare var att konverteringsgraden tredubblade sig. De nya kunderna från Google var högre kvalitet än tidigare marknadsföring – de letade redan aktivt efter den tjänsten.",
+          "Många nystartade verksamheter syns inte alls på sina viktigaste sökord – ofta på grund av en kombination av tekniska brister, saknad metadata och avsaknad av lokal optimering. Vi börjar därför alltid med en komplett teknisk SEO-audit som kartlägger varje åtgärdspunkt och prioriterar dem efter effekt.",
+          "Det tekniska kommer först: hastighetsoptimering, korrekt kanonisk URL-struktur, JSON-LD schema-markup och genomarbetad metadata för varje sida. En snabb, tekniskt ren sajt är grunden allt annat vilar på.",
+          "Parallellt bygger vi en strategi för lokala landningssidor – unika sidor optimerade för specifika tjänster i specifika orter i Västmanland, med genuint lokalt anpassat innehåll snarare än mallar. Kombinerat med löpande innehållsarbete och en stark intern länkstruktur är det så man långsiktigt klättrar mot toppen för de sökord som faktiskt ger kunder.",
         ],
       },
       {

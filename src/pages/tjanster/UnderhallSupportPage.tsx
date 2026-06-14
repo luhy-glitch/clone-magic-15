@@ -29,11 +29,11 @@ const UnderhallSupportPage = () => (
     ]}
     contentSections={[
       {
-        title: "Kundcase: Trygg drift för fastighetsbolag",
+        title: "Vad trygg drift och support innebär",
         paragraphs: [
-          "Ett fastighetsbolag i Västerås med flera hundra hyresgäster förlitade sig på sin webbplats för felanmälningar, kontaktformulär och information. När sajten gick ner under en helg förlorade de viktiga felanmälningar och fick hantera frustrerade hyresgäster via telefon under måndagen. Det blev tydligt att de behövde en pålitligare lösning.",
-          "Vi tog över driften och implementerade ett komplett övervaknings- och backupsystem. Sajten övervakas nu dygnet runt med automatiska larm vid driftstörningar, dagliga backuper med möjlighet till återställning inom 15 minuter, samt månatliga säkerhetsuppdateringar av alla komponenter.",
-          "Sedan vi tog över har sajten haft 99,98 % upptid och bolaget har inte missat en enda felanmälan. Den proaktiva övervakningen har dessutom identifierat och åtgärdat potentiella problem innan de påverkat användarna.",
+          "En webbplats som ligger nere kostar pengar och förtroende – särskilt om den hanterar bokningar, felanmälningar eller kontaktformulär. Ett enda driftstopp under en helg kan innebära missade affärer och frustrerade kunder. Därför handlar bra drift om att förebygga problem innan de uppstår.",
+          "Vi erbjuder ett komplett övervaknings- och backupsystem: sajten övervakas dygnet runt med automatiska larm vid driftstörningar, dagliga backuper med snabb återställning, samt löpande säkerhetsuppdateringar av alla komponenter.",
+          "Med proaktiv övervakning upptäcks och åtgärdas potentiella problem ofta innan de hinner påverka dina besökare. Du kan fokusera på din verksamhet med vetskapen att din digitala närvaro är i trygga händer.",
         ],
       },
       {

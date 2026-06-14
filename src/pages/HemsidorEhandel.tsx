@@ -23,7 +23,7 @@ const config = {
     { title: "Skalbar e-handelsteknik", description: "Oavsett om du använder WooCommerce, Shopify eller headless e-handel bygger vi lösningar som växer med din verksamhet." },
   ],
   bodyTitle: "E-handel hemsida för butiker i Västmanland",
-  bodyParagraphs: ["E-handel är inte framtiden – det är nutiden. En väl byggd e-handelhemsida kan tredubbla försäljningen för en traditionell butik. Google och sociala medier kan driva trafik direkt till din butik online.","För en butik eller produktbaserat företag är en e-handelhemsida nästan obligatorisk för tillväxt."],
+  bodyParagraphs: ["E-handel är inte framtiden – det är nutiden. En väl byggd e-handelhemsida kan öka försäljningen rejält för en traditionell butik. Google och sociala medier kan driva trafik direkt till din butik online.","För en butik eller produktbaserat företag är en e-handelhemsida nästan obligatorisk för tillväxt."],
   bodyExtraSections: [
     {
       title: "Konverteringsoptimering för e-handel",

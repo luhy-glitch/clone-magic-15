@@ -23,7 +23,7 @@ const config = {
     { title: "Säkerhet och sekretess", description: "Vi bygger med bästa praxis för säkerhet, inklusive HTTPS, Content Security Policy och krypterad filöverföring." },
   ],
   bodyTitle: "Webbsidor för redovisningsbyråer i Västmanland",
-  bodyParagraphs: ["Redovisningsbyråer i Västmanland är ofta väletablerade men digitalt svaga. En hemsida kan locka många nya småföretag-kunder som söker på Google för att hitta en bokförare. En redovisningsbyrå med bra hemsida och ranking kan tredubbla sin kundkrets.","För en redovisningsbyrå är en hemsida en investering i tillväxt som betalar sig många gånger."],
+  bodyParagraphs: ["Redovisningsbyråer i Västmanland är ofta väletablerade men digitalt svaga. En hemsida kan locka många nya småföretag-kunder som söker på Google för att hitta en bokförare. En redovisningsbyrå med bra hemsida och ranking kan växa sin kundkrets rejält.","För en redovisningsbyrå är en hemsida en investering i tillväxt som betalar sig många gånger."],
   bodyExtraSections: [
     {
       title: "Förtroende och professionalitet online",

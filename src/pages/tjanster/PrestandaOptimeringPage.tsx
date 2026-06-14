@@ -28,11 +28,11 @@ const PrestandaOptimeringPage = () => (
     ]}
     contentSections={[
       {
-        title: "Kundcase: Från rött till grönt i Lighthouse",
+        title: "Så går en prestandaoptimering till",
         paragraphs: [
-          "En befintlig webbplats i Västmanland led av höga avhoppsfrekvenser på grund av långsamma laddningstider, särskilt i mobilen. Sajten hade en Lighthouse-poäng på 45 av 100 och laddningstider på över fyra sekunder. Bilderna var okomprimerade, JavaScript-bundlarna onödigt stora och servern saknade korrekt cachning.",
-          "Vi genomförde en total prestandaoptimering i flera steg. Först konverterade vi alla bilder till moderna format (AVIF med WebP-fallback) och implementerade responsiva bildstorlekar med lazy loading. Därefter delade vi upp JavaScript-bundlarna med dynamisk import och tree-shaking för att minimera mängden kod som laddades vid sidvisning.",
-          "Slutligen konfigurerade vi smart server-side cachning, optimerade CSS-leveransen genom att inlina kritisk CSS och konfigurerade ett CDN för global leverans. Sidan gick från ett rött betyg (45/100) till grönt (98/100) på Google PageSpeed Insights. Avhoppsfrekvensen sjönk med 40 % och konverteringsgraden ökade med 25 %.",
+          "De flesta långsamma sajter lider av samma grundproblem: okomprimerade bilder, onödigt stora JavaScript-bundlar och en server utan korrekt cachning. Vi börjar alltid med en mätning i Lighthouse och Core Web Vitals för att se exakt var flaskhalsarna finns – och vad de kostar dig i form av avhopp och tappade kunder.",
+          "Därefter arbetar vi i flera steg. Vi konverterar bilder till moderna format (AVIF med WebP-fallback) med responsiva storlekar och lazy loading, och delar upp JavaScript med dynamisk import och tree-shaking så att bara nödvändig kod laddas vid sidvisning.",
+          "Slutligen konfigurerar vi smart server-side cachning, inlinear kritisk CSS och sätter upp ett CDN för snabb global leverans. Målet är konkret: en sajt som konsekvent når grönt i PageSpeed Insights och laddar på bråkdelen av en sekund – för bättre upplevelse, lägre avhopp och starkare ranking på Google.",
         ],
       },
       {
