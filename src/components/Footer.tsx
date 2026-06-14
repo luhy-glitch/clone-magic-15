@@ -1,7 +1,8 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import LrhLogo from "@/components/LrhLogo";
 import { trackCTAClick } from "@/lib/analytics";
+import { GOOGLE_REVIEW_URL } from "@/lib/constants";
 
 const Footer = () => {
   return (
@@ -104,6 +105,22 @@ const Footer = () => {
             </ul>
           </nav>
         </div>
+
+        {/* Recensions-CTA (visas endast när Google-recensionslänk är satt) */}
+        {GOOGLE_REVIEW_URL && (
+          <div className="flex justify-center mb-6">
+            <a
+              href={GOOGLE_REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCTAClick("footer-google-review", "footer")}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary/40 bg-primary/10 text-sm font-medium text-foreground hover:bg-primary/20 transition-colors"
+            >
+              <Star size={16} className="text-primary" fill="currentColor" />
+              Nöjd kund? Lämna gärna en recension på Google
+            </a>
+          </div>
+        )}
 
         {/* Social links */}
         <div className="flex items-center justify-center gap-3 mb-6">

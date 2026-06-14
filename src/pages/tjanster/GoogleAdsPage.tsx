@@ -72,6 +72,14 @@ const includes = [
   { icon: Megaphone, title: "Lokal styrning", text: "Dina annonser visas bara för personer i de städer du faktiskt verkar i – Västerås, Köping, Sala och hela Mälardalen." },
 ];
 
+const processSteps = [
+  { n: "1", title: "Analys & mål", text: "Vi börjar med att förstå ditt företag, dina marginaler och vad en ny kund faktiskt är värd. Sedan kartlägger vi vilka sökord dina kunder använder och vad konkurrenterna betalar för dem." },
+  { n: "2", title: "Kontouppsättning & spårning", text: "Du äger alltid ditt eget Google Ads-konto. Vi sätter upp korrekt konverteringsspårning så att vi mäter det som räknas – samtal, formulär och bokningar, inte bara klick." },
+  { n: "3", title: "Annonser & landningssidor", text: "Vi skriver annonstexter som sticker ut och ser till att de leder till en sida byggd för att konvertera. En snabb landningssida med tydlig call-to-action är ofta skillnaden mellan en besökare och en kund." },
+  { n: "4", title: "Lansering & löpande optimering", text: "När kampanjen är live börjar finliret: vi testar annonser mot varandra, lägger till negativa sökord och justerar buden löpande för att sänka din kostnad per kund över tid." },
+  { n: "5", title: "Tydlig rapportering", text: "Du får begripliga rapporter – och en personlig genomgång i de större paketen – som visar vad du fått för pengarna i kronor och kunder, inte tekniskt nonsens." },
+];
+
 const faq = [
   { question: "Betalar jag annonsbudgeten till dig?", answer: "Nej, du kopplar ditt eget betalkort direkt till Google Ads-kontot. Min avgift är en fast kostnad för att jag sköter strategin, optimeringen och analysen av dina kampanjer. Du äger alltid ditt eget konto." },
   { question: "Hur mycket bör jag lägga i annonsbudget?", answer: "Det beror helt på din bransch och konkurrens. För ett lokalt företag rekommenderar jag ofta en startbudget på minst 3 000 – 5 000 kr per månad utöver min förvaltningsavgift för att få tillräckligt med data att optimera utifrån." },
@@ -180,8 +188,24 @@ const GoogleAdsPage = () => {
           </div>
         </section>
 
+        {/* Varför Google Ads */}
+        <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="ads-why-heading">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <AnimatedSection>
+              <h2 id="ads-why-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-6">
+                Varför Google Ads för företag i Västmanland?
+              </h2>
+              <div className="space-y-5 text-muted-foreground leading-[1.7] text-base">
+                <p>När någon söker på "elektriker Västerås" eller "tandläkare Köping" har de oftast redan bestämt sig för att anlita någon – de letar bara efter rätt företag. Google Ads låter dig synas högst upp i exakt det ögonblicket, ovanför både konkurrenterna och de organiska resultaten. För lokala företag är det skillnaden mellan att hittas direkt och att förbli osynlig.</p>
+                <p>Fördelen för dig som verkar i Mälardalen är att konkurrensen om annonsplatserna ofta är betydligt lägre än i storstäderna. Det betyder lägre kostnad per klick och att även en blygsam budget kan ge tydlig avkastning. Du betalar bara när någon faktiskt klickar på din annons – och vi ser till att klicken kommer från rätt personer i just ditt område.</p>
+                <p>Allt är dessutom mätbart. Vi följer exakt vilka sökord, annonser och tidpunkter som genererar samtal och förfrågningar, och flyttar budgeten dit den gör mest nytta. Vill du ha en strategi som håller långsiktigt rekommenderar vi att kombinera annonseringen med <Link to="/tjanster/seo-optimering" className="text-primary hover:underline font-medium">SEO-optimering</Link> och en snabb, konverterande <Link to="/tjanster/webbutveckling" className="text-primary hover:underline font-medium">hemsida</Link>.</p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
         {/* Pricing packages */}
-        <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="ads-pricing-heading">
+        <section className="py-16 sm:py-24 bg-background" aria-labelledby="ads-pricing-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <div className="text-center max-w-2xl mx-auto mb-12">
@@ -242,6 +266,33 @@ const GoogleAdsPage = () => {
           </div>
         </section>
 
+        {/* Process */}
+        <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="ads-process-heading">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <AnimatedSection>
+              <h2 id="ads-process-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-6">
+                Så arbetar vi med dina Google Ads
+              </h2>
+              <p className="text-muted-foreground leading-[1.7] text-base mb-10">
+                En lönsam kampanj handlar inte om att "boosta" och hoppas på det bästa, utan om en strukturerad process där varje krona ska kunna motiveras. Så här går det till:
+              </p>
+            </AnimatedSection>
+            <ol className="space-y-6">
+              {processSteps.map((step, i) => (
+                <FadeIn key={step.n} delay={i * 0.08}>
+                  <li className="flex gap-5">
+                    <span className="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary font-bold font-serif flex items-center justify-center" aria-hidden="true">{step.n}</span>
+                    <div>
+                      <h3 className="font-bold font-serif text-lg text-foreground mb-1">{step.title}</h3>
+                      <p className="text-muted-foreground leading-[1.7] text-base">{step.text}</p>
+                    </div>
+                  </li>
+                </FadeIn>
+              ))}
+            </ol>
+          </div>
+        </section>
+
         {/* What's always included */}
         <section className="py-16 sm:py-24 bg-background" aria-labelledby="ads-includes-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -270,8 +321,24 @@ const GoogleAdsPage = () => {
           </div>
         </section>
 
+        {/* Google Ads vs SEO */}
+        <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="ads-vs-seo-heading">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <AnimatedSection>
+              <h2 id="ads-vs-seo-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-6">
+                Google Ads eller SEO – vad ska du välja?
+              </h2>
+              <div className="space-y-5 text-muted-foreground leading-[1.7] text-base">
+                <p>Det är en av de vanligaste frågorna vi får, och svaret är oftast "båda – men i rätt ordning". Google Ads ger dig synlighet och leads redan från första dagen, vilket gör det perfekt när du precis lanserat, har ett tidsbegränsat erbjudande, eller vill testa vilka sökord som faktiskt konverterar innan du satsar på organisk ranking.</p>
+                <p><Link to="/tjanster/seo-optimering" className="text-primary hover:underline font-medium">SEO</Link> tar längre tid men bygger ett bestående värde – när du väl rankar organiskt fortsätter trafiken att komma utan att du betalar per klick. Den smartaste strategin för de flesta lokala företag är att starta med Ads för snabba resultat och parallellt bygga upp SEO, så att du på sikt blir mindre beroende av annonsbudgeten.</p>
+                <p>Är du osäker på var du står idag? Börja med en kostnadsfri <Link to="/gratis-seo-analys" className="text-primary hover:underline font-medium">SEO-analys</Link> så får du en tydlig bild av vilken mix som passar ditt företag bäst.</p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
         {/* FAQ */}
-        <section className="py-16 sm:py-24 bg-section-alt" aria-labelledby="ads-faq-heading">
+        <section className="py-16 sm:py-24 bg-background" aria-labelledby="ads-faq-heading">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
               <h2 id="ads-faq-heading" className="text-2xl sm:text-3xl font-bold font-serif text-center mb-10">
