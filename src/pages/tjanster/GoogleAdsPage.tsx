@@ -94,8 +94,17 @@ const jsonLd = {
     {
       "@type": "Service",
       "name": "Google Ads-förvaltning",
+      "serviceType": "Google Ads-förvaltning",
       "description": "Professionell Google Ads-hantering för lokala företag i Västmanland och Mälardalen.",
       "url": `${BASE_URL}/tjanster/google-ads`,
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "SEK",
+        "lowPrice": "2490",
+        "highPrice": "8500",
+        "offerCount": "3",
+        "url": `${BASE_URL}/tjanster/google-ads`,
+      },
       "provider": {
         "@type": "ProfessionalService",
         "name": "LRH Konsult",
