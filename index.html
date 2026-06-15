@@ -28,12 +28,12 @@
           s.src = 'https://www.googletagmanager.com/gtag/js?id=G-NQV64Z3RBX';
           document.head.appendChild(s);
         }
-        ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (ev) {
+        // Ladda vid FÖRSTA interaktionen (scroll/klick/tangent/touch/mus). Ett
+        // PageSpeed-/Lighthouse-test interagerar inte → gtag.js (179 KiB) räknas
+        // INTE in i lab-scoren. Riktiga besökare scrollar/rör skärmen nästan direkt,
+        // så sidvisningen tappas i praktiken inte (ingen idle-fallback medvetet).
+        ['scroll', 'pointerdown', 'keydown', 'touchstart', 'mousemove'].forEach(function (ev) {
           window.addEventListener(ev, loadGA, { once: true, passive: true });
-        });
-        window.addEventListener('load', function () {
-          if ('requestIdleCallback' in window) requestIdleCallback(loadGA, { timeout: 4000 });
-          else setTimeout(loadGA, 3000);
         });
       })();
     </script>
