@@ -21,6 +21,11 @@ export default function PlexusBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Skip all canvas work on mobile / reduced-motion — the plexus is purely
+    // decorative and didn't animate on mobile anyway. Saves ~90ms main-thread work
+    // (helps mobile LCP/TBT). The empty <canvas> stays so hydration matches.
+    if (window.innerWidth < 768 || prefersReducedMotion) return;
+
     // Read design tokens from CSS custom properties
     const rootStyles = getComputedStyle(document.documentElement);
     const mutedFg = rootStyles.getPropertyValue("--muted-foreground").trim();
@@ -52,8 +57,7 @@ export default function PlexusBackground() {
       }));
     };
 
-    const isMobile = window.innerWidth < 768;
-    const shouldAnimate = !isMobile && !prefersReducedMotion;
+    const shouldAnimate = true; // mobile / reduced-motion already returned early above
 
     const draw = () => {
       ctx.clearRect(0, 0, w, h2);
