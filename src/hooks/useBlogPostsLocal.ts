@@ -1,46 +1,34 @@
 import { useQuery } from "@tanstack/react-query";
 import type { DbBlogPost } from "@/hooks/useBlogPosts";
-import blogPostsData from "@/data/blogPosts.json";
+import blogPostsMeta from "@/data/blogPostsMeta.json";
 
 export type { DbBlogPost };
 
 /**
- * Some posts store `content` as an array of markdown lines instead of a single
- * string. BloggArtikel calls `content.split(...)`, which throws on arrays and
- * makes the page fall back to NotFound (soft-404, no H1). Normalise array
- * content to a newline-joined markdown string so every post renders correctly.
+ * Lightweight post metadata for the blog LIST and related-article cards — every
+ * field EXCEPT the heavy `content` (article bodies are ~84% of blogPosts.json and
+ * live in useBlogPost instead). Keeps the blog-list chunk tiny (~80 KB vs ~530 KB),
+ * so the Blogg tab loads fast. `readingMinutes` is precomputed by
+ * scripts/generate-blog-meta.mjs (generated FIRST in build-smart.mjs).
  */
-type RawPost = Omit<DbBlogPost, "content"> & { content: string | string[]; scheduled_date?: string };
-type LocalBlogPost = DbBlogPost & { scheduled_date?: string };
+export type BlogPostMeta = Omit<DbBlogPost, "content" | "id" | "key_takeaways"> & {
+  scheduled_date?: string;
+  readingMinutes: number;
+};
 
-const posts: LocalBlogPost[] = (blogPostsData as RawPost[]).map((p) => ({
-  ...p,
-  content: Array.isArray(p.content) ? p.content.join("\n\n") : p.content,
-}));
+const meta = blogPostsMeta as unknown as BlogPostMeta[];
 
 // Swedish local date (Europe/Stockholm, DST-safe) so a post scheduled for
 // "today" isn't hidden client-side until 02:00 CEST / 01:00 CET.
 const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Stockholm" });
-const publishedPosts = posts.filter(
+const publishedPosts = meta.filter(
   (p) => !p.scheduled_date || p.scheduled_date <= today
 );
 
 export const useBlogPosts = () => {
   return useQuery({
-    queryKey: ["blog-posts-local"],
+    queryKey: ["blog-posts-local-meta"],
     queryFn: () => publishedPosts,
     initialData: publishedPosts,
-  });
-};
-
-export const useBlogPost = (slug: string | undefined) => {
-  return useQuery({
-    queryKey: ["blog-post-local", slug],
-    queryFn: () => {
-      if (!slug) return null;
-      return posts.find((p) => p.slug === slug) ?? null;
-    },
-    initialData: slug ? (posts.find((p) => p.slug === slug) ?? null) : null,
-    enabled: !!slug,
   });
 };

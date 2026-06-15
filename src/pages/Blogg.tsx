@@ -15,10 +15,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-function estimateReadingTime(content: string): number {
-  return Math.max(1, Math.ceil(content.split(/\s+/).length / 200));
-}
-
 function formatUpdatedDate(dateStr: string): string | null {
   try {
     const d = new Date(dateStr);
@@ -53,7 +49,7 @@ const Blogg = () => {
       slug: "seo-vasteras-guide",
       tag: "SEO",
       metaDescription: "Komplett SEO-guide för småföretag i Västerås och Västmanland – från nyckelordsanalys och on-page till lokal SEO och länkbygge. Så syns du högre på Google.",
-      content: ["En komplett SEO-guide för att hjälpa småföretag synas bättre i sökmotorer."],
+      readingMinutes: 8,
       image_url: null,
       image_alt: null,
       updated_at: null,
@@ -65,7 +61,7 @@ const Blogg = () => {
       slug: "lokal-seo-smaforetag",
       tag: "Webbutveckling",
       metaDescription: "Steg-för-steg guide för att skapa en professionell företagshemsida.",
-      content: ["En komplett guide för att planera, bygga och lansera en professionell hemsida för ditt företag."],
+      readingMinutes: 8,
       image_url: null,
       image_alt: null,
       updated_at: null,
@@ -218,7 +214,7 @@ const Blogg = () => {
                               <Calendar size={13} /> {featured.date}
                             </span>
                             <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                              <Clock size={13} /> {estimateReadingTime(Array.isArray(featured.content) ? featured.content.join(' ') : featured.content as string)} min
+                              <Clock size={13} /> {featured.readingMinutes} min
                             </span>
                             {featured.updated_at && formatUpdatedDate(featured.updated_at) && (
                               <span className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -265,7 +261,7 @@ const Blogg = () => {
                                 <Calendar size={12} /> {post.date}
                               </span>
                               <span className="flex items-center gap-1 text-[11px] text-muted-foreground">
-                                <Clock size={12} /> {estimateReadingTime(Array.isArray(post.content) ? post.content.join(' ') : post.content as string)} min
+                                <Clock size={12} /> {post.readingMinutes} min
                               </span>
                               {post.updated_at && formatUpdatedDate(post.updated_at) && (
                                 <span className="flex items-center gap-1 text-[11px] text-muted-foreground">

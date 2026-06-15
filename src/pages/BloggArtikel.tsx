@@ -4,7 +4,8 @@ import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import AnimatedSection, { FadeIn } from "@/components/AnimatedSection";
 import SocialShare from "@/components/SocialShare";
-import { useBlogPost, useBlogPosts } from "@/hooks/useBlogPostsLocal";
+import { useBlogPosts } from "@/hooks/useBlogPostsLocal";
+import { useBlogPost } from "@/hooks/useBlogPost";
 import { Calendar, ArrowLeft, Tag, ArrowRight, Clock, User, Lightbulb } from "lucide-react";
 import {
   Breadcrumb,

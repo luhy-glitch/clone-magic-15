@@ -5,5 +5,5 @@ if (process.env.VERCEL) {
   process.exit(0);
 } else {
   console.log('🖥️ LOKALT BYGGE! Startar Vite och Playwright...');
-  execSync('vite build && node scripts/render-browser.mjs && node inject-meta.js && node scripts/generate-sitemap.mjs', { stdio: 'inherit' });
+  execSync('node scripts/generate-blog-meta.mjs && vite build && node scripts/render-browser.mjs && node inject-meta.js && node scripts/generate-sitemap.mjs', { stdio: 'inherit' });
 }
