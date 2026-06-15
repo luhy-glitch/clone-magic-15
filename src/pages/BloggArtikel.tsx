@@ -397,8 +397,9 @@ const BloggArtikel = () => {
               </FadeIn>
             )}
 
-            {/* Article content */}
-            <AnimatedSection>
+            {/* Article content — NO scroll-reveal on the body: the main text must
+                always be visible, and it fixes TOC anchor jumps landing on content
+                that's still in its hidden (opacity:0) pre-reveal state. */}
               <article className="prose-article" style={{ maxWidth: "70ch" }}>
                 {parsed.map((el, i) => {
                   switch (el.type) {
@@ -436,7 +437,6 @@ const BloggArtikel = () => {
                   }
                 })}
               </article>
-            </AnimatedSection>
 
             {/* Mid-article CTA */}
             <FadeIn>
