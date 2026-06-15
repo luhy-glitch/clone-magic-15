@@ -34,17 +34,6 @@ const Navbar = () => {
     setMobileOpen(false);
   }, [location.pathname]);
 
-  const handleNavClick = (to: string) => {
-    setMobileOpen(false);
-    setDropdownOpen(false);
-    if (to.includes("#")) {
-      const [path, hash] = to.split("#");
-      if (location.pathname === path || (path === "" && location.pathname === "/")) {
-        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
   return (
     <header
       className={`sticky top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-all duration-300 ${scrolled ? "shadow-md shadow-background/50" : ""}`}
@@ -105,7 +94,7 @@ const Navbar = () => {
 
           <Link to="/case" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Kundcase</Link>
           <Link to="/om-mig" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Om mig</Link>
-          <Link to="/#priser" onClick={() => handleNavClick("/#priser")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">Priser</Link>
+          <Link to="/priser" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Priser</Link>
           <Link to="/blogg" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Blogg</Link>
           <Link to="/kontakt" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Kontakt</Link>
           <Link
@@ -168,7 +157,7 @@ const Navbar = () => {
         <div className="border-t border-border my-1" />
         <Link to="/case" onClick={() => setMobileOpen(false)} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Kundcase</Link>
         <Link to="/om-mig" onClick={() => setMobileOpen(false)} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Om mig</Link>
-        <Link to="/#priser" onClick={() => { handleNavClick("/#priser"); setMobileOpen(false); }} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Priser</Link>
+        <Link to="/priser" onClick={() => setMobileOpen(false)} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Priser</Link>
         <Link to="/blogg" onClick={() => setMobileOpen(false)} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Blogg</Link>
         <Link to="/kontakt" onClick={() => setMobileOpen(false)} className="py-3 text-sm text-muted-foreground min-h-[44px] flex items-center">Kontakt</Link>
         <Link

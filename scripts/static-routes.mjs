@@ -18,6 +18,7 @@ export const staticRoutes = [
   "/blogg",
   "/om-mig",
   "/kontakt",
+  "/priser",
   "/integritetspolicy",
   "/case",
   "/gratis-seo-analys",

@@ -5,44 +5,40 @@ import { trackCTAClick } from "@/lib/analytics";
 
 const plans = [
   {
-    name: "Bas",
-    price: "5 000",
-    description: "Perfekt för dig som behöver en enkel och professionell närvaro online.",
+    name: "Onepager",
+    price: "12 000",
+    description: "En slagkraftig ensidig webbplats för dig som snabbt vill synas professionellt.",
     features: [
-      "Ensidig webbplats",
-      "Responsiv design",
+      "1 sida, responsiv design",
       "Grundläggande SEO",
       "Kontaktformulär",
-      "SSL-certifikat",
+      "Google Analytics",
     ],
     popular: false,
   },
   {
-    name: "Standard",
-    price: "12 000",
-    description: "För företag som vill synas mer och nå fler kunder digitalt.",
+    name: "Bas",
+    price: "20 000",
+    description: "För företaget som behöver en komplett närvaro med flera sidor.",
     features: [
-      "Flersidig webbplats (upp till 5 sidor)",
-      "CMS-integration",
-      "Avancerad SEO-optimering",
-      "Kontaktformulär med e-post",
-      "Google Analytics",
-      "Sociala medie-integration",
+      "2–5 sidor, responsiv design",
+      "Komplett on-page-SEO",
+      "Kontaktformulär + kartintegration",
+      "Google Analytics + Search Console",
+      "1 revideringsrunda",
     ],
     popular: true,
   },
   {
-    name: "Premium",
-    price: "25 000",
-    description: "Skräddarsydd lösning för maximalt resultat och tillväxt.",
+    name: "Tillväxt",
+    price: "30 000",
+    description: "För dig som vill växa med innehåll, struktur och konvertering i fokus.",
     features: [
-      "Skräddarsydd design & funktionalitet",
-      "E-handelslösning",
-      "Prestandaoptimering",
-      "Löpande support (3 månader)",
-      "A/B-testning",
-      "Avancerade integrationer",
-      "Prioriterad leverans",
+      "6–12 sidor, skräddarsydd design",
+      "Avancerad SEO-arkitektur",
+      "Blogg/nyheter + tjänstesidor",
+      "CMS för eget innehåll",
+      "Konverteringsoptimering",
     ],
     popular: false,
   },
@@ -111,6 +107,15 @@ const Pricing = () => {
               </div>
             </FadeIn>
           ))}
+        </div>
+
+        <div className="text-center mt-10 sm:mt-12">
+          <Link
+            to="/priser"
+            className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
+          >
+            Se alla priser – hemsida, SEO &amp; Google Ads <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
     </section>

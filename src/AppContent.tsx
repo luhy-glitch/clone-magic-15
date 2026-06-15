@@ -17,6 +17,7 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const OmMig = lazy(() => import("./pages/OmMig"));
 const Blogg = lazy(() => import("./pages/Blogg"));
 const Kontakt = lazy(() => import("./pages/Kontakt"));
+const Priser = lazy(() => import("./pages/Priser"));
 const BloggArtikel = lazy(() => import("./pages/BloggArtikel"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
@@ -81,6 +82,7 @@ const DataRoutes = () => (
         <Route path="/blogg" element={<Blogg />} />
         <Route path="/blogg/:slug" element={<BloggArtikel />} />
         <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="/priser" element={<Priser />} />
         <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
 
         {/* Service pages (canonical paths) */}
