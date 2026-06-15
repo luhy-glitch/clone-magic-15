@@ -236,7 +236,7 @@ const Blogg = () => {
                 {/* Grid */}
                 <div className="grid gap-6 sm:grid-cols-2">
                   {grid.map((post, i) => (
-                    <FadeIn key={post.slug} delay={i * 0.08}>
+                    <FadeIn key={post.slug} delay={Math.min(i, 5) * 0.06}>
                       <Link to={`/blogg/${post.slug}`} className="block h-full">
                         <article className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg hover:shadow-primary/5 hover:border-primary/30 transition-all duration-300 group h-full flex flex-col">
                           <div className="aspect-video w-full overflow-hidden">

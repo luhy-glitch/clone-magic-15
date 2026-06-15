@@ -31,7 +31,10 @@ function useReveal(animClass: string, delay = 0) {
     // Above-fold visas direkt – animera bara det som ligger under första vyn.
     if (el.getBoundingClientRect().top < window.innerHeight * 0.95) return;
     el.classList.add("lrh-reveal", animClass);
-    if (delay) el.style.transitionDelay = `${delay}s`;
+    // Spärr: en stagger baserad på absolut index (t.ex. blogg-listan) kan annars ge
+    // flersekunders transition-delay → kort långt ner "fastnar" osynliga vid scroll.
+    const clampedDelay = Math.min(Math.max(delay, 0), 0.4);
+    if (clampedDelay) el.style.transitionDelay = `${clampedDelay}s`;
     const obs = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
