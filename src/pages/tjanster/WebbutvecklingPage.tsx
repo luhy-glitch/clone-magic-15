@@ -54,7 +54,7 @@ const WebbutvecklingPage = () => (
         title: "Webbutvecklingpaket och prissättning",
         paragraphs: [
           "Vi erbjuder flexibla webbutvecklingslösningar anpassade efter ditt företags behov och budget. En enkel informationswebbplats för ett lokalt företag kan utvecklas snabbare och kosta mindre än en komplex e-handelsplattform, men båda får samma fokus på prestanda och SEO.",
-          "Priser för webbutveckling startar omkring 45 000 kr för en grundläggande webbplats (5-10 sidor, mobilanpassad, 100/100 PageSpeed) och skalerar upp beroende på komplexitet. E-handelslösningar ligger vanligtvis mellan 80 000-150 000 kr. Bokningssystem, API-integrationer och anpassad funktionalitet adderas utifrån dina specifika behov.",
+          "Priser för webbutveckling startar från 12 000 kr för en grundläggande webbplats och skalerar upp beroende på omfattning. E-handelslösningar är skräddarsydda från 50 000 kr. Se alla [priser](/priser). Bokningssystem, API-integrationer och anpassad funktionalitet adderas utifrån dina specifika behov.",
           "Det viktigaste för oss är att du förstår ROI. En hemsida som kostar 50 000 kr och genererar två extra kunder per månad på 5 000 kr är redan lönsam inom två månader. För de flesta företag i Västmanland betalar sig en rätt byggd hemsida inom 3-6 månader genom ökade kontaktförfrågningar och konverteringar.",
         ],
       },

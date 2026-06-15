@@ -129,7 +129,7 @@ const DigitalMarknadsforing = () => (
               </div>
               <div>
                 <h3 className="font-serif font-bold text-lg mb-2">Vad kostar digital marknadsföring för min butik?</h3>
-                <p className="text-muted-foreground leading-relaxed">Vi erbjuder paket från 3 000 kr/månad för SEO-tjänster. För hemsideutveckling börjar priserna från 5 000 kr. Kontakta oss för en skräddarsydd offert.</p>
+                <p className="text-muted-foreground leading-relaxed">Vi erbjuder SEO-paket från 8 000 kr/månad och hemsidor från 12 000 kr — se alla [priser](/priser). Kontakta oss för en skräddarsydd offert.</p>
               </div>
               <div>
                 <h3 className="font-serif font-bold text-lg mb-2">Hur snabbt kan jag se resultat?</h3>

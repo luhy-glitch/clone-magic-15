@@ -58,7 +58,7 @@ const config = {
     },
   ],
   faq: [
-    { question: "Vad kostar en hemsida för en restaurang i Sala?", answer: "Vi erbjuder paket från 5 000 kr. För mer information om våra tjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
+    { question: "Vad kostar en hemsida för en restaurang i Sala?", answer: "Hemsidor börjar från 12 000 kr beroende på omfattning — se alla [priser](/priser) eller läs mer om [webbutveckling](/tjanster/webbutveckling)." },
     { question: "Kan jag själv uppdatera dagens lunch på hemsidan?", answer: "Ja, vi bygger en enkel lösning. För SEO-tjänster, kolla in [SEO-optimering](/tjanster/seo-optimering)." },
     { question: "Kan ni integrera ett online-bokningssystem?", answer: "Ja, vi bygger skräddarsydda system. Börja med en [gratis SEO-analys](/gratis-seo-analys) för att förbättra din synlighet." },
     { question: "Hur snabbt kan hemsidan vara klar?", answer: "En hemsida tar normalt 2–3 veckor. Vi prioriterar kvalitet." },

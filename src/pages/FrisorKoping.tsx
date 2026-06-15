@@ -58,7 +58,7 @@ const config = {
     },
   ],
   faq: [
-    { question: "Vad kostar en hemsida för en frisörsalong i Köping?", answer: "Vi erbjuder paket från 5 000 kr. För mer information om våra tjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
+    { question: "Vad kostar en hemsida för en frisörsalong i Köping?", answer: "Hemsidor börjar från 12 000 kr beroende på omfattning — se alla [priser](/priser) eller läs mer om [webbutveckling](/tjanster/webbutveckling)." },
     { question: "Kan ni integrera mitt befintliga bokningssystem?", answer: "Ja, vi kan integrera olika bokningssystem. För SEO-tjänster, kolla in [SEO-optimering](/tjanster/seo-optimering)." },
     { question: "Hur snabbt kan hemsidan vara klar?", answer: "En hemsida tar normalt 2–3 veckor. Börja med en [gratis SEO-analys](/gratis-seo-analys) för att förbättra din synlighet." },
     { question: "Behöver jag professionella bilder av mitt arbete?", answer: "Ja, autentiska bilder bygger förtroende. Vi hjälper med optimering." },

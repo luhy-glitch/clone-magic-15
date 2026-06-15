@@ -63,7 +63,7 @@ const config = {
     { question: "Kan ni bygga bokningssystem utan provision?", answer: "Ja. Vi bygger bokningslösningar direkt i din hemsida utan att ta provision per bokning. Det sparar pengar och ger dig bättre kunddata." },
     { question: "Hur snabbt kan jag uppdatera menyn?", answer: "Vi implementerar enkla redigeringsverktyg så att du kan uppdatera menyn själv på några minuter. Vill du hellre skicka ändringar till oss hjälper vi gärna till." },
     { question: "Kan ni hjälpa mig med Google Business och recensioner?", answer: "Absolut. Vi optimerar din Google Business-profil och hjälper till att skapa en strategi för att samla in äkta recensioner från nöjda gäster." },
-    { question: "Vad kostar en restauranghemsida?", answer: "Priserna startar vid 5 000 kr. För en detaljerad offert, börja med en [gratis SEO-analys](/gratis-seo-analys) och se hur vi kan hjälpa din restaurang att växa." },
+    { question: "Vad kostar en restauranghemsida?", answer: "Hemsidor börjar från 12 000 kr beroende på omfattning — se alla [priser](/priser). För en detaljerad offert, börja med en [gratis SEO-analys](/gratis-seo-analys)." },
   ],
 };
 

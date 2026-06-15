@@ -59,7 +59,7 @@ const config = {
     },
   ],
   faq: [
-    { question: "Vad kostar en hemsida för en redovisningsbyrå?", answer: "Priserna startar vid 5 000 kr. Hör av dig för en offert baserad på din byrås behov och vilka funktioner du vill ha." },
+    { question: "Vad kostar en hemsida för en redovisningsbyrå?", answer: "Hemsidor börjar från 12 000 kr beroende på omfattning — se alla [priser](/priser). Hör av dig för en offert baserad på din byrås behov." },
     { question: "Kan ni bygga en klientportal?", answer: "Ja, vi bygger säkra klientportaler för dokumenthantering och kommunikation. Vi kan även integrera mot system som Fortnox eller Visma." },
     { question: "Hur hjälper ni mig att ranka lokalt?", answer: "Vi optimerar din hemsida för lokala sökfraser, implementerar LocalBusiness-schema och går igenom din Google Business-profil. Det hjälper dig att synas när kunder söker efter redovisningsbyråer i Västmanland." },
     { question: "Hur skyddar ni känslig information?", answer: "Vi använder TLS/HTTPS, filkryptering och säker användarautentisering. Vi kan också hjälpa dig att implementera GDPR-kompatibla lösningar." },

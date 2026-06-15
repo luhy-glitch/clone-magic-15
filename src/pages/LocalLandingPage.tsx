@@ -80,7 +80,7 @@ const buildLocalJsonLd = (config: LocalPageConfig) => ({
         {
           "@type": "Question",
           "name": `Hur mycket kostar ${config.serviceKeyword.toLowerCase()} i ${config.city}?`,
-          "acceptedAnswer": { "@type": "Answer", "text": `Priset beror på omfattning och komplexitet. Grundläggande ${config.serviceKeyword.toLowerCase()} börjar från 45 000 kr. Mer avancerade lösningar kostar 75-150 000 kr. Vi erbjuder alltid en kostnadsfri konsultation för att ge ett exakt pris.` },
+          "acceptedAnswer": { "@type": "Answer", "text": `Priset beror på omfattning och komplexitet. Grundläggande ${config.serviceKeyword.toLowerCase()} börjar från 12 000 kr. Mer avancerade lösningar är skräddarsydda från 50 000 kr (se /priser). Vi erbjuder alltid en kostnadsfri konsultation för att ge ett exakt pris.` },
         },
         {
           "@type": "Question",
@@ -235,7 +235,7 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
                 {[
                   {
                     q: `Hur mycket kostar ${config.serviceKeyword.toLowerCase()} i ${config.city}?`,
-                    a: `Priset beror på omfattning och komplexitet. Grundläggande ${config.serviceKeyword.toLowerCase()} börjar från 45 000 kr. Mer avancerade lösningar med e-handel eller integrations kostar 75-150 000 kr. Vi erbjuder alltid en kostnadsfri konsultation för att ge ett exakt pris.`,
+                    a: `Priset beror på omfattning och komplexitet. Grundläggande ${config.serviceKeyword.toLowerCase()} börjar från 12 000 kr. Mer avancerade lösningar med e-handel eller integrationer är skräddarsydda från 50 000 kr (se /priser). Vi erbjuder alltid en kostnadsfri konsultation för att ge ett exakt pris.`,
                   },
                   {
                     q: `Hur länge tar det att bygga en hemsida i ${config.city}?`,

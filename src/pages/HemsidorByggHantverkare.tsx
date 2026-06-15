@@ -59,7 +59,7 @@ const config = {
   ],
   faq: [
     { question: "Behöver hantverkare verkligen en hemsida?", answer: "Ja, 97 procent av konsumenterna söker efter lokala tjänster online. För att förbättra din synlighet, överväg våra [SEO-optimeringstjänster](/tjanster/seo-optimering)." },
-    { question: "Vad kostar en hemsida för ett byggföretag?", answer: "Vi erbjuder paket från 5 000 kr. För detaljer om våra webbutvecklingstjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
+    { question: "Vad kostar en hemsida för ett byggföretag?", answer: "Hemsidor börjar från 12 000 kr beroende på omfattning — se alla [priser](/priser) eller läs mer om [webbutveckling](/tjanster/webbutveckling)." },
     { question: "Kan ni visa mina projekt med före-och-efter-bilder?", answer: "Absolut. Vi skapar professionella projektgallerier som hjälper dig att sticka ut online." },
     { question: "Kan ni hjälpa med information om ROT-avdrag på hemsidan?", answer: "Ja, vi skapar en dedikerad sida. Börja med en [gratis SEO-analys](/gratis-seo-analys) för att se förbättringsmöjligheter." },
     { question: "Erbjuder ni support och uppdateringar efter lansering?", answer: "Ja, vi erbjuder supportavtal för långsiktig framgång i Västmanland." },

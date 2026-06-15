@@ -55,7 +55,7 @@ const config = {
     },
   ],
   faq: [
-    { question: "Vad kostar en hemsida för företag i Sala?", answer: "Vi erbjuder paket från 5 000 kr till 25 000 kr beroende på projektets storlek. För mer information om våra webbutvecklingstjänster, besök [webbutveckling](/tjanster/webbutveckling)." },
+    { question: "Vad kostar en hemsida för företag i Sala?", answer: "Hemsidor börjar från 12 000 kr beroende på omfattning — se alla [priser](/priser) eller läs mer om [webbutveckling](/tjanster/webbutveckling)." },
     { question: "Kan ni hjälpa med SEO för företag i Sala?", answer: "Ja, alla våra hemsidor är SEO-optimerade. För djupgående SEO-tjänster som hjälper ditt företag att ranka högt i Sala, kolla in vår [SEO-optimering](/tjanster/seo-optimering)." },
     { question: "Erbjuder ni gratis SEO-analys för Sala-företag?", answer: "Absolut! Vi erbjuder en gratis SEO-analys som hjälper dig att förstå din nuvarande online-närvaro. Besök [gratis SEO-analys](/gratis-seo-analys) för att komma igång." },
     { question: "Hur snabbt kan ni leverera en hemsida i Sala?", answer: "En enkel hemsida kan vara klar inom 2–3 veckor. Mer komplexa projekt tar 4–8 veckor. Vi prioriterar alltid kvalitet för företag i Sala." },

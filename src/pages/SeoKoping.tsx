@@ -63,7 +63,7 @@ const config = {
     },
   ],
   faq: [
-    { question: "Hur mycket kostar SEO i Köping?", answer: "Vi erbjuder paket från 3 000 kr/månad. För mer information om våra tjänster, besök [SEO-optimering](/tjanster/seo-optimering)." },
+    { question: "Hur mycket kostar SEO i Köping?", answer: "Vi erbjuder SEO-paket från 8 000 kr/månad — se alla [priser](/priser). Läs mer om [SEO-optimering](/tjanster/seo-optimering)." },
     { question: "Hur lång tid tar det att se resultat av SEO i Köping?", answer: "Första förbättringarna syns inom 2–3 månader. För konkurrenskraftiga sökord kan det ta 6–12 månader." },
     { question: "Behöver jag en ny hemsida för bättre SEO?", answer: "Inte nödvändigtvis, men en modern hemsida hjälper. Kolla in våra [webbutvecklingstjänster](/tjanster/webbutveckling)." },
     { question: "Kan jag se exakt vad ni gör varje månad?", answer: "Ja, vi levererar detaljerade månadsrapporter med full transparens." },

@@ -62,7 +62,7 @@ const config = {
     { question: "Vilken plattform är bäst för min e-handel?", answer: "Det beror på din verksamhet. Vi hjälper dig att välja mellan WooCommerce, Shopify eller en headless lösning baserat på dina behov och tillväxtplaner." },
     { question: "Hur ökar jag konverteringen i min webbutik?", answer: "Fokusera på snabb laddning, tydlig navigation och ett enkelt checkout-flöde. Vi optimerar dessa element och använder A/B-testning för att hitta vad som fungerar bäst." },
     { question: "Kan ni hjälpa till med lokal leverans i Västmanland?", answer: "Ja, vi bygger leveranszoner och Click & Collect-alternativ som passar din butik. Det ökar kundnöjdheten och minskar fraktkostnader." },
-    { question: "Vad kostar det att bygga en e-handelshemsida?", answer: "Priserna börjar vid 10 000 kr beroende på funktionalitet. För en detaljerad offert, börja med en [gratis SEO-analys](/gratis-seo-analys)." },
+    { question: "Vad kostar det att bygga en e-handelshemsida?", answer: "E-handelshemsidor börjar från 30 000 kr beroende på funktionalitet — se alla [priser](/priser). För en detaljerad offert, börja med en [gratis SEO-analys](/gratis-seo-analys)." },
     { question: "Kan ni hjälpa mig med SEO för e-handel?", answer: "Absolut. Vi optimerar produkt- och kategorisidor, metadata och strukturerad data för att öka din synlighet. Kolla in vår [SEO-optimering](/tjanster/seo-optimering)." },
   ],
 };

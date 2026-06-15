@@ -49,7 +49,7 @@ const config = {
     },
   ],
   faq: [
-    { question: "Hur mycket kostar SEO i Eskilstuna?", answer: "Vi erbjuder SEO-paket från 3 000 kr/månad anpassade efter konkurrens och mål. Se våra [SEO-tjänster](/tjanster/seo-optimering) eller börja med en [gratis SEO-analys](/gratis-seo-analys)." },
+    { question: "Hur mycket kostar SEO i Eskilstuna?", answer: "Vi erbjuder SEO-paket från 8 000 kr/månad anpassade efter konkurrens och mål — se alla [priser](/priser). Se våra [SEO-tjänster](/tjanster/seo-optimering) eller börja med en [gratis SEO-analys](/gratis-seo-analys)." },
     { question: "Hur lång tid tar det att se resultat av SEO i Eskilstuna?", answer: "De första förbättringarna syns oftast inom 2–3 månader. För konkurrensutsatta sökord som 'seo eskilstuna' kan det ta 6–12 månader att nå toppositionerna – men resultatet håller sedan över tid." },
     { question: "Vad är skillnaden mellan SEO och Google Ads?", answer: "Google Ads ger snabb synlighet men trafiken upphör när du slutar betala. SEO bygger bestående organisk synlighet utan löpande klickkostnad. Vi kan kombinera båda – läs mer om [Google Ads](/tjanster/google-ads)." },
     { question: "Behöver jag en ny hemsida för att lyckas med SEO?", answer: "Inte alltid, men en snabb och tekniskt korrekt hemsida är en stor fördel. Ofta åtgärdar vi den befintliga sajten; ibland lönar sig en ombyggnad. Se vår [webbutveckling i Eskilstuna](/webbutveckling-eskilstuna)." },

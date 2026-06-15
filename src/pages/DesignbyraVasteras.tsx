@@ -61,7 +61,7 @@ const config = {
   faq: [
     {
       question: "Vad kostar det att anlita en designbyrå i Västerås?",
-      answer: "En ny hemsida kostar typiskt 15 000–60 000 kr beroende på komplexitet. En komplett grafisk profil med logotyp ligger på 8 000–20 000 kr. Vi erbjuder alltid ett fast pris efter specifikation – inga dolda timkostnader. Se mer på vår [prissida](/tjanster/vad-kostar-en-hemsida-2026).",
+      answer: "En ny hemsida kostar typiskt 12 000–50 000 kr beroende på omfattning. En komplett grafisk profil med logotyp ligger på 8 000–20 000 kr. Vi erbjuder alltid ett fast pris efter specifikation – inga dolda timkostnader. Se mer på vår [prissida](/tjanster/vad-kostar-en-hemsida-2026).",
     },
     {
       question: "Arbetar ni med Webflow eller React?",
