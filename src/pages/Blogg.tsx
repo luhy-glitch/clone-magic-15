@@ -40,36 +40,11 @@ const Blogg = () => {
   const { data: posts = [], isLoading } = useBlogPosts();
   const [activeCategory, setActiveCategory] = useState<string>("Alla");
 
-  // Static “pillar” articles that live outside the CMS but should still appear in the blog list
-  const staticPosts = [
-    {
-      title: "Komplett SEO-guide för småföretag 2025",
-      excerpt: "Lär dig allt om SEO för småföretag – från nyckelord till länkbygge.",
-      date: "2026-03-16",
-      slug: "seo-vasteras-guide",
-      tag: "SEO",
-      metaDescription: "Komplett SEO-guide för småföretag i Västerås och Västmanland – från nyckelordsanalys och on-page till lokal SEO och länkbygge. Så syns du högre på Google.",
-      readingMinutes: 8,
-      image_url: null,
-      image_alt: null,
-      updated_at: null,
-    },
-    {
-      title: "Så skapar du en hemsida för ditt företag 2025",
-      excerpt: "Steg-för-steg guide för att skapa en professionell företagshemsida.",
-      date: "2026-03-16",
-      slug: "lokal-seo-smaforetag",
-      tag: "Webbutveckling",
-      metaDescription: "Steg-för-steg guide för att skapa en professionell företagshemsida.",
-      readingMinutes: 8,
-      image_url: null,
-      image_alt: null,
-      updated_at: null,
-    },
-  ];
-
+  // Note: seo-vasteras-guide & lokal-seo-smaforetag used to be hardcoded "pillar"
+  // entries here (with no image) — they now exist as real posts with covers, so
+  // they come from the data like everything else. No static duplicates needed.
   const allPosts = useMemo(() =>
-    [...staticPosts, ...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+    [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     [posts]
   );
 
