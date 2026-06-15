@@ -14,10 +14,24 @@ const PUBLIC_PREFIX = "/images/blog-covers";
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+// Accentfärg per kategori — navy-botten är konstant (brand-anker), accenten varierar
+// så flödet får visuell variation utan att tappa identiteten. SEO behåller guld.
+const ACCENTS = {
+  "SEO": { h: 38, s: 92 },                     // guld (flaggskepp / brand)
+  "Webbutveckling": { h: 185, s: 70 },         // teal
+  "Webbdesign": { h: 262, s: 60 },             // violett
+  "Prestanda": { h: 155, s: 60 },              // grön (hastighet)
+  "Digital marknadsföring": { h: 350, s: 75 }, // korall
+  "Digital Strategi": { h: 212, s: 80 },       // azurblå
+};
+const DEFAULT_ACCENT = { h: 38, s: 92 }; // guld
+
 function coverHtml(title, tag) {
   // Dynamisk titelstorlek så långa titlar får plats
   const len = title.length;
   const fs = len > 70 ? 52 : len > 48 ? 60 : len > 30 ? 70 : 80;
+  const a = ACCENTS[tag] || DEFAULT_ACCENT;
+  const A = `${a.h} ${a.s}%`; // hue+sat; ljushet sätts per användning
   return `<!doctype html><html><head><meta charset="utf-8"><style>
     * { margin:0; padding:0; box-sizing:border-box; }
     html,body { width:1200px; height:630px; }
@@ -26,15 +40,15 @@ function coverHtml(title, tag) {
          font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
          padding:72px 80px; display:flex; flex-direction:column; justify-content:space-between; }
     .arc { position:absolute; right:-180px; bottom:-220px; width:520px; height:520px; border-radius:50%;
-           background:radial-gradient(circle at 50% 50%, hsl(38 92% 50% / .18), transparent 65%); }
-    .bar { position:absolute; left:0; top:0; width:10px; height:100%; background:hsl(38 92% 50%); }
-    .eyebrow { color:hsl(38 92% 55%); font-weight:800; letter-spacing:.22em; font-size:24px; }
+           background:radial-gradient(circle at 50% 50%, hsl(${A} 50% / .20), transparent 65%); }
+    .bar { position:absolute; left:0; top:0; width:10px; height:100%; background:hsl(${A} 52%); }
+    .eyebrow { color:hsl(${A} 64%); font-weight:800; letter-spacing:.22em; font-size:24px; }
     .title { color:hsl(210 40% 97%); font-family:Georgia, "Times New Roman", serif; font-weight:700;
              font-size:${fs}px; line-height:1.14; max-width:1000px; }
-    .chip { align-self:flex-start; color:hsl(38 92% 55%); border:2px solid hsl(38 92% 50% / .55);
-            background:hsl(38 92% 50% / .10); border-radius:999px; padding:10px 22px;
+    .chip { align-self:flex-start; color:hsl(${A} 64%); border:2px solid hsl(${A} 52% / .55);
+            background:hsl(${A} 52% / .12); border-radius:999px; padding:10px 22px;
             font-size:22px; font-weight:700; letter-spacing:.03em; }
-    .dot { display:inline-block; width:9px; height:9px; border-radius:50%; background:hsl(38 92% 50%); margin-right:10px; vertical-align:middle; }
+    .dot { display:inline-block; width:9px; height:9px; border-radius:50%; background:hsl(${A} 52%); margin-right:10px; vertical-align:middle; }
   </style></head><body>
     <div class="c">
       <div class="bar"></div><div class="arc"></div>
@@ -47,7 +61,12 @@ function coverHtml(title, tag) {
 
 async function main() {
   const posts = JSON.parse(readFileSync(DATA, "utf8"));
-  const targets = posts.filter((p) => !p.image_url);
+  // Default: bara inlägg utan bild. Med --refresh: även befintliga branded covers
+  // (för att rulla ut ny design, t.ex. kategori-accent, på alla på en gång).
+  const REFRESH = process.argv.includes("--refresh");
+  const targets = posts.filter(
+    (p) => !p.image_url || (REFRESH && p.image_url.includes("/blog-covers/"))
+  );
   if (!targets.length) { console.log("Inga inlägg saknar image_url — inget att göra."); return; }
   if (!existsSync(OUT_DIR)) mkdirSync(OUT_DIR, { recursive: true });
 
