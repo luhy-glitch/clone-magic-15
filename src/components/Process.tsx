@@ -49,7 +49,7 @@ const Process = () => {
             <FadeIn key={step.title} delay={i * 0.1}>
               <div className="relative bg-card border border-border rounded-2xl p-6 sm:p-7 h-full flex flex-col group hover:border-primary/30 hover:shadow-lg transition-all duration-300">
                 {/* Step number */}
-                <span aria-hidden="true" className="text-5xl font-bold font-serif text-primary/10 absolute top-4 right-5 group-hover:text-primary/20 transition-colors">{step.number}</span>
+                <span aria-hidden="true" className="text-5xl font-bold font-serif text-primary/80 absolute top-4 right-5 group-hover:text-primary transition-colors">{step.number}</span>
 
                 <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
                   <step.icon size={20} className="text-primary" />
