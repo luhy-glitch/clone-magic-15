@@ -8,6 +8,7 @@ const PrivacyPolicy = () => {
       <PageHead
         title="Integritetspolicy | LRH Konsult"
         description="Läs om hur LRH Konsult hanterar dina personuppgifter enligt GDPR. Information om cookies, dataskydd och dina rättigheter."
+        noindex
       />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
         <Link
