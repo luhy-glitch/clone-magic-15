@@ -236,12 +236,46 @@ const PriceSection = ({
   </section>
 );
 
+const toPrice = (p: string) => p.replace(/\s/g, "");
+const makeOffers = (plans: Plan[], category: string, recurring: boolean) =>
+  plans.map((p) => ({
+    "@type": "Offer",
+    name: `${category} – ${p.name}`,
+    priceCurrency: "SEK",
+    price: toPrice(p.price),
+    url: "https://www.lrhkonsult.se/priser",
+    ...(recurring
+      ? {
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: toPrice(p.price),
+            priceCurrency: "SEK",
+            referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "MON" },
+          },
+        }
+      : {}),
+  }));
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.lrhkonsult.se" },
-    { "@type": "ListItem", position: 2, name: "Priser", item: "https://www.lrhkonsult.se/priser" },
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.lrhkonsult.se" },
+        { "@type": "ListItem", position: 2, name: "Priser", item: "https://www.lrhkonsult.se/priser" },
+      ],
+    },
+    {
+      "@type": "OfferCatalog",
+      name: "Priser – Hemsida, SEO & Google Ads | LRH Konsult",
+      url: "https://www.lrhkonsult.se/priser",
+      itemListElement: [
+        ...makeOffers(websites, "Hemsida", false),
+        ...makeOffers(seo, "SEO", true),
+        ...makeOffers(ads, "Google Ads", true),
+      ],
+    },
   ],
 };
 

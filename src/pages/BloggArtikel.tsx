@@ -285,6 +285,7 @@ const BloggArtikel = () => {
       <PageHead
         title={post.metaTitle || `${post.title} | LRH Konsult`}
         description={post.metaDescription || post.excerpt}
+        ogImage={post.image_url ? (post.image_url.startsWith("http") ? post.image_url : `https://www.lrhkonsult.se${post.image_url}`) : undefined}
         jsonLd={jsonLd}
       />
       <Navbar />
