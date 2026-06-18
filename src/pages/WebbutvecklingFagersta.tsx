@@ -19,7 +19,7 @@ const config = {
   ],
   benefits: [
     { title: "Lokal förståelse", description: "Vi känner Västmanland och förstår de specifika utmaningarna och möjligheterna för företag i Fagersta och norra Västmanland." },
-    { title: "Från legacy till modern", description: "Vi migrerar din hemsida från tunga, föråldrade plattformar till en blixtsnabb React-lösning utan att förlora innehål eller SEO-värde." },
+    { title: "Från legacy till modern", description: "Vi migrerar din hemsida från tunga, föråldrade plattformar till en blixtsnabb React-lösning utan att förlora innehåll eller SEO-värde." },
     { title: "Semantisk HTML", description: "Korrekt HTML-struktur med rätt heading-hierarki, ARIA-attribut och semantiska element som sökmotorer älskar." },
     { title: "Strukturerad data", description: "JSON-LD Schema Markup som ger ditt företag rika utdrag och bättre synlighet i Googles sökresultat." },
   ],

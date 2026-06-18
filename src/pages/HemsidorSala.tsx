@@ -23,7 +23,7 @@ const config = {
     { title: "Prestanda i världsklass", description: "Perfekta PageSpeed-poäng innebär snabbare laddning, bättre ranking och fler nöjda besökare i Sala." },
   ],
   bodyTitle: "Hemsidor Sala - Moderna Webbplatser för Lokala Företag",
-  bodyParagraphs: ["Sala är en charmig mindre stad söder om Västerås med cirka 21 000 invånare, känd för sin salzvärldar-historia och Sala silvergruva. Turism är en viktig del av ekonomin här, men många lokala företag saknar digital närvaro för att nå turister och lokala kunder.","För ett Sala-företag inom turism, handel eller tjänster är en hemsida nästan obligatorisk. Turister söker på Google innan de anländer.","Vi bygger Sala-hemsidor som lockar både turister och lokala kunder."],
+  bodyParagraphs: ["Sala är en charmig mindre stad söder om Västerås med cirka 21 000 invånare, känd för sin gruvhistoria och Sala silvergruva. Turism är en viktig del av ekonomin här, men många lokala företag saknar digital närvaro för att nå turister och lokala kunder.","För ett Sala-företag inom turism, handel eller tjänster är en hemsida nästan obligatorisk. Turister söker på Google innan de anländer.","Vi bygger Sala-hemsidor som lockar både turister och lokala kunder."],
   bodyExtraSections: [
     {
       title: "Design som bygger förtroende i Sala",

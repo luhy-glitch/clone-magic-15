@@ -90,7 +90,7 @@ const buildLocalJsonLd = (config: LocalPageConfig) => ({
         {
           "@type": "Question",
           "name": `Rankar ${config.serviceKeyword.toLowerCase()} högt på Google för ${config.city}?`,
-          "acceptedAnswer": { "@type": "Answer", "text": `Ja, vi specialiserar oss på lokal SEO för ${config.city}. Med rätt optimering och innehål rankar hemsidor typiskt första eller andra sidan för lokala sökningar inom 2-4 månader.` },
+          "acceptedAnswer": { "@type": "Answer", "text": `Ja, vi specialiserar oss på lokal SEO för ${config.city}. Med rätt optimering och innehåll rankar hemsidor typiskt första eller andra sidan för lokala sökningar inom 2-4 månader.` },
         },
         {
           "@type": "Question",
@@ -243,7 +243,7 @@ const LocalLandingPage = ({ config }: { config: LocalPageConfig }) => {
                   },
                   {
                     q: `Rankar ${config.serviceKeyword.toLowerCase()} högt på Google för ${config.city}?`,
-                    a: `Ja, vi specialiserar oss på lokal SEO för ${config.city}. Med rätt optimering och innehål rankar hemsidor typiskt första eller andra sidan för lokala sökningar inom 2-4 månader. Konkurrensen i ${config.city} är ofta lägre än i större städer.`,
+                    a: `Ja, vi specialiserar oss på lokal SEO för ${config.city}. Med rätt optimering och innehåll rankar hemsidor typiskt första eller andra sidan för lokala sökningar inom 2-4 månader. Konkurrensen i ${config.city} är ofta lägre än i större städer.`,
                   },
                   {
                     q: `Vad ingår i underhållet efter lansering?`,

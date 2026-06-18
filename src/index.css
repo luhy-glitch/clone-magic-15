@@ -22,7 +22,8 @@
     --secondary-foreground: 210 40% 96%;
 
     --muted: 220 16% 14%;
-    --muted-foreground: 218 12% 55%;
+    /* 64% ljushet (höjt från 55%) för WCAG-kontrast mot mörk botten — a11y */
+    --muted-foreground: 218 14% 64%;
 
     --accent: 38 92% 50%;
     --accent-foreground: 222 47% 6%;

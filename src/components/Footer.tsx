@@ -215,7 +215,7 @@ const Footer = () => {
             className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 hover:border-primary/50 hover:text-foreground transition-colors"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-            <span className="font-medium">100/100 PageSpeed</span>
+            <span className="font-medium">100/100 PageSpeed (desktop)</span>
           </Link>
           <span>
             En del av{" "}

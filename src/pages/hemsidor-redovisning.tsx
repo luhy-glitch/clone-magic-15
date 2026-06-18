@@ -21,7 +21,7 @@ const AccountingHomePage = () => (
       { title: "Kundrecensioner & testimon", description: "Visa CFO-reviews och SME-testimonials. Socialt bevis ökar konvertering med 20-30%." },
     ]}
     process={[
-      { step: "1", title: "Strategi & målgrupp", description: "Vi identifierar din målgrupp (startups, SME, eller corporates) och designar innehål och CTAs som resonerar med dem." },
+      { step: "1", title: "Strategi & målgrupp", description: "Vi identifierar din målgrupp (startups, SME, eller corporates) och designar innehåll och CTAs som resonerar med dem." },
       { step: "2", title: "Klientportal & teknik", description: "Vi designar en intuitiv klientportal där dina klienter kan ladda upp dokument, se rapporter och kommunicera säkert. Fullt encrypted och GDPR-compliant." },
       { step: "3", title: "Innehål & SEO", description: "Vi skriver guider om bokföring, skatt och redovisning optimerade för Google. Din hemsida rankar för 'redovisningsbyrå [stad]', 'bokföring för startups' osv." },
       { step: "4", title: "Lansering & training", description: "Vi lanserar hemsidan och tränar ditt personal att uppdatera priser, lägga till nya testimon och hantera klientportaler." },

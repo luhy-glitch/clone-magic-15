@@ -83,12 +83,14 @@ function extractKeyTakeaways(content: string, title: string): string[] {
 /** Parse content line-by-line so headings never swallow paragraphs */
 function parseContentLines(raw: string) {
   const lines = raw.split("\n");
-  const elements: { type: "h2" | "h3" | "p" | "quote" | "li"; text: string; id?: string }[] = [];
+  const elements: { type: "h2" | "h3" | "p" | "quote" | "ul"; text: string; id?: string; items?: string[] }[] = [];
   let listBuffer: string[] = [];
 
   const flushList = () => {
     if (listBuffer.length > 0) {
-      listBuffer.forEach((item) => elements.push({ type: "li", text: item }));
+      // Group consecutive items into ONE <ul> — <li> must live inside a list
+      // parent (a11y + semantics). Previously each item rendered as a bare <li>.
+      elements.push({ type: "ul", text: "", items: [...listBuffer] });
       listBuffer = [];
     }
   };
@@ -421,11 +423,15 @@ const BloggArtikel = () => {
                           {el.text}
                         </blockquote>
                       );
-                    case "li":
+                    case "ul":
                       return (
-                        <li key={i} className="text-muted-foreground leading-[1.7] text-[15px] sm:text-base ml-5 list-disc mb-1.5">
-                          {renderInline(el.text)}
-                        </li>
+                        <ul key={i} className="list-disc ml-5 my-4 space-y-1.5">
+                          {(el.items || []).map((item, j) => (
+                            <li key={j} className="text-muted-foreground leading-[1.7] text-[15px] sm:text-base">
+                              {renderInline(item)}
+                            </li>
+                          ))}
+                        </ul>
                       );
                     case "p":
                     default:
