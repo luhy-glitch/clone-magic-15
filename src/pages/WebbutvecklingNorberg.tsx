@@ -14,7 +14,7 @@ const config = {
   heroFacts: [
     "100/100 PageSpeed – snabbast i norra Västmanland",
     "CNC-verkstäder i Norberg når kunder digitalt",
-    "First-mover-advantage med låg lokal konkurrens",
+    "Försteg med låg lokal konkurrens",
     "Konverteringsdesign med click-to-call och minimala formulär",
   ],
   benefits: [
@@ -40,7 +40,7 @@ const config = {
       paragraphs: [
         "Norbergs geografiska position i norra Västmanland, med närhet till Fagersta, Avesta och Skinnskatteberg, ger ett naturligt upptagningsområde som sträcker sig över kommungränserna. Med rätt lokal SEO-strategi kan ditt företag i Norberg fånga upp sökningar från hela norra Mälardalen utan att behöva investera i dyra annonskampanjer.",
         "Vi implementerar JSON-LD LocalBusiness-schema som berättar för Google exakt vilka tjänster du erbjuder och var du verkar. Optimerade metadata med lokala söktermer säkerställer att din hemsida matchar de sökfrågor som invånarna i Norberg och närområdet faktiskt ställer. Resultatet är ökad synlighet i både organiska sökresultat och Google Maps-listningar.",
-        "I en kommun med färre företag än storstäderna finns en tydlig first-mover-advantage. Det företag som först investerar i professionell webbutveckling i Norberg kan snabbt etablera sig som det dominerande sökresultatet inom sin bransch. Med lägre konkurrens tar det veckor snarare än månader att nå toppositioner.",
+        "I en kommun med färre företag än storstäderna finns ett tydligt försteg. Det företag som först investerar i professionell webbutveckling i Norberg kan snabbt etablera sig som det dominerande sökresultatet inom sin bransch. Med lägre konkurrens tar det veckor snarare än månader att nå toppositioner.",
       ],
     },
     {
