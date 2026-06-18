@@ -211,7 +211,6 @@ const Footer = () => {
           <span>© 2026 LRH Konsult. Alla rättigheter förbehållna.</span>
           <Link
             to="/case"
-            aria-label="100/100 PageSpeed"
             className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 hover:border-primary/50 hover:text-foreground transition-colors"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />

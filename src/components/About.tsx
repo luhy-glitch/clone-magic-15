@@ -1,6 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import AnimatedSection, { FadeIn, ScaleIn } from "./AnimatedSection";
+import AnimatedSection, { ScaleIn } from "./AnimatedSection";
 
 const skills = ["React", "TypeScript", "Node.js", "WordPress", "SEO"];
 
@@ -62,13 +62,11 @@ const About = () => {
 
               {/* Snabba fakta */}
               <ul className="mt-8 space-y-4">
-                {quickFacts.map((item, i) => (
-                  <FadeIn key={item} delay={0.3 + i * 0.1}>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 size={20} className="text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground text-sm">{item}</span>
-                    </li>
-                  </FadeIn>
+                {quickFacts.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 size={20} className="text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground text-sm">{item}</span>
+                  </li>
                 ))}
               </ul>
             </div>
